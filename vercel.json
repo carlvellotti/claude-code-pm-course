@@ -1,6 +1,0 @@
-{
-  "version": 2,
-  "buildCommand": "cd website && npm run build",
-  "outputDirectory": "website/out",
-  "installCommand": "npm --prefix website install"
-}
