@@ -1,0 +1,10 @@
+export default
+{
+  "index": "Home",
+  "company-context": "Company Context",
+  "getting-started": "Getting Started",
+  "fundamentals": "Fundamentals",
+  "advanced": "Advanced PM Work",
+  "search": "Search"
+}
+

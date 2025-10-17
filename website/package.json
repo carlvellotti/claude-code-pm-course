@@ -1,0 +1,22 @@
+{
+  "name": "claude-code-pm-course-site",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "postbuild": "pagefind --site ./out",
+    "preview": "npx serve out -p 3000"
+  },
+  "dependencies": {
+    "next": "14.2.5",
+    "nextra": "3.2.3",
+    "nextra-theme-docs": "3.2.3",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "24.8.1",
+    "pagefind": "1.1.0"
+  }
+}
