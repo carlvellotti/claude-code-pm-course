@@ -1,13 +1,6 @@
 {
-  "buildCommand": "cd website && npm install && npm run build",
+  "version": 2,
+  "buildCommand": "cd website && npm run build",
   "outputDirectory": "website/out",
-  "installCommand": "cd website && npm install",
-  "framework": "nextjs",
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/$1"
-    }
-  ]
+  "installCommand": "npm --prefix website install"
 }
-
