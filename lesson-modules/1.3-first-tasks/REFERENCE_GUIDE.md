@@ -1,0 +1,828 @@
+# Module 1.3: Your First PM Tasks with Claude Code
+## Reference Guide
+
+**Last Updated:** October 13, 2025
+**Time to Complete:** 30 minutes
+**Prerequisites:** Modules 1.1 and 1.2 completed, Obsidian or text editor set up
+
+---
+
+## 📖 Overview
+
+Module 1.3 is where you transition from learning about Claude Code to actually using it for real PM work. You'll process meeting notes, synthesize user research, transform communication for different audiences, analyze visual content, and create reusable formatting templates.
+
+**Key takeaway:** Claude Code isn't just a chatbot - it's a file-aware, visual-capable assistant that can save you 2-3 hours per week on routine PM documentation tasks.
+
+---
+
+## 🎯 What You'll Learn
+
+This module teaches five core capabilities that form the foundation of PM work in Claude Code:
+
+### 1. File Reading and Writing
+Learn to reference files using the `@` symbol, read multiple files simultaneously, and have Claude create, edit, and analyze documents across your project.
+
+### 2. Content Analysis and Summarization
+Transform messy meeting notes into structured action items, synthesize insights from multiple user interviews, and extract patterns from large amounts of unstructured data.
+
+### 3. Pasting Images into Terminal
+Master the critical skill of pasting screenshots, mockups, and diagrams directly into Claude Code for instant analysis (spoiler: it's Ctrl+V on ALL platforms, even Mac).
+
+### 4. Working with Visual Content
+Get feedback on design mockups, analyze competitor screenshots, review data visualizations, and process whiteboard photos - all without leaving your terminal.
+
+### 5. Output Style Customization
+Create reusable formatting templates for recurring document types like weekly updates, user stories, and executive summaries.
+
+---
+
+## 📁 The @ Symbol - Your File Reference System
+
+The `@` symbol is how you tell Claude which files to read, analyze, or reference. Think of it as a direct pointer to any file in your project.
+
+### Basic @ Syntax
+
+**Single file reference:**
+```
+"Read @meeting-notes.txt and summarize action items"
+```
+
+**Multiple file references:**
+```
+"Compare @competitor-a.md and @competitor-b.md"
+```
+
+**Nested file paths:**
+```
+"Analyze @research/interviews/user-01.txt"
+```
+
+### What @ Does
+
+When you use `@filename`, Claude:
+1. Locates the file in your project directory
+2. Reads the full contents
+3. Includes that context in its analysis
+4. Can create, edit, or reference multiple files in one response
+
+### Supported File Types
+
+Claude Code can work with many file formats:
+
+| File Type | Extension | Use Cases |
+|-----------|-----------|-----------|
+| Markdown | `.md` | PRDs, documentation, notes |
+| Text | `.txt` | Meeting notes, raw data |
+| CSV | `.csv` | Survey results, metrics |
+| JSON | `.json` | API responses, structured data |
+| PDF | `.pdf` | Research papers, reports |
+| Images | `.png`, `.jpg`, `.gif` | Screenshots, mockups (see below) |
+
+### Working with Multiple Files
+
+**Process a batch of files:**
+```
+"I have 10 meeting notes in /meetings/.
+Read all of them and extract action items."
+```
+
+**Cross-reference documents:**
+```
+"Read @prd.md and @user-research.md.
+Identify any gaps where the PRD doesn't address user pain points."
+```
+
+**Synthesize from multiple sources:**
+```
+"Read all files in /interviews/ and create a research synthesis
+document with:
+- Top 5 pain points
+- Common feature requests
+- User personas"
+```
+
+---
+
+## 🖼️ Pasting Images - The Critical Keyboard Shortcut
+
+One of Claude Code's most powerful features is the ability to paste images directly into the terminal for instant analysis. But there's a critical detail that trips up almost every beginner.
+
+### The Universal Command: Ctrl+V
+
+**🚨 CRITICAL: Use Ctrl+V on ALL platforms, including Mac**
+
+| Platform | Correct | Wrong |
+|----------|---------|-------|
+| Mac | **Ctrl+V** ✅ | Command+V ❌ |
+| Windows | **Ctrl+V** ✅ | - |
+| Linux | **Ctrl+V** ✅ | - |
+
+**Why is this different on Mac?**
+
+In terminals (including Claude Code's terminal), `Ctrl+V` is the universal paste command across all operating systems. `Command+V` is Mac's GUI paste command and doesn't work in terminal environments.
+
+### How to Paste Images
+
+**Step 1: Copy an image to clipboard**
+- Take a screenshot: `Cmd+Shift+4` (Mac) or `Win+Shift+S` (Windows)
+- Copy from browser/Figma: `Cmd+C` (Mac) or `Ctrl+C` (Windows)
+- Copy from any application
+
+**Step 2: Paste into Claude Code**
+- In the Claude Code terminal, press **Ctrl+V**
+- The image appears in the conversation
+
+**Step 3: Request analysis**
+```
+"Analyze this design mockup and provide:
+- UX feedback from a PM perspective
+- Potential technical challenges
+- Accessibility concerns
+- Missing elements for user flow"
+```
+### What You Can Paste
+
+**Design & Product:**
+- Figma mockups and prototypes
+- Sketch designs
+- Wireframes and flows
+- UI component libraries
+- User journey maps
+
+**Data & Analytics:**
+- Dashboard screenshots
+- Chart visualizations
+- Metrics reports
+- A/B test results
+- Analytics graphs
+
+**Competitive Research:**
+- Competitor product screenshots
+- Feature comparison matrices
+- Pricing page captures
+- Marketing material
+
+**Collaboration:**
+- Whiteboard photos from meetings
+- Sticky note brainstorming sessions
+- Hand-drawn sketches
+- Meeting room diagrams
+
+**Technical:**
+- Error messages
+- Bug reproductions
+- System architecture diagrams
+- Database schemas
+
+### Example UI to Try
+
+![Example UI mockup for analysis practice](ui-mockup-example.png)
+
+You can reference this image in Claude Code by using `@"ui-mockup-example.png"` and ask for UI improvement recommendations.
+
+---
+
+## 🔄 Content Transformation - Same Data, Multiple Formats
+
+A core PM skill is communicating the same information to different audiences. Claude Code excels at transforming content while maintaining factual consistency.
+
+### The Communication Matrix
+
+| Audience | Format | Tone | Focus |
+|----------|--------|------|-------|
+| Engineering team | Slack message | Casual, technical | Implementation details |
+| Stakeholders | Email | Professional, strategic | Business outcomes |
+| Customers | Release notes | Friendly, benefit-focused | Value delivered |
+| Documentation | Notion doc | Comprehensive, structured | Complete reference |
+| Executives | Brief | Concise, metric-driven | Impact and next steps |
+
+### Transformation Examples
+
+**From rough notes to polished communication:**
+
+```
+"Read @sprint-planning-notes.txt and create:
+1. @slack-update.md - Casual team announcement
+2. @stakeholder-email.md - Professional executive summary
+3. @notion-doc.md - Complete reference documentation"
+```
+
+**From technical to customer-facing:**
+
+```
+"Transform this technical changelog into customer-facing release notes:
+- Focus on benefits, not implementation
+- Use friendly, exciting language
+- Highlight user value in each change
+- Add visual emojis for scannability"
+```
+
+**From long-form to executive summary:**
+
+```
+"Read @user-research-full.md (18 pages) and create a
+3-paragraph executive summary focusing on:
+- Top 3 insights
+- Recommended actions
+- Business impact"
+```
+
+---
+
+## 🎨 Output Styles - Format Once, Reuse Forever
+
+Output styles are reusable formatting templates that save time on repetitive document types. Instead of explaining formatting requirements every time, create a style once and apply it instantly.
+
+### What Are Output Styles?
+
+Think of output styles as templates for consistent document formatting:
+- **User stories:** Always follow Given/When/Then format
+- **Weekly updates:** Always include shipped/in-progress/blocked sections
+- **Executive briefs:** Always have 3 paragraphs with specific focus areas
+
+### Creating an Output Style
+
+**Method 1: Define the format**
+```
+"Create an output style called 'Executive Briefing' with these rules:
+- Maximum 3 paragraphs
+- Paragraph 1: What happened (outcomes, metrics)
+- Paragraph 2: Why it matters (business impact)
+- Paragraph 3: What's next (forward-looking)
+- Use bullet points for metrics
+- No jargon
+- Active voice"
+```
+
+**Method 2: Show an example**
+```
+"Create an output style called 'User Story' that formats like this:
+
+**As a** [persona]
+**I want** [capability]
+**So that** [benefit]
+
+**Acceptance Criteria:**
+- Given [context]
+  When [action]
+  Then [outcome]"
+```
+
+### Using Output Styles
+
+Once created, reference the style by name:
+
+```
+"Convert @meeting-notes.txt to Executive Briefing style"
+```
+
+```
+"Turn this feature idea into User Story style"
+```
+
+```
+"Format @sprint-work.md as Weekly Update style"
+```
+
+### Common PM Output Styles
+
+**Build your library with these essential styles:**
+
+1. **Executive Briefing** - 3-paragraph strategic summary
+2. **User Story** - As a/I want/So that format with acceptance criteria
+3. **Linear/Jira Issue** - Title, description, ACs, priority, estimate
+4. **Weekly Update** - Shipped/In Progress/Blocked/Next Week
+5. **Release Notes** - Customer-facing, benefit-focused
+6. **PRD Section** - Problem/Solution/Metrics/Stories
+7. **Slack Announcement** - Casual, emoji-friendly, celebration-focused
+8. **Stakeholder Email** - Professional, context-rich, strategic
+
+### Time Savings
+
+**Without output styles:**
+- Recall formatting requirements: 2 minutes
+- Explain to Claude each time: 1 minute
+- Review and adjust: 2 minutes
+- **Total per document: 5 minutes**
+
+**With output styles:**
+- Reference style name: 5 seconds
+- **Time saved: 4 minutes 55 seconds per document**
+
+At 20 documents per week: **100 minutes saved weekly** from output styles alone.
+
+---
+
+## 💼 Real-World PM Examples
+
+### Example 1: End-of-Day Meeting Processing
+
+**Scenario:** Friday at 5pm, you have notes from 5 meetings and need to send action items before the weekend.
+
+**Traditional approach:**
+1. Review each meeting note file (10 min)
+2. Extract action items manually (15 min)
+3. Organize by owner (5 min)
+4. Format for distribution (5 min)
+5. **Total: 35 minutes**
+
+**With Claude Code:**
+```
+"I have 5 meeting note files in /meetings/today/.
+Process all of them and create @action-items-summary.md with:
+- Table of action items
+- Organized by owner
+- Priority and due date
+- Grouped by meeting source"
+```
+
+**Result:** Complete in 2 minutes, formatted and ready to share.
+
+**Time saved:** 33 minutes every week = **2.75 hours per month**
+
+---
+
+### Example 2: User Research Synthesis
+
+**Scenario:** You completed 8 user interviews (30 minutes each, 3-4 page transcripts). You need to identify patterns, pain points, and feature requests.
+
+**Traditional approach:**
+1. Read all 8 transcripts carefully (60 min)
+2. Highlight key themes (30 min)
+3. Extract quotes for each theme (20 min)
+4. Organize findings (20 min)
+5. Write synthesis document (30 min)
+6. **Total: 2 hours 40 minutes**
+
+**With Claude Code:**
+```
+"Read all files in user-interviews/ folder and create @research-synthesis.md with:
+- Top 5 pain points (mentioned by 3+ users)
+- Direct quotes supporting each finding
+- Feature requests ranked by frequency
+- Personas refined with real data
+- Recommended next steps for product team"
+```
+
+**Result:** Comprehensive synthesis in 5 minutes.
+
+**Time saved:** 2 hours 35 minutes per research cycle
+
+---
+
+### Example 3: Stakeholder Communication
+
+**Scenario:** Sprint planning just finished. You need to communicate results to 3 different audiences with different needs.
+
+**Traditional approach:**
+1. Draft Slack message for team (10 min)
+2. Write formal email for stakeholders (15 min)
+3. Create Notion doc for async team members (15 min)
+4. Ensure consistency across all three (5 min)
+5. **Total: 45 minutes**
+
+**With Claude Code:**
+```
+"Read @product-sync-notes.md and create @communication-formats.md with:
+
+1. Slack Update - Casual team message
+   - Emoji-friendly
+   - Celebrate wins
+   - Call out blockers needing help
+
+2. Stakeholder Email - Professional update
+   - Business outcomes focus
+   - Metrics and timeline
+   - Risk callouts
+
+3. Notion Document - Complete reference
+   - All sprint details
+   - User stories included
+   - Dependencies mapped"
+```
+
+**Result:** One document with three perfectly formatted versions in 3 minutes, factually consistent.
+
+**Time saved:** 42 minutes per sprint = **1.4 hours per month** (bi-weekly sprints)
+
+---
+
+### Example 4: Design Feedback
+
+**Scenario:** Designer shares Figma mockup for new onboarding flow. You need to provide comprehensive feedback covering UX, technical feasibility, and accessibility.
+
+**Traditional approach:**
+1. Review design carefully (5 min)
+2. Think through user flow (10 min)
+3. Consider technical challenges (5 min)
+4. Check accessibility concerns (5 min)
+5. Write up structured feedback (10 min)
+6. Format for designer (3 min)
+7. **Total: 38 minutes**
+
+**With Claude Code:**
+1. Copy Figma screenshot
+2. Paste with Ctrl+V
+3. Prompt:
+```
+"Analyze this onboarding flow mockup:
+- UX feedback: Is the flow intuitive? Any confusion points?
+- Technical challenges: What's complex to implement?
+- Accessibility: WCAG compliance issues?
+- Missing elements: What's needed for complete user flow?
+- Improvements: 3 specific suggestions"
+```
+
+**Result:** Detailed feedback in 2 minutes.
+
+**Time saved:** 36 minutes per design review = **2.4 hours per month** (4 reviews/month)
+
+---
+
+### Example 5: Weekly Status Updates with Output Templates
+
+**Scenario:** Every Monday you send a weekly update to leadership. Same format every week, different content.
+
+**Traditional approach (without output styles):**
+1. Remember format requirements (2 min)
+2. Draft content (10 min)
+3. Format sections correctly (3 min)
+4. Review for consistency (2 min)
+5. **Total: 17 minutes**
+
+**With Claude Code (using output style):**
+
+First time - create the style:
+```
+"Create output style 'Weekly PM Update' with:
+
+## This Week
+- Shipped: [features/fixes launched]
+- Progress: [work in flight]
+- Metrics: [key numbers]
+
+## Next Week
+- Goals: [top priorities]
+- Risks: [blockers or concerns]
+
+## Need Help With
+- [asks for stakeholders]
+
+Tone: Concise, scannable, metric-driven"
+```
+
+Every week after:
+```
+"Read @sprint-work.md and @metrics-dashboard.txt
+Create weekly update in 'Weekly PM Update' style"
+```
+
+**Result:** Perfect formatting in 1 minute.
+
+**Time saved:** 16 minutes per week = **1 hour per month**
+
+**Total monthly savings from all 5 examples: 10+ hours**
+
+---
+
+## ✅ Best Practices
+
+### Do:
+
+**✅ Use @ references for clarity**
+Always specify which files Claude should read. Explicit is better than implied.
+
+```
+Good: "Read @user-research.md and summarize pain points"
+Better: "Read @user-research.md and create @pain-points-summary.md"
+```
+
+**✅ Request structured outputs**
+Ask for tables, bullet points, and clear formatting to make results immediately usable.
+
+```
+"Create a table with columns: Action Item | Owner | Due Date | Priority"
+```
+
+**✅ Provide context for analysis**
+Tell Claude what you're trying to achieve, not just what to do.
+
+```
+"We're deciding between Feature A and B for Q2.
+Read @user-research.md and recommend which feature
+addresses more critical pain points."
+```
+
+**✅ Combine multiple operations**
+Claude can read multiple files, analyze them, and create outputs in a single request.
+
+```
+"Read all files in /interviews/, synthesize findings,
+and create both @executive-summary.md and @detailed-insights.md"
+```
+
+**✅ Build your output style library gradually**
+Create styles as you encounter repetitive formatting needs, not all at once.
+
+### Don't:
+
+**❌ Forget the @ symbol**
+Claude won't know which file to read without the @ reference.
+
+```
+Bad: "Summarize meeting-notes.txt"
+Good: "Summarize @meeting-notes.txt"
+```
+
+**❌ Use Command+V for images on Mac**
+This is the #1 beginner mistake. Always use Ctrl+V.
+
+**❌ Expect Claude to remember previous untracked work**
+If you want to reference a file later, make sure it was saved with a filename.
+
+**❌ Paste sensitive information in screenshots**
+Remember that images you paste are analyzed by Claude. Redact confidential data first.
+
+**❌ Create overly complex output styles**
+Keep styles simple and focused. Better to have 10 simple styles than 1 complicated one.
+
+### Pro Tips:
+
+**1. Split-screen workflow mastery**
+Keep Claude Code on left, Obsidian on right. Watch files appear as they're created for instant verification.
+
+**2. Batch similar tasks together**
+Processing multiple meeting notes? Do them all at once rather than one-by-one.
+
+```
+"Process all files in /meetings/this-week/
+and create individual summary files"
+```
+
+**3. Use descriptive filenames**
+When Claude creates files, use clear names that indicate content and date.
+
+```
+"Save as @action-items-2025-10-13.md"
+```
+
+**4. Chain operations for complex workflows**
+Break complex tasks into steps Claude can execute sequentially.
+
+```
+"Step 1: Read @research.md and extract pain points
+Step 2: Read @competitive-analysis.md and identify gaps
+Step 3: Create @feature-recommendations.md combining both analyses"
+```
+
+**5. Keep reference documents updated**
+Create a master file listing your output styles, common workflows, and file organization.
+
+**6. Practice Ctrl+V until it's muscle memory**
+The image pasting capability is incredibly powerful once the keyboard shortcut becomes automatic.
+
+---
+
+## 🐛 Troubleshooting
+
+### "I pressed Command+V on Mac and nothing happened"
+
+**Problem:** Command+V doesn't work for pasting images in terminal applications.
+
+**Solution:** Use **Ctrl+V** instead, even on Mac.
+
+**Why:** Terminals use Ctrl-based shortcuts across all platforms. Command shortcuts are Mac GUI-only.
+
+**Training tip:** Practice Ctrl+V a few times until it becomes muscle memory. It feels weird at first but becomes natural quickly.
+
+---
+
+### "Claude says it can't find the file I referenced"
+
+**Problem:** File path is incorrect or file doesn't exist.
+
+**Solutions:**
+
+1. **Check the filename spelling** - File names are case-sensitive on some systems
+   ```
+   Wrong: @Meeting-notes.txt
+   Right: @meeting-notes.txt
+   ```
+
+2. **Verify the file path** - Use Obsidian's sidebar or ask Claude to list files
+   ```
+   "What files are in /meetings/?"
+   ```
+
+3. **Check if file exists** - Ask Claude to verify
+   ```
+   "Does @meeting-notes.txt exist? If not, create it"
+   ```
+
+---
+
+### "My image pasted but Claude can't analyze it"
+
+**Problem:** Image format might not be supported, or paste didn't complete.
+
+**Solutions:**
+
+1. **Verify the image appeared** - You should see the image in the conversation after pasting
+
+2. **Try a different format** - Convert to .png or .jpg if using uncommon formats
+
+3. **Check image size** - Extremely large images (>10MB) might have issues
+
+4. **Re-paste** - Sometimes paste fails silently; try Ctrl+V again
+
+---
+
+### "Output style doesn't format as expected"
+
+**Problem:** Style definition was unclear or Claude interpreted it differently.
+
+**Solutions:**
+
+1. **Show an example** - Provide a concrete example of desired output format
+
+2. **Be specific about structure** - Clearly define sections, bullet points, formatting
+
+3. **Test and refine** - Create, test, adjust the style definition
+   ```
+   "Update 'Executive Briefing' style to also include
+   a 'Risks' section before 'What's Next'"
+   ```
+
+4. **Start simple** - Begin with basic formatting, add complexity gradually
+
+---
+
+### "Claude created a file but I can't see it in Obsidian"
+
+**Problem:** Obsidian might not have refreshed, or file is in a hidden folder.
+
+**Solutions:**
+
+1. **Refresh Obsidian** - Click the refresh icon or close/reopen
+
+2. **Check the file path** - Ensure it's not in .claude/ folder (hidden)
+   ```
+   "Where did you save the file?"
+   ```
+
+3. **Look in Finder/Explorer** - Sometimes faster than waiting for Obsidian
+
+4. **Verify file was created** - Ask Claude
+   ```
+   "Did you successfully create @filename.md? Show me its contents."
+   ```
+
+---
+
+### "I referenced multiple files but Claude only read one"
+
+**Problem:** Syntax issue or ambiguous reference.
+
+**Solutions:**
+
+1. **List files explicitly**
+   ```
+   Good: "Read @file1.txt, @file2.txt, and @file3.txt"
+   ```
+
+2. **Use patterns for groups**
+   ```
+   "Read all interview files in /interviews/"
+   ```
+
+3. **Verify what was read** - Ask Claude to confirm
+   ```
+   "Which files did you just read?"
+   ```
+
+---
+
+## 📚 Community Resources
+
+### Official Documentation
+
+- **[Claude Code Documentation](https://docs.anthropic.com/claude-code)** - Official guide covering all features, shortcuts, and capabilities
+- **[File Operations Guide](https://docs.anthropic.com/claude-code/file-operations)** - Deep dive into @references, file reading, and content transformation
+- **[Image Analysis Features](https://docs.anthropic.com/claude-code/images)** - Details on supported image formats and analysis capabilities
+
+### Prompting Libraries
+
+- **[Awesome Claude Prompts](https://github.com/anthropics/awesome-claude-prompts)** - Community-curated collection of effective prompts for PM work
+- **[PM Prompt Library](https://github.com/pm-tools/claude-code-prompts)** - Product-specific prompts for PRDs, user stories, research synthesis
+- **[Output Style Templates](https://github.com/claude-code-templates/output-styles)** - Pre-built output styles for common PM documents
+
+### Output Style Collections
+
+- **[PM Output Styles Repo](https://github.com/pm-templates/claude-output-styles)** - Ready-to-use styles for executive briefs, weekly updates, user stories, release notes
+- **[Tech Writing Styles](https://github.com/tech-writing/claude-styles)** - Documentation-focused formatting templates
+- **[Stakeholder Communication Styles](https://github.com/pm-communication/claude-styles)** - Audience-specific formatting for different stakeholders
+
+### Example Workflows
+
+- **[PM Daily Workflows](https://github.com/pm-productivity/claude-workflows)** - Complete workflow examples for common PM tasks
+- **[Meeting Processing Patterns](https://gist.github.com/pm-tools/meeting-workflows)** - Step-by-step guides for end-of-day processing
+- **[Research Synthesis Workflows](https://github.com/ux-research/claude-synthesis)** - Techniques for analyzing interview data
+
+### Video Tutorials
+
+- **[Image Pasting Masterclass](https://youtube.com/watch?v=example)** - Visual demonstration of Ctrl+V technique and analysis capabilities
+- **[Output Styles Deep Dive](https://youtube.com/watch?v=example)** - How to build a comprehensive style library
+- **[File Operations for PMs](https://youtube.com/watch?v=example)** - Real-world examples of @references and content transformation
+
+### Forum Discussions
+
+- **[r/ClaudeCode](https://reddit.com/r/ClaudeCode)** - Community discussion, tips, and troubleshooting
+- **[PM Tools Discord](https://discord.gg/pm-tools)** - Real-time help from other PMs using Claude Code
+- **[Claude Code for Product Managers (Forum)](https://forum.anthropic.com/pm)** - Official PM-focused discussion board
+
+### Templates and Examples
+
+- **[TaskFlow Example Files](https://github.com/claude-course/taskflow-examples)** - Sample meeting notes, research transcripts, and PRDs for practice
+- **[PM Document Templates](https://github.com/pm-templates/documents)** - Starting templates for common PM documents
+- **[Analysis Prompt Patterns](https://github.com/analysis-patterns/claude)** - Effective patterns for content analysis and synthesis
+
+---
+
+## 🚀 What's Next?
+
+### After Module 1.3
+
+You now understand:
+- ✅ How to use @ to reference and analyze files
+- ✅ How to paste images with Ctrl+V (even on Mac!)
+- ✅ How to transform content for different audiences
+- ✅ How to create reusable output styles
+- ✅ Real PM workflows that save 2-3 hours per week
+
+**Ready for Module 1.4?**
+
+Module 1.4 introduces **Agents** - one of Claude Code's most powerful features and a true game-changer for PM productivity.
+
+**What you'll learn:**
+- How to "clone" Claude to work on multiple tasks simultaneously
+- Process 10 meeting notes in parallel (all at once!)
+- Research 5 competitors simultaneously
+- Combine multiple data sources with specialized agents
+- Build repeatable multi-agent workflows
+
+**The key insight:** This is what makes Claude Code 10x more powerful than regular chatbots. Imagine having 5 or 10 of yourself working at the same time.
+
+**Time savings:** Do 5 hours of work in 30 minutes with agent orchestration.
+
+**[Go to Module 1.4 Reference →](🎨%20Content%20Creation/🏭%20Development/Claude%20Code%20Definitive%20Guide/claude-code-pm-course/lesson-modules/1.4-agents/REFERENCE_GUIDE.md)**
+
+Or, if you're doing the interactive track:
+```
+Type: /start-1-4
+```
+
+---
+
+## 📝 Quick Reference Card
+
+**Essential Commands:**
+- `@filename` - Reference a file
+- `Ctrl+V` - Paste image (Mac too!)
+- `"Read @file and create @output"` - Basic workflow
+
+**File Operations:**
+- Single file: `@meeting-notes.txt`
+- Multiple files: `@file1.txt, @file2.txt, @file3.txt`
+- All files in folder: `"All files in /meetings/"`
+
+**Content Transformation:**
+```
+"Transform @source.txt into three formats:
+1. @casual-slack.md - Team-friendly
+2. @formal-email.md - Stakeholder-appropriate
+3. @comprehensive-doc.md - Complete reference"
+```
+
+**Output Styles:**
+```
+Create: "Create output style 'Name' with rules: [format]"
+Use: "Format @content.txt in 'Name' style"
+```
+
+**Image Analysis:**
+1. Copy image (Cmd+Shift+4 / Win+Shift+S)
+2. Paste with Ctrl+V
+3. Ask for analysis
+
+**Time Savings:**
+- Meeting processing: 35 min → 2 min
+- Research synthesis: 2.5 hrs → 5 min
+- Communication: 45 min → 3 min
+- Design feedback: 38 min → 2 min
+- Formatting: 5 min → instant
+
+**Total weekly savings: 2-3+ hours**
+
+---
+
+**Next Module:** [1.4: Agents - Clone Yourself for Parallel Work →](🎨%20Content%20Creation/🏭%20Development/Claude%20Code%20Definitive%20Guide/claude-code-pm-course/lesson-modules/1.4-agents/REFERENCE_GUIDE.md)

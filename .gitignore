@@ -1,0 +1,13 @@
+# macOS
+.DS_Store
+
+# Obsidian workspace (personal settings)
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+
+# Node modules if any
+node_modules/
+
+# Environment files
+.env
+.env.local
