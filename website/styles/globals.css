@@ -28,6 +28,11 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
 }
 
+/* Sidebar text */
+.nx-sidebar {
+  font-family: var(--font-heading);
+}
+
 /* Code blocks stay monospace */
 code, pre {
   font-family: 'JetBrains Mono', 'Courier New', monospace;
@@ -64,42 +69,35 @@ p > strong:first-child {
 }
 
 /* Color scheme - Red (#FF5856) and Teal (#1DD3B0) - DARK MODE ONLY */
-@media (prefers-color-scheme: dark) {
-  /* 1. H2 main headers in red */
-  .nextra-content h2 {
-    color: #FF5856;
-  }
+.dark .nextra-content h2 {
+  color: #FF5856;
+}
 
-  /* 2. H3 subheaders in teal */
-  .nextra-content h3 {
-    color: #1DD3B0;
-  }
+.dark .nextra-content h3 {
+  color: #1DD3B0;
+}
 
-  /* 7. Inline code with teal accent */
-  .nextra-content code:not(pre code) {
-    background-color: rgba(29, 211, 176, 0.1);
-    border: 1px solid rgba(29, 211, 176, 0.3);
-    color: #1DD3B0;
-    padding: 0.2em 0.4em;
-    border-radius: 4px;
-  }
+.dark .nextra-content code:not(pre code) {
+  background-color: rgba(29, 211, 176, 0.1);
+  border: 1px solid rgba(29, 211, 176, 0.3);
+  color: #1DD3B0;
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+}
 
-  /* 10. Bullet points in red */
-  .nextra-content ul > li::marker {
-    color: #FF5856;
-  }
+.dark .nextra-content ul > li::marker {
+  color: #FF5856;
+}
 
-  .nextra-content ol > li::marker {
-    color: #FF5856;
-  }
+.dark .nextra-content ol > li::marker {
+  color: #FF5856;
+}
 
-  /* Bonus: Links in teal with red hover */
-  .nextra-content a {
-    color: #1DD3B0;
-    text-decoration: none;
-  }
+.dark .nextra-content a {
+  color: #1DD3B0;
+  text-decoration: none;
+}
 
-  .nextra-content a:hover {
-    color: #FF5856;
-  }
+.dark .nextra-content a:hover {
+  color: #FF5856;
 }
