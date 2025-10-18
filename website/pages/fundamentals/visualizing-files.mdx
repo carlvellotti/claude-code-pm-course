@@ -3,7 +3,7 @@ title: "1.2: Visualizing Files with Obsidian"
 description: Set up Obsidian to see your files visually alongside Claude Code for a seamless split-screen workflow
 ---
 
-## 1.2: Visualizing Files with Obsidian Reference
+## 1.2: Visualizing Files with Obsidian
 
  - **Time to Complete:** 15-20 minutes
  - **Prerequisites:** Module 1.1 complete, basic familiarity with file systems
@@ -13,11 +13,9 @@ description: Set up Obsidian to see your files visually alongside Claude Code fo
 
 ## 📖 Overview
 
-Working with Claude Code in a terminal can feel like flying blind if you cant see your files visually. Youre asking Claude to create documents, edit PRDs, organize research notes, but where are they? Whats happening? This module solves that problem.
+Set up Obsidian to visualize your project files in real-time alongside Claude Code for a seamless split-screen workflow.
 
-Youll learn how to set up Obsidian - a free, PM-friendly note-taking app - to visualize your project files in real-time alongside Claude Code. With this split-screen workflow, youll always see what Claude is creating, editing, and organizing. No more working in the dark.
-
-**Key takeaway:** A visual workspace transforms Claude Code from a mysterious black box into a transparent, intuitive PM tool you can watch and verify in real-time.
+**Key takeaway:** Visual workspace lets you watch files appear and update as Claude works.
 
 
 ## 🎯 Why Visualization Matters
@@ -42,242 +40,26 @@ Obsidian is perfect for PMs because it's built for markdown (PRDs, notes, docs) 
 
 ## 🚀 Setup Guide
 
-### Step 1: Download and Install Obsidian
+**Download:** Visit https://obsidian.md/download (free for personal use)
 
-**1. Visit the official website:**
-```
-https://obsidian.md/download
-```
+**Open your project:** In Obsidian, select "Open folder as vault" and navigate to your course folder (ask Claude for the path if needed)
 
-**2. Download for your platform:**
-- **Mac:** Download `.dmg` file
-- **Windows:** Download `.exe` installer
-
-**3. Install:**
-
-**Mac:**
-1. Open the downloaded `.dmg` file
-2. Drag Obsidian.app to your Applications folder
-3. Open Applications and launch Obsidian
-4. If you see a security warning: System Preferences → Security & Privacy → Open Anyway
-
-**Windows:**
-1. Run the downloaded `.exe` installer
-2. Follow the installation prompts
-3. Launch Obsidian from Start Menu or Desktop
-
-**4. First Launch:**
-
-When you open Obsidian for the first time, youll see a welcome screen with options:
-- Create new vault
-- Open folder as vault
-- Open vault from Obsidian Sync
-
-Dont worry about these yet - move to Step 2.
+**Split-screen workflow:** Position Claude Code terminal and Obsidian side-by-side to watch files appear in real-time
 
 
-### Step 2: Connect Obsidian to Your Project Folder
+## ⚠️ The .claude/ Folder
 
-Obsidian needs to know which folder to display. This should be the same folder where you run Claude Code.
+**Key limitation:** Obsidian cannot display hidden folders (folders starting with `.`)
 
-**Understanding the Concept:**
+The `.claude/` folder contains agents, commands, and settings. You won't see it in Obsidian - this is normal.
 
-```
-Your Computer
-└── Documents/
-    └── claude-code-pm-course/        ← This is where you run `claude`
-        ├── company-context/
-        ├── exercises/
-        ├── your-work/
-        └── CLAUDE.md
-```
+**To view `.claude/` files:**
+- **Mac:** Press `Cmd + Shift + .` in Finder to show hidden folders
+- **Windows:** Enable "Hidden items" in File Explorer View tab
 
-When you run `claude` in terminal, youre working in a specific directory (folder). Obsidian needs to open that same folder as a vault (Obsidians term for a workspace).
+**When you need it:** Module 1.5 (Custom Sub-Agents) and later. For now, focus on regular project files.
 
-**How to Open Your Project Folder:**
-
-![Obsidian welcome screen showing Open folder as vault option](/images/obsidian-welcome.png)
-
-**Steps:**
-1. In Obsidians welcome screen, look for **Open folder as vault** (should be the second option on the list)
-2. Click it, and a file browser will appear
-3. Navigate to your project folder (where you run `claude`)
-4. Select the folder
-5. Click **Open** or **Select Folder**
-
-**How to find your project folder path:**
-
-Just ask Claude in Claude Code: *Whats the path to my course folder?*
-
-Claude will tell you the exact path, which will be something like:
-```
-/Users/yourname/Documents/claude-code-pm-course
-```
-
-Use this path when navigating in Obsidians file browser.
-
-**Success indicator:**
-You should now see your project files in Obsidians left sidebar (file explorer).
-![Obsidian file explorer showing project folder structure](/images/obsidian-explorer.png)
-
-
-### Step 3: Set Up Split-Screen Workspace
-
-The ideal Claude Code workflow uses a split-screen layout:
-- Claude Code terminal on one side
-- Obsidian on the other side
-
-This lets you chat with Claude AND see the files being created simultaneously.
-
-**Visual Layout:**
-
-```
-┌─────────────────────────────┬─────────────────────────────┐
-│                             │                             │
-│     Terminal                │     Obsidian                │
-│     (Claude Code)           │     (File Viewer)           │
-│                             │                             │
-│  > claude                   │  📁 Files                   │
-│  Welcome to Claude Code!    │    ├─ company-context/      │
-│                             │    ├─ exercises/            │
-│  You: Create a PRD...       │    ├─ your-work/            │
-│                             │    └─ CLAUDE.md             │
-│  Claude: Ill help create   │                             │
-│  that PRD...                │  📄 Selected File Content   │
-│                             │                             │
-│                             │                             │
-└─────────────────────────────┴─────────────────────────────┘
-```
-
-Simply resize and position your windows side by side.
-
-
-## ⚠️ Critical Limitation: The .claude/ Folder
-
-### Understanding Hidden Folders
-
-Obsidian cannot display hidden folders - folders whose names start with a period (`.`).
-
-Examples of hidden folders:
-- `.claude/` (Claude Codes configuration)
-- `.git/` (Git version control)
-- `.obsidian/` (Obsidians own settings)
-
-**Why hidden?** By convention, folders starting with `.` are system/configuration folders. Most apps hide them to reduce clutter.
-
-### The .claude/ Folder
-
-Claude Code stores important files in `.claude/`:
-
-```
-your-project/
-└── .claude/                    ← Hidden from Obsidian
-    ├── agents/
-    │   ├── engineer.md
-    │   ├── executive.md
-    │   └── user-researcher.md
-    ├── commands/
-    │   ├── start-1-1.md
-    │   ├── weekly-update.md
-    │   └── prd-review.md
-    ├── settings.json
-    └── CLAUDE.md (global)
-```
-
-**Whats in .claude/:**
-- **agents/** - Custom sub-agents you create
-- **commands/** - Slash commands (like `/start-1-2`)
-- **settings.json** - Claude Code configuration
-- **CLAUDE.md** - Global project memory
-
-**Why this matters:**
-- You wont see `.claude/` in Obsidians file explorer
-- You cant edit these files directly in Obsidian
-- This is expected behavior, not a bug!
-
-
-**Note: Claude has no issue with . files which is the main way you will work with them.**
-
-### The Workaround: Use Finder/Explorer
-
-When you need to view or edit `.claude/` files, use your systems file browser.
-
-**Mac: Using Finder**
-
-**Method 1: Show Hidden Files**
-1. Open Finder
-2. Press: `Cmd + Shift + .` (period key)
-3. Hidden folders become visible (appear dimmed/gray)
-4. Navigate to your project folder
-5. Youll see the `.claude/` folder
-6. Double-click to open
-
-**Method 2: Go to Folder**
-1. In Finder, press: `Cmd + Shift + G`
-2. Type the path: `/Users/yourname/Documents/your-project/.claude`
-3. Press Enter
-4. Finder opens the hidden folder
-
-**To edit files:**
-- Right-click a file → Open With → TextEdit (or any text editor)
-- Or drag the file into VS Code, Cursor, etc.
-
-**Windows: Using File Explorer**
-
-**Show Hidden Files:**
-1. Open File Explorer
-2. Click the **View** tab (or View menu in Windows 11)
-3. Check the box: **Hidden items**
-4. Hidden folders now visible
-5. Navigate to your project folder
-6. Youll see the `.claude/` folder
-
-**Path:**
-```
-C:\Users\YourName\Documents\your-project\.claude\
-```
-
-**To edit files:**
-- Right-click a file → Open with → Notepad (or any text editor)
-- Or drag the file into VS Code, Cursor, etc.
-
-### When Youll Need .claude/ Access
-
-**Module 1.5: Custom Sub-Agents**
-- Youll create files in `.claude/agents/`
-- Give them emoji names and colors
-- Define personas and expertise
-
-**Module 3.1: Custom Slash Commands**
-- Youll create files in `.claude/commands/`
-- Build reusable PM workflows
-- Define command parameters
-
-**Module 5+: Advanced Configuration**
-- Edit `.claude/settings.json`
-- Configure hooks and automation
-- Set up advanced features
-
-**For now:** Dont worry about this! You wont work with `.claude/` until Module 1.5. Focus on using Obsidian to visualize your regular project files.
-
-### Important Note: Two CLAUDE.md Files
-
-There are actually TWO places CLAUDE.md can exist:
-
-**1. Project CLAUDE.md (Visible in Obsidian)**
-```
-your-project/
-└── CLAUDE.md              ← Visible in Obsidian!
-```
-
-**2. Global CLAUDE.md (Hidden)**
-```
-your-project/
-└── .claude/
-    └── CLAUDE.md          ← Hidden from Obsidian
-```
-
-The project-level CLAUDE.md (without the dot) IS visible in Obsidian. You can edit it there! Only the `.claude/` folder version is hidden.
+**Note:** Claude Code can access `.claude/` files - only Obsidian can't display them.
 
 
 ## 🎬 Real-Time Visualization Demo
@@ -296,325 +78,40 @@ That's it! No refresh needed. Files update in real-time as Claude works.
 
 ## 💡 Obsidian Tips for PM Work
 
-### Essential Keyboard Shortcuts
+**Essential shortcuts:**
+- **`Cmd/Ctrl + O`** - Quick Switcher (jump to any file)
+- **`Cmd/Ctrl + Shift + F`** - Search across all files
+- **`Cmd/Ctrl + E`** - Toggle Reading/Editing view
 
-**Quick Switcher (Most Important!)**
-- **Mac:** `Cmd + O`
-- **Windows:** `Ctrl + O`
-- **What it does:** Jump to any file instantly
-- **Use case:** I need that competitive analysis doc... Cmd+O, type comp, Enter - done!
+**Wikilinks:** Connect documents with `[[filename]]` syntax for easy navigation
 
-**Search Across All Files**
-- **Mac:** `Cmd + Shift + F`
-- **Windows:** `Ctrl + Shift + F`
-- **What it does:** Find text across entire workspace
-- **Use case:** Where did I mention dark mode?
+**Tags:** Organize with `#prd #user-research #q1-2025` for filtering
 
-**Command Palette**
-- **Mac:** `Cmd + P`
-- **Windows:** `Ctrl + P`
-- **What it does:** Access all Obsidian commands
-- **Use case:** Quick access to any feature
+**Stay in Reading view** for cleaner formatted display
 
-**Toggle Reading/Editing View**
-- **Mac:** `Cmd + E`
-- **Windows:** `Ctrl + E`
-- **What it does:** Switch between formatted view and raw markdown
-- **Use case:** Most of the time stay in Reading view (cleaner)
 
-**Create New Note**
-- **Mac:** `Cmd + N`
-- **Windows:** `Ctrl + N`
-- **What it does:** Create a new note file
-- **Use case:** Quickly capture ideas while working
+## 💼 Example: Real-Time Workflow
 
-### Linking Notes Together
+**Without visualization:** Claude creates files, but you're unsure what happened or where they are.
 
-One of Obsidians superpowers is linking documents.
-
-**Wikilink Syntax:**
-```markdown
-See the [[dark-mode-prd]] for feature requirements.
-
-Check out [[user-research-synthesis|our research findings]].
-```
-
-**How it works:**
-- `[[filename]]` creates a link
-- `[[filename|display text]]` creates a link with custom text
-- Click the link to navigate to that file
-- Obsidian shows backlinks (what files link here)
-
-**PM Use Case:**
-
-In a PRD:
-```markdown
-# Dark Mode Feature PRD
-
-## User Research
-Based on [[user-interview-synthesis|user interviews]], 60% of users
-requested dark mode for late-night work.
-
-## Technical Considerations
-See [[dark-mode-technical-spec]] for implementation details.
-
-## Related Documents
-- [[competitive-analysis-dark-mode]]
-- [[design-mockups-dark-mode]]
-```
-
-Now you can click any link to jump to that document. And when viewing `user-interview-synthesis.md`, youll see backlinks showing that the PRD references it.
-
-### Graph View (Visual Connections)
-
-**Access:** Click the graph icon in the left sidebar
-
-**What it shows:** A visual map of all your notes and how they connect
-
-**Use case:**
-- See which documents are central to your work (heavily linked)
-- Identify isolated documents (maybe need more context)
-- Understand the structure of a complex project
-- Looks cool in demos!
-
-**Not essential but fun!**
-
-### Tags for Organization
-
-Tag your documents for easy filtering:
-
-```markdown
-# Dark Mode PRD
-
-#prd #feature #q2-2025 #dark-mode
-
-## Problem Statement
-...
-```
-
-**Then in Obsidian:**
-- Click any tag to see all documents with that tag
-- Search for tags: search `tag:#prd`
-- Great for grouping related work
-
-**Suggested PM tags:**
-- `#prd`, `#user-story`, `#meeting-notes`
-- `#user-research`, `#competitive-analysis`
-- `#q1-2025`, `#q2-2025` (time-based)
-- `#shipped`, `#in-progress`, `#backlog` (status)
-
-### Reading View vs Editing View
-
-**Reading View (Default):**
-- Formatted display (headers look like headers)
-- Links are clickable
-- Clean and professional
-- Best for reviewing Claudes work
-
-**Editing View:**
-- Raw markdown syntax visible
-- Edit text directly
-- See formatting codes
-- Use when you want to make manual changes
-
-**Toggle:** `Cmd/Ctrl + E`
-
-**Recommendation:** Stay in Reading view most of the time. Switch to Editing view only when you need to manually edit something.
-
-
-## 💼 Real-World PM Examples
-
-### Example 1: Processing Meeting Notes
-
-**Scenario:** Its Friday afternoon. You have 8 meeting notes from this week that need action items extracted.
-
-**Without visualization:**
-```
-You → Claude: Process meeting notes in /meetings and extract action items
-
-Claude: Done! Ive created action-items.md
-
-You: Um... where? Whats in it? Did it work?
-[Uncertainty, need to ask Claude to show you]
-```
-
-**With Obsidian:**
-```
-You → Claude: Process meeting notes in /meetings and extract action items
-
-[In Obsidian, you watch:]
-- action-items.md appears in your-work/
-- Click it to see the table
-- Verify all 8 meetings are covered
-- Notice Claude organized by owner
-- Perfect! Ready to share with team.
-```
-
-**Confidence. Speed. Control.**
-
-### Example 2: PRD Creation and Iteration
-
-**Scenario:** Building a PRD for a new feature. Iterating based on feedback.
-
-**Workflow:**
-```
-You → Claude: Create a PRD for notification preferences feature
-
-Claude: [Creates prd-notification-preferences.md]
-
-You → Obsidian: [Opens PRD, reads it]
-                [Spots issue: Missing mobile considerations]
-
-You → Claude: Add a section about mobile notification settings
-
-Claude: [Updates PRD]
-
-You → Obsidian: [New section appears]
-                [Looks good!]
-
-You → Claude: Now expand the success metrics section with specific targets
-
-Claude: [Updates]
-
-You → Obsidian: [Verifies changes]
-                [Satisfied]
-```
-
-**Real-time iteration with full visibility.**
-
-### Example 3: Organizing Research by Theme
-
-**Scenario:** You have 15 user interview transcripts. Need to organize insights by theme.
-
-**Workflow:**
-```
-You → Claude: Read all interviews in /interviews. Create themed summary documents:
-              - pain-points.md
-              - feature-requests.md
-              - user-workflows.md
-              - quotes.md
-
-              Organize everything under user-research/
-
-Claude: [Processes interviews]
-
-You → Obsidian: [Watches folder structure appear]
-                user-research/
-                ├─ pain-points.md          ✓ [Click to review]
-                ├─ feature-requests.md     ✓ [Click to review]
-                ├─ user-workflows.md       ✓ [Click to review]
-                └─ quotes.md               ✓ [Great quotes!]
-
-                [Each file has well-organized insights]
-```
-
-**Visual structure makes complex organization clear.**
-
-### Example 4: Multi-Document Workflow
-
-**Scenario:** Building a comprehensive feature launch plan spanning multiple documents.
-
-**Workflow:**
-```
-You → Claude: Im planning the dark mode feature launch. Create:
-              1. PRD in prd-dark-mode.md
-              2. User stories in user-stories-dark-mode.md
-              3. Technical spec in tech-spec-dark-mode.md
-              4. Launch checklist in launch-checklist-dark-mode.md
-
-              Link them together with wikilinks.
-
-Claude: [Creates all 4 documents]
-
-You → Obsidian: [All 4 files appear]
-                [Opens prd-dark-mode.md]
-                [Sees links to other documents]
-                [Clicks to navigate between them]
-                [Opens graph view - sees all connections]
-```
-
-**Complex multi-doc projects become navigable.**
+**With Obsidian:** Watch files appear instantly, click to review content, verify organization - complete visibility and control.
 
 
 ## ✅ Best Practices
 
-### Do:
+**Do:**
+- Use split-screen workflow constantly
+- Leverage `Cmd/Ctrl+O` Quick Switcher
+- Stay in Reading view for cleaner display
 
-- ✅ **Keep Obsidian open all the time** - Lightweight, instant access to your knowledge base
-- ✅ **Use split-screen workflow** - See Claudes work as it happens
-- ✅ **Leverage wikilinks** - Connect related documents for easy navigation
-- ✅ **Tag your documents** - Makes finding related work easier
-- ✅ **Stay in Reading view** - Cleaner, more professional display
-- ✅ **Use Quick Switcher** - Cmd/Ctrl+O is your best friend
-- ✅ **Trust the process** - Files will appear automatically, no refresh needed
-
-### Dont:
-
-- ❌ **Dont expect to see .claude/ folder** - Its hidden, use Finder/Explorer instead
-- ❌ **Dont manually refresh** - Obsidian updates automatically
-- ❌ **Dont try to edit .claude/ files in Obsidian** - You cant, use another editor
-- ❌ **Dont overcomplicate setup** - Default settings work great
-- ❌ **Dont forget to Cmd/Ctrl+O** - Clicking through folders is slow
-- ❌ **Dont work full-screen terminal only** - Youre missing half the value!
-
-### Pro Tips:
-
-**1. One Vault Per Major Project**
-- Dont use one vault for everything
-- Create separate vaults for: this course, work projects, personal notes
-- Switch between vaults: Settings → Open another vault
-
-**2. Create a Dashboard Note**
-```markdown
-# My TaskFlow Dashboard
-
-## Active Work
-- [[prd-dark-mode]]
-- [[user-stories-onboarding-v2]]
-- [[sprint-planning-march]]
-
-## Reference
-- [[competitive-landscape]]
-- [[user-personas]]
-- [[product-roadmap-q2]]
-
-## Templates
-- [[template-prd]]
-- [[template-user-story]]
-- [[template-meeting-notes]]
-```
-
-Pin this as your home base. Quick Switcher to it anytime.
-
-**3. Use Templates for Repeated Documents**
-
-Create templates in a `/templates` folder:
-- `template-prd.md`
-- `template-meeting-notes.md`
-- `template-user-story.md`
-
-Then ask Claude:
-```
-Create a new PRD using the template in templates/template-prd.md
-```
-
-**4. Obsidian Sync for Mobile Access (Optional)**
-
-If you want to access your notes on phone/tablet:
-- Obsidian Sync (paid): $8/month, official
-- Alternative: iCloud, Dropbox, Google Drive (manual setup)
-- Review your PM docs on the go!
-
-**5. Can Edit Files in Both Places**
-
-You can edit a file in Obsidian while Claude Code is running. They work together. But generally:
-- **Claude:** Handles bulk operations, creation, complex edits
-- **Obsidian:** Quick manual tweaks, reading, navigation
+**Don't:**
+- Expect to see `.claude/` folder (it's hidden - use Finder/Explorer)
+- Work full-screen terminal only (you're missing half the value)
 
 
 ## 🐛 Troubleshooting
 
-### I dont see any files in Obsidian
+**I don't see any files:**
 
 **Likely cause:** Wrong folder opened as vault
 
@@ -680,3 +177,11 @@ You can edit a file in Obsidian while Claude Code is running. They work together
 2. Navigate to your project folder
 3. View tab → Check Hidden items
 4. `.claude/`
+
+---
+
+**About This Course**
+
+Created by [Carl Vellotti](https://www.linkedin.com/in/carlvellotti/). If you have any feedback about this module or the course overall, message me! I'm building a newsletter and community for PM builders, check out [The Full Stack PM](https://fullstack-pm.com/subscribe).
+
+**Source Repository:** [github.com/carlvellotti/claude-code-pm-course](https://github.com/carlvellotti/claude-code-pm-course)

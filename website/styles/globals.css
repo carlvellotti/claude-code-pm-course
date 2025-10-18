@@ -3,6 +3,9 @@
 :root {
   --font-sans: 'SF Mono', 'Monaco', 'Courier New', monospace;
   --font-heading: 'JetBrains Mono', 'Monaco', 'Courier New', monospace;
+  --nextra-primary-hue: 169deg;
+  --nextra-primary-saturation: 85%;
+  --nextra-primary-lightness: 38%;
 }
 
 /* Apply fonts */
@@ -34,8 +37,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Increase sidebar width */
-.nx-sidebar {
-  width: 280px !important;
+aside.nextra-sidebar-container {
+  width: 320px !important;
+  max-width: 320px !important;
+}
+
+nav.nextra-sidebar {
+  width: 320px !important;
 }
 
 /* Code blocks stay monospace */
@@ -43,43 +51,36 @@ code, pre {
   font-family: 'JetBrains Mono', 'Courier New', monospace;
 }
 
-/* Dark mode background – terminal color */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --nextra-bg: #1c1c1c;
-    --nextra-bg-secondary: #232323;
-  }
-  
-  body {
-    background-color: #1c1c1c;
-    color-scheme: dark;
-  }
-  
-  /* Nextra page background */
-  .nextra-container {
-    background-color: #1c1c1c;
-  }
+/* Make inline code bold */
+code {
+  font-weight: 600;
 }
 
-/* Ensure Time to Complete and Prerequisites wrap on new lines */
-strong:has(+ strong) {
-  display: block;
-  margin-bottom: 0.5rem;
+/* Dark mode - use Nextra defaults */
+
+/* Tighten list spacing - reduce space above lists */
+.nextra-content ul,
+.nextra-content ol {
+  margin-top: 0.5rem !important;
 }
 
-/* Make metadata info display as list items */
-p > strong:first-child {
-  display: block;
+/* Reduce space between paragraph and following list */
+.nextra-content p:has(+ ul),
+.nextra-content p:has(+ ol) {
+  margin-bottom: 0.5rem !important;
+}
+
+.nextra-content ul > li,
+.nextra-content ol > li {
+  margin-top: 0.25rem;
   margin-bottom: 0.25rem;
 }
 
-/* Color scheme - Red (#FF5856) and Teal (#1DD3B0) - DARK MODE ONLY */
-.dark .nextra-content h2 {
-  color: #FF5856;
-}
-
-.dark .nextra-content h3 {
-  color: #1DD3B0;
+/* Color scheme - Teal (#1DD3B0) - DARK MODE ONLY */
+.dark {
+  --nextra-primary-hue: 169deg;
+  --nextra-primary-saturation: 85%;
+  --nextra-primary-lightness: 48%;
 }
 
 .dark .nextra-content code:not(pre code) {

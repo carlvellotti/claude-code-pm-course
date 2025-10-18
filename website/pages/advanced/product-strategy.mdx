@@ -3,72 +3,56 @@ title: "2.3: Product Strategy"
 description: Develop strategic plans and competitive analysis with AI support
 ---
 
-## 2.3: Product Strategy Reference
+## 2.3: Product Strategy
 
- - **Time to Complete:** 60-90 minutes (interactive module)
- - **Prerequisites:**
-- Module 1.4 (Task Orchestration - for parallel competitive research)
-- Module 1.5 (Custom Sub-Agents - understanding agent capabilities)
-- Familiarity with strategic thinking concepts
+ - **Time to Complete:** 60-90 minutes
+ - **Prerequisites:** Module 1.4 (Task Orchestration), Module 1.5 (Custom Sub-Agents)
 
 
 > **Start this module in Claude Code:** Run `/start-2-3` to kick off the interactive experience.
 
-## 📖 Overview
+## Overview
 
-This module teaches you how to develop product strategy using AI as a thinking partner - not to generate strategy for you, but to help you think more rigorously about strategic choices. Youll learn to use Rumelts Strategy Kernel framework (Diagnosis → Guiding Policy → Coherent Actions) to structure your strategic thinking, pressure-test choices with devils advocate, and transform strategy documents into executive presentations.
+Module 2.3 teaches you to develop product strategy using AI as a thinking partner. You'll use Rumelt's Strategy Kernel framework (Diagnosis → Guiding Policy → Coherent Actions) to structure strategic thinking, pressure-test choices with devil's advocate, and transform strategy documents into executive presentations.
 
-**Key takeaway:** Product strategy is about making hard choices on WHERE to compete and HOW to win - AI cant make those decisions for you, but it can help you research faster, apply frameworks rigorously, challenge your assumptions, and communicate clearly.
-
-
-## 🎯 What is Product Strategy?
-
-### The Core Concept
-
-Product strategy isnt a feature list or a vision statement - its a set of **hard choices** about where to focus resources and how to create competitive advantage. Good strategy requires:
-
-1. **Making tradeoffs** - Saying YES to some opportunities and NO to others
-2. **Focused resources** - Concentrating efforts rather than spreading thin
-3. **Clear positioning** - Defining how youre different from competitors
-4. **Coherent actions** - Ensuring initiatives reinforce each other
-
-### What Strategy Is NOT
-
-❌ **Goals masquerading as strategy:** Well increase revenue 50% (thats a goal, not a strategy)
-❌ **Feature lists:** Well build AI chat, voice, and automation (thats a roadmap, not a strategy)
-❌ **Vision statements:** Well be the best productivity tool (thats aspiration, not strategy)
-✅ **Real strategy:** Well focus exclusively on voice-first AI for SMBs, explicitly NOT competing on breadth against Notion (clear choices, tradeoffs, positioning)
-
-### Why AI Cant Do Strategy Alone
-
-Strategy requires:
-- **Context** - Deep understanding of your market, team, constraints (AI doesnt have this)
-- **Judgment** - Deciding what tradeoffs are worth making (requires human intuition)
-- **Commitment** - Willingness to say no and live with consequences (AI cant commit)
-
-What AI CAN do:
-- **Research faster** - Competitive landscape analysis in minutes vs. hours
-- **Apply frameworks rigorously** - Structure thinking systematically
-- **Challenge assumptions** - Play devils advocate to stress-test choices
-- **Synthesize documents** - Turn strategic choices into polished strategy docs
-- **Create presentations** - Transform written strategy into executive slides
+**Key takeaway:** AI can't make strategic decisions for you, but it can help you research faster, apply frameworks rigorously, challenge assumptions, and communicate clearly.
 
 
-## 🧠 Rumelts Strategy Kernel Framework
+## What is Product Strategy?
+
+Product strategy is a set of **hard choices** about where to focus resources and how to create competitive advantage.
+
+### Strategy vs. Not Strategy
+
+| Not Strategy | Real Strategy |
+|--------------|---------------|
+| "Increase revenue 50%" (goal) | "Focus exclusively on voice-first AI for SMBs, explicitly NOT competing on breadth against Notion" (clear choices + tradeoffs) |
+| "Build AI chat, voice, automation" (features) | "Go deep on one capability where we can uniquely win with limited resources" (focused direction) |
+| "Be the best productivity tool" (vision) | "Subsidize AI costs initially to build defensibility through usage data and retention" (positioning) |
+
+### AI's Role in Strategy
+
+| AI Can't Do | AI Can Do |
+|-------------|-----------|
+| Make tradeoffs (requires judgment) | Research competitors in parallel |
+| Provide deep context about your market | Apply frameworks rigorously |
+| Commit to hard choices | Challenge assumptions (devil's advocate) |
+| | Synthesize documents and create presentations |
+
+
+## Rumelt's Strategy Kernel Framework
 
 ### The Three-Part Structure
-
-Richard Rumelts Strategy Kernel from *Good Strategy, Bad Strategy* provides the foundation for strategic thinking:
 
 ```
 ┌─────────────────────────────────────────┐
 │         1. DIAGNOSIS                    │
-│    Whats the challenge/opportunity?    │
+│    What's the challenge/opportunity?    │
 └─────────────────────────────────────────┘
                    ↓
 ┌─────────────────────────────────────────┐
 │       2. GUIDING POLICY                 │
-│   Whats our overall approach?          │
+│   What's our overall approach?          │
 │   (WHERE to compete, HOW to win)        │
 └─────────────────────────────────────────┘
                    ↓
@@ -80,66 +64,45 @@ Richard Rumelts Strategy Kernel from *Good Strategy, Bad Strategy* provides the 
 └─────────────────────────────────────────┘
 ```
 
-### 1. Diagnosis - Understanding the Challenge
+### 1. Diagnosis
 
-**What it is:** A clear, actionable statement of the strategic challenge or opportunity youre facing.
+A clear, actionable statement of the strategic challenge or opportunity based on real data.
 
 **Good diagnosis:**
-- Based on real data (competitive research, user feedback, market trends)
-- Cuts through complexity to the essential issue
-- Identifies the critical constraint or opportunity
-- Frames the problem in a way that suggests action
+> The AI landscape is heating up fast. Notion, Linear, and Asana have all launched AI features in the past 6 months. As a smaller player with a 2-person AI team and limited budget (~$50k/quarter), we can't compete on breadth. We need to find a defensible position where we can uniquely win with limited resources.
 
-**Example:**
-> The AI landscape is heating up fast. Notion, Linear, and Asana have all launched AI features in the past 6 months. As a smaller player with a 2-person AI team and limited budget (~$50k/quarter), we cant compete on breadth. We need to find a defensible position where we can uniquely win with limited resources.
-
-**Not a good diagnosis:**
+**Bad diagnosis:**
 > Competitors are doing AI (too vague, no insight)
 
-### 2. Guiding Policy - Your Strategic Approach
+### 2. Guiding Policy
 
-**What it is:** Your overall approach to dealing with the diagnosis. This is where you make **hard choices** about where to compete and how to win.
+Your overall approach that makes **explicit tradeoffs** about where to compete and how to win.
 
 **Good guiding policy:**
-- Makes explicit tradeoffs (says YES to some things, NO to others)
-- Creates focus by choosing a specific direction
-- Defines competitive positioning (how youre different)
-- Acts as a filter for future decisions
+> We'll focus exclusively on voice-first AI for SMBs (5-20 person teams), explicitly NOT competing on breadth against larger players. We'll differentiate through AI features that small teams need but enterprise-focused competitors won't build. We'll subsidize AI costs in our base pricing to drive adoption, accepting lower margins initially to build defensibility through usage data and retention.
 
-**Example:**
-> Well focus exclusively on voice-first AI for SMBs (5-20 person teams), explicitly NOT competing on breadth against larger players. Well differentiate through AI features that small teams need but enterprise-focused competitors wont build. Well subsidize AI costs in our base pricing to drive adoption, accepting lower margins initially to build defensibility through usage data and retention.
+**Bad guiding policy:**
+> We'll build great AI features and win in the market (no choices, no tradeoffs)
 
-**Not a good guiding policy:**
-> Well build great AI features and win in the market (no choices, no tradeoffs)
+### 3. Coherent Actions
 
-### 3. Coherent Actions - Your Roadmap
-
-**What it is:** Specific, coordinated initiatives that implement your guiding policy. These actions should reinforce each other and create momentum.
+Specific, coordinated initiatives that implement your guiding policy and reinforce each other.
 
 **Good coherent actions:**
-- Align directly with the guiding policy
-- Reinforce each other (not scattered, random initiatives)
-- Sequenced logically (dependencies considered)
-- Resource-focused (concentrated effort, not spread thin)
+```
+Q1 2026:
+- Expand voice to meeting notes + task breakdown (deepening voice capability)
+- Launch SMB-specific templates (5-20 person team workflows)
+- A/B test AI in base price vs. premium tier
 
-**Example:**
-> **Q1 2026:**
-> - Expand voice to meeting notes + task breakdown (deepening voice capability)
-> - Launch SMB-specific templates (5-20 person team workflows)
-> - A/B test AI in base price vs. premium tier
->
-> **Q2 2026:**
-> - Voice collaboration features (multi-user voice sessions)
-> - SMB admin dashboard (usage tracking for small team leads)
-> - Refine pricing based on Q1 data
-
-**Not coherent actions:**
-> Random list of features with no connection to each other or the strategy
+Q2 2026:
+- Voice collaboration features (multi-user voice sessions)
+- SMB admin dashboard (usage tracking for small team leads)
+- Refine pricing based on Q1 data
+```
 
 
-## 🔬 Using AI for Product Strategy
-
-### The Strategy Development Workflow
+## The Strategy Development Workflow
 
 ```
 1. COMPETITIVE RESEARCH
@@ -148,11 +111,11 @@ Richard Rumelts Strategy Kernel from *Good Strategy, Bad Strategy* provides the 
 2. STRATEGIC CHOICES
    ↓ (Make 5 key tradeoff decisions)
 
-3. DEVILS ADVOCATE
+3. DEVIL'S ADVOCATE
    ↓ (Pressure-test each choice)
 
 4. SYNTHESIS
-   ↓ (AI creates strategy doc using Rumelts Kernel)
+   ↓ (AI creates strategy doc using Rumelt's Kernel)
 
 5. PRESENTATION
    ↓ (Use pptx skill for executive slides)
@@ -160,106 +123,72 @@ Richard Rumelts Strategy Kernel from *Good Strategy, Bad Strategy* provides the 
 
 ### 1. Competitive Research with Parallel Agents
 
-**The approach:**
-Instead of sequentially researching competitors, launch multiple agents in parallel to research different competitors simultaneously.
-
-**How to do it:**
+Launch multiple agents in parallel to research different competitors simultaneously.
 
 ```markdown
 Spin up 3 agents to research the competitive AI landscape:
-- Agent 1: Research Notions AI features, pricing, and positioning
-- Agent 2: Research Linears AI features, pricing, and positioning
-- Agent 3: Research Asanas AI features, pricing, and positioning
+- Agent 1: Research Notion's AI features, pricing, and positioning
+- Agent 2: Research Linear's AI features, pricing, and positioning
+- Agent 3: Research Asana's AI features, pricing, and positioning
 
 For each competitor, I need:
-- What AI features theyve launched
+- What AI features they've launched
 - How they position and price AI
 - What seems to be working vs. not working
 - Where there might be whitespace for us
 ```
 
-**Why parallel agents work:**
-- 3x faster than sequential research (3 agents = 3x speed)
-- Each agent uses WebSearch for latest information
-- Results consolidated into competitive insights
-
-**Output:** Competitive landscape summary that informs your Diagnosis
+**Why parallel agents work:** 3x faster than sequential research, each agent uses WebSearch for latest information.
 
 ### 2. Making Strategic Choices
 
-Instead of trying to invent strategy from scratch, answer 5 multiple-choice questions that force real tradeoffs:
+Answer 5 multiple-choice questions that force real tradeoffs:
 
-**Choice #1 - FOCUS VS BREADTH**
-- A) Go deep on one capability (e.g., voice-first)
-- B) Spread AI across all features (broad but shallow)
-- C) Partner for capabilities, focus on integration
+| Choice | Options |
+|--------|---------|
+| **#1: Focus vs Breadth** | A) Go deep on one capability<br/>B) Spread AI across all features<br/>C) Partner for capabilities |
+| **#2: Competitive Response** | A) Race to out-innovate<br/>B) Differentiate differently<br/>C) Ignore and focus on roadmap |
+| **#3: Business Model** | A) Premium AI tier (margins over adoption)<br/>B) Subsidize to drive adoption<br/>C) Usage-based pricing |
+| **#4: Product Scope** | A) AI as the product<br/>B) AI as enhancement<br/>C) AI for specific jobs |
+| **#5: Risk Tolerance** | A) Move fast, take risks<br/>B) Deliberate and defensible<br/>C) Wait and learn |
 
-**Choice #2 - COMPETITIVE RESPONSE**
-- A) Race to out-innovate (match features quickly)
-- B) Differentiate differently (compete where you can win)
-- C) Ignore and focus (stick to your roadmap)
+Your 5 answers become your Guiding Policy.
 
-**Choice #3 - BUSINESS MODEL**
-- A) Premium AI tier (margins over adoption)
-- B) Subsidize to drive adoption (growth over margins)
-- C) Usage-based pricing (align costs with value)
-
-**Choice #4 - PRODUCT SCOPE**
-- A) AI as the product (rebuild AI-first)
-- B) AI as enhancement (AI makes existing features better)
-- C) AI for specific jobs (focused use cases)
-
-**Choice #5 - RISK TOLERANCE**
-- A) Move fast, take risks (speed over polish)
-- B) Deliberate and defensible (quality over speed)
-- C) Wait and learn (fast follower strategy)
-
-Each choice shapes a different aspect of your strategy. Your 5 answers become your Guiding Policy.
-
-### 3. Devils Advocate - Pressure-Testing Choices
+### 3. Devil's Advocate - Pressure-Testing Choices
 
 After each choice, use AI to challenge your thinking:
-
-**How it works:**
 
 ```markdown
 User chooses: A) Go deep on voice
 
-Devils advocate response:
-Youre betting everything on voice. But what if voice becomes
+Devil's advocate response:
+You're betting everything on voice. But what if voice becomes
 commoditized in 6 months? OpenAI just released better voice
-recognition at 1/10th the cost. If everyone has voice, youve
-built your strategy on something thats no longer differentiated.
-With a 2-person team, you wont have resources to pivot.
-Isnt this risky?
+recognition at 1/10th the cost. If everyone has voice, you've
+built your strategy on something that's no longer differentiated.
+With a 2-person team, you won't have resources to pivot.
+Isn't this risky?
 
 User then: Stick with choice OR Reconsider
 ```
 
-**Why this works:**
-- Forces you to think through downsides BEFORE committing
-- Surfaces risks you might have overlooked
-- Stress-tests your conviction (if you cant defend it, maybe its wrong)
-- Better to hear hard questions from AI than from your CEO
-
-**Pro tip:** The devils advocate isnt trying to change your mind - its helping you refine your thinking.
+**Why this works:** Forces you to think through downsides BEFORE committing. Better to hear hard questions from AI than from your CEO.
 
 ### 4. Synthesizing Strategy Documents
 
-Once youve made your 5 strategic choices, AI can synthesize them into a complete strategy document using Rumelts Kernel:
+Once you've made your 5 strategic choices, AI synthesizes them into a complete strategy document using Rumelt's Kernel:
 
-**What AI does:**
-- Takes competitive research → Diagnosis
-- Takes your 5 choices → Guiding Policy
+**AI takes:**
+- Competitive research → Diagnosis
+- Your 5 choices → Guiding Policy
 - Creates 6-month roadmap aligned with choices → Coherent Actions
-- Adds critical assumptions, risks, positioning
 
-**What YOU provide:**
-- The strategic choices (AI cant make these for you)
-- Context about your constraints and situation
-- Judgment about which devils advocate challenges matter
+**You provide:**
+- The strategic choices (AI can't make these)
+- Context about constraints and situation
+- Judgment about which devil's advocate challenges matter
 
-**Example output structure:**
+**Output structure:**
 
 ```markdown
 # H1 2026 AI Product Strategy
@@ -269,38 +198,31 @@ Once youve made your 5 strategic choices, AI can synthesize them into a complete
 
 ## GUIDING POLICY: Our Strategic Approach
 [Your 5 choices synthesized into coherent direction]
-[Explicit tradeoffs - what were NOT doing]
+[Explicit tradeoffs - what we're NOT doing]
 
 ## COHERENT ACTIONS: H1 2026 Roadmap
 
 ### Q1 2026
 - Initiative 1 (aligned with choices)
 - Initiative 2 (aligned with choices)
-- Initiative 3 (aligned with choices)
 
 ### Q2 2026
-- Initiative 4 (builds on Q1)
-- Initiative 5 (builds on Q1)
+- Initiative 3 (builds on Q1)
 
 ### Success Metrics
 - Metric 1: [Target]
-- Metric 2: [Target]
 
 ## CRITICAL ASSUMPTIONS
 - Assumption 1: [What needs to be true]
-- Assumption 2: [How well validate]
 
 ## COMPETITIVE POSITIONING
 - Why customers choose us vs. alternatives
-- Our defensible advantages
 - Risks and mitigation
 ```
 
 ### 5. Creating Executive Presentations with Skills
 
 Transform your strategy document into presentation slides using the pptx skill:
-
-**How to use:**
 
 ```markdown
 Use the pptx skill to create an executive presentation from
@@ -310,401 +232,132 @@ Requirements:
 - 12-15 slides covering complete strategy
 - Include: Title, Executive Summary, Diagnosis, Competitive
   Landscape, Strategic Direction, Tradeoffs, Roadmap (Q1/Q2),
-  Success Metrics, Critical Assumptions, Why Well Win, Risks
+  Success Metrics, Critical Assumptions, Why We'll Win, Risks
 - Professional design for executive audience
 - Save as strategy-review-slides.pptx
 ```
 
-**What the skill generates:**
-- Title slide with strategy title and date
-- Executive summary (1-2 slides for time-pressed execs)
-- Diagnosis slide (the strategic challenge)
-- Competitive landscape (table or matrix)
-- Strategic direction (your guiding policy)
-- Explicit tradeoffs (what youre NOT doing)
-- Roadmap slides (Q1 and Q2 initiatives)
-- Success metrics (how youll measure)
-- Critical assumptions (what needs to be true)
-- Competitive positioning (why youll win)
-- Risks and mitigation
-- The ask (what you need from leadership)
-
-**Pro tip:** The pptx skill requires `python-pptx` library. If installation fails, you can create a markdown outline of slides instead - the learning (using skills to transform documents) is still achieved.
+**Note:** The pptx skill requires `python-pptx` library. If installation fails, you can create a markdown outline of slides instead.
 
 
-## 💼 Real-World Examples
+## Real-World Example
 
-### Example 1: Expanding AI Capabilities at TaskFlow
+**Scenario:** You're the Gen AI PM at TaskFlow. You shipped AI voice chat for todos (well-received, moderate usage). Leadership asks: How should we evolve our AI strategy for H1 2026?
 
-**Scenario:** Youre the Gen AI PM at TaskFlow. You shipped AI voice chat for todos (well-received, moderate usage) and improved activation with guided onboarding (45% → 56% for small teams). Leadership asks: How should we evolve our AI strategy for H1 2026?
+**Approach:**
 
-**How to approach:**
-
-**Step 1 - Research competitors:**
+**1. Research competitors in parallel:**
 ```markdown
 Spin up 3 agents to research:
-- Notion AI (how they position, what features, pricing)
-- Linear AI (engineering-focused features, adoption signals)
+- Notion AI (positioning, features, pricing)
+- Linear AI (engineering-focused features)
 - Asana AI (enterprise focus, strategic direction)
-
-Each agent uses WebSearch for latest info, returns summary.
 ```
 
-**Step 2 - Identify diagnosis:**
-Based on competitive research + your constraints:
-- Everyones adding AI, no clear winner yet
-- You have a 2-person AI team, ~$50k/quarter budget
-- Can build ~1 major AI feature per quarter
-- TaskFlow targets SMBs (5-20 person teams)
-
-**Diagnosis:** We cant compete on breadth with limited resources. Need to find defensible position where we uniquely win.
-
-**Step 3 - Make strategic choices:**
-- Choice #1: Go deep on voice (focus beats spread)
-- Choice #2: Differentiate for SMBs (compete where we can win)
-- Choice #3: Subsidize AI costs (drive adoption over margins initially)
-- Choice #4: AI as enhancement (not rebuilding product)
-- Choice #5: Deliberate and defensible (quality over speed)
-
-**Step 4 - Devils advocate each choice:**
-After each choice, hear the challenge:
-- What if voice gets commoditized?
-- Is SMB really different from enterprise?
-- Can you afford to subsidize costs?
-- etc.
-
-Refine or stick with each choice.
-
-**Step 5 - Synthesize strategy:**
-AI creates complete strategy doc:
-- Diagnosis from research
-- Guiding policy from your 5 choices
-- Coherent actions as H1 2026 roadmap
-
-**Step 6 - Create slides:**
-Use pptx skill to generate 13-slide executive deck.
-
-**Outcome:** Complete, defensible AI strategy ready to pitch to leadership.
-
-### Example 2: Competitive Response Strategy
-
-**Scenario:** A major competitor (Notion) just launched AI features similar to yours and is marketing heavily. Your CEO asks: How should we respond?
-
-**How to approach:**
-
-**Option A - Use the strategic choice framework:**
-
-Ask yourself Choice #2: Competitive Response
-- A) Race to out-innovate (risky, resource-intensive)
-- B) Differentiate differently (compete on different axis)
-- C) Ignore and focus (stick to plan)
-
-**Devils advocate for each:**
-- If A: Can you really out-innovate a well-funded competitor? They have 10x your team.
-- If B: Whats truly differentiated? SMBs use same tools as enterprise.
-- If C: Ignoring competition = losing customers to Notions marketing.
-
-**Option B - Use competitive research:**
-
-```markdown
-Research Notions AI launch:
-- What features did they ship?
-- How are they pricing it?
-- Whats the early feedback from users?
-- Where are the gaps in their offering?
-
-Then identify whitespace: What can you do that Notion WONT do?
-```
-
-**Option C - Update your guiding policy:**
-
-If Notions launch changes the landscape, revisit your guiding policy:
-- Does our strategy still work in this new context?
-- What assumptions did we make that are now invalid?
-- Do we need to adjust our positioning?
-
-**Outcome:** Data-driven response vs. reactive panic.
-
-### Example 3: Quarterly Strategy Review
-
-**Scenario:** Its Q2. Your H1 2026 strategy assumed AI costs would stay flat, but theyve increased 40%. Your CFO wants to know: Do we need to change the strategy?
-
-**How to approach:**
-
-**Step 1 - Revisit critical assumptions:**
-Open your strategy doc, review Critical Assumptions section:
-- Assumption: AI costs remain ~$3/user/month
-- Reality: Now $4.20/user/month (40% increase)
-- Impact: Subsidizing AI is eating into margins faster than expected
-
-**Step 2 - Evaluate guiding policy:**
-Does the 40% cost increase break your guiding policy?
-- Choice #3 was: Subsidize AI costs to drive adoption
-- Is this still viable? Or do you need to reconsider pricing?
-
-**Step 3 - Devils advocate:**
-Challenge the assumption:
-```markdown
-The strategy assumed we could subsidize costs short-term to
-build defensibility. But costs increased 40% faster than expected.
-If we continue subsidizing, well burn through cash in 6 months.
-Should we pivot to premium AI tier to protect margins?
-```
-
-**Step 4 - Update coherent actions:**
-If guiding policy still holds, adjust tactics:
-- Negotiate better AI infrastructure pricing
-- Optimize usage (reduce unnecessary API calls)
-- Consider usage-based pricing for heavy users
-- Accelerate retention initiatives (higher LTV justifies higher CAC)
-
-If guiding policy needs changing:
-- Pivot to premium AI tier (Choice #3 → A instead of B)
-- Update roadmap to align with new pricing
-- Communicate change to team and customers
-
-**Outcome:** Strategic adaptability without panic-driven changes.
-
-
-## 💡 Best Practices
-
-### Do:
-
-✅ **Base diagnosis on real data** - Use competitive research, user feedback, market trends (not gut feeling)
-
-✅ **Make explicit tradeoffs** - Say what youre NOT doing (real strategy requires saying no)
-
-✅ **Use devils advocate rigorously** - Pressure-test every choice before committing
-
-✅ **Ensure coherent actions** - Roadmap initiatives should reinforce each other, not scatter
-
-✅ **Document assumptions** - Write down what needs to be true for the strategy to work
-
-✅ **Review quarterly** - Strategy should be stable but not static; adjust based on learning
-
-✅ **Communicate clearly** - Use executive presentations to align stakeholders
-
-### Dont:
-
-❌ **Let AI make strategic decisions** - AI cant make tradeoffs or commit; thats your job
-
-❌ **Confuse goals with strategy** - Increase revenue 50% is a goal, not a strategy
-
-❌ **Create feature lists instead of strategy** - Listing what youll build isnt strategic
-
-❌ **Skip the hard tradeoffs** - Real strategy requires saying NO to good opportunities
-
-❌ **Ignore competitive landscape** - Your strategy exists in competitive context
-
-❌ **Set and forget** - Strategy needs periodic review as assumptions get validated/invalidated
-
-❌ **Make strategy in a vacuum** - Involve team, pressure-test with stakeholders
-
-### Pro Tips:
-
-1. **Use the 5 strategic choice questions** - Easier than inventing strategy from scratch, forces real tradeoffs
-
-2. **Parallel agents for competitive research** - 3 competitors researched simultaneously = 3x faster than sequential
-
-3. **Devils advocate after EVERY choice** - Dont skip this; it surfaces risks before you commit
-
-4. **Synthesize with Rumelts Kernel** - Forces structured thinking (diagnosis → policy → actions)
-
-5. **Create executive slides** - Strategy isnt real until its communicated; slides force clarity
-
-6. **Document what youre NOT doing** - Explicit tradeoffs help future decision-making
-
-7. **Review assumptions quarterly** - When assumptions break, update tactics (or strategy if needed)
-
-8. **Show your work** - Include competitive research, devils advocate challenges, tradeoffs in final doc
-
-
-## 🐛 Troubleshooting
-
-### My strategy feels generic - could apply to any company
-
-**Likely cause:** Not making specific enough choices. Generic strategy = no tradeoffs.
-
-**Fix:**
-1. Review your guiding policy - does it say what youre NOT doing?
-2. Add explicit tradeoffs: Well do X, explicitly NOT Y
-3. Include specific constraints: With our 2-person team and $50k budget...
-4. Test: Could a competitor copy this word-for-word? If yes, its too generic.
-
-**Example:**
-- ❌ Generic: Well build great AI features to win in the market
-- ✅ Specific: Well focus exclusively on voice-first AI for SMBs, explicitly NOT competing on breadth against Notion, subsidizing costs initially to build defensibility through retention data
-
-### Devils advocate questions feel unfair/overly negative
-
-**Likely cause:** Devils advocate is doing its job - surfacing uncomfortable truths.
-
-**Fix:**
-1. Remember: Better to hear hard questions from AI than from your CEO
-2. If you cant defend your choice against the challenge, maybe reconsider
-3. Devils advocate isnt trying to change your mind - its stress-testing your conviction
-4. Use challenges to refine your thinking, not abandon good ideas
-
-**Pro tip:** If the devils advocate challenge reveals a real risk, add it to Critical Assumptions section with mitigation plan.
-
-### Competitive research is outdated by the time I finish
-
-**Likely cause:** AI landscape moves fast; yesterdays research might be outdated tomorrow.
-
-**Fix:**
-1. Use parallel agents with WebSearch for latest info (not static data)
-2. Focus on competitive positioning and patterns (not just feature lists)
-3. Include Last researched dates in strategy doc
-4. Review competitive landscape quarterly, not just once
-5. Monitor competitor launches via newsletters, Reddit, product hunt
-
-**Pro tip:** Follow competitors product blogs, changelog pages, and Twitter accounts for real-time updates.
-
-### pptx skill wont install / python-pptx errors
-
-**Likely cause:** Missing Python dependencies or environment issues.
-
-**Fix:**
-1. First attempt: `pip install python-pptx`
-2. If that fails: `pip3 install python-pptx`
-3. Check Python version: `python --version` (needs 3.7+)
-4. If still failing after 2-3 attempts, use graceful fallback:
-   - Create markdown outline of slides instead
-   - Structure it as: Slide 1: Title, Slide 2: Executive Summary, etc.
-   - Frame positively: Dependencies can be tricky - in real PM work, youd work with engineering to solve this. The key learning (using skills for document transformation) is still achieved!
-
-**Remember:** The goal is learning about skills, not debugging Python.
-
-### My 5 strategic choices contradict each other
-
-**Likely cause:** Choices made in isolation without considering how they fit together.
-
-**Fix:**
-1. Review all 5 choices together - do they tell a coherent story?
-2. Check for contradictions:
-   - Cant be deep focus (Choice #1) AND spread everywhere
-   - Cant be deliberate/quality (Choice #5) AND move fast/risky
-3. If choices contradict, revisit devils advocate challenges
-4. Test coherence: Could you explain all 5 choices in one paragraph that makes sense?
-
-**Example of coherent choices:**
+**2. Identify diagnosis:**
+Based on competitive research + constraints (2-person AI team, ~$50k/quarter budget):
+> We can't compete on breadth with limited resources. Need to find defensible position where we uniquely win.
+
+**3. Make strategic choices:**
 - Focus: Go deep on voice (not breadth)
 - Competition: Differentiate for SMBs
 - Pricing: Subsidize to drive adoption
-- Scope: AI as enhancement (not rebuilding)
+- Scope: AI as enhancement
 - Risk: Deliberate and defensible
 
-These fit together: Deep focus on voice for SMBs, subsidized to drive adoption, enhancing existing product, quality over speed.
+**4. Devil's advocate each choice:**
+After each choice, hear the challenge and refine or stick with it.
 
-### Strategy document is too long - executives wont read it
+**5. Synthesize strategy:**
+AI creates complete strategy doc with Diagnosis, Guiding Policy, Coherent Actions.
 
-**Likely cause:** Including too much detail in the main strategy doc.
+**6. Create slides:**
+Use pptx skill to generate 13-slide executive deck.
+
+
+## Best Practices
+
+**Do:**
+- Base diagnosis on real data (competitive research, user feedback, market trends)
+- Make explicit tradeoffs - say what you're NOT doing
+- Use devil's advocate rigorously to pressure-test every choice
+- Ensure coherent actions reinforce each other
+- Document assumptions and review quarterly
+
+**Don't:**
+- Let AI make strategic decisions (that's your job)
+- Confuse goals with strategy ("increase revenue 50%" isn't strategy)
+- Skip hard tradeoffs (real strategy requires saying NO)
+- Ignore competitive landscape or set-and-forget strategy
+
+
+## Troubleshooting
+
+**My strategy feels generic - could apply to any company**
 
 **Fix:**
-1. Create executive summary (1-2 paragraphs) at the top
-2. Use the slide deck for executive communication (13 slides vs. 10-page doc)
-3. Structure doc with clear sections: Diagnosis (2-3 paragraphs), Guiding Policy (3-5 bullets), Coherent Actions (simple roadmap)
-4. Move detailed research to appendix
-5. Use bullet points and bold text for scannability
+- Review guiding policy - does it say what you're NOT doing?
+- Add specific constraints: "With our 2-person team and $50k budget..."
+- Test: Could a competitor copy this word-for-word? If yes, it's too generic.
 
-**Rule of thumb:** Main strategy section should fit on 2 pages. Details go in appendix.
+**Devil's advocate questions feel unfair/overly negative**
 
+**Remember:** Better to hear hard questions from AI than from your CEO. If you can't defend your choice, maybe reconsider. Use challenges to refine your thinking.
 
-## 📚 Community Resources
+**pptx skill won't install / python-pptx errors**
 
-### Official Documentation
+**Fix:**
+1. Try: `pip install python-pptx`
+2. If that fails: `pip3 install python-pptx`
+3. If still failing, create markdown outline of slides instead
 
-- [Claude Code Documentation](https://docs.claude.com/claude-code) - Official getting started guide and feature documentation
-- [Skills Documentation](https://docs.claude.com/claude-code/skills) - How to create and use skills for document transformation
-- [Task Tool Documentation](https://docs.claude.com/claude-code/tools/task) - Guide to parallel agent orchestration
+**My 5 strategic choices contradict each other**
 
-### Strategy Frameworks
-
-- [Good Strategy, Bad Strategy](https://www.amazon.com/Good-Strategy-Bad-Difference-Matters/dp/0307886239) - Richard Rumelts seminal book on the Strategy Kernel framework
-- [Playing to Win](https://www.amazon.com/Playing-Win-Strategy-Really-Works/dp/142218739X) - A.G. Lafley & Roger Martin on strategic choice cascades
-- [7 Powers](https://www.amazon.com/7-Powers-Foundations-Business-Strategy/dp/0998116319) - Hamilton Helmer on strategic differentiation
-
-### Community Examples
-
-- [awesome-product-strategy](https://github.com/teoga/awesome-product-strategy) - Collection of product strategy templates and frameworks
-- [Product Strategy Stack](https://www.reforge.com/artifacts) - Reforges product strategy artifacts and templates
-- [Lennys Newsletter - Strategy](https://www.lennysnewsletter.com/t/strategy) - Real-world product strategy examples from top PMs
-
-### Claude Code Skills
-
-- [anthropics/skills](https://github.com/anthropics/skills) - Official skills marketplace including pptx, xlsx, pdf, docx
-- [Creating Custom Skills](https://docs.claude.com/claude-code/skills/custom) - Guide to building your own skills
-
-### Product Strategy Tools
-
-- [Miro Strategy Templates](https://miro.com/templates/product-strategy/) - Visual strategy planning templates
-- [FigJam Strategy Frameworks](https://www.figma.com/community/tag/strategy/files) - Collaborative strategy frameworks
-- [Notion Strategy Template](https://www.notion.so/templates/category/product-strategy) - Strategy documentation templates
-
-### Further Reading
-
-- [Sequoias Product Strategy Framework](https://www.sequoiacap.com/article/business-model-examples/) - How top VCs think about product strategy
-- [First Round Review - Product Strategy](https://review.firstround.com/product-strategy) - Case studies from successful companies
-- [Product Coalition - Strategy](https://productcoalition.com/tagged/product-strategy) - Articles from practicing PMs on strategic thinking
+**Fix:**
+- Review all 5 choices together - do they tell a coherent story?
+- Check for contradictions: Can't be deep focus AND spread everywhere
+- Test coherence: Could you explain all 5 choices in one paragraph that makes sense?
 
 
-## 🚀 Whats Next?
-
-### After Module 2.3
+## What's Next?
 
 You now understand:
-- ✅ Product strategy is about making hard choices (WHERE to compete, HOW to win)
-- ✅ Rumelts Strategy Kernel framework (Diagnosis → Guiding Policy → Coherent Actions)
-- ✅ How to use AI for competitive research, devils advocate, and document synthesis
-- ✅ How to transform strategy documents into executive presentations with skills
-- ✅ The difference between goals, feature lists, and real strategy
+- Product strategy is about making hard choices (WHERE to compete, HOW to win)
+- Rumelt's Strategy Kernel framework (Diagnosis → Guiding Policy → Coherent Actions)
+- How to use AI for competitive research, devil's advocate, and document synthesis
+- How to transform strategy documents into executive presentations with skills
 
-### Youve Completed Module 2 - Practical PM Applications!
+**You've Completed Module 2 - Practical PM Applications!**
 
 Across three modules, you learned the complete AI-powered PM workflow:
 
-**Module 2.1 - Write a PRD:**
-- Using @-mentions for context
-- Generating multiple strategic approaches with parallel agents
-- Getting multi-perspective feedback with sub-agents
+| Module | What You Learned |
+|--------|------------------|
+| **2.1: Write a PRD** | @-mentions for context, parallel agents for strategic approaches, sub-agents for feedback |
+| **2.2: Analyze Data** | Funnel/survey analysis, scenario modeling, A/B test segmentation |
+| **2.3: Product Strategy** | Competitive research, strategic choices with devil's advocate, framework synthesis, presentations |
 
-**Module 2.2 - Analyze Data:**
-- Discovering problems with funnel and survey analysis
-- Estimating impact with scenario modeling
-- Analyzing A/B tests with segmentation
-
-**Module 2.3 - Develop Product Strategy:**
-- Researching competitors with parallel agents
-- Making strategic choices with devils advocate
-- Synthesizing strategy with frameworks
-- Creating presentations with skills
-
-**You now have a complete PM toolkit powered by AI.**
-
-
-## 🔄 How Module 1 Skills Enabled Module 2 Applications
-
-Looking back, every Module 2 task used Module 1 foundations:
+**How Module 1 Skills Enabled Module 2 Applications:**
 
 | Module 1 Skill | Module 2 Application |
 |----------------|---------------------|
-| **File Operations** (Read, Write, Edit) | Reading templates, creating strategy docs, analyzing CSVs |
-| **Search Tools** (Glob, Grep) | Exploring context files, locating research |
-| **Task Orchestration** | Parallel PRD generation, competitive research |
-| **Sub-Agents** | Multi-perspective feedback (engineer, executive, user researcher) |
-| **Skills** | Transforming strategy into executive slides (pptx) |
-| **WebSearch** | Competitive landscape research, market intelligence |
-
-**The pattern:** Module 1 taught you tools, Module 2 taught you how PMs actually use them.
-
-
-**Related Modules:**
-- [Module 2.1: Write a PRD →](../2.1-write-prd/REFERENCE_GUIDE.md)
-- [Module 2.2: Analyze Data →](../2.2-analyze-data/REFERENCE_GUIDE.md)
-- [Module 1.4: Task Orchestration →](../1.4-task-orchestration/REFERENCE_GUIDE.md)
-- [Module 1.5: Custom Sub-Agents →](../1.5-custom-subagents/REFERENCE_GUIDE.md)
+| File Operations (Read, Write, Edit) | Reading templates, creating strategy docs, analyzing CSVs |
+| Search Tools (Glob, Grep) | Exploring context files, locating research |
+| Task Orchestration | Parallel PRD generation, competitive research |
+| Sub-Agents | Multi-perspective feedback (engineer, executive, user researcher) |
+| Skills | Transforming strategy into executive slides (pptx) |
+| WebSearch | Competitive landscape research, market intelligence |
 
 **For the interactive version:**
 ```
 Type: /start-2-3
 ```
+
+
+---
+
+**About This Course**
+
+Created by [Carl Vellotti](https://www.linkedin.com/in/carlvellotti/). If you have any feedback about this module or the course overall, message me! I'm building a newsletter and community for PM builders, check out [The Full Stack PM](https://fullstack-pm.com/subscribe).
+
+**Source Repository:** [github.com/carlvellotti/claude-code-pm-course](https://github.com/carlvellotti/claude-code-pm-course)

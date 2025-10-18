@@ -31,7 +31,7 @@ export default {
       <meta name="twitter:card" content="summary_large_image" />
     </>
   ),
-  primaryHue: 220,
+  primaryHue: 169,
   sidebar: {
     defaultMenuCollapseLevel: 1,
     toggleButton: true
