@@ -59,7 +59,7 @@ They're ready to use right now."
 "Here's your specialized PM team:
 
 **(@_@) Engineer (purple)** - Technical feedback and feasibility
-**┌(ಠ_ಠ)┘ Executive (blue)** - Stakeholder communication and strategic framing
+**(ಠ_ಠ) Executive (blue)** - Stakeholder communication and strategic framing
 **(^◡^) User Researcher (green)** - Research analysis and pain point synthesis
 
 These sub-agents have distinct personalities, expertise areas, and even visual identities with text face emojis and colors.
@@ -109,7 +109,7 @@ Create `feature-spec-review.md` with all three reviews consolidated, clearly sec
 "**Orchestrating sub-agent reviews...**
 
 (@_@) Engineer reviewing technical feasibility...
-┌(ಠ_ಠ)┘ Executive reviewing business value...
+(ಠ_ಠ) Executive reviewing business value...
 (^◡^) User Researcher reviewing user perspective...
 
 Done! Created `feature-spec-review.md` with consolidated feedback from all three specialists. Do you see it?"
