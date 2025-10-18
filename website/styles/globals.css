@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
-  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-heading: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-sans: 'SF Mono', 'Monaco', 'Courier New', monospace;
+  --font-heading: 'SF Mono', 'Monaco', 'Courier New', monospace;
 }
 
 /* Apply fonts */
@@ -61,4 +61,43 @@ strong:has(+ strong) {
 p > strong:first-child {
   display: block;
   margin-bottom: 0.25rem;
+}
+
+/* Color scheme - Red (#FF5856) and Teal (#1DD3B0) */
+/* 1. H2 main headers in red */
+.nextra-content h2 {
+  color: #FF5856;
+}
+
+/* 2. H3 subheaders in teal */
+.nextra-content h3 {
+  color: #1DD3B0;
+}
+
+/* 7. Inline code with teal accent */
+.nextra-content code:not(pre code) {
+  background-color: rgba(29, 211, 176, 0.1);
+  border: 1px solid rgba(29, 211, 176, 0.3);
+  color: #1DD3B0;
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+}
+
+/* 10. Bullet points in red */
+.nextra-content ul > li::marker {
+  color: #FF5856;
+}
+
+.nextra-content ol > li::marker {
+  color: #FF5856;
+}
+
+/* Bonus: Links in teal with red hover */
+.nextra-content a {
+  color: #1DD3B0;
+  text-decoration: none;
+}
+
+.nextra-content a:hover {
+  color: #FF5856;
 }
