@@ -1,10 +1,10 @@
 export default
 {
   "index": "Home",
-  "company-context": "Company Context",
-  "getting-started": "Getting Started",
-  "fundamentals": "Fundamentals",
-  "advanced": "Advanced PM Work",
+  "getting-started": "Module 0: Getting Started",
+  "fundamentals": "Module 1: Fundamentals",
+  "advanced": "Module 2: Advanced PM Work",
+  "company-context": "TaskFlow Context",
   "search": "Search"
 }
 

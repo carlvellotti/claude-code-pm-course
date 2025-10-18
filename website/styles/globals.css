@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-heading: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* Apply fonts */
+body {
+  font-family: var(--font-sans);
+}
+
+/* Nextra headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+}
+
+/* Logo styling */
+.nx-logo {
+  font-family: var(--font-heading);
+  font-weight: 700;
+}
+
+/* Sidebar titles */
+.nx-sidebar h2 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+}
+
+/* Code blocks stay monospace */
+code, pre {
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+}
+
+/* Dark mode background – terminal color */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --nextra-bg: #1c1c1c;
+    --nextra-bg-secondary: #232323;
+  }
+  
+  body {
+    background-color: #1c1c1c;
+    color-scheme: dark;
+  }
+  
+  /* Nextra page background */
+  .nextra-container {
+    background-color: #1c1c1c;
+  }
+}
+
+/* Ensure Time to Complete and Prerequisites wrap on new lines */
+strong:has(+ strong) {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+/* Make metadata info display as list items */
+p > strong:first-child {
+  display: block;
+  margin-bottom: 0.25rem;
+}

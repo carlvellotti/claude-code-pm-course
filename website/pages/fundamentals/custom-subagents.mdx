@@ -1,34 +1,33 @@
 ---
-title: '1.5: "Custom Sub-Agents'
-description: 'Create specialized AI personas for different types of reviews and feedback'
+title: "1.5: Custom Sub-Agents"
+description: Create specialized AI personas for different types of reviews and feedback
 ---
 
-## Reference Guide
+## 1.5: Custom Sub-Agents Reference
 
-**Last Updated:** October 13, 2025
-**Time to Complete:** 20-25 minutes
-**Prerequisites:** Module 1.4 (Agents for Parallel Work)
+ - **Time to Complete:** 20-25 minutes
+ - **Prerequisites:** Module 1.4 (Agents for Parallel Work)
 
----
+
+> **Start this module in Claude Code:** Run `/start-1-5` to kick off the interactive experience.
 
 ## 📖 Overview
 
 Module 1.5 teaches you how to create custom sub-agents - permanent AI team members with distinct personalities, expertise, and visual identities. Unlike the temporary ad-hoc agents you learned in Module 1.4, custom sub-agents are reusable specialists you can call on anytime.
 
-**Key takeaway:** Custom sub-agents transform Claude Code from a single assistant into a full specialized team. Instead of telling Claude "act like an engineer" every time, you build a real Engineer sub-agent with personality, expertise, and visual distinction (colors and emojis!) that you can call upon repeatedly.
+**Key takeaway:** Custom sub-agents transform Claude Code from a single assistant into a full specialized team. Instead of telling Claude act like an engineer every time, you build a real Engineer sub-agent with personality, expertise, and visual distinction (colors and emojis!) that you can call upon repeatedly.
 
----
 
 ## 🎭 What Are Custom Sub-Agents?
 
 ### The Core Concept
 
-Custom sub-agents are pre-configured AI personas stored as files in your project's `.claude/agents/` folder. Each sub-agent has:
+Custom sub-agents are pre-configured AI personas stored as files in your projects `.claude/agents/` folder. Each sub-agent has:
 
 - **Name with emoji** (shows up visually in terminal!)
 - **Color coding** (purple, blue, green, red, etc.)
 - **Persona definition** (background, expertise, communication style)
-- **Specialized knowledge** (what they're good at)
+- **Specialized knowledge** (what theyre good at)
 
 Think of them as hiring permanent team members who are always available and never forget context.
 
@@ -39,13 +38,13 @@ Understanding the difference is crucial:
 **Ad-Hoc Agents (Module 1.4):**
 - Created on-the-fly for specific tasks
 - Temporary workers for one-time jobs
-- Example: "Create 10 agents to summarize these meeting notes"
+- Example: Create 10 agents to summarize these meeting notes
 - Use case: Parallel processing of similar tasks
 
 **Custom Sub-Agents (Module 1.5):**
 - Pre-built personas you call repeatedly
 - Permanent team members with expertise
-- Example: "👨‍💻 Engineer, review this technical spec"
+- Example: 👨‍💻 Engineer, review this technical spec
 - Use case: Specialized perspectives you need regularly
 
 **When to use which:**
@@ -61,11 +60,10 @@ Understanding the difference is crucial:
 
 **The key difference:** Ad-hoc agents are for DOING many things in parallel. Custom sub-agents are for getting SPECIALIZED PERSPECTIVES you need repeatedly.
 
----
 
 ## 🗂️ Setup Guide: Accessing the .claude/agents/ Folder
 
-Custom sub-agents live in the hidden `.claude/agents/` folder. Here's how to access it on your system.
+Custom sub-agents live in the hidden `.claude/agents/` folder. Heres how to access it on your system.
 
 ### On Mac (Finder)
 
@@ -120,7 +118,7 @@ xdg-open ~/.claude/agents  # Generic (most distros)
 cd /path/to/project/.claude/agents && ls -la  # Command line
 ```
 
-### Why Can't I See .claude/ in Obsidian?
+### Why Cant I See .claude/ in Obsidian?
 
 Obsidian deliberately hides folders starting with `.` (hidden folders). This is a design choice to avoid clutter. For `.claude/` files, you MUST use Finder/Explorer/File Manager.
 
@@ -129,7 +127,6 @@ Obsidian deliberately hides folders starting with `.` (hidden folders). This is 
 2. Use another editor like VS Code or Cursor for `.claude/` files
 3. Keep Obsidian open for regular project files
 
----
 
 ## 📄 Sub-Agent File Structure
 
@@ -175,9 +172,9 @@ When analyzing features or specs, you provide:
 
 Your communication style:
 - Direct and pragmatic
-- Focus on what's technically possible vs ideal
+- Focus on whats technically possible vs ideal
 - Flag risks early
-- Suggest alternatives when something won't work
+- Suggest alternatives when something wont work
 - Balance perfectionism with shipping
 
 You help PMs write better technical specs by spotting gaps, ambiguities,
@@ -228,18 +225,17 @@ purple
 - [Bulleted list of specific skills]
 ```
 - Concrete skills and knowledge areas
-- Be specific (not just "design" but "UI/UX patterns for enterprise SaaS")
+- Be specific (not just design but UI/UX patterns for enterprise SaaS)
 - Helps Claude understand when to apply which knowledge
 
----
 
 ## 🛠️ Creating Your First Sub-Agent
 
-Let's create a QA Tester sub-agent from scratch.
+Lets create a QA Tester sub-agent from scratch.
 
 ### Step 1: Navigate to .claude/agents/ Folder
 
-Use the methods above to open your project's `.claude/agents/` folder in Finder/Explorer.
+Use the methods above to open your projects `.claude/agents/` folder in Finder/Explorer.
 
 ### Step 2: Create New File
 
@@ -303,13 +299,12 @@ Save the file, then test in Claude Code:
 claude
 
 # Call your new sub-agent
-"🔍 QA Tester, review these user stories in @user-stories.md and identify
-potential edge cases and missing test scenarios"
+🔍 QA Tester, review these user stories in @user-stories.md and identify
+potential edge cases and missing test scenarios
 ```
 
 You should see red-colored output with the QA emoji!
 
----
 
 ## 👥 Pre-Built Sub-Agents Overview
 
@@ -326,14 +321,14 @@ The TaskFlow course includes three ready-to-use sub-agents:
 
 **Example prompts:**
 ```
-"👨‍💻 Engineer, review @feature-spec.md and identify:
+👨‍💻 Engineer, review @feature-spec.md and identify:
 - Technical implementation challenges
 - Performance implications
 - Scalability concerns
-- Integration complexity"
+- Integration complexity
 
-"👨‍💻 Engineer, estimate the engineering effort for @prd.md
-in person-weeks. Break down by component."
+👨‍💻 Engineer, estimate the engineering effort for @prd.md
+in person-weeks. Break down by component.
 ```
 
 ### 2. 💼 Executive (Blue)
@@ -347,13 +342,13 @@ in person-weeks. Break down by component."
 
 **Example prompts:**
 ```
-"💼 Executive, convert @sprint-update.md into a concise
+💼 Executive, convert @sprint-update.md into a concise
 executive summary for the CEO. Focus on business impact
-and metrics."
+and metrics.
 
-"💼 Executive, help me frame this feature proposal in
-@pitch-doc.md for board presentation. What's the strategic
-narrative?"
+💼 Executive, help me frame this feature proposal in
+@pitch-doc.md for board presentation. Whats the strategic
+narrative?
 ```
 
 ### 3. 👤 User Researcher (Green)
@@ -367,40 +362,39 @@ narrative?"
 
 **Example prompts:**
 ```
-"👤 User Researcher, analyze all files in /interviews and identify:
+👤 User Researcher, analyze all files in /interviews and identify:
 - Top 3 pain points (with supporting quotes)
 - Common feature requests
 - User workflow patterns
-- Personas that emerge from the data"
+- Personas that emerge from the data
 
-"👤 User Researcher, review @support-tickets.csv and
-categorize issues by pain point severity"
+👤 User Researcher, review @support-tickets.csv and
+categorize issues by pain point severity
 ```
 
----
 
 ## 💼 Real-World PM Examples
 
 ### Example 1: Engineer for Technical Specs
 
-**Scenario:** You're writing a PRD for a new dashboard feature and want to ensure it's technically sound.
+**Scenario:** Youre writing a PRD for a new dashboard feature and want to ensure its technically sound.
 
 **Workflow:**
 ```
 # Write initial PRD
-"Create a PRD for real-time analytics dashboard with auto-refresh"
+Create a PRD for real-time analytics dashboard with auto-refresh
 
 # Get Engineer feedback
-"👨‍💻 Engineer, review @dashboard-prd.md and provide:
+👨‍💻 Engineer, review @dashboard-prd.md and provide:
 1. Technical feasibility assessment
 2. Implementation complexity (1-10 scale)
 3. Potential technical challenges
 4. Performance considerations for real-time updates
-5. Suggested architecture approach"
+5. Suggested architecture approach
 
 # Refine based on feedback
-"Update @dashboard-prd.md based on Engineer's feedback,
-adding technical considerations section"
+Update @dashboard-prd.md based on Engineers feedback,
+adding technical considerations section
 ```
 
 **Value:** Catch technical issues early, write better technical requirements, build trust with engineering team.
@@ -412,15 +406,15 @@ adding technical considerations section"
 **Workflow:**
 ```
 # Draft sprint update
-"Summarize work from @sprint-notes.md into update"
+Summarize work from @sprint-notes.md into update
 
 # Executive polish
-"💼 Executive, convert @sprint-update.md into executive summary:
+💼 Executive, convert @sprint-update.md into executive summary:
 - 3 bullets max
 - Focus on outcomes and metrics
 - Highlight business impact
 - Flag risks requiring attention
-- Forward-looking (what's next)"
+- Forward-looking (whats next)
 
 # Send to CEO
 [Copy executive-polished version]
@@ -435,27 +429,26 @@ adding technical considerations section"
 **Workflow:**
 ```
 # Parallel analysis
-"Launch 15 ad-hoc agents to process each interview in /interviews.
-Each should extract: pain points, feature requests, workflow description"
+Launch 15 ad-hoc agents to process each interview in /interviews.
+Each should extract: pain points, feature requests, workflow description
 
 # Deep synthesis with User Researcher
-"👤 User Researcher, review all processed interviews and provide:
+👤 User Researcher, review all processed interviews and provide:
 1. Top 5 pain points ranked by frequency and severity
 2. Common patterns across user workflows
 3. Feature requests grouped by theme
 4. 3 user personas that emerge from the data
 5. Recommended product priorities based on research
 
-Include specific user quotes supporting each finding."
+Include specific user quotes supporting each finding.
 
 # Output to PRD
-"Create @research-insights.md with User Researcher's analysis.
-Format for inclusion in PRD."
+Create @research-insights.md with User Researchers analysis.
+Format for inclusion in PRD.
 ```
 
 **Value:** Turn 3 days of manual analysis into 30 minutes, evidence-based prioritization, user-backed product decisions.
 
----
 
 ## 🎯 PM-Specific Sub-Agents You Can Build
 
@@ -637,7 +630,6 @@ onboarding, adoption challenges, and customer retention.
 - Customer feedback synthesis
 - Adoption strategies
 
----
 
 ## 💡 Best Practices
 
@@ -650,10 +642,10 @@ onboarding, adoption challenges, and customer retention.
 - Make them feel like a real person
 - Focus on what value they provide to YOU as a PM
 
-**❌ Don't:**
-- Make personas too generic ("You are helpful")
+**❌ Dont:**
+- Make personas too generic (You are helpful)
 - Overlap expertise too much between agents
-- Create personas you won't use regularly
+- Create personas you wont use regularly
 - Write personas that are too brief (under 100 words)
 
 **Example of good vs bad persona:**
@@ -671,8 +663,8 @@ You are an experienced software engineer with 10+ years at top tech companies.
 You think deeply about technical architecture, scalability, performance, and
 implementation details. You provide constructive, specific feedback that helps
 PMs write better technical specs. Your communication is direct and pragmatic,
-focusing on what's technically possible vs ideal. You flag risks early and
-suggest alternatives when something won't work.
+focusing on whats technically possible vs ideal. You flag risks early and
+suggest alternatives when something wont work.
 ```
 
 ### Color Choice
@@ -686,7 +678,7 @@ suggest alternatives when something won't work.
 - **Cyan:** Data roles (Analyst, Data Engineer)
 - **Magenta:** Marketing roles (Marketing PM, Growth)
 
-**Why this matters:** Consistent color usage helps you quickly identify which agent is "speaking" in terminal output.
+**Why this matters:** Consistent color usage helps you quickly identify which agent is speaking in terminal output.
 
 ### Emoji Selection
 
@@ -704,7 +696,7 @@ suggest alternatives when something won't work.
 
 **Tips:**
 - Choose emojis that are immediately recognizable
-- Avoid obscure emojis that don't render well
+- Avoid obscure emojis that dont render well
 - Use the same emoji throughout (consistency)
 - Test emoji appearance in your terminal
 
@@ -732,7 +724,7 @@ suggest alternatives when something won't work.
 - You need the same perspective repeatedly (weekly or more)
 - The expertise is specialized (not general Claude)
 - You want consistent voice/style
-- You're building a team workflow
+- Youre building a team workflow
 
 **Use regular Claude when:**
 - One-time tasks
@@ -745,31 +737,30 @@ suggest alternatives when something won't work.
 - Many similar tasks
 - One-time batch work
 
----
 
 ## 🐛 Troubleshooting
 
-### "I can't see the .claude/ folder!"
+### I cant see the .claude/ folder!
 
-**Problem:** Obsidian or Finder/Explorer doesn't show `.claude/` directory.
+**Problem:** Obsidian or Finder/Explorer doesnt show `.claude/` directory.
 
 **Cause:** Folders starting with `.` are hidden by default on Mac/Windows/Linux.
 
 **Fix:**
 - **Mac:** Press Cmd+Shift+. in Finder to show hidden files
-- **Windows:** Enable "Hidden items" in File Explorer View tab
-- **Alternative:** Use "Go to Folder" or direct path methods above
+- **Windows:** Enable Hidden items in File Explorer View tab
+- **Alternative:** Use Go to Folder or direct path methods above
 
-### "My sub-agent isn't responding!"
+### My sub-agent isnt responding!
 
-**Problem:** You call a sub-agent but Claude doesn't use it.
+**Problem:** You call a sub-agent but Claude doesnt use it.
 
 **Causes & Fixes:**
 
 **Cause 1: Wrong calling syntax**
 ```
-❌ "Engineer, review this"  # Missing emoji
-✅ "👨‍💻 Engineer, review this"  # Correct with emoji
+❌ Engineer, review this  # Missing emoji
+✅ 👨‍💻 Engineer, review this  # Correct with emoji
 ```
 
 **Cause 2: File not saved properly**
@@ -779,7 +770,7 @@ suggest alternatives when something won't work.
 
 **Cause 3: Syntax error in file**
 - Ensure headers use `##` not `###`
-- Check no typos in section names ("Color" not "Colour")
+- Check no typos in section names (Color not Colour)
 - Validate markdown formatting
 
 **Cause 4: Claude needs restart**
@@ -787,50 +778,49 @@ suggest alternatives when something won't work.
 - Restart Claude (`claude`)
 - Try calling sub-agent again
 
-### "Colors aren't showing up in terminal"
+### Colors arent showing up in terminal
 
 **Problem:** Sub-agent output is all one color.
 
-**Cause:** Terminal doesn't support colors or color name is wrong.
+**Cause:** Terminal doesnt support colors or color name is wrong.
 
 **Fix:**
-1. Verify color name spelling (all lowercase: "purple" not "Purple")
+1. Verify color name spelling (all lowercase: purple not Purple)
 2. Use standard colors: purple, blue, green, red, yellow, cyan, magenta
 3. Test terminal supports colors: Some terminals have limited color support
 4. Try a different terminal (iTerm2 on Mac, Windows Terminal on Windows)
 
-### "How do I call multiple sub-agents at once?"
+### How do I call multiple sub-agents at once?
 
 **Approach 1: Sequential**
 ```
-"👨‍💻 Engineer, review @spec.md for technical feasibility.
-Then 🔍 QA Tester, review it for test coverage."
+👨‍💻 Engineer, review @spec.md for technical feasibility.
+Then 🔍 QA Tester, review it for test coverage.
 ```
 
 **Approach 2: Parallel with agents**
 ```
-"Launch 3 agents in parallel:
+Launch 3 agents in parallel:
 - Agent 1: Have 👨‍💻 Engineer review @spec.md
 - Agent 2: Have 🔍 QA Tester review @spec.md
 - Agent 3: Have 👤 User Researcher review @spec.md
 
-Combine all feedback into @spec-review.md"
+Combine all feedback into @spec-review.md
 ```
 
-### "Can I have sub-agents talk to each other?"
+### Can I have sub-agents talk to each other?
 
 **Answer:** Not directly, but you can orchestrate:
 
 ```
-"First, 👤 User Researcher analyzes @interviews.md and identifies
+First, 👤 User Researcher analyzes @interviews.md and identifies
 top 3 pain points. Then 👨‍💻 Engineer evaluates technical feasibility
 of solutions for each pain point. Then 💼 Executive frames the
-business case for prioritization."
+business case for prioritization.
 ```
 
 Claude will simulate each perspective sequentially.
 
----
 
 ## 📚 Community Resources
 
@@ -862,9 +852,8 @@ Claude will simulate each perspective sequentially.
 - [PM Productivity with Custom Agents](https://example.com/pm-agents) - Case studies from PMs using custom agents
 - [Building Your AI Team](https://example.com/ai-team) - Strategic guide to which agents to build
 
----
 
-## 🚀 What's Next?
+## 🚀 Whats Next?
 
 ### After Module 1.5
 
@@ -879,9 +868,9 @@ You now understand:
 
 **Ready for Module 1.6?**
 
-Module 1.6 teaches you about **Project Memory with CLAUDE.md** - how to give Claude permanent memory about your product, team, and preferences. This is the "constitution" of your project that Claude always follows.
+Module 1.6 teaches you about **Project Memory with CLAUDE.md** - how to give Claude permanent memory about your product, team, and preferences. This is the constitution of your project that Claude always follows.
 
-You'll learn:
+Youll learn:
 - Creating CLAUDE.md files for project memory
 - The hierarchy: CLAUDE.md (immutable rules) vs prompts (flexible requests)
 - Using the `#` symbol to add rules dynamically during sessions
@@ -890,18 +879,17 @@ You'll learn:
 
 **[Go to Module 1.6 Reference →](🎨%20Content%20Creation/🏭%20Development/Claude%20Code%20Definitive%20Guide/claude-code-pm-course/lesson-modules/1.6-project-memory/REFERENCE_GUIDE.md)**
 
-Or, if you're doing the interactive track:
+Or, if youre doing the interactive track:
 ```
 Type: /start-1-6
 ```
 
----
 
 ## ❓ Common Questions
 
-### "How many sub-agents should I create?"
+### How many sub-agents should I create?
 
-**Answer:** Start small! Create 3-5 agents for perspectives you need WEEKLY. Don't create 20 agents on day one. Build as you discover repeated needs.
+**Answer:** Start small! Create 3-5 agents for perspectives you need WEEKLY. Dont create 20 agents on day one. Build as you discover repeated needs.
 
 **Good starting set for PMs:**
 1. 👨‍💻 Engineer (technical feedback)
@@ -912,20 +900,20 @@ Type: /start-1-6
 
 Expand from there based on your actual workflow.
 
-### "Can sub-agents access MCPs (integrations)?"
+### Can sub-agents access MCPs (integrations)?
 
-**Answer:** Yes! In Module 4.1 you'll learn about MCP servers (Notion, Linear, GitHub, etc.). Sub-agents can use MCPs just like regular Claude. Example:
+**Answer:** Yes! In Module 4.1 youll learn about MCP servers (Notion, Linear, GitHub, etc.). Sub-agents can use MCPs just like regular Claude. Example:
 
 ```
-"👤 User Researcher, use the Reddit MCP to research user sentiment
-about dark mode features in product management tools"
+👤 User Researcher, use the Reddit MCP to research user sentiment
+about dark mode features in product management tools
 ```
 
-### "Do sub-agents share context with each other?"
+### Do sub-agents share context with each other?
 
-**Answer:** Within a single session, yes. If you call Engineer then later call User Researcher in the same conversation, User Researcher knows what Engineer said. But sub-agents don't have persistent memory across sessions (unless you save context in CLAUDE.md - covered in Module 1.6).
+**Answer:** Within a single session, yes. If you call Engineer then later call User Researcher in the same conversation, User Researcher knows what Engineer said. But sub-agents dont have persistent memory across sessions (unless you save context in CLAUDE.md - covered in Module 1.6).
 
-### "Can I edit pre-built sub-agents?"
+### Can I edit pre-built sub-agents?
 
 **Answer:** Absolutely! The Engineer, Executive, and User Researcher sub-agents are templates. Customize them:
 - Change communication style to match your preferences
@@ -933,33 +921,32 @@ about dark mode features in product management tools"
 - Adjust tone (more formal, more casual, etc.)
 - Add context about your company or domain
 
-### "What's the difference between sub-agents and output styles?"
+### Whats the difference between sub-agents and output styles?
 
 **Answer:**
 - **Sub-agents:** Change WHO is responding (different persona/expertise)
 - **Output styles (Module 2.6):** Change HOW Claude formats output (different template)
 
-You can combine them: "💼 Executive, write update in 'Executive Briefing' output style"
+You can combine them: 💼 Executive, write update in Executive Briefing output style
 
-### "Can I share sub-agents with my team?"
+### Can I share sub-agents with my team?
 
 **Answer:** Yes! The `.claude/agents/` folder can be committed to git and shared across your team. Everyone gets the same sub-agents:
 
 ```bash
 git add .claude/agents/
-git commit -m "Add PM sub-agent library for team"
+git commit -m Add PM sub-agent library for team
 git push
 ```
 
 Team members pull and have instant access to your specialized agents.
 
-### "How do I delete or rename a sub-agent?"
+### How do I delete or rename a sub-agent?
 
 **Answer:**
 - **Delete:** Remove the `.md` file from `.claude/agents/` folder
 - **Rename:** Rename the `.md` file (update emoji/name in file too)
 - Changes take effect when you restart Claude
 
----
 
-**You're now ready to build your specialized AI team! Create sub-agents for the perspectives you need most, and watch your PM productivity soar.** 🚀
+**Youre now ready to build your specialized AI team! Create sub-agents for the perspectives you need most, and watch your PM productivity soar.** 🚀

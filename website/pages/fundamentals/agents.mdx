@@ -1,39 +1,38 @@
 ---
-title: '1.4: "Agents for Parallel Work'
-description: 'Clone yourself - run multiple AI agents in parallel to process work 10x faster'
+title: "1.4: Agents for Parallel Work"
+description: Clone yourself - run multiple AI agents in parallel to process work 10x faster
 ---
 
-## Reference Guide
+## 1.4: Agents for Parallel Work Reference
 
-**Last Updated:** October 13, 2025
-**Time to Complete:** 25 minutes
-**Prerequisites:** Module 1.3 (File operations and @ references)
+ - **Time to Complete:** 25 minutes
+ - **Prerequisites:** Module 1.3 (File operations and @ references)
 
----
+
+> **Start this module in Claude Code:** Run `/start-1-4` to kick off the interactive experience.
 
 ## 📖 Overview
 
-Module 1.4 introduces the most powerful feature of Claude Code: **agents**. This is the moment that transforms Claude Code from "helpful AI assistant" into "productivity superpower."
+Module 1.4 introduces the most powerful feature of Claude Code: **agents**. This is the moment that transforms Claude Code from helpful AI assistant into productivity superpower.
 
-Imagine you have 10 meeting notes to process. Normally, you'd do them one by one - that's 50 minutes of sequential work. With agents, you spin up 10 independent instances of Claude that work simultaneously. Same work, done in 5 minutes.
+Imagine you have 10 meeting notes to process. Normally, youd do them one by one - thats 50 minutes of sequential work. With agents, you spin up 10 independent instances of Claude that work simultaneously. Same work, done in 5 minutes.
 
-**Key takeaway:** Agents let you clone Claude to do multiple things at once. This isn't just faster - it unlocks entirely new workflows that would be impractical to do manually.
+**Key takeaway:** Agents let you clone Claude to do multiple things at once. This isnt just faster - it unlocks entirely new workflows that would be impractical to do manually.
 
----
 
-## 🤯 What Are Agents? (The "Aha!" Moment)
+## 🤯 What Are Agents? (The Aha! Moment)
 
 ### The Core Concept
 
 **Agents are independent instances of Claude that run in parallel.**
 
 Think of it like this:
-- **Without agents:** You're one person doing tasks sequentially
+- **Without agents:** Youre one person doing tasks sequentially
 - **With agents:** You can clone yourself 5, 10, or 20 times to work simultaneously
 
-### Not Just "Faster" - It's Different
+### Not Just Faster - Its Different
 
-Here's what makes agents revolutionary:
+Heres what makes agents revolutionary:
 
 **Before agents (sequential work):**
 ```
@@ -58,21 +57,21 @@ Total time: 5 minutes
 
 **Sequential processing:**
 - 10 meetings × 5 minutes each = 50 minutes
-- You're stressed, rushing, probably skip some
+- Youre stressed, rushing, probably skip some
 
 **Parallel processing with agents:**
 - 10 agents × 5 minutes = 5 minutes total
 - Every meeting processed thoroughly
 - You arrive at standup fully prepared
 
-**That's not 10% faster. That's 10x faster.**
+**Thats not 10% faster. Thats 10x faster.**
 
 ### What Makes This Different from Chatbots
 
 **Regular chatbot:**
 - One conversation thread
 - Sequential processing only
-- Can't actually do multiple things at once
+- Cant actually do multiple things at once
 - Previous work disappears in chat history
 
 **Claude Code with agents:**
@@ -83,7 +82,7 @@ Total time: 5 minutes
 
 ### Real-World Impact
 
-Let's say you're a PM who spends time on:
+Lets say youre a PM who spends time on:
 - Processing meeting notes (2 hours/week)
 - Competitor research (3 hours/week)
 - User research synthesis (4 hours/week)
@@ -95,7 +94,6 @@ Let's say you're a PM who spends time on:
 
 **Time saved: 8+ hours per week**
 
----
 
 ## 🎯 When to Use Agents (Decision Framework)
 
@@ -118,7 +116,7 @@ Can tasks be done independently (no dependencies)?
     │
     ├─ YES → Use agents! (2-10 agents with different specializations)
     │
-    └─ NO → Sequential work, don't use agents
+    └─ NO → Sequential work, dont use agents
 ```
 
 ### ✅ Perfect Use Cases for Agents
@@ -150,25 +148,25 @@ Can tasks be done independently (no dependencies)?
 
 **1. Single Tasks**
 ```
-❌ "Create 1 agent to summarize this file"
-✅ Just prompt normally: "Summarize @meeting-notes.txt"
+❌ Create 1 agent to summarize this file
+✅ Just prompt normally: Summarize @meeting-notes.txt
 ```
 
 **2. Sequential Dependencies**
 ```
-❌ "Agent 1 analyzes, Agent 2 uses Agent 1's output, Agent 3 uses Agent 2's output"
-✅ Do this sequentially: "Analyze this, then synthesize, then create recommendations"
+❌ Agent 1 analyzes, Agent 2 uses Agent 1s output, Agent 3 uses Agent 2s output
+✅ Do this sequentially: Analyze this, then synthesize, then create recommendations
 ```
 
 **3. Small Quick Tasks**
 ```
-❌ "Create 10 agents to each write one sentence"
-✅ Just ask Claude: "Write 10 sentences about..."
+❌ Create 10 agents to each write one sentence
+✅ Just ask Claude: Write 10 sentences about...
 ```
 
 **4. Tasks Requiring Context from Each Other**
 ```
-❌ Agents that need to "talk" to each other
+❌ Agents that need to talk to each other
 ✅ Single Claude instance that builds context as it works
 ```
 
@@ -189,13 +187,12 @@ Can tasks be done independently (no dependencies)?
 - Quick work
 - Sequential dependencies
 
----
 
 ## 🔧 How Agents Work (Technical Overview for PMs)
 
 ### The Basics
 
-**When you tell Claude to use agents, here's what happens:**
+**When you tell Claude to use agents, heres what happens:**
 
 1. **Claude creates independent instances** - Each agent is a separate Claude execution
 2. **Each agent gets its task** - Clear instructions and file access
@@ -206,44 +203,44 @@ Can tasks be done independently (no dependencies)?
 
 Each agent has:
 - ✅ Full file system access (can read/write files)
-- ✅ All Claude's capabilities (analysis, writing, reasoning)
-- ✅ Independent context (doesn't see other agents' work while running)
+- ✅ All Claudes capabilities (analysis, writing, reasoning)
+- ✅ Independent context (doesnt see other agents work while running)
 - ✅ Tool use (can create files, analyze data, etc.)
 
 Each agent does NOT have:
 - ❌ Communication with other agents (they work independently)
 - ❌ Shared state (each has its own context)
-- ❌ Knowledge of other agents' results (until synthesis)
+- ❌ Knowledge of other agents results (until synthesis)
 
 ### How to Prompt for Agents
 
 **Pattern 1: Explicit agent request**
 ```
-"Create 10 agents to process the 10 meeting notes in /meetings.
+Create 10 agents to process the 10 meeting notes in /meetings.
 Each agent should extract:
 - Key decisions
 - Action items
 - Blockers
 - Next steps
 
-Combine all results into @weekly-summary.md"
+Combine all results into @weekly-summary.md
 ```
 
 **Pattern 2: Let Claude decide**
 ```
-"I have 15 competitor websites to research for features and pricing.
-Work in parallel to get this done quickly."
+I have 15 competitor websites to research for features and pricing.
+Work in parallel to get this done quickly.
 ```
 Claude will intelligently spin up agents.
 
 **Pattern 3: Specialized agents**
 ```
-"Launch 3 specialized agents:
+Launch 3 specialized agents:
 - Agent 1: Analyze all interview transcripts in /interviews
 - Agent 2: Process survey data in @survey-results.csv
 - Agent 3: Review support tickets in /support
 
-Synthesize findings into @user-research-insights.md"
+Synthesize findings into @user-research-insights.md
 ```
 
 ### Agent Output and Synthesis
@@ -268,24 +265,23 @@ Synthesize findings into @user-research-insights.md"
 └── Recommendations
 ```
 
----
 
 ## 💼 Real-World Examples
 
 ### Example 1: Meeting Processing Marathon
 
-**Scenario:** It's Monday morning. You have 10 meeting recordings from last week. Your standup is in 1 hour. You need to know what happened, what's blocked, and what decisions were made.
+**Scenario:** Its Monday morning. You have 10 meeting recordings from last week. Your standup is in 1 hour. You need to know what happened, whats blocked, and what decisions were made.
 
 **Without agents (50 minutes):**
 - Listen to Meeting 1, take notes (5 min)
 - Listen to Meeting 2, take notes (5 min)
 - ... continue for all 10
 - Manually combine into summary (10 min)
-- Total: 60 minutes → You're late to standup
+- Total: 60 minutes → Youre late to standup
 
 **With agents (5 minutes):**
 ```
-"I have 10 meeting transcripts in /meetings/last-week/.
+I have 10 meeting transcripts in /meetings/last-week/.
 
 Create 10 agents to process each meeting simultaneously.
 
@@ -302,7 +298,7 @@ Then synthesize ALL findings into @monday-standup-prep.md with:
 - Section 3: Action items by team member
 - Section 4: Upcoming risks to watch
 
-Format for easy skimming during standup."
+Format for easy skimming during standup.
 ```
 
 **Result:**
@@ -314,7 +310,7 @@ Format for easy skimming during standup."
 
 ### Example 2: Competitive Research Sprint
 
-**Scenario:** Your CEO asks for competitive analysis on 5 competitors. She needs it by end of day for a board meeting. It's 2pm.
+**Scenario:** Your CEO asks for competitive analysis on 5 competitors. She needs it by end of day for a board meeting. Its 2pm.
 
 **Without agents (5 hours):**
 - Research Competitor A: features, pricing, positioning (1 hour)
@@ -323,11 +319,11 @@ Format for easy skimming during standup."
 - Research Competitor D (1 hour)
 - Research Competitor E (1 hour)
 - Create comparison matrix (30 min)
-- Total: 5.5 hours → You're working past midnight
+- Total: 5.5 hours → Youre working past midnight
 
 **With agents (1 hour):**
 ```
-"Launch 5 agents to research these competitors simultaneously:
+Launch 5 agents to research these competitors simultaneously:
 - Company A: Asana
 - Company B: Linear
 - Company C: Monday.com
@@ -348,9 +344,9 @@ Then synthesize into @competitive-analysis.md with:
 - Feature comparison matrix (table format)
 - Pricing comparison (visualize tiers)
 - Positioning map (how they position vs us)
-- Gaps and opportunities (what we can do that they can't)
+- Gaps and opportunities (what we can do that they cant)
 - Recommendations (where should TaskFlow focus?)
-"
+
 ```
 
 **Result:**
@@ -358,11 +354,11 @@ Then synthesize into @competitive-analysis.md with:
 - CEO has what she needs for board meeting
 - You look like a superstar
 
-**Time saved: 4.5 hours → Attend your kid's soccer game instead**
+**Time saved: 4.5 hours → Attend your kids soccer game instead**
 
 ### Example 3: Multi-Source User Research
 
-**Scenario:** You're preparing for quarterly planning. You need to synthesize user research from 3 sources: interviews, surveys, and support tickets. Normally this takes a full day.
+**Scenario:** Youre preparing for quarterly planning. You need to synthesize user research from 3 sources: interviews, surveys, and support tickets. Normally this takes a full day.
 
 **Without agents (8 hours):**
 - Read 20 interview transcripts (3 hours)
@@ -373,7 +369,7 @@ Then synthesize into @competitive-analysis.md with:
 
 **With agents (30 minutes):**
 ```
-"Launch 3 specialized research agents to work in parallel:
+Launch 3 specialized research agents to work in parallel:
 
 Agent 1 - Interview Analyst:
 - Read all files in /user-research/interviews/
@@ -402,7 +398,7 @@ After all agents complete, synthesize into @q4-user-research-synthesis.md:
 - User personas refined with real data
 - Recommended focus areas for Q4
 - Evidence for each recommendation (cite sources)
-"
+
 ```
 
 **Result:**
@@ -425,7 +421,7 @@ After all agents complete, synthesize into @q4-user-research-synthesis.md:
 
 **With agents (20 minutes):**
 ```
-"I have 50 user stories in /backlog/. Sprint planning is tomorrow.
+I have 50 user stories in /backlog/. Sprint planning is tomorrow.
 
 Create multiple agents to analyze these stories in parallel.
 
@@ -442,7 +438,7 @@ Then create @sprint-planning-prep.md with:
 - Critical path visualization
 - Risks requiring discussion
 - Questions for the team
-"
+
 ```
 
 **Result:**
@@ -452,7 +448,6 @@ Then create @sprint-planning-prep.md with:
 
 **Time saved: 3.5 hours → Prepare thoughtful questions for the team instead**
 
----
 
 ## 🎨 Agent Orchestration Patterns (Reusable Workflows)
 
@@ -474,9 +469,9 @@ Main Claude
 
 **Example prompt:**
 ```
-"Process all 15 files in /meetings/ with 15 agents.
+Process all 15 files in /meetings/ with 15 agents.
 Extract action items from each.
-Combine into single action item list grouped by owner."
+Combine into single action item list grouped by owner.
 ```
 
 ### Pattern 2: Specialized Roles
@@ -496,12 +491,12 @@ Main Claude
 
 **Example prompt:**
 ```
-"Launch 3 specialized agents:
+Launch 3 specialized agents:
 - Agent 1 (Interview Expert): Analyze qualitative data
 - Agent 2 (Data Analyst): Process survey numbers
 - Agent 3 (Support Analyst): Categorize ticket themes
 
-Synthesize into comprehensive user research report."
+Synthesize into comprehensive user research report.
 ```
 
 ### Pattern 3: Parallel Research
@@ -522,9 +517,9 @@ Main Claude
 
 **Example prompt:**
 ```
-"Research these 5 competitors in parallel.
+Research these 5 competitors in parallel.
 Each agent creates detailed profile.
-Synthesize into comparison matrix showing strengths/weaknesses."
+Synthesize into comparison matrix showing strengths/weaknesses.
 ```
 
 ### Pattern 4: Batch Document Generation
@@ -545,9 +540,9 @@ Main Claude
 
 **Example prompt:**
 ```
-"From @prd.md, generate 20 user stories with acceptance criteria.
+From @prd.md, generate 20 user stories with acceptance criteria.
 Use agents to create stories in parallel.
-Ensure consistency in format and quality."
+Ensure consistency in format and quality.
 ```
 
 ### Pattern 5: Validation Pipeline
@@ -568,33 +563,32 @@ Main Claude
 
 **Example prompt:**
 ```
-"Review all PRDs in /docs/prds/ against our quality checklist.
+Review all PRDs in /docs/prds/ against our quality checklist.
 Each agent reviews one PRD.
-Create summary report of issues and recommendations."
+Create summary report of issues and recommendations.
 ```
 
----
 
 ## 💡 Best Practices
 
 ### Do:
 
 - ✅ **Use agents for time-sensitive batch work** - When you need results fast
-- ✅ **Let Claude decide agent count** - "Process these files in parallel" works great
+- ✅ **Let Claude decide agent count** - Process these files in parallel works great
 - ✅ **Provide clear individual task instructions** - Each agent needs to know what to do
 - ✅ **Request synthesis** - Tell Claude to combine agent results meaningfully
 - ✅ **Use agents for independent tasks** - No dependencies between tasks
 - ✅ **Specify output format** - Tell agents how to structure their results
 - ✅ **Trust the parallel execution** - Agents truly work simultaneously
 
-### Don't:
+### Dont:
 
-- ❌ **Don't use agents for single tasks** - Just prompt Claude directly
-- ❌ **Don't create agents that need to communicate** - They work independently
-- ❌ **Don't use agents for sequential work** - Tasks with dependencies should be done in order
-- ❌ **Don't over-agent small tasks** - If it takes 30 seconds, don't use agents
-- ❌ **Don't forget synthesis** - Raw agent outputs need combining
-- ❌ **Don't use agents when context matters** - If Task 2 needs Task 1's context, do sequentially
+- ❌ **Dont use agents for single tasks** - Just prompt Claude directly
+- ❌ **Dont create agents that need to communicate** - They work independently
+- ❌ **Dont use agents for sequential work** - Tasks with dependencies should be done in order
+- ❌ **Dont over-agent small tasks** - If it takes 30 seconds, dont use agents
+- ❌ **Dont forget synthesis** - Raw agent outputs need combining
+- ❌ **Dont use agents when context matters** - If Task 2 needs Task 1s context, do sequentially
 
 ### Pro Tips:
 
@@ -602,51 +596,50 @@ Create summary report of issues and recommendations."
 
 2. **Name your agents** - In specialized roles, give agents descriptive names:
    ```
-   "Agent 1 (Interview Analyst): ..."
-   "Agent 2 (Data Specialist): ..."
+   Agent 1 (Interview Analyst): ...
+   Agent 2 (Data Specialist): ...
    ```
 
 3. **Standardize output formats** - Make agent outputs consistent for easier synthesis:
    ```
-   "Each agent should output markdown with these sections:
+   Each agent should output markdown with these sections:
    - Summary
    - Key Findings
-   - Recommendations"
+   - Recommendations
    ```
 
 4. **Use agents for experimentation** - Want to try 3 different PRD approaches? Use 3 agents:
    ```
-   "Create 3 agents to write 3 different versions of this PRD:
+   Create 3 agents to write 3 different versions of this PRD:
    - Agent 1: Technical-focused approach
    - Agent 2: User benefit-focused approach
    - Agent 3: Business value-focused approach
 
-   Let me compare and choose the best."
+   Let me compare and choose the best.
    ```
 
 5. **Combine with other features** - Agents + @ file references + output styles = powerful workflows
 
----
 
 ## 🐛 Troubleshooting
 
-### "The agents aren't working in parallel"
+### The agents arent working in parallel
 
-**Likely cause:** The prompt wasn't explicit about parallelization
+**Likely cause:** The prompt wasnt explicit about parallelization
 
 **Fix:**
-- Say explicitly: "Create agents to work in parallel" or "Simultaneously process"
-- Use phrases like "at the same time" or "all at once"
+- Say explicitly: Create agents to work in parallel or Simultaneously process
+- Use phrases like at the same time or all at once
 - Let Claude know this is time-sensitive
 
-### "Agent results are inconsistent in format"
+### Agent results are inconsistent in format
 
 **Likely cause:** Insufficient output format instructions
 
 **Fix:**
 Provide clear template for each agent:
 ```
-"Each agent should output markdown file with exactly these sections:
+Each agent should output markdown file with exactly these sections:
 ## Summary
 [1 paragraph overview]
 
@@ -656,28 +649,28 @@ Provide clear template for each agent:
 - Finding 3
 
 ## Recommendations
-[Specific next steps]"
+[Specific next steps]
 ```
 
-### "Too many agents were created"
+### Too many agents were created
 
 **Likely cause:** Unclear scope or Claude being over-eager
 
 **Fix:**
-- Specify exact count: "Create exactly 5 agents"
-- Or provide constraint: "Use as many agents as needed, max 10"
+- Specify exact count: Create exactly 5 agents
+- Or provide constraint: Use as many agents as needed, max 10
 
-### "Agents finished but no synthesis"
+### Agents finished but no synthesis
 
 **Likely cause:** Forgot to request synthesis in prompt
 
 **Fix:**
 Always end agent requests with synthesis instruction:
 ```
-"After all agents complete, synthesize results into @summary.md"
+After all agents complete, synthesize results into @summary.md
 ```
 
-### "One agent failed, whole process stopped"
+### One agent failed, whole process stopped
 
 **Likely cause:** Agent encountered error (missing file, unclear instruction)
 
@@ -687,7 +680,7 @@ Always end agent requests with synthesis instruction:
 - Verify instructions are clear
 - Re-run with corrected prompt
 
-### "Don't know if agents are still working"
+### Dont know if agents are still working
 
 **Likely cause:** Long-running agent process
 
@@ -696,7 +689,6 @@ Always end agent requests with synthesis instruction:
 - Be patient - complex agent work takes time
 - You can check files in Obsidian to see results appearing
 
----
 
 ## 📚 Community Resources
 
@@ -720,9 +712,9 @@ Always end agent requests with synthesis instruction:
 
 ### Articles and Tutorials
 
-- "Agent Orchestration for PMs" - Blog post on advanced agent patterns (2025)
-- "10x Your PM Productivity with Agents" - Real-world PM agent workflows
-- "When to Use Agents vs Single Claude" - Decision framework guide
+- Agent Orchestration for PMs - Blog post on advanced agent patterns (2025)
+- 10x Your PM Productivity with Agents - Real-world PM agent workflows
+- When to Use Agents vs Single Claude - Decision framework guide
 
 ### Video Tutorials
 
@@ -736,9 +728,8 @@ Always end agent requests with synthesis instruction:
 - [Claude Code Discord](https://discord.gg/claude-code) - Real-time help and community workflows
 - [PM Agent Patterns Thread](https://forum.anthropic.com/pm-agents) - Sharing and discussing PM-specific patterns
 
----
 
-## 🚀 What's Next?
+## 🚀 Whats Next?
 
 ### After Module 1.4
 
@@ -755,7 +746,7 @@ You now understand:
 
 In Module 1.4, you learned about **ad-hoc agents** - temporary agents you create on the fly for specific tasks.
 
-Module 1.5 introduces **custom sub-agents** - permanent team members with personalities, specializations, and visual identities (emojis and colors!). Instead of saying "act like an engineer" every time, you'll have a 👨‍💻 Engineer sub-agent (in purple!) you can call anytime.
+Module 1.5 introduces **custom sub-agents** - permanent team members with personalities, specializations, and visual identities (emojis and colors!). Instead of saying act like an engineer every time, youll have a 👨‍💻 Engineer sub-agent (in purple!) you can call anytime.
 
 **The difference:**
 - **Module 1.4 agents:** Temporary clones for parallel processing
@@ -763,24 +754,22 @@ Module 1.5 introduces **custom sub-agents** - permanent team members with person
 
 **[Go to Module 1.5 Reference →](🎨%20Content%20Creation/🏭%20Development/Claude%20Code%20Definitive%20Guide/claude-code-pm-course/lesson-modules/1.5-custom-subagents/REFERENCE_GUIDE.md)**
 
-Or, if you're doing the interactive track:
+Or, if youre doing the interactive track:
 ```
 Type: /start-1-5
 ```
 
----
 
-## 🎉 You've Unlocked the Superpower!
+## 🎉 Youve Unlocked the Superpower!
 
-Agents are what make Claude Code fundamentally different from regular chatbots. You're not just getting faster responses - you're getting the ability to multiply yourself.
+Agents are what make Claude Code fundamentally different from regular chatbots. Youre not just getting faster responses - youre getting the ability to multiply yourself.
 
 **Remember:**
 - 10 tasks × 5 minutes each = 50 minutes sequential
 - 10 agents × 5 minutes = 5 minutes parallel
-- **That's not 10% better. That's 10x better.**
+- **Thats not 10% better. Thats 10x better.**
 
 Now go forth and parallelize your PM work! 🚀
 
----
 
 **Next Module:** [1.5: Custom Sub-Agents - Build Your Specialized Team! →](🎨%20Content%20Creation/🏭%20Development/Claude%20Code%20Definitive%20Guide/claude-code-pm-course/lesson-modules/1.5-custom-subagents/REFERENCE_GUIDE.md)

@@ -1,27 +1,26 @@
 ---
-title: '1.6: "Project Memory (CLAUDE.md)'
-description: 'Use CLAUDE.md to give Claude persistent context about your product, team, and preferences'
+title: "1.6: Project Memory (CLAUDE.md)"
+description: Use CLAUDE.md to give Claude persistent context about your product, team, and preferences
 ---
 
-## Reference Guide
+## 1.6: Project Memory (CLAUDE.md) Reference
 
-**Last Updated:** October 13, 2025
-**Time to Complete:** 20-25 minutes
-**Prerequisites:** Modules 1.1-1.5 complete
+ - **Time to Complete:** 20-25 minutes
+ - **Prerequisites:** Modules 1.1-1.5 complete
 
----
+
+> **Start this module in Claude Code:** Run `/start-1-6` to kick off the interactive experience.
 
 ## 📖 Overview
 
-Every time you start a new conversation with an AI tool, you have to re-explain everything from scratch. What your product does. Who your users are. Your writing preferences. Your company's terminology. It's exhausting and wastes 5-10 minutes every single session.
+Every time you start a new conversation with an AI tool, you have to re-explain everything from scratch. What your product does. Who your users are. Your writing preferences. Your companys terminology. Its exhausting and wastes 5-10 minutes every single session.
 
 **CLAUDE.md changes that forever.**
 
-CLAUDE.md is Claude's permanent memory for your project. You write it once, and Claude knows your product context in every conversation. No re-explaining. Ever.
+CLAUDE.md is Claudes permanent memory for your project. You write it once, and Claude knows your product context in every conversation. No re-explaining. Ever.
 
-**Key takeaway:** CLAUDE.md is your project's constitution - immutable rules that override temporary prompts. While prompts are like legislation (flexible requests), CLAUDE.md establishes the supreme law of your project.
+**Key takeaway:** CLAUDE.md is your projects constitution - immutable rules that override temporary prompts. While prompts are like legislation (flexible requests), CLAUDE.md establishes the supreme law of your project.
 
----
 
 ## 🏛️ What Is CLAUDE.md?
 
@@ -29,11 +28,11 @@ CLAUDE.md is Claude's permanent memory for your project. You write it once, and 
 
 CLAUDE.md is a markdown file that lives in your project directory and contains permanent context about your product, team, and preferences. When you start a Claude Code session in that directory, Claude automatically reads this file and applies everything in it.
 
-Think of it as Claude's onboarding document for your project.
+Think of it as Claudes onboarding document for your project.
 
 ### What Makes It Special
 
-**Automatic loading:** You never have to say "read my CLAUDE.md" - Claude reads it at session start automatically.
+**Automatic loading:** You never have to say read my CLAUDE.md - Claude reads it at session start automatically.
 
 **Persistent memory:** Information in CLAUDE.md carries across ALL conversations in that project directory.
 
@@ -45,22 +44,21 @@ Think of it as Claude's onboarding document for your project.
 
 Without CLAUDE.md:
 ```
-Session 1: "Remember, we call it Workspace not Project..."
-Session 2: "Remember, we call it Workspace not Project..."
-Session 3: "Remember, we call it Workspace not Project..."
+Session 1: Remember, we call it Workspace not Project...
+Session 2: Remember, we call it Workspace not Project...
+Session 3: Remember, we call it Workspace not Project...
 [Repeat forever]
 ```
 
 With CLAUDE.md:
 ```
-CLAUDE.md: "Use 'Workspace' not 'Project'"
-Session 1: Claude uses "Workspace" ✓
-Session 2: Claude uses "Workspace" ✓
-Session 3: Claude uses "Workspace" ✓
+CLAUDE.md: Use Workspace not Project
+Session 1: Claude uses Workspace ✓
+Session 2: Claude uses Workspace ✓
+Session 3: Claude uses Workspace ✓
 [Works forever, automatically]
 ```
 
----
 
 ## ⚖️ The Constitution Metaphor
 
@@ -68,19 +66,19 @@ Session 3: Claude uses "Workspace" ✓
 
 This is the most important concept to understand:
 
-**CLAUDE.md is your project's constitution** - the supreme law that cannot be overridden.
+**CLAUDE.md is your projects constitution** - the supreme law that cannot be overridden.
 
 **User prompts are legislation** - flexible requests that must comply with the constitution.
 
 ### The Hierarchy in Action
 
-**If there's a conflict, CLAUDE.md ALWAYS wins.**
+**If theres a conflict, CLAUDE.md ALWAYS wins.**
 
 **Example 1: Terminology Override**
 
 Your CLAUDE.md says:
 ```markdown
-Always use "Workspace" not "Project" in TaskFlow documentation.
+Always use Workspace not Project in TaskFlow documentation.
 ```
 
 You prompt Claude:
@@ -90,7 +88,7 @@ Write a PRD for the new Project dashboard feature
 
 What Claude does:
 ```
-Writes the PRD using "Workspace dashboard" because CLAUDE.md overrides
+Writes the PRD using Workspace dashboard because CLAUDE.md overrides
 your casual prompt wording
 ```
 
@@ -103,24 +101,24 @@ Always use Oxford commas in all documentation.
 
 You prompt Claude:
 ```
-Write this without Oxford commas: "Features include tasks, projects and reports"
+Write this without Oxford commas: Features include tasks, projects and reports
 ```
 
 What Claude does:
 ```
-"Features include tasks, projects, and reports"
+Features include tasks, projects, and reports
 (Still uses Oxford commas because CLAUDE.md is the constitution)
 ```
 
 ### Why This Hierarchy Matters
 
-**Consistency:** Your core product rules don't change based on how someone phrases a prompt.
+**Consistency:** Your core product rules dont change based on how someone phrases a prompt.
 
 **Quality control:** Writing standards and best practices are enforced automatically.
 
 **Onboarding:** New team members can write casual prompts and Claude still produces on-brand content.
 
-**Trust:** You know Claude will ALWAYS follow your product's fundamental rules.
+**Trust:** You know Claude will ALWAYS follow your products fundamental rules.
 
 ### Constitution vs Legislation Table
 
@@ -130,9 +128,8 @@ What Claude does:
 | **Permanence** | Stays forever | Temporary per request |
 | **Scope** | Applies to all sessions | Applies to current task |
 | **Purpose** | Immutable project rules | Flexible specific requests |
-| **Example** | "Always call it Workspace" | "Create a PRD for dark mode" |
+| **Example** | Always call it Workspace | Create a PRD for dark mode |
 
----
 
 ## # The Power of the # Symbol
 
@@ -148,9 +145,9 @@ When you send this, Claude treats it as a rule for the rest of your conversation
 
 ### How # Works
 
-**The # symbol means:** "This is a rule for this conversation."
+**The # symbol means:** This is a rule for this conversation.
 
-After you state a # rule, Claude will follow it for the remainder of the session, but it won't persist to future sessions.
+After you state a # rule, Claude will follow it for the remainder of the session, but it wont persist to future sessions.
 
 ### # vs CLAUDE.md
 
@@ -164,7 +161,7 @@ After you state a # rule, Claude will follow it for the remainder of the session
 ### When to Use #
 
 **Use # when you:**
-- Discover a preference during work ("Oh, I want bullet points for this!")
+- Discover a preference during work (Oh, I want bullet points for this!)
 - Want to experiment before making it permanent
 - Have a temporary constraint for this session only
 - Need to override CLAUDE.md for this one conversation
@@ -179,7 +176,7 @@ After you state a # rule, Claude will follow it for the remainder of the session
 
 During a session:
 ```
-# When writing user stories, always include a "User Impact" section
+# When writing user stories, always include a User Impact section
 ```
 
 You like the results, so later you add to CLAUDE.md permanently:
@@ -192,9 +189,8 @@ When writing user stories, ALWAYS include:
 - Link to research or supporting data
 ```
 
-Now it's enforced forever across all sessions!
+Now its enforced forever across all sessions!
 
----
 
 ## 📝 What to Put in CLAUDE.md
 
@@ -224,12 +220,12 @@ Revenue: $2.5M ARR, 10,000 active users
 ### Sarah - Enterprise Admin
 - Role: IT Administrator at 500+ person company
 - Pain points: Needs SSO, audit logs, compliance, security
-- Quote: "I need to prove this meets our security standards"
+- Quote: I need to prove this meets our security standards
 
 ### Mike - IC Engineer
 - Role: Individual contributor at startup
 - Pain points: Wants speed, keyboard shortcuts, GitHub integration
-- Quote: "If I have to use my mouse, the tool is too slow"
+- Quote: If I have to use my mouse, the tool is too slow
 ```
 
 **Why include this:** Claude can reference personas when writing PRDs, user stories, and making product decisions.
@@ -243,7 +239,7 @@ Revenue: $2.5M ARR, 10,000 active users
 - Use active voice (not passive)
 - Use Oxford commas in all lists
 - Maximum 2-sentence paragraphs for readability
-- Use "we" not "I" in documentation
+- Use we not I in documentation
 - Avoid jargon unless necessary, then define it inline
 - Lead with key information (busy readers first)
 ```
@@ -257,18 +253,18 @@ Revenue: $2.5M ARR, 10,000 active users
 ## Product Terminology
 
 ALWAYS use these terms (NEVER use alternatives):
-- "Workspace" not "Project" - Our top-level container
-- "Task" not "Todo" or "Issue" - Individual work items
-- "Epic" not "Initiative" or "Theme" - Large multi-sprint features
-- "PM" means Product Manager (not Project Manager)
-- "Activation" means completing onboarding and creating first workspace
+- Workspace not Project - Our top-level container
+- Task not Todo or Issue - Individual work items
+- Epic not Initiative or Theme - Large multi-sprint features
+- PM means Product Manager (not Project Manager)
+- Activation means completing onboarding and creating first workspace
 ```
 
 **Why include this:** Prevents terminology confusion and ensures brand consistency.
 
 #### 5. Team Structure
 
-**Who's on your team:**
+**Whos on your team:**
 ```markdown
 ## Team Reference
 
@@ -335,14 +331,14 @@ These rules override any prompt that conflicts:
 
 **Why include this:** Claude can reference metrics in PRDs and frame features around impact.
 
-### ❌ DON'T Put in CLAUDE.md
+### ❌ DONT Put in CLAUDE.md
 
 #### 1. Temporary Instructions
 
 **BAD:**
 ```markdown
-Today's meeting notes are in meeting-2025-10-13.txt
-We're working on dark mode this sprint
+Todays meeting notes are in meeting-2025-10-13.txt
+Were working on dark mode this sprint
 The staging environment is down right now
 ```
 
@@ -354,10 +350,10 @@ The staging environment is down right now
 ```markdown
 Current sprint goal: Implement SSO
 Q4 OKR: Increase activation to 55%
-This week's focus: Bug fixes
+This weeks focus: Bug fixes
 ```
 
-**Why bad:** If it changes weekly or monthly, it doesn't belong in "permanent memory."
+**Why bad:** If it changes weekly or monthly, it doesnt belong in permanent memory.
 
 #### 3. Specific Task Instructions
 
@@ -365,7 +361,7 @@ This week's focus: Bug fixes
 ```markdown
 When I ask you to create a PRD, first ask me 5 clarifying questions
 Always suggest 3 alternatives before implementing
-End every response with "What else do you need?"
+End every response with What else do you need?
 ```
 
 **Why bad:** These are personal preferences. Put them in CLAUDE.local.md instead (covered next).
@@ -374,8 +370,8 @@ End every response with "What else do you need?"
 
 **BAD:**
 ```markdown
-Our revenue is actually declining (don't tell the board)
-We're planning layoffs next quarter
+Our revenue is actually declining (dont tell the board)
+Were planning layoffs next quarter
 API keys: sk-proj-xxxxx
 Database password: admin123
 ```
@@ -384,11 +380,10 @@ Database password: admin123
 
 ### The Test
 
-**If you'd want Claude to know this in 6 months, put it in CLAUDE.md.**
+**If youd want Claude to know this in 6 months, put it in CLAUDE.md.**
 
 **If it might change next week, use prompts instead.**
 
----
 
 ## 🏗️ CLAUDE.md Hierarchy
 
@@ -414,7 +409,7 @@ You can have multiple CLAUDE.md files at different locations:
 
 ### How They Stack
 
-The levels **combine** (they don't replace each other). Rules from all levels apply simultaneously, with more specific levels overriding less specific ones when there's a conflict.
+The levels **combine** (they dont replace each other). Rules from all levels apply simultaneously, with more specific levels overriding less specific ones when theres a conflict.
 
 **Example Scenario:**
 
@@ -428,7 +423,7 @@ Use Oxford commas
 **Project CLAUDE.md** (`/taskflow/CLAUDE.md`):
 ```markdown
 # TaskFlow-specific rules
-Use "Workspace" not "Project"
+Use Workspace not Project
 All user stories need acceptance criteria
 Reference personas: Sarah, Mike, or Alex
 ```
@@ -444,7 +439,7 @@ Mention accessibility requirements
 
 Claude follows ALL THREE layers:
 - Active voice and Oxford commas (global)
-- "Workspace" terminology and persona references (project)
+- Workspace terminology and persona references (project)
 - Mobile responsiveness and accessibility (directory)
 
 ### When to Use Each Level
@@ -493,7 +488,7 @@ Document authentication requirements
 
 #### Personal (CLAUDE.local.md)
 
-**Use for:** Your own preferences that you DON'T want to share with team
+**Use for:** Your own preferences that you DONT want to share with team
 
 **Examples:**
 ```markdown
@@ -509,7 +504,6 @@ When creating meeting notes, tag action items with @name
 CLAUDE.local.md
 ```
 
----
 
 ## 🚀 Creating Your First CLAUDE.md
 
@@ -524,7 +518,6 @@ Open a new file called `CLAUDE.md` in your project root and start with basics:
 
 This file provides permanent context about [Product] for Claude Code.
 
----
 
 ## What [Product] Is
 
@@ -546,7 +539,7 @@ This file provides permanent context about [Product] for Claude Code.
 - Role: [job title and context]
 - Pain points: [what frustrates them]
 - Priorities: [what matters most]
-- Quote: "[memorable quote]"
+- Quote: [memorable quote]
 
 [Repeat for other personas]
 ```
@@ -568,8 +561,8 @@ This file provides permanent context about [Product] for Claude Code.
 ## Product Terminology
 
 ALWAYS use these terms (NEVER use alternatives):
-- "[Term]" not "[alternative]" - [why]
-- "[Term]" not "[alternative]" - [why]
+- [Term] not [alternative] - [why]
+- [Term] not [alternative] - [why]
 ```
 
 #### Step 5: Add Immutable Rules
@@ -606,14 +599,13 @@ These rules override any prompt that conflicts:
 
 ### Complete Example: TaskFlow CLAUDE.md
 
-Here's the real CLAUDE.md created for the TaskFlow course (see `EXAMPLE_TASKFLOW_CLAUDE.md` in this module directory for the full version):
+Heres the real CLAUDE.md created for the TaskFlow course (see `EXAMPLE_TASKFLOW_CLAUDE.md` in this module directory for the full version):
 
 ```markdown
 # TaskFlow Product Context
 
 This file provides permanent context about TaskFlow for Claude Code.
 
----
 
 ## What TaskFlow Is
 
@@ -632,47 +624,43 @@ meets Jira, but built specifically for async collaboration.
 - Focus: Activation & Onboarding
 - Reporting: To Sarah (CEO)
 
----
 
 ## User Personas
 
 ### Sarah - Enterprise Admin
 - Role: IT Administrator at 500+ person company
 - Pain points: Needs security, SSO, audit logs, compliance
-- Quote: "I need to prove to leadership that TaskFlow meets our
-security standards"
+- Quote: I need to prove to leadership that TaskFlow meets our
+security standards
 
 ### Mike - IC Engineer
 - Role: Individual contributor software engineer at startup
 - Pain points: Wants speed, keyboard shortcuts, GitHub integration
-- Quote: "If I have to use my mouse, the tool is too slow"
+- Quote: If I have to use my mouse, the tool is too slow
 
 ### Alex - Team Lead
 - Role: Engineering manager of 8-person team
 - Pain points: Needs team visibility, workload balance, reporting
-- Quote: "I need to see who's overloaded before they burn out"
+- Quote: I need to see whos overloaded before they burn out
 
----
 
 ## Writing Style & Standards
 
 - Use active voice (not passive)
 - Use Oxford commas in all lists
 - Maximum 2-sentence paragraphs for readability
-- Use "we" not "I" in documentation
+- Use we not I in documentation
 - Avoid jargon unless necessary, then define it inline
 
----
 
 ## Product Terminology
 
 ALWAYS use these terms consistently:
-- "Workspace" not "Project" - Our top-level container
-- "Task" not "Todo" or "Issue" - Individual work items
-- "Epic" not "Initiative" - Large multi-sprint features
-- "PM" means Product Manager (not Project Manager)
+- Workspace not Project - Our top-level container
+- Task not Todo or Issue - Individual work items
+- Epic not Initiative - Large multi-sprint features
+- PM means Product Manager (not Project Manager)
 
----
 
 ## Immutable Rules
 
@@ -688,7 +676,6 @@ ALWAYS use these terms consistently:
    - Mention keyboard navigation
    - Consider screen reader compatibility
 
----
 
 ## Team Reference
 
@@ -698,7 +685,6 @@ ALWAYS use these terms consistently:
 - You - Senior PM, activation & onboarding
 ```
 
----
 
 ## 💼 Real-World Examples
 
@@ -726,7 +712,7 @@ See `EXAMPLE_TASKFLOW_CLAUDE.md` in this module directory for the complete examp
 - Building MVP for [market]
 
 ## Target User (Hypothesis)
-[Description - we're still validating!]
+[Description - were still validating!]
 
 ## Experiment Tracking
 Document all experiments in /experiments/ with:
@@ -778,7 +764,6 @@ Focus on economic buyer vs. end user distinction
 
 **Why different:** More technical, assumes engineering audience.
 
----
 
 ## 🎯 Best Practices
 
@@ -813,13 +798,13 @@ ALWAYS include acceptance criteria in user stories
 
 ❌ **Bad:**
 ```markdown
-Use "Workspace" not "Project"
+Use Workspace not Project
 ```
 
 ✅ **Good:**
 ```markdown
-Use "Workspace" not "Project" - We differentiate from traditional project
-management tools. "Workspace" signals collaboration space.
+Use Workspace not Project - We differentiate from traditional project
+management tools. Workspace signals collaboration space.
 ```
 
 ### Organization
@@ -880,13 +865,12 @@ management tools. "Workspace" signals collaboration space.
 - Metrics updated monthly
 ```
 
----
 
 ## 🔧 Troubleshooting
 
 ### Problem: Rules Are Being Ignored
 
-**Symptom:** Claude doesn't follow a rule in CLAUDE.md
+**Symptom:** Claude doesnt follow a rule in CLAUDE.md
 
 **Possible causes:**
 
@@ -895,11 +879,11 @@ management tools. "Workspace" signals collaboration space.
    - Directory > Project > Global (most specific wins)
 
 2. **Rule is too vague**
-   - ❌ "Keep things simple"
-   - ✅ "Limit forms to maximum 3 required fields"
+   - ❌ Keep things simple
+   - ✅ Limit forms to maximum 3 required fields
 
 3. **Rule conflicts with itself**
-   - Example: "Use active voice" and "Use passive voice" in same file
+   - Example: Use active voice and Use passive voice in same file
    - Remove contradiction
 
 **Solution:**
@@ -909,7 +893,7 @@ management tools. "Workspace" signals collaboration space.
 
 ### Problem: CLAUDE.md Not Loading
 
-**Symptom:** Claude doesn't seem to know project context
+**Symptom:** Claude doesnt seem to know project context
 
 **Possible causes:**
 
@@ -928,7 +912,7 @@ management tools. "Workspace" signals collaboration space.
 **Solution:**
 - Verify file exists: `ls CLAUDE.md`
 - Verify location: `pwd` to check current directory
-- Test: Start new session and ask "What does my CLAUDE.md say?"
+- Test: Start new session and ask What does my CLAUDE.md say?
 
 ### Problem: Too Many CLAUDE.md Files
 
@@ -940,7 +924,7 @@ management tools. "Workspace" signals collaboration space.
 - Team members created their own without coordination
 
 **Solution:**
-- Audit all CLAUDE.md files: `find . -name "CLAUDE.md"`
+- Audit all CLAUDE.md files: `find . -name CLAUDE.md`
 - Document the hierarchy (add to README)
 - Consolidate when possible
 - Use CLAUDE.local.md for personal preferences
@@ -972,7 +956,6 @@ Quick reference:
 - Alex: Team Lead, needs visibility/reporting
 ```
 
----
 
 ## 📚 Community Resources
 
@@ -1053,17 +1036,16 @@ Quick reference:
 - Discuss hierarchy strategies
 - Troubleshoot issues
 
----
 
 ## 🎉 Module 1.6 Complete!
 
 ### You Did It!
 
-Congratulations! You've completed Module 1.6: Project Memory!
+Congratulations! Youve completed Module 1.6: Project Memory!
 
-CLAUDE.md is one of the most powerful features you'll use. Permanent project memory means never having to re-explain your product context, personas, or writing style.
+CLAUDE.md is one of the most powerful features youll use. Permanent project memory means never having to re-explain your product context, personas, or writing style.
 
-### What You've Mastered So Far
+### What Youve Mastered So Far
 
 **Module 1.1: Welcome to TaskFlow**
 - Met TaskFlow and understood the course structure
@@ -1108,9 +1090,8 @@ With Module 1.6 complete, you can:
 
 **These skills alone will save you 5-10 hours per week.**
 
----
 
-## 🚀 What's Next: Module 1.7 - Planning Mode
+## 🚀 Whats Next: Module 1.7 - Planning Mode
 
 One more module to complete Level 1: Foundation!
 
@@ -1123,7 +1104,7 @@ One more module to complete Level 1: Foundation!
 
 ### Then: Level 2 - Practitioner
 
-After Module 1.7, you'll move to Level 2 which teaches daily PM workflows:
+After Module 1.7, youll move to Level 2 which teaches daily PM workflows:
 
 ### Module 2.1: Write a PRD
 - Transform rough ideas into complete PRDs
@@ -1150,7 +1131,6 @@ After Module 1.7, you'll move to Level 2 which teaches daily PM workflows:
 - Generate release notes for multiple audiences
 - Create meeting prep packages
 
----
 
 ## 🎯 Before Starting Module 1.7
 
@@ -1161,42 +1141,41 @@ After Module 1.7, you'll move to Level 2 which teaches daily PM workflows:
 - Include product context, personas, writing style
 - Experience the magic of permanent memory
 
-**2. Review what you've learned:**
+**2. Review what youve learned:**
 - Look at files created in lesson-modules/
 - Read through the TaskFlow CLAUDE.md example
 - Review your custom sub-agents
 
 **3. Take a quick break!**
-You've learned a lot. Let it sink in before the final Level 1 module.
+Youve learned a lot. Let it sink in before the final Level 1 module.
 
-### When You're Ready
+### When Youre Ready
 
 To start Module 1.7 (final module in Level 1):
 ```
 /start-1-7
 ```
 
----
 
 ## ❓ Common Questions
 
-### "Do I have to create CLAUDE.md for every project?"
+### Do I have to create CLAUDE.md for every project?
 
 No! You can start with a global CLAUDE.md (`~/.claude/CLAUDE.md`) with your general preferences. Then add project-specific ones when helpful. Many people use Claude Code without any CLAUDE.md files - it just makes it more powerful when you have consistent projects.
 
-### "What if I put the wrong thing in CLAUDE.md?"
+### What if I put the wrong thing in CLAUDE.md?
 
 Just edit it! CLAUDE.md is a regular markdown file. Open it in your editor, change whatever you want, and save. Changes apply to new sessions. Think of it like updating a constitution - you can amend it anytime.
 
-### "Will CLAUDE.md slow down Claude?"
+### Will CLAUDE.md slow down Claude?
 
-Not noticeably! Claude reads CLAUDE.md at session start, but it's typically 50-200 lines - takes milliseconds. The benefit of having context far outweighs any minimal load time.
+Not noticeably! Claude reads CLAUDE.md at session start, but its typically 50-200 lines - takes milliseconds. The benefit of having context far outweighs any minimal load time.
 
-### "Can I share CLAUDE.md with my team?"
+### Can I share CLAUDE.md with my team?
 
-Yes! That's the point of putting it in your project root. When you commit it to git, your whole team gets the same product context and rules. For personal preferences, use CLAUDE.local.md instead (gitignored).
+Yes! Thats the point of putting it in your project root. When you commit it to git, your whole team gets the same product context and rules. For personal preferences, use CLAUDE.local.md instead (gitignored).
 
-### "How is this different from custom instructions in ChatGPT?"
+### How is this different from custom instructions in ChatGPT?
 
 Three key differences:
 
@@ -1204,11 +1183,11 @@ Three key differences:
 2. **Project-specific** - Different CLAUDE.md per project, not just global
 3. **Team shareable** - Commit to git, whole team uses same rules
 
-### "What happens if CLAUDE.md conflicts with itself?"
+### What happens if CLAUDE.md conflicts with itself?
 
 The most specific rule wins. Directory > Project > Global. Within a file, later rules override earlier ones. But try to avoid conflicts - keep rules clear and non-overlapping.
 
-### "Should I commit CLAUDE.md to git?"
+### Should I commit CLAUDE.md to git?
 
 **Project CLAUDE.md:** Yes! Share with team.
 
@@ -1216,7 +1195,6 @@ The most specific rule wins. Directory > Project > Global. Within a file, later 
 
 **Global CLAUDE.md:** Not in project repo (lives in `~/.claude/`).
 
----
 
 ## ✨ Final Thoughts
 
@@ -1229,15 +1207,14 @@ Now you have:
 - Custom sub-agent team members
 - **Permanent project memory with CLAUDE.md**
 
-**That's HUGE progress!**
+**Thats HUGE progress!**
 
 Level 1 gives you the foundation to use Claude Code daily. Level 2 will make you a practitioner who automates real PM workflows and saves 20+ hours per week.
 
-**Celebrate this achievement!** You've earned it.
+**Celebrate this achievement!** Youve earned it.
 
-When you're ready to continue your journey to becoming a Claude Code master, Level 2 awaits.
+When youre ready to continue your journey to becoming a Claude Code master, Level 2 awaits.
 
----
 
 **Next Module:** [Module 1.7: Final Navigation Skills →](../1.7-planning-mode/REFERENCE_GUIDE.md)
 

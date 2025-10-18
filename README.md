@@ -34,6 +34,20 @@ An interactive course teaching Product Managers how to use Claude Code effective
 ### Reference Track
 Each module has a `REFERENCE_GUIDE.md` that can be read standalone for quick reference.
 
+## ⚠️ Important: Instructions for Claude Code
+
+**When you first open this repository in Claude Code:**
+- ❌ **Do NOT install npm dependencies** or run `npm install` yet
+- ❌ **Do NOT build the website** or run `npm run build`
+- ❌ **Do NOT make any setup changes** without being asked
+
+**Instead:**
+- 📖 Read the course content as guided
+- 🎯 Wait for explicit instructions in each module
+- 💬 Ask the user what they'd like to do next
+
+The course is self-contained - we'll handle setup only when needed. Your job is to guide the user through the learning experience interactively.
+
 ## What You'll Learn
 
 - **File Operations** - Read, search, organize, and manage PM documents

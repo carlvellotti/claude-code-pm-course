@@ -1,29 +1,29 @@
 ---
-title: '1.7: "Claude Code Navigation'
-description: 'Master file operations, searches, and navigation techniques'
+title: "1.7: Claude Code Navigation"
+description: Master file operations, searches, and navigation techniques
 ---
 
+## 1.7: Claude Code Navigation Reference
 
-**Last Updated:** January 2025
-**Time to Complete:** 15-20 minutes
-**Prerequisites:** Modules 1.1-1.6 complete
+ - **Time to Complete:** 15-20 minutes
+ - **Prerequisites:** Modules 1.1-1.6 complete
 
----
+
+> **Start this module in Claude Code:** Run `/start-1-7` to kick off the interactive experience.
 
 ## 📖 Overview
 
-This is the final module of Level 1: Foundation. You've learned file operations, agents, sub-agents, output styles, and project memory. Now you're learning the **last essential navigation skills** you need for complete Claude Code mastery.
+This is the final module of Level 1: Foundation. Youve learned file operations, agents, sub-agents, output styles, and project memory. Now youre learning the **last essential navigation skills** you need for complete Claude Code mastery.
 
-**What you'll master in this module:**
-1. **Input modes** - Three ways to control Claude's workflow (edit, auto-accept, plan)
+**What youll master in this module:**
+1. **Input modes** - Three ways to control Claudes workflow (edit, auto-accept, plan)
 2. **Think keywords** - How to adjust analysis depth on demand
 3. **--dangerously-skip-permissions** - Critical workflow accelerator
 
-These are the final pieces of the foundation puzzle. After this, you'll have complete control over Claude Code's workflow.
+These are the final pieces of the foundation puzzle. After this, youll have complete control over Claude Codes workflow.
 
 **Key takeaway:** Mastering navigation means knowing when to use each mode, how to adjust analysis depth, and how to remove friction from your workflow. These skills separate beginners from masters.
 
----
 
 ## 🎛️ The Three Input Modes
 
@@ -35,13 +35,13 @@ Claude Code has three input modes that control how it handles your requests:
 
 **When to use:**
 - You want control and review
-- You're working with critical files
-- You're learning how Claude approaches tasks
+- Youre working with critical files
+- Youre learning how Claude approaches tasks
 - Default for safety
 
 **Example:**
 ```
-You: "Update the README with installation instructions"
+You: Update the README with installation instructions
 Claude: Creates the changes → Shows you the diff → Waits for approval
 You: Approve or reject each change
 ```
@@ -58,7 +58,7 @@ You: Approve or reject each change
 
 **Example:**
 ```
-You: "Add a dark mode toggle to settings"
+You: Add a dark mode toggle to settings
 Claude: Creates and applies the change immediately → Done
 ```
 
@@ -74,11 +74,10 @@ Claude: Creates and applies the change immediately → Done
 
 **Example:**
 ```
-You: "Research competitors' AI features and create response strategy"
+You: Research competitors AI features and create response strategy
 Claude: Creates plan with steps → Shows auto-generated todo list → You approve → Executes while updating todos
 ```
 
----
 
 ## 🔄 Switching Between Modes
 
@@ -88,11 +87,10 @@ Claude: Creates plan with steps → Shows auto-generated todo list → You appro
 Edit Mode → (Shift+Tab) → Auto-Accept Mode → (Shift+Tab) → Plan Mode → (Shift+Tab) → Edit Mode
 ```
 
-You'll see the current mode indicator in the Claude Code interface.
+Youll see the current mode indicator in the Claude Code interface.
 
-**Pro tip:** You can switch modes anytime during a session based on what you're working on.
+**Pro tip:** You can switch modes anytime during a session based on what youre working on.
 
----
 
 ## 📋 Planning Mode Deep Dive
 
@@ -115,15 +113,15 @@ When Claude creates a plan, it automatically generates a todo list showing:
 
 **Example todo list:**
 ```
-☐ Research TaskFlow's main competitors
+☐ Research TaskFlows main competitors
 ☐ Launch parallel agents to analyze AI features
 ☐ Synthesize findings into competitive analysis
 ☐ Create response strategy document
 ```
 
-As Claude works, you'll see:
+As Claude works, youll see:
 ```
-✓ Research TaskFlow's main competitors
+✓ Research TaskFlows main competitors
 → Launch parallel agents to analyze AI features
 ☐ Synthesize findings into competitive analysis
 ☐ Create response strategy document
@@ -150,35 +148,34 @@ The module demonstrates plan mode with a realistic PM scenario:
 
 **Scenario:** A competitor just launched an AI chat feature. Your exec team is panicking. You need to:
 1. Research who your competitors are
-2. Launch parallel agents to analyze each competitor's AI feature
+2. Launch parallel agents to analyze each competitors AI feature
 3. Synthesize findings into a competitive analysis
 4. Create a response strategy
 
-**Why this demonstrates plan mode's value:**
+**Why this demonstrates plan modes value:**
 - Multi-step workflow (research → agents → synthesis → strategy)
 - Urgent and complex (realistic PM fire drill)
 - Benefits from seeing the plan upfront
 - Todo list provides visibility into progress
 
----
 
 ## 💡 Think Control Keywords
 
-Claude Code supports "think control" keywords that adjust how deeply Claude analyzes before responding:
+Claude Code supports think control keywords that adjust how deeply Claude analyzes before responding:
 
 ### The Three Levels
 
-**1. "think about X"**
+**1. think about X**
 - Normal thinking
 - Standard analysis depth
 - Use for most tasks
 
-**2. "think harder about X"**
+**2. think harder about X**
 - Deeper analysis
 - More thorough consideration
 - Use for complex decisions
 
-**3. "ultrathink about X"**
+**3. ultrathink about X**
 - Maximum depth thinking
 - Extensive analysis
 - Use for really hard problems
@@ -188,27 +185,26 @@ Claude Code supports "think control" keywords that adjust how deeply Claude anal
 
 **With plan mode:**
 ```
-"Think harder about the competitive threats, then research our competitors' AI features and create response strategy"
+Think harder about the competitive threats, then research our competitors AI features and create response strategy
 ```
 
 Claude will do deeper analysis before creating the plan.
 
 **With any mode:**
 ```
-"Ultrathink about whether we should build or buy this feature"
+Ultrathink about whether we should build or buy this feature
 ```
 
 Claude will provide maximum-depth analysis of the decision.
 
-**Pro tip:** Think keywords work in any input mode, but they're especially useful in plan mode for complex strategy work.
+**Pro tip:** Think keywords work in any input mode, but theyre especially useful in plan mode for complex strategy work.
 
----
 
 ## ⚡ Critical Workflow Accelerator: Dangerously Skip Permissions
 
 ### Why This Matters
 
-This isn't just an "advanced tip" - this is a **critical workflow accelerator** that Carl (the course creator) strongly recommends.
+This isnt just an advanced tip - this is a **critical workflow accelerator** that Carl (the course creator) strongly recommends.
 
 ### The Flag
 
@@ -222,7 +218,7 @@ claude --dangerously-skip-permissions
 
 **Without the flag:**
 ```
-You: "Create 5 user stories"
+You: Create 5 user stories
 Claude: Can I write to user-story-1.md?
 You: Yes
 Claude: Can I write to user-story-2.md?
@@ -234,33 +230,33 @@ You: Yes
 
 **With the flag:**
 ```
-You: "Create 5 user stories"
+You: Create 5 user stories
 Claude: [Creates all 5 files immediately]
 Done!
 ```
 
-### Why It's Called "Dangerously"
+### Why Its Called Dangerously
 
 **The risk:**
 - No safety net
 - Commands execute immediately
-- Claude can't ask "Are you sure?"
+- Claude cant ask Are you sure?
 - Mistakes happen faster
 
-**Why it's worth it:**
+**Why its worth it:**
 - **Pure flow state** - No interruptions
 - **10x faster** - No permission friction
-- **Real workflow** - How you'll actually work once you trust Claude
+- **Real workflow** - How youll actually work once you trust Claude
 
-### Carl's Strong Recommendation
+### Carls Strong Recommendation
 
 **Use it.** The speed gains are worth it once you understand Claude Code.
 
-**When you're ready:**
-- You've completed Level 1
+**When youre ready:**
+- Youve completed Level 1
 - You trust Claude Code
 - You want professional speed
-- You're working in a safe project
+- Youre working in a safe project
 
 **How to use it:**
 ```bash
@@ -273,7 +269,7 @@ claude --dangerously-skip-permissions
 
 **Pro tip:** Create a shell alias:
 ```bash
-alias cc="claude --dangerously-skip-permissions"
+alias cc=claude --dangerously-skip-permissions
 ```
 
 Then just type `cc` to start Claude Code in fast mode.
@@ -284,7 +280,6 @@ Claude Code is designed for **trust and speed**. The permission prompts are trai
 
 This is your final navigation skill. Use it wisely.
 
----
 
 ## 🎯 Mode Selection Guide
 
@@ -309,14 +304,13 @@ This is your final navigation skill. Use it wisely.
 | Analyze CSV file | Auto-Accept | Straightforward analysis |
 | Multi-source research synthesis | Plan Mode | Complex: multiple agents → synthesis |
 
----
 
 ## 🛑 Stopping Execution
 
 **Press Esc at any time** to stop Claude from executing.
 
 **When to use:**
-- You've seen enough of the plan execution
+- Youve seen enough of the plan execution
 - You want to adjust the approach
 - You realize something needs to change
 - You just want to pause
@@ -324,12 +318,11 @@ This is your final navigation skill. Use it wisely.
 **What happens:**
 - Execution stops immediately
 - Files created so far remain
-- You can review what's been done
+- You can review whats been done
 - You can continue or change direction
 
-**Pro tip:** In plan mode, you don't need to watch the entire execution. Press Esc once you've seen the value, then review the files when you're ready.
+**Pro tip:** In plan mode, you dont need to watch the entire execution. Press Esc once youve seen the value, then review the files when youre ready.
 
----
 
 ## 📝 Real-World Workflow
 
@@ -340,7 +333,7 @@ This is your final navigation skill. Use it wisely.
 ```
 1. Open Claude Code in your project
 2. Press Shift+Tab to switch to Plan Mode
-3. Request: "Research how Asana, Monday, and ClickUp handle AI chat features and create competitive analysis with response strategy"
+3. Request: Research how Asana, Monday, and ClickUp handle AI chat features and create competitive analysis with response strategy
 4. Claude creates plan with todo list
 5. Approve plan
 6. Watch todos update as Claude works (or press Esc and review later)
@@ -360,54 +353,52 @@ This is your final navigation skill. Use it wisely.
 
 **Week 4:** Naturally switch between modes based on task complexity
 
-You'll develop intuition for which mode fits which task.
+Youll develop intuition for which mode fits which task.
 
----
 
 ## ✅ Best Practices
 
 ### Do:
 - ✅ Use plan mode for multi-step workflows
 - ✅ Watch the todo list update (it shows progress)
-- ✅ Press Esc if you've seen enough
+- ✅ Press Esc if youve seen enough
 - ✅ Use think keywords in plan mode for deeper analysis
 - ✅ Switch modes freely based on task complexity
 
-### Don't:
+### Dont:
 - ❌ Use plan mode for simple tasks (overkill)
 - ❌ Stay in one mode all the time (be flexible)
 - ❌ Forget you can stop execution with Esc
 - ❌ Feel like you need to use plan mode for everything
 
----
 
 ## ❓ Common Questions
 
-### "When should I use plan mode vs just asking Claude to do it?"
+### When should I use plan mode vs just asking Claude to do it?
 
 **Use plan mode when:**
 - Task has 3+ distinct steps
 - You want to see the strategy first
 - Work involves research → synthesis → deliverable
-- You'd benefit from todo visibility
+- Youd benefit from todo visibility
 
 **Skip plan mode when:**
 - Task is simple and obvious
 - One clear step to completion
 - You just want it done fast
 
-### "Can I edit the plan before Claude executes it?"
+### Can I edit the plan before Claude executes it?
 
-Yes! When Claude shows you the plan, you can ask to adjust it before execution. "Add a step to..." or "Remove the X part" work perfectly.
+Yes! When Claude shows you the plan, you can ask to adjust it before execution. Add a step to... or Remove the X part work perfectly.
 
-### "What happens if I press Esc during execution?"
+### What happens if I press Esc during execution?
 
 Execution stops immediately. Files created up to that point remain. You can review them and decide whether to continue, adjust, or start over.
 
-### "Should I always use --dangerously-skip-permissions?"
+### Should I always use --dangerously-skip-permissions?
 
-It's fast but risky. Use it when:
-- You're in a safe environment
+Its fast but risky. Use it when:
+- Youre in a safe environment
 - You trust Claude completely
 - You know the project well
 - Speed matters more than safety gates
@@ -418,17 +409,16 @@ Avoid it when:
 - Learning a new project
 - Safety matters most
 
-### "Do think keywords work in all modes?"
+### Do think keywords work in all modes?
 
-Yes! "think about", "think harder about", and "ultrathink about" work in edit mode, auto-accept mode, and plan mode. They just adjust how deeply Claude analyzes before responding.
+Yes! think about, think harder about, and ultrathink about work in edit mode, auto-accept mode, and plan mode. They just adjust how deeply Claude analyzes before responding.
 
----
 
-## 🎉 What's Next?
+## 🎉 Whats Next?
 
 ### Level 1 Complete - You Did It!
 
-**Congratulations!** You've completed all of Level 1: Foundation. You started Module 1.1 with zero knowledge of Claude Code, and now you have complete navigation mastery.
+**Congratulations!** Youve completed all of Level 1: Foundation. You started Module 1.1 with zero knowledge of Claude Code, and now you have complete navigation mastery.
 
 **What you mastered in Level 1:**
 
@@ -500,8 +490,7 @@ To start Level 2, Module 2.1:
 /start-2-1
 ```
 
-**Or take a break!** Your progress is saved. When you return, you'll be ready to tackle real PM workflows.
+**Or take a break!** Your progress is saved. When you return, youll be ready to tackle real PM workflows.
 
----
 
-**Celebrate this achievement!** You've built a complete foundation for Claude Code mastery. Level 2 awaits! 🎓
+**Celebrate this achievement!** Youve built a complete foundation for Claude Code mastery. Level 2 awaits! 🎓
