@@ -127,7 +127,7 @@ Obsidian will then open this folder as a vault. You should see a sidebar on the 
 
 **What you should see:**
 - A file explorer on the left
-- Folders like `company-context/`, `exercises/`, `reference/`
+- Folders like `company-context/`, `lesson-modules/`, `reference/`
 - This is your entire course project!
 
 Let me know when you can see the file explorer with these folders. Say: **'I can see the files'**"
@@ -160,7 +160,7 @@ This way you can chat with me on the left AND see the files I'm creating/editing
 │                             │                             │
 │  > claude                   │  📁 Files                   │
 │  Welcome to Claude Code!    │    ├─ company-context/      │
-│                             │    ├─ exercises/            │
+│                             │    ├─ lesson-modules/       │
 │  You: Create a PRD...       │    ├─ your-work/            │
 │                             │    └─ CLAUDE.md             │
 │  Claude: I'll help create   │                             │
@@ -225,11 +225,11 @@ Ready to see this in action? Say: **'Show me how it works'**"
 
 **Keep your eyes on the Obsidian sidebar!**
 
-I'm creating a file called `test-visualization.md` in the exercises/1.2-visualizing-files/ folder. You should see it pop up..."
+I'm creating a file called `test-visualization.md` in the lesson-modules/1.2-visualizing-files/ folder. You should see it pop up..."
 
 **Action:**
 
-Use Write tool to create: `exercises/1.2-visualizing-files/test-visualization.md`
+Use Write tool to create: `lesson-modules/1.2-visualizing-files/test-visualization.md`
 
 Content:
 ```markdown
@@ -250,7 +250,7 @@ This is your new PM workspace! 🎉
 
 **After creating the file, say:**
 
-"Did you see it? A file called `test-visualization.md` should have just appeared in your Obsidian sidebar under the exercises/1.2-visualizing-files/ folder!
+"Did you see it? A file called `test-visualization.md` should have just appeared in your Obsidian sidebar under the lesson-modules/1.2-visualizing-files/ folder!
 
 **Try this:** Click on that file in Obsidian. You should see the content I just wrote.
 
@@ -269,7 +269,7 @@ Let me create one more file to really drive this home. Watch the sidebar again!"
 
 **Action:**
 
-Use Write tool to create: `exercises/1.2-visualizing-files/pm-workflow-example.md`
+Use Write tool to create: `lesson-modules/1.2-visualizing-files/pm-workflow-example.md`
 
 Content:
 ```markdown
@@ -407,7 +407,7 @@ See you in Module 1.3! 👋"
 
 **If they can't see the test file:**
 - Check: Is Obsidian focused on the right folder?
-- Check: Did the file actually get created? (run `ls exercises/1.2-visualizing-files/`)
+- Check: Did the file actually get created? (run `ls lesson-modules/1.2-visualizing-files/`)
 - Reassure: "Let's troubleshoot this together"
 
 **If they ask about other editors:**
@@ -449,7 +449,7 @@ A: "Yes! Obsidian is highly customizable with themes and plugins. But for this c
 **Q: "The test file didn't appear. What do I do?"**
 A: "Let's troubleshoot:
 1. Is Obsidian still open? (Maybe it closed accidentally)
-2. Are you looking in the right folder? (exercises/1.2-visualizing-files/)
+2. Are you looking in the right folder? (lesson-modules/1.2-visualizing-files/)
 3. Try clicking the 'Refresh' button in Obsidian (or close and reopen it)
 4. Let me check if the file exists: [run ls command]
 

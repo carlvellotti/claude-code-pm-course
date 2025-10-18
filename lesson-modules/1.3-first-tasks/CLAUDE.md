@@ -77,7 +77,7 @@ I'm going to read one of the meeting note files so you can see what we're workin
 
 **Action:**
 
-Read exercises/1.3-first-tasks/meeting-notes-raw.md (silently)
+Read lesson-modules/1.3-first-tasks/meeting-notes-raw.md (silently)
 
 **Present it like this:**
 
@@ -85,7 +85,7 @@ Read exercises/1.3-first-tasks/meeting-notes-raw.md (silently)
 
 **Now here's what I want you to do:** Go look at that file in Obsidian so you can see what messy meeting notes look like.
 
-Find it in: exercises/1.3-first-tasks/meeting-notes-raw.md
+Find it in: lesson-modules/1.3-first-tasks/meeting-notes-raw.md
 
 Take a look, then come back and say: **'I see the messy notes'**"
 
@@ -117,7 +117,7 @@ Read meeting-notes-raw.md and append the following to the note:
 
 "Done! I just added a summary to the bottom of meeting-notes-raw.md.
 
-**Go look at it in Obsidian!** You should see it in the exercises/1.3-first-tasks/ folder.
+**Go look at it in Obsidian!** You should see it in the lesson-modules/1.3-first-tasks/ folder.
 
 Open it and check out how I organized everything. Then come back and say: **'I see the summary'**"
 
@@ -190,7 +190,7 @@ Let me show you what we have."
 **Action:**
 
 ```bash
-ls exercises/1.3-first-tasks/user-interviews/
+ls lesson-modules/1.3-first-tasks/user-interviews/
 ```
 
 **Present it like this:**
@@ -201,7 +201,7 @@ ls exercises/1.3-first-tasks/user-interviews/
 Each is a full transcript from a 30-minute interview.
 
 **Go take a look at one or two in Obsidian** - just to see what raw interview data looks like. They're in:
-exercises/1.3-first-tasks/user-interviews/
+lesson-modules/1.3-first-tasks/user-interviews/
 
 Don't read all 8! Just skim one so you see the format. Then say: **'I see the interviews'**"
 
@@ -228,7 +228,7 @@ Say: "This will take me about 1 minute. Watch the tokens go up to see I am worki
 
 **Action:**
 
-Read all files in exercises/1.3-first-tasks/user-interviews/ and create user-research-synthesis.md with:
+Read all files in lesson-modules/1.3-first-tasks/user-interviews/ and create user-research-synthesis.md with:
 - Top 5 pain points (with frequency count)
 - Supporting quotes from users
 - Feature requests by priority
@@ -238,7 +238,7 @@ Read all files in exercises/1.3-first-tasks/user-interviews/ and create user-res
 
 "Done! I just created @user-research-synthesis.md.
 
-**Go look at it in Obsidian!** It should be in the exercises/1.3-first-tasks/ folder.
+**Go look at it in Obsidian!** It should be in the lesson-modules/1.3-first-tasks/ folder.
 
 Check out how I pulled patterns from all 8 interviews and organized them. Then come back and say: **'I see the synthesis'**"
 
@@ -284,7 +284,7 @@ Instead of rewriting from scratch, you just say:
 Let me show you. I've prepared 3 communication style templates for you to see.
 
 **Go look at the communication-styles folder in Obsidian:**
-exercises/1.3-first-tasks/communication-styles/
+lesson-modules/1.3-first-tasks/communication-styles/
 
 You'll find 3 files:
 - style-slack-update.md
@@ -324,7 +324,7 @@ Go ahead - type that command!"
 
 **Action:**
 
-1. Read all files in exercises/1.3-first-tasks/communication-styles/
+1. Read all files in lesson-modules/1.3-first-tasks/communication-styles/
 2. Read exercises/1.3-first-tasks/user-research-synthesis.md
 3. Create research-communications.md with three sections:
    - Section 1: Slack Update (following style-slack-update.md format)

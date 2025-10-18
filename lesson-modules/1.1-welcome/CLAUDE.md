@@ -84,7 +84,7 @@ Ready? I'll search for the files now."
 
 Use `ls -la` or `find` commands (NOT `tree`) to show directory structure. For example:
 - `ls -la ../company-context/` to show company files
-- `ls -la ../exercises/` to show exercise modules
+- `ls -la ../lesson-modules/` to show exercise modules
 
 **Present it like this:**
 
