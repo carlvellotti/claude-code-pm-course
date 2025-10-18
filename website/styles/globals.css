@@ -53,7 +53,12 @@ code, pre {
 
 /* Make inline code bold */
 code {
-  font-weight: 600;
+  font-weight: 800;
+}
+
+/* Make bold text extra bold */
+strong {
+  font-weight: 900;
 }
 
 /* Dark mode - use Nextra defaults */
