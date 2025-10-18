@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700;800;900&display=swap');
 
 :root {
   --font-sans: 'SF Mono', 'Monaco', 'Courier New', monospace;
-  --font-heading: 'JetBrains Mono', 'Monaco', 'Courier New', monospace;
+  --font-heading: 'SF Mono', 'Monaco', 'Courier New', monospace;
   --nextra-primary-hue: 169deg;
   --nextra-primary-saturation: 85%;
   --nextra-primary-lightness: 38%;
@@ -14,6 +14,11 @@ body {
 }
 
 /* Nextra headings */
+.nextra-content h1 {
+  font-family: var(--font-heading) !important;
+  font-weight: 900 !important;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   font-weight: 700;
