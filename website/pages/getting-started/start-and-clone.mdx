@@ -96,100 +96,43 @@ Would you like me to show you the directory structure?
 **This is the new way of working.**
 
 
-## Step 4: Explore What Claude Created
+## Step 4: Exit Claude Code & Open Your Course Folder
 
-Lets confirm everything worked. Ask Claude:
+Now that the repository is cloned, you'll need to exit to launch Claude specifically in this course.
 
+**There are two ways to do it:**
+
+### Option One: Find it in the File Explorer
+
+Navigate to your Documents folder and find the `claude-code-pm-course` folder. Then right-click and select "New Terminal at Folder"
+
+It will look something like this:
+
+![Opening folder from file explorer](/images/folder-location.png)
+
+Then type `claude` and hit Enter
+
+### Option Two: Open it from the Terminal
+
+**Exit Claude Code:**
 ```
-Show me the folder structure of the course.
-```
-
-**Claude will respond with something like:**
-
-```
-Tool Use: bash
-Command: tree -L 2 claude-code-pm-course
-
-claude-code-pm-course/
-├── README.md
-├── HIGH_LEVEL_COURSE_OVERVIEW.md
-├── lesson-modules/
-│   ├── 0.0-introduction/
-│   ├── 0.1-installation/
-│   ├── 0.2-start-and-clone/
-│   ├── 1.1-welcome/
-│   ├── 1.2-visualizing-files/
-│   ├── 1.3-first-tasks/
-│   ├── 1.4-agents/
-│   └── [... more modules]
-├── TaskFlow-context/
-│   ├── company-overview.md
-│   ├── user-personas/
-│   ├── product-specs/
-│   └── user-research/
-└── resources/
-    ├── templates/
-    ├── examples/
-    └── cheatsheets/
-
-The course includes:
-- 15+ interactive lesson modules
-- Complete TaskFlow company context
-- Ready-to-use templates
-- Reference guides
+Type: exit
 ```
 
-**Success!** Youve just cloned an entire course repository without typing a single git command.
+You should be back at your regular terminal prompt.
 
-
-## What Just Happened? (The Important Part)
-
-Lets break down the magic:
-
-### You said:
-> Clone the repository and set it up for me.
-
-### Claude understood:
-- **Intent:** You want the course materials on your computer
-- **Where:** Your Documents folder
-- **How:** Using git clone
-- **Verification:** Navigate into the directory and confirm it worked
-
-### Claude executed:
-1. Changed directory to `~/Documents`
-2. Ran `git clone [URL] claude-code-pm-course`
-3. Navigated into `claude-code-pm-course`
-4. Confirmed success
-5. Offered to show you the structure
-
-### You learned:
-**You are now an orchestrator, not a command typist.**
-
-
-## The Permission System (Important to Understand)
-
-You may have noticed Claude asking for permission to run commands:
-
-```
-Ill need to run the following command:
-git clone [URL]
-
-May I proceed? (yes/no)
+Type these commands:
+```bash
+cd ~/Documents/claude-code-pm-course
+claude
 ```
 
-**This is a safety feature.** Claude will ask permission before:
-- Running terminal commands
-- Creating or modifying files
-- Installing software
-- Making system changes
+This navigates to your course folder and opens Claude Code directly inside it.
 
-**You can:**
-- Type `yes` to approve
-- Type `no` to decline
-- Type `yes and dont ask again` to trust Claude for this session
+**Either way, you end up at the same place:**
+Claude Code is now open with full context of all the course files – ready for the interactive learning experience.
 
-**For learning purposes, its fine to use yes and dont ask again in this course environment.**
-
+**Success!** Youve just cloned an entire course repository without typing a single git command. Now you have Claude Code open with the full course context ready to go.
 
 ## Common Questions
 
@@ -248,162 +191,4 @@ List all the TaskFlow user personas available in the context folder.
 
 **This is your new workflow.**
 
-
-## Success Criteria
-
-Youre ready for Module 1.1 when you:
-
-✅ Successfully cloned the course repository
-✅ Can see the folder structure in your Documents folder
-✅ Understand the conversation model (not command-typing)
-✅ Feel comfortable asking Claude to do things for you
-✅ Appreciate that you just completed a technical task without knowing git
-
-
-## The Mindset Shift
-
-Lets revisit the insight from Module 0.0:
-
-**Old mindset:**
-> I need to learn git commands to clone a repository.
-
-**New mindset:**
-> I need the course materials on my computer.
-
-**See the difference?**
-
-You think in **outcomes**. Claude handles **execution**.
-
-This mindset shift applies to everything youll do in this course:
-
-- I need a PRD for dark mode → Claude writes it
-- Organize my meeting notes from last week → Claude organizes them
-- Analyze 500 customer feedback responses → Claude analyzes them
-- Create a competitive landscape matrix → Claude creates it
-
-**You state the what. Claude figures out the how.**
-
-
-## What You Just Learned
-
-In 5 minutes, you:
-
-1. ✅ Started Claude Code
-2. ✅ Had your first conversation with AI that actually executes
-3. ✅ Cloned an entire course repository without knowing git
-4. ✅ Explored the course structure
-5. ✅ Understood the permission system
-6. ✅ Experienced the paradigm shift firsthand
-
-**This is just the beginning.**
-
-
-## Whats Next
-
-Youre now ready to start the real course.
-
-**Module 1.1: Welcome to TaskFlow**
-
-In Module 1.1, youll:
-- Meet TaskFlow, your learning company (a fictional PM tool like Asana meets Linear)
-- See how the interactive course works
-- Learn the @-symbol for referencing files
-- Complete your first real PM task with Claude Code
-
-**Important setup note:**
-
-Before you continue to Module 1.1, consider setting up a file visualization tool like Obsidian (covered in Module 1.2). This lets you see the files Claude creates in real-time, which makes learning much easier.
-
-**But you dont have to.** You can jump straight to Module 1.1 and come back to visualization later.
-
-
-## Quick Reference: What You Used
-
-| Concept | What it means |
-|---------|---------------|
-| `claude` | Start Claude Code from terminal |
-| Natural language instructions | Tell Claude what you want in plain English |
-| Permission prompts | Claude asks before running commands (for safety) |
-| Yes and dont ask again | Trust Claude for the current session |
-| Tool Use: bash | Claude showing you what command its running |
-| Git clone | Downloading a repository (you dont need to know this!) |
-
-
-## Pro Tips
-
-**Tip 1: Be specific but natural**
-```
-❌ git clone [URL]  (Youre thinking in commands)
-✅ Clone this repository and put it in my Documents folder  (Youre thinking in outcomes)
-```
-
-**Tip 2: Claude remembers context**
-```
-You: Clone the course repository.
-Claude: [Clones it]
-You: Show me the structure.  ← Claude knows you mean the course you just cloned
-```
-
-**Tip 3: You can always ask why or how**
-```
-You: Why did you use that command?
-You: How does git clone work?
-You: What would happen if I ran this myself?
-```
-
-**Tip 4: Experiment fearlessly**
-- Youre in a learning environment
-- You can always re-clone the repository
-- Claude will help you fix mistakes
-- The worst that happens: you learn something
-
-
-## Troubleshooting
-
-### Git is not installed
-
-**Claude will likely detect this and offer to help you install git.**
-
-If not, you can say:
-```
-Help me install git.
-```
-
-Claude will guide you through the installation for your operating system.
-
-### Permission denied
-
-This usually means you need authentication for a private repository.
-
-**Solution:**
-```
-Help me set up GitHub authentication.
-```
-
-Claude will walk you through it.
-
-### The directory already exists
-
-If youve already cloned the repository:
-
-```
-Delete the existing course folder and clone a fresh copy.
-```
-
-Claude will handle it.
-
-
-## Final Thought
-
-You just completed your first real task with Claude Code.
-
-You didnt learn git. You didnt memorize commands. You didnt worry about syntax.
-
-**You stated what you wanted, and it happened.**
-
-This is how youll work for the rest of the course – and the rest of your PM career.
-
-**Welcome to the future of PM work.**
-
-
-**Ready to dive in? Head to Module 1.1: Welcome to TaskFlow.**
+You're ready to begin! Go to [Module 1.1: Welcome to TaskFlow](/fundamentals/welcome)

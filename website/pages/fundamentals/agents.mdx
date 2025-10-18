@@ -20,7 +20,7 @@ Imagine you have 10 meeting notes to process. Normally, youd do them one by one 
 **Key takeaway:** Agents let you clone Claude to do multiple things at once. This isnt just faster - it unlocks entirely new workflows that would be impractical to do manually.
 
 
-## 🤯 What Are Agents? (The Aha! Moment)
+## 🤯 What Are Agents?
 
 ### The Core Concept
 
@@ -51,35 +51,6 @@ Task 10 (5 min)┘
 Total time: 5 minutes
 ```
 
-### The Math That Changes Everything
-
-**Example:** You have 10 meeting recordings from last week to process before your Monday standup.
-
-**Sequential processing:**
-- 10 meetings × 5 minutes each = 50 minutes
-- Youre stressed, rushing, probably skip some
-
-**Parallel processing with agents:**
-- 10 agents × 5 minutes = 5 minutes total
-- Every meeting processed thoroughly
-- You arrive at standup fully prepared
-
-**Thats not 10% faster. Thats 10x faster.**
-
-### What Makes This Different from Chatbots
-
-**Regular chatbot:**
-- One conversation thread
-- Sequential processing only
-- Cant actually do multiple things at once
-- Previous work disappears in chat history
-
-**Claude Code with agents:**
-- Multiple independent Claude instances
-- True parallel execution
-- Each agent can use full tool access
-- All work persists in files
-
 ### Real-World Impact
 
 Lets say youre a PM who spends time on:
@@ -91,9 +62,6 @@ Lets say youre a PM who spends time on:
 - Process 15 meetings in 10 minutes (instead of 2 hours)
 - Research 5 competitors simultaneously (instead of sequentially)
 - Analyze interviews, surveys, and support tickets in parallel (instead of one at a time)
-
-**Time saved: 8+ hours per week**
-
 
 ## 🎯 When to Use Agents (Decision Framework)
 
@@ -119,73 +87,27 @@ Can tasks be done independently (no dependencies)?
     └─ NO → Sequential work, dont use agents
 ```
 
-### ✅ Perfect Use Cases for Agents
+### ✅ When to Use Agents
 
-**1. Batch Processing Similar Tasks**
-- Process 10 meeting notes → 10 agents
-- Summarize 20 interview transcripts → 20 agents
-- Analyze 15 customer support tickets → 15 agents
-- Review 8 PRD drafts → 8 agents
-
-**2. Parallel Research**
-- Research 5 competitors → 5 agents (one per competitor)
-- Analyze 3 market segments → 3 agents
-- Review 10 feature requests → 10 agents
-
-**3. Multi-Source Analysis**
-- Agent 1: Analyze user interviews
-- Agent 2: Process survey data
-- Agent 3: Review support tickets
-- Agent 4: Analyze social media feedback
-- All work in parallel, combine insights at the end
-
-**4. Time-Sensitive Work**
-- Need competitive analysis done in 1 hour, not 1 day
-- Process all sprint retrospectives before planning meeting
-- Synthesize research before stakeholder presentation
+**Perfect for:**
+- **Batch processing:** 10 meeting notes, 20 interviews, 15 support tickets
+- **Parallel research:** 5 competitors, 3 market segments, 10 feature requests  
+- **Multi-source analysis:** Different agents for interviews, surveys, tickets, social media
+- **Time-sensitive work:** Need results in hours, not days
 
 ### ❌ When NOT to Use Agents
 
-**1. Single Tasks**
-```
-❌ Create 1 agent to summarize this file
-✅ Just prompt normally: Summarize @meeting-notes.txt
-```
+**Skip agents for:**
+- **Single tasks:** Just prompt Claude directly
+- **Sequential work:** Tasks that depend on each other
+- **Quick tasks:** Simple requests that take seconds
+- **Context-dependent work:** Tasks that need to build on each other
 
-**2. Sequential Dependencies**
-```
-❌ Agent 1 analyzes, Agent 2 uses Agent 1s output, Agent 3 uses Agent 2s output
-✅ Do this sequentially: Analyze this, then synthesize, then create recommendations
-```
+### How Many Agents?
 
-**3. Small Quick Tasks**
-```
-❌ Create 10 agents to each write one sentence
-✅ Just ask Claude: Write 10 sentences about...
-```
-
-**4. Tasks Requiring Context from Each Other**
-```
-❌ Agents that need to talk to each other
-✅ Single Claude instance that builds context as it works
-```
-
-### How Many Agents Should You Use?
-
-**Many agents (5-20+):**
-- Similar tasks (10 meeting notes)
-- Independent work (no dependencies)
-- Time-critical (need results fast)
-
-**Few agents (2-4):**
-- Different specializations (interviews vs surveys vs tickets)
-- Resource-intensive tasks (deep analysis each)
-- Complex synthesis required afterward
-
-**One agent (just use Claude directly):**
-- Single task
-- Quick work
-- Sequential dependencies
+**Many (5-20+):** Similar tasks, independent work, time-critical
+**Few (2-4):** Different specializations, complex analysis needed
+**One:** Single task, quick work, sequential dependencies
 
 
 ## 🔧 How Agents Work (Technical Overview for PMs)
@@ -408,46 +330,6 @@ After all agents complete, synthesize into @q4-user-research-synthesis.md:
 - Ready for quarterly planning
 
 **Time saved: 7.5 hours → Deep-dive into strategic implications**
-
-### Example 4: Sprint Planning Preparation
-
-**Scenario:** Sprint planning is tomorrow. You need to size the backlog (50 stories), check for dependencies, and identify risks. The team expects this analysis before the meeting.
-
-**Without agents (4 hours):**
-- Read each user story (2 hours)
-- Size each story with reasoning (1.5 hours)
-- Check dependencies manually (30 min)
-- Total: 4 hours → Late night work
-
-**With agents (20 minutes):**
-```
-I have 50 user stories in /backlog/. Sprint planning is tomorrow.
-
-Create multiple agents to analyze these stories in parallel.
-
-For each story, determine:
-- T-shirt size (XS, S, M, L, XL) with reasoning
-- Technical complexity (1-10 scale)
-- Dependencies on other stories
-- Risks or unknowns
-- Recommended sprint order
-
-Then create @sprint-planning-prep.md with:
-- Stories sorted by priority and dependencies
-- Suggested 2-week sprint plan (we have 3 engineers = 30 person-days)
-- Critical path visualization
-- Risks requiring discussion
-- Questions for the team
-
-```
-
-**Result:**
-- 20 minutes → Complete sprint planning prep
-- Team meeting is efficient and focused
-- No surprises, clear sequencing
-
-**Time saved: 3.5 hours → Prepare thoughtful questions for the team instead**
-
 
 ## 🎨 Agent Orchestration Patterns (Reusable Workflows)
 
@@ -751,25 +633,3 @@ Module 1.5 introduces **custom sub-agents** - permanent team members with person
 **The difference:**
 - **Module 1.4 agents:** Temporary clones for parallel processing
 - **Module 1.5 sub-agents:** Permanent specialized team members
-
-**[Go to Module 1.5 Reference →](🎨%20Content%20Creation/🏭%20Development/Claude%20Code%20Definitive%20Guide/claude-code-pm-course/lesson-modules/1.5-custom-subagents/REFERENCE_GUIDE.md)**
-
-Or, if youre doing the interactive track:
-```
-Type: /start-1-5
-```
-
-
-## 🎉 Youve Unlocked the Superpower!
-
-Agents are what make Claude Code fundamentally different from regular chatbots. Youre not just getting faster responses - youre getting the ability to multiply yourself.
-
-**Remember:**
-- 10 tasks × 5 minutes each = 50 minutes sequential
-- 10 agents × 5 minutes = 5 minutes parallel
-- **Thats not 10% better. Thats 10x better.**
-
-Now go forth and parallelize your PM work! 🚀
-
-
-**Next Module:** [1.5: Custom Sub-Agents - Build Your Specialized Team! →](🎨%20Content%20Creation/🏭%20Development/Claude%20Code%20Definitive%20Guide/claude-code-pm-course/lesson-modules/1.5-custom-subagents/REFERENCE_GUIDE.md)

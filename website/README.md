@@ -1,6 +1,6 @@
-# Claude Code for PMs - Documentation Website
+# Claude Code for Product Managers - Documentation Website
 
-This is the Nextra-based documentation website for the Claude Code PM Course.
+This is the Nextra-based documentation website for the Claude Code for Product Managers Course.
 
 ## Development
 
