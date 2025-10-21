@@ -14,7 +14,15 @@ export default {
     component: null
   },
   footer: {
-    component: null
+    content: (
+      <span>
+        © {new Date().getFullYear()} Carl Vellotti. Licensed under{' '}
+        <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener noreferrer">
+          CC BY-NC-ND 4.0
+        </a>
+        .
+      </span>
+    )
   },
   useNextSeoProps() {
     return { titleTemplate: '%s – Claude Code for Product Managers' }

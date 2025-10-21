@@ -75,4 +75,6 @@ This course teaches PMs how to use Claude Code as a thinking partner, not just a
 
 ## License
 
-MIT License - feel free to use and adapt for your team!
+This work is licensed under [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/).
+
+Copyright © 2025 Carl Vellotti. You may view and share this course content with attribution, but commercial use and modifications are not permitted.
