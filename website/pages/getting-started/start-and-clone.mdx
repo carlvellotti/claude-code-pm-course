@@ -26,20 +26,20 @@ claude
 You'll see the Claude Code interface appear. This is your AI-powered command center with full access to your file system and terminal.
 
 
-## 📦 Cloning the Course Repository
+## 📦 Downloading the Course Materials
 
 Tell Claude what you want in natural language:
 
 ```
-Clone the Claude Code PM course repository from
-https://github.com/carlvellotti/claude-code-pm-course and set it up for me.
-Put it in a folder called claude-code-pm-course in my Documents folder.
+Download the course materials from
+https://github.com/carlvellotti/claude-code-pm-course/releases/latest/download/complete-course.zip
+and extract it to a folder called claude-code-course in my Documents folder.
 ```
 
 **What Claude will do:**
 1. Navigate to your Documents folder
-2. Run `git clone` with the correct URL
-3. Name the folder appropriately
+2. Download the zip file
+3. Extract it to `claude-code-course`
 4. Navigate into the new directory
 5. Confirm success
 
@@ -47,13 +47,14 @@ Put it in a folder called claude-code-pm-course in my Documents folder.
 
 ```
 Tool Use: bash
-Command: cd ~/Documents && git clone https://github.com/carlvellotti/claude-code-pm-course
+Command: cd ~/Documents && curl -L https://github.com/carlvellotti/claude-code-pm-course/releases/latest/download/complete-course.zip -o course.zip && unzip course.zip -d claude-code-course
 
-Cloning into claude-code-pm-course...
-remote: Enumerating objects: 234, done.
-Receiving objects: 100% (234/234), done.
+Downloading...
+Archive:  course.zip
+  inflating: claude-code-course/README.md
+  ...
 
-✓ Successfully cloned the repository to ~/Documents/claude-code-pm-course
+✓ Successfully downloaded and extracted course materials to ~/Documents/claude-code-course
 ✓ Navigated into the course directory
 ```
 
@@ -66,7 +67,7 @@ Exit Claude Code and reopen it inside the course folder to access all course fil
 
 ### Option 1: From File Explorer
 
-1. Navigate to `Documents/claude-code-pm-course`
+1. Navigate to `Documents/claude-code-course`
 2. Right-click folder → "New Terminal at Folder"
 3. Run `claude`
 
@@ -79,7 +80,7 @@ Exit Claude Code and reopen it inside the course folder to access all course fil
 exit
 
 # Navigate and restart
-cd ~/Documents/claude-code-pm-course
+cd ~/Documents/claude-code-course
 claude
 ```
 
@@ -96,14 +97,14 @@ No. The pattern is: describe what you want, Claude handles the technical impleme
 
 Claude will detect this and guide you through installation. Follow the prompts.
 
-### Can I clone other repositories this way?
+### Can I download other course materials this way?
 
-Yes. This pattern works for any git repository:
-- Company internal documentation
-- Open-source projects
-- Personal GitHub repositories
+Yes. This pattern works for any downloadable files:
+- GitHub release assets
+- Direct download links
+- Company resources
 
-Just tell Claude the URL and where you want it.
+Just tell Claude the URL and where you want it extracted.
 
 ### What if something goes wrong?
 
@@ -143,11 +144,11 @@ This is your new workflow.
 **Natural Language First:**
 - Describe your goal, not the commands
 - Let Claude figure out the implementation details
-- Example: "Clone this repo to my Documents" not "cd ~/Documents && git clone..."
+- Example: "Download and extract the course to my Documents" not "cd ~/Documents && curl..."
 
 **Verify Context:**
-- Always open Claude Code from your project root
-- Use `/start` commands only when inside the course folder
+- Always open Claude Code from your course materials folder
+- Use `/start` commands only when inside the `claude-code-course` folder
 - Claude's effectiveness depends on having proper file context
 
 **Learn by Doing:**

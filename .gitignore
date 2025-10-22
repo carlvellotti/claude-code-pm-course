@@ -20,3 +20,7 @@ node_modules/
 !tsconfig.json
 *.png
 !website/public/**/*.png
+
+# Release artifacts
+releases/
+*.zip
