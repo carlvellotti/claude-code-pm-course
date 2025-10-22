@@ -152,3 +152,34 @@ strong {
 .dark .nextra-content a:hover {
   color: #FF5856;
 }
+
+/* Code block improvements */
+/* Always show copy button (not just on hover) */
+.nextra-code-block button[title="Copy code"] {
+  opacity: 1 !important;
+}
+
+/* Style copy button with theme red/orange color */
+.dark .nextra-code-block button[title="Copy code"] {
+  background-color: #FF5856 !important;
+  color: white !important;
+  border-radius: 6px !important;
+  padding: 6px 8px !important;
+  transition: all 0.2s ease !important;
+}
+
+.dark .nextra-code-block button[title="Copy code"]:hover {
+  background-color: #ff6e6c !important;
+  transform: scale(1.05) !important;
+}
+
+/* Copied state */
+.dark .nextra-code-block button[title="Copied"] {
+  background-color: #1DD3B0 !important;
+}
+
+/* Enable word-wrap for long lines in code blocks */
+.nextra-code-block pre code {
+  white-space: pre-wrap !important;
+  word-break: break-all !important;
+}
