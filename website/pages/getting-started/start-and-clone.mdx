@@ -15,103 +15,82 @@ Module 0.2 demonstrates the core principle of Claude Code: describe what you wan
 **Key takeaway:** Claude Code transforms natural language requests into precise terminal operations. This pattern works for any repository - internal docs, open-source projects, or personal code.
 
 
-## 🚀 Starting Claude Code
+## 📦 Download and Start
 
-Open your terminal and run:
+Copy and paste this command into your terminal to download the course and launch Claude Code:
 
 ```bash
-claude
+cd ~/Documents && curl -L https://github.com/carlvellotti/claude-code-pm-course/releases/latest/download/complete-course.zip -o course.zip && unzip course.zip -d claude-code-course && cd claude-code-course && claude
 ```
 
-You'll see the Claude Code interface appear. This is your AI-powered command center with full access to your file system and terminal.
+**What this does:**
+1. Navigates to your Documents folder
+2. Downloads the course materials
+3. Extracts them to `claude-code-course`
+4. Navigates into the course folder
+5. Launches Claude Code with full course context
 
+**Expected output:**
 
-## 📦 Downloading the Course Materials
-
-Tell Claude what you want in natural language:
-
-```
-Download the course materials from
-https://github.com/carlvellotti/claude-code-pm-course/releases/latest/download/complete-course.zip
-and extract it to a folder called claude-code-course in my Documents folder.
-```
-
-**What Claude will do:**
-1. Navigate to your Documents folder
-2. Download the zip file
-3. Extract it to `claude-code-course`
-4. Navigate into the new directory
-5. Confirm success
-
-**Example output:**
-
-```
-Tool Use: bash
-Command: cd ~/Documents && curl -L https://github.com/carlvellotti/claude-code-pm-course/releases/latest/download/complete-course.zip -o course.zip && unzip course.zip -d claude-code-course
-
-Downloading...
+```bash
+  % Total    % Received
 Archive:  course.zip
   inflating: claude-code-course/README.md
+  inflating: claude-code-course/.claude/commands/start-1-1.md
   ...
 
-✓ Successfully downloaded and extracted course materials to ~/Documents/claude-code-course
-✓ Navigated into the course directory
+# Claude Code launches inside the course folder
 ```
 
-**This is the new way of working:** State your intent, Claude handles implementation.
+Once Claude Code starts, you'll have full access to all course files and can run the interactive `/start` commands.
 
 
-## 📂 Opening the Course Folder
+## 🎯 Alternative: Let Claude Do It
 
-Exit Claude Code and reopen it inside the course folder to access all course files and interactive modules.
+Want to see Claude Code in action before starting the course? You can ask Claude to handle the download for you:
 
-### Option 1: From File Explorer
+1. Open your terminal and run `claude`
+2. Tell Claude: "Download the course materials from https://github.com/carlvellotti/claude-code-pm-course/releases/latest/download/complete-course.zip and extract it to a folder called claude-code-course in my Documents folder"
+3. Exit and navigate: `exit`, then `cd ~/Documents/claude-code-course && claude`
 
-1. Navigate to `Documents/claude-code-course`
-2. Right-click folder → "New Terminal at Folder"
-3. Run `claude`
-
-![Opening folder from file explorer](/images/folder-location.png)
-
-### Option 2: From Terminal
-
-```bash
-# Exit Claude Code
-exit
-
-# Navigate and restart
-cd ~/Documents/claude-code-course
-claude
-```
-
-**Result:** Claude Code now has full context of all course files and can run the interactive `/start` commands.
+This demonstrates Claude Code's core principle: describe what you want in natural language, and Claude handles the implementation.
 
 
 ## ❓ Common Questions
 
-### Do I need to understand git?
+### What if curl or unzip aren't installed?
 
-No. The pattern is: describe what you want, Claude handles the technical implementation. This applies to git, file operations, and most terminal tasks.
+Most Mac and Linux systems have these built-in. If you get an error:
+- **Mac:** Install Command Line Tools: `xcode-select --install`
+- **Windows:** Use Git Bash or WSL (Windows Subsystem for Linux)
+- **Linux:** Install via your package manager: `sudo apt install curl unzip` (Ubuntu/Debian)
 
-### What if git isn't installed?
+### Can I change the download location?
 
-Claude will detect this and guide you through installation. Follow the prompts.
+Yes! Change `~/Documents` in the command to any folder:
+```bash
+cd ~/Desktop && curl -L https://... && unzip ... && cd claude-code-course && claude
+```
 
-### Can I download other course materials this way?
+### Can I download other materials this way?
 
-Yes. This pattern works for any downloadable files:
+Absolutely. This pattern works for any downloadable files:
 - GitHub release assets
 - Direct download links
-- Company resources
+- Company documentation
+- Any zip file URL
 
-Just tell Claude the URL and where you want it extracted.
+Just replace the URL and folder names as needed.
 
-### What if something goes wrong?
+### What if the download fails?
 
-Claude will diagnose the error and suggest fixes. Ask:
-- "What went wrong?"
-- "How do I fix this?"
-- "Try again with a different approach"
+Try downloading the zip manually from the [GitHub Releases page](https://github.com/carlvellotti/claude-code-pm-course/releases/latest), then:
+```bash
+cd ~/Downloads
+unzip complete-course.zip -d ~/Documents/claude-code-course
+cd ~/Documents/claude-code-course
+claude
+```
 
 
 ## 🧪 Testing Your Setup
