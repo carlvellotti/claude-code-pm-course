@@ -1,0 +1,11 @@
+# *
+User-agent: *
+Allow: /
+Disallow: /api/*
+Disallow: /_next/*
+
+# Host
+Host: https://ccforpms.com
+
+# Sitemaps
+Sitemap: https://ccforpms.com/sitemap.xml
