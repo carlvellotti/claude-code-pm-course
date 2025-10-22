@@ -41,6 +41,19 @@ export default {
         <meta name="description" content={description} />
         <meta name="google-site-verification" content="Oenxq7BatQp09RlIUs43VkDpdoOQUWlUhqwxYxw49xQ" />
 
+        {/* Google Analytics */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-XBF1JD68VY"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-XBF1JD68VY');
+            `
+          }}
+        />
+
         {/* Open Graph */}
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Claude Code for Product Managers" />
