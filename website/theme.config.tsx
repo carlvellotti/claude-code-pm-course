@@ -28,17 +28,49 @@ export default {
     return { titleTemplate: '%s – Claude Code for Product Managers' }
   },
   theme: 'dark',
-  head: (
-    <>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <meta property="og:title" content="Learn Claude Code IN Claude Code!" />
-      <meta property="og:description" content="Claude Code for Product Managers" />
-      <meta property="og:image" content="https://claude-code-pm-course.vercel.app/images/better-graphic.png" />
-      <meta property="og:image:width" content="1200" />
-      <meta property="og:image:height" content="630" />
-      <meta name="twitter:card" content="summary_large_image" />
-    </>
-  ),
+  head: function Head({ title, frontMatter }: { title?: string; frontMatter?: any }) {
+    const siteUrl = 'https://ccforpms.com'
+    const pageTitle = title ? `${title} – Claude Code for Product Managers` : 'Claude Code for Product Managers'
+    const description = frontMatter?.description || 'Learn Claude Code for PM work - an interactive course teaching file operations, agents, and AI-powered product management workflows.'
+    const ogImage = frontMatter?.ogImage || `${siteUrl}/images/better-graphic.png`
+
+    return (
+      <>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content={description} />
+
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Claude Code for Product Managers" />
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content={ogImage} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={pageTitle} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content={ogImage} />
+
+        {/* Additional SEO */}
+        {frontMatter?.keywords && (
+          <meta name="keywords" content={frontMatter.keywords} />
+        )}
+
+        {/* Structured Data */}
+        {frontMatter?.schema && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify(frontMatter.schema)
+            }}
+          />
+        )}
+      </>
+    )
+  },
   primaryHue: 169,
   sidebar: {
     defaultMenuCollapseLevel: 1,
