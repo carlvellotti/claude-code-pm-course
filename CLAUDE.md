@@ -116,6 +116,19 @@ npm run preview
 
 Website auto-deploys to Vercel (ccforpms.com) on pushes to main branch. No manual deployment needed.
 
+### Analytics
+
+**Google Analytics:**
+- Measurement ID: `G-XBF1JD68VY`
+- Implemented in: `website/theme.config.tsx` (lines 44-55)
+- Tracks: Page views, visitors, traffic sources, geographic data, device types, scroll depth, outbound clicks
+- Verify: Visit site → check Google Analytics Realtime dashboard
+
+**Download Tracking:**
+- Course material downloads (via `curl` from Module 0.2) are tracked by GitHub's built-in release download stats
+- Check download counts: GitHub repo → Releases tab, or via `gh api repos/carlvellotti/claude-code-pm-course/releases`
+- Google Analytics does NOT track these downloads (they bypass the website entirely)
+
 ## Repository Architecture
 
 ### Course Materials (course-materials/)
