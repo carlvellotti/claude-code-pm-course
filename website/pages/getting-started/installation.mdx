@@ -22,12 +22,31 @@ Module 0.1 covers installation and authentication for Claude Code. This referenc
 |-------------|---------|
 | **Claude Subscription** | Claude Pro ($20/month) or Claude Max. Free tier NOT supported. Sign up at [claude.ai](https://claude.ai/) |
 | **Node.js** | Version 18 or higher required. Download from [nodejs.org](https://nodejs.org/) |
-| **Operating System** | macOS, Windows 10+, or most Linux distributions |
+| **Operating System** | macOS or Windows 10+ |
+
+
+## How to Open Your Terminal
+
+All the commands in this guide need to be typed into your **terminal** (also called command line). Here's how to open it:
+
+**Mac:**
+1. Press `Cmd + Space` to open Spotlight
+2. Type "Terminal"
+3. Press Enter
+
+**Windows:**
+1. Press the Windows key
+2. Type "PowerShell"
+3. Press Enter
+
+You'll see a window with a blinking cursor - this is where you'll type commands.
 
 
 ## Quick Installation
 
 ### Check Node.js Version
+
+**Open your terminal and type this command, then press Enter:**
 
 ```bash
 node --version
@@ -45,13 +64,14 @@ If you see `v18.0.0` or higher, proceed to installation. Otherwise, install Node
 |----------|---------|
 | **macOS** | `brew install node` |
 | **Windows** | `choco install nodejs` |
-| **Linux (apt)** | `sudo apt update && sudo apt install nodejs npm` |
 
-Close and reopen your terminal after installation.
+**Important:** After installing Node.js, completely close your terminal window and open a new one. This refreshes your system's PATH so it recognizes the `node` command.
 
 ### Install Claude Code
 
-**Mac / Linux:**
+**In your terminal, copy and paste one of these commands, then press Enter:**
+
+**Mac:**
 ```bash
 curl -fsSL https://claude.ai/install.sh | bash
 ```
@@ -63,16 +83,18 @@ irm https://claude.ai/install.ps1 | iex
 
 ### Verify Installation
 
+**Type this command in your terminal and press Enter:**
+
 ```bash
 claude --version
 ```
 
-If you see a version number, installation succeeded. If you see `command not found`, close and reopen your terminal.
+If you see a version number, installation succeeded. If you see `command not found`, completely close your terminal window and open a new one, then try again.
 
 
 ## Authentication
 
-Run Claude Code for the first time:
+**Type this in your terminal and press Enter:**
 
 ```bash
 claude
@@ -88,7 +110,7 @@ After authentication, you'll see the Claude Code welcome screen.
 
 ## Health Check
 
-Inside Claude Code, run:
+**Inside Claude Code, type this command:**
 
 ```
 /doctor
@@ -108,15 +130,15 @@ Healthy output shows green checkmarks for all items.
 ### Command not found: claude
 
 **Fix:**
-1. Close terminal completely and reopen
+1. Completely close your terminal window and open a new one
 2. If still failing, check PATH configuration:
 
-**Mac/Linux:** Add to `~/.bashrc` or `~/.zshrc`:
+**Mac:** Add to `~/.bashrc` or `~/.zshrc`:
 ```bash
 export PATH=$HOME/.local/bin:$PATH
 ```
 
-**Windows:** Restart computer (installer updates PATH automatically)
+**Windows:** Restart your computer (installer updates PATH automatically)
 
 ### Subscription required
 
@@ -125,21 +147,22 @@ export PATH=$HOME/.local/bin:$PATH
 
 ### Node version too old
 
+**Type this in your terminal:**
 ```bash
-node --version  # Check current version
+node --version
 ```
 
 Download latest LTS from [nodejs.org](https://nodejs.org/) if below v18.0.0
 
 ### Permission denied
 
-**Mac/Linux:**
+**Mac:**
 ```bash
 sudo curl -fsSL https://claude.ai/install.sh | bash
 ```
 
 **Windows:**
-Run PowerShell as Administrator (right-click → Run as Administrator)
+Run PowerShell as Administrator (right-click PowerShell → Run as Administrator)
 
 
 ## Command Reference

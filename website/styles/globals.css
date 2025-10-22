@@ -154,13 +154,13 @@ strong {
 }
 
 /* Code block improvements */
-/* Always show copy button (not just on hover) */
-.nextra-code-block button[title="Copy code"] {
+/* Always show copy button container (not just on hover) */
+.nextra-code > div {
   opacity: 1 !important;
 }
 
 /* Style copy button with theme red/orange color */
-.dark .nextra-code-block button[title="Copy code"] {
+.dark button[title="Copy code"] {
   background-color: #FF5856 !important;
   color: white !important;
   border-radius: 6px !important;
@@ -168,18 +168,18 @@ strong {
   transition: all 0.2s ease !important;
 }
 
-.dark .nextra-code-block button[title="Copy code"]:hover {
+.dark button[title="Copy code"]:hover {
   background-color: #ff6e6c !important;
   transform: scale(1.05) !important;
 }
 
 /* Copied state */
-.dark .nextra-code-block button[title="Copied"] {
+.dark button[title="Copied"] {
   background-color: #1DD3B0 !important;
 }
 
 /* Enable word-wrap for long lines in code blocks */
-.nextra-code-block pre code {
+pre code {
   white-space: pre-wrap !important;
   word-break: break-all !important;
 }
