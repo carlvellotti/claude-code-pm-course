@@ -12,3 +12,11 @@ node_modules/
 .env
 .env.local
 .vercel
+
+# Temporary files
+*.json
+!package.json
+!package-lock.json
+!tsconfig.json
+*.png
+!website/public/**/*.png
