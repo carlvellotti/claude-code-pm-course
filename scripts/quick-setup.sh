@@ -18,6 +18,40 @@ echo "Quick Setup Script"
 echo "========================================="
 echo ""
 
+# Check Node.js version
+echo "Checking prerequisites..."
+if command -v node &> /dev/null; then
+    NODE_VERSION=$(node --version | cut -d 'v' -f 2 | cut -d '.' -f 1)
+    if [ "$NODE_VERSION" -ge 18 ]; then
+        echo "✓ Node.js $(node --version) installed"
+    else
+        echo "⚠️  Node.js $(node --version) found, but version 18+ required"
+        echo "Upgrading Node.js..."
+        if [ "$TEST_MODE" = "1" ]; then
+            echo "[TEST] Would upgrade Node.js via Homebrew"
+        else
+            brew upgrade node
+        fi
+    fi
+else
+    echo "Node.js not found. Installing..."
+    if [ "$TEST_MODE" = "1" ]; then
+        echo "[TEST] Would install Node.js"
+    else
+        # Check if Homebrew is installed
+        if ! command -v brew &> /dev/null; then
+            echo "Installing Homebrew first..."
+            /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+        fi
+
+        echo "Installing Node.js via Homebrew..."
+        brew install node
+        echo "✓ Node.js installed"
+    fi
+fi
+
+echo ""
+
 # Check if Claude Code is already installed
 if command -v claude &> /dev/null; then
     echo "✓ Claude Code is already installed"
