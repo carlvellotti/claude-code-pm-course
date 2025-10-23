@@ -90,7 +90,8 @@ if [ "$TEST_MODE" = "1" ]; then
     echo "TEST COMPLETE - No changes were made"
     echo "========================================="
 else
-    # Navigate to Documents (where course materials are) and launch Claude Code
+    # Navigate to course directory and launch Claude Code
+    # Redirect stdin from /dev/tty to enable interactive mode when piped
     cd "$COURSE_DIR"
-    claude "/start-1-1"
+    claude "/start-1-1" < /dev/tty
 fi
