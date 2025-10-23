@@ -41,11 +41,11 @@ else
         # Check if Homebrew is installed
         if ! command -v brew &> /dev/null; then
             echo "Installing Homebrew first..."
-            /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+            /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" < /dev/null
         fi
 
         echo "Installing Node.js via Homebrew..."
-        brew install node
+        brew install node < /dev/null
 
         # Add Homebrew's bin directory to PATH for this script session
         export PATH="/opt/homebrew/bin:$PATH"
@@ -65,7 +65,7 @@ else
         echo "[TEST] Would run: curl -fsSL https://claude.ai/install.sh | bash"
         echo "✓ [TEST] Claude Code installation simulated"
     else
-        curl -fsSL https://claude.ai/install.sh | bash
+        curl -fsSL https://claude.ai/install.sh | bash < /dev/null
 
         # Try to add to PATH for this session
         # Claude Code typically installs to ~/.local/bin on macOS/Linux
