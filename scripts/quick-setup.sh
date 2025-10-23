@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -e  # Exit on any error
+# Note: Not using 'set -e' to allow script to handle errors gracefully
 
 # Test mode flag - set to 1 to simulate without executing
 TEST_MODE=${TEST_MODE:-0}
