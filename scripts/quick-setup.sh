@@ -46,6 +46,11 @@ else
 
         echo "Installing Node.js via Homebrew..."
         brew install node
+
+        # Add Homebrew's Node to PATH for this script session
+        eval "$(/opt/homebrew/bin/brew shellenv)"
+        export PATH="/opt/homebrew/bin:$PATH"
+
         echo "✓ Node.js installed"
     fi
 fi
