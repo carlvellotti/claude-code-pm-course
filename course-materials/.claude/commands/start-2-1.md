@@ -8,8 +8,14 @@ Do this SILENTLY:
 
 2. Read `course-structure.json` to find the module with this ID
 
-3. Get the module's teaching script path from the config
+3. Get the module's teaching script path from the config (the "path" field)
 
-4. Read that CLAUDE.md file
+4. Read that CLAUDE.md file - this is your teaching script
 
-Follow the script PRECISELY.
+5. Also read `.claude/SCRIPT_INSTRUCTIONS.md` for critical instructions
+
+6. Follow the teaching script PRECISELY as instructed in SCRIPT_INSTRUCTIONS.md
+   - Execute "Say:" blocks word-for-word
+   - Stop at "Check:" points and wait
+   - Run "Action:" blocks exactly as specified
+   - Start teaching immediately (no meta-commentary)
