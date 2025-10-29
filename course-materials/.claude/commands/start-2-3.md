@@ -1,3 +1,5 @@
+Command to start module
+
 DO NOT tell the user the step you're about to take.
 
 Do this SILENTLY:
