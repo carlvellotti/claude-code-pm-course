@@ -27,9 +27,10 @@ An interactive course teaching Product Managers how to use Claude Code effective
 
 ### Interactive Track (Recommended)
 1. Clone this repository
-2. Open it in Claude Code
-3. Run `/start-0-0` to begin
-4. Follow the guided, hands-on lessons
+2. Navigate to the course materials: `cd course-materials`
+3. Start Claude Code: `claude`
+4. Run `/start-1-1` to begin the first lesson
+5. Follow the guided, hands-on lessons
 
 ### Reference Track
 Each module has a `REFERENCE_GUIDE.md` that can be read standalone for quick reference.
