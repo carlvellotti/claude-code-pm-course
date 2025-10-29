@@ -18,6 +18,7 @@ node_modules/
 !package.json
 !package-lock.json
 !tsconfig.json
+!course-materials/course-structure.json
 *.png
 !website/public/**/*.png
 

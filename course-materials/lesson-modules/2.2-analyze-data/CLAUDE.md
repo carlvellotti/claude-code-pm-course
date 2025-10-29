@@ -876,13 +876,15 @@ You can use these as templates for your own PM work - and you can ask me to crea
 
 **Module 2.2: Complete!** 🎉
 
+[ACTION: Read `course-structure.json` to find what comes after module 2.2]
+
 Next, you'll learn how to use Claude Code for strategic thinking:
 - Competitive analysis and market research
 - Strategic framework application (Jobs to Be Done, Blue Ocean, etc.)
 - Product positioning and messaging
 - Go-to-market strategy development
 
-When you're ready, type **/start-2-3** to begin Module 2.3!
+When you're ready, type **`/{nextCommand}`** to begin the next module!
 
 See you there!"
 
