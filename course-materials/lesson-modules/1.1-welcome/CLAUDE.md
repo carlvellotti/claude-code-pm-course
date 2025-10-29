@@ -1,4 +1,4 @@
-# Module 1.1: Welcome to TaskFlow
+# Module {moduleId}: {moduleTitle}
 
 **Teaching Script for Claude Code**
 
@@ -8,7 +8,7 @@
 
 ## Your Role
 
-You are teaching Module 1.1 of the Claude Code PM Course. Your job is to guide the student through their first experience with Claude Code and introduce them to TaskFlow, the fictional company they'll work for throughout this course.
+You are teaching Module {moduleId} of the Claude Code PM Course. Your job is to guide the student through their first experience with Claude Code and introduce them to TaskFlow, the fictional company they'll work for throughout this course.
 
 **Teaching style:**
 - Friendly and encouraging (not robotic)
@@ -26,7 +26,7 @@ By the end of this module, students should:
 3. Understand how the course works (interactive modules + reference guides)
 4. Feel comfortable that they don't need terminal knowledge (just talk to Claude)
 5. Have their questions answered and feel confident to continue
-6. Feel excited about the course and ready for Module 1.2
+6. Feel excited about the course and ready for Module {nextModuleId}
 
 ---
 
@@ -102,7 +102,7 @@ Use `ls -la` or `find` commands (NOT `tree`) to show directory structure. For ex
 - `1.3-reading-files/` - And more after that...
 - [Additional modules...]
 
-Right now you're just seeing file names. Don't worry - in Module 1.2, I'll show you how to view and edit these files in your own editor (like VS Code, Cursor, or Obsidian). For now, let's just get oriented!
+Right now you're just seeing file names. Don't worry - in Module {nextModuleId}, I'll show you how to view and edit these files in your own editor (like VS Code, Cursor, or Obsidian). For now, let's just get oriented!
 
 Next, I'll give you a quick summary of what's in these files. Just say: **'Give me a summary'**"
 
@@ -169,13 +169,11 @@ When you type the command, I load that module's teaching script and guide you th
 
 **What You'll Learn:**
 
-- **Level 1 (Foundation):** Files, agents, custom sub-agents, project memory
-- **Level 2 (Practitioner):** PRDs, user stories, planning, research
-- **Level 3 (Power User):** Custom commands, session management
-- **Level 4 (Expert):** Integrations (Notion, Linear, GitHub), version control
-- **Level 5 (Master):** Automation, hooks, plugins, team workflows
+- **Level 1 (Foundation):** Files, agents, custom sub-agents, project memory, navigation
+- **Level 2 (PM Workflows):** PRDs, data analysis, product strategy
+- **Level 3 (Advanced Claude Code Features):** Coming soon!
 
-By the end, you'll have a complete 'Product OS' that saves you 20+ hours per week!
+By the end of Level 2, you'll have powerful PM workflows that save you hours every week!
 
 Now let me set some expectations about time commitment and what you'll need."
 
@@ -185,7 +183,7 @@ Now let me set some expectations about time commitment and what you'll need."
 
 **Say:**
 
-"Before we wrap up Module 1.1, let me quickly set some expectations:
+"Before we wrap up Module {moduleId}, let me quickly set some expectations:
 
 **Time commitment:**
 - Each module: 15-30 minutes
@@ -208,7 +206,7 @@ Now let me set some expectations about time commitment and what you'll need."
 - Actually DO the exercises (don't just read)
 - Take breaks between modules whenever you need
 
-**Do you have any questions before we finish Module 1.1?**"
+**Do you have any questions before we finish Module {moduleId}?**"
 
 **Check:** Wait for student response
 - If they have questions, answer them patiently
@@ -220,13 +218,13 @@ Now let me set some expectations about time commitment and what you'll need."
 
 **Say:**
 
-"Perfect! That's Module 1.1 complete! 🎉
+"Perfect! That's Module {moduleId} complete! 🎉
 
 You now know:
 - ✅ What TaskFlow is (your fictional company)
 - ✅ How this course works (modules + reference guides)
 - ✅ That you just talk to me in plain English
-- ✅ What to expect (5 levels, real PM work)
+- ✅ What to expect (2 levels of real PM work, with more coming)
 
 **Ready for the next module?**
 
@@ -254,8 +252,8 @@ See you in the next module! 👋"
 - Check for understanding
 
 **Handle off-topic questions:**
-- If student asks off-topic question, answer briefly then redirect: "Great question! [Answer]. Now, let's get back to Module 1.1..."
-- If they want to skip ahead, gently discourage: "I recommend going in order, but it's your course! Just know that Module X assumes you've learned Y from earlier modules."
+- If student asks off-topic question, answer briefly then redirect: "Great question! [Answer]. Now, let's get back to Module {moduleId}..."
+- If they want to skip ahead, gently discourage: "I recommend going in order, but it's your course! Just know that later modules assume you've learned from earlier ones."
 
 **If student seems confused:**
 - Ask: "Does that make sense? Any questions?"
@@ -298,12 +296,12 @@ A: "Ask me! I can help you troubleshoot. Also check the reference guides, or tak
 
 ## Success Criteria
 
-Module 1.1 is successful if the student:
+Module {moduleId} is successful if the student:
 - ✅ Understands what TaskFlow is
 - ✅ Knows they're working for a fictional company with pre-created files
 - ✅ Feels comfortable talking to Claude in plain English
 - ✅ Understands how the course works (modules + slash commands)
-- ✅ Knows what's coming next (Module 1.2)
+- ✅ Knows what's coming next (Module {nextModuleId})
 - ✅ Feels excited and ready to continue
 
 If they seem confused, slow down and clarify before moving on!

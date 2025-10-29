@@ -93,45 +93,117 @@ This ensures students can see all course materials in their Obsidian vault throu
 
 ---
 
-## Dynamic Module Navigation
+## Dynamic Variables System
 
-**The course uses a config-driven architecture with `course-structure.json` as the single source of truth.**
+**CRITICAL: The course uses a config-driven architecture. Teaching scripts MUST use dynamic variables for ALL module references.**
 
-### How It Works
+### When to Read Config
 
-When teaching scripts need to reference "what comes next," they should:
+**At the START of EVERY teaching script, you must:**
 
-1. **Read the config:** At the END of the module (not the beginning), read `course-structure.json`
-2. **Determine next steps:** Find your current module and identify what comes next
-3. **Use dynamic references:** Use variables like `{nextCommand}`, `{nextModuleId}`, `{nextModuleTitle}` instead of hardcoded values
+1. Read `course-structure.json` silently
+2. Determine your module context (see variables below)
+3. Calculate all needed references (next, previous, cross-references)
+4. Keep this context for the entire session
 
-### Pattern for End-of-Module Navigation
+**DO THIS BEFORE starting to teach!**
 
-**When a module ends, use this pattern:**
+### Available Dynamic Variables
 
-```markdown
-[ACTION: Read `course-structure.json` to find what comes after module X.Y]
+Teaching scripts contain variables in curly braces: `{variableName}`. Replace these with actual values from the config.
 
-[Then say:]
-"When you're ready, type `/{nextCommand}` to continue to Module {nextModuleId}: {nextModuleTitle}!"
+#### Your Module (Always Available):
+- `{moduleId}` - Your module number (e.g., "1.3")
+- `{moduleTitle}` - Your module name (e.g., "First Tasks")
+- `{levelId}` - Your level number (e.g., "1")
+- `{levelName}` - Your level name (e.g., "Foundation")
+
+#### Navigation - Next Module:
+- `{nextModuleId}` - Next module number (e.g., "1.4") - empty string if last in course
+- `{nextModuleTitle}` - Next module title (e.g., "Agents")
+- `{nextCommand}` - Next slash command (e.g., "start-1-4")
+
+#### Navigation - Previous Module:
+- `{prevModuleId}` - Previous module number (e.g., "1.2") - empty string if first in course
+- `{prevModuleTitle}` - Previous module title
+
+#### Cross-Level Navigation:
+- `{nextLevelId}` - Next level number (e.g., "2") - only when transitioning levels
+- `{nextLevelName}` - Next level name (e.g., "PM Workflows")
+
+#### Cross-References (For Teaching Callbacks):
+When a script references another specific module by slug (e.g., "custom-subagents"), look up that module in the config to get its current ID and title.
+
+**Example:**
+Script says: "Remember custom sub-agents from {module:custom-subagents}?"
+You look up the module with `slug: "custom-subagents"` in config and replace with: "Module 1.5"
+
+### Conditional Blocks
+
+Scripts may contain conditional text that only shows under certain circumstances:
+
+**Syntax:**
 ```
+{ifLastInLevel:This text only shows if you're the last module in your level}
+{ifNotLastInLevel:This text only shows if you're NOT last in level}
+{ifLastInCourse:This text only shows if you're the last module in the entire course}
+{ifFirstInLevel:This text only shows if you're the first module in your level}
+```
+
+**How to determine:**
+- **Last in level:** Check if there's another module in your level after you
+- **Last in course:** Check if there's ANY module after you (any level)
+- **First in level:** Check if there's any module in your level before you
+
+### Complete Example
+
+**Teaching script contains:**
+```markdown
+**SAY:**
+
+"Welcome to Module {moduleId}: {moduleTitle}!
+
+{ifFirstInLevel:This is the first module of Level {levelId}.}
+
+{ifNotLastInLevel:After this, we'll move to Module {nextModuleId}.}
+
+{ifLastInLevel:This is the final module of Level {levelId} {levelName}! You're ready for Level {nextLevelId}.}
+
+Remember the sub-agents from {module:custom-subagents}? We'll use them here."
+```
+
+**You process and say:**
+```markdown
+"Welcome to Module 1.3: First Tasks!
+
+After this, we'll move to Module 1.4.
+
+Remember the sub-agents from Module 1.5? We'll use them here."
+```
+
+### Critical Rules
+
+**NEVER say these literal strings:**
+- ❌ "Welcome to Module 1.3"
+- ❌ "In Module 1.5 we learned..."
+- ❌ "Type /start-2-3 to continue"
+- ❌ "You've completed ALL of Level 1!"
+
+**ALWAYS replace with variables:**
+- ✅ "Welcome to Module {moduleId}: {moduleTitle}"
+- ✅ "In Module {module:custom-subagents} we learned..."
+- ✅ "Type /{nextCommand} to continue"
+- ✅ "{ifLastInLevel:You've completed ALL of Level {levelId}!}"
 
 ### Why This Matters
 
-This approach allows the course creator to:
-- Add new modules without editing existing teaching scripts
-- Reorder modules by only editing the JSON config
-- Maintain one source of truth for course structure
+This system allows the course creator to:
+- Add modules anywhere without breaking existing content
+- Reorder modules without editing teaching scripts
+- Change module numbers/slugs without cascading edits
+- Have ONE source of truth (course-structure.json)
 
-**Never hardcode:**
-- ❌ "Type `/start-2-3` to continue"
-- ❌ "Move on to Module 1.5"
-- ❌ "You've completed ALL of Level 2!" (unless you check the config first)
-
-**Always use config-driven references:**
-- ✅ Read config → Use `/{nextCommand}` from config
-- ✅ Read config → Use `{nextModuleId}` from config
-- ✅ Read config → Check if last module in level before celebrating completion
+**Every hardcoded module reference is a future bug. Use variables for EVERYTHING.**
 
 ---
 
