@@ -228,18 +228,20 @@ You now know:
 - ✅ That you just talk to me in plain English
 - ✅ What to expect (5 levels, real PM work)
 
-**Ready for Module 1.2?**
+**Ready for the next module?**
 
-Module 1.2 is about **Visualizing Files** - how to see files in an editor (VS Code, Cursor, or Obsidian) while working in Claude Code. It's really helpful!
+[ACTION: Read `course-structure.json` to find what comes after module 1.1]
+
+The next module is about **Visualizing Files** - how to see files in an editor (VS Code, Cursor, or Obsidian) while working in Claude Code. It's really helpful!
 
 When you're ready, type:
 ```
-/start-1-2
+/{nextCommand}
 ```
 
 Or take a break and come back later. Your progress is saved!
 
-See you in Module 1.2! 👋"
+See you in the next module! 👋"
 
 ---
 

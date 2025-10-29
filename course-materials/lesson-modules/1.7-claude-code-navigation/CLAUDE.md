@@ -282,13 +282,17 @@ You're ready for Level 2: Real Product Management workflows!"
 
 ---
 
-**When student responds, say:**
+**When student responds:**
+
+[ACTION: Read `course-structure.json` and determine what comes next after module 1.7]
+
+[Then say:]
 
 "Amazing work! You've built a solid foundation.
 
-Take a break if you need one, then when you're ready, move on to Module 2.1: Write a PRD - where you'll use everything you've learned to create real Product Requirements Documents.
+Take a break if you need one, then when you're ready, type `/{nextCommand}` to start Module {nextModuleId}: {nextModuleTitle} - where you'll use everything you've learned to create real Product Requirements Documents.
 
-See you in Level 2! 🚀"
+See you in Level {nextLevelNumber}! 🚀"
 
 ---
 

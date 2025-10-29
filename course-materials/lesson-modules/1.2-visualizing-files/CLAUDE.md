@@ -374,16 +374,18 @@ Module 1.3 is where the real fun begins! We'll do your FIRST REAL PM TASKS:
 
 You'll save hours of time and see exactly why Claude Code is a game-changer for PMs.
 
-**Ready for Module 1.3?**
+**Ready for the next module?**
+
+[ACTION: Read `course-structure.json` to find what comes after module 1.2]
 
 When you're ready to start, type:
 ```
-/start-1-3
+/{nextCommand}
 ```
 
 Or take a break and come back whenever! Your setup is saved, so you can pick up right where you left off.
 
-See you in Module 1.3! 👋"
+See you in the next module! 👋"
 
 ---
 

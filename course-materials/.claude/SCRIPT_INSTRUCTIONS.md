@@ -93,4 +93,46 @@ This ensures students can see all course materials in their Obsidian vault throu
 
 ---
 
+## Dynamic Module Navigation
+
+**The course uses a config-driven architecture with `course-structure.json` as the single source of truth.**
+
+### How It Works
+
+When teaching scripts need to reference "what comes next," they should:
+
+1. **Read the config:** At the END of the module (not the beginning), read `course-structure.json`
+2. **Determine next steps:** Find your current module and identify what comes next
+3. **Use dynamic references:** Use variables like `{nextCommand}`, `{nextModuleId}`, `{nextModuleTitle}` instead of hardcoded values
+
+### Pattern for End-of-Module Navigation
+
+**When a module ends, use this pattern:**
+
+```markdown
+[ACTION: Read `course-structure.json` to find what comes after module X.Y]
+
+[Then say:]
+"When you're ready, type `/{nextCommand}` to continue to Module {nextModuleId}: {nextModuleTitle}!"
+```
+
+### Why This Matters
+
+This approach allows the course creator to:
+- Add new modules without editing existing teaching scripts
+- Reorder modules by only editing the JSON config
+- Maintain one source of truth for course structure
+
+**Never hardcode:**
+- ❌ "Type `/start-2-3` to continue"
+- ❌ "Move on to Module 1.5"
+- ❌ "You've completed ALL of Level 2!" (unless you check the config first)
+
+**Always use config-driven references:**
+- ✅ Read config → Use `/{nextCommand}` from config
+- ✅ Read config → Use `{nextModuleId}` from config
+- ✅ Read config → Check if last module in level before celebrating completion
+
+---
+
 **This file is referenced by all teaching scripts (CLAUDE.md files) in the course. Any updates here apply to all modules.**

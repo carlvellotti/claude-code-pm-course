@@ -705,7 +705,13 @@ You just finished the entire **Practical PM Applications** module. Let's step ba
 - ✅ Synthesized complete strategy using Rumelt's Strategy Kernel framework
 - ✅ Used pptx skill to create executive presentation with charts, graphs, and visual elements
 
-Great work! Module 3 — ADVANCED CLAUDE CODE FEATURES — is coming soon! See you then!
+[ACTION: Read `course-structure.json` to check if there are more modules after 2.3]
+
+[IF there is a next module:]
+Great work! When you're ready, type **`/{nextCommand}`** to continue to Module {nextModuleId}: {nextModuleTitle}!
+
+[IF this is the last module in the course:]
+Great work! You've completed all available modules. More modules coming soon! See you then!
 
 ---
 
