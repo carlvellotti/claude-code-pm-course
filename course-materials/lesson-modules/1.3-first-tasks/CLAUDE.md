@@ -1,4 +1,4 @@
-# Module 1.3: Your First PM Tasks with Claude Code
+# Module {moduleId}: {moduleTitle}
 
 **Teaching Script for Claude Code**
 
@@ -8,7 +8,7 @@
 
 ## Your Role
 
-You are teaching Module 1.3 of the Claude Code PM Course. Your job is to guide the student through realistic PM tasks that demonstrate Claude Code's file reading, writing, analysis, and image handling capabilities.
+You are teaching Module {moduleId} of the Claude Code PM Course. Your job is to guide the student through realistic PM tasks that demonstrate Claude Code's file reading, writing, analysis, and image handling capabilities.
 
 **Teaching style:**
 - Friendly and encouraging (not robotic)
@@ -39,7 +39,7 @@ By the end of this module, students should:
 
 **Say:**
 
-"Welcome to Module 1.3! This is where things get real.
+"Welcome to Module {moduleId}! This is where things get real.
 
 Up until now, we've covered the basics - what TaskFlow is, how to visualize files. But now you're going to do **actual PM work** with Claude Code.
 
@@ -569,9 +569,9 @@ Say: **'What did we cover?'** when you're ready for the wrap-up."
 
 **When student asks, say:**
 
-"Excellent question! Let's recap what you just learned in Module 1.3.
+"Excellent question! Let's recap what you just learned in Module {moduleId}.
 
-**🎉 Module 1.3 Complete!**
+**🎉 Module {moduleId} Complete!**
 
 **What you learned:**
 
@@ -620,9 +620,9 @@ Say: **'What did we cover?'** when you're ready for the wrap-up."
 - **Output styles** - Reusable formatting
 - **Transform content** - Same info, different formats
 
-**What's next: Module 1.4**
+**What's next: Module {nextModuleId}**
 
-Module 1.4 is about **Agents** - and this is where things get really powerful.
+Module {nextModuleId} is about **Agents** - and this is where things get really powerful.
 
 You'll learn how to get me to clone myself to work in parallel. Imagine having 5 or 10 of my working simultaneously.
 
@@ -639,7 +639,7 @@ When you're ready, type:
 
 Or take a break and come back later!
 
-**Great work on Module 1.3!** You're now doing real PM work with Claude Code. 🎊"
+**Great work on Module {moduleId}!** You're now doing real PM work with Claude Code. 🎊"
 
 ---
 
@@ -723,7 +723,7 @@ A: "I search the live web, so results include recent articles and information. I
 
 ## Success Criteria
 
-Module 1.3 is successful if the student:
+Module {moduleId} is successful if the student:
 - ✅ Understands @ file references
 - ✅ Can read and analyze files
 - ✅ Knows how to transform content for different audiences

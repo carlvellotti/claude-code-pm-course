@@ -1,4 +1,4 @@
-# Module 1.6: Project Memory - Teaching Script
+# Module {moduleId}: {moduleTitle}
 
 **Teaching Script for Claude Code**
 
@@ -8,7 +8,7 @@
 
 ## Your Role
 
-You are teaching Module 1.6 of the Claude Code PM Course. This module introduces students to CLAUDE.md, the permanent project memory system. By the end, they'll understand the critical distinction between immutable rules (CLAUDE.md) and flexible requests (prompts), and they'll see an example CLAUDE.md file for TaskFlow.
+You are teaching Module {moduleId} of the Claude Code PM Course. This module introduces students to CLAUDE.md, the permanent project memory system. By the end, they'll understand the critical distinction between immutable rules (CLAUDE.md) and flexible requests (prompts), and they'll see an example CLAUDE.md file for TaskFlow.
 
 **Teaching style:**
 - Emphasize the "constitution vs legislation" metaphor throughout
@@ -27,7 +27,7 @@ By the end of this module, students should:
 3. Understand the # symbol prompts you to choose where to save (Global vs Project)
 4. See a complete example CLAUDE.md for TaskFlow
 5. Understand CLAUDE.md hierarchy (Global > Project > Directory > Local)
-6. Be ready to continue to Module 1.7 (Planning Mode)
+6. Be ready to continue to Module {nextModuleId} (Planning Mode)
 
 ---
 
@@ -35,7 +35,7 @@ By the end of this module, students should:
 
 **Say:**
 
-"Welcome to Module 1.6: Project Memory!
+"Welcome to Module {moduleId}!
 
 Here's a problem you've probably experienced with AI tools:
 
@@ -370,7 +370,7 @@ These layers **stack together** - all applicable CLAUDE.md files are loaded.
 
 **Say:**
 
-"🎉 **You've completed Module 1.6: Project Memory!** 🎉
+"🎉 **You've completed Module {moduleId}!** 🎉
 
 CLAUDE.md is one of the most powerful features of Claude Code - permanent project memory that makes every conversation better.
 
@@ -381,11 +381,11 @@ CLAUDE.md is one of the most powerful features of Claude Code - permanent projec
 - Custom sub-agents for specialized perspectives
 - CLAUDE.md for permanent project memory
 
-**What's next:** Module 1.7 covers the final navigation skills - the last module in Level 1: Foundation!
+**What's next:** Module {nextModuleId} covers the final navigation skills - the last module in Level 1: Foundation!
 
 You'll learn input modes, think keywords, and the --dangerously-skip-permissions flag. These complete your Claude Code navigation mastery.
 
-**Ready to continue?** `/start-1-7`
+**Ready to continue?** `/{nextCommand}`
 
 ---
 
@@ -433,7 +433,7 @@ You'll learn input modes, think keywords, and the --dangerously-skip-permissions
 
 ## Success Criteria
 
-Module 1.6 is successful if the student:
+Module {moduleId} is successful if the student:
 - ✅ Understands the constitution vs legislation metaphor
 - ✅ Knows CLAUDE.md creates permanent project memory
 - ✅ Understands the # symbol prompts for Global vs Project choice

@@ -1,4 +1,4 @@
-# Module 2.2: Data-Driven Feature Development
+# Module {moduleId}: {moduleTitle}
 
 **Teaching Script for Claude Code**
 
@@ -6,7 +6,7 @@
 
 ## Your Role
 
-You are teaching Module 2.2 of the Claude Code PM Course. This module teaches the complete product development workflow: using data to discover problems, estimating impact before building, and analyzing experiment results after shipping.
+You are teaching Module {moduleId} of the Claude Code PM Course. This module teaches the complete product development workflow: using data to discover problems, estimating impact before building, and analyzing experiment results after shipping.
 
 **Teaching style:**
 - Practical and tactical - show real PM workflows
@@ -30,7 +30,7 @@ By the end of this module, students should:
 
 **SAY:**
 
-"Welcome to Module 2.2: Data-Driven Feature Development!
+"Welcome to Module {moduleId}!
 
 This module is going to teach you one of the most valuable PM skills: using data to make confident product decisions.
 
@@ -874,9 +874,7 @@ You now know how to use Claude Code for the complete data-driven PM workflow:
 
 You can use these as templates for your own PM work - and you can ask me to create similar analyses for your real product data!
 
-**Module 2.2: Complete!** 🎉
-
-[ACTION: Read `course-structure.json` to find what comes after module 2.2]
+**Module {moduleId}: Complete!** 🎉
 
 Next, you'll learn how to use Claude Code for strategic thinking:
 - Competitive analysis and market research
@@ -932,7 +930,7 @@ See you there!"
 
 ## Success Criteria
 
-Module 2.2 is successful if the student:
+Module {moduleId} is successful if the student:
 - ✅ Can analyze funnel data to identify drop-off points
 - ✅ Understands the impact estimation framework (Users × Rate × Lift × Value)
 - ✅ Creates three scenarios (pessimistic/realistic/optimistic) for ROI models

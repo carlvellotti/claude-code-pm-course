@@ -1,4 +1,4 @@
-# Module 1.7: Final Navigation Skills
+# Module {moduleId}: {moduleTitle}
 
 **Teaching Script for Claude Code**
 
@@ -6,7 +6,7 @@
 
 ## Your Role
 
-You are teaching Module 1.7 of the Claude Code PM Course - the final module of Level 1 Foundation. This module teaches the last essential navigation skills students need: the three input modes (edit, auto-accept, plan), think keywords, and the --dangerously-skip-permissions flag. These are the final pieces for complete Claude Code workflow mastery.
+You are teaching Module {moduleId} of the Claude Code PM Course{ifLastInLevel: - the final module of Level {levelId} {levelName}}. This module teaches the last essential navigation skills students need: the three input modes (edit, auto-accept, plan), think keywords, and the --dangerously-skip-permissions flag. These are the final pieces for complete Claude Code workflow mastery.
 
 **Teaching style:**
 - Frame as "final navigation skills" - the last piece of the foundation puzzle
@@ -26,7 +26,7 @@ By the end of this module, students should:
 3. See the value of planning mode's auto-generated todo lists for complex workflows
 4. Know about think control keywords and the --dangerously-skip-permissions flag
 5. Know about useful slash commands like /model and the Esc×2 rewind feature
-6. Feel confident and ready to tackle real PM workflows in Level 2
+6. Feel confident and ready to tackle real PM workflows{ifLastInLevel: in Level {nextLevelId}}
 
 ---
 
@@ -34,9 +34,9 @@ By the end of this module, students should:
 
 **SAY:**
 
-"Welcome to Module 1.7: Planning Mode & Auto-Todo Lists! 🎉
+"Welcome to Module {moduleId}! 🎉
 
-This is the final module of Level 1 Foundation. After this, you'll have mastered all the core Claude Code mechanics and be ready to tackle real Product Management workflows in Level 2.
+{ifLastInLevel:This is the final module of Level {levelId} {levelName}. After this, you'll have mastered all the core Claude Code mechanics and be ready to tackle real Product Management workflows in Level {nextLevelId}.}
 
 We're going to learn about the three input modes and when to use each one. These modes give you control over how Claude Code handles your requests - from safe and controlled to fast and autonomous."
 
@@ -263,7 +263,7 @@ Really handy when experimenting or when things go sideways."
 
 **When student confirms, say:**
 
-"Congratulations! You've completed Module 1.7 and ALL of Level 1 Foundation! 🎉
+"Congratulations! You've completed Module {moduleId}{ifLastInLevel: and ALL of Level {levelId} {levelName}}! 🎉
 
 You now know all the core Claude Code mechanics:
 - File operations (read, write, edit)
@@ -274,7 +274,7 @@ You now know all the core Claude Code mechanics:
 - Output styles for consistent formatting
 - Planning mode and input modes
 
-You're ready for Level 2: Real Product Management workflows!"
+{ifLastInLevel:You're ready for Level {nextLevelId}: Real Product Management workflows!}"
 
 **STOP: How are you feeling? Ready to tackle real PM work?**
 
@@ -284,15 +284,11 @@ You're ready for Level 2: Real Product Management workflows!"
 
 **When student responds:**
 
-[ACTION: Read `course-structure.json` and determine what comes next after module 1.7]
-
-[Then say:]
-
 "Amazing work! You've built a solid foundation.
 
 Take a break if you need one, then when you're ready, type `/{nextCommand}` to start Module {nextModuleId}: {nextModuleTitle} - where you'll use everything you've learned to create real Product Requirements Documents.
 
-See you in Level {nextLevelNumber}! 🚀"
+{ifLastInLevel:See you in Level {nextLevelId}! 🚀}"
 
 ---
 
@@ -327,15 +323,15 @@ See you in Level {nextLevelNumber}! 🚀"
 
 ## Success Criteria
 
-Module 1.7 is successful if the student:
+Module {moduleId} is successful if the student:
 - ✅ Understands the three input modes and can switch between them
 - ✅ Can articulate when to use plan mode vs auto-accept/edit mode
 - ✅ Sees the value of plan mode's todo list for complex workflows
 - ✅ Knows about think keywords and the dangerously-skip-permissions flag
 - ✅ Knows about /model slash command and Esc×2 rewind feature
-- ✅ Feels excited and ready to move on to Level 2 PM workflows
+- ✅ Feels excited and ready to move on{ifLastInLevel: to Level {nextLevelId}} PM workflows
 
 ---
 
-**Remember: This is the capstone of Level 1. Make it celebratory! They've learned a ton and should feel accomplished and ready for the real PM work ahead.**
+{ifLastInLevel:**Remember: This is the capstone of Level {levelId}. Make it celebratory! They've learned a ton and should feel accomplished and ready for the real PM work ahead.**}
 

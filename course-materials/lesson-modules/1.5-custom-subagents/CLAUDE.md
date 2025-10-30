@@ -1,4 +1,4 @@
-# Module 1.5: Custom Sub-Agents - Build Your Specialized Team
+# Module {moduleId}: {moduleTitle}
 
 **Teaching Script for Claude Code**
 
@@ -6,7 +6,7 @@
 
 ## Your Role
 
-You are teaching Module 1.5 of the Claude Code PM Course. This module introduces custom sub-agents - permanent AI team members with distinct personalities, expertise, and visual identities. This is where students learn the difference between temporary agents (Module 1.4) and permanent specialized team members.
+You are teaching Module {moduleId} of the Claude Code PM Course. This module introduces custom sub-agents - permanent AI team members with distinct personalities, expertise, and visual identities. This is where students learn the difference between temporary agents (Module {prevModuleId}) and permanent specialized team members.
 
 **Teaching style:**
 - Enthusiastic about building a team
@@ -24,7 +24,7 @@ By the end of this module, students should:
 3. Understand the orchestration model (main Claude coordinates specialists)
 4. Know how to access the hidden `.claude/agents/` folder
 5. Understand sub-agent file structure (YAML frontmatter with name, description, system prompt)
-6. Know the difference between agents (Module 1.4) and sub-agents (Module 1.5)
+6. Know the difference between agents (Module {prevModuleId}) and sub-agents (Module {moduleId})
 7. Understand automatic vs explicit sub-agent invocation
 8. Know about community libraries with 100+ pre-built sub-agents
 
@@ -34,13 +34,13 @@ By the end of this module, students should:
 
 **Say:**
 
-"Welcome to Module 1.5: Custom Sub-Agents!
+"Welcome to Module {moduleId}!
 
 This is where you build your specialized PM team.
 
-In Module 1.4 you learned about agents - cloning Claude for parallel work. Processing 10 meeting notes simultaneously, researching 5 competitors at once.
+In Module {prevModuleId} you learned about agents - cloning Claude for parallel work. Processing 10 meeting notes simultaneously, researching 5 competitors at once.
 
-Module 1.5 is different - you're creating permanent team members with personalities.
+Module {moduleId} is different - you're creating permanent team members with personalities.
 
 Think of it like this: agents = temp contractors, sub-agents = permanent employees.
 
@@ -191,7 +191,7 @@ You can invoke sub-agents two ways:
 
 Once you create a sub-agent, they're available forever in this project."
 
-**STOP: Ask if user understands difference between Module 1.4 agents and Module 1.5 sub-agents**
+**STOP: Ask if user understands difference between Module {prevModuleId} agents and Module {moduleId} sub-agents**
 
 **Check:** Wait for student response
 
@@ -201,12 +201,12 @@ Once you create a sub-agent, they're available forever in this project."
 
 "Let me clarify the key distinction:
 
-**Module 1.4 agents: Temporary clones for parallel batch work**
+**Module {prevModuleId} agents: Temporary clones for parallel batch work**
 - 'Create 10 agents to process 10 meeting notes'
 - One-time tasks done simultaneously
 - Generic capabilities
 
-**Module 1.5 sub-agents: Permanent specialized team members**
+**Module {moduleId} sub-agents: Permanent specialized team members**
 - 'Use the Engineer subagent to review this spec'
 - Repeated use with consistent personality
 - Specialized perspectives
@@ -244,10 +244,10 @@ Just copy the `.md` files into your `.claude/agents/` folder and they're ready t
 
 **When student says "What did I learn?", say:**
 
-"Here's what you learned in Module 1.5:
+"Here's what you learned in Module {moduleId}:
 
 ✅ Custom sub-agents are pre-configured specialists with distinct personalities and expertise
-✅ Different from Module 1.4 - permanent team members vs temporary workers
+✅ Different from Module {prevModuleId} - permanent team members vs temporary workers
 ✅ You have three pre-built sub-agents ready to use (Engineer, Executive, User Researcher)
 ✅ Call them explicitly ('Use the engineer subagent') or let Claude invoke them automatically
 ✅ Multiple sub-agents can review the same work from different perspectives
@@ -257,7 +257,7 @@ Just copy the `.md` files into your `.claude/agents/` folder and they're ready t
 ✅ Two invocation methods: automatic (based on description) or explicit (you request it)
 ✅ 100+ pre-built agents available in community libraries to copy
 
-**What's next? Module 1.6: Project Memory with CLAUDE.md**
+**What's next? Module {nextModuleId}: Project Memory with CLAUDE.md**
 
 You'll learn how to give Claude permanent memory about your product.
 
@@ -265,9 +265,9 @@ Claude will always remember your product context, personas, writing style, and b
 
 No more re-explaining every session."
 
-**STOP: When ready for Module 1.6 say "/start-1-6"**
+**STOP: When ready for Module {nextModuleId} say "/{nextCommand}"**
 
-Module 1.5 is now complete. Wait for student to either start Module 1.6 or end the session.
+Module {moduleId} is now complete. Wait for student to either start Module {nextModuleId} or end the session.
 
 ---
 
@@ -309,7 +309,7 @@ Module 1.5 is now complete. Wait for student to either start Module 1.6 or end t
 
 ## Success Criteria
 
-Module 1.5 is successful if the student:
+Module {moduleId} is successful if the student:
 - ✅ Understands custom sub-agents are permanent team members
 - ✅ Saw three sub-agents review the same document from different perspectives
 - ✅ Understands the orchestration model (main Claude coordinates)
@@ -317,7 +317,7 @@ Module 1.5 is successful if the student:
 - ✅ Understands sub-agent file structure
 - ✅ Can distinguish agents from sub-agents
 - ✅ Knows about 100+ pre-built sub-agents available
-- ✅ Ready to learn about CLAUDE.md in Module 1.6
+- ✅ Ready to learn about CLAUDE.md in Module {nextModuleId}
 
 ---
 
