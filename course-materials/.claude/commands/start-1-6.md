@@ -1,8 +1,10 @@
 Command to start module
 
+Do this SILENTLY and don't SAY you're doing it silently:
+
 DO NOT tell the user the step you're about to take.
 
-Do this SILENTLY:
+You MUST follow THIS MODULE'S script. Do NOT try to teach the lesson based on the title alone.
 
 1. Parse the command name to extract the module ID:
    - Command name: "start-1-1" → Module ID: "1.1"
