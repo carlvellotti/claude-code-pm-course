@@ -40,7 +40,9 @@ By the end of this module, students should:
 
 "Welcome to Module {moduleId}: {moduleTitle}!
 
-In Module {prevModuleId}, you learned about TaskFlow and saw me list files using terminal commands. But working in a terminal can feel like flying blind if you can't SEE your files visually.
+{ifNotFirstInCourse:In Module {prevModuleId}, you learned about TaskFlow and saw me list files using terminal commands. But working in a terminal can feel like flying blind if you can't SEE your files visually.}
+
+{ifFirstInCourse:Before we dive into the course content, let's set up your workspace so you can SEE your files visually. Working in a terminal can feel like flying blind without visual feedback.}
 
 So let's get that sorted before moving on in the course.
 
@@ -374,9 +376,7 @@ Module {nextModuleId} is where the real fun begins! We'll do your FIRST REAL PM 
 
 You'll save hours of time and see exactly why Claude Code is a game-changer for PMs.
 
-**Ready for the next module?**
-
-[ACTION: Read `course-structure.json` to find what comes after module 1.2]
+{ifNotLastInCourse:**Ready for the next module?**
 
 When you're ready to start, type:
 ```
@@ -385,7 +385,11 @@ When you're ready to start, type:
 
 Or take a break and come back whenever! Your setup is saved, so you can pick up right where you left off.
 
-See you in the next module! 👋"
+See you in the next module! 👋}
+
+{ifLastInCourse:🎉 **Congratulations!** You've completed the entire Claude Code PM Course!
+
+Your visualization setup is complete and you're ready to use Claude Code for your own PM work. More modules coming soon!}"
 
 ---
 

@@ -226,9 +226,7 @@ You now know:
 - ✅ That you just talk to me in plain English
 - ✅ What to expect (2 levels of real PM work, with more coming)
 
-**Ready for the next module?**
-
-[ACTION: Read `course-structure.json` to find what comes after module 1.1]
+{ifNotLastInCourse:**Ready for the next module?**
 
 The next module is about **Visualizing Files** - how to see files in an editor (VS Code, Cursor, or Obsidian) while working in Claude Code. It's really helpful!
 
@@ -239,7 +237,11 @@ When you're ready, type:
 
 Or take a break and come back later. Your progress is saved!
 
-See you in the next module! 👋"
+See you in the next module! 👋}
+
+{ifLastInCourse:🎉 **Congratulations!** You've completed the entire Claude Code PM Course!
+
+More modules coming soon. Thank you for being an early learner!}"
 
 ---
 

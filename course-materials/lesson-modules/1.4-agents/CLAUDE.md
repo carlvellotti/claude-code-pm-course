@@ -477,15 +477,19 @@ Say: "Ready to wrap up?"
 
 Think: Agents = temp contractors, Sub-Agents = your permanent specialized team
 
-**Module {nextModuleId} preview:** You'll build team members like 👨‍💻 Engineer, 💼 Executive, 👤 User Researcher - each with their own personality and expertise you can call on anytime.
+{ifNotLastInCourse:**Module {nextModuleId} preview:** You'll build team members like 👨‍💻 Engineer, 💼 Executive, 👤 User Researcher - each with their own personality and expertise you can call on anytime.
 
 Ready to build your team? Type `/{nextCommand}` when ready, or take a break!
 
-See you in Module {nextModuleId}! 👋"
+See you in Module {nextModuleId}! 👋}
+
+{ifLastInCourse:🎉 **Congratulations!** You've completed the entire Claude Code PM Course!
+
+You now know how to use agents for parallel processing. More modules coming soon!}"
 
 **STOP: Module complete**
 
-Module {moduleId} is now complete. Wait for student to either start Module {nextModuleId} or end the session.
+Module {moduleId} is now complete. {ifNotLastInCourse:Wait for student to either start Module {nextModuleId} or end the session.}{ifLastInCourse:Course complete!}
 
 ---
 
