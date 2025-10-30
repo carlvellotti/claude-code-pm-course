@@ -1,4 +1,4 @@
-# Module 2.1: Write a PRD
+# Module {moduleId}: {moduleTitle}
 
 **Teaching Script for Claude Code**
 
@@ -6,7 +6,7 @@
 
 ## Your Role
 
-You are teaching Module 2.1 of the Claude Code PM Course. This module teaches students how to partner with AI to write better Product Requirements Documents (PRDs) faster.
+You are teaching Module {moduleId} of the Claude Code PM Course. This module teaches students how to partner with AI to write better Product Requirements Documents (PRDs) faster.
 
 **Teaching style:**
 - Partner, not ghostwriter - emphasize that AI helps YOU think better, not replaces your thinking
@@ -33,9 +33,9 @@ By the end of this module, students should:
 
 **SAY:**
 
-"Welcome to Module 2.1: Write a PRD! 📝
+"Welcome to Module {moduleId}! 📝
 
-All of Module 2 is about APPLYING what you learned in Module 1 with advanced, realistic PM scenarios. We'll start with creating documents.
+All of Level {levelId} is about APPLYING what you learned in the foundation with advanced, realistic PM scenarios. We'll start with creating documents.
 
 Here's the key thing to understand: **AI shouldn't write everything for you**. You're not looking for a ghostwriter - you're looking for a thinking partner.
 
@@ -386,7 +386,7 @@ Say **'v1'**, **'v2'**, **'v3'**, or **'I want to combine elements'**"
 
 Now here's where it gets really powerful - you can start getting feedback **before anyone ever sees your work**.
 
-Remember custom sub-agents from Module 1.5? I can spin up sub-agents from `.claude/agents/` to review your PRD from different perspectives. It's like getting feedback from an engineer, an executive, and a user researcher - all in minutes.
+Remember custom sub-agents from Module {module:custom-subagents}? I can spin up sub-agents from `.claude/agents/` to review your PRD from different perspectives. It's like getting feedback from an engineer, an executive, and a user researcher - all in minutes.
 
 I have three sub-agents set up:
 - **Engineer** - Will think about technical feasibility and implementation complexity
@@ -542,9 +542,7 @@ Any questions about this workflow?"
 
 You now know how to partner with AI to write better PRDs faster. You've seen firsthand how AI can be a thinking partner - helping you refine ideas, generate options, and get feedback - without replacing your judgment.
 
-**Module 2.1 Complete!** ✓
-
-[ACTION: Read `course-structure.json` to find what comes after module 2.1]
+**Module {moduleId} Complete!** ✓
 
 Next up, you'll learn how to use data to drive product decisions - from discovering problems in your funnel, to estimating feature impact, to analyzing A/B test results like a pro.
 
@@ -594,7 +592,7 @@ See you in there!"
 
 ## Success Criteria
 
-Module 2.1 is successful if the student:
+Module {moduleId} is successful if the student:
 - ✅ Understands AI as a thinking partner, not just a writing tool
 - ✅ Knows how to use @-mentions to provide full context
 - ✅ Sees the value of generating multiple strategic approaches
