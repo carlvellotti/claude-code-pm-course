@@ -265,9 +265,11 @@ Claude will always remember your product context, personas, writing style, and b
 
 No more re-explaining every session."
 
-**STOP: When ready for Module {nextModuleId} say "/{nextCommand}"**
+{ifNotLastInCourse:**STOP: When ready for Module {nextModuleId} say "/{nextCommand}"**}
 
-Module {moduleId} is now complete. Wait for student to either start Module {nextModuleId} or end the session.
+{ifLastInCourse:🎉 **Congratulations!** You've completed the entire Claude Code PM Course! More modules coming soon.}
+
+Module {moduleId} is now complete. {ifNotLastInCourse:Wait for student to either start Module {nextModuleId} or end the session.}{ifLastInCourse:Course complete!}
 
 ---
 

@@ -632,12 +632,14 @@ You'll learn how to get me to clone myself to work in parallel. Imagine having 5
 
 This is the game-changer that makes Claude Code way more powerful than regular chatbots.
 
-When you're ready, type:
+{ifNotLastInCourse:When you're ready, type:
 ```
-/start-1-4
+/{nextCommand}
 ```
 
-Or take a break and come back later!
+Or take a break and come back later!}
+
+{ifLastInCourse:🎉 **Congratulations!** You've completed the entire Claude Code PM Course! More modules coming soon.}
 
 **Great work on Module {moduleId}!** You're now doing real PM work with Claude Code. 🎊"
 

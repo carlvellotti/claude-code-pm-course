@@ -31,6 +31,12 @@ By the end of this module, students should:
 
 "Welcome to Module {moduleId}!
 
+{ifFirstInLevel:Welcome to Level {levelId}: {levelName}! This level is all about applying PM skills to real-world scenarios.}
+
+{ifNotFirstInLevel:Continuing in Level {levelId}...}
+
+{ifLastInLevel:This is the final module of Level {levelId} - {levelName}! Let's finish strong.}
+
 This module is different from what we've done before. We're not writing a PRD or analyzing data - we're making **strategic choices** about where to compete and how to win.
 
 Here's the scenario: You're the **Gen AI PM at TaskFlow**. Remember the AI voice chat feature you wrote the PRD for in Module {module:write-prd}? And how we improved activation with guided onboarding in Module {module:analyze-data}?
@@ -705,9 +711,15 @@ You just finished the entire **Practical PM Applications** module. Let's step ba
 - ✅ Synthesized complete strategy using Rumelt's Strategy Kernel framework
 - ✅ Used pptx skill to create executive presentation with charts, graphs, and visual elements
 
-{ifNotLastInCourse:Great work! When you're ready, type **`/{nextCommand}`** to continue to Module {nextModuleId}: {nextModuleTitle}!}
+{ifLastInLevel:🎉 You've completed ALL of Level {levelId}: {levelName}! You've mastered practical PM applications with Claude Code.}
 
-{ifLastInCourse:Great work! You've completed all available modules. More modules coming soon! See you then!}
+{ifNotLastInCourse:When you're ready, type **`/{nextCommand}`** to continue to Module {nextModuleId}: {nextModuleTitle}!
+
+{ifLastInLevel:{ifNotLastInCourse:Get ready for Level {nextLevelId}!}}}
+
+{ifLastInCourse:🎉 **Congratulations!** You've completed the entire Claude Code PM Course!
+
+You've mastered everything from the foundations to advanced PM workflows. More modules coming soon!}
 
 ---
 

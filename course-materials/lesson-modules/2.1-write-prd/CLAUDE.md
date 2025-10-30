@@ -35,7 +35,13 @@ By the end of this module, students should:
 
 "Welcome to Module {moduleId}! 📝
 
-All of Level {levelId} is about APPLYING what you learned in the foundation with advanced, realistic PM scenarios. We'll start with creating documents.
+{ifFirstInLevel:Welcome to Level {levelId}: {levelName}! This level is all about applying PM skills to real-world scenarios.}
+
+{ifNotFirstInLevel:Continuing in Level {levelId}...}
+
+{ifNotFirstInCourse:All of Level {levelId} is about APPLYING what you learned in the foundation with advanced, realistic PM scenarios. We'll start with creating documents.}
+
+{ifFirstInCourse:In this module, you'll learn how to create Product Requirements Documents (PRDs) with AI as a thinking partner.}
 
 Here's the key thing to understand: **AI shouldn't write everything for you**. You're not looking for a ghostwriter - you're looking for a thinking partner.
 
@@ -544,11 +550,15 @@ You now know how to partner with AI to write better PRDs faster. You've seen fir
 
 **Module {moduleId} Complete!** ✓
 
-Next up, you'll learn how to use data to drive product decisions - from discovering problems in your funnel, to estimating feature impact, to analyzing A/B test results like a pro.
+{ifNotLastInCourse:Next up, you'll learn how to use data to drive product decisions - from discovering problems in your funnel, to estimating feature impact, to analyzing A/B test results like a pro.
 
 When you're ready, start the next module by running: **`/{nextCommand}`**
 
-See you in there!"
+See you in there!}
+
+{ifLastInCourse:🎉 **Congratulations!** You've completed the entire Claude Code PM Course!
+
+You now know how to use Claude Code for PRD writing. More modules coming soon!}"
 
 ---
 

@@ -38,6 +38,8 @@ By the end of this module, students should:
 
 {ifLastInLevel:This is the final module of Level {levelId} {levelName}. After this, you'll have mastered all the core Claude Code mechanics and be ready to tackle real Product Management workflows in Level {nextLevelId}.}
 
+{ifNotLastInLevel:Continuing in Level {levelId}! We're covering advanced navigation skills that will complete your Claude Code foundation.}
+
 We're going to learn about the three input modes and when to use each one. These modes give you control over how Claude Code handles your requests - from safe and controlled to fast and autonomous."
 
 **STOP: Ready to learn about input modes?**
@@ -286,9 +288,15 @@ You now know all the core Claude Code mechanics:
 
 "Amazing work! You've built a solid foundation.
 
-Take a break if you need one, then when you're ready, type `/{nextCommand}` to start Module {nextModuleId}: {nextModuleTitle} - where you'll use everything you've learned to create real Product Requirements Documents.
+{ifNotLastInCourse:Take a break if you need one, then when you're ready, type `/{nextCommand}` to start Module {nextModuleId}: {nextModuleTitle} - where you'll use everything you've learned to create real Product Requirements Documents.
 
-{ifLastInLevel:See you in Level {nextLevelId}! 🚀}"
+{ifLastInLevel:See you in Level {nextLevelId}! 🚀}}
+
+{ifLastInCourse:🎉 **Congratulations!** You've completed the entire Claude Code PM Course!
+
+{ifLastInLevel:You've mastered all of Level {levelId}: {levelName}!}
+
+More modules coming soon. Thank you for being an early learner!}"
 
 ---
 

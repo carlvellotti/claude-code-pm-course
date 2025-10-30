@@ -142,43 +142,115 @@ You look up the module with `slug: "custom-subagents"` in config and replace wit
 
 Scripts may contain conditional text that only shows under certain circumstances:
 
-**Syntax:**
+**All Available Conditionals:**
 ```
-{ifLastInLevel:This text only shows if you're the last module in your level}
-{ifNotLastInLevel:This text only shows if you're NOT last in level}
-{ifLastInCourse:This text only shows if you're the last module in the entire course}
-{ifFirstInLevel:This text only shows if you're the first module in your level}
+{ifFirstInCourse:...}      - Only the very first module (1.1)
+{ifNotFirstInCourse:...}   - All modules except the first
+{ifFirstInLevel:...}       - First module in any level (1.1, 2.1, 3.1, etc.)
+{ifNotFirstInLevel:...}    - Not the first module in current level
+{ifLastInLevel:...}        - Last module in a level (1.7, 2.3, etc.)
+{ifNotLastInLevel:...}     - More modules exist in this level
+{ifLastInCourse:...}       - Absolute last module in entire course
+{ifNotLastInCourse:...}    - More modules/levels ahead
 ```
 
 **How to determine:**
-- **Last in level:** Check if there's another module in your level after you
-- **Last in course:** Check if there's ANY module after you (any level)
-- **First in level:** Check if there's any module in your level before you
+- **First in course:** No modules before you at all (only 1.1 currently)
+- **Not first in course:** Any module that has modules before it
+- **First in level:** First module in your level (1.1, 2.1, etc.)
+- **Not first in level:** Not the first module in your current level
+- **Last in level:** No more modules in your level (1.7 is last in Level 1)
+- **Not last in level:** More modules exist in your level
+- **Last in course:** No modules anywhere after you (2.3 is currently last)
+- **Not last in course:** More modules or levels exist after you
 
-### Complete Example
+**Variable Safety Rules:**
 
-**Teaching script contains:**
-```markdown
-**SAY:**
+⚠️ **CRITICAL:** Never use these variables without wrapping them in conditionals:
 
-"Welcome to Module {moduleId}: {moduleTitle}!
+```
+❌ NEVER: "Type /{nextCommand}"
+✅ ALWAYS: "{ifNotLastInCourse:Type /{nextCommand}}"
 
-{ifFirstInLevel:This is the first module of Level {levelId}.}
+❌ NEVER: "In Module {prevModuleId} you learned..."
+✅ ALWAYS: "{ifNotFirstInCourse:In Module {prevModuleId} you learned...}"
 
-{ifNotLastInLevel:After this, we'll move to Module {nextModuleId}.}
+❌ NEVER: "Next is Module {nextModuleId}"
+✅ ALWAYS: "{ifNotLastInCourse:Next is Module {nextModuleId}}"
 
-{ifLastInLevel:This is the final module of Level {levelId} {levelName}! You're ready for Level {nextLevelId}.}
-
-Remember the sub-agents from {module:custom-subagents}? We'll use them here."
+❌ NEVER: "You're ready for Level {nextLevelId}"
+✅ ALWAYS: "{ifLastInLevel:You're ready for Level {nextLevelId}}"
 ```
 
-**You process and say:**
+**Why:** If a module gets moved/reordered, these variables might not exist. Unconditional references will break.
+
+### Standard Module Patterns
+
+Every module should follow these patterns to work in any position:
+
+**MODULE START PATTERN:**
+```markdown
+"Welcome to Module {moduleId}: {moduleTitle}!
+
+{ifFirstInCourse:This is the very first module of the course!}
+
+{ifFirstInLevel:{ifNotFirstInCourse:This is the first module of Level {levelId}: {levelName}!}}
+
+{ifNotFirstInLevel:Continuing in Level {levelId}...}
+
+{ifNotFirstInCourse:In Module {prevModuleId}, you learned about...}
+
+[Rest of module intro content]"
+```
+
+**MODULE END PATTERN:**
+```markdown
+"Module {moduleId} complete!
+
+{ifLastInLevel:🎉 You've completed ALL of Level {levelId}: {levelName}!}
+
+{ifNotLastInCourse:Ready to continue? Type `/{nextCommand}` to start Module {nextModuleId}: {nextModuleTitle}}
+
+{ifLastInLevel:{ifNotLastInCourse:You're now ready for Level {nextLevelId}!}}
+
+{ifLastInCourse:🎉 Congratulations! You've completed the entire course. More modules coming soon!}"
+```
+
+**Example Processing:**
+
+If Module 1.3 with these patterns:
 ```markdown
 "Welcome to Module 1.3: First Tasks!
 
-After this, we'll move to Module 1.4.
+Continuing in Level 1...
 
-Remember the sub-agents from Module 1.5? We'll use them here."
+In Module 1.2, you learned about...
+
+[content]
+
+Module 1.3 complete!
+
+Ready to continue? Type `/start-1-4` to start Module 1.4: Agents"
+```
+
+If Module 1.7 (last in level):
+```markdown
+"Module 1.7 complete!
+
+🎉 You've completed ALL of Level 1: Foundation!
+
+Ready to continue? Type `/start-2-1` to start Module 2.1: Write a PRD
+
+You're now ready for Level 2!"
+```
+
+If Module 2.3 (last in course):
+```markdown
+"Module 2.3 complete!
+
+🎉 You've completed ALL of Level 2: PM Workflows!
+
+🎉 Congratulations! You've completed the entire course. More modules coming soon!"
 ```
 
 ### Critical Rules

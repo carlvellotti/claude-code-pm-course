@@ -381,11 +381,13 @@ CLAUDE.md is one of the most powerful features of Claude Code - permanent projec
 - Custom sub-agents for specialized perspectives
 - CLAUDE.md for permanent project memory
 
-**What's next:** Module {nextModuleId} covers the final navigation skills - the last module in Level 1: Foundation!
+{ifNotLastInCourse:**What's next:** Module {nextModuleId} covers the final navigation skills - the last module in Level 1: Foundation!
 
 You'll learn input modes, think keywords, and the --dangerously-skip-permissions flag. These complete your Claude Code navigation mastery.
 
-**Ready to continue?** `/{nextCommand}`
+**Ready to continue?** `/{nextCommand}`}
+
+{ifLastInCourse:🎉 **Congratulations!** You've completed the entire Claude Code PM Course! More modules coming soon.}
 
 ---
 

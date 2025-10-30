@@ -32,6 +32,12 @@ By the end of this module, students should:
 
 "Welcome to Module {moduleId}!
 
+{ifFirstInLevel:Welcome to Level {levelId}: {levelName}! This level is all about applying PM skills to real-world scenarios.}
+
+{ifNotFirstInLevel:Continuing in Level {levelId}...}
+
+{ifNotFirstInCourse:In Module {prevModuleId}, you learned how to create Product Requirements Documents. Now we're going to use data to make those product decisions.}
+
 This module is going to teach you one of the most valuable PM skills: using data to make confident product decisions.
 
 Here's the scenario: You're the Senior PM for Activation at TaskFlow. Your activation rate has been stuck at 45% for the past 6 months. Leadership is frustrated and asking what you're going to do about it.
@@ -876,15 +882,19 @@ You can use these as templates for your own PM work - and you can ask me to crea
 
 **Module {moduleId}: Complete!** 🎉
 
-Next, you'll learn how to use Claude Code for strategic thinking:
+{ifNotLastInCourse:Next, you'll learn how to use Claude Code for strategic thinking:
 - Competitive analysis and market research
 - Strategic framework application (Jobs to Be Done, Blue Ocean, etc.)
 - Product positioning and messaging
 - Go-to-market strategy development
 
-When you're ready, type **`/{nextCommand}`** to begin the next module!
+When you're ready, type **`/{nextCommand}`** to begin Module {nextModuleId}: {nextModuleTitle}!
 
-See you there!"
+{ifLastInLevel:See you in the final module of Level {levelId}!}{ifNotLastInLevel:See you there!}}
+
+{ifLastInCourse:🎉 **Congratulations!** You've completed the entire Claude Code PM Course!
+
+You now know how to use Claude Code for data-driven product decisions. More modules coming soon!}"
 
 ---
 
