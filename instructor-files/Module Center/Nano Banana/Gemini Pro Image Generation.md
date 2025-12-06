@@ -23,12 +23,22 @@ tags:
 
 ## Module Outline
 
+### Module 0: Getting Started with Nano Banana
+
+**3.0 Setup & Download** *(website page, not in-tool)*
+- Download the Nano Banana module files (GitHub release)
+- Navigate into folder and launch Claude Code
+- Run `/start-3-1` to begin
+
+---
+
 ### Module 1: Introduction to Image Generation
 
-**1.1 Welcome & First Generation**
-- Quick setup: API key from Google AI Studio → `.env` file
+**3.1.1 Welcome & First Generation**
+- Get your Gemini API key (Google AI Studio, free, 2 min)
+- Set up `.env` file with API key
 - Immediate win: Generate a "ready to learn" image (course mascot, celebration, etc.)
-- What you'll learn in this course:
+- What you'll learn in this module:
   - Product mockups & wireframes
   - Persona visualizations
   - Architecture diagrams
@@ -37,20 +47,20 @@ tags:
 - How it works (brief): Pre-built module, simple functions, Claude handles the rest
 - Pricing context: Cheaper than wrapper apps, pay per generation
 
-**1.2 Understanding the Basics**
+**3.1.2 Understanding the Basics**
 - The `generate()` function and what it returns
 - Output folder structure
 - Available parameters: aspect ratio, resolution, model choice
 - Sessions: how iterative editing works
 
-**1.3 Consistency & Style**
+**3.1.3 Consistency & Style**
 - Using reference images
 - Multi-image inputs (style ref + content ref)
 - Deconstructing existing images to extract their style
 - Building a style database (JSON/markdown)
 - The meta-skill: building your personal creative toolkit
 
-**1.4 Iteration Strategies**
+**3.1.4 Iteration Strategies**
 - Sessions vs reference images for editing:
   - Continuing in a session: Gemini remembers full context, precise edits work
   - Passing same image as reference each time: Errors compound, edits get misinterpreted
@@ -62,26 +72,26 @@ tags:
 
 ### Module 2: PM Use Cases
 
-**2.1 Users & Product Visuals**
-- 2.1a Persona visualizations
-- 2.1b User journey mapping / flow visualizations
-- 2.1c Hand-drawn → polished wireframes
-- 2.1d Product mockups in context (device frames, lifestyle)
+**3.2.1 Users & Product Visuals**
+- Persona visualizations
+- User journey mapping / flow visualizations
+- Hand-drawn → polished wireframes
+- Product mockups in context (device frames, lifestyle)
 
-**2.2 Strategy & Architecture Visuals**
-- 2.2a Architecture / system diagrams
-- 2.2b Pitch deck visuals
-- 2.2c Strategy framework diagrams / process docs
+**3.2.2 Strategy & Architecture Visuals**
+- Architecture / system diagrams
+- Pitch deck visuals
+- Strategy framework diagrams / process docs
 
-**2.3 Ad & Marketing Assets**
-- 2.3a Ad creative assets
-- 2.3b Feature announcement graphics
+**3.2.3 Ad & Marketing Assets**
+- Ad creative assets
+- Feature announcement graphics
 
 ---
 
 ### Module 3: Build Your Own Image Tool
 
-**The Project: Style Transformer**
+**3.3.1 Style Transformer Project**
 - Upload an image → choose a style → output in that style
 - Core features:
   - Apply existing styles from your database

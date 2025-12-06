@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "lastUpdated": "2025-10-29",
+  "lastUpdated": "2025-12-05",
   "levels": [
     {
       "id": "1",
@@ -103,6 +103,22 @@
           "command": "start-2-3",
           "description": "Strategic planning and prioritization",
           "estimatedMinutes": 30
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Nano Banana",
+      "description": "AI Image Generation with Gemini 3 Pro",
+      "modules": [
+        {
+          "id": "3.1.1",
+          "title": "Welcome & First Generation",
+          "slug": "welcome-first-generation",
+          "path": "lesson-modules/3-nano-banana/3.1-intro-to-image-gen/3.1.1-welcome/CLAUDE.md",
+          "command": "start-3-1-1",
+          "description": "Set up your API key and generate your first image",
+          "estimatedMinutes": 10
         }
       ]
     }
