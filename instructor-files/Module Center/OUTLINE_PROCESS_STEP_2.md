@@ -41,6 +41,7 @@ After the `---` divider, write the detailed teaching flow using these standards:
 - ❌ **Never skip user gates between major topic changes** (always require user initiation)
 - ❌ **Never use "I'm going to do X, ready? *does X*"** - instead teach the capability and have them ask
 - ❌ **Never ask "What happened?" or "Describe what you see"** unless exploring (use closed questions: "Do you see the file pill?")
+- ❌ **Never say "Display" or "See!" for files/images** - Claude Code runs in a terminal and cannot visually display files. Instead, tell users where to find the file so they can open it themselves (e.g., "Open `outputs/image.png` in Finder" not "ACTION: Display the image")
 
 ### Student-Driven Commands (Important!)
 
