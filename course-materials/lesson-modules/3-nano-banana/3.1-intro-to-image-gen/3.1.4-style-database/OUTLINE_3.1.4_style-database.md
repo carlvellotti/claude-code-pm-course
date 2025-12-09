@@ -29,7 +29,7 @@
 - Clarify: this isn't a real website! It's just a local HTML file - a way to visualize your style collection from your computer
 - And here's the cool part: you can always change the design or functionality just by asking Claude! Don't do it now, but in the future you could add new columns, change the layout, add search, etc.
 - Explain the library structure: index number, thumbnail, name, category, prompt (click to copy), tags, example uses
-- Categories: Illustration, Photo (Portrait/Product/Environment), Diagram, UI/Mockup, 3D/Isometric, Presentation, Marketing, Artistic
+- Categories: Framework, Flow, Architecture, Mockup, Persona, Marketing, Artistic (PM-focused + composable!)
 - How to use it: tell Claude the index # (e.g., "use style #02") or copy the prompt directly
 - Let user try it - pick a style, generate something with it
 
