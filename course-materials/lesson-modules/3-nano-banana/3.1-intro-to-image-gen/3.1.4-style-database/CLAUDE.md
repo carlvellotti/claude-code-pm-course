@@ -322,16 +322,32 @@ Great! Type `/start-3-2-1` to continue.
 - Thumbnails go to the `thumbnails/` folder in this module folder
 
 ### When Adding Styles to the Library
-1. Read the current style-library.html to find the styles array
+1. Read the current style-library.html to find the styles array AND the CANONICAL_TAGS object
 2. Determine the next ID number
-3. Create a descriptive name and choose appropriate category
-4. Generate 3-5 relevant tags
-5. Copy the output image to thumbnails/ with a kebab-case filename
-6. Add the new entry to the styles array in the HTML file
-7. Update the thumbnail path to point to the new file
+3. Create a descriptive name
+4. Choose a category from the CATEGORIES array (see below)
+5. Choose 2-4 tags ONLY from the CANONICAL_TAGS for that category
+6. Copy the output image to thumbnails/ with a kebab-case filename
+7. Add the new entry to the styles array in the HTML file
+8. Update the thumbnail path to point to the new file
 
-### Style Categories
-Valid categories: Illustration, Photo - Portrait, Photo - Product, Photo - Environment, Diagram, UI/Mockup, 3D/Isometric, Presentation, Marketing, Artistic
+### Categories and Canonical Tags
+The style-library.html contains CATEGORIES and CANONICAL_TAGS objects. You MUST use these exactly:
+
+**Categories:** Framework, Flow, Architecture, Mockup, Persona, Marketing, Artistic
+
+**Canonical Tags by Category:**
+- **Framework:** 2x2-matrix, pyramid, venn, canvas, concentric, triangle
+- **Flow:** process, journey-map, flowchart, steps, sequence
+- **Architecture:** hierarchy, hub-spoke, system-diagram, org-chart, tree
+- **Mockup:** wireframe, device-frame, ui-concept, landing-page, mobile, desktop
+- **Persona:** portrait, lifestyle, headshot, context, illustrated, scene
+- **Marketing:** ad, social, announcement, banner, hero
+- **Artistic:** flat-illustration, hand-drawn, watercolor, photography, retro, minimalist, bold-graphic, 3d-render
+
+Do NOT invent new tags or categories. Always reference the CANONICAL_TAGS in the HTML file.
+
+**Note:** Users can combine styles from different categories (e.g., "use the retro style from Artistic with a scene-style Persona") to create composable results.
 
 ### Running Style Extraction
 Use the extract_style() function from style_extract.py. It takes an image path and returns a detailed natural language description of the visual style.
