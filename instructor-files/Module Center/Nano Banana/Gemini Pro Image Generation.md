@@ -4,12 +4,11 @@ supported_tools:
   - Claude Code
   - Cursor
   - Nano Banana
-last_updated: 2025-12-04
+last_updated: 2025-12-04T00:00:00.000Z
 tags:
   - theme_ai_image
   - theme_ai_tool_nano_banana
 ---
-
 ## Deliverables
 
 - [ ] **In-tool course** - 3 modules for Claude Code / Cursor PM course (see outline below)
@@ -54,19 +53,19 @@ tags:
 - Sessions: how iterative editing works
 
 **3.1.3 Consistency & Style**
+- Teach the Golden Rules of Prompting (from Google's official guide):
+  - Edit, Don't Re-roll: If an image is 80% correct, ask for specific changes instead of starting over
+  - Use Natural Language & Full Sentences: Talk to the model like you're briefing a human artist (not "tag soup"). Note: JSON prompt templates exist but aren't necessary - natural language works just as well since Gemini is a thinking model
+  - Be Specific and Descriptive: Define subject, setting, lighting, mood, textures/materials
+  - Provide Context: Tell it the "why" or "for whom" - the thinking model makes smarter decisions with context
 - Using reference images
 - Multi-image inputs (style ref + content ref)
-- Deconstructing existing images to extract their style
-- Building a style database (JSON/markdown)
-- The meta-skill: building your personal creative toolkit
-
-**3.1.4 Iteration Strategies**
-- Sessions vs reference images for editing:
-  - Continuing in a session: Gemini remembers full context, precise edits work
-  - Passing same image as reference each time: Errors compound, edits get misinterpreted
-- Recommended workflow: generate → refine in session → `revert()` if wrong turn → continue
-- When to `new_session()`: Starting a completely different image concept
 - Generating variants: Make a few options, pick one, then iterate on that in its session
+
+**3.1.4 Building Your Prompt Database**
+- Deconstructing existing images to extract their style (ask the model to describe it)
+- Building a style database in `styles/` folder (markdown format)
+- The meta-skill: building your personal creative toolkit over time
 
 ---
 
@@ -103,7 +102,7 @@ tags:
 ## Notes
 
 - Source material: [[gemini-image-generation-learnings]] from carousel experiment
-- Course repo: https://github.com/carlvellotti/claude-code-pm-course
+- https://github.com/carlvellotti/claude-code-pm-courseCourse repo: https://github.com/carlvellotti/claude-code-pm-course
 - Lesson format: CLAUDE.md teaching scripts with Say/Check/Action blocks
 - Each module section becomes a hands-on exercise in Claude Code
 
@@ -114,7 +113,7 @@ tags:
 
 ### Implementation Decisions
 
-**API Key Storage: `.env` file approach**
+**API Key Storage: \****`.env`**\*\* file approach**
 - Add `.env.example` to course-materials with `GEMINI_API_KEY=your_key_here`
 - Module 1.1 teaches: get key from Google AI Studio → copy `.env.example` to `.env` → paste key
 - Python scripts use `python-dotenv` to load: `load_dotenv()` then `os.environ.get('GEMINI_API_KEY')`
@@ -126,7 +125,7 @@ tags:
 - Gemini 3 Pro uses "thought signatures" to preserve reasoning context across turns - handled automatically by SDK
 - Session persistence: save/restore chat history to `.image_session.json` between Claude Code turns
 
-**Pre-built `image_gen.py` module**
+**Pre-built \****`image_gen.py`**\*\* module**
 - Single module handles all image generation, session management, output saving
 - Claude calls simple functions rather than writing new scripts each time
 - Key functions:

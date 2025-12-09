@@ -26,3 +26,4 @@ node_modules/
 releases/
 *.zip
 __pycache__/
+.venv/

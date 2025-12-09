@@ -20,7 +20,7 @@ SESSION_FILE = ".image_session.json"
 OUTPUT_DIR = "outputs"
 DEFAULT_MODEL = "gemini-3-pro-image-preview"
 DEFAULT_ASPECT_RATIO = "1:1"
-DEFAULT_RESOLUTION = "2K"
+DEFAULT_RESOLUTION = "1K"
 
 
 def _get_client():
@@ -197,7 +197,7 @@ def generate(
             else:
                 print(f"Warning: Reference image not found: {img_path}")
 
-    # Build config (note: image_size may not be available in all SDK versions)
+    # Build config
     config = types.GenerateContentConfig(
         response_modalities=['TEXT', 'IMAGE'],
         image_config=types.ImageConfig(

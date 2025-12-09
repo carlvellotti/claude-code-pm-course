@@ -4,6 +4,8 @@ This document defines **Step 2** of the module outline process for the Claude Co
 
 ## Step 2: Write the Detailed Teaching Flow
 
+**Note:** Step 2 is appended to the same outline file created in Step 1 (e.g., `OUTLINE_3.1.3_style.md`). Add the teaching flow after the `---` divider following the High-Level Overview section.
+
 After the `---` divider, write the detailed teaching flow using these standards:
 
 ### The Three Prefixes
@@ -131,6 +133,6 @@ After the `---` divider, write the detailed teaching flow using these standards:
 
 ## Summary
 
-**Step 1:** Create high-level overview (files needed, files created, bullet overview)
-**Step 2:** Get alignment on overview before proceeding
-**Step 3:** Write detailed teaching flow using prefix standards (ACTION/STOP/USER, no "Say", tabs for sub-bullets, one level deep)
+**Step 1:** Create high-level overview in `OUTLINE_[module-id]_[name].md` (files needed, files created, bullet overview)
+**Step 2:** After approval, append detailed teaching flow to the same outline file
+**Step 3:** Convert outline to final `CLAUDE.md` script (see OUTLINE_PROCESS_STEP_3.md)

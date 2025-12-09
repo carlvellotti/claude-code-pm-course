@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Style Library</title>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Instrument+Serif&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #0a0a0b;
+      --bg-secondary: #141416;
+      --bg-tertiary: #1c1c1f;
+      --border: #2a2a2e;
+      --text-primary: #fafafa;
+      --text-secondary: #888;
+      --text-muted: #555;
+      --accent: #e8ff47;
+      --accent-dim: #a3b832;
+      --success: #47ffb4;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      min-height: 100vh;
+      background-image:
+        radial-gradient(ellipse at 0% 0%, rgba(232, 255, 71, 0.03) 0%, transparent 50%),
+        radial-gradient(ellipse at 100% 100%, rgba(71, 255, 180, 0.02) 0%, transparent 50%);
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+    }
+
+    header {
+      margin-bottom: 3rem;
+    }
+
+    h1 {
+      font-family: 'Instrument Serif', serif;
+      font-size: 3.5rem;
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+    }
+
+    h1 span {
+      color: var(--accent);
+    }
+
+    .subtitle {
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+    }
+
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .filter-btn {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+      border-radius: 100px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .filter-btn:hover {
+      border-color: var(--text-muted);
+      color: var(--text-primary);
+    }
+
+    .filter-btn.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: var(--bg-primary);
+    }
+
+    .style-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .style-table th {
+      text-align: left;
+      padding: 1rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .style-table th:first-child {
+      width: 60px;
+    }
+
+    .style-table th:nth-child(2) {
+      width: 100px;
+    }
+
+    .style-table tr {
+      border-bottom: 1px solid var(--border);
+      transition: background 0.15s ease;
+    }
+
+    .style-table tbody tr:hover {
+      background: var(--bg-secondary);
+    }
+
+    .style-table td {
+      padding: 1.25rem 1rem;
+      vertical-align: top;
+    }
+
+    .index {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .thumbnail {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .thumbnail:hover {
+      transform: scale(3);
+      z-index: 100;
+      border-color: var(--accent);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+    }
+
+    .style-name {
+      font-family: 'Instrument Serif', serif;
+      font-size: 1.35rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .style-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-top: 0.5rem;
+    }
+
+    .tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      padding: 0.25rem 0.5rem;
+      background: var(--bg-tertiary);
+      border-radius: 3px;
+      color: var(--text-secondary);
+    }
+
+    .category-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      font-weight: 500;
+      padding: 0.35rem 0.65rem;
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      color: var(--text-secondary);
+      white-space: nowrap;
+    }
+
+    .prompt-cell {
+      position: relative;
+      max-width: 400px;
+    }
+
+    .prompt-text {
+      font-size: 0.9rem;
+      line-height: 1.5;
+      color: var(--text-secondary);
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      cursor: pointer;
+      padding: 0.75rem;
+      background: var(--bg-tertiary);
+      border-radius: 6px;
+      border: 1px solid transparent;
+      transition: all 0.3s ease;
+      max-height: 5.5rem;
+    }
+
+    .prompt-text:hover {
+      border-color: var(--accent-dim);
+      color: var(--text-primary);
+      display: block;
+      -webkit-line-clamp: unset;
+      max-height: 500px;
+      overflow: visible;
+      position: relative;
+      z-index: 50;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+    }
+
+    .prompt-text::after {
+      content: 'Click to copy';
+      position: absolute;
+      bottom: -1.5rem;
+      left: 0.75rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      color: var(--text-muted);
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+
+    .prompt-text:hover::after {
+      opacity: 1;
+    }
+
+    .prompt-text.copied {
+      border-color: var(--success);
+    }
+
+    .prompt-text.copied::after {
+      content: 'Copied!';
+      color: var(--success);
+      opacity: 1;
+    }
+
+    .example-use {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
+    .empty-state {
+      text-align: center;
+      padding: 4rem 2rem;
+      color: var(--text-muted);
+    }
+
+    .empty-state h2 {
+      font-family: 'Instrument Serif', serif;
+      font-weight: 400;
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-secondary);
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: var(--success);
+      color: var(--bg-primary);
+      padding: 0.75rem 1.5rem;
+      border-radius: 100px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+      font-weight: 600;
+      opacity: 0;
+      transition: all 0.3s ease;
+      pointer-events: none;
+    }
+
+    .toast.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+
+    @media (max-width: 900px) {
+      h1 { font-size: 2.5rem; }
+      .style-table th:nth-child(5),
+      .style-table td:nth-child(5) { display: none; }
+      .prompt-cell { max-width: 250px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Style <span>Library</span></h1>
+      <p class="subtitle">Your personal collection of reusable visual styles. Tell Claude the index # to use any style.</p>
+    </header>
+
+    <div class="filters">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="Illustration">Illustration</button>
+      <button class="filter-btn" data-filter="Photo - Portrait">Photo - Portrait</button>
+      <button class="filter-btn" data-filter="Photo - Product">Photo - Product</button>
+      <button class="filter-btn" data-filter="Photo - Environment">Photo - Environment</button>
+      <button class="filter-btn" data-filter="Diagram">Diagram</button>
+      <button class="filter-btn" data-filter="UI/Mockup">UI/Mockup</button>
+      <button class="filter-btn" data-filter="3D/Isometric">3D/Isometric</button>
+      <button class="filter-btn" data-filter="Presentation">Presentation</button>
+      <button class="filter-btn" data-filter="Marketing">Marketing</button>
+      <button class="filter-btn" data-filter="Artistic">Artistic</button>
+    </div>
+
+    <table class="style-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Preview</th>
+          <th>Style</th>
+          <th>Category</th>
+          <th>Prompt (click to copy)</th>
+          <th>Good For</th>
+        </tr>
+      </thead>
+      <tbody id="styles-body">
+        <!-- Populated by JS -->
+      </tbody>
+    </table>
+
+    <div class="empty-state" id="empty-state" style="display: none;">
+      <h2>No styles match this filter</h2>
+      <p>Try a different category or add more styles to your library.</p>
+    </div>
+  </div>
+
+  <div class="toast" id="toast">Copied to clipboard</div>
+
+  <script>
+    // Style library data - Claude can add entries here
+    const styles = [
+      {
+        id: 1,
+        name: "90s Analog Snapshot",
+        category: "Photo - Portrait",
+        tags: ["vintage", "film grain", "flash", "nostalgic", "datestamp"],
+        thumbnail: "thumbnails/90s-analog-snapshot.jpg",
+        prompt: "1990s Analog Snapshot style. Direct on-camera flash, harsh and flat. Sharp shadows cast behind subjects. Muted, desaturated warm-neutral palette with off-white/cream backgrounds. Visible film grain throughout. Deep depth of field - most of scene in focus. Specular highlights on glossy surfaces from flash. Orange/amber datestamp in corner (format: MON DD 'YY). Candid, authentic, unpolished feel like a point-and-shoot 35mm camera. Nostalgic, contemplative mood.",
+        exampleUse: "Nostalgic content, throwback posts, indie aesthetic, personal moments"
+      },
+      {
+        id: 2,
+        name: "Candid Editorial Flash",
+        category: "Photo - Portrait",
+        tags: ["fashion", "high contrast", "bold colors", "confrontational"],
+        thumbnail: "thumbnails/candid-editorial-flash.png",
+        prompt: "Candid Editorial Flash style. Harsh direct on-camera flash creating sharp shadows on wall behind subject. High contrast with deep blacks and bright, borderline-clipped whites. Electric cobalt blue (#1A449B) as dominant color. Signal red as accent (lips, nails, small details). Off-white/cool gray neutral background. Noticeable film grain throughout. Shot straight-on at eye level, medium close-up framing. Shallow depth of field with tack sharp focus on face. Raw, glossy skin texture with specular highlights. Mood: defiant, playful indulgence, raw confidence. Indie Sleaze / After-Party Editorial aesthetic.",
+        exampleUse: "Fashion content, bold portraits, editorial looks, brand campaigns"
+      },
+      {
+        id: 3,
+        name: "Flat Corporate Illustration",
+        category: "Illustration",
+        tags: ["flat design", "minimal", "professional", "clean"],
+        thumbnail: "thumbnails/flat-corporate.png",
+        prompt: "Clean flat illustration style for professional presentations. Simple geometric shapes with no outlines. Limited color palette of 4-5 harmonious colors with one accent. Soft, muted tones - nothing too saturated. Human figures are abstract/faceless with simple body shapes. Subtle shadows using darker shade of base color, not black. Plenty of white space. No textures or gradients. Modern, approachable, professional feel suitable for business presentations and documentation.",
+        exampleUse: "Slide decks, product docs, onboarding flows, feature explanations"
+      }
+    ];
+
+    const tbody = document.getElementById('styles-body');
+    const emptyState = document.getElementById('empty-state');
+    const toast = document.getElementById('toast');
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    let currentFilter = 'all';
+
+    function renderStyles() {
+      const filtered = currentFilter === 'all'
+        ? styles
+        : styles.filter(s => s.category === currentFilter);
+
+      if (filtered.length === 0) {
+        tbody.innerHTML = '';
+        emptyState.style.display = 'block';
+        return;
+      }
+
+      emptyState.style.display = 'none';
+      tbody.innerHTML = filtered.map(style => `
+        <tr data-category="${style.category}">
+          <td><span class="index">${String(style.id).padStart(2, '0')}</span></td>
+          <td><img class="thumbnail" src="${style.thumbnail}" alt="${style.name}" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 80 80%22><rect fill=%22%231c1c1f%22 width=%2280%22 height=%2280%22/><text x=%2250%%22 y=%2250%%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23555%22 font-size=%2210%22>No img</text></svg>'"></td>
+          <td>
+            <div class="style-name">${style.name}</div>
+            <div class="style-tags">
+              ${style.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+            </div>
+          </td>
+          <td><span class="category-badge">${style.category}</span></td>
+          <td class="prompt-cell">
+            <div class="prompt-text" data-prompt="${encodeURIComponent(style.prompt)}">${style.prompt}</div>
+          </td>
+          <td><span class="example-use">${style.exampleUse}</span></td>
+        </tr>
+      `).join('');
+
+      // Add click handlers for copy
+      document.querySelectorAll('.prompt-text').forEach(el => {
+        el.addEventListener('click', () => copyPrompt(el));
+      });
+    }
+
+    function copyPrompt(el) {
+      const prompt = decodeURIComponent(el.dataset.prompt);
+      navigator.clipboard.writeText(prompt).then(() => {
+        el.classList.add('copied');
+        toast.classList.add('show');
+        setTimeout(() => {
+          el.classList.remove('copied');
+          toast.classList.remove('show');
+        }, 2000);
+      });
+    }
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentFilter = btn.dataset.filter;
+        renderStyles();
+      });
+    });
+
+    renderStyles();
+  </script>
+</body>
+</html>

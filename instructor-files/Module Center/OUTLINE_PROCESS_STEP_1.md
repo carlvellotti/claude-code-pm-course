@@ -2,6 +2,19 @@
 
 This document defines **Step 1** of the module outline process for the Claude Code PM Course.
 
+## File Naming Convention
+
+Outline files use this format: `OUTLINE_[module-id]_[lesson-name].md`
+
+Examples:
+- `OUTLINE_3.1.1_welcome.md`
+- `OUTLINE_3.1.3_style.md`
+- `OUTLINE_1.4_agents.md`
+
+This file contains both Step 1 (high-level overview) and Step 2 (teaching flow). Step 3 creates the final `CLAUDE.md` script.
+
+---
+
 ## Step 1: Create High-Level Overview
 
 Before writing the detailed teaching flow, create a simple high-level overview with:
@@ -13,7 +26,7 @@ Before writing the detailed teaching flow, create a simple high-level overview w
 
 **Example:**
 ```markdown
-# Module 1.4: Agents - Ultra Simple Outline
+# Module 1.4: Agents - Outline
 
 ## Files Needed to Start
 - `meeting-notes/meeting-notes-1.md` through `meeting-notes-10.md` (10 messy meeting notes)
@@ -31,6 +44,10 @@ Before writing the detailed teaching flow, create a simple high-level overview w
 - Explain when to use agents vs regular sequential work
 
 ---
+
+## Teaching Flow
+
+[Step 2 content goes here after approval...]
 ```
 
-**Key point:** Get alignment on this high-level overview BEFORE writing the detailed teaching flow.
+**Key point:** Get alignment on this high-level overview BEFORE writing the detailed teaching flow (Step 2) in the same file.
