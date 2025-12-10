@@ -241,6 +241,39 @@ The site has comprehensive SEO in theme.config.tsx:
 - Custom metadata per page via frontMatter
 - Structured data support
 
+### Instructor Files (instructor-files/) - Private Submodule
+
+The `instructor-files/` folder is a **git submodule** pointing to a private repository (`claude-code-pm-instructor`). This keeps instructor-only materials (outlines, build guides, reference docs) separate from the public course.
+
+**How it works:**
+- Public users see the folder exists but can't access it (404 on private repo)
+- You (with access) can view and edit files normally
+- Changes are tracked in a separate private repo
+
+**Workflow for updating instructor files:**
+```bash
+# 1. Make changes in instructor-files/
+cd instructor-files
+
+# 2. Commit and push to the private repo
+git add -A
+git commit -m "Update build guide"
+git push
+
+# 3. Back in main repo, update the submodule reference
+cd ..
+git add instructor-files
+git commit -m "Update instructor submodule"
+git push
+```
+
+**After cloning (for yourself):**
+```bash
+git submodule update --init --recursive
+```
+
+**Note:** The submodule won't be included in student course material zips (they download via GitHub Releases which excludes submodules by default).
+
 ### Internal Documentation (docs/)
 
 Planning documents not included in student-facing materials:
