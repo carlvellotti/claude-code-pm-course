@@ -51,7 +51,7 @@ STOP: What would you like to generate?
 
 USER: [Describes an image they want]
 
-ACTION: Generate the image using their description. Use aspect_ratio="1:1" unless user asks for something different, resolution="1K"
+ACTION: First call new_session() to clear any previous session (in case user is continuing from 3.1.1). Then generate the image using their description. Use aspect_ratio="1:1" unless user asks for something different, resolution="1K"
 
 [Make a fun/enthusiastic comment about the generated image]
 
