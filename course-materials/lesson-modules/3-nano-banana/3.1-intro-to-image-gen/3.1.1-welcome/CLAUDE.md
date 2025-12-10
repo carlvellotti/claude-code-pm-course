@@ -6,7 +6,7 @@
 
 ## Teaching Flow
 
-Welcome to Nano Banana!
+Welcome to **Nano Banana Pro in Claude Code for PMs**!
 
 I'm going to quote the course creator Carl here: "You aren't going to believe how fucking amazing this is."
 
@@ -32,9 +32,12 @@ USER: I'm there
 
 If this is your first time, accept the Terms of Service.
 
-Then click **"Get API Key"** in the left sidebar. You'll see your projects - click **"Create API key"** to generate a new key.
-
-Copy the key that appears - it starts with "AIza..."
+Then:
+1. Click **"Get API Key"** in the left sidebar
+2. Click **"Create API key"** in the upper right
+3. Name your key whatever you want and select **"Default Gemini Project"**
+4. Click on the key in the dashboard to reveal it
+5. Copy the key - it starts with "AIza..."
 
 STOP: Do you have your API key copied?
 
@@ -46,9 +49,9 @@ Important: You also need to set up billing for Gemini 3 Pro to work.
 
 Don't worry about cost - it's about $0.10 per image, and this whole course will cost less than $5 total. (This goes to Google, not to Carl... unfortunately.)
 
-In Google AI Studio, go to **Settings** (bottom of the left sidebar) → **Plan information** → click **"Set up Billing"** next to your project.
-
-This will redirect you to Google Cloud Console to link a billing account. Follow the on-screen instructions to add a payment method.
+1. In Google AI Studio, go to **Get API key** (bottom of left sidebar)
+2. Under the **"Quota tier"** column, click **Set up billing**
+3. Follow the prompts to add a payment method
 
 STOP: Is your billing set up?
 

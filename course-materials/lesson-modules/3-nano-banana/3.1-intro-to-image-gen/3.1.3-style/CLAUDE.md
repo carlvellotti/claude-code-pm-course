@@ -22,7 +22,7 @@ Google released an official guide for prompting Gemini's image generation. They 
 
 **Rule 4: Provide Context** - Tell the "why" or "for whom" so the thinking model makes smarter creative decisions.
 
-STOP: Make sense so far?
+STOP: We'll cover them one by one. Make sense so far?
 
 USER: Yes
 
@@ -43,6 +43,20 @@ USER: Yes
 ### Rule 2: Natural Language vs Tag Soup
 
 Let's start with Rule 2.
+
+"Tag soup" is the style of prompting that became popular with earlier image models like Midjourney and Stable Diffusion - comma-separated keywords jammed together:
+
+```
+cat, orange tabby, sitting, window, sunlight, cozy, warm lighting, 8k, hyperrealistic, bokeh, soft focus
+```
+
+Natural language is just... writing normally:
+
+```
+An orange tabby cat sitting on a windowsill, bathed in warm afternoon sunlight. The scene feels cozy and intimate, with soft focus on the background.
+```
+
+Both can work, but Gemini was trained on natural language. Let's see the difference.
 
 STOP: What concept would you like to see this demonstrated with? Give me a subject or scene - anything you want.
 
@@ -328,7 +342,11 @@ USER: [Responds]
 
 Now let's talk about variants.
 
-Sometimes you want to explore different directions for the same concept. Instead of generating one image and hoping it's right, generate 2-3 variants. Then pick your favorite and iterate on that.
+Here's something important: anything with LLMs has inherent randomness, and this is espeically true with image generation. Even with the exact same prompt, you'll get different results each time.
+
+You can treat this as a feature, not a bug.
+
+Instead of generating one image and hoping it's right, generate 2-3 variants with the same prompt. Then pick your favorite and iterate on that one.
 
 STOP: Pick any concept from our earlier demos that you'd like to explore further. You can check the `outputs/` folder if you need a reminder.
 
@@ -336,12 +354,13 @@ USER: [Picks concept]
 
 ---
 
-ACTION: Generate 2-3 variants of the user's chosen concept
-- Same core idea, different creative interpretations
+ACTION: Generate 3 variants of the user's chosen concept using the SAME prompt each time
+- Call new_session() before each generation to ensure fresh results
+- Use identical prompts to demonstrate the natural variation
 
-ACTION: Save as `[concept]_variant_1.png`, `[concept]_variant_2.png`, etc.
+ACTION: Save as `[concept]_variant_1.png`, `[concept]_variant_2.png`, `[concept]_variant_3.png`
 
-Check your `outputs/` folder - you should see multiple versions.
+Check your `outputs/` folder - you should see three different versions from the same prompt.
 
 STOP: Which variant do you like best?
 
