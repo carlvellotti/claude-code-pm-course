@@ -56,29 +56,21 @@ USER: Yes / Done
 
 ---
 
-Now let's add your API key to this project.
+Now let's add your API key to this project. You have two options:
 
-ACTION: Read `.env.example` and show the contents
+**Option 1:** Just paste your API key here and I'll create the `.env` file for you.
 
-Here's what the `.env.example` file looks like - you need to copy this to `.env` and paste in your API key.
+**Option 2:** Do it yourself - copy `.env.example` to `.env` and add your key: `GEMINI_API_KEY=YourKeyHere`
 
-STOP: Say "Create my .env file with my API key"
+STOP: Paste your API key here, or say "Done" if you set it up manually.
 
-USER: Create my .env file with my API key
-
----
-
-ACTION: Copy `.env.example` to `.env`
-
-I've created the `.env` file for you. Now paste your API key after the equals sign where it says `your_key_here`.
-
-STOP: Let me know when you've pasted your key.
-
-USER: Done
+USER: [Pastes API key] / Done
 
 ---
 
-Perfect! You're all set up.
+ACTION: If user provided an API key, create `.env` file with `GEMINI_API_KEY=[their key]`. If user said "Done", verify `.env` exists.
+
+Great, you're all set up!
 
 Now for the fun part - let's generate your first image.
 
