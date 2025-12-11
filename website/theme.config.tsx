@@ -1,4 +1,6 @@
 import React from 'react'
+import { useConfig } from 'nextra-theme-docs'
+import { useRouter } from 'next/router'
 
 export default {
   logo: <span style={{ fontWeight: 600 }}>Claude Code for Product Managers</span>,
@@ -28,15 +30,17 @@ export default {
     return { titleTemplate: '%s – Claude Code for Product Managers' }
   },
   theme: 'dark',
-  head: function Head({ title, frontMatter }: { title?: string; frontMatter?: any }) {
+  head: function Head() {
+    const { frontMatter, title } = useConfig()
+    const { asPath } = useRouter()
     const siteUrl = 'https://ccforpms.com'
     const pageTitle = title ? `${title} – Claude Code for Product Managers` : 'Claude Code for Product Managers'
     const description = frontMatter?.description || 'Learn Claude Code for PM work - an interactive course teaching file operations, agents, and AI-powered product management workflows.'
     const ogImage = frontMatter?.ogImage || `${siteUrl}/images/better-graphic.png`
+    const url = `${siteUrl}${asPath}`
 
     return (
       <>
-        <title>{pageTitle}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="description" content={description} />
         <meta name="google-site-verification" content="Oenxq7BatQp09RlIUs43VkDpdoOQUWlUhqwxYxw49xQ" />
@@ -60,6 +64,7 @@ export default {
 
         {/* Open Graph */}
         <meta property="og:type" content="website" />
+        <meta property="og:url" content={url} />
         <meta property="og:site_name" content="Claude Code for Product Managers" />
         <meta property="og:title" content={pageTitle} />
         <meta property="og:description" content={description} />
@@ -99,4 +104,3 @@ export default {
     backToTop: true
   }
 }
-
