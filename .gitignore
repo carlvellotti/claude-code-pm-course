@@ -25,3 +25,5 @@ node_modules/
 # Release artifacts
 releases/
 *.zip
+__pycache__/
+.venv/

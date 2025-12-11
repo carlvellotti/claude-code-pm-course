@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "lastUpdated": "2025-10-29",
+  "lastUpdated": "2025-12-05",
   "levels": [
     {
       "id": "1",
@@ -11,7 +11,7 @@
           "id": "1.1",
           "title": "Welcome",
           "slug": "welcome",
-          "path": "lesson-modules/1.1-welcome/CLAUDE.md",
+          "path": "lesson-modules/1-fundamentals/1.1-welcome/CLAUDE.md",
           "command": "start-1-1",
           "description": "Introduction to Claude Code",
           "estimatedMinutes": 10
@@ -20,7 +20,7 @@
           "id": "1.2",
           "title": "Visualizing Files",
           "slug": "visualizing-files",
-          "path": "lesson-modules/1.2-visualizing-files/CLAUDE.md",
+          "path": "lesson-modules/1-fundamentals/1.2-visualizing-files/CLAUDE.md",
           "command": "start-1-2",
           "description": "Using Obsidian to visualize your workspace",
           "estimatedMinutes": 15
@@ -29,7 +29,7 @@
           "id": "1.3",
           "title": "First Tasks",
           "slug": "first-tasks",
-          "path": "lesson-modules/1.3-first-tasks/CLAUDE.md",
+          "path": "lesson-modules/1-fundamentals/1.3-first-tasks/CLAUDE.md",
           "command": "start-1-3",
           "description": "Reading files, transforming content, and using output styles",
           "estimatedMinutes": 25
@@ -38,7 +38,7 @@
           "id": "1.4",
           "title": "Agents",
           "slug": "agents",
-          "path": "lesson-modules/1.4-agents/CLAUDE.md",
+          "path": "lesson-modules/1-fundamentals/1.4-agents/CLAUDE.md",
           "command": "start-1-4",
           "description": "Clone Claude to work in parallel",
           "estimatedMinutes": 20
@@ -47,7 +47,7 @@
           "id": "1.5",
           "title": "Custom Sub-agents",
           "slug": "custom-subagents",
-          "path": "lesson-modules/1.5-custom-subagents/CLAUDE.md",
+          "path": "lesson-modules/1-fundamentals/1.5-custom-subagents/CLAUDE.md",
           "command": "start-1-5",
           "description": "Create specialized agents with custom personas",
           "estimatedMinutes": 15
@@ -56,7 +56,7 @@
           "id": "1.6",
           "title": "Project Memory",
           "slug": "project-memory",
-          "path": "lesson-modules/1.6-project-memory/CLAUDE.md",
+          "path": "lesson-modules/1-fundamentals/1.6-project-memory/CLAUDE.md",
           "command": "start-1-6",
           "description": "Using CLAUDE.md for project context",
           "estimatedMinutes": 15
@@ -65,7 +65,7 @@
           "id": "1.7",
           "title": "Claude Code Navigation",
           "slug": "claude-code-navigation",
-          "path": "lesson-modules/1.7-claude-code-navigation/CLAUDE.md",
+          "path": "lesson-modules/1-fundamentals/1.7-claude-code-navigation/CLAUDE.md",
           "command": "start-1-7",
           "description": "Navigation skills and keyboard shortcuts",
           "estimatedMinutes": 15
@@ -81,7 +81,7 @@
           "id": "2.1",
           "title": "Write a PRD",
           "slug": "write-prd",
-          "path": "lesson-modules/2.1-write-prd/CLAUDE.md",
+          "path": "lesson-modules/2-advanced-pm-work/2.1-write-prd/CLAUDE.md",
           "command": "start-2-1",
           "description": "Creating Product Requirements Documents",
           "estimatedMinutes": 30
@@ -90,7 +90,7 @@
           "id": "2.2",
           "title": "Analyze Data",
           "slug": "analyze-data",
-          "path": "lesson-modules/2.2-analyze-data/CLAUDE.md",
+          "path": "lesson-modules/2-advanced-pm-work/2.2-analyze-data/CLAUDE.md",
           "command": "start-2-2",
           "description": "Working with data and analytics",
           "estimatedMinutes": 25
@@ -99,10 +99,80 @@
           "id": "2.3",
           "title": "Product Strategy",
           "slug": "product-strategy",
-          "path": "lesson-modules/2.3-product-strategy/CLAUDE.md",
+          "path": "lesson-modules/2-advanced-pm-work/2.3-product-strategy/CLAUDE.md",
           "command": "start-2-3",
           "description": "Strategic planning and prioritization",
           "estimatedMinutes": 30
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Nano Banana",
+      "description": "AI Image Generation with Gemini 3 Pro",
+      "modules": [
+        {
+          "id": "3.1.1",
+          "title": "Welcome & First Generation",
+          "slug": "welcome-first-generation",
+          "path": "lesson-modules/3-nano-banana/3.1-intro-to-image-gen/3.1.1-welcome/CLAUDE.md",
+          "command": "start-3-1-1",
+          "description": "Set up your API key and generate your first image",
+          "estimatedMinutes": 10
+        },
+        {
+          "id": "3.1.2",
+          "title": "Understanding the Basics",
+          "slug": "understanding-basics",
+          "path": "lesson-modules/3-nano-banana/3.1-intro-to-image-gen/3.1.2-basics/CLAUDE.md",
+          "command": "start-3-1-2",
+          "description": "Learn about parameters, aspect ratios, resolution, and iteration",
+          "estimatedMinutes": 15
+        },
+        {
+          "id": "3.1.3",
+          "title": "Consistency & Style",
+          "slug": "consistency-style",
+          "path": "lesson-modules/3-nano-banana/3.1-intro-to-image-gen/3.1.3-style/CLAUDE.md",
+          "command": "start-3-1-3",
+          "description": "Master the Golden Rules of prompting, reference images, and variants",
+          "estimatedMinutes": 20
+        },
+        {
+          "id": "3.1.4",
+          "title": "Building Your Style Database",
+          "slug": "style-database",
+          "path": "lesson-modules/3-nano-banana/3.1-intro-to-image-gen/3.1.4-style-database/CLAUDE.md",
+          "command": "start-3-1-4",
+          "description": "Build a reusable library of styles and learn to extract styles from any image",
+          "estimatedMinutes": 20
+        },
+        {
+          "id": "3.2.1",
+          "title": "Users & Product Visuals",
+          "slug": "users-product-visuals",
+          "path": "lesson-modules/3-nano-banana/3.2-pm-use-cases/3.2.1-users-product/CLAUDE.md",
+          "command": "start-3-2-1",
+          "description": "Create personas, journey maps, wireframes, and lifestyle shots for product pitches",
+          "estimatedMinutes": 25
+        },
+        {
+          "id": "3.2.2",
+          "title": "Strategy & Architecture Visuals",
+          "slug": "strategy-architecture-visuals",
+          "path": "lesson-modules/3-nano-banana/3.2-pm-use-cases/3.2.2-strategy-architecture/CLAUDE.md",
+          "command": "start-3-2-2",
+          "description": "Create system architecture diagrams, prioritization matrices, and product roadmaps",
+          "estimatedMinutes": 20
+        },
+        {
+          "id": "3.2.3",
+          "title": "Marketing & Launch Assets",
+          "slug": "marketing-launch-assets",
+          "path": "lesson-modules/3-nano-banana/3.2-pm-use-cases/3.2.3-marketing/CLAUDE.md",
+          "command": "start-3-2-3",
+          "description": "Create app store graphics, social ads, and launch announcement visuals",
+          "estimatedMinutes": 20
         }
       ]
     }

@@ -1,0 +1,395 @@
+---
+title: "3.2.1: Users & Product Visuals"
+description: "Create persona portraits, journey maps, wireframes, and product mockups for pitch decks and presentations"
+keywords: "persona portrait, journey map, wireframe mockup, device frame, lifestyle shot, product visualization"
+---
+
+## 3.2.1: Users & Product Visuals
+
+- **Time to Complete:** 25 minutes
+- **Prerequisites:** Module 3.1 completed (style database built)
+
+> **Start this module in Claude Code:** Run `/start-3-2-1` to begin the interactive experience.
+
+## Overview
+
+Module 3.2.1 applies your image generation skills to real PM deliverables. You'll create the visual assets needed for product pitches: persona portraits, journey maps, wireframes, device mockups, and hero images.
+
+**Key takeaway:** These techniques work for any pitch or presentation. Once you can generate these five asset types, you can visually communicate almost any product story.
+
+
+## The Scenario
+
+Throughout Module 3.2, you're a PM at TaskFlow (the course's fictional B2B SaaS company). You're pitching **TaskFlow Mobile** - a new mobile app for operations managers in manufacturing.
+
+Your pitch deck needs:
+1. **Persona portrait** - "Who are we building for?"
+2. **Journey map** - "What problem are we solving?"
+3. **Wireframe** - "What does the solution look like?"
+4. **Device mockup** - "How does it feel in hand?"
+5. **Hero image** - "What's the vision?"
+
+Let's build each one.
+
+
+## Persona Portraits
+
+![Persona portrait examples - cinematic and illustrated styles](/images/nano-banana/persona-portrait-cinematic.png)
+
+### What They Are
+
+Persona portraits put a face to your target user. They make abstract user segments feel real and help stakeholders empathize with the people you're building for.
+
+### When to Use
+
+- Pitch deck "Who" slides
+- User research presentations
+- PRD persona sections
+- Team alignment documents
+
+### How to Generate
+
+**Basic prompt:**
+```
+Create a persona portrait of [name], a [role] at [company type].
+[Age range], [key characteristics]. Professional but approachable.
+For a pitch deck.
+```
+
+**Example - Marcus Chen:**
+```
+Create a persona portrait of Marcus Chen, an operations manager
+at a manufacturing plant. Mid-40s, practical, confident but
+approachable expression. Wearing work-appropriate attire -
+polo shirt, maybe a safety vest. Natural lighting.
+For a pitch deck to leadership.
+```
+
+### Style Options
+
+| Style | Best for | Example prompt addition |
+|-------|----------|------------------------|
+| **Photo-realistic** | Executive presentations | "Photorealistic, professional headshot quality" |
+| **Illustrated** | Friendly/casual contexts | "Illustrated in a modern flat style" |
+| **Stylized** | Brand-specific needs | Reference your style library |
+
+### Pro Tips
+
+- **Add context clues:** Include environment hints (factory floor, office, etc.)
+- **Match the tone:** Executive pitch = more formal; team wiki = more casual
+- **Be consistent:** If you have multiple personas, use the same style for all
+
+
+## Journey Maps
+
+![Journey map examples - minimalist and hand-drawn styles](/images/nano-banana/journey-map-minimalist.png)
+
+### What They Are
+
+Journey maps visualize a user's experience over time - the steps, touchpoints, pain points, and emotions throughout a process.
+
+### When to Use
+
+- Problem definition slides
+- User research findings
+- Solution framing
+- Stakeholder alignment
+
+### How to Generate
+
+**Basic prompt:**
+```
+Create a journey map showing [user]'s [process/workflow].
+Stages: [list stages]. Show pain points at each stage.
+Clean, presentation-ready, 16:9 aspect ratio.
+```
+
+**Example - Marcus's morning:**
+```
+Create a journey map showing an operations manager's morning workflow.
+Stages: Arrive (6am) → Review backlog → Morning standup → Floor walk → Handoff prep.
+Show pain points: scattered information, manual tracking, delayed updates.
+Clean visual style suitable for a pitch deck. 16:9 aspect ratio.
+```
+
+### Style Options
+
+| Style | Best for |
+|-------|----------|
+| **Minimalist** | Executive presentations |
+| **Hand-drawn** | Workshop/collaborative feel |
+| **Infographic** | Marketing/external use |
+| **Detailed** | Deep-dive presentations |
+
+### Pro Tips
+
+- **Include emotions:** Happy/frustrated faces at each stage add impact
+- **Highlight pain points:** Red zones or icons draw attention to problems
+- **Keep it scannable:** 5-7 stages max; detail goes in supporting docs
+
+
+## Wireframe Transformation
+
+![Wireframe examples - grayscale and hand-drawn sketch styles](/images/nano-banana/wireframe-grayscale.png)
+
+### What It Is
+
+Transform rough sketches into polished wireframes. This is perfect for taking meeting whiteboard sketches and making them presentation-ready.
+
+### When to Use
+
+- After brainstorming sessions
+- Early-stage design reviews
+- Quick concept validation
+- When you don't have a designer available
+
+### How to Generate
+
+**Basic prompt:**
+```
+Transform this hand-drawn sketch into a clean, polished wireframe.
+Keep the same layout and elements. Professional quality with
+clean lines and consistent spacing.
+```
+
+Provide your rough sketch as a reference image.
+
+**Example:**
+```
+Transform this hand-drawn wireframe into a polished mobile app wireframe.
+Preserve the layout: header with greeting, task list, shift overview,
+bottom navigation. Clean, professional, grayscale with good typography.
+Mobile aspect ratio (9:16).
+```
+
+### What to Include in Sketches
+
+Even rough sketches should show:
+- Overall layout structure
+- Key UI elements (headers, buttons, lists)
+- Content hierarchy
+- Navigation patterns
+
+Gemini will clean up the visuals while preserving your layout decisions.
+
+### Pro Tips
+
+- **Keep sketches clear:** Gemini needs to understand your intent
+- **Label elements:** Write text in your sketch so Gemini knows what goes where
+- **Specify fidelity:** "Low-fi wireframe" vs "high-fidelity mockup"
+
+
+## Device Mockups
+
+![Device mockup examples - iPhone and MacBook frames](/images/nano-banana/device-iphone-light.png)
+
+### What They Are
+
+Device mockups place your wireframes or screenshots into phone/laptop frames. They make digital products feel tangible.
+
+### When to Use
+
+- App store preview images
+- Pitch deck product slides
+- Marketing materials
+- Social media announcements
+
+### How to Generate
+
+**Basic prompt:**
+```
+Place this wireframe into a [device] mockup.
+Clean background, slight shadow for depth.
+Professional, presentation-ready.
+```
+
+Provide your wireframe as a reference image.
+
+**Example:**
+```
+Put this mobile wireframe into an iPhone 15 Pro mockup.
+Clean white background with subtle shadow.
+Slight 3D angle to show depth. Professional quality.
+```
+
+### Device Options
+
+| Device | Best for |
+|--------|----------|
+| **iPhone** | Mobile app pitches |
+| **Android** | Cross-platform or Android-first |
+| **MacBook** | Web apps, dashboards |
+| **iPad** | Tablet experiences |
+| **Multiple devices** | Responsive design showcases |
+
+### Pro Tips
+
+- **Match the context:** iPhone for consumer, MacBook for enterprise
+- **Use current devices:** Latest models feel more premium
+- **Consider angles:** Flat for clarity, angled for dynamism
+- **Add context:** Hands holding the device adds authenticity
+
+
+## Lifestyle Shots
+
+![Lifestyle shot example - persona in office environment](/images/nano-banana/persona-scene-office-modern.png)
+
+### What They Are
+
+Lifestyle shots show your product in real-world use. They're the "hero images" that sell the vision - a person using your product in their natural environment.
+
+### When to Use
+
+- Pitch deck covers
+- Landing pages
+- Marketing hero images
+- Social media announcements
+
+### How to Generate
+
+**Basic prompt:**
+```
+A [persona] using [product] in [environment].
+[Specific details about context]. Natural lighting.
+Composition suitable for [use case].
+```
+
+**Example:**
+```
+Marcus, an operations manager in his mid-40s, using TaskFlow Mobile
+on the factory floor. He's holding his phone confidently, reviewing
+task updates. Manufacturing environment in the background - equipment,
+workers, industrial setting. Natural lighting from warehouse windows.
+Composition works as a pitch deck hero image.
+```
+
+### Composition Tips
+
+| Element | Guidance |
+|---------|----------|
+| **Subject placement** | Rule of thirds; leave space for text overlay if needed |
+| **Background** | Relevant but not distracting; adds context |
+| **Lighting** | Natural usually feels more authentic |
+| **Expression** | Should match the story (confident, focused, satisfied) |
+
+### Pro Tips
+
+- **Use persona consistency:** Generate the same "Marcus" across all images
+- **Match the environment:** Office for B2B SaaS, home for consumer apps
+- **Leave text space:** If it's a hero image, leave room for headlines
+- **Generate variants:** Try different compositions and pick the best
+
+
+## Complete Pitch Deck Example
+
+Here's how all five assets work together for the TaskFlow Mobile pitch:
+
+### Slide 1: The Hero
+**Asset:** Lifestyle shot of Marcus using TaskFlow Mobile on the factory floor
+**Story:** "This is the future we're building"
+
+### Slide 2: The User
+**Asset:** Persona portrait of Marcus Chen
+**Story:** "Meet Marcus - our target user"
+
+### Slide 3: The Problem
+**Asset:** Journey map of Marcus's chaotic morning
+**Story:** "His current workflow is broken"
+
+### Slide 4: The Solution
+**Asset:** Polished wireframe of TaskFlow Mobile
+**Story:** "Here's what we're building"
+
+### Slide 5: The Vision
+**Asset:** Device mockup (iPhone with wireframe)
+**Story:** "Task management in your pocket"
+
+**Total time:** 15-20 minutes for all five assets.
+
+
+## Using Your Style Library
+
+Remember the style library from Module 3.1.4? It shines here.
+
+**For consistency:**
+```
+Generate Marcus persona portrait using style #12
+Generate journey map using style #15
+```
+
+**For exploring options:**
+```
+Show me all persona styles in my library
+Generate Marcus using style #12, #15, and #18 as variants
+```
+
+The more styles you build, the faster this becomes.
+
+
+## Best Practices
+
+### Do:
+- **Match styles across a deck** - consistency looks professional
+- **Use TaskFlow context** - or your real company context
+- **Generate at 1K first** - iterate, then go to 2K for finals
+- **Save good styles** - add them to your library
+- **Generate variants** - especially for hero images
+
+### Don't:
+- **Don't mix wildly different styles** - it looks unprofessional
+- **Don't skip iteration** - first drafts are rarely final
+- **Don't over-detail wireframes** - they should feel like wireframes
+- **Don't forget context** - tell Claude what it's for
+
+
+## Troubleshooting
+
+### Persona doesn't match description
+
+- Be more specific about age, expression, attire
+- Provide reference images of the "type" you want
+- Try: "NOT a stock photo feeling, more natural and authentic"
+
+### Journey map is too complex
+
+- Reduce to 5-6 stages maximum
+- Request "simplified, high-level view"
+- Save detailed journeys for separate deep-dive slides
+
+### Wireframe looks too polished
+
+- Explicitly request "low-fidelity wireframe"
+- Ask for "grayscale only, no polish"
+- Specify "sketch-like, not final design"
+
+### Device mockup looks fake
+
+- Request "photorealistic device frame"
+- Add context: "slight shadow and reflection"
+- Try different angles
+
+
+## What's Next?
+
+You've mastered user and product visuals. Next up: strategy and architecture diagrams for stakeholder meetings.
+
+**Module 3.2.2** covers system architecture diagrams, prioritization matrices, and product roadmaps - the visuals for CTO, CEO, and board meetings.
+
+Interactive track: Type `/start-3-2-2`
+
+
+## Resources
+
+- [Figma Journey Map Template](https://www.figma.com/community/file/1167700722702284382/journey-map-template) - Free template to reference
+- [UXPressia Templates](https://uxpressia.com/templates) - Journey map and persona templates
+- [Journey Map Examples](https://www.uxtweak.com/user-journey-map/examples/) - Inspiration for different styles
+- [Smashing Magazine: Journey Map Templates](https://www.smashingmagazine.com/2024/07/customer-journey-maps-figma-miro-templates/) - Curated collection
+
+
+---
+
+**About This Course**
+
+Created by [Carl Vellotti](https://www.linkedin.com/in/carlvellotti/). Check out [The Full Stack PM](https://fullstack-pm.com/subscribe?utm_source=ccforpms&utm_medium=course&utm_campaign=nano-banana-users) for more PM builder content.
+
+**Source Repository:** [github.com/carlvellotti/claude-code-pm-course](https://github.com/carlvellotti/claude-code-pm-course)
