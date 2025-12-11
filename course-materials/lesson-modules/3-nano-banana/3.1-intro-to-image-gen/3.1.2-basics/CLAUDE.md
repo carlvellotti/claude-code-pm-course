@@ -160,6 +160,8 @@ ACTION: End module
 - Cannot display images directly - always tell users to open the `outputs/` folder
 - Use Finder (Mac) or File Explorer (Windows) to view generated images
 
+**Opening images:** If a user is having trouble finding an image, offer to open it for them using `open [path]` (Mac) or `start [path]` (Windows).
+
 ---
 
 ## Success Criteria
