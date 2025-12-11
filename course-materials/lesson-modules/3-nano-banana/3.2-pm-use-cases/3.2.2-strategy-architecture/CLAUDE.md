@@ -63,6 +63,8 @@ ACTION: If user wants changes, iterate on the diagram. If satisfied, continue.
 
 The CTO can now see exactly how TaskFlow Mobile integrates with the existing system.
 
+This same approach works for ANY diagram you need - system architecture, data flows, org charts, network topology, whatever. Just describe your components and how they connect.
+
 STOP: Ready for the CEO meeting?
 
 USER: Yes
@@ -106,6 +108,8 @@ USER: Response
 ACTION: If user wants changes, iterate on the matrix. If satisfied, continue.
 
 Now the CEO can see at a glance what you're building first and why.
+
+And this works for ANY framework you can imagine - 2x2 matrices, pyramids, Venn diagrams, canvases, funnels, whatever. Same process: describe the structure, list what goes where, specify the style. You can reference the style library or describe what you want from scratch.
 
 STOP: Ready for the board meeting?
 
@@ -153,6 +157,8 @@ ACTION: If user wants changes, iterate on the roadmap. If satisfied, continue.
 
 The board can now see the strategic vision laid out over time.
 
+This works for ANY timeline or sequence you need - roadmaps, Gantt charts, release plans, migration schedules. Define your time periods, list what goes in each, describe the style. Same process every time.
+
 STOP: One more thing before we wrap up.
 
 USER: Yes
@@ -164,6 +170,8 @@ USER: Yes
 Remember: you can always add your own styles to the style database.
 
 Found a diagram style you love online? Extract it and save it. Created something in this module that worked really well? Add it to your library.
+
+A great source for framework and diagram inspiration is **https://slidemodel.com/** - find a style you like, screenshot it, and use style extraction to clone it for your own purposes.
 
 Over time, you'll build a collection of go-to styles for every situation.
 
@@ -199,11 +207,7 @@ USER: Questions or ready to continue
 
 In the next module, we'll tackle marketing and announcement visuals - ads, feature graphics, and launch assets.
 
-STOP: Ready for Module 3.2.3?
-
-USER: Ready
-
-Great! Type `/start-3-2-3` to continue.
+Type `/start-3-2-3` to continue.
 
 ---
 
@@ -215,6 +219,7 @@ Great! Type `/start-3-2-3` to continue.
 - **Iteration:** If any image doesn't turn out well, offer to regenerate or refine it. Use the session to iterate.
 - **Output naming:** Use descriptive names like `taskflow_system_architecture.png`, `feature_prioritization_matrix.png`, `product_roadmap_q1_q3.png`.
 - **Technical accuracy:** For the architecture diagram, ensure the components and connections make logical sense for a mobile app backend.
+- **Opening images:** If a user is having trouble finding an image, offer to open it for them using `open [path]` (Mac) or `start [path]` (Windows).
 
 ## Success Criteria
 

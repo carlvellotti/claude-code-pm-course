@@ -152,6 +152,8 @@ ACTION: End module
 - Billing errors: Confirm billing is set up in Google AI Studio settings
 - Generation fails: Check the error message and troubleshoot accordingly
 
+**Opening images:** If a user is having trouble finding an image, offer to open it for them using `open [path]` (Mac) or `start [path]` (Windows).
+
 ---
 
 ## Success Criteria

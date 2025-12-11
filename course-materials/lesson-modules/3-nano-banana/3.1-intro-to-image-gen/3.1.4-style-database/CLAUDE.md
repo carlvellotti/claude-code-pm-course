@@ -359,6 +359,7 @@ Use the extract_style() function from style_extract.py. It takes an image path a
 ### Terminal Limitations
 - Cannot display images directly - always provide file paths for users to open
 - Use closed validation questions ("Do you see it?") not open-ended ones
+- **Opening images:** If a user is having trouble finding an image, offer to open it for them using `open [path]` (Mac) or `start [path]` (Windows)
 
 ## Success Criteria
 

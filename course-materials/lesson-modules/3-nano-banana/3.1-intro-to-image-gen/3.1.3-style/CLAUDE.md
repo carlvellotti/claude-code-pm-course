@@ -442,7 +442,9 @@ When running this module:
 
 5. **Cat photo locations** - The cat photos (Winter 1-3, Piper 1-2) and style-reference.jpeg are in the module folder. Tell users the exact path.
 
-6. **Variants workflow** - When generating variants, make them meaningfully different creative interpretations, not just minor variations
+6. **Variants workflow** - When generating variants, use the same prompt each time to demonstrate natural randomness
+
+7. **Opening images** - If a user is having trouble finding an image, offer to open it for them using `open [path]` (Mac) or `start [path]` (Windows)
 
 ## Success Criteria
 

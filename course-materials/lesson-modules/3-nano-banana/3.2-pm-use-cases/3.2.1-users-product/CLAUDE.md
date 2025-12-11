@@ -8,7 +8,13 @@ Quick reminder: TaskFlow is the fictional company for this course - a B2B SaaS p
 
 Here's the scenario: you're a PM at TaskFlow, and you're pitching a new mobile app to leadership next week. The app is designed for operations managers in manufacturing - people who coordinate tasks across shifts on the factory floor.
 
-You need visuals for your pitch deck: a persona portrait, a journey map, wireframes, and a hero image. By the end of this module, you'll have built all of them.
+You need visuals for your pitch deck: 
+- a persona portrait
+- a journey map
+- wireframes
+- a hero image.
+
+By the end of this module, you'll have built all of them.
 
 STOP: Ready to start building your pitch deck visuals?
 
@@ -111,9 +117,36 @@ USER: Response (either asks for change or continues)
 
 ACTION: If user wants a change, regenerate with their requested style. If they're satisfied, continue to the next section.
 
-Now leadership can see exactly where TaskFlow Mobile fits into Marcus's day.
+Now here's a power move: we can put Marcus INSIDE the journey map.
 
-STOP: Ready to show them what the solution looks like?
+We have Marcus's portrait from earlier. We can use it as a reference image and generate a journey map that shows him at each stage of his morning.
+
+STOP: Ask me to regenerate the journey map with Marcus in it.
+
+USER: Regenerate with Marcus / Put Marcus in the journey map
+
+ACTION: Generate journey map with Marcus as a character at each stage
+- Use the Marcus portrait image as a reference image
+- Describe his visual details in the prompt: mid-40s, navy polo, safety vest
+- Same 5 stages: Arrive → Review → Standup → Floor Walk → Handoff
+- Show Marcus himself at each stage performing the activity
+- Include pain points at each stage
+- Clean infographic style, 16:9 aspect ratio
+- Save to outputs folder
+
+ACTION: Provide the path to the output image so user can view it.
+
+Check `outputs/` for the updated journey map.
+
+STOP: See how Marcus appears consistently across all stages? That's the session memory at work.
+
+USER: Response
+
+---
+
+This is the kind of artifact that makes presentations memorable. It's not just a generic journey map - it's Marcus's story.
+
+STOP: Ready to show leadership what the solution looks like? Next up: wireframes
 
 USER: Yes
 
@@ -174,8 +207,9 @@ STOP: Ask me to put the wireframe into an iPhone mockup.
 
 USER: Put this in an iPhone / Create a device mockup
 
-ACTION: Generate device mockup with the polished wireframe
-- iPhone frame (modern model)
+ACTION: Generate device mockup with a realistic UI (not wireframe)
+- iPhone frame (modern model), direct head-on view (not angled)
+- Transform the wireframe concept into a polished, realistic app UI with real colors, icons, and typography
 - Clean background (white or subtle gradient)
 - Slight shadow for depth
 - Professional, pitch-deck ready
@@ -247,11 +281,7 @@ USER: Questions or ready to continue
 
 In the next module, we'll tackle strategy and architecture visuals - diagrams, frameworks, and system overviews.
 
-STOP: Ready for Module 3.2.2?
-
-USER: Ready
-
-Great! Type `/start-3-2-2` to continue.
+Type `/start-3-2-2` to continue.
 
 ---
 
@@ -262,6 +292,7 @@ Great! Type `/start-3-2-2` to continue.
 - **Style library:** If user references a style number, look up the prompt in `style-library.html` (in the 3.1.4 module folder).
 - **Iteration:** If any image doesn't turn out well, offer to regenerate or refine it. Use the session to iterate.
 - **Output naming:** Use descriptive names like `marcus_chen_persona.png`, `morning_workflow_journey_map.png`, etc.
+- **Opening images:** If a user is having trouble finding an image, offer to open it for them using `open [path]` (Mac) or `start [path]` (Windows).
 
 ## Success Criteria
 
