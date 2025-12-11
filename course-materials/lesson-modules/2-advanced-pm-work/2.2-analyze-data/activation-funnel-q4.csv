@@ -1,0 +1,5 @@
+step,users_entered,users_completed,completion_rate,median_time_to_complete
+Signup,10000,10000,1.0,0
+First Task Created,10000,7200,0.72,18
+First Task Completed,7200,2880,0.4,45
+Invite Sent,2880,1440,0.5,24

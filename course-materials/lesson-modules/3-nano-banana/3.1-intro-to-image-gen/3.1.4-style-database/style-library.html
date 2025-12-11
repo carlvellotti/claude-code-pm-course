@@ -1,0 +1,1854 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Style Library</title>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Instrument+Serif&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #0a0a0b;
+      --bg-secondary: #141416;
+      --bg-tertiary: #1c1c1f;
+      --border: #2a2a2e;
+      --text-primary: #fafafa;
+      --text-secondary: #888;
+      --text-muted: #555;
+      --accent: #e8ff47;
+      --accent-dim: #a3b832;
+      --success: #47ffb4;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      min-height: 100vh;
+      background-image:
+        radial-gradient(ellipse at 0% 0%, rgba(232, 255, 71, 0.03) 0%, transparent 50%),
+        radial-gradient(ellipse at 100% 100%, rgba(71, 255, 180, 0.02) 0%, transparent 50%);
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+    }
+
+    header {
+      margin-bottom: 3rem;
+    }
+
+    h1 {
+      font-family: 'Instrument Serif', serif;
+      font-size: 3.5rem;
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+    }
+
+    h1 span {
+      color: var(--accent);
+    }
+
+    .subtitle {
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+    }
+
+    .filters {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-bottom: 2rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .category-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .filter-btn {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+      border-radius: 100px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .filter-btn:hover {
+      border-color: var(--text-muted);
+      color: var(--text-primary);
+    }
+
+    .filter-btn.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: var(--bg-primary);
+    }
+
+    .tag-filters {
+      display: none;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      width: 100%;
+      margin-top: 0.75rem;
+      padding-top: 0.75rem;
+      border-top: 1px dashed var(--border);
+    }
+
+    .tag-filters.active {
+      display: flex;
+    }
+
+    .tag-filter-btn {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      font-weight: 400;
+      padding: 0.35rem 0.7rem;
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .tag-filter-btn:hover {
+      border-color: var(--text-muted);
+      color: var(--text-primary);
+    }
+
+    .tag-filter-btn.active {
+      background: var(--success);
+      border-color: var(--success);
+      color: var(--bg-primary);
+    }
+
+    .style-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .style-table th {
+      text-align: left;
+      padding: 1rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .style-table th:first-child {
+      width: 60px;
+    }
+
+    .style-table th:nth-child(2) {
+      width: 100px;
+    }
+
+    .style-table tr {
+      border-bottom: 1px solid var(--border);
+      transition: background 0.15s ease;
+    }
+
+    .style-table tbody tr:hover {
+      background: var(--bg-secondary);
+    }
+
+    .style-table td {
+      padding: 1.25rem 1rem;
+      vertical-align: top;
+    }
+
+    .index {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .thumbnail {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+
+    .thumbnail:hover {
+      border-color: var(--accent);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    /* Hover preview styles */
+    .hover-preview {
+      display: none;
+      position: fixed;
+      z-index: 500;
+      pointer-events: none;
+      max-width: 400px;
+      max-height: 400px;
+      border-radius: 8px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+      border: 1px solid var(--border);
+      background: var(--bg-secondary);
+      padding: 4px;
+    }
+
+    .hover-preview.active {
+      display: block;
+      animation: previewFadeIn 0.15s ease;
+    }
+
+    .hover-preview img {
+      max-width: 100%;
+      max-height: 392px;
+      object-fit: contain;
+      border-radius: 6px;
+      display: block;
+    }
+
+    @keyframes previewFadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    /* Lightbox styles */
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .lightbox.active {
+      display: flex;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      object-fit: contain;
+      border-radius: 8px;
+      box-shadow: 0 20px 80px rgba(0, 0, 0, 0.5);
+      animation: lightboxFadeIn 0.2s ease;
+    }
+
+    @keyframes lightboxFadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      font-size: 2rem;
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: color 0.2s ease;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .lightbox-close:hover {
+      color: var(--text-primary);
+    }
+
+    .style-name {
+      font-family: 'Instrument Serif', serif;
+      font-size: 1.35rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .style-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-top: 0.5rem;
+    }
+
+    .tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      padding: 0.25rem 0.5rem;
+      background: var(--bg-tertiary);
+      border-radius: 3px;
+      color: var(--text-secondary);
+    }
+
+    .category-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      font-weight: 500;
+      padding: 0.35rem 0.65rem;
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      color: var(--text-secondary);
+      white-space: nowrap;
+    }
+
+    .prompt-cell {
+      position: relative;
+      max-width: 400px;
+    }
+
+    .prompt-text {
+      font-size: 0.85rem;
+      line-height: 1.5;
+      color: var(--text-secondary);
+      cursor: pointer;
+      padding: 0.75rem;
+      background: var(--bg-tertiary);
+      border-radius: 6px;
+      border: 1px solid transparent;
+      transition: all 0.3s ease;
+      max-height: 5.5rem;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .prompt-text:hover {
+      border-color: var(--accent-dim);
+      color: var(--text-primary);
+      max-height: 300px;
+      overflow-y: auto;
+      z-index: 50;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+    }
+
+    .prompt-text::after {
+      content: 'Click to copy';
+      position: absolute;
+      bottom: 0.5rem;
+      right: 0.75rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem;
+      color: var(--text-muted);
+      background: var(--bg-tertiary);
+      padding: 0.2rem 0.4rem;
+      border-radius: 3px;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+
+    .prompt-text:hover::after {
+      opacity: 1;
+    }
+
+    .prompt-text.copied {
+      border-color: var(--success);
+    }
+
+    .prompt-text.copied::after {
+      content: 'Copied!';
+      color: var(--success);
+      opacity: 1;
+    }
+
+    /* Markdown formatting inside prompt */
+    .prompt-text strong {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .prompt-text ul, .prompt-text ol {
+      margin: 0.3rem 0;
+      padding-left: 1.2rem;
+    }
+
+    .prompt-text li {
+      margin: 0.15rem 0;
+    }
+
+    .prompt-text p {
+      margin: 0.4rem 0;
+    }
+
+    .prompt-text p:first-child {
+      margin-top: 0;
+    }
+
+    .example-use {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
+    .empty-state {
+      text-align: center;
+      padding: 4rem 2rem;
+      color: var(--text-muted);
+    }
+
+    .empty-state h2 {
+      font-family: 'Instrument Serif', serif;
+      font-weight: 400;
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-secondary);
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: var(--success);
+      color: var(--bg-primary);
+      padding: 0.75rem 1.5rem;
+      border-radius: 100px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+      font-weight: 600;
+      opacity: 0;
+      transition: all 0.3s ease;
+      pointer-events: none;
+    }
+
+    .toast.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+
+    @media (max-width: 900px) {
+      h1 { font-size: 2.5rem; }
+      .style-table th:nth-child(5),
+      .style-table td:nth-child(5) { display: none; }
+      .prompt-cell { max-width: 250px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Style <span>Library</span></h1>
+      <p class="subtitle">Your personal collection of reusable visual styles. Tell Claude the index # to use any style.</p>
+    </header>
+
+    <div class="filters">
+      <div class="category-filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="Framework">Framework</button>
+        <button class="filter-btn" data-filter="Flow">Flow</button>
+        <button class="filter-btn" data-filter="Architecture">Architecture</button>
+        <button class="filter-btn" data-filter="Mockup">Mockup</button>
+        <button class="filter-btn" data-filter="Persona">Persona</button>
+        <button class="filter-btn" data-filter="Marketing">Marketing</button>
+        <button class="filter-btn" data-filter="Artistic">Artistic</button>
+      </div>
+      <div class="tag-filters" id="tag-filters">
+        <!-- Populated by JS when category is selected -->
+      </div>
+    </div>
+
+    <table class="style-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Preview</th>
+          <th>Style</th>
+          <th>Category</th>
+          <th>Prompt (click to copy)</th>
+          <th>Good For</th>
+        </tr>
+      </thead>
+      <tbody id="styles-body">
+        <!-- Populated by JS -->
+      </tbody>
+    </table>
+
+    <div class="empty-state" id="empty-state" style="display: none;">
+      <h2>No styles match this filter</h2>
+      <p>Try a different category or add more styles to your library.</p>
+    </div>
+  </div>
+
+  <div class="toast" id="toast">Copied to clipboard</div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <span class="lightbox-close">&times;</span>
+    <img src="" alt="Expanded view" id="lightbox-img">
+  </div>
+
+  <!-- Hover Preview -->
+  <div class="hover-preview" id="hover-preview">
+    <img src="" alt="Preview" id="hover-preview-img">
+  </div>
+
+  <script>
+    // ===========================================
+    // CANONICAL CATEGORIES AND TAGS
+    // When adding new styles, Claude MUST use these categories and tags only.
+    // ===========================================
+    const CATEGORIES = ["Framework", "Flow", "Architecture", "Mockup", "Persona", "Marketing", "Artistic"];
+
+    const CANONICAL_TAGS = {
+      "Framework": ["2x2-matrix", "pyramid", "venn", "canvas", "concentric", "triangle"],
+      "Flow": ["process", "journey-map", "flowchart", "steps", "sequence"],
+      "Architecture": ["hierarchy", "hub-spoke", "system-diagram", "org-chart", "tree"],
+      "Mockup": ["wireframe", "device-frame", "ui-concept", "landing-page", "mobile", "desktop"],
+      "Persona": ["portrait", "lifestyle", "headshot", "context", "illustrated", "scene"],
+      "Marketing": ["ad", "social", "announcement", "banner", "hero"],
+      "Artistic": ["flat-illustration", "hand-drawn", "watercolor", "photography", "retro", "minimalist", "bold-graphic", "3d-render"]
+    };
+
+    // Style library data - Claude can add entries here
+    const styles = [
+      {
+        id: 1,
+        name: "90s Analog Snapshot",
+        category: "Persona",
+        tags: ["portrait", "lifestyle", "context"],
+        thumbnail: "thumbnails/90s-analog-snapshot.jpg",
+        prompt: "1990s Analog Snapshot style. Direct on-camera flash, harsh and flat. Sharp shadows cast behind subjects. Muted, desaturated warm-neutral palette with off-white/cream backgrounds. Visible film grain throughout. Deep depth of field - most of scene in focus. Specular highlights on glossy surfaces from flash. Orange/amber datestamp in corner (format: MON DD 'YY). Candid, authentic, unpolished feel like a point-and-shoot 35mm camera. Nostalgic, contemplative mood.",
+        exampleUse: "Persona portraits, user context shots, lifestyle imagery"
+      },
+      {
+        id: 2,
+        name: "Candid Editorial Flash",
+        category: "Persona",
+        tags: ["portrait", "headshot"],
+        thumbnail: "thumbnails/candid-editorial-flash.png",
+        prompt: "Candid Editorial Flash style. Harsh direct on-camera flash creating sharp shadows on wall behind subject. High contrast with deep blacks and bright, borderline-clipped whites. Electric cobalt blue (#1A449B) as dominant color. Signal red as accent (lips, nails, small details). Off-white/cool gray neutral background. Noticeable film grain throughout. Shot straight-on at eye level, medium close-up framing. Shallow depth of field with tack sharp focus on face. Raw, glossy skin texture with specular highlights. Mood: defiant, playful indulgence, raw confidence. Indie Sleaze / After-Party Editorial aesthetic.",
+        exampleUse: "Bold persona portraits, user profile images, brand photography"
+      },
+      {
+        id: 3,
+        name: "Clean Minimalist Journey Map",
+        category: "Flow",
+        tags: ["journey-map", "process", "steps"],
+        thumbnail: "thumbnails/journey-map-minimalist.png",
+        prompt: "**Task:** Create a UX user journey map.\n\n**Style:**\n- Clean minimalist aesthetic with soft gray lines and muted blue accent color\n- Rounded rectangles for each stage, thin connecting arrows\n- Light drop shadows for subtle depth\n- Modern sans-serif typography\n\n**Output:**\n- Single 16:9 infographic, white background\n- Clear hierarchy between headings, labels, and body text\n\n**Content:**\n- Title: \"User Journey – Pro Plan Signup\"\n- Stages: Awareness → Consideration → Signup → Onboarding → Activation → Retention\n- Stage details:\n  - Awareness: \"Discovers product via ad or referral\" / Metric: Impressions\n  - Consideration: \"Visits pricing page, reads reviews\" / Metric: Site visits\n  - Signup: \"Creates free account\" / Metric: Signups\n  - Onboarding: \"Completes setup wizard\" / Metric: Completion rate\n  - Activation: \"Invites first team member\" / Metric: Activation %\n  - Retention: \"Returns weekly, upgrades to paid\" / Metric: WAU\n\n**Layout:**\n- Horizontal flow from left to right with arrows between stages\n- Title at top center\n- Each stage as a card with description above and metric below\n\n**Constraints:**\n- English text only\n- All text fully readable at 1080p\n- No decorative illustrations, icons, or characters",
+        exampleUse: "User journeys, onboarding flows, funnel visualization"
+      },
+      {
+        id: 4,
+        name: "Hand-Drawn Sketch Journey Map",
+        category: "Flow",
+        tags: ["journey-map", "process", "steps"],
+        thumbnail: "thumbnails/journey-map-handdrawn.png",
+        prompt: "**Task:** Create a UX user journey map.\n\n**Style:**\n- Hand-drawn sketch aesthetic on off-white paper texture\n- Wobbly lines, imperfect circles, casual handwriting-style font\n- Black ink with single highlight color (orange) for emphasis\n- Looks like a whiteboard brainstorm\n\n**Output:**\n- Single 16:9 infographic, off-white textured background\n- Typography mimics neat handwriting\n\n**Content:**\n- Title: \"Customer Journey – E-commerce Purchase\"\n- Stages: Browse → Compare → Add to Cart → Checkout → Delivery → Review\n- Stage details:\n  - Browse: \"Scrolls homepage, clicks category\" / Metric: Page views\n  - Compare: \"Reads specs, checks reviews\" / Metric: Time on page\n  - Add to Cart: \"Selects size, adds item\" / Metric: Cart adds\n  - Checkout: \"Enters payment, confirms order\" / Metric: Conversion\n  - Delivery: \"Tracks package, receives item\" / Metric: Delivery time\n  - Review: \"Rates product, shares feedback\" / Metric: Review rate\n\n**Layout:**\n- Horizontal flow with hand-drawn arrows\n- Title at top left, underlined\n- Stages as rough rectangular boxes with text inside\n\n**Constraints:**\n- English text only\n- All text legible despite hand-drawn style\n- No digital polish or gradients",
+        exampleUse: "Workshop outputs, brainstorm documentation, informal presentations"
+      },
+      {
+        id: 5,
+        name: "Clean Corporate Matrix",
+        category: "Framework",
+        tags: ["2x2-matrix"],
+        thumbnail: "thumbnails/matrix-corporate.png",
+        prompt: "**Task:** Create a 2x2 prioritization matrix.\n\n**Style:**\n- Clean corporate aesthetic with crisp lines\n- Light gray grid lines, navy text, teal accent for quadrant labels\n- Professional, presentation-ready appearance\n- Modern sans-serif typography\n\n**Output:**\n- Single 1:1 square diagram, white background\n- Clear axis labels and quadrant names\n\n**Content:**\n- Title: \"Feature Prioritization Matrix\"\n- X-axis: \"Effort\" (Low → High)\n- Y-axis: \"Impact\" (Low → High)\n- Quadrants:\n  - Top-left: \"Quick Wins\" (High Impact, Low Effort)\n  - Top-right: \"Major Projects\" (High Impact, High Effort)\n  - Bottom-left: \"Fill-ins\" (Low Impact, Low Effort)\n  - Bottom-right: \"Thankless Tasks\" (Low Impact, High Effort)\n- Example items plotted: \"Dark mode\" (Quick Win), \"API rebuild\" (Major Project), \"Footer update\" (Fill-in), \"Legacy migration\" (Thankless)\n\n**Layout:**\n- Four equal quadrants with labeled axes\n- Title centered at top\n- Items as small labeled dots or rectangles in each quadrant\n\n**Constraints:**\n- English text only\n- All text readable\n- No decorative elements, icons, or illustrations",
+        exampleUse: "Feature prioritization, effort/impact analysis, strategic planning"
+      },
+      {
+        id: 6,
+        name: "Colorful Infographic Matrix",
+        category: "Framework",
+        tags: ["2x2-matrix"],
+        thumbnail: "thumbnails/matrix-colorful.png",
+        prompt: "**Task:** Create a 2x2 prioritization matrix.\n\n**Style:**\n- Colorful infographic aesthetic with distinct color per quadrant\n- Soft pastel fills (green, blue, yellow, red) with white text\n- Rounded corners, friendly and modern\n- Bold sans-serif typography\n\n**Output:**\n- Single 1:1 square diagram, light gray background\n- High contrast quadrant labels\n\n**Content:**\n- Title: \"Risk Assessment Matrix\"\n- X-axis: \"Likelihood\" (Low → High)\n- Y-axis: \"Severity\" (Low → High)\n- Quadrants:\n  - Top-left (yellow): \"Monitor\" (High Severity, Low Likelihood)\n  - Top-right (red): \"Mitigate Immediately\" (High Severity, High Likelihood)\n  - Bottom-left (green): \"Accept\" (Low Severity, Low Likelihood)\n  - Bottom-right (orange): \"Contingency Plan\" (Low Severity, High Likelihood)\n\n**Layout:**\n- Four colored quadrants filling the space\n- Axis labels outside the grid\n- Title at top, centered\n\n**Constraints:**\n- English text only\n- Color-coded but also labeled (accessible)\n- No decorative elements beyond color fills",
+        exampleUse: "Risk assessment, stakeholder mapping, priority visualization"
+      },
+      {
+        id: 7,
+        name: "Clean Grayscale Wireframe",
+        category: "Mockup",
+        tags: ["wireframe", "mobile"],
+        thumbnail: "thumbnails/wireframe-grayscale.png",
+        prompt: "**Task:** Create a mobile app wireframe.\n\n**Style:**\n- Clean grayscale wireframe aesthetic\n- Simple rectangles, lines, and placeholder shapes\n- No color except shades of gray\n- Annotations in blue for callouts\n\n**Output:**\n- Single mobile screen (9:19.5 aspect ratio), white background\n- Low-fidelity, sketch-level detail\n\n**Content:**\n- Screen: \"Home Dashboard\"\n- Elements:\n  - Status bar at top (time, battery, signal placeholders)\n  - Header: \"Good morning, Sarah\" with avatar circle\n  - Search bar with magnifying glass icon\n  - Section: \"Recent Projects\" with 3 horizontal card placeholders\n  - Section: \"Quick Actions\" with 4 icon button placeholders\n  - Bottom navigation: 4 tab icons (Home, Search, Add, Profile)\n\n**Layout:**\n- Standard mobile layout, elements stacked vertically\n- Consistent padding and spacing\n- Blue annotation arrows pointing to key elements with labels\n\n**Constraints:**\n- Grayscale only (no color in UI, blue for annotations only)\n- Placeholder text like \"Lorem ipsum\" or \"Project Title\"\n- No realistic images or icons, just shapes",
+        exampleUse: "Mobile app concepts, early-stage designs, stakeholder reviews"
+      },
+      {
+        id: 8,
+        name: "Blueprint-Style Wireframe",
+        category: "Mockup",
+        tags: ["wireframe", "desktop"],
+        thumbnail: "thumbnails/wireframe-blueprint.png",
+        prompt: "**Task:** Create a desktop web wireframe.\n\n**Style:**\n- Blueprint aesthetic with dark blue background and white/cyan lines\n- Technical drawing feel with grid lines visible\n- Precise measurements and spacing indicators\n- Monospace font for labels\n\n**Output:**\n- Single desktop screen (16:9), dark navy blueprint background\n- Technical schematic appearance\n\n**Content:**\n- Screen: \"Settings Page\"\n- Elements:\n  - Top nav bar: Logo placeholder, nav links, user avatar\n  - Left sidebar: Settings categories (Profile, Security, Billing, Notifications, Integrations)\n  - Main content: Form with labeled input fields (Name, Email, Password)\n  - Action buttons: \"Cancel\" and \"Save Changes\"\n  - Dimension markers showing spacing (16px, 24px, etc.)\n\n**Layout:**\n- Standard admin dashboard layout\n- Sidebar on left, main content right\n- Grid lines visible in background\n\n**Constraints:**\n- Blueprint color scheme only (dark blue, white, cyan)\n- Include spacing/dimension annotations\n- No decorative elements, purely functional",
+        exampleUse: "Technical specs, developer handoffs, detailed wireframes"
+      },
+      {
+        id: 9,
+        name: "Clean Corporate Headshot",
+        category: "Persona",
+        tags: ["portrait", "headshot"],
+        thumbnail: "thumbnails/portrait-corporate.png",
+        prompt: "**Task:** Create a professional persona portrait.\n\n**Style:**\n- Clean corporate headshot aesthetic\n- Soft, even studio lighting with subtle fill\n- Neutral, approachable expression\n- Muted, professional color tones\n\n**Output:**\n- Single 1:1 square portrait, light gray gradient background\n- High resolution, sharp focus on face\n\n**Content:**\n- Subject: Woman, mid-30s, product manager\n- Appearance: Dark hair in neat bob, minimal makeup, small earrings\n- Clothing: Navy blazer over white blouse\n- Expression: Confident, slight smile, direct eye contact\n\n**Layout:**\n- Head and shoulders framing\n- Subject centered, looking at camera\n- Soft vignette toward edges\n\n**Lighting:**\n- Three-point studio lighting\n- Key light at 45 degrees, soft fill opposite\n- Subtle rim light on hair\n\n**Constraints:**\n- Photorealistic\n- Professional and approachable, not intimidating\n- No logos, text, or props",
+        exampleUse: "Persona cards, user profiles, stakeholder presentations"
+      },
+      {
+        id: 10,
+        name: "Warm Natural Light Portrait",
+        category: "Persona",
+        tags: ["portrait", "lifestyle"],
+        thumbnail: "thumbnails/portrait-natural.png",
+        prompt: "**Task:** Create a professional persona portrait.\n\n**Style:**\n- Warm natural light aesthetic, golden hour feel\n- Slightly shallow depth of field, soft bokeh background\n- Authentic, candid energy rather than posed\n- Warm color grade with lifted shadows\n\n**Output:**\n- Single 4:5 vertical portrait, blurred outdoor background\n- Film-like quality with subtle grain\n\n**Content:**\n- Subject: Man, late 20s, startup founder\n- Appearance: Short beard, wavy brown hair, friendly eyes\n- Clothing: Heather gray crewneck sweater\n- Expression: Genuine smile, relaxed, approachable\n\n**Layout:**\n- Head and shoulders with slight negative space above\n- Subject slightly off-center (rule of thirds)\n- Background suggests outdoor café or park, blurred\n\n**Lighting:**\n- Natural golden hour sunlight from side\n- Soft shadows, warm highlights on face\n- No harsh contrasts\n\n**Constraints:**\n- Photorealistic with subtle film emulation\n- Feels authentic, not stock photo\n- No text, logos, or distracting elements",
+        exampleUse: "Founder profiles, team pages, authentic persona imagery"
+      },
+      {
+        id: 11,
+        name: "Corporate Flat Illustration",
+        category: "Artistic",
+        tags: ["flat-illustration"],
+        thumbnail: "thumbnails/illustration-corporate.png",
+        prompt: "**Task:** Create a flat illustration of a team collaboration scene.\n\n**Style:**\n- Modern corporate flat illustration aesthetic\n- Simple geometric shapes, no outlines\n- Limited palette: soft blue, coral, cream, navy, white\n- Abstract faceless figures with simple body shapes\n\n**Output:**\n- Single 16:9 illustration, soft cream background\n- Clean vector-style appearance\n\n**Content:**\n- Scene: Three team members collaborating around a table\n- Elements:\n  - Person 1: Standing, pointing at whiteboard with chart\n  - Person 2: Seated, laptop open, taking notes\n  - Person 3: Seated, holding coffee, engaged in discussion\n  - Whiteboard with simple bar chart\n  - Table with laptops and coffee cups\n  - Plant in corner for warmth\n\n**Layout:**\n- Centered composition with figures around table\n- Whiteboard as focal point in background\n- Balanced negative space\n\n**Constraints:**\n- No facial features on figures\n- Maximum 5 colors\n- No gradients, textures, or shadows\n- No text or labels",
+        exampleUse: "Team collaboration visuals, culture decks, about pages"
+      },
+      {
+        id: 12,
+        name: "Playful Geometric Illustration",
+        category: "Artistic",
+        tags: ["flat-illustration", "bold-graphic"],
+        thumbnail: "thumbnails/illustration-playful.png",
+        prompt: "**Task:** Create a flat illustration of a person working remotely.\n\n**Style:**\n- Playful geometric illustration with bold shapes\n- Bright, saturated colors: yellow, pink, electric blue, black\n- Chunky proportions, slightly exaggerated features\n- Memphis design influence with floating shapes\n\n**Output:**\n- Single 1:1 square illustration, white background\n- Bold, eye-catching, modern\n\n**Content:**\n- Scene: Person working from home at desk\n- Elements:\n  - Person: Seated at desk with headphones, waving at screen\n  - Desk: Monitor showing video call grid, keyboard, plant\n  - Chair: Modern ergonomic style\n  - Background: Floating geometric shapes (circles, triangles, squiggles)\n  - Cat sleeping on nearby surface\n\n**Layout:**\n- Person centered, desk slightly angled\n- Floating shapes scattered around edges\n- Dynamic, energetic composition\n\n**Constraints:**\n- Stylized but recognizable figures (simple faces okay)\n- Bold color blocks, no gradients\n- No realistic textures\n- No text",
+        exampleUse: "Remote work content, modern brand visuals, social media"
+      },
+      {
+        id: 13,
+        name: "Clean Corporate Pyramid",
+        category: "Framework",
+        tags: ["pyramid"],
+        thumbnail: "thumbnails/pyramid-corporate.png",
+        prompt: "**Task:** Create a strategic priority pyramid diagram with 4 levels\n\n**Style:**\n- Clean corporate aesthetic with crisp lines and professional finish\n- Navy blue gradient (darkest at base, lighter at top)\n- Sans-serif typography, bold labels\n- Subtle shadow effects for depth\n\n**Output:**\n- 16:9 landscape orientation\n- White background\n\n**Content:**\n- Title at top: \"Product Strategy Pyramid\"\n- Level 1 (bottom/widest): \"Core Infrastructure & Platform\"\n- Level 2: \"Feature Development\"\n- Level 3: \"Optimizations & Experiments\"\n- Level 4 (top/smallest): \"Innovation Bets\"\n- Add small percentages on right: 50%, 30%, 15%, 5%\n\n**Layout:**\n- Centered pyramid with clean horizontal divisions\n- Labels inside each tier, left-aligned\n- Percentages outside on right edge\n\n**Constraints:**\n- English text only\n- All text fully readable\n- Professional boardroom-ready appearance",
+        exampleUse: "Strategic priority visualization, resource allocation, product roadmap hierarchy"
+      },
+      {
+        id: 14,
+        name: "Hand-Drawn User Hierarchy",
+        category: "Framework",
+        tags: ["pyramid"],
+        thumbnail: "thumbnails/pyramid-handdrawn.png",
+        prompt: "**Task:** Create a hand-sketched customer value pyramid with 5 levels\n\n**Style:**\n- Hand-drawn sketch aesthetic with wobbly, imperfect lines\n- Black ink on cream paper texture background\n- Single teal accent color for highlights\n- Handwritten-style font\n- Intentional slight imperfections in alignment\n\n**Output:**\n- Square 1:1 aspect ratio\n- Cream/off-white paper texture background\n\n**Content:**\n- Handwritten title above: \"User Needs Hierarchy\"\n- Level 1 (bottom): \"Functional - Does it work?\"\n- Level 2: \"Reliable - Can I depend on it?\"\n- Level 3: \"Usable - Is it easy?\"\n- Level 4: \"Convenient - Does it save time?\"\n- Level 5 (top): \"Delightful - Do I love it?\"\n\n**Layout:**\n- Sketch-style pyramid centered\n- Labels handwritten inside or next to each tier\n- Small doodle arrows pointing to key levels\n\n**Constraints:**\n- English text only\n- All text fully readable\n- Authentic sketch appearance, not overly polished",
+        exampleUse: "User value hierarchy, needs assessment, feature prioritization frameworks"
+      },
+      {
+        id: 15,
+        name: "Colorful Capability Stack",
+        category: "Framework",
+        tags: ["pyramid"],
+        thumbnail: "thumbnails/pyramid-colorful.png",
+        prompt: "**Task:** Create a colorful team capability pyramid with 4 levels\n\n**Style:**\n- Bright, friendly infographic style with bold colors\n- Each tier a different vibrant color: purple (bottom), blue, green, yellow (top)\n- Rounded, soft edges on pyramid segments\n- Modern sans-serif typography, white text on colored backgrounds\n- Playful icons next to each label\n\n**Output:**\n- 16:9 landscape orientation\n- Light gray background\n\n**Content:**\n- Title: \"Team Capability Stack\"\n- Level 1 (purple): \"Technical Skills\" with a gear icon\n- Level 2 (blue): \"Domain Knowledge\" with a lightbulb icon\n- Level 3 (green): \"Collaboration\" with a handshake icon\n- Level 4 (yellow): \"Strategic Thinking\" with a target icon\n\n**Layout:**\n- Pyramid centered with clear separation between tiers\n- Icons and labels centered in each section\n- Equal visual weight across all levels\n\n**Constraints:**\n- English text only\n- All text fully readable\n- High contrast for accessibility",
+        exampleUse: "Team skills assessment, capability development, competency frameworks"
+      },
+      {
+        id: 16,
+        name: "Corporate Product-Market Fit",
+        category: "Framework",
+        tags: ["venn"],
+        thumbnail: "thumbnails/venn-corporate.png",
+        prompt: "**Task:** Create a professional 3-circle Venn diagram showing product-market fit\n\n**Style:**\n- Clean corporate design with semi-transparent overlapping circles\n- Three circles: teal, navy blue, and gray with 40% opacity\n- Intersection areas show darker blended colors\n- Sans-serif labels in dark gray\n- Minimal, professional aesthetic\n\n**Output:**\n- Square 1:1 aspect ratio\n- White background\n\n**Content:**\n- Title above: \"Product-Market Fit Framework\"\n- Circle 1 (left): \"Customer Needs\"\n- Circle 2 (right): \"Our Capabilities\"\n- Circle 3 (bottom): \"Market Opportunity\"\n- Center intersection: \"PRODUCT-MARKET FIT\" (bold)\n- Small labels in 2-way intersections: \"Feasible\", \"Desirable\", \"Viable\"\n\n**Layout:**\n- Three circles of equal size arranged in triangle formation\n- All circles overlap in center\n- Labels positioned clearly outside or at edge of circles\n- Center label prominent\n\n**Constraints:**\n- English text only\n- All text fully readable\n- Clear visual hierarchy",
+        exampleUse: "Product-market fit analysis, strategic positioning, opportunity assessment"
+      },
+      {
+        id: 17,
+        name: "Sketch Feature Prioritization",
+        category: "Framework",
+        tags: ["venn"],
+        thumbnail: "thumbnails/venn-sketch.png",
+        prompt: "**Task:** Create a hand-drawn 2-circle Venn diagram for feature prioritization\n\n**Style:**\n- Sketchy, hand-drawn circles with imperfect lines\n- Black ink on white paper with subtle texture\n- Orange highlight color for the intersection area\n- Handwritten-style annotations\n- Casual, whiteboard aesthetic\n\n**Output:**\n- 16:9 landscape orientation\n- White background with subtle paper texture\n\n**Content:**\n- Scribbled title: \"Feature Prioritization\"\n- Left circle: \"High User Impact\"\n- Right circle: \"Low Engineering Effort\"\n- Intersection (shaded orange): \"PRIORITIZE THESE\"\n- Small bullet points in intersection: \"Quick wins\", \"Low-hanging fruit\", \"MVP features\"\n\n**Layout:**\n- Two large overlapping circles\n- Generous overlap area in center\n- Hand-drawn arrows pointing to intersection\n- Rough, informal spacing\n\n**Constraints:**\n- English text only\n- All text fully readable\n- Authentic sketch feel",
+        exampleUse: "Feature prioritization, effort-impact analysis, MVP planning"
+      },
+      {
+        id: 18,
+        name: "Colorful Stakeholder Alignment",
+        category: "Framework",
+        tags: ["venn"],
+        thumbnail: "thumbnails/venn-colorful.png",
+        prompt: "**Task:** Create a vibrant 3-circle Venn diagram showing stakeholder alignment\n\n**Style:**\n- Bold, colorful infographic style\n- Three bright circles: pink, cyan, and yellow with transparency\n- Overlapping areas create green, orange, and purple blends\n- Modern rounded sans-serif font\n- Playful, approachable design\n\n**Output:**\n- Square 1:1 aspect ratio\n- Light blue background\n\n**Content:**\n- Title: \"Stakeholder Alignment Map\"\n- Circle 1 (pink) with user icon: \"Users Want\"\n- Circle 2 (cyan) with briefcase icon: \"Business Needs\"\n- Circle 3 (yellow) with gear icon: \"Tech Can Build\"\n- Center with star icon: \"SWEET SPOT\"\n- 2-way intersections: \"User Value\", \"Business Value\", \"Technical Value\"\n\n**Layout:**\n- Three equal circles in balanced triangle\n- Clear overlap zones with visible color blending\n- Icons add visual interest\n- Center emphasized with icon\n\n**Constraints:**\n- English text only\n- All text fully readable\n- Friendly, accessible tone",
+        exampleUse: "Stakeholder alignment, strategic decision-making, value identification"
+      },
+      {
+        id: 19,
+        name: "Corporate Business Model Canvas",
+        category: "Framework",
+        tags: ["canvas"],
+        thumbnail: "thumbnails/canvas-corporate.png",
+        prompt: "**Task:** Create a professional Business Model Canvas diagram\n\n**Style:**\n- Clean corporate grid layout with crisp lines\n- Navy blue headers with white text\n- Light gray section backgrounds\n- Professional sans-serif typography\n- Minimalist, boardroom-ready aesthetic\n\n**Output:**\n- 16:9 landscape orientation\n- White background\n\n**Content:**\n- Title at top: \"Business Model Canvas\"\n- 9 sections in grid:\n  Top row: \"Key Partners\", \"Key Activities\", \"Value Propositions\", \"Customer Relationships\", \"Customer Segments\"\n  Middle row: (Key Activities extends down), \"Key Resources\", (Value Propositions extends down), (Customer Relationships extends down), \"Channels\"\n  Bottom row (full width): \"Cost Structure\" (left half), \"Revenue Streams\" (right half)\n- Each section has header in navy blue bar\n\n**Layout:**\n- Classic Business Model Canvas grid structure\n- Clear borders between sections\n- Headers at top of each section\n- Balanced spacing\n\n**Constraints:**\n- English text only\n- All text fully readable\n- Professional appearance",
+        exampleUse: "Business model design, strategic planning, startup planning"
+      },
+      {
+        id: 20,
+        name: "Sketch Lean Canvas",
+        category: "Framework",
+        tags: ["canvas"],
+        thumbnail: "thumbnails/canvas-sketch.png",
+        prompt: "**Task:** Create a hand-sketched Lean Canvas diagram\n\n**Style:**\n- Hand-drawn grid with wobbly lines\n- Black ink on cream paper texture\n- Teal highlight color for numbered sections\n- Handwritten-style font\n- Whiteboard sketch aesthetic\n\n**Output:**\n- 16:9 landscape orientation\n- Cream/off-white paper texture background\n\n**Content:**\n- Scribbled title: \"Lean Canvas\"\n- 9 numbered boxes in grid:\n  Box 1: \"Problem\"\n  Box 2: \"Solution\"\n  Box 3: \"Key Metrics\"\n  Box 4: \"Unique Value Proposition\" (center, slightly larger)\n  Box 5: \"Unfair Advantage\"\n  Box 6: \"Channels\"\n  Box 7: \"Customer Segments\"\n  Box 8: \"Cost Structure\"\n  Box 9: \"Revenue Streams\"\n- Small circled numbers (1-9) in corners\n\n**Layout:**\n- 3x3 grid with uneven hand-drawn lines\n- Center box (Unique Value Prop) emphasized\n- Informal spacing, sketch-like\n\n**Constraints:**\n- English text only\n- All text fully readable\n- Authentic hand-drawn appearance",
+        exampleUse: "Lean startup planning, product validation, MVP definition"
+      },
+      {
+        id: 21,
+        name: "Colorful Product Vision Canvas",
+        category: "Framework",
+        tags: ["canvas"],
+        thumbnail: "thumbnails/canvas-colorful.png",
+        prompt: "**Task:** Create a vibrant Product Vision Canvas\n\n**Style:**\n- Colorful infographic style with bold colors\n- Each section a different bright color\n- Rounded corners on all boxes\n- Modern sans-serif typography\n- Friendly, approachable design\n\n**Output:**\n- 16:9 landscape orientation\n- Light gray background\n\n**Content:**\n- Title: \"Product Vision Canvas\"\n- 6 colorful sections:\n  Top row (3 boxes): \"Target Group\" (purple), \"Needs\" (blue), \"Product\" (green)\n  Bottom row (3 boxes): \"Business Goals\" (yellow), \"Key Features\" (orange), \"Success Metrics\" (pink)\n- Small icons in each section header\n\n**Layout:**\n- 2 rows x 3 columns grid\n- Equal-sized colorful boxes with rounded corners\n- White space between boxes\n- Icons add visual interest to headers\n\n**Constraints:**\n- English text only\n- All text fully readable\n- High contrast, accessible colors",
+        exampleUse: "Product vision development, roadmap planning, team alignment"
+      },
+      {
+        id: 22,
+        name: "Corporate Market Segmentation",
+        category: "Framework",
+        tags: ["concentric"],
+        thumbnail: "thumbnails/concentric-corporate.png",
+        prompt: "**Task:** Create a professional concentric circles target diagram\n\n**Style:**\n- Clean corporate design with perfect circles\n- Navy blue gradient rings (lighter towards center)\n- White text on dark rings, dark text on light center\n- Crisp lines and professional finish\n- Minimal, elegant aesthetic\n\n**Output:**\n- Square 1:1 aspect ratio\n- White background\n\n**Content:**\n- Title above: \"Market Segmentation Strategy\"\n- 4 concentric rings from outside to inside:\n  Outer ring: \"Total Addressable Market (TAM)\"\n  Ring 2: \"Serviceable Available Market (SAM)\"\n  Ring 3: \"Serviceable Obtainable Market (SOM)\"\n  Center circle: \"Current Customers\"\n- Small percentage labels: 100%, 40%, 10%, 2%\n\n**Layout:**\n- Centered concentric circles\n- Labels positioned inside each ring\n- Percentages on the right side\n- Clear visual hierarchy from outside in\n\n**Constraints:**\n- English text only\n- All text fully readable\n- Professional, boardroom-ready",
+        exampleUse: "Market segmentation, TAM/SAM/SOM analysis, go-to-market planning"
+      },
+      {
+        id: 23,
+        name: "Sketch Sphere of Influence",
+        category: "Framework",
+        tags: ["concentric"],
+        thumbnail: "thumbnails/concentric-sketch.png",
+        prompt: "**Task:** Create a hand-sketched concentric circles influence diagram\n\n**Style:**\n- Hand-drawn circles with wobbly, imperfect lines\n- Black ink on white paper\n- Orange shading in center circle\n- Handwritten-style annotations\n- Casual whiteboard aesthetic\n\n**Output:**\n- Square 1:1 aspect ratio\n- White background with subtle texture\n\n**Content:**\n- Scribbled title: \"Sphere of Influence\"\n- 3 concentric rings from outside to inside:\n  Outer ring: \"Things I'm Concerned About\"\n  Middle ring: \"Things I Can Influence\"\n  Center circle (shaded orange): \"Things I Control\"\n- Small doodle arrows pointing inward\n- Rough sketch style\n\n**Layout:**\n- Hand-drawn imperfect concentric circles\n- Labels written along the curve of each ring\n- Arrows suggesting movement toward center\n- Informal, sketch-like spacing\n\n**Constraints:**\n- English text only\n- All text fully readable\n- Authentic hand-drawn feel",
+        exampleUse: "Influence mapping, control analysis, focus prioritization"
+      },
+      {
+        id: 24,
+        name: "Colorful User Journey Layers",
+        category: "Framework",
+        tags: ["concentric"],
+        thumbnail: "thumbnails/concentric-colorful.png",
+        prompt: "**Task:** Create a vibrant concentric circles user journey diagram\n\n**Style:**\n- Bold, colorful infographic style\n- Each ring a different bright color: purple (outer), blue, green, yellow (center)\n- Modern rounded sans-serif font\n- Playful icons in each ring\n- Friendly, approachable design\n\n**Output:**\n- Square 1:1 aspect ratio\n- Light gray background\n\n**Content:**\n- Title: \"User Journey Layers\"\n- 4 colorful concentric rings from outside to inside:\n  Outer (purple) with eye icon: \"Awareness\"\n  Ring 2 (blue) with magnifying glass icon: \"Consideration\"\n  Ring 3 (green) with shopping cart icon: \"Purchase\"\n  Center (yellow) with heart icon: \"Loyalty\"\n\n**Layout:**\n- Centered colorful concentric circles\n- Each ring clearly separated with white space\n- Icons and labels in each ring\n- Center emphasized\n\n**Constraints:**\n- English text only\n- All text fully readable\n- High contrast colors",
+        exampleUse: "User journey mapping, funnel visualization, customer lifecycle"
+      },
+      {
+        id: 25,
+        name: "Corporate Risk Triangle",
+        category: "Framework",
+        tags: ["triangle"],
+        thumbnail: "thumbnails/triangle-corporate.png",
+        prompt: "**Task:** Create a professional segmented triangle showing risk levels\n\n**Style:**\n- Clean corporate triangle divided into 3 horizontal segments\n- Navy blue, gray, and light blue sections\n- Sharp, crisp lines\n- Sans-serif typography\n- Professional gradient shading\n\n**Output:**\n- Square 1:1 aspect ratio\n- White background\n\n**Content:**\n- Title above: \"Risk Assessment Framework\"\n- Triangle divided into 3 segments (top to bottom):\n  Top segment (navy): \"High Risk - Avoid\"\n  Middle segment (gray): \"Medium Risk - Mitigate\"\n  Bottom segment (light blue): \"Low Risk - Accept\"\n- Small risk icons next to each label\n- Clean dividing lines between segments\n\n**Layout:**\n- Centered equilateral triangle\n- 3 equal horizontal divisions\n- Labels inside each segment, left-aligned\n- Clear visual separation\n\n**Constraints:**\n- English text only\n- All text fully readable\n- Professional appearance",
+        exampleUse: "Risk assessment, decision frameworks, prioritization triangles"
+      },
+      {
+        id: 26,
+        name: "Sketch Decision Triangle",
+        category: "Framework",
+        tags: ["triangle"],
+        thumbnail: "thumbnails/triangle-sketch.png",
+        prompt: "**Task:** Create a hand-sketched triangle showing decision factors\n\n**Style:**\n- Hand-drawn triangle with wobbly lines\n- Black ink on cream paper texture\n- Teal highlights in corners\n- Handwritten-style annotations\n- Whiteboard sketch aesthetic\n\n**Output:**\n- 16:9 landscape orientation\n- Cream/off-white paper texture background\n\n**Content:**\n- Scribbled title: \"Decision Triangle\"\n- Triangle with 3 corners labeled:\n  Top corner: \"Desirability\" (with smiley face doodle)\n  Bottom left: \"Feasibility\" (with gear doodle)\n  Bottom right: \"Viability\" (with dollar sign doodle)\n- Center of triangle: \"GO!\" (circled)\n- Hand-drawn arrows pointing from each corner to center\n\n**Layout:**\n- Large triangle centered\n- Corner labels outside triangle points\n- Doodles add personality\n- Arrows converge at center\n\n**Constraints:**\n- English text only\n- All text fully readable\n- Authentic sketch feel",
+        exampleUse: "Decision-making frameworks, viability analysis, innovation assessment"
+      },
+      {
+        id: 27,
+        name: "Colorful Project Triangle",
+        category: "Framework",
+        tags: ["triangle"],
+        thumbnail: "thumbnails/triangle-colorful.png",
+        prompt: "**Task:** Create a vibrant triangle showing quality trade-offs\n\n**Style:**\n- Bold, colorful infographic style\n- Triangle divided into 3 sections in bright colors\n- Purple, green, and orange segments meeting at center\n- Modern rounded sans-serif font\n- Playful, approachable design\n\n**Output:**\n- Square 1:1 aspect ratio\n- Light gray background\n\n**Content:**\n- Title: \"Project Management Triangle\"\n- Triangle with 3 colored sections:\n  Top (purple) with clock icon: \"Time\"\n  Bottom left (green) with dollar icon: \"Cost\"\n  Bottom right (orange) with star icon: \"Quality\"\n- Center shows: \"Pick 2\"\n- Each corner has an icon\n\n**Layout:**\n- Equilateral triangle centered\n- Each section a different color\n- Icons in corners\n- Center text emphasized\n\n**Constraints:**\n- English text only\n- All text fully readable\n- High contrast colors",
+        exampleUse: "Project constraints, trade-off analysis, scope management"
+      },
+      {
+        id: 28,
+        name: "Sketch Eisenhower Matrix",
+        category: "Framework",
+        tags: ["2x2-matrix"],
+        thumbnail: "thumbnails/matrix-2x2-sketch.png",
+        prompt: "**Task:** Create a hand-sketched 2x2 priority matrix\n\n**Style:**\n- Hand-drawn grid with wobbly lines\n- Black ink on white paper with subtle texture\n- Colored quadrants: red (urgent/important), yellow (not urgent/important), orange (urgent/not important), green (not urgent/not important)\n- Handwritten-style labels\n- Casual whiteboard aesthetic with rough edges\n\n**Output:**\n- Square 1:1 aspect ratio\n- White background with subtle paper texture\n\n**Content:**\n- Scribbled title: \"Eisenhower Matrix\"\n- Vertical axis label (left): \"IMPORTANCE\" with arrow up\n- Horizontal axis label (bottom): \"URGENCY\" with arrow right\n- Quadrant labels:\n  Top-left (red): \"DO FIRST - Crisis & Deadlines\"\n  Top-right (yellow): \"SCHEDULE - Strategic Work\"\n  Bottom-left (orange): \"DELEGATE - Interruptions\"\n  Bottom-right (green): \"ELIMINATE - Time Wasters\"\n- Rough, imperfect grid lines\n\n**Layout:**\n- Hand-drawn cross dividing into 4 quadrants\n- Wobbly axis lines with arrows\n- Labels handwritten in each quadrant\n- Informal spacing and alignment\n\n**Constraints:**\n- English text only\n- All text fully readable\n- Authentic sketch appearance",
+        exampleUse: "Priority matrices, urgency/importance analysis, task management"
+      },
+      {
+        id: 29,
+        name: "Clean Corporate Hierarchy",
+        category: "Architecture",
+        tags: ["hierarchy"],
+        thumbnail: "thumbnails/hierarchy-corporate.png",
+        prompt: "**Task:** Create an information architecture hierarchy diagram showing product feature prioritization levels\n\n**Style:**\n- Clean corporate aesthetic with crisp rectangles and professional appearance\n- Color palette: Navy blue (#1a365d) for top tier, transitioning through medium blue (#2563eb) to light blue (#93c5fd) for lower tiers\n- Sans-serif typography, bold headers, regular body text\n- Solid connecting lines with subtle drop shadows\n\n**Output:**\n- 16:9 landscape orientation (1920x1080)\n- White background (#ffffff)\n\n**Content:**\n- Title: \"Product Feature Hierarchy - Q1 2024\"\n- Level 1 (top): \"Strategic Initiatives\" with 2 items\n- Level 2 (middle): \"Core Features\" with 4 items\n- Level 3 (bottom): \"Nice-to-Have\" with 6 items\n- Include brief descriptions in each box\n\n**Layout:**\n- Pyramid structure, centered alignment\n- Top box: 400px wide, Level 2: 250px each, Level 3: 180px each\n- Vertical spacing: 80px between levels\n- Straight vertical connector lines\n\n**Constraints:**\n- English text only\n- All text fully readable at minimum 14pt\n- No icons or imagery, text and boxes only",
+        exampleUse: "Information architecture, priority levels, organizational tiers"
+      },
+      {
+        id: 30,
+        name: "Whiteboard Hierarchy Sketch",
+        category: "Architecture",
+        tags: ["hierarchy"],
+        thumbnail: "thumbnails/hierarchy-sketch.png",
+        prompt: "**Task:** Create a hand-drawn organizational hierarchy diagram showing team structure levels\n\n**Style:**\n- Whiteboard sketch aesthetic with hand-drawn imperfect lines\n- Color palette: Black (#000000) marker for outlines, yellow (#fbbf24), orange (#fb923c), and pink (#f472b6) highlighter for different levels\n- Handwritten-style font, slightly irregular text\n- Wavy connector lines, hand-drawn arrows\n\n**Output:**\n- 16:9 landscape orientation (1920x1080)\n- Off-white background (#f8f8f8) with slight texture\n\n**Content:**\n- Title: \"Product Org Structure\" (hand-written at top)\n- Level 1: \"VP Product\" (yellow highlight)\n- Level 2: \"Director Platform\" and \"Director Growth\" (orange highlights)\n- Level 3: \"PM - Core\", \"PM - API\", \"PM - Acquisition\", \"PM - Retention\" (pink highlights)\n- Add stick figure icons next to each role\n\n**Layout:**\n- Traditional org chart top-down tree structure\n- Rough hand-drawn boxes with rounded corners\n- Connector lines slightly curved and imperfect\n- Boxes slightly tilted (2-3 degrees variation)\n\n**Constraints:**\n- English text only\n- All text readable despite handwritten style\n- Maintain whiteboard brainstorm aesthetic",
+        exampleUse: "Brainstorming organizational levels, informal team structure planning"
+      },
+      {
+        id: 31,
+        name: "Modern Gradient Hierarchy",
+        category: "Architecture",
+        tags: ["hierarchy"],
+        thumbnail: "thumbnails/hierarchy-gradient.png",
+        prompt: "**Task:** Create a modern hierarchy diagram showing information architecture for a product\n\n**Style:**\n- Modern colorful aesthetic with gradient fills and rounded corners\n- Color palette: Purple to blue gradient (#8b5cf6 to #3b82f6) for top, green gradient (#10b981 to #059669) for middle, orange gradient (#f59e0b to #ea580c) for bottom\n- Modern sans-serif (Inter/SF Pro style), white text on colored backgrounds\n- No connecting lines, use spacing and alignment to show hierarchy\n\n**Output:**\n- 9:16 portrait orientation (1080x1920)\n- Dark charcoal background (#1f2937)\n\n**Content:**\n- Title: \"Platform Information Architecture\" (white text, top)\n- Tier 1: \"User Management\" (large rounded rectangle)\n- Tier 2: \"Authentication\", \"Profiles\", \"Permissions\" (medium rectangles)\n- Tier 3: \"Login\", \"SSO\", \"Avatar\", \"Bio\", \"Role Assignment\", \"Access Control\" (small rectangles)\n\n**Layout:**\n- Vertical stacked layout\n- Each tier indented slightly right from tier above\n- 24px border-radius on all rectangles\n- Generous white space between tiers (60px)\n\n**Constraints:**\n- English text only\n- High contrast text for accessibility\n- All labels clearly readable",
+        exampleUse: "Modern product architecture presentations, platform structure"
+      },
+      {
+        id: 32,
+        name: "Sketch Hub-Spoke Brainstorm",
+        category: "Architecture",
+        tags: ["hub-spoke"],
+        thumbnail: "thumbnails/hub-spoke-sketch.png",
+        prompt: "**Task:** Create a hand-drawn hub-and-spoke diagram showing product feature modules\n\n**Style:**\n- Whiteboard sketch aesthetic with rough hand-drawn circles and curves\n- Color palette: Orange (#f97316) marker for hub, blue (#3b82f6) marker for spokes, green (#22c55e) highlighter accents\n- Handwritten-style labels, slightly messy\n- Curved wavy lines connecting hub to spokes, hand-drawn arrows\n\n**Output:**\n- 16:9 landscape orientation (1920x1080)\n- Cream/manila background (#fef3c7)\n\n**Content:**\n- Center: \"Core Product Engine\" (rough circle with orange outline)\n- 6 modules around it: \"User Auth Module\", \"Data Analytics\", \"Notifications\", \"Search Engine\", \"File Storage\", \"Reporting\"\n- Add doodle icons (lock, chart, bell, magnifying glass, folder, document)\n\n**Layout:**\n- Irregular circular arrangement, not perfectly symmetrical\n- Modules placed organically around center (not exactly evenly spaced)\n- Connector lines are curved/wavy, not straight\n- Hub circle slightly larger and more emphasized\n\n**Constraints:**\n- English text only\n- Maintain hand-drawn aesthetic throughout\n- Keep it looking like a whiteboard brainstorm session",
+        exampleUse: "Feature module brainstorming, product ecosystem ideation"
+      },
+      {
+        id: 33,
+        name: "Technical Hub-Spoke Network",
+        category: "Architecture",
+        tags: ["hub-spoke"],
+        thumbnail: "thumbnails/hub-spoke-technical.png",
+        prompt: "**Task:** Create a technical blueprint-style hub-and-spoke diagram showing microservices architecture\n\n**Style:**\n- Technical blueprint aesthetic with grid background and precise geometric shapes\n- Color palette: Cyan (#06b6d4) for lines and text on dark navy background, white (#ffffff) for hub, yellow (#fbbf24) accents for data flow indicators\n- Monospace font (Courier/Monaco style) for technical feel\n- Dashed grid lines, solid connector lines with directional arrows\n\n**Output:**\n- 16:9 landscape orientation (1920x1080)\n- Dark navy background (#0f172a) with subtle cyan grid pattern\n\n**Content:**\n- Center: \"API Gateway\" (hexagon shape)\n- 7 services: \"Auth Service\", \"User Service\", \"Product Service\", \"Order Service\", \"Payment Service\", \"Notification Service\", \"Analytics Service\"\n- Add small arrows showing request/response flow\n- Label data formats: \"JSON\", \"gRPC\", \"REST\"\n\n**Layout:**\n- Perfect hexagonal arrangement of services around central gateway\n- Services in rounded rectangles with technical monospace labels\n- Bi-directional arrows showing communication\n- Distance from center: 450px uniformly\n\n**Constraints:**\n- English text only\n- Technical precision in layout\n- Blueprint/schematic visual style",
+        exampleUse: "Microservices architecture, API gateway design, service mesh diagrams"
+      },
+      {
+        id: 34,
+        name: "Clean System Architecture",
+        category: "Architecture",
+        tags: ["system-diagram"],
+        thumbnail: "thumbnails/system-diagram-corporate.png",
+        prompt: "**Task:** Create a clean system architecture diagram showing data flow through application layers\n\n**Style:**\n- Professional corporate aesthetic with layered horizontal sections\n- Color palette: Purple (#9333ea) for presentation layer, blue (#2563eb) for business logic, green (#059669) for data layer, gray (#6b7280) for external services\n- Sans-serif typography, left-aligned labels\n- Solid arrows showing data flow direction\n\n**Output:**\n- 16:9 landscape orientation (1920x1080)\n- White background (#ffffff)\n\n**Content:**\n- Title: \"TaskFlow System Architecture\"\n- Layer 1 (top): \"Presentation Layer\" - Web App, Mobile App, API Clients\n- Layer 2: \"Business Logic Layer\" - Auth Controller, Task Controller, User Controller\n- Layer 3: \"Data Layer\" - PostgreSQL Database, Redis Cache\n- Layer 4 (side): \"External Services\" - AWS S3, SendGrid, Stripe\n- Show arrows indicating request/response flows\n\n**Layout:**\n- Horizontal layers stacked vertically\n- Each layer as full-width colored band (200px height)\n- Components within layers as rounded rectangles\n- Vertical arrows between layers, horizontal arrows to external services\n\n**Constraints:**\n- English text only\n- All component names clearly readable\n- Clear directional flow indicators",
+        exampleUse: "Application architecture, data flow documentation, layer diagrams"
+      },
+      {
+        id: 35,
+        name: "Whiteboard System Sketch",
+        category: "Architecture",
+        tags: ["system-diagram"],
+        thumbnail: "thumbnails/system-diagram-sketch.png",
+        prompt: "**Task:** Create a hand-drawn system integration diagram showing platform connections\n\n**Style:**\n- Whiteboard marker sketch aesthetic with rough boxes and organic lines\n- Color palette: Black (#000000) for outlines, blue (#3b82f6), green (#22c55e), orange (#f97316) highlighters for different system types\n- Handwritten labels, slightly irregular\n- Curved connector lines with hand-drawn arrows\n\n**Output:**\n- Square 1:1 aspect ratio (1080x1080)\n- White background (#ffffff)\n\n**Content:**\n- Center: \"TaskFlow Core\" (blue highlight, rough rectangle)\n- Connected systems: \"CRM (Salesforce)\" (green), \"Email Platform\" (orange), \"Analytics\" (green), \"Payment System\" (orange), \"Cloud Storage\" (blue)\n- Label connections: \"Customer Data Sync\", \"Notification Events\", \"Usage Metrics\", \"Transaction Data\", \"File Upload\"\n- Add small cloud doodles, database cylinder sketches\n\n**Layout:**\n- Central system with 5 external systems around it in loose circle\n- Hand-drawn boxes of varying sizes based on importance\n- Wavy connecting lines, not straight\n- Annotations and notes in margins\n\n**Constraints:**\n- English text only\n- Maintain casual brainstorm aesthetic\n- All system names and connections labeled",
+        exampleUse: "Integration planning, system design brainstorming, platform connections"
+      },
+      {
+        id: 36,
+        name: "Technical Data Flow Diagram",
+        category: "Architecture",
+        tags: ["system-diagram"],
+        thumbnail: "thumbnails/system-diagram-technical.png",
+        prompt: "**Task:** Create a technical data flow diagram showing real-time event processing pipeline\n\n**Style:**\n- Technical schematic aesthetic with precise geometric shapes\n- Color palette: Neon green (#10b981) for data streams on black background, cyan (#06b6d4) for processing nodes, yellow (#fbbf24) for storage\n- Monospace font, technical labels with specifications\n- Animated-style flow arrows (dashed lines suggesting movement)\n\n**Output:**\n- 16:9 landscape orientation (1920x1080)\n- Black background (#000000)\n\n**Content:**\n- Title: \"Real-time Analytics Pipeline\"\n- Flow: \"Event Sources\" → \"Message Queue (Kafka)\" → \"Stream Processor\" → \"Data Warehouse\" → \"Analytics Dashboard\"\n- Add technical specs: \"10k events/sec\", \"3-node cluster\", \"PostgreSQL 14\", \"React App\"\n- Show parallel paths for hot vs cold data\n\n**Layout:**\n- Left-to-right flow diagram\n- Rectangles for processing components (150px height)\n- Cylinders for data storage\n- Multiple parallel paths showing data splitting/merging\n- Arrows labeled with data volume metrics\n\n**Constraints:**\n- English text only\n- Technical precision in labeling\n- Clear data flow direction left to right",
+        exampleUse: "Real-time pipelines, event processing, data engineering architecture"
+      },
+      {
+        id: 37,
+        name: "Corporate Org Chart",
+        category: "Architecture",
+        tags: ["org-chart"],
+        thumbnail: "thumbnails/org-chart-corporate.png",
+        prompt: "**Task:** Create a professional organizational chart showing product team structure\n\n**Style:**\n- Clean corporate aesthetic with rounded rectangles and professional typography\n- Color palette: Dark blue (#1e40af) for executive level, medium blue (#3b82f6) for directors, light blue (#60a5fa) for managers, lightest blue (#93c5fd) for individual contributors\n- Sans-serif font, names in bold, titles in regular weight\n- Thin solid connecting lines in gray (#6b7280)\n\n**Output:**\n- 16:9 landscape orientation (1920x1080)\n- Light background (#f9fafb)\n\n**Content:**\n- Title: \"Product Organization - TaskFlow\"\n- Level 1: \"Sarah Chen, VP Product\"\n- Level 2: \"Michael Torres, Dir. Platform\" | \"Priya Patel, Dir. Growth\"\n- Level 3: \"Alex Kim, PM Lead\" | \"Jordan Lee, PM Lead\" | \"Sam Rivera, PM Lead\" | \"Casey Wong, PM Lead\"\n- Level 4: 6 individual PMs under leads\n- Include profile photo placeholders (circles)\n\n**Layout:**\n- Traditional top-down tree structure\n- Perfect vertical alignment within levels\n- Horizontal spacing: 250px between boxes at same level\n- Vertical spacing: 120px between levels\n- Connector lines from center-bottom to center-top\n\n**Constraints:**\n- English text only\n- All names and titles fully readable\n- Symmetrical and balanced layout",
+        exampleUse: "Team structures, reporting lines, product organization design"
+      },
+      {
+        id: 38,
+        name: "Casual Org Sketch",
+        category: "Architecture",
+        tags: ["org-chart"],
+        thumbnail: "thumbnails/org-chart-sketch.png",
+        prompt: "**Task:** Create a hand-drawn organizational chart showing startup team structure\n\n**Style:**\n- Whiteboard sketch with hand-drawn stick figures and speech bubbles\n- Color palette: Black (#000000) markers for drawing, yellow (#fbbf24), pink (#f472b6), green (#22c55e) highlighters\n- Handwritten-style labels, playful and informal\n- Wobbly connecting lines, sketched arrows\n\n**Output:**\n- Square 1:1 aspect ratio (1080x1080)\n- Off-white background (#fefce8)\n\n**Content:**\n- Top: Stick figure with crown icon, \"CEO - Jamie\" (yellow highlight)\n- Second level: 3 stick figures \"Product - Alex\", \"Engineering - Sam\", \"Design - Morgan\" (pink highlights)\n- Third level: Under each, 2-3 smaller stick figures for team members (green highlights)\n- Add small doodles: laptop, coffee cup, lightbulb\n- Speech bubbles with team mottos\n\n**Layout:**\n- Informal tree structure, slightly asymmetrical\n- Stick figures instead of boxes\n- Hand-drawn arrows pointing down\n- Annotations and notes in margins\n\n**Constraints:**\n- English text only\n- Maintain playful startup vibe\n- All roles clearly labeled",
+        exampleUse: "Startup team visualization, informal structure planning, team mapping"
+      },
+      {
+        id: 39,
+        name: "Modern Flat Org Chart",
+        category: "Architecture",
+        tags: ["org-chart"],
+        thumbnail: "thumbnails/org-chart-modern.png",
+        prompt: "**Task:** Create a modern flat organizational chart showing cross-functional squad structure\n\n**Style:**\n- Modern minimal aesthetic with cards and subtle shadows\n- Color palette: Vibrant gradients - purple-to-pink (#a855f7 to #ec4899) for leadership, blue-to-cyan (#3b82f6 to #06b6d4) for squads, green-to-emerald (#10b981 to #059669) for pods\n- Modern sans-serif (SF Pro/Inter style), white text on colored backgrounds\n- No connector lines, use grouping and proximity\n\n**Output:**\n- 16:9 landscape orientation (1920x1080)\n- Dark background (#111827)\n\n**Content:**\n- Title: \"Cross-functional Product Squads\" (white text)\n- Top: \"Product Leadership Team\" (3 people cards)\n- Middle: 3 squad cards - \"Core Platform Squad\", \"Growth Squad\", \"Enterprise Squad\"\n- Each squad shows: PM, Engineer, Designer, Data Analyst (4 mini cards)\n- Add role icons (compass, code, palette, chart)\n\n**Layout:**\n- Leadership row at top (horizontal)\n- Three squad columns below, each self-contained\n- Cards with rounded corners (16px radius), subtle drop shadow\n- Generous spacing between squads (80px)\n- No connecting lines, grouping by proximity\n\n**Constraints:**\n- English text only\n- High contrast for dark mode readability\n- Modern SaaS product aesthetic",
+        exampleUse: "Cross-functional squads, agile team structures, pod organization"
+      },
+      {
+        id: 40,
+        name: "Decision Tree Corporate",
+        category: "Architecture",
+        tags: ["tree"],
+        thumbnail: "thumbnails/tree-decision-corporate.png",
+        prompt: "**Task:** Create a clean decision tree diagram for product feature prioritization\n\n**Style:**\n- Professional corporate aesthetic with diamond decision nodes and rectangular outcome nodes\n- Color palette: Navy (#1e40af) for decision diamonds, green (#059669) for positive outcomes, red (#dc2626) for negative outcomes, gray (#6b7280) for neutral\n- Sans-serif typography, centered text in shapes\n- Solid connector lines with labels\n\n**Output:**\n- 9:16 portrait orientation (1080x1920)\n- White background (#ffffff)\n\n**Content:**\n- Title: \"Feature Prioritization Decision Tree\"\n- Root: \"Does it align with strategy?\" (diamond)\n- Branch 1: \"Is it technically feasible?\" (diamond)\n- Branch 2: \"What's the user impact?\" (diamond)\n- Outcomes: \"Build Now\" (green), \"Add to Backlog\" (gray), \"Research Needed\" (blue), \"Reject\" (red)\n- Label connectors with \"Yes/No\" or \"High/Medium/Low\"\n\n**Layout:**\n- Top-down tree structure\n- Diamonds for decisions (150px width)\n- Rectangles for outcomes (200px width)\n- Connector lines labeled with conditions\n- Balanced binary tree structure\n\n**Constraints:**\n- English text only\n- All decision criteria clearly readable\n- Logical flow top to bottom",
+        exampleUse: "Feature prioritization frameworks, go/no-go decisions, evaluation criteria"
+      },
+      {
+        id: 41,
+        name: "Taxonomy Tree Sketch",
+        category: "Architecture",
+        tags: ["tree"],
+        thumbnail: "thumbnails/tree-taxonomy-sketch.png",
+        prompt: "**Task:** Create a hand-drawn taxonomy tree showing product feature categories\n\n**Style:**\n- Whiteboard sketch aesthetic with organic tree branches\n- Color palette: Brown (#92400e) for trunk/branches, green (#22c55e) for leaf nodes, black (#000000) for text\n- Handwritten labels, playful style\n- Curved organic branch lines, leaf shapes for end nodes\n\n**Output:**\n- Square 1:1 aspect ratio (1080x1080)\n- Cream background (#fef3c7)\n\n**Content:**\n- Root: \"TaskFlow Features\" (tree trunk base)\n- Level 1 branches: \"Collaboration\", \"Productivity\", \"Analytics\"\n- Level 2 branches (leaves): Under Collaboration - \"Comments\", \"Sharing\", \"Mentions\" | Under Productivity - \"Tasks\", \"Projects\", \"Calendar\" | Under Analytics - \"Reports\", \"Dashboards\", \"Insights\"\n- Draw actual tree with branches and leaves\n\n**Layout:**\n- Organic tree growing upward\n- Trunk at bottom splitting into 3 main branches\n- Each branch splits into 3 leaf nodes\n- Hand-drawn wavy lines for branches\n- Leaf shapes contain feature names\n\n**Constraints:**\n- English text only\n- Natural tree aesthetic, not rigid boxes\n- All feature names readable in leaves",
+        exampleUse: "Feature categorization, product taxonomy, content hierarchy"
+      },
+      {
+        id: 42,
+        name: "Technical Dependency Tree",
+        category: "Architecture",
+        tags: ["tree"],
+        thumbnail: "thumbnails/tree-dependency-technical.png",
+        prompt: "**Task:** Create a technical dependency tree showing software component hierarchy\n\n**Style:**\n- Technical schematic aesthetic with monospace font and precise layout\n- Color palette: Cyan (#06b6d4) for core components, yellow (#fbbf24) for UI layer, purple (#a855f7) for services, green (#10b981) for utilities on dark background\n- Monospace typography (Courier/Monaco), technical labels\n- Bracket-style connector lines (├── └──) like terminal tree command\n\n**Output:**\n- 9:16 portrait orientation (1080x1920)\n- Dark background (#0a0a0a)\n\n**Content:**\n- Title: \"Component Dependency Tree - v2.4.0\"\n- Root: \"/app\"\n- Level 1: \"├── /components\", \"├── /services\", \"└── /utils\"\n- Level 2: Under components - \"├── Header.tsx\", \"├── Dashboard.tsx\", \"└── TaskList.tsx\"\n- Under services - \"├── api.ts\", \"└── auth.ts\"\n- Under utils - \"├── validation.ts\", \"└── formatting.ts\"\n- Show file sizes next to names\n\n**Layout:**\n- Terminal tree command style (text-based tree)\n- Left-aligned monospace layout\n- ASCII-art style connectors (├── └──)\n- Indentation for hierarchy levels\n- Syntax-highlighted style coloring\n\n**Constraints:**\n- English text only\n- Maintain terminal/code aesthetic\n- All file paths clearly readable",
+        exampleUse: "Component dependencies, software architecture, module relationships"
+      },
+      {
+        id: 43,
+        name: "iPhone Device Mockup - Light",
+        category: "Mockup",
+        tags: ["device-frame", "mobile"],
+        thumbnail: "thumbnails/device-iphone-light.png",
+        prompt: "**Task:** Create a polished iPhone 15 Pro device mockup showing a productivity app interface in light mode\n\n**Style:**\n- Photorealistic iPhone device with black titanium frame\n- Clean, modern light mode UI design\n- Soft shadows beneath device\n- White/light gray color palette with blue accents\n\n**Output:**\n- Portrait orientation (9:16)\n- Subtle gradient background (light blue to white)\n\n**Content:**\n- Task management app home screen\n- Top navigation: \"My Tasks\" title, profile icon, settings icon\n- Main content: 4-5 task cards with checkboxes, titles, due dates\n- Bottom tab bar: Home, Projects, Calendar, Profile icons\n- Sample tasks: \"Review Q4 roadmap\", \"User interview prep\", \"Sprint planning\"\n\n**Layout:**\n- Device centered in frame with slight perspective\n- Screen fills most of device\n- Visible home indicator and status bar\n\n**Constraints:**\n- English text only\n- All text readable and crisp\n- High-fidelity polished UI design",
+        exampleUse: "App store screenshots, product demos for mobile apps, marketing materials showcasing iOS applications"
+      },
+      {
+        id: 44,
+        name: "MacBook Device Mockup - Dark",
+        category: "Mockup",
+        tags: ["device-frame", "desktop"],
+        thumbnail: "thumbnails/device-macbook-dark.png",
+        prompt: "**Task:** Create a polished MacBook Pro device mockup showing an analytics dashboard in dark mode\n\n**Style:**\n- Photorealistic MacBook Pro with space gray aluminum body\n- Sleek dark mode UI with purple/pink gradient accents\n- Minimal shadows and reflections\n- Dark gray background with subtle gradients\n\n**Output:**\n- Landscape orientation (16:9)\n- Dark gradient background (dark purple to black)\n\n**Content:**\n- Product analytics dashboard\n- Left sidebar: Logo, navigation (Dashboard, Users, Events, Reports)\n- Main area: \"Weekly Overview\" heading, 3 metric cards (Active Users, Conversion Rate, Revenue)\n- Line chart showing user growth over 7 days\n- Top bar: Search, notifications, user profile\n\n**Layout:**\n- Device angled slightly (15 degrees)\n- Screen occupies majority of device\n- Keyboard and trackpad visible\n\n**Constraints:**\n- English text only\n- Charts and metrics clearly visible\n- High-fidelity professional UI",
+        exampleUse: "Website hero images, desktop app marketing, SaaS product showcases, presentation slides"
+      },
+      {
+        id: 45,
+        name: "Multi-Device Responsive Mockup",
+        category: "Mockup",
+        tags: ["device-frame", "mobile", "desktop"],
+        thumbnail: "thumbnails/device-multi-responsive.png",
+        prompt: "**Task:** Create a multi-device mockup showing the same app across iPhone, iPad, and MacBook\n\n**Style:**\n- Three devices arranged in composition: MacBook (back), iPad (left), iPhone (right)\n- Consistent light mode UI across all devices\n- Silver/white devices with blue accent colors\n- Professional product photography style\n\n**Output:**\n- Landscape orientation (16:9)\n- Clean white background with subtle shadow beneath devices\n\n**Content:**\n- Project management app interface\n- MacBook: Full dashboard with project cards, timeline, team members\n- iPad: Tablet-optimized grid view of projects\n- iPhone: Mobile view showing project list\n- Consistent branding: \"TaskFlow\" logo, same color scheme\n\n**Layout:**\n- MacBook largest in background (slight angle)\n- iPad and iPhone in front, slightly overlapping\n- All screens clearly visible\n\n**Constraints:**\n- English text only\n- Responsive design evident across devices\n- High-fidelity polished mockup",
+        exampleUse: "Product landing pages, showcasing responsive design, pitch decks demonstrating cross-platform apps"
+      },
+      {
+        id: 46,
+        name: "Analytics Dashboard Dark Mode",
+        category: "Mockup",
+        tags: ["ui-concept", "desktop"],
+        thumbnail: "thumbnails/ui-dashboard-dark.png",
+        prompt: "**Task:** Create a modern analytics dashboard UI concept in dark mode (no device frame - just the interface)\n\n**Style:**\n- Sleek dark mode design with gradient purple/blue accents\n- Modern rounded cards and clean typography\n- Glass morphism effects on panels\n- Dark navy background (#0F172A)\n\n**Output:**\n- Landscape orientation (16:9)\n- Edge-to-edge UI, no device frame\n\n**Content:**\n- Top navigation: \"Product Analytics\" logo, tabs (Overview, Users, Revenue, Reports), search bar, profile\n- Main grid: 4 metric cards showing KPIs (MAU: 45.2K, Conversion: 3.8%, MRR: $125K, Churn: 2.1%)\n- Large area chart showing user growth with gradient fill\n- Bottom section: Recent activities table\n\n**Layout:**\n- Top nav bar fixed height\n- 4-column metric cards row\n- Chart takes central focus\n- Table at bottom\n\n**Constraints:**\n- English text only\n- Metrics and chart clearly readable\n- High-fidelity polished dashboard UI",
+        exampleUse: "PM presentations showing product analytics, dashboard design concepts, investor decks with metrics"
+      },
+      {
+        id: 47,
+        name: "Settings Screen Light Mode",
+        category: "Mockup",
+        tags: ["ui-concept", "mobile"],
+        thumbnail: "thumbnails/ui-settings-light.png",
+        prompt: "**Task:** Create a clean settings screen UI concept in light mode (no device frame)\n\n**Style:**\n- Minimal light mode design with subtle gray cards\n- Clean sans-serif typography\n- Soft shadows and gentle rounded corners\n- White background with light gray sections (#F8FAFC)\n\n**Output:**\n- Portrait orientation (9:16)\n- Mobile interface, edge-to-edge\n\n**Content:**\n- Top header: \"Settings\" title, back arrow, save button\n- Profile section: Avatar, \"Sarah Chen\", \"Product Manager\", edit button\n- Settings categories:\n  - Account (Email, Password, Two-factor auth)\n  - Notifications (Push, Email, In-app)\n  - Privacy (Data sharing, Analytics, Cookies)\n  - Preferences (Theme, Language, Time zone)\n- Sign out button at bottom\n\n**Layout:**\n- Header bar with title centered\n- Profile card at top\n- List-style settings with right arrows\n- Grouped by category with headers\n\n**Constraints:**\n- English text only\n- Clean, readable typography\n- High-fidelity mobile UI design",
+        exampleUse: "Mobile app design mockups, settings page concepts, user profile screens"
+      },
+      {
+        id: 48,
+        name: "Onboarding Flow Screen",
+        category: "Mockup",
+        tags: ["ui-concept", "mobile"],
+        thumbnail: "thumbnails/ui-onboarding-flow.png",
+        prompt: "**Task:** Create an app onboarding screen UI concept showing multi-step flow (no device frame)\n\n**Style:**\n- Colorful gradient backgrounds with illustration\n- Modern, friendly design with rounded elements\n- Purple to pink gradient backdrop\n- Light, approachable aesthetic\n\n**Output:**\n- Portrait orientation (9:16)\n- Mobile interface\n\n**Content:**\n- Progress dots at top (3 steps: filled, filled, outlined)\n- Large illustration: Team collaboration graphic\n- Heading: \"Collaborate in Real-Time\"\n- Subtext: \"Work together with your team on projects, share feedback, and stay aligned\"\n- Primary button: \"Continue\"\n- Skip link at bottom\n\n**Layout:**\n- Progress indicator top center\n- Illustration takes upper half\n- Text content in lower third\n- Button and skip at bottom\n\n**Constraints:**\n- English text only\n- Friendly, welcoming design\n- High-fidelity onboarding screen",
+        exampleUse: "User onboarding design, first-time user experience mockups, mobile app flow demonstrations"
+      },
+      {
+        id: 49,
+        name: "SaaS Hero Section",
+        category: "Mockup",
+        tags: ["landing-page", "desktop"],
+        thumbnail: "thumbnails/landing-saas-hero.png",
+        prompt: "**Task:** Create a modern SaaS product landing page hero section\n\n**Style:**\n- Clean, professional design with vibrant blue/purple gradients\n- Modern typography with bold headlines\n- Subtle geometric background patterns\n- Light mode with white/light gray base\n\n**Output:**\n- Landscape orientation (16:9)\n- Desktop web interface, edge-to-edge\n\n**Content:**\n- Top navigation: Logo \"TaskFlow\", links (Features, Pricing, About, Contact), \"Sign In\" and \"Get Started\" buttons\n- Hero section:\n  - Headline: \"Project Management for Modern Teams\"\n  - Subheading: \"Collaborate, track progress, and ship faster with the all-in-one workspace\"\n  - Two CTAs: \"Start Free Trial\" (primary), \"Watch Demo\" (secondary)\n  - Right side: Dashboard screenshot/mockup showing the product\n- Trust badges at bottom: \"Trusted by 10,000+ teams\"\n\n**Layout:**\n- Navigation bar at top\n- 50/50 split: text left, visual right\n- Generous white space\n- Centered content within max-width container\n\n**Constraints:**\n- English text only\n- Professional, enterprise-ready aesthetic\n- High-fidelity landing page design",
+        exampleUse: "Product landing pages, marketing website designs, SaaS product launch pages"
+      },
+      {
+        id: 50,
+        name: "Product Launch Page Dark",
+        category: "Mockup",
+        tags: ["landing-page", "desktop"],
+        thumbnail: "thumbnails/landing-launch-dark.png",
+        prompt: "**Task:** Create a bold product launch landing page in dark mode\n\n**Style:**\n- Dark background with vibrant color accents (neon green, electric blue)\n- Bold, large typography with high contrast\n- Gradient overlays and glowing effects\n- Energetic, modern aesthetic\n\n**Output:**\n- Landscape orientation (16:9)\n- Desktop web interface\n\n**Content:**\n- Top bar: \"TaskFlow 3.0\" logo, minimal navigation, \"Pre-order Now\" button\n- Center hero:\n  - Large headline: \"The Future of Work\"\n  - Subtext: \"Launching March 2025\"\n  - Product image: Sleek 3D render of app interface floating/hovering\n  - Email capture: Input field + \"Notify Me\" button\n- Bottom: Feature highlights in 3 columns (AI-Powered, Real-time Collab, Enterprise Security)\n\n**Layout:**\n- Centered, vertical composition\n- Product visual dominates center\n- Symmetric layout\n\n**Constraints:**\n- English text only\n- Bold, launch-event aesthetic\n- High-fidelity product page",
+        exampleUse: "Product launch announcements, pre-order pages, event landing pages, dramatic product reveals"
+      },
+      {
+        id: 51,
+        name: "Minimal Startup Landing",
+        category: "Mockup",
+        tags: ["landing-page", "desktop"],
+        thumbnail: "thumbnails/landing-minimal-startup.png",
+        prompt: "**Task:** Create a minimal, clean startup landing page\n\n**Style:**\n- Ultra-minimal design with lots of white space\n- Black and white with single accent color (warm orange)\n- Simple sans-serif typography\n- Clean, uncluttered aesthetic\n\n**Output:**\n- Landscape orientation (16:9)\n- Desktop web interface\n\n**Content:**\n- Minimal top nav: Simple logo mark, \"Sign In\" link only\n- Hero centered:\n  - Bold headline: \"Work smarter, not harder\"\n  - One-line description: \"The simplest way to manage projects and collaborate with your team\"\n  - Single CTA button: \"Get Started Free\"\n  - Simple line illustration showing workflow concept\n- Bottom: Logos of well-known companies using the product\n\n**Layout:**\n- Maximum white space\n- Vertically centered content\n- Single-column, centered layout\n- Illustration subtle and minimal\n\n**Constraints:**\n- English text only\n- Minimal, startup aesthetic\n- High-fidelity clean design",
+        exampleUse: "Startup landing pages, minimalist product sites, early-stage company marketing pages"
+      },
+      {
+        id: 52,
+        name: "Social Feed Light Mode",
+        category: "Mockup",
+        tags: ["mobile", "ui-concept"],
+        thumbnail: "thumbnails/mobile-social-feed-light.png",
+        prompt: "**Task:** Create a social feed mobile app screen in light mode (no device frame - just UI)\n\n**Style:**\n- Clean, modern light mode social media interface\n- Card-based design with subtle shadows\n- Blue/white color scheme\n- Instagram/LinkedIn aesthetic\n\n**Output:**\n- Portrait orientation (9:16)\n- Mobile app interface, edge-to-edge\n\n**Content:**\n- Top nav: \"Feed\" title, notification bell, message icon\n- Stories bar: 5 circular avatars with \"Add yours\" first\n- Feed posts (2-3 visible):\n  - User avatar, name \"Alex Rivera\", \"2h ago\"\n  - Post text about product launch\n  - Engagement: Like, Comment, Share buttons\n  - Second post with user \"Morgan Lee\" sharing design work\n- Bottom tab bar: Home (active), Search, Add, Activity, Profile\n\n**Layout:**\n- Fixed top navigation\n- Horizontal scrolling stories\n- Vertical feed of cards\n- Fixed bottom tab bar\n\n**Constraints:**\n- English text only\n- Clean, familiar social interface\n- High-fidelity mobile design",
+        exampleUse: "Social media app mockups, feed design concepts, community features in PM tools"
+      },
+      {
+        id: 53,
+        name: "E-commerce Product Dark",
+        category: "Mockup",
+        tags: ["mobile", "ui-concept"],
+        thumbnail: "thumbnails/mobile-ecommerce-dark.png",
+        prompt: "**Task:** Create an e-commerce product detail screen in dark mode (no device frame)\n\n**Style:**\n- Premium dark mode e-commerce interface\n- Dark gray/black background with gold accents\n- High-quality product photography style\n- Luxury shopping app aesthetic\n\n**Output:**\n- Portrait orientation (9:16)\n- Mobile app interface\n\n**Content:**\n- Top: Back arrow, \"Product\" title, share and favorite icons\n- Large product image: Wireless headphones in studio lighting\n- Product swatches: Black, Silver, Gold (Black selected)\n- Title: \"Premium Wireless Headphones\"\n- Price: \"$299.99\"\n- Rating: 4.8 stars (1,234 reviews)\n- Description: \"Industry-leading noise cancellation with premium sound quality\"\n- Size/Quantity selector\n- \"Add to Cart\" button (gold/yellow)\n- Bottom: Related products carousel\n\n**Layout:**\n- Full-width hero image at top\n- Product details stacked\n- CTA button prominent\n- Scrollable content\n\n**Constraints:**\n- English text only\n- Premium, luxury feel\n- High-fidelity e-commerce UI",
+        exampleUse: "E-commerce app designs, product detail page mockups, shopping experience concepts"
+      },
+      {
+        id: 54,
+        name: "Fitness Tracker Colorful",
+        category: "Mockup",
+        tags: ["mobile", "ui-concept"],
+        thumbnail: "thumbnails/mobile-fitness-colorful.png",
+        prompt: "**Task:** Create a fitness tracking app home screen with vibrant colors (no device frame)\n\n**Style:**\n- Vibrant, energetic design with gradient cards\n- Mix of purple, pink, orange, green gradients\n- Modern, health-app aesthetic\n- Bold data visualization\n\n**Output:**\n- Portrait orientation (9:16)\n- Mobile app interface\n\n**Content:**\n- Top section: \"Hello Sarah\" greeting, streak badge \"7 day streak!\", profile pic\n- Daily summary card with circular progress ring showing 75% goal completion\n- Stats: 8,245 steps, 3.2 miles, 520 calories\n- Activity cards grid:\n  - Workout (orange gradient): \"30 min run\"\n  - Sleep (purple gradient): \"7.5 hours\"\n  - Water (blue gradient): \"6/8 glasses\"\n  - Heart Rate (red gradient): \"72 BPM\"\n- Bottom tab bar: Dashboard, Workouts, Nutrition, Profile\n\n**Layout:**\n- Greeting header\n- Large progress ring\n- 2x2 grid of stat cards\n- Bottom navigation\n\n**Constraints:**\n- English text only\n- Vibrant, motivational design\n- High-fidelity fitness app UI",
+        exampleUse: "Fitness app mockups, health tracking dashboards, wellness product demos"
+      },
+      {
+        id: 55,
+        name: "Admin Panel Light Mode",
+        category: "Mockup",
+        tags: ["desktop", "ui-concept"],
+        thumbnail: "thumbnails/desktop-admin-light.png",
+        prompt: "**Task:** Create an admin panel/dashboard for a SaaS platform in light mode (no device frame)\n\n**Style:**\n- Clean, professional light mode interface\n- Sidebar navigation with icons\n- White/light gray cards with subtle borders\n- Blue accent colors for actions\n\n**Output:**\n- Landscape orientation (16:9)\n- Desktop web application interface\n\n**Content:**\n- Left sidebar: Logo, navigation icons (Dashboard, Users, Analytics, Settings, Support)\n- Top bar: Search bar, notifications, user profile \"Admin\"\n- Main content area:\n  - Page title: \"User Management\"\n  - Action bar: Search users, filters, \"Add User\" button\n  - Data table: List of users with columns (Name, Email, Role, Status, Actions)\n  - 8-10 user rows visible\n  - Pagination at bottom\n- Right panel: Quick stats (Total Users, Active, Pending)\n\n**Layout:**\n- Fixed left sidebar (narrow)\n- Top navigation bar\n- Main content area with table\n- Optional right sidebar with stats\n\n**Constraints:**\n- English text only\n- Professional enterprise UI\n- High-fidelity admin interface",
+        exampleUse: "SaaS admin dashboards, user management interfaces, internal tools mockups"
+      },
+      {
+        id: 56,
+        name: "Kanban Project Board",
+        category: "Mockup",
+        tags: ["desktop", "ui-concept"],
+        thumbnail: "thumbnails/desktop-kanban-board.png",
+        prompt: "**Task:** Create a Kanban-style project management board interface (no device frame)\n\n**Style:**\n- Colorful, organized board layout\n- Distinct colored columns\n- Card-based task items with labels\n- Modern project management aesthetic (Trello/Asana style)\n\n**Output:**\n- Landscape orientation (16:9)\n- Desktop web application\n\n**Content:**\n- Top navigation: \"Product Launch Q1\" project title, team members avatars, share button\n- Kanban columns (4): \"Backlog\", \"In Progress\", \"Review\", \"Done\"\n- Each column has 3-5 task cards showing:\n  - Task title\n  - Priority label (High/Medium/Low in different colors)\n  - Assignee avatar\n  - Due date\n  - Attachment/comment counts\n- Example tasks: \"Design mockups\", \"API integration\", \"User testing\"\n- Add card buttons at bottom of each column\n\n**Layout:**\n- Horizontal columns of equal width\n- Cards stacked vertically\n- Drag-and-drop visual affordance\n\n**Constraints:**\n- English text only\n- Organized, productive feel\n- High-fidelity kanban board",
+        exampleUse: "Project management tool mockups, workflow boards, agile sprint planning visuals"
+      },
+      {
+        id: 57,
+        name: "Code Editor Dark Theme",
+        category: "Mockup",
+        tags: ["desktop", "ui-concept"],
+        thumbnail: "thumbnails/desktop-code-editor-dark.png",
+        prompt: "**Task:** Create a modern code editor interface in dark mode (VS Code style, no device frame)\n\n**Style:**\n- Dark theme code editor (dark gray/black background)\n- Syntax highlighting with colorful code\n- Professional developer tool aesthetic\n- Monokai/Dracula color scheme\n\n**Output:**\n- Landscape orientation (16:9)\n- Desktop application interface\n\n**Content:**\n- Top menu bar: File, Edit, View, etc., window controls\n- Left sidebar: File explorer showing project structure\n  - Folders: src/, components/, utils/\n  - Files: App.tsx, index.html, package.json\n- Main editor area: \n  - Open file tabs: \"Dashboard.tsx\", \"api.ts\", \"styles.css\"\n  - Code visible with syntax highlighting (React/TypeScript code)\n  - Line numbers\n- Right sidebar: Outline/symbols panel\n- Bottom panel: Terminal showing command output\n- Status bar at bottom: Git branch, errors/warnings, line number\n\n**Layout:**\n- Sidebar-Editor-Panel layout\n- Multiple panes and split views\n- Status information at bottom\n\n**Constraints:**\n- English text and code only\n- Professional developer environment\n- High-fidelity code editor UI",
+        exampleUse: "Developer tool mockups, coding environment demos, technical documentation screenshots"
+      },
+      {
+        id: 58,
+        name: "Hand-Drawn Sketch Wireframe",
+        category: "Mockup",
+        tags: ["wireframe", "desktop"],
+        thumbnail: "thumbnails/wireframe-hand-drawn-sketch.png",
+        prompt: "**Task:** Create a hand-drawn style wireframe sketch for a web application\n\n**Style:**\n- Hand-drawn pencil sketch aesthetic\n- Loose, sketchy lines with slight imperfections\n- Black pencil on white paper\n- Casual, brainstorming feel with annotations\n\n**Output:**\n- Landscape orientation (16:9)\n- Sketched wireframe on paper texture\n\n**Content:**\n- Web application dashboard layout sketch\n- Hand-drawn boxes representing:\n  - Top navigation bar with hamburger menu and logo\n  - Left sidebar with navigation items\n  - Main content area with cards and charts\n  - Right panel with notifications\n- Annotations with arrows pointing to elements:\n  - \"User profile here\"\n  - \"Chart shows weekly data\"\n  - \"CTA button - primary action\"\n- Wavy lines representing text content\n- X marks or simple shapes for images/icons\n\n**Layout:**\n- Standard web app layout structure\n- Loose, imperfect rectangles and lines\n- Hand-written labels and notes\n- Sketch marks and corrections visible\n\n**Constraints:**\n- English annotations only\n- Lo-fi hand-drawn wireframe style\n- Authentic sketch appearance",
+        exampleUse: "Early-stage wireframes, brainstorming sessions, lo-fi design explorations, ideation documents"
+      },
+      {
+        id: 59,
+        name: "Flat Vector Illustrated Persona",
+        category: "Persona",
+        tags: ["illustrated"],
+        thumbnail: "thumbnails/persona-illustrated-flat-vector.png",
+        prompt: "**Task:** Create a flat vector illustrated persona portrait\n\n**Style:**\n- Geometric flat vector illustration\n- Bold, solid colors with minimal gradients\n- Modern, clean design aesthetic\n- Professional yet approachable\n\n**Output:**\n- Square aspect ratio (1:1)\n- Solid color background (single tone)\n\n**Content:**\n- Professional woman, early 30s, product manager\n- Modern business casual attire\n- Confident, friendly expression\n- Simplified facial features in flat style\n\n**Layout:**\n- Upper body portrait\n- Centered composition\n- Minimal details, focus on shapes and colors\n\n**Constraints:**\n- Illustrated, not photorealistic\n- No text or logos\n- Use 3-4 primary colors maximum",
+        exampleUse: "User persona cards, presentation graphics, team member illustrations, about pages, profile avatars"
+      },
+      {
+        id: 60,
+        name: "3D Cartoon Character",
+        category: "Persona",
+        tags: ["illustrated"],
+        thumbnail: "thumbnails/persona-illustrated-3d-cartoon.png",
+        prompt: "**Task:** Create a 3D cartoon style persona character\n\n**Style:**\n- Pixar/modern 3D animation aesthetic\n- Smooth, rounded forms\n- Playful proportions (slightly oversized head)\n- Vibrant, saturated colors\n- Soft ambient lighting\n\n**Output:**\n- Square aspect ratio (1:1)\n- Gradient or simple environment background\n\n**Content:**\n- Young male professional, mid-20s, tech worker\n- Casual hoodie and glasses\n- Enthusiastic, energetic expression\n- Stylized hair and features\n\n**Layout:**\n- Waist-up portrait\n- Slight three-quarter angle\n- Dynamic, engaging pose\n\n**Lighting:**\n- Soft, even ambient light\n- Subtle rim lighting for depth\n\n**Constraints:**\n- 3D illustrated style, not photorealistic\n- No text or logos\n- Friendly, approachable character design",
+        exampleUse: "Playful user personas, onboarding characters, app mascots, friendly product guides, gamified experiences"
+      },
+      {
+        id: 61,
+        name: "Hand-Drawn Sketch Persona",
+        category: "Persona",
+        tags: ["illustrated"],
+        thumbnail: "thumbnails/persona-illustrated-sketch.png",
+        prompt: "**Task:** Create a hand-drawn sketch style persona illustration\n\n**Style:**\n- Loose, expressive line drawing\n- Ink and watercolor aesthetic\n- Organic, artistic feel\n- Limited color palette with washes\n\n**Output:**\n- Square aspect ratio (1:1)\n- White or cream textured paper background\n\n**Content:**\n- Middle-aged man, 40s, consultant or advisor\n- Business attire with rolled sleeves\n- Thoughtful, contemplative expression\n- Sketchy, gestural linework\n\n**Layout:**\n- Head and shoulders portrait\n- Asymmetric composition\n- Loose, energetic strokes\n\n**Constraints:**\n- Hand-drawn illustrated style, not photorealistic\n- No text or logos\n- Artistic, human touch visible in linework",
+        exampleUse: "Creative personas, workshop materials, artistic presentations, human-centered design artifacts, empathy maps"
+      },
+      {
+        id: 62,
+        name: "Modern Office Scene",
+        category: "Persona",
+        tags: ["scene"],
+        thumbnail: "thumbnails/persona-scene-office-modern.png",
+        prompt: "**Task:** Create a photorealistic scene of a person working in a modern office environment\n\n**Style:**\n- Photorealistic, contemporary aesthetic\n- Clean, modern office interior\n- Natural light from large windows\n- Professional yet comfortable atmosphere\n\n**Output:**\n- 16:9 aspect ratio (horizontal)\n- Environmental context visible\n\n**Content:**\n- Female product manager, 30s, at standing desk\n- Reviewing data on large monitor\n- Casual professional attire (blazer and jeans)\n- Engaged, focused expression\n- Visible whiteboard with diagrams in background\n- Plants and modern office furniture\n\n**Layout:**\n- Medium shot showing person and workspace\n- Environmental storytelling\n- Depth of field - subject sharp, background slightly soft\n\n**Lighting:**\n- Natural daylight from windows\n- Soft shadows\n- Warm, inviting tone\n\n**Constraints:**\n- Photorealistic, not illustrated\n- No text or logos on screen\n- Authentic workspace, not stock-photo-staged",
+        exampleUse: "Workplace scenarios, day-in-the-life stories, office culture content, product usage contexts, employee profiles"
+      },
+      {
+        id: 63,
+        name: "Coffee Shop Remote Work",
+        category: "Persona",
+        tags: ["scene"],
+        thumbnail: "thumbnails/persona-scene-coffee-shop.png",
+        prompt: "**Task:** Create a photorealistic scene of a person working remotely in a coffee shop\n\n**Style:**\n- Photorealistic, documentary-style photography\n- Cozy cafe atmosphere\n- Natural ambient lighting\n- Casual, authentic moment\n\n**Output:**\n- 3:4 aspect ratio (vertical/portrait)\n- Environmental context showing cafe setting\n\n**Content:**\n- Young Asian male designer, mid-20s, at cafe table\n- Working on laptop with coffee cup visible\n- Headphones on, concentrated expression\n- Casual attire (t-shirt, hoodie)\n- Cafe interior visible - wooden tables, plants, other patrons blurred in background\n\n**Layout:**\n- Medium shot from slightly elevated angle\n- Environmental storytelling\n- Shallow depth of field - subject in focus, background atmosphere\n\n**Lighting:**\n- Soft window light from side\n- Warm cafe interior lighting\n- Cozy, intimate feel\n\n**Constraints:**\n- Photorealistic, not illustrated\n- Authentic coffee shop vibe, not staged\n- No visible branding or logos",
+        exampleUse: "Remote work personas, digital nomad content, flexible workplace stories, casual user scenarios, lifestyle branding"
+      },
+      {
+        id: 64,
+        name: "Home Office Video Call",
+        category: "Persona",
+        tags: ["scene"],
+        thumbnail: "thumbnails/persona-scene-home-office.png",
+        prompt: "**Task:** Create a photorealistic scene of a person on a video call in a home office\n\n**Style:**\n- Photorealistic, contemporary home office aesthetic\n- Clean, organized workspace\n- Soft natural lighting\n- Professional home setup\n\n**Output:**\n- Square aspect ratio (1:1)\n- Home office environment visible\n\n**Content:**\n- Woman in her 30s on video call\n- Sitting at desk with laptop open\n- Friendly, engaged expression (mid-conversation)\n- Smart casual attire (nice top, visible on camera)\n- Bookshelf with plants visible in background\n- Warm lamp providing supplemental lighting\n\n**Layout:**\n- Waist-up framing from webcam perspective\n- Professional video call composition\n- Background showing organized home office\n\n**Lighting:**\n- Soft window light from side\n- Ring light or desk lamp for face\n- Warm, flattering tone\n\n**Constraints:**\n- Photorealistic, not illustrated\n- Authentic home office, not corporate\n- No visible screen content or branding",
+        exampleUse: "Remote work scenarios, video conferencing contexts, work-from-home personas, collaboration tools, hybrid work stories"
+      },
+      {
+        id: 65,
+        name: "Dramatic Studio Headshot",
+        category: "Persona",
+        tags: ["headshot"],
+        thumbnail: "thumbnails/persona-headshot-dramatic.png",
+        prompt: "**Task:** Create a dramatic studio headshot portrait with professional lighting\n\n**Style:**\n- Photorealistic, high-end editorial aesthetic\n- Dark, moody background\n- Dramatic lighting setup\n- Cinematic quality\n\n**Output:**\n- Square aspect ratio (1:1)\n- Dark gradient background (charcoal to black)\n\n**Content:**\n- Male executive, 40s, confident demeanor\n- Formal business attire (suit and tie)\n- Direct eye contact, serious yet approachable expression\n- Clean, professional appearance\n\n**Layout:**\n- Tight headshot framing (head and upper shoulders)\n- Centered composition\n- Sharp focus on eyes\n\n**Lighting:**\n- Rembrandt lighting (one side lit, triangle of light on cheek)\n- Strong key light from 45-degree angle\n- Subtle rim light separating subject from background\n- High contrast, dramatic shadows\n\n**Constraints:**\n- Photorealistic, not illustrated\n- Professional studio quality\n- No text or logos",
+        exampleUse: "Executive profiles, leadership team pages, professional bios, corporate announcements, high-stakes personas"
+      },
+      {
+        id: 66,
+        name: "Outdoor Environmental Headshot",
+        category: "Persona",
+        tags: ["headshot"],
+        thumbnail: "thumbnails/persona-headshot-outdoor.png",
+        prompt: "**Task:** Create an environmental headshot with natural outdoor setting\n\n**Style:**\n- Photorealistic, lifestyle photography aesthetic\n- Outdoor natural environment\n- Soft natural lighting\n- Relaxed, approachable feel\n\n**Output:**\n- Square aspect ratio (1:1)\n- Blurred natural background (bokeh)\n\n**Content:**\n- Young female entrepreneur, late 20s\n- Smart casual attire (denim jacket)\n- Genuine smile, warm expression\n- Natural hair and minimal makeup\n- Green foliage visible in soft-focus background\n\n**Layout:**\n- Headshot framing (head to upper chest)\n- Slight off-center composition (rule of thirds)\n- Shallow depth of field\n\n**Lighting:**\n- Golden hour natural light\n- Soft, directional sunlight\n- Warm color temperature\n- Minimal shadows, flattering on face\n\n**Constraints:**\n- Photorealistic, not illustrated\n- Natural, authentic feel - not studio-shot\n- No text or logos",
+        exampleUse: "Approachable team profiles, founder stories, startup personas, casual brand identity, human-first content"
+      },
+      {
+        id: 67,
+        name: "Urban Lifestyle Portrait",
+        category: "Persona",
+        tags: ["lifestyle"],
+        thumbnail: "thumbnails/persona-lifestyle-urban.png",
+        prompt: "**Task:** Create a lifestyle portrait of a person in an urban environment\n\n**Style:**\n- Photorealistic, contemporary street photography aesthetic\n- Urban setting with modern architecture\n- Natural light, documentary feel\n- Energetic, dynamic composition\n\n**Output:**\n- 3:4 aspect ratio (vertical/portrait)\n- Urban background with depth\n\n**Content:**\n- Young professional, early 30s, walking with confidence\n- Modern casual style (sneakers, jeans, leather jacket)\n- Mid-stride, natural movement\n- Engaged, purposeful expression\n- City street with modern buildings in background\n- Crosswalk or urban plaza setting\n\n**Layout:**\n- Full body or three-quarter length shot\n- Environmental context visible\n- Leading lines from architecture\n- Subject slightly off-center\n\n**Lighting:**\n- Bright daylight, clear weather\n- Even natural illumination\n- Clean, crisp shadows\n- Contemporary urban feel\n\n**Constraints:**\n- Photorealistic, not illustrated\n- Authentic street moment, not posed\n- No visible brand names or logos",
+        exampleUse: "Active user personas, city-life scenarios, on-the-go contexts, mobile app usage, urban professional stories"
+      },
+      {
+        id: 68,
+        name: "Collaborative Lifestyle Moment",
+        category: "Persona",
+        tags: ["lifestyle"],
+        thumbnail: "thumbnails/persona-lifestyle-collaboration.png",
+        prompt: "**Task:** Create a lifestyle portrait showing collaboration and teamwork\n\n**Style:**\n- Photorealistic, editorial documentary aesthetic\n- Natural indoor/outdoor hybrid setting\n- Candid interaction captured\n- Warm, authentic atmosphere\n\n**Output:**\n- 16:9 aspect ratio (horizontal)\n- Environmental context showing interaction\n\n**Content:**\n- Two colleagues collaborating, diverse pair (one Black woman, one Hispanic man)\n- Both in casual professional attire\n- Reviewing work on tablet together\n- Engaged expressions, natural interaction\n- Outdoor cafe or co-working patio setting\n- Natural light, comfortable environment\n\n**Layout:**\n- Medium shot capturing both subjects\n- Over-the-shoulder perspective or side angle\n- Authentic moment of collaboration\n- Environmental depth\n\n**Lighting:**\n- Soft natural daylight\n- Warm afternoon light\n- Even, flattering illumination\n- Casual, relaxed mood\n\n**Constraints:**\n- Photorealistic, not illustrated\n- Authentic interaction, not staged-looking\n- No visible screen content or branding",
+        exampleUse: "Teamwork scenarios, collaboration tools, pair programming contexts, partnership stories, diverse team representation"
+      },
+      {
+        id: 69,
+        name: "Tools of the Trade Context",
+        category: "Persona",
+        tags: ["context"],
+        thumbnail: "thumbnails/persona-context-tools.png",
+        prompt: "**Task:** Create a portrait with contextual elements showing the person's profession\n\n**Style:**\n- Photorealistic, editorial style\n- Professional environmental portrait\n- Flat lay or overhead perspective elements\n- Clean, organized composition\n\n**Output:**\n- Square aspect ratio (1:1)\n- Professional context clearly visible\n\n**Content:**\n- UX designer, woman in 30s, at work desk\n- Surrounded by tools of her trade: sketches, wireframes, color swatches, tablet with stylus\n- Overhead/bird's eye view looking down at desk\n- Designer working on tablet in center\n- Professional casual attire\n- Focused, creative expression\n\n**Layout:**\n- Overhead flat lay composition\n- Symmetrical arrangement of work tools\n- Subject central, contextual elements arranged around\n- Well-organized, visually balanced\n\n**Lighting:**\n- Even, soft overhead lighting\n- Clean, bright workspace\n- Professional product photography feel\n- Minimal shadows\n\n**Constraints:**\n- Photorealistic, not illustrated\n- Professional, curated workspace aesthetic\n- No visible brand names or logos on tools",
+        exampleUse: "Role-based personas, profession showcases, day-in-the-life content, workspace stories, skill demonstrations"
+      },
+      {
+        id: 70,
+        name: "Role Identity Context Portrait",
+        category: "Persona",
+        tags: ["context"],
+        thumbnail: "thumbnails/persona-context-role.png",
+        prompt: "**Task:** Create a portrait with visual elements representing the person's role and expertise\n\n**Style:**\n- Photorealistic, creative composite style\n- Person as central focus\n- Symbolic contextual elements floating/arranged around them\n- Professional yet creative aesthetic\n\n**Output:**\n- Square aspect ratio (1:1)\n- Clean background with contextual graphics\n\n**Content:**\n- Data scientist, man in mid-30s\n- Professional casual attire (button-up, no tie)\n- Confident, approachable expression\n- Semi-transparent data visualizations, charts, code snippets floating around him\n- Graphs, neural network diagrams, mathematical formulas as context\n- Light gray or white background\n- Elements suggesting data analysis and AI expertise\n\n**Layout:**\n- Waist-up portrait, centered\n- Contextual elements arranged symmetrically around subject\n- Professional headshot feel with illustrative overlays\n- Clean, modern composition\n\n**Lighting:**\n- Soft, even studio lighting on subject\n- Clean, professional illumination\n- High-key aesthetic\n\n**Constraints:**\n- Photorealistic subject with semi-transparent graphic elements\n- Professional, not gimmicky\n- No actual readable text in formulas/code",
+        exampleUse: "Expert profiles, specialized role personas, skill-based content, professional identity, thought leadership visuals"
+      },
+      {
+        id: 71,
+        name: "Cinematic Film Portrait",
+        category: "Persona",
+        tags: ["portrait"],
+        thumbnail: "thumbnails/persona-portrait-cinematic.png",
+        prompt: "**Task:** Create a cinematic film-style portrait with moody aesthetics\n\n**Style:**\n- Photorealistic, cinematic film aesthetic\n- Film grain texture\n- Desaturated color palette with teal/orange tones\n- Cinematic aspect ratio feel\n- Professional cinema camera look\n\n**Output:**\n- Square aspect ratio (1:1) but with cinematic feel\n- Shallow depth of field, blurred background\n\n**Content:**\n- Creative professional, gender-neutral person, late 20s\n- Dark turtleneck or minimalist clothing\n- Thoughtful, introspective expression\n- Side-lit dramatic portrait\n- Dark, moody background (urban or indoor)\n\n**Layout:**\n- Close portrait (head and shoulders)\n- Slight off-center composition\n- Shallow depth of field\n- Cinematic framing\n\n**Lighting:**\n- Strong side lighting (split lighting or Rembrandt)\n- Dramatic shadows\n- Film noir influence\n- Moody, artistic aesthetic\n\n**Constraints:**\n- Photorealistic with film emulation look\n- Cinematic color grading (teal shadows, warm highlights)\n- Subtle film grain texture\n- No text or logos",
+        exampleUse: "Artistic personas, creative professional profiles, moody brand content, storytelling visuals, dramatic presentations"
+      },
+      {
+        id: 72,
+        name: "High-Key Minimalist Portrait",
+        category: "Persona",
+        tags: ["portrait"],
+        thumbnail: "thumbnails/persona-portrait-minimalist.png",
+        prompt: "**Task:** Create a high-key minimalist portrait with clean, bright aesthetic\n\n**Style:**\n- Photorealistic, minimalist contemporary style\n- Bright, airy feel\n- Clean white or very light background\n- Modern, fresh aesthetic\n- High-key lighting\n\n**Output:**\n- Square aspect ratio (1:1)\n- Pure white or very light gray background\n\n**Content:**\n- Young professional, woman in late 20s\n- Clean, modern style (white or light-colored clothing)\n- Natural, gentle smile\n- Minimal accessories\n- Clean, contemporary look\n\n**Layout:**\n- Upper body portrait (chest and up)\n- Centered, symmetrical composition\n- Negative space around subject\n- Minimalist framing\n\n**Lighting:**\n- High-key lighting setup\n- Bright, even illumination\n- Soft shadows or shadowless\n- Clean, fresh, airy feel\n- Professional beauty lighting aesthetic\n\n**Constraints:**\n- Photorealistic, not illustrated\n- Minimalist, clean aesthetic\n- Bright and optimistic mood\n- No text or logos",
+        exampleUse: "Clean brand personas, optimistic product content, healthcare/wellness contexts, professional services, modern corporate identity"
+      },
+      {
+        id: 73,
+        name: "Minimal App Ad",
+        category: "Marketing",
+        tags: ["ad"],
+        thumbnail: "thumbnails/ad-app-minimal.png",
+        prompt: "**Task:** Create a minimal mobile app advertisement\n\n**Style:**\n- Clean, minimal aesthetic with ample white space\n- Monochromatic color palette: soft grays with single accent color (teal)\n- Sans-serif typography, bold headline\n- Simple geometric shapes and iPhone mockup\n\n**Output:**\n- Square format (1080x1080px)\n- Light gradient background (white to pale gray)\n\n**Content:**\n- Headline: \"Focus. Track. Ship.\"\n- Subheadline: \"The project management app built for modern PMs\"\n- iPhone mockup showing clean dashboard interface\n- Call-to-action: \"Start Free Trial\"\n\n**Layout:**\n- Centered composition\n- Headline top third\n- Phone mockup center\n- CTA button bottom\n\n**Constraints:**\n- English text only\n- All text crisp and readable\n- Professional B2B aesthetic",
+        exampleUse: "App store ads, mobile app promotions, B2B SaaS advertisements"
+      },
+      {
+        id: 74,
+        name: "Bold Feature Ad",
+        category: "Marketing",
+        tags: ["ad"],
+        thumbnail: "thumbnails/ad-feature-bold.png",
+        prompt: "**Task:** Create a vibrant feature highlight advertisement\n\n**Style:**\n- Bold, energetic design with high contrast\n- Bright gradient background (orange to pink)\n- Heavy sans-serif typography\n- Abstract geometric shapes and floating UI elements\n\n**Output:**\n- Horizontal rectangle (1200x628px, social ad format)\n- Dynamic gradient background with depth\n\n**Content:**\n- Headline: \"AI-Powered Insights Are Here\"\n- Supporting text: \"Make data-driven decisions 10x faster\"\n- Floating dashboard screenshots showing charts and analytics\n- Call-to-action: \"See It In Action →\"\n\n**Layout:**\n- Text on left 40%\n- Visual elements on right 60%\n- Diagonal compositional flow\n\n**Constraints:**\n- English text only\n- Text must pop against gradient\n- Modern SaaS aesthetic",
+        exampleUse: "Feature announcements, product updates, social media ads highlighting new capabilities"
+      },
+      {
+        id: 75,
+        name: "Photo-Based Product Ad",
+        category: "Marketing",
+        tags: ["ad"],
+        thumbnail: "thumbnails/ad-product-photo.png",
+        prompt: "**Task:** Create a photo-realistic product advertisement\n\n**Style:**\n- Professional photography aesthetic\n- Natural color palette with warm tones\n- Clean sans-serif typography\n- Real workspace environment\n\n**Output:**\n- Landscape format (1920x1080px)\n- Soft focus background, sharp product focus\n\n**Content:**\n- Headline: \"Collaboration That Actually Works\"\n- Product: Laptop showing team collaboration dashboard\n- Scene: Modern office desk with coffee, notebook, natural light\n- Call-to-action: \"Join 50,000+ Teams\"\n\n**Layout:**\n- Product placement: right two-thirds\n- Text overlay: left third with semi-transparent overlay\n- Natural depth of field\n\n**Constraints:**\n- English text only\n- Text readable with subtle shadow/outline\n- Aspirational but realistic",
+        exampleUse: "Enterprise product ads, lifestyle marketing, premium SaaS positioning"
+      },
+      {
+        id: 76,
+        name: "Instagram Product Post",
+        category: "Marketing",
+        tags: ["social"],
+        thumbnail: "thumbnails/social-instagram-product.png",
+        prompt: "**Task:** Create an Instagram-native product showcase post\n\n**Style:**\n- Vibrant, thumb-stopping design\n- Gradient background (purple to blue)\n- Modern rounded typography\n- 3D-style floating UI mockups\n\n**Output:**\n- Square format (1080x1080px)\n- Rich gradient with subtle texture\n\n**Content:**\n- Headline: \"Ship Faster With Smart Roadmaps\"\n- Visual: 3D perspective mockups of roadmap interface\n- Branding: Small logo bottom corner\n- Emoji: Rocket ship 🚀\n\n**Layout:**\n- Centered composition\n- Headline at top with padding\n- Mockups arranged in perspective stack\n- Balanced negative space\n\n**Constraints:**\n- English text only\n- High contrast for mobile viewing\n- Instagram-optimized colors",
+        exampleUse: "Instagram posts, product showcases, feature highlights on social media"
+      },
+      {
+        id: 77,
+        name: "LinkedIn Professional Graphic",
+        category: "Marketing",
+        tags: ["social"],
+        thumbnail: "thumbnails/social-linkedin-professional.png",
+        prompt: "**Task:** Create a professional LinkedIn insight post\n\n**Style:**\n- Clean, corporate aesthetic\n- Professional color scheme (navy, white, gold accent)\n- Serif and sans-serif combination\n- Data visualization elements\n\n**Output:**\n- Landscape format (1200x627px, LinkedIn native)\n- Solid or subtle gradient background\n\n**Content:**\n- Headline: \"The State of Product Management 2025\"\n- Supporting stat: \"73% of PMs say AI changed their workflow\"\n- Visual: Simple bar chart or infographic element\n- Branding: Company name \"ProductFlow Insights\"\n\n**Layout:**\n- Text-heavy design, left-aligned\n- Chart/visual element right side\n- Professional spacing and hierarchy\n- Subtle brand accent at bottom\n\n**Constraints:**\n- English text only\n- Corporate professional tone\n- Optimized for LinkedIn feed",
+        exampleUse: "LinkedIn posts, industry insights, thought leadership content, B2B marketing"
+      },
+      {
+        id: 78,
+        name: "Twitter/X Announcement Card",
+        category: "Marketing",
+        tags: ["social", "announcement"],
+        thumbnail: "thumbnails/social-twitter-announcement.png",
+        prompt: "**Task:** Create a Twitter/X card for feature announcement\n\n**Style:**\n- Bold, punchy design\n- High-contrast colors (black background, electric blue accents)\n- Condensed bold typography\n- Minimal graphic elements\n\n**Output:**\n- Twitter card format (1200x675px)\n- Dark background with neon accents\n\n**Content:**\n- Headline: \"NEW: Real-Time Sync\"\n- Subtext: \"Your team, always in sync. Zero lag.\"\n- Icon: Sync symbol with glow effect\n- Branding: \"TaskFlow\" wordmark\n\n**Layout:**\n- Centered text\n- Large icon top center\n- Headline middle\n- Brand bottom\n- Plenty of breathing room\n\n**Constraints:**\n- English text only\n- High contrast for timeline scanning\n- Eye-catching but not cluttered",
+        exampleUse: "Twitter/X announcements, quick feature drops, social media launch teasers"
+      },
+      {
+        id: 79,
+        name: "Product Launch Gradient",
+        category: "Marketing",
+        tags: ["announcement"],
+        thumbnail: "thumbnails/announcement-launch-gradient.png",
+        prompt: "**Task:** Create an exciting product launch announcement\n\n**Style:**\n- Futuristic gradient design\n- Multi-color gradient (cyan to purple to pink)\n- Bold geometric typography\n- Light rays and glow effects\n\n**Output:**\n- Landscape format (1920x1080px)\n- Dynamic flowing gradient background\n\n**Content:**\n- Headline: \"Introducing PulseFlow 2.0\"\n- Subheadline: \"The future of agile project management\"\n- Launch date: \"Available January 15, 2025\"\n- Visual: Abstract geometric shapes suggesting movement\n\n**Layout:**\n- Text centered with dramatic spacing\n- Geometric elements framing the text\n- Symmetrical composition\n- Glowing accents\n\n**Constraints:**\n- English text only\n- All text prominently displayed\n- Exciting, launch-worthy energy",
+        exampleUse: "Major product launches, version releases, big announcements, event promotion"
+      },
+      {
+        id: 80,
+        name: "Feature Release Illustrated",
+        category: "Marketing",
+        tags: ["announcement"],
+        thumbnail: "thumbnails/announcement-feature-illustrated.png",
+        prompt: "**Task:** Create an illustrated feature release announcement\n\n**Style:**\n- Friendly illustrated design\n- Pastel color palette (mint, peach, lavender)\n- Rounded friendly typography\n- Hand-drawn style illustrations\n\n**Output:**\n- Square format (1080x1080px)\n- Soft solid background color\n\n**Content:**\n- Headline: \"Say Hello to Smart Templates\"\n- Visual: Illustrated icons of templates, folders, sparkles\n- Supporting text: \"Save hours with AI-powered templates\"\n- Badge element: \"New Feature\"\n\n**Layout:**\n- Headline top with breathing room\n- Illustrations arranged in circular pattern center\n- Badge top-right corner\n- Friendly, approachable spacing\n\n**Constraints:**\n- English text only\n- Welcoming, non-technical tone\n- Consumer-friendly aesthetic",
+        exampleUse: "Feature releases, minor updates, friendly product announcements, community-focused updates"
+      },
+      {
+        id: 81,
+        name: "Company Milestone Photo",
+        category: "Marketing",
+        tags: ["announcement"],
+        thumbnail: "thumbnails/announcement-milestone-photo.png",
+        prompt: "**Task:** Create a company milestone announcement\n\n**Style:**\n- Celebratory photo-based design\n- Warm, optimistic colors (gold, coral, white)\n- Elegant serif typography\n- Confetti or celebration elements\n\n**Output:**\n- Landscape format (1200x628px)\n- Photo background with overlay\n\n**Content:**\n- Headline: \"1 Million Users Strong\"\n- Supporting text: \"Thank you for trusting us with your projects\"\n- Visual: Team celebration photo or abstract celebration imagery\n- Hashtag: \"#BuildingTogether\"\n\n**Layout:**\n- Photo background, slightly darkened\n- Text overlay center or left-aligned\n- Celebration graphics (confetti, sparkles) subtly placed\n- Warm, grateful tone\n\n**Constraints:**\n- English text only\n- Text legible over photo\n- Authentic, heartfelt feeling",
+        exampleUse: "Company milestones, user achievements, growth announcements, thank you messages"
+      },
+      {
+        id: 82,
+        name: "Web Banner Minimal",
+        category: "Marketing",
+        tags: ["banner"],
+        thumbnail: "thumbnails/banner-web-minimal.png",
+        prompt: "**Task:** Create a minimal website banner\n\n**Style:**\n- Ultra-clean minimal design\n- Monochrome with single accent (electric blue)\n- Thin modern sans-serif\n- Subtle geometric line elements\n\n**Output:**\n- Wide banner format (1440x400px)\n- White or very light gray background\n\n**Content:**\n- Headline: \"Project Management, Simplified\"\n- Supporting text: \"Everything your team needs in one place\"\n- Call-to-action button: \"Get Started Free\"\n- Product screenshot: Dashboard preview on right\n\n**Layout:**\n- Text left-aligned on left 40%\n- Product visual right 60%\n- Horizontal divider line\n- Ample white space\n\n**Constraints:**\n- English text only\n- Clean, premium feel\n- Fast-loading web-optimized",
+        exampleUse: "Website banners, above-the-fold sections, landing page headers, product pages"
+      },
+      {
+        id: 83,
+        name: "Email Header Bold",
+        category: "Marketing",
+        tags: ["banner"],
+        thumbnail: "thumbnails/banner-email-bold.png",
+        prompt: "**Task:** Create a bold email campaign header\n\n**Style:**\n- Energetic, attention-grabbing design\n- Bold gradient (orange to red)\n- Heavy impact typography\n- Abstract shape elements\n\n**Output:**\n- Email header format (600x200px)\n- Full-bleed gradient background\n\n**Content:**\n- Headline: \"Level Up Your Workflow\"\n- Supporting badge: \"Limited Time: 40% Off\"\n- No imagery, typography-focused\n- Urgency element\n\n**Layout:**\n- Centered text composition\n- Stacked headline and offer\n- Badge/pill shape for discount\n- Strong visual hierarchy\n\n**Constraints:**\n- English text only\n- Mobile email-optimized\n- Immediate impact required",
+        exampleUse: "Email campaign headers, newsletter headers, promotional email graphics"
+      },
+      {
+        id: 84,
+        name: "Display Ad Illustrated",
+        category: "Marketing",
+        tags: ["banner"],
+        thumbnail: "thumbnails/banner-display-illustrated.png",
+        prompt: "**Task:** Create an illustrated display ad banner\n\n**Style:**\n- Friendly illustrated design\n- Bright, optimistic colors (yellow, teal, coral)\n- Rounded cheerful typography\n- Cartoon-style illustrations\n\n**Output:**\n- Standard display ad (728x90px leaderboard)\n- Solid background color\n\n**Content:**\n- Headline: \"Manage Projects Like a Pro\"\n- Visual: Small illustrated characters collaborating\n- Call-to-action: \"Try Free →\"\n- Logo: Left side\n\n**Layout:**\n- Logo far left\n- Headline center-left\n- Illustrations center-right\n- CTA button far right\n- Compact but readable\n\n**Constraints:**\n- English text only\n- Readable at small sizes\n- Standard display ad format",
+        exampleUse: "Display ads, leaderboard banners, sidebar ads, retargeting campaigns"
+      },
+      {
+        id: 85,
+        name: "Website Hero Gradient",
+        category: "Marketing",
+        tags: ["hero"],
+        thumbnail: "thumbnails/hero-website-gradient.png",
+        prompt: "**Task:** Create a modern website hero section\n\n**Style:**\n- Premium gradient design\n- Sophisticated gradient (deep blue to purple)\n- Large bold typography\n- Abstract flowing shapes\n\n**Output:**\n- Wide hero format (1920x800px)\n- Dynamic gradient background with depth\n\n**Content:**\n- Headline: \"Ship Products Your Users Love\"\n- Subheadline: \"AI-powered product management for modern teams\"\n- Call-to-action buttons: \"Start Free Trial\" and \"See Demo\"\n- Floating dashboard mockup right side\n\n**Layout:**\n- Text left 50%, larger than typical\n- Product mockup right 50% with perspective\n- CTAs stacked or side-by-side\n- Dramatic scale and spacing\n\n**Constraints:**\n- English text only\n- Hero-scale typography (72px+)\n- Conversion-focused layout",
+        exampleUse: "Website hero sections, landing page headers, main product pages, homepage heroes"
+      },
+      {
+        id: 86,
+        name: "App Store Hero Photo",
+        category: "Marketing",
+        tags: ["hero"],
+        thumbnail: "thumbnails/hero-appstore-photo.png",
+        prompt: "**Task:** Create an app store header hero\n\n**Style:**\n- Professional photo-realistic design\n- Natural colors with tech product focus\n- Clean modern typography\n- Depth and dimension\n\n**Output:**\n- App store header format (1920x640px)\n- Atmospheric background with product focus\n\n**Content:**\n- Headline: \"Your Command Center for Product Success\"\n- Visual: MacBook and iPhone showing app interface\n- Supporting text: \"Used by product teams at Google, Stripe, and Airbnb\"\n- Rating element: \"4.9★ on App Store\"\n\n**Layout:**\n- Devices arranged in hero perspective (center-right)\n- Text overlay left side\n- Social proof elements bottom\n- Premium product photography feel\n\n**Constraints:**\n- English text only\n- App store optimization\n- Trust-building elements",
+        exampleUse: "App store headers, product hunt launches, software marketplace listings, premium product pages"
+      },
+      {
+        id: 87,
+        name: "Landing Page Hero Bold",
+        category: "Marketing",
+        tags: ["hero"],
+        thumbnail: "thumbnails/hero-landing-bold.png",
+        prompt: "**Task:** Create a high-impact landing page hero\n\n**Style:**\n- Bold, high-contrast design\n- Vibrant duotone (electric blue and hot pink)\n- Massive bold typography\n- 3D geometric elements\n\n**Output:**\n- Full-width hero (2400x1000px)\n- Bold duotone gradient background\n\n**Content:**\n- Headline: \"Build. Launch. Iterate.\"\n- Subheadline: \"The only PM tool you'll ever need\"\n- Call-to-action: \"Start Building Now\" (large button)\n- Visual: 3D floating UI components and abstract shapes\n- Trust badge: \"Trusted by 10,000+ product teams\"\n\n**Layout:**\n- Headline massive and centered\n- Subheadline below with breathing room\n- CTA prominent center\n- 3D elements floating around text\n- Dramatic, conversion-optimized\n\n**Constraints:**\n- English text only\n- Maximum visual impact\n- Clear hierarchy to CTA",
+        exampleUse: "High-conversion landing pages, campaign pages, product launches, signup pages"
+      },
+      {
+        id: 88,
+        name: "Modern Flat Workflow",
+        category: "Artistic",
+        tags: ["flat-illustration"],
+        thumbnail: "thumbnails/flat-modern-workflow.png",
+        prompt: "**Task:** Create a modern flat illustration of a product development workflow.\n\n**Style:**\n- Clean, modern flat design with subtle gradients\n- Muted, sophisticated color palette (sage green, warm gray, soft coral, cream)\n- Smooth vector aesthetic with rounded corners\n- No shadows, gentle overlays for depth\n\n**Output:**\n- 16:9 aspect ratio\n- Solid warm cream background\n\n**Content:**\n- Product lifecycle stages: ideation (lightbulb), design (wireframe), build (tools), launch (rocket)\n- Connected by flowing curved lines\n- Small UI elements and icons around each stage\n- Conveys progression and connectivity\n\n**Layout:**\n- Horizontal workflow from left to right\n- Stages evenly spaced\n- Visual hierarchy through size variation\n\n**Constraints:**\n- Flat aesthetic only, no 3D elements\n- No text\n- Keep it sophisticated and modern",
+        exampleUse: "Product roadmaps, workflow diagrams, process illustrations, modern presentation visuals"
+      },
+      {
+        id: 89,
+        name: "Whiteboard Sketch Style",
+        category: "Artistic",
+        tags: ["hand-drawn"],
+        thumbnail: "thumbnails/handdrawn-whiteboard.png",
+        prompt: "**Task:** Create a whiteboard-style brainstorm illustration of feature prioritization.\n\n**Style:**\n- Black dry-erase marker on white background\n- Sketchy, imperfect lines with natural hand variation\n- Quick diagrams, arrows, circles, underlines\n- Authentic whiteboard aesthetic with slight marker streaks\n\n**Output:**\n- 16:9 aspect ratio\n- White background (whiteboard surface)\n\n**Content:**\n- 2x2 prioritization matrix (effort vs impact)\n- Sticky notes scattered in quadrants\n- Arrows connecting related items\n- Star marks on high-priority items\n- Conveys active brainstorming session\n\n**Layout:**\n- Matrix in center\n- Items distributed across quadrants\n- Dynamic, organic placement\n\n**Constraints:**\n- Monochrome black only\n- Hand-drawn imperfections essential\n- No digital polish\n- No text",
+        exampleUse: "Brainstorm visuals, concept sketches, workshop documentation, informal presentations"
+      },
+      {
+        id: 90,
+        name: "Notebook Sketch Style",
+        category: "Artistic",
+        tags: ["hand-drawn"],
+        thumbnail: "thumbnails/handdrawn-notebook.png",
+        prompt: "**Task:** Create a notebook-style sketch of a product roadmap concept.\n\n**Style:**\n- Pen sketch on lined notebook paper\n- Mix of clean lines and loose doodles\n- Hatching for shadows and emphasis\n- Visible paper texture and faint blue ruled lines\n\n**Output:**\n- 16:9 aspect ratio\n- Off-white paper background with subtle lines\n\n**Content:**\n- Timeline sketch with milestones\n- Small product icons doodled along the path\n- Checkmarks, stars, and emphasis marks\n- Calendar icons and phase markers\n- Conveys planning and timeline thinking\n\n**Layout:**\n- Horizontal timeline across page\n- Annotations above and below\n- Natural notebook composition\n\n**Constraints:**\n- Black/blue pen only\n- Notebook paper visible\n- Authentic hand-drawn quality\n- No text",
+        exampleUse: "Timeline planning, roadmap sketches, ideation documentation, casual planning visuals"
+      },
+      {
+        id: 91,
+        name: "Doodle Infographic Style",
+        category: "Artistic",
+        tags: ["hand-drawn"],
+        thumbnail: "thumbnails/handdrawn-doodle.png",
+        prompt: "**Task:** Create a doodle-style infographic about user research methods.\n\n**Style:**\n- Playful marker doodles with varied line weights\n- Simple shapes, stick figures, icons\n- Hand-drawn arrows and connectors\n- Organic, friendly, approachable aesthetic\n- Black lines with selective color highlights (yellow, pink, blue markers)\n\n**Output:**\n- Square aspect ratio (1:1)\n- Cream/off-white background\n\n**Content:**\n- Research methods shown as doodle icons: interview (speech bubbles), survey (clipboard), usability test (screen with user)\n- Simple stick figures interacting with each method\n- Hearts, stars, and checkmarks for emphasis\n- Conveys creative problem-solving\n\n**Layout:**\n- Icons arranged in organic cluster\n- Central focus with supporting elements\n- Playful, non-linear composition\n\n**Constraints:**\n- Maintain doodle authenticity\n- Mix of thick and thin lines\n- No perfect geometry\n- No text",
+        exampleUse: "Concept explanations, friendly infographics, team culture visuals, approachable presentations"
+      },
+      {
+        id: 92,
+        name: "Soft Watercolor Style",
+        category: "Artistic",
+        tags: ["watercolor"],
+        thumbnail: "thumbnails/watercolor-soft.png",
+        prompt: "**Task:** Create a soft watercolor illustration of team collaboration.\n\n**Style:**\n- Delicate watercolor washes with soft edges\n- Pastel palette (lavender, peach, mint green, pale yellow)\n- Transparent overlapping layers\n- Gentle color bleeding and gradients\n- Dreamy, ethereal quality\n\n**Output:**\n- 16:9 aspect ratio\n- White/cream paper background with subtle texture\n\n**Content:**\n- Abstract figures collaborating around a table\n- Soft shapes representing documents, devices, ideas\n- Organic circular flow of collaboration\n- Conveys harmony and creative teamwork\n\n**Layout:**\n- Centered composition\n- Balanced color distribution\n- Gentle radial flow\n\n**Constraints:**\n- Maintain watercolor authenticity\n- No hard edges\n- Soft, contemplative mood\n- No text",
+        exampleUse: "Team collaboration visuals, culture presentations, soft emotional storytelling, gentle concepts"
+      },
+      {
+        id: 93,
+        name: "Vibrant Watercolor Style",
+        category: "Artistic",
+        tags: ["watercolor"],
+        thumbnail: "thumbnails/watercolor-vibrant.png",
+        prompt: "**Task:** Create a vibrant watercolor illustration of product launch excitement.\n\n**Style:**\n- Bold, energetic watercolor with rich pigments\n- Dynamic color palette (electric blue, coral, golden yellow, magenta)\n- Expressive brush strokes and color splashes\n- High contrast with deep saturated colors\n- Energetic and celebratory quality\n\n**Output:**\n- Square aspect ratio (1:1)\n- White background with color bursts\n\n**Content:**\n- Rocket ship launching upward\n- Explosive watercolor bursts around launch\n- Stars, sparkles, and dynamic motion trails\n- Charts trending upward in background\n- Conveys excitement and momentum\n\n**Layout:**\n- Rocket as central focal point\n- Radial energy bursting outward\n- Upward motion emphasis\n\n**Constraints:**\n- Vibrant, saturated colors\n- Dynamic movement\n- Celebratory energy\n- No text",
+        exampleUse: "Launch announcements, celebration visuals, energetic presentations, milestone achievements"
+      },
+      {
+        id: 94,
+        name: "Abstract Watercolor Style",
+        category: "Artistic",
+        tags: ["watercolor"],
+        thumbnail: "thumbnails/watercolor-abstract.png",
+        prompt: "**Task:** Create an abstract watercolor representation of data insights.\n\n**Style:**\n- Abstract watercolor blending and layering\n- Cool analytical palette (deep blue, teal, purple, silver)\n- Flowing organic shapes with intentional color mixing\n- Translucent overlays creating depth\n- Contemplative, intelligent aesthetic\n\n**Output:**\n- 16:9 aspect ratio\n- White background with gradient washes\n\n**Content:**\n- Abstract flowing shapes suggesting data streams\n- Circular nodes where colors intersect (insights)\n- Organic network of connected elements\n- Gradient flows from dark to light\n- Conveys discovery and pattern recognition\n\n**Layout:**\n- Asymmetric composition\n- Visual flow from left to right\n- Layered depth\n\n**Constraints:**\n- Abstract, non-literal\n- Focus on color interaction\n- Sophisticated and thoughtful\n- No text",
+        exampleUse: "Data visualization concepts, abstract insights, analytical thinking visuals, sophisticated backgrounds"
+      },
+      {
+        id: 95,
+        name: "Product Flat Lay Photography",
+        category: "Artistic",
+        tags: ["photography"],
+        thumbnail: "thumbnails/photography-flatlay.png",
+        prompt: "**Task:** Create an artistic flat lay photograph of productivity tools and stationery.\n\n**Style:**\n- Overhead photography with clean, organized arrangement\n- Natural light from above creating soft shadows\n- Minimalist aesthetic with plenty of negative space\n- Professional product photography quality\n- Soft focus on edges, crisp center\n\n**Output:**\n- Square aspect ratio (1:1)\n- Clean white or neutral background\n\n**Content:**\n- Tech gadgets (laptop, phone, headphones)\n- Notebooks, pens, coffee cup\n- Geometric arrangement with intentional spacing\n- Conveys productivity and organization\n\n**Layout:**\n- Perfectly overhead view (bird's eye)\n- Objects arranged in pleasing grid or diagonal\n- Balanced composition with breathing room\n\n**Constraints:**\n- No text or logos\n- Clean, professional aesthetic\n- Realistic photography\n- Subtle shadows only",
+        exampleUse: "Product showcases, tool collections, organizational systems, professional aesthetics"
+      },
+      {
+        id: 96,
+        name: "Workspace Aesthetic Photography",
+        category: "Artistic",
+        tags: ["photography"],
+        thumbnail: "thumbnails/photography-workspace.png",
+        prompt: "**Task:** Create an atmospheric photograph of a creative workspace.\n\n**Style:**\n- Environmental photography with depth of field\n- Warm natural lighting from window (golden hour)\n- Bokeh effects and shallow depth of field\n- Magazine-quality interior photography\n- Cozy, aspirational aesthetic\n\n**Output:**\n- 16:9 aspect ratio\n- Natural environment with depth\n\n**Content:**\n- Desk near window with soft natural light\n- Computer, plants, books, coffee\n- Blurred background showing workspace depth\n- Conveys focus and creative environment\n\n**Layout:**\n- Rule of thirds composition\n- Foreground elements in focus\n- Soft bokeh background\n- Window light from side\n\n**Constraints:**\n- Photorealistic only\n- No text\n- Natural, unstaged feeling\n- Warm, inviting mood",
+        exampleUse: "Workspace inspiration, culture visuals, environmental storytelling, aspirational scenes"
+      },
+      {
+        id: 97,
+        name: "Abstract Texture Photography",
+        category: "Artistic",
+        tags: ["photography"],
+        thumbnail: "thumbnails/photography-abstract.png",
+        prompt: "**Task:** Create an abstract macro photograph of geometric patterns and textures.\n\n**Style:**\n- Extreme close-up macro photography\n- Strong directional lighting creating dramatic shadows\n- Abstract composition from everyday objects\n- High contrast with rich colors\n- Editorial/artistic photography\n\n**Output:**\n- Square aspect ratio (1:1)\n- Dramatic lighting setup\n\n**Content:**\n- Geometric shapes and surfaces (paper folds, fabric, architectural details)\n- Play of light and shadow creating patterns\n- Rich colors (deep teal, burnt orange, navy)\n- Conveys innovation and abstract thinking\n\n**Layout:**\n- Off-center composition\n- Strong diagonal lines\n- Layered depth\n- Negative space balanced with detail\n\n**Constraints:**\n- Photo-realistic only\n- No recognizable objects\n- Abstract and artistic\n- No text",
+        exampleUse: "Abstract backgrounds, creative headers, artistic presentations, thought-provoking visuals"
+      },
+      {
+        id: 98,
+        name: "80s Neon Style",
+        category: "Artistic",
+        tags: ["retro"],
+        thumbnail: "thumbnails/retro-80s-neon.png",
+        prompt: "**Task:** Create an 80s-inspired neon illustration of tech startup growth.\n\n**Style:**\n- 1980s computer graphics aesthetic\n- Neon colors (hot pink, electric blue, cyan, purple)\n- Grid floors and geometric shapes\n- Synthwave/vaporwave influence\n- Glowing edges and chrome reflections\n\n**Output:**\n- 16:9 aspect ratio\n- Dark background (black or deep purple)\n\n**Content:**\n- Ascending bar chart or growth arrow\n- Grid perspective floor\n- Geometric shapes (pyramids, spheres)\n- Neon outlines and glowing elements\n- Conveys retro-futuristic success\n\n**Layout:**\n- Centered composition\n- Perspective vanishing point\n- Layered depth with grid floor\n- Upward motion emphasis\n\n**Constraints:**\n- Authentic 80s aesthetic\n- Neon/glowing effects essential\n- No modern elements\n- No text",
+        exampleUse: "Retro tech presentations, startup culture visuals, nostalgic branding, synthwave aesthetics"
+      },
+      {
+        id: 99,
+        name: "70s Earth Tones Style",
+        category: "Artistic",
+        tags: ["retro"],
+        thumbnail: "thumbnails/retro-70s-earth.png",
+        prompt: "**Task:** Create a 1970s-inspired illustration of workplace collaboration.\n\n**Style:**\n- 1970s graphic design aesthetic\n- Warm earth tone palette (burnt orange, harvest gold, avocado green, brown)\n- Rounded shapes and organic forms\n- Textured, slightly grainy finish\n- Groovy, optimistic vibe\n\n**Output:**\n- Square aspect ratio (1:1)\n- Warm cream or tan background\n\n**Content:**\n- Stylized figures in collaborative poses\n- Geometric sunburst or circular patterns\n- Office elements abstracted (phones, papers)\n- Retro pattern overlays\n- Conveys community and teamwork\n\n**Layout:**\n- Centered circular composition\n- Radial or symmetrical arrangement\n- Balanced, harmonious\n\n**Constraints:**\n- Authentic 70s color palette\n- Rounded, organic shapes\n- Groovy, optimistic mood\n- No text",
+        exampleUse: "Retro team visuals, nostalgic branding, vintage presentations, groovy culture content"
+      },
+      {
+        id: 100,
+        name: "Mid-Century Modern Style",
+        category: "Artistic",
+        tags: ["retro"],
+        thumbnail: "thumbnails/retro-midcentury.png",
+        prompt: "**Task:** Create a mid-century modern illustration of product development process.\n\n**Style:**\n- 1950s-60s mid-century modern design\n- Sophisticated palette (teal, coral, charcoal, cream, mustard)\n- Clean geometric shapes with atomic-era motifs\n- Flat colors with minimal shading\n- Eames-era aesthetic\n\n**Output:**\n- 16:9 aspect ratio\n- Solid neutral background (cream or gray)\n\n**Content:**\n- Product lifecycle represented by connected geometric icons\n- Atomic starburst accents\n- Clean, simplified illustrations\n- Angular furniture and desk elements\n- Conveys order and progress\n\n**Layout:**\n- Horizontal flow\n- Asymmetric but balanced\n- Mid-century modern composition principles\n\n**Constraints:**\n- Authentic mid-century palette\n- Geometric precision\n- Sophisticated, adult aesthetic\n- No text",
+        exampleUse: "Sophisticated process visuals, retro-modern branding, elegant presentations, timeless aesthetics"
+      },
+      {
+        id: 101,
+        name: "Minimalist Line Art",
+        category: "Artistic",
+        tags: ["minimalist"],
+        thumbnail: "thumbnails/minimalist-lineart.png",
+        prompt: "**Task:** Create an ultra-minimalist line art illustration of user journey stages.\n\n**Style:**\n- Single-weight continuous line drawing\n- Black lines on white background\n- Simple, essential forms only\n- Japanese minimalism influence\n- Elegant simplicity\n\n**Output:**\n- 16:9 aspect ratio\n- Pure white background\n\n**Content:**\n- User journey stages as connected line illustrations\n- Simple icons: person → screen → heart (satisfaction)\n- Flowing, unbroken line connecting elements\n- Conveys clarity and flow\n\n**Layout:**\n- Horizontal progression\n- Generous whitespace (80% of canvas)\n- Elements small and delicate\n- Centered composition\n\n**Constraints:**\n- Black and white only\n- Single line weight\n- No fills or shading\n- Maximum simplicity\n- No text",
+        exampleUse: "Journey maps, process flows, elegant diagrams, sophisticated minimalist presentations"
+      },
+      {
+        id: 102,
+        name: "Single Accent Minimalist",
+        category: "Artistic",
+        tags: ["minimalist"],
+        thumbnail: "thumbnails/minimalist-accent.png",
+        prompt: "**Task:** Create a minimalist illustration with one bold accent color.\n\n**Style:**\n- Extreme minimalism with single accent color\n- Mostly grayscale with one vibrant element\n- Clean geometric shapes\n- Scandinavian design influence\n- Lots of negative space\n\n**Output:**\n- Square aspect ratio (1:1)\n- White background\n\n**Content:**\n- Product concept represented by simple shapes\n- Majority in light gray/charcoal\n- One element in vibrant coral/orange (the focus)\n- Conveys focus and priority\n\n**Layout:**\n- Asymmetric composition\n- 70% white space\n- Single focal point with accent color\n- Bottom-right or top-left weighting\n\n**Constraints:**\n- Only black, white, gray, and ONE accent color\n- Minimal elements\n- Clean and sophisticated\n- No text",
+        exampleUse: "Focus visuals, priority communication, clean product concepts, Scandinavian aesthetics"
+      },
+      {
+        id: 103,
+        name: "Negative Space Minimalist",
+        category: "Artistic",
+        tags: ["minimalist"],
+        thumbnail: "thumbnails/minimalist-negative-space.png",
+        prompt: "**Task:** Create a minimalist illustration using negative space to show growth concept.\n\n**Style:**\n- Negative space illustration\n- Monochromatic (single color)\n- Clever use of positive/negative space interaction\n- Swiss design influence\n- Intellectual and sophisticated\n\n**Output:**\n- Square aspect ratio (1:1)\n- Solid background color (deep navy or forest green)\n\n**Content:**\n- Growth arrow formed by negative space\n- Simple geometric shapes creating the form\n- Clever visual that reveals itself\n- Conveys smart design and growth\n\n**Layout:**\n- Centered composition\n- Perfect balance of positive/negative space\n- Figure-ground relationship\n- Geometric precision\n\n**Constraints:**\n- Two tones maximum\n- Negative space technique essential\n- No gradients\n- Clean edges\n- No text",
+        exampleUse: "Clever concept visuals, growth illustrations, intelligent design, sophisticated presentations"
+      },
+      {
+        id: 104,
+        name: "Bauhaus Bold Graphic",
+        category: "Artistic",
+        tags: ["bold-graphic"],
+        thumbnail: "thumbnails/bold-bauhaus.png",
+        prompt: "**Task:** Create a Bauhaus-inspired poster showing product launch.\n\n**Style:**\n- Bauhaus design school aesthetic\n- Primary colors (red, blue, yellow) with black\n- Geometric shapes (circles, triangles, rectangles)\n- Strong diagonal compositions\n- Constructivist influence\n\n**Output:**\n- Square aspect ratio (1:1)\n- Solid background (cream or light gray)\n\n**Content:**\n- Rocket launch represented by bold geometric shapes\n- Ascending diagonal composition\n- Circles, triangles, rectangles in primary colors\n- Conveys movement and innovation\n\n**Layout:**\n- Dynamic diagonal orientation\n- Overlapping geometric shapes\n- Strong sense of movement\n- Balanced asymmetry\n\n**Constraints:**\n- Primary colors + black only\n- Pure geometric shapes\n- Bold and graphic\n- No gradients\n- No text",
+        exampleUse: "Bold launch visuals, modernist presentations, graphic posters, design-forward communications"
+      },
+      {
+        id: 105,
+        name: "Pop Art Bold Graphic",
+        category: "Artistic",
+        tags: ["bold-graphic"],
+        thumbnail: "thumbnails/bold-popart.png",
+        prompt: "**Task:** Create a pop art style illustration of team success.\n\n**Style:**\n- 1960s pop art aesthetic\n- Ben-Day dots and halftone patterns\n- Bold outlines and flat colors\n- High contrast comic book style\n- Vibrant, energetic palette (hot pink, electric yellow, cyan, red)\n\n**Output:**\n- Square aspect ratio (1:1)\n- Solid bright background\n\n**Content:**\n- Stylized celebration scene\n- Raised fists or cheering figures\n- Star bursts and action lines\n- Conveys excitement and achievement\n\n**Layout:**\n- Centered, bold composition\n- Layered elements\n- Dynamic energy\n- Comic book panel aesthetic\n\n**Constraints:**\n- Bold outlines essential\n- Halftone dots and patterns\n- No subtle gradients\n- High contrast\n- No text",
+        exampleUse: "Celebration announcements, energetic team visuals, bold communications, retro marketing"
+      },
+      {
+        id: 106,
+        name: "Geometric Poster Bold Graphic",
+        category: "Artistic",
+        tags: ["bold-graphic"],
+        thumbnail: "thumbnails/bold-geometric-poster.png",
+        prompt: "**Task:** Create a bold geometric poster about data-driven decisions.\n\n**Style:**\n- Modern geometric poster design\n- Limited bold color palette (teal, coral, mustard, charcoal)\n- Sharp angles and precise shapes\n- Swiss modernism meets contemporary\n- Strong graphic impact\n\n**Output:**\n- 16:9 aspect ratio\n- Solid bold background\n\n**Content:**\n- Abstract data visualization as geometric art\n- Charts and graphs abstracted into bold shapes\n- Overlapping transparent layers\n- Conveys analytics and insight\n\n**Layout:**\n- Grid-based composition\n- Overlapping geometric forms\n- Strong visual hierarchy\n- Balanced tension\n\n**Constraints:**\n- Bold, flat colors\n- Geometric precision\n- No photographic elements\n- Strong graphic statement\n- No text",
+        exampleUse: "Data presentations, analytical visuals, modern posters, bold graphic communications"
+      },
+      {
+        id: 107,
+        name: "Isometric 3D Workspace",
+        category: "Artistic",
+        tags: ["3d-render"],
+        thumbnail: "thumbnails/3d-isometric-workspace.png",
+        prompt: "**Task:** Create an isometric 3D render of a modern workspace scene.\n\n**Style:**\n- Isometric 3D rendering (30-degree angles)\n- Clean, stylized 3D models\n- Soft ambient lighting\n- Pastel color palette (mint, lavender, peach, cream)\n- Blender/Cinema 4D aesthetic\n\n**Output:**\n- Square aspect ratio (1:1)\n- Solid pastel background\n\n**Content:**\n- Isometric desk setup with computer, chair, plant, coffee\n- Multiple workspace items arranged in scene\n- Clean, organized environment\n- Conveys modern work culture\n\n**Layout:**\n- Isometric perspective (no vanishing point)\n- Centered composition\n- Layered elements showing depth\n- Front-facing view\n\n**Constraints:**\n- Perfect isometric angles\n- 3D rendered look\n- Clean, stylized (not photorealistic)\n- Soft shadows\n- No text",
+        exampleUse: "Workspace illustrations, tech environment visuals, modern office concepts, isometric diagrams"
+      },
+      {
+        id: 108,
+        name: "Clay/Soft 3D Style",
+        category: "Artistic",
+        tags: ["3d-render"],
+        thumbnail: "thumbnails/3d-clay-soft.png",
+        prompt: "**Task:** Create a soft 3D clay-style render of product development objects.\n\n**Style:**\n- Soft, rounded 3D forms\n- Matte clay/plasticine texture\n- Diffused studio lighting\n- Monochromatic or two-tone color scheme\n- Tactile, friendly aesthetic\n\n**Output:**\n- Square aspect ratio (1:1)\n- Soft gradient background\n\n**Content:**\n- Product development icons: lightbulb, gears, rocket, chart\n- Soft, rounded 3D forms floating or arranged\n- Gentle shadows\n- Conveys approachable innovation\n\n**Layout:**\n- Floating composition\n- Balanced arrangement\n- Soft depth of field\n- Studio lighting setup\n\n**Constraints:**\n- Soft, rounded forms only\n- Matte finish\n- No hard edges\n- Friendly, approachable\n- No text",
+        exampleUse: "Friendly product visuals, approachable concepts, soft 3D illustrations, tactile aesthetics"
+      },
+      {
+        id: 109,
+        name: "Realistic 3D Product Render",
+        category: "Artistic",
+        tags: ["3d-render"],
+        thumbnail: "thumbnails/3d-realistic-product.png",
+        prompt: "**Task:** Create a photorealistic 3D product render of tech devices.\n\n**Style:**\n- Photorealistic 3D rendering\n- Precise studio lighting with reflections\n- Realistic materials (metal, glass, plastic)\n- Professional product photography aesthetic\n- Octane/V-Ray quality rendering\n\n**Output:**\n- 16:9 aspect ratio\n- Gradient or solid studio background\n\n**Content:**\n- Sleek tech product (phone, tablet, or laptop)\n- Professional studio lighting setup\n- Reflections and specular highlights\n- Clean, premium aesthetic\n- Conveys quality and precision\n\n**Layout:**\n- Hero product composition\n- Three-quarter view\n- Studio lighting (key, fill, rim)\n- Centered with negative space\n\n**Constraints:**\n- Photorealistic rendering\n- Realistic materials and physics\n- Professional lighting\n- Premium aesthetic\n- No text or UI",
+        exampleUse: "Product showcases, premium visuals, realistic mockups, professional presentations"
+      },
+      {
+        id: 110,
+        name: "Clean Corporate Process Flow",
+        category: "Flow",
+        tags: ["process"],
+        thumbnail: "thumbnails/process-corporate.png",
+        prompt: "**Task:** Create a clean corporate process flow diagram showing product development stages\n\n**Style:**\n- Professional corporate aesthetic with clean rectangles and arrows\n- Color palette: Navy blue (#1e40af) for stages, light gray (#f3f4f6) for background, gray (#6b7280) for arrows\n- Sans-serif typography, bold stage names\n- Solid directional arrows between stages\n\n**Output:**\n- 16:9 landscape orientation (1920x1080)\n- White background (#ffffff)\n\n**Content:**\n- Title: \"Product Development Process\"\n- 5 sequential stages: \"Discovery\" → \"Design\" → \"Development\" → \"Testing\" → \"Launch\"\n- Each stage has 2-3 bullet points describing activities\n- Timeline indicator showing 2-week sprint per stage\n\n**Layout:**\n- Horizontal left-to-right flow\n- Equal-sized rectangular stages (280px wide)\n- Thick arrows between stages\n- Stages evenly spaced across width\n\n**Constraints:**\n- English text only\n- All stage names clearly readable\n- Professional corporate aesthetic",
+        exampleUse: "Business processes, operational workflows, SOPs, product development stages"
+      },
+      {
+        id: 111,
+        name: "Whiteboard Sketch Process Cycle",
+        category: "Flow",
+        tags: ["process"],
+        thumbnail: "thumbnails/process-whiteboard.png",
+        prompt: "**Task:** Create a hand-drawn circular process diagram showing agile sprint cycle\n\n**Style:**\n- Whiteboard sketch aesthetic with hand-drawn arrows and circles\n- Color palette: Black (#000000) for outlines, orange (#f97316), blue (#3b82f6), green (#22c55e) highlighters\n- Handwritten-style labels, casual feel\n- Curved arrows forming a cycle\n\n**Output:**\n- Square 1:1 aspect ratio (1080x1080)\n- Off-white background (#fefce8)\n\n**Content:**\n- Title: \"Sprint Cycle\" (hand-written at top)\n- 4 phases in a circle: \"Plan\" → \"Build\" → \"Test\" → \"Review\" → back to Plan\n- Hand-drawn icons: clipboard, hammer, checkmark, magnifying glass\n- \"2 weeks\" notation in center\n\n**Layout:**\n- Circular arrangement of 4 phases\n- Curved arrows connecting each phase\n- Center space for cycle duration\n- Annotations around the outside\n\n**Constraints:**\n- English text only\n- Maintain hand-drawn whiteboard aesthetic\n- Circular flow clearly visible",
+        exampleUse: "Agile sprint cycles, iterative processes, circular workflows, team planning sessions"
+      },
+      {
+        id: 112,
+        name: "Colorful Gradient Onboarding Flow",
+        category: "Flow",
+        tags: ["process"],
+        thumbnail: "thumbnails/process-gradient.png",
+        prompt: "**Task:** Create a colorful gradient process flow showing user onboarding stages\n\n**Style:**\n- Modern colorful aesthetic with gradient-filled stages\n- Color palette: Purple (#9333ea) → Blue (#3b82f6) → Cyan (#06b6d4) → Green (#10b981) gradient progression\n- Modern sans-serif, white text on colored backgrounds\n- Chevron/arrow shapes for stages\n\n**Output:**\n- 16:9 landscape orientation (1920x1080)\n- Dark charcoal background (#1f2937)\n\n**Content:**\n- Title: \"User Onboarding Flow\" (white text)\n- 5 stages: \"Sign Up\" → \"Profile Setup\" → \"Connect Integrations\" → \"Invite Team\" → \"First Task\"\n- Progress bar showing completion percentage\n- Small icons for each stage\n\n**Layout:**\n- Horizontal chevron/arrow shapes forming a pipeline\n- Each stage overlaps slightly creating connected flow\n- Progress indicator below stages\n- Stage numbers (1-5) visible\n\n**Constraints:**\n- English text only\n- High contrast for dark mode\n- Modern SaaS aesthetic",
+        exampleUse: "User onboarding flows, step-by-step guides, mobile app flows, progressive stages"
+      },
+      {
+        id: 113,
+        name: "Professional Decision Tree",
+        category: "Flow",
+        tags: ["flowchart"],
+        thumbnail: "thumbnails/flowchart-professional.png",
+        prompt: "**Task:** Create a professional flowchart showing feature rollout decision logic\n\n**Style:**\n- Clean corporate aesthetic with standard flowchart shapes\n- Color palette: Blue (#2563eb) for processes, yellow (#fbbf24) for decisions, green (#059669) for success, red (#dc2626) for failure\n- Sans-serif typography, centered text\n- Solid lines with arrows\n\n**Output:**\n- 9:16 portrait orientation (1080x1920)\n- Light gray background (#f9fafb)\n\n**Content:**\n- Title: \"Feature Rollout Decision Flow\"\n- Start: \"New Feature Ready\"\n- Decisions: \"Passes QA?\" → \"A/B Test Positive?\" → \"Stakeholder Approval?\"\n- Outcomes: \"Ship to Production\" (green), \"Return to Dev\" (red), \"Hold for Review\" (yellow)\n\n**Layout:**\n- Top-down flowchart structure\n- Diamonds for decisions\n- Rectangles for processes\n- Rounded rectangles for start/end\n- Arrows labeled Yes/No\n\n**Constraints:**\n- English text only\n- Standard flowchart conventions\n- All text readable",
+        exampleUse: "Decision trees, feature rollout logic, approval workflows, conditional processes"
+      },
+      {
+        id: 114,
+        name: "Hand-Drawn User Flow",
+        category: "Flow",
+        tags: ["flowchart"],
+        thumbnail: "thumbnails/flowchart-handdrawn.png",
+        prompt: "**Task:** Create a hand-drawn flowchart showing user authentication flow\n\n**Style:**\n- Whiteboard sketch aesthetic with rough shapes\n- Color palette: Black (#000000) marker, pink (#f472b6), blue (#3b82f6), green (#22c55e) highlighters\n- Handwritten labels, slightly irregular shapes\n- Curved arrows with hand-drawn arrowheads\n\n**Output:**\n- 16:9 landscape orientation (1920x1080)\n- Off-white background (#fef3c7)\n\n**Content:**\n- Title: \"Login User Flow\" (hand-written)\n- Flow: \"Enter Email\" → \"Valid?\" → \"Enter Password\" → \"Correct?\" → \"Dashboard\"\n- Alternative paths: \"Forgot Password?\" → \"Reset Email\"\n- Error states: \"Try Again\" loops\n\n**Layout:**\n- Organic flowchart layout (not perfectly grid-aligned)\n- Rough rectangles and diamonds\n- Wavy connector lines\n- Annotations and notes in margins\n\n**Constraints:**\n- English text only\n- Maintain brainstorm aesthetic\n- Clear flow despite hand-drawn style",
+        exampleUse: "User flows, authentication logic, mobile app flows, brainstorming sessions"
+      },
+      {
+        id: 115,
+        name: "Dark Mode System Flowchart",
+        category: "Flow",
+        tags: ["flowchart"],
+        thumbnail: "thumbnails/flowchart-dark.png",
+        prompt: "**Task:** Create a technical flowchart showing API error handling workflow\n\n**Style:**\n- Technical dark mode aesthetic with precise shapes\n- Color palette: Cyan (#06b6d4) for lines, neon green (#10b981) for success, red (#ef4444) for errors, yellow (#fbbf24) for warnings on black background\n- Monospace font, technical labels\n- Solid lines with directional arrows\n\n**Output:**\n- 16:9 landscape orientation (1920x1080)\n- Black background (#0a0a0a)\n\n**Content:**\n- Title: \"API Error Handling Flow\"\n- Start: \"API Request Received\"\n- Decisions: \"Valid Token?\" → \"Rate Limited?\" → \"Resource Exists?\"\n- Outcomes: \"200 OK\", \"401 Unauthorized\", \"429 Too Many Requests\", \"404 Not Found\"\n- HTTP status codes displayed\n\n**Layout:**\n- Top-down technical flowchart\n- Hexagons for start/end\n- Diamonds for decisions\n- Rectangles for outcomes\n- Neon glow effects on lines\n\n**Constraints:**\n- English text only\n- Technical precision\n- Developer documentation style",
+        exampleUse: "API error handling, system architecture, technical workflows, developer documentation"
+      },
+      {
+        id: 116,
+        name: "Numbered Steps Guide",
+        category: "Flow",
+        tags: ["steps"],
+        thumbnail: "thumbnails/steps-numbered.png",
+        prompt: "**Task:** Create a numbered steps guide showing user interview process\n\n**Style:**\n- Clean professional aesthetic with numbered circles\n- Color palette: Teal (#0d9488) for numbers, dark gray (#374151) for text, light gray (#f3f4f6) for backgrounds\n- Sans-serif typography, hierarchical sizing\n- Large number circles with connecting lines\n\n**Output:**\n- 9:16 portrait orientation (1080x1920)\n- White background (#ffffff)\n\n**Content:**\n- Title: \"User Interview Process\"\n- Step 1: \"Prepare Questions\" - 3 sub-bullets\n- Step 2: \"Schedule Session\" - 3 sub-bullets  \n- Step 3: \"Conduct Interview\" - 3 sub-bullets\n- Step 4: \"Synthesize Findings\" - 3 sub-bullets\n- Step 5: \"Share Insights\" - 3 sub-bullets\n\n**Layout:**\n- Vertical numbered list\n- Large circled numbers (60px) on left\n- Content indented to right\n- Thin vertical line connecting numbers\n\n**Constraints:**\n- English text only\n- All text readable\n- Professional documentation style",
+        exampleUse: "User interview guides, research protocols, step-by-step instructions, procedural documentation"
+      },
+      {
+        id: 117,
+        name: "Illustrated Step-by-Step",
+        category: "Flow",
+        tags: ["steps"],
+        thumbnail: "thumbnails/steps-illustrated.png",
+        prompt: "**Task:** Create an illustrated step-by-step guide for A/B testing process\n\n**Style:**\n- Friendly illustrated style with simple icons\n- Color palette: Purple (#8b5cf6), orange (#f97316), teal (#14b8a6), pink (#ec4899)\n- Rounded friendly typography\n- Simple line art illustrations for each step\n\n**Output:**\n- 16:9 landscape orientation (1920x1080)\n- Light cream background (#fefbf6)\n\n**Content:**\n- Title: \"How to Run an A/B Test\"\n- 4 steps horizontally: \n  - \"Form Hypothesis\" (lightbulb icon)\n  - \"Set Up Variants\" (split screen icon)\n  - \"Run Experiment\" (play button icon)\n  - \"Analyze Results\" (chart icon)\n- Brief description under each\n\n**Layout:**\n- Horizontal row of 4 illustrated cards\n- Each card: icon on top, title, description\n- Connecting dotted line between cards\n- Step numbers in small badges\n\n**Constraints:**\n- English text only\n- Friendly approachable aesthetic\n- Simple memorable illustrations",
+        exampleUse: "A/B testing processes, experiment workflows, how-to guides, team tutorials"
+      },
+      {
+        id: 118,
+        name: "Blueprint Technical Steps",
+        category: "Flow",
+        tags: ["steps"],
+        thumbnail: "thumbnails/steps-blueprint.png",
+        prompt: "**Task:** Create a blueprint-style technical steps guide for API integration\n\n**Style:**\n- Technical blueprint aesthetic with grid background\n- Color palette: Cyan (#06b6d4) on dark navy (#0f172a), white (#ffffff) for text\n- Monospace font, technical terminology\n- Precise geometric shapes, grid lines\n\n**Output:**\n- 16:9 landscape orientation (1920x1080)\n- Dark navy background (#0f172a) with subtle grid\n\n**Content:**\n- Title: \"API Integration Steps\"\n- Step 1: \"Generate API Keys\" - code snippet placeholder\n- Step 2: \"Configure Webhooks\" - endpoint diagram\n- Step 3: \"Test Authentication\" - curl command\n- Step 4: \"Handle Responses\" - JSON example\n- Version number: \"v2.4.0\"\n\n**Layout:**\n- Vertical steps with technical details\n- Code blocks for commands\n- Small diagrams inline\n- Technical annotations and notes\n\n**Constraints:**\n- English text only\n- Technical precision\n- Developer documentation aesthetic",
+        exampleUse: "API integration guides, technical setup procedures, developer documentation, system configuration"
+      },
+      {
+        id: 119,
+        name: "Timeline Sequence",
+        category: "Flow",
+        tags: ["sequence"],
+        thumbnail: "thumbnails/sequence-timeline.png",
+        prompt: "**Task:** Create a timeline sequence showing product launch milestones\n\n**Style:**\n- Clean professional timeline aesthetic\n- Color palette: Blue (#2563eb) for completed, gray (#9ca3af) for upcoming, green (#059669) for current\n- Sans-serif typography, dates and labels\n- Horizontal line with milestone markers\n\n**Output:**\n- 16:9 landscape orientation (1920x1080)\n- White background (#ffffff)\n\n**Content:**\n- Title: \"Product Launch Timeline - Q1 2025\"\n- Milestones: \"Beta Release (Jan 15)\" → \"Public Launch (Feb 1)\" → \"Feature Update (Feb 15)\" → \"Enterprise Tier (Mar 1)\"\n- Current position indicator\n- Week numbers below\n\n**Layout:**\n- Horizontal timeline across full width\n- Markers above timeline with labels\n- Dates below timeline\n- Current position highlighted\n\n**Constraints:**\n- English text only\n- Clear timeline progression\n- Professional corporate style",
+        exampleUse: "Product launch timelines, project milestones, release schedules, roadmap visualization"
+      },
+      {
+        id: 120,
+        name: "Swimlane Sequence Diagram",
+        category: "Flow",
+        tags: ["sequence"],
+        thumbnail: "thumbnails/sequence-swimlane.png",
+        prompt: "**Task:** Create a swimlane sequence diagram showing checkout flow interactions\n\n**Style:**\n- Technical UML-style sequence diagram\n- Color palette: Blue (#3b82f6) for user actions, green (#10b981) for server, purple (#8b5cf6) for payment, gray (#6b7280) for lines\n- Sans-serif technical font\n- Dashed lines for lifelines, solid arrows for messages\n\n**Output:**\n- 9:16 portrait orientation (1080x1920)\n- Light gray background (#f9fafb)\n\n**Content:**\n- Title: \"Checkout Flow Sequence\"\n- 4 swimlanes: \"User\", \"Frontend\", \"Backend\", \"Payment Service\"\n- Messages: \"Add to Cart\" → \"Update Cart\" → \"Checkout\" → \"Process Payment\" → \"Confirm Order\"\n- Response arrows showing data flow\n\n**Layout:**\n- Vertical swimlanes from left to right\n- Horizontal arrows showing message flow\n- Numbered sequence (1, 2, 3...)\n- Activation boxes on lifelines\n\n**Constraints:**\n- English text only\n- UML sequence diagram conventions\n- Technical but readable",
+        exampleUse: "System interactions, checkout flows, cross-functional processes, service communication"
+      },
+      {
+        id: 121,
+        name: "Animated Storyboard Sequence",
+        category: "Flow",
+        tags: ["sequence"],
+        thumbnail: "thumbnails/sequence-storyboard.png",
+        prompt: "**Task:** Create a storyboard sequence showing user onboarding journey\n\n**Style:**\n- Comic/storyboard aesthetic with panel frames\n- Color palette: Warm colors - peach (#fed7aa), coral (#fb7185), sky blue (#7dd3fc), mint (#6ee7b7)\n- Rounded friendly typography\n- Panel borders with rounded corners, slight rotation\n\n**Output:**\n- 16:9 landscape orientation (1920x1080)\n- Cream background (#fef3c7)\n\n**Content:**\n- Title: \"New User Journey\"\n- 6 panels showing: \"Discovers App\" → \"Signs Up\" → \"Explores Features\" → \"Creates First Project\" → \"Invites Team\" → \"Success!\"\n- Simple stick figure illustrations\n- Speech bubbles with thoughts/reactions\n\n**Layout:**\n- 2 rows of 3 panels\n- Each panel like a comic frame\n- Numbered sequence (1-6)\n- Arrows between panels showing flow\n\n**Constraints:**\n- English text only\n- Friendly storyboard aesthetic\n- Clear narrative flow",
+        exampleUse: "User journey flows, onboarding sequences, narrative scenarios, customer experience mapping"
+      },
+      {
+        id: 122,
+        name: "Journey Map Dashboard",
+        category: "Flow",
+        tags: ["journey-map"],
+        thumbnail: "thumbnails/journey-map-dashboard.png",
+        prompt: "**Task:** Create a customer journey map showing trial-to-paid conversion journey\n\n**Style:**\n- Professional UX research dashboard aesthetic\n- Color palette: Blue (#2563eb) for touchpoints, green (#059669) for positive emotions, red (#dc2626) for pain points, purple (#7c3aed) for opportunities\n- Clean sans-serif typography\n- Emotion line graph, touchpoint cards\n\n**Output:**\n- 16:9 landscape orientation (1920x1080)\n- White background (#ffffff)\n\n**Content:**\n- Title: \"Trial to Paid Customer Journey\"\n- Phases: \"Awareness\" → \"Trial Signup\" → \"Onboarding\" → \"Activation\" → \"Conversion\"\n- Touchpoints row: Marketing site, Signup form, Welcome email, First task, Upgrade prompt\n- Emotions row: Emotion curve showing highs and lows\n- Pain points row: Friction moments\n- Opportunities row: Improvement ideas\n\n**Layout:**\n- Horizontal journey with 5 phase columns\n- 4 horizontal rows: Touchpoints, Actions, Emotions (graph), Insights\n- Emotion line graph connecting points\n- Color-coded insights\n\n**Constraints:**\n- English text only\n- UX research documentation style\n- Comprehensive journey visualization",
+        exampleUse: "Customer journey mapping, UX research, trial-to-paid conversion analysis, multi-touchpoint experiences"
+      },
+      {
+        id: 123,
+        name: "Corporate Hub-Spoke Ecosystem",
+        category: "Architecture",
+        tags: ["hub-spoke"],
+        thumbnail: "thumbnails/hub-spoke-corporate.png",
+        prompt: "**Task:** Create a hub-and-spoke diagram showing a platform ecosystem with integrations\n\n**Style:**\n- Professional corporate aesthetic with clean circles and straight connector lines\n- Color palette: Dark blue (#1e40af) for central hub, various pastel colors for spokes (mint #a7f3d0, lavender #ddd6fe, peach #fed7aa, pink #fbcfe8)\n- Clean sans-serif typography, centered text\n- Solid straight lines radiating from center, with small circular connection points\n\n**Output:**\n- Square 1:1 aspect ratio (1080x1080)\n- Light gray background (#f3f4f6)\n\n**Content:**\n- Center hub: \"TaskFlow Platform API\" (large circle, 300px diameter)\n- 8 spokes radiating outward: \"Slack Integration\", \"Jira Sync\", \"GitHub\", \"Analytics Dashboard\", \"Mobile App\", \"Email Service\", \"Payment Gateway\", \"CRM System\"\n- Add small labels on connector lines showing \"REST API\" or \"Webhook\"\n\n**Layout:**\n- Central circle perfectly centered\n- 8 spokes evenly distributed in circular pattern (45° apart)\n- Spoke circles: 150px diameter, positioned 400px from center\n- Connector lines: 2px solid, matching spoke color\n\n**Constraints:**\n- English text only\n- All integration names fully readable\n- Symmetrical radial layout",
+        exampleUse: "Platform integrations, API ecosystem maps, third-party connections"
+      }
+    ];
+
+    const tbody = document.getElementById('styles-body');
+    const emptyState = document.getElementById('empty-state');
+    const toast = document.getElementById('toast');
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const tagFiltersContainer = document.getElementById('tag-filters');
+    let currentFilter = 'all';
+    let currentTag = null;
+
+    function renderTagFilters() {
+      if (currentFilter === 'all') {
+        tagFiltersContainer.classList.remove('active');
+        tagFiltersContainer.innerHTML = '';
+        return;
+      }
+
+      const tags = CANONICAL_TAGS[currentFilter] || [];
+      if (tags.length === 0) {
+        tagFiltersContainer.classList.remove('active');
+        tagFiltersContainer.innerHTML = '';
+        return;
+      }
+
+      tagFiltersContainer.innerHTML = tags.map(tag =>
+        `<button class="tag-filter-btn${currentTag === tag ? ' active' : ''}" data-tag="${tag}">${tag}</button>`
+      ).join('');
+      tagFiltersContainer.classList.add('active');
+
+      // Add click handlers for tag buttons
+      document.querySelectorAll('.tag-filter-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const clickedTag = btn.dataset.tag;
+          if (currentTag === clickedTag) {
+            // Deselect if clicking same tag
+            currentTag = null;
+          } else {
+            currentTag = clickedTag;
+          }
+          renderTagFilters();
+          renderStyles();
+        });
+      });
+    }
+
+    // Simple markdown to HTML converter
+    function renderMarkdown(text) {
+      return text
+        // Bold: **text** or __text__
+        .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+        .replace(/__(.+?)__/g, '<strong>$1</strong>')
+        // Italic: *text* or _text_
+        .replace(/\*([^*]+)\*/g, '<em>$1</em>')
+        .replace(/_([^_]+)_/g, '<em>$1</em>')
+        // Line breaks to paragraphs (double newline)
+        .split(/\n\n+/)
+        .map(para => {
+          // Check if paragraph is a list
+          const lines = para.split('\n');
+          if (lines[0].match(/^[-•]\s/)) {
+            // Unordered list
+            const items = lines.map(line => `<li>${line.replace(/^[-•]\s+/, '')}</li>`).join('');
+            return `<ul>${items}</ul>`;
+          }
+          // Regular paragraph - convert single newlines to <br>
+          return `<p>${para.replace(/\n/g, '<br>')}</p>`;
+        })
+        .join('');
+    }
+
+    function renderStyles() {
+      let filtered = currentFilter === 'all'
+        ? styles
+        : styles.filter(s => s.category === currentFilter);
+
+      // Apply tag filter if set
+      if (currentTag) {
+        filtered = filtered.filter(s => s.tags.includes(currentTag));
+      }
+
+      if (filtered.length === 0) {
+        tbody.innerHTML = '';
+        emptyState.style.display = 'block';
+        return;
+      }
+
+      emptyState.style.display = 'none';
+      tbody.innerHTML = filtered.map(style => `
+        <tr data-category="${style.category}">
+          <td><span class="index">${String(style.id).padStart(2, '0')}</span></td>
+          <td><img class="thumbnail" src="${style.thumbnail}" alt="${style.name}" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 80 80%22><rect fill=%22%231c1c1f%22 width=%2280%22 height=%2280%22/><text x=%2250%%22 y=%2250%%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23555%22 font-size=%2210%22>No img</text></svg>'"></td>
+          <td>
+            <div class="style-name">${style.name}</div>
+            <div class="style-tags">
+              ${style.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+            </div>
+          </td>
+          <td><span class="category-badge">${style.category}</span></td>
+          <td class="prompt-cell">
+            <div class="prompt-text" data-prompt="${encodeURIComponent(style.prompt)}">${renderMarkdown(style.prompt)}</div>
+          </td>
+          <td><span class="example-use">${style.exampleUse}</span></td>
+        </tr>
+      `).join('');
+
+      // Add click handlers for copy
+      document.querySelectorAll('.prompt-text').forEach(el => {
+        el.addEventListener('click', () => copyPrompt(el));
+      });
+
+      // Add click handlers for lightbox
+      document.querySelectorAll('.thumbnail').forEach(el => {
+        el.addEventListener('click', () => openLightbox(el.src));
+        el.addEventListener('mouseenter', (e) => showHoverPreview(el.src, e));
+        el.addEventListener('mousemove', (e) => moveHoverPreview(e));
+        el.addEventListener('mouseleave', hideHoverPreview);
+      });
+    }
+
+    function copyPrompt(el) {
+      const prompt = decodeURIComponent(el.dataset.prompt);
+      navigator.clipboard.writeText(prompt).then(() => {
+        el.classList.add('copied');
+        toast.classList.add('show');
+        setTimeout(() => {
+          el.classList.remove('copied');
+          toast.classList.remove('show');
+        }, 2000);
+      });
+    }
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentFilter = btn.dataset.filter;
+        currentTag = null; // Reset tag when category changes
+        renderTagFilters();
+        renderStyles();
+      });
+    });
+
+    // Lightbox functionality
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxClose = document.querySelector('.lightbox-close');
+
+    function openLightbox(src) {
+      lightboxImg.src = src;
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    lightbox.addEventListener('click', closeLightbox);
+    lightboxClose.addEventListener('click', closeLightbox);
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightbox();
+    });
+
+    // Hover preview functionality
+    const hoverPreview = document.getElementById('hover-preview');
+    const hoverPreviewImg = document.getElementById('hover-preview-img');
+
+    function showHoverPreview(src, e) {
+      hoverPreviewImg.src = src;
+      hoverPreview.classList.add('active');
+      moveHoverPreview(e);
+    }
+
+    function moveHoverPreview(e) {
+      const preview = hoverPreview;
+      const padding = 20;
+
+      // Get viewport dimensions
+      const viewportWidth = window.innerWidth;
+      const viewportHeight = window.innerHeight;
+
+      // Position to the right of cursor by default
+      let x = e.clientX + padding;
+      let y = e.clientY - 100;
+
+      // If preview would go off right edge, show on left of cursor
+      if (x + 420 > viewportWidth) {
+        x = e.clientX - 420 - padding;
+      }
+
+      // Keep within vertical bounds
+      if (y < padding) {
+        y = padding;
+      } else if (y + 420 > viewportHeight) {
+        y = viewportHeight - 420 - padding;
+      }
+
+      preview.style.left = x + 'px';
+      preview.style.top = y + 'px';
+    }
+
+    function hideHoverPreview() {
+      hoverPreview.classList.remove('active');
+    }
+
+    renderStyles();
+  </script>
+</body>
+</html>

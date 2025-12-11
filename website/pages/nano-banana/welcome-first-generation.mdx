@@ -1,0 +1,208 @@
+---
+title: "3.1.1: Welcome & First Generation"
+description: "Set up your Gemini API key and generate your first AI image with Nano Banana Pro"
+keywords: "gemini api key, google ai studio, first image generation, nano banana setup, gemini 3 pro"
+---
+
+## 3.1.1: Welcome & First Generation
+
+- **Time to Complete:** 10 minutes
+- **Prerequisites:** Nano Banana files downloaded (Module 3.0)
+
+> **Start this module in Claude Code:** Run `/start-3-1-1` to begin the interactive experience.
+
+## Overview
+
+Module 3.1.1 gets you from zero to your first AI-generated image. You'll set up your Gemini API key, configure billing, and watch as Claude transforms a reference photo into something magical.
+
+**Key takeaway:** The setup is a one-time process. Once your API key is configured, you can generate images with simple natural language requests - Claude handles all the technical complexity.
+
+
+## What is Gemini 3 Pro?
+
+**Gemini 3 Pro** (codenamed "Nano Banana Pro") is Google's most advanced image generation model. It can:
+
+- Generate photorealistic images from text descriptions
+- Transform reference photos while preserving identity
+- Add accurate text overlays to images
+- Create consistent characters across multiple generations
+- Understand and replicate complex visual styles
+
+Unlike consumer apps, accessing the API directly gives you:
+- **More permissive content policies** (e.g., real people as references)
+- **Full parameter control** (aspect ratio, resolution, etc.)
+- **Session-based iteration** (refine images step-by-step)
+- **Lower cost** (~$0.10/image vs subscription apps)
+
+
+## Setting Up Your API Key
+
+### Step 1: Get Your Key from Google AI Studio
+
+1. Go to [Google AI Studio](https://aistudio.google.com/)
+2. Sign in with your Google account
+3. Accept the Terms of Service (if first time)
+4. Click **"Get API Key"** in the left sidebar
+5. Click **"Create API key"** in the upper right to generate a new key
+6. Name your key whatever you want and select "Default Gemini Project"
+7. Click on the key in the dashbaord
+8. Copy the key - it starts with `AIza...`
+
+Keep this key safe. You'll paste it into your `.env` file in Step 3.
+
+### Step 2: Set Up Billing
+
+Gemini 3 Pro requires a billing account. Don't worry - it's pay-per-use and very affordable.
+
+1. In Google AI Studio, go to **Get API key** (bottom of left sidebar)
+2. Under the "Quota tier" column, click **Set up billing**
+3. Follow the prompts to add a payment method
+
+**Cost context:**
+- ~$0.10 per image generation
+- This entire course costs less than $5 total
+- No monthly subscription - just pay for what you use
+- This money goes to **Google**, not Carl (unfortunately)
+
+### Step 3: Configure Your API Key
+
+Just tell Claude your API key and it will set everything up:
+
+> "My Gemini API key is AIzaYourKeyHere - please add it to my .env file"
+
+Claude will create the `.env` file and store your key securely.
+
+**Prefer to do it manually?** Copy `.env.example` to `.env` and add your key: `GEMINI_API_KEY=YourKeyHere`
+
+
+## Your First Generation
+
+Once setup is complete, you're ready to generate. In the interactive module, Claude uses a reference photo to create a fun welcome image - demonstrating the model's ability to transform real photos.
+
+**What happens behind the scenes:**
+1. You describe what you want
+2. Claude calls the `generate()` function from `image_gen.py`
+3. The function sends your request to Gemini's API
+4. The generated image is saved to the `outputs/` folder
+5. Claude tells you where to find it
+
+**Generation time:** About 10-15 seconds per image.
+
+
+## What Claude Handles for You
+
+When you generate images through Claude Code, you don't need to worry about:
+
+| You handle | Claude handles |
+|------------|----------------|
+| Describing what you want | API calls and authentication |
+| Choosing styles | Session management |
+| Providing feedback | File saving and naming |
+| Reviewing outputs | Parameter optimization |
+
+This is the power of combining Gemini with Claude Code. You focus on creative direction; Claude handles implementation.
+
+
+## The `image_gen.py` Module
+
+All image generation runs through a pre-built Python module called `image_gen.py`. You don't need to write any code - Claude uses it on your behalf.
+
+**Key functions:**
+- `generate()` - Create or refine an image
+- `new_session()` - Start fresh (clear conversation history)
+- `session_info()` - Check current session status
+
+**You'll learn more about these in Module 3.1.2.**
+
+
+## Output Structure
+
+Generated images are saved to the `outputs/` folder in your nano-banana directory:
+
+```
+nano-banana/
+├── outputs/
+│   ├── image_001.png
+│   ├── image_002.png
+│   └── ...
+├── image_gen.py
+├── .env
+└── ...
+```
+
+Images are numbered sequentially. Claude will tell you the exact path to each generated image so you can open it in Finder (Mac) or Explorer (Windows).
+
+
+## Troubleshooting
+
+### "API key not found" or authentication errors
+
+- Verify your `.env` file exists (not `.env.example`)
+- Check that the key is pasted correctly with no extra spaces
+- Make sure the key starts with `AIza`
+
+### "Billing not enabled" errors
+
+- Return to Google AI Studio → Settings → Plan information
+- Confirm billing is set up and a payment method is linked
+- It may take a few minutes for billing to activate
+
+### Generation fails or times out
+
+- Check your internet connection
+- Gemini may be experiencing high load - wait a minute and try again
+- If errors persist, try starting a new session: tell Claude "Start a new session"
+
+### Can't find generated images
+
+- Images save to the `outputs/` folder
+- Claude will provide the exact path after each generation
+- Open Finder (Mac) or Explorer (Windows) and navigate to the folder
+
+
+## Best Practices
+
+**Keep your API key secure:**
+- Never commit `.env` to git (it's in `.gitignore` by default)
+- Don't share your API key publicly
+- You can regenerate keys in Google AI Studio if compromised
+
+**Check outputs in a proper viewer:**
+- Terminal can't display images - always open the file
+- Use Preview (Mac), Photos (Windows), or any image viewer
+- For best experience, keep the `outputs/` folder open while working
+
+
+## What You'll Learn Next
+
+Module 3.1.1 gets you set up. The rest of Module 3.1 teaches you to use image generation effectively:
+
+- **3.1.2: Understanding the Basics** - Parameters, aspect ratios, resolution, iteration
+- **3.1.3: Consistency & Style** - Golden Rules of prompting, reference images, variants
+- **3.1.4: Building Your Style Database** - Create a reusable library of styles
+
+Then Module 3.2 applies these skills to real PM work: personas, diagrams, mockups, and marketing assets.
+
+
+## What's Next?
+
+You're set up and you've generated your first image. Now it's time to understand how the system works.
+
+**Module 3.1.2** teaches you about the `generate()` function, available parameters, and how to iterate on your images.
+
+Interactive track: Type `/start-3-1-2`
+
+
+## Resources
+
+- [Google AI Studio](https://aistudio.google.com/) - Get your API key and manage billing
+- [Gemini Image Generation Documentation](https://ai.google.dev/gemini-api/docs/image-generation) - Official API reference
+
+
+---
+
+**About This Course**
+
+Created by [Carl Vellotti](https://www.linkedin.com/in/carlvellotti/). Check out [The Full Stack PM](https://fullstack-pm.com/subscribe?utm_source=ccforpms&utm_medium=course&utm_campaign=nano-banana-welcome) for more PM builder content.
+
+**Source Repository:** [github.com/carlvellotti/claude-code-pm-course](https://github.com/carlvellotti/claude-code-pm-course)

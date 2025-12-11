@@ -1,0 +1,291 @@
+---
+title: "3.1.2: Understanding the Basics"
+description: "Learn the generate() function, aspect ratios, resolution options, and how to iterate on your AI-generated images"
+keywords: "gemini parameters, aspect ratio, image resolution, AI image iteration, generate function"
+---
+
+## 3.1.2: Understanding the Basics
+
+- **Time to Complete:** 15 minutes
+- **Prerequisites:** API key set up (Module 3.1.1)
+
+> **Start this module in Claude Code:** Run `/start-3-1-2` to begin the interactive experience.
+
+## Overview
+
+Module 3.1.2 teaches you the mechanics of image generation - how the system works and what you can control. You'll understand the `generate()` function, learn about aspect ratios and resolution, and master the art of iteration.
+
+**Key takeaway:** You don't need to memorize parameters or write code. Describe what you want naturally, and Claude picks smart defaults. But understanding what's possible helps you get better results.
+
+
+## How Generation Works
+
+When you ask Claude to generate an image:
+
+1. **You describe** what you want in natural language
+2. **Claude translates** your request into API parameters
+3. **The `generate()` function** sends the request to Gemini
+4. **Gemini generates** the image (10-15 seconds)
+5. **The image saves** to your `outputs/` folder
+6. **Claude tells you** where to find it
+
+You never touch the API directly. Claude handles everything.
+
+
+## The `generate()` Function
+
+All image generation flows through `image_gen.py`. Here are the key parameters:
+
+| Parameter | What it controls | Default |
+|-----------|------------------|---------|
+| `prompt` | Your description of the image | Required |
+| `reference_images` | Photos to use as visual input | None |
+| `aspect_ratio` | Shape of the output image | 1:1 |
+| `resolution` | Size/quality of the output | 1K |
+
+### Two Ways to Work
+
+**Option 1: Let Claude decide**
+```
+Generate a professional headshot of a product manager
+```
+Claude picks sensible defaults (1:1 for headshots, 1K for drafts).
+
+**Option 2: Specify what you want**
+```
+Generate a professional headshot, 16:9 aspect ratio, 2K resolution
+```
+Claude honors your explicit requests.
+
+Both approaches work great. Start with Option 1, get specific when needed.
+
+
+## Aspect Ratios
+
+Aspect ratio is the shape of your image. Choose based on where you'll use it.
+
+| Ratio | Shape | Best for |
+|-------|-------|----------|
+| **1:1** | Square | Profile pics, Instagram posts, icons |
+| **16:9** | Wide landscape | Presentations, YouTube thumbnails, hero images |
+| **9:16** | Tall portrait | Instagram/TikTok stories, phone wallpapers |
+| **4:5** | Tall rectangle | Instagram feed posts |
+| **3:2** | Classic photo | Traditional photography ratio |
+| **4:3** | Standard | Older presentations, tablets |
+| **21:9** | Ultra-wide | Cinematic, banners |
+
+### Quick Reference
+
+- **Presentation slide?** → 16:9
+- **Social media post?** → 1:1 or 4:5
+- **Phone mockup?** → 9:16
+- **Website hero?** → 16:9 or 21:9
+- **Profile picture?** → 1:1
+
+
+## Resolution
+
+Resolution determines size and detail level. It does NOT affect creative quality - just pixel dimensions.
+
+| Resolution | Dimensions | Generation time | Best for |
+|------------|------------|-----------------|----------|
+| **1K** | 1024px | ~20 seconds | Drafts, iteration, exploration |
+| **2K** | 2048px | ~30 seconds | Final outputs, presentations |
+| **4K** | 4096px | ~45 seconds | Print, large displays |
+
+### Resolution Strategy
+
+**Use 1K while iterating.** It's faster, costs the same, and lets you explore more quickly.
+
+**Use 2K for final versions.** Once you're happy with the creative direction, regenerate at higher resolution.
+
+**Use 4K only for print.** Unless you're printing at large scale, 4K is overkill.
+
+
+## Iteration: The Core Workflow
+
+Iteration is the most important concept in image generation. Instead of hoping to get it right on the first try, you refine step by step.
+
+### Why Iteration Works
+
+Gemini is a "thinking model" - it maintains context across the conversation. When you say "make it bluer," it knows what "it" refers to and what you've discussed before.
+
+**Single-shot approach (frustrating):**
+```
+Generate the perfect image → Hope it's right → Start over if not
+```
+
+**Iterative approach (effective):**
+```
+Generate first draft → "Add more contrast" → "Move the text higher" → "Perfect"
+```
+
+### How to Iterate
+
+After Claude generates an image, just ask for changes:
+
+- "Make the background darker"
+- "Add a subtle shadow"
+- "Change the text to say 'Launch Day'"
+- "Make it feel more professional"
+- "Try a warmer color palette"
+
+Claude continues the session with Gemini, and your changes build on the previous image.
+
+### When to Start Fresh
+
+Sometimes iteration isn't the right move:
+
+- **Major direction change** → Start fresh with `new_session()`
+- **Completely different subject** → Start fresh
+- **Want to explore alternatives** → Generate variants (covered in 3.1.3)
+
+Tell Claude "start a new session" or "let's try something completely different" and it will begin fresh.
+
+
+## Sessions Explained
+
+A **session** is a conversation with Gemini that maintains context. Here's how it works:
+
+**Within a session:**
+- Gemini remembers previous generations
+- You can reference "the image" or "it"
+- Edits build on previous versions
+- "Thought signatures" preserve reasoning
+
+**Between sessions:**
+- Fresh start
+- No memory of previous work
+- Good for new projects or directions
+
+### Session Management
+
+Claude handles sessions automatically, but you can control them:
+
+| What you want | What to say |
+|---------------|-------------|
+| Continue refining | Just describe changes |
+| Start fresh | "Start a new session" |
+| Check status | "What's the current session?" |
+
+**Pro tip:** Sessions work best for linear refinement. If you want to explore multiple directions, use variants (covered in 3.1.3).
+
+
+## Practical Examples
+
+### Example 1: Presentation Graphic
+
+**You:** "Create a hero image for a presentation about AI productivity"
+
+**Claude generates** a 1:1 image at 1K resolution.
+
+**You:** "Make it 16:9 for my slides"
+
+**Claude regenerates** with correct aspect ratio.
+
+**You:** "Add text that says 'AI for PMs'"
+
+**Claude adds** the text overlay.
+
+**You:** "This is perfect, regenerate at 2K"
+
+**Claude produces** the final high-resolution version.
+
+### Example 2: Quick Exploration
+
+**You:** "Generate a user persona portrait - corporate vibe"
+
+**Claude generates** first version.
+
+**You:** "Try a more casual look"
+
+**Claude refines** the style.
+
+**You:** "Actually let's start fresh - try illustrated style instead"
+
+**Claude starts new session** and generates illustrated version.
+
+
+## Best Practices
+
+### Do:
+- **Start at 1K resolution** for faster iteration
+- **Be specific about changes** - "make the sky more orange" beats "improve it"
+- **Let Claude pick defaults** when you don't have strong preferences
+- **Build incrementally** - small changes are more predictable
+
+### Don't:
+- **Don't start at 4K** - you'll waste time on images you're going to change
+- **Don't make multiple changes at once** - iterate one thing at a time
+- **Don't be vague** - "make it better" gives Claude nothing to work with
+- **Don't abandon good images** - iterate instead of starting over
+
+
+## Troubleshooting
+
+### Changes aren't being applied
+
+- Make sure you're being specific about what to change
+- Try rephrasing: "change the background color to navy blue" instead of "different background"
+- The session may have gotten confused - start fresh
+
+### Aspect ratio looks wrong
+
+- Verify you asked for the right ratio (16:9 vs 9:16 is a common mix-up)
+- Some compositions work better in certain ratios - Claude may suggest alternatives
+
+### Image quality seems low
+
+- Check resolution - you may be at 1K (which is fine for drafts)
+- For final outputs, explicitly ask for 2K resolution
+
+### Generation is slow
+
+- 4K takes ~45 seconds, which feels slow but is normal
+- Poor internet can add latency
+- High API load can cause delays
+
+
+## Quick Reference Card
+
+```
+Aspect Ratios:
+  1:1   → Square (profiles, icons)
+  16:9  → Landscape (presentations)
+  9:16  → Portrait (stories, mobile)
+  4:5   → Tall (Instagram feed)
+
+Resolution:
+  1K → Fast drafts
+  2K → Final outputs
+  4K → Print only
+
+Workflow:
+  1. Generate at 1K
+  2. Iterate until happy
+  3. Regenerate at 2K for final
+```
+
+
+## What's Next?
+
+You understand the mechanics. Now it's time to learn the art.
+
+**Module 3.1.3** teaches the Golden Rules of prompting - how to write descriptions that get amazing results. You'll also learn about reference images and generating variants.
+
+Interactive track: Type `/start-3-1-3`
+
+
+## Resources
+
+- [Gemini Image Generation Documentation](https://ai.google.dev/gemini-api/docs/image-generation) - Parameters, aspect ratios, resolution options
+- [Gemini 3 Developer Guide](https://ai.google.dev/gemini-api/docs/gemini-3) - Thought signatures, multi-turn sessions
+
+
+---
+
+**About This Course**
+
+Created by [Carl Vellotti](https://www.linkedin.com/in/carlvellotti/). Check out [The Full Stack PM](https://fullstack-pm.com/subscribe?utm_source=ccforpms&utm_medium=course&utm_campaign=nano-banana-basics) for more PM builder content.
+
+**Source Repository:** [github.com/carlvellotti/claude-code-pm-course](https://github.com/carlvellotti/claude-code-pm-course)

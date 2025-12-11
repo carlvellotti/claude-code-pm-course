@@ -1,0 +1,407 @@
+---
+title: "3.2.2: Strategy & Architecture Visuals"
+description: "Create system architecture diagrams, prioritization matrices, and product roadmaps for stakeholder presentations"
+keywords: "system architecture diagram, prioritization matrix, product roadmap, strategy visualization, stakeholder presentation"
+---
+
+## 3.2.2: Strategy & Architecture Visuals
+
+- **Time to Complete:** 20 minutes
+- **Prerequisites:** Users & Product Visuals (Module 3.2.1)
+
+> **Start this module in Claude Code:** Run `/start-3-2-2` to begin the interactive experience.
+
+## Overview
+
+Module 3.2.2 teaches you to create strategy and architecture visuals for different stakeholder audiences. CTO wants to understand the technical architecture. CEO wants to see prioritization. Board wants to see the roadmap. Different audiences, different visuals.
+
+**Key takeaway:** Strategic visuals translate complex ideas into immediate clarity. The right diagram can accomplish in seconds what a 10-minute explanation cannot.
+
+
+## The Scenario
+
+Your TaskFlow Mobile pitch landed. Now you have follow-up meetings:
+
+1. **CTO meeting** - "How does it integrate with our existing systems?"
+2. **CEO meeting** - "What are we building first and why?"
+3. **Board meeting** - "What's the 3-quarter roadmap?"
+
+Each needs a different type of visual.
+
+
+## System Architecture Diagrams
+
+![System architecture diagram example - technical style](/images/nano-banana/system-diagram-technical.png)
+
+### What They Are
+
+System architecture diagrams show how components connect - services, databases, APIs, external integrations. They answer "how does the technical system work?"
+
+### When to Use
+
+- Technical deep-dives with engineering
+- CTO/VP Engineering presentations
+- Security and compliance reviews
+- Integration planning discussions
+
+### How to Generate
+
+**Basic prompt:**
+```
+Create a system architecture diagram showing [system].
+Components: [list components]. Show data flow between them.
+Clean technical style, suitable for [audience]. 16:9 aspect ratio.
+```
+
+**Example - TaskFlow Mobile:**
+```
+Create a system architecture diagram for TaskFlow Mobile.
+
+Components:
+- TaskFlow Mobile app (the new thing)
+- TaskFlow Backend API (existing)
+- PostgreSQL database
+- Redis cache
+- Firebase (push notifications)
+- Mixpanel (analytics)
+
+Show data flow arrows between components.
+Clean technical style suitable for CTO review. 16:9 aspect ratio.
+```
+
+### Key Elements
+
+| Element | Purpose |
+|---------|---------|
+| **Boxes/nodes** | Represent services, databases, apps |
+| **Arrows** | Show data flow and relationships |
+| **Labels** | Identify each component |
+| **Groupings** | Cluster related components |
+| **Colors** | Distinguish types (new vs existing, internal vs external) |
+
+### Style Options
+
+| Style | Best for |
+|-------|----------|
+| **Clean/minimal** | Executive presentations |
+| **Technical/detailed** | Engineering reviews |
+| **Colorful/branded** | External documentation |
+| **Hand-drawn** | Whiteboard/workshop feel |
+
+### Pro Tips
+
+- **Highlight what's new:** Use color or borders to distinguish new components
+- **Show boundaries:** Group internal vs external, or by team ownership
+- **Keep it readable:** 5-10 components max per diagram; split if needed
+- **Add a legend:** If using colors or shapes meaningfully
+
+
+## Prioritization Matrices
+
+![Prioritization matrix example - corporate style](/images/nano-banana/matrix-corporate.png)
+
+### What They Are
+
+2x2 matrices plot items on two dimensions - typically Impact vs Effort, or Value vs Complexity. They visualize prioritization decisions.
+
+### When to Use
+
+- Feature prioritization discussions
+- Executive strategy meetings
+- Planning sessions
+- Stakeholder alignment
+
+### The Classic 2x2
+
+The most common: **Impact vs Effort**
+
+```
+High Impact │  Major      │  Quick
+            │  Projects   │  Wins
+────────────┼─────────────┼──────────
+Low Impact  │  Avoid      │  Fill-ins
+            │             │
+            └─────────────┴──────────
+             High Effort   Low Effort
+```
+
+| Quadrant | Meaning | Action |
+|----------|---------|--------|
+| **Quick Wins** | High impact, low effort | Do first |
+| **Major Projects** | High impact, high effort | Plan carefully |
+| **Fill-ins** | Low impact, low effort | Do when time allows |
+| **Avoid** | Low impact, high effort | Don't do |
+
+### How to Generate
+
+**Basic prompt:**
+```
+Create a 2x2 prioritization matrix.
+X-axis: [dimension 1] (Low → High)
+Y-axis: [dimension 2] (Low → High)
+
+Quadrant labels: [list quadrants]
+
+Plot these items:
+- [Item 1]: [quadrant]
+- [Item 2]: [quadrant]
+...
+
+Clean corporate style for executive presentation. 16:9 or 1:1.
+```
+
+**Example - TaskFlow Mobile features:**
+```
+Create a 2x2 prioritization matrix for TaskFlow Mobile features.
+
+X-axis: Effort (Low → High)
+Y-axis: Impact (Low → High)
+
+Quadrants: Quick Wins (top-right), Major Projects (top-left),
+Fill-ins (bottom-right), Avoid (bottom-left)
+
+Plot these features:
+Quick Wins:
+- Push notifications for task updates
+- Offline task viewing
+
+Major Projects:
+- Real-time sync across devices
+- Team chat integration
+
+Fill-ins:
+- Custom themes
+- Widget support
+
+Avoid:
+- Voice command support
+- AR task visualization
+
+Clean corporate style for CEO presentation. Square format.
+```
+
+### Other Matrix Types
+
+| Matrix | Dimensions | Use case |
+|--------|------------|----------|
+| **Eisenhower** | Urgent × Important | Task management |
+| **Risk** | Probability × Impact | Risk assessment |
+| **RICE** | Reach × Impact × Confidence × Effort | Feature scoring |
+| **BCG** | Market growth × Market share | Portfolio strategy |
+
+### Pro Tips
+
+- **Be explicit about quadrant labels:** Don't assume Gemini knows your terminology
+- **Plot items clearly:** List where each item belongs
+- **Keep it balanced:** 3-5 items per quadrant looks best
+- **Use your style library:** Save a matrix style you like for reuse
+
+
+## Product Roadmaps
+
+![Product roadmap example - timeline style](/images/nano-banana/sequence-timeline.png)
+
+### What They Are
+
+Product roadmaps show planned work over time - typically by quarter or month. They answer "what's the plan and when?"
+
+### When to Use
+
+- Board presentations
+- Annual planning reviews
+- Team alignment
+- External stakeholder updates
+
+### Roadmap Structures
+
+| Structure | Best for |
+|-----------|----------|
+| **Timeline** | Clear chronological view |
+| **Swimlane** | Multiple parallel tracks |
+| **Now/Next/Later** | Flexible, non-dated |
+| **Milestone** | Key deliverables focus |
+
+### How to Generate
+
+**Basic prompt:**
+```
+Create a product roadmap for [product].
+
+Timeline: [time period]
+
+[Period 1]: [Theme]
+- [Item 1]
+- [Item 2]
+
+[Period 2]: [Theme]
+- [Item 1]
+- [Item 2]
+
+...
+
+Professional style for [audience]. 16:9 aspect ratio.
+```
+
+**Example - TaskFlow Mobile:**
+```
+Create a product roadmap for TaskFlow Mobile over 3 quarters.
+
+Q1 - MVP Launch:
+- Core task management
+- Push notifications
+- Offline viewing
+
+Q2 - Team Features:
+- Real-time sync
+- Team chat integration
+- Shared task lists
+
+Q3 - Enterprise:
+- Admin controls
+- SSO integration
+- Advanced analytics
+
+Professional style suitable for board presentation.
+Show clear progression from MVP to enterprise-ready.
+16:9 aspect ratio.
+```
+
+### Key Elements
+
+| Element | Purpose |
+|---------|---------|
+| **Time markers** | Quarters, months, or sprints |
+| **Themes** | Name each phase |
+| **Features** | Specific deliverables |
+| **Milestones** | Key dates or achievements |
+| **Progress** | Current status (optional) |
+
+### Pro Tips
+
+- **Tell a story:** Each phase should build logically on the previous
+- **Use themes:** "MVP" → "Growth" → "Scale" is clearer than a feature list
+- **Don't over-detail:** Roadmaps are strategic, not sprint plans
+- **Match audience:** Board sees themes; engineering sees features
+
+
+## Stakeholder-Specific Tips
+
+### For CTO/Engineering
+
+- **Focus on:** Integration points, data flow, technical dependencies
+- **Include:** Existing systems, APIs, databases
+- **Style:** Technical but readable; not overwhelming
+- **Level:** Architectural, not implementation details
+
+### For CEO/Leadership
+
+- **Focus on:** Strategic decisions, prioritization rationale
+- **Include:** Trade-offs, what you're NOT doing
+- **Style:** Clean, minimal, high-level
+- **Level:** Business impact, not technical details
+
+### For Board
+
+- **Focus on:** Timeline, milestones, strategic direction
+- **Include:** Phases, key deliverables, business outcomes
+- **Style:** Professional, polished, confident
+- **Level:** Quarterly, not weekly
+
+
+## Using Your Style Library
+
+Strategic visuals benefit enormously from consistent styling.
+
+**Save your go-to styles:**
+- "Executive Architecture" - clean technical diagrams
+- "Corporate Matrix" - professional 2x2s
+- "Board Roadmap" - polished timeline visuals
+
+**Then reuse:**
+```
+Generate system architecture using style #34
+Generate prioritization matrix using style #5
+Generate roadmap using style #88
+```
+
+Consistency across stakeholder materials looks professional.
+
+
+## Example: Complete Stakeholder Package
+
+### CTO Deck
+**Asset:** System architecture diagram
+**Message:** "Here's how it integrates with our existing infrastructure"
+
+### CEO Deck
+**Asset:** 2x2 prioritization matrix
+**Message:** "Here's what we're building first and why"
+
+### Board Deck
+**Asset:** 3-quarter roadmap
+**Message:** "Here's the path from MVP to enterprise"
+
+**Total time:** 15-20 minutes for all three assets.
+
+
+## Best Practices
+
+### Do:
+- **Match style to audience** - technical for engineers, clean for executives
+- **Tell a clear story** - each visual should have one main message
+- **Use consistent styling** - leverage your style library
+- **Keep it simple** - complexity kills comprehension
+- **Iterate** - first drafts are rarely final
+
+### Don't:
+- **Don't overcomplicate** - 5-10 elements per visual max
+- **Don't mix metaphors** - pick one visual approach and stick with it
+- **Don't skip labels** - everything should be clearly identified
+- **Don't use jargon carelessly** - match the audience's vocabulary
+
+
+## Troubleshooting
+
+### Architecture diagram is too cluttered
+
+- Reduce to core components only
+- Split into multiple diagrams (frontend, backend, integrations)
+- Request "high-level overview, not detailed architecture"
+
+### Matrix items are overlapping
+
+- Reduce items per quadrant (3-5 is ideal)
+- Request "items clearly positioned, not overlapping"
+- Use a larger format (16:9 instead of 1:1)
+
+### Roadmap doesn't show progression
+
+- Explicitly describe the narrative: "MVP → Growth → Scale"
+- Use visual progression (left to right, small to large)
+- Request "show clear evolution from phase to phase"
+
+
+## What's Next?
+
+You've created visuals for internal stakeholders. Now it's time for external audiences.
+
+**Module 3.2.3** covers marketing and launch assets - app store graphics, social ads, and launch announcements.
+
+Interactive track: Type `/start-3-2-3`
+
+
+## Resources
+
+- [SlideModel](https://slidemodel.com/) - Framework and diagram templates, screenshot and clone styles
+- [Miro Architecture Diagrams](https://miro.com/diagramming/architecture-diagram-examples/) - Examples and templates
+- [Lucidchart Architecture Guide](https://www.lucidchart.com/blog/how-to-draw-architectural-diagrams) - 5 types of architecture diagrams
+- [EdrawMax Templates](https://www.edrawmax.com/templates/tag/system-architecture/) - Free system architecture templates
+
+
+---
+
+**About This Course**
+
+Created by [Carl Vellotti](https://www.linkedin.com/in/carlvellotti/). Check out [The Full Stack PM](https://fullstack-pm.com/subscribe?utm_source=ccforpms&utm_medium=course&utm_campaign=nano-banana-strategy) for more PM builder content.
+
+**Source Repository:** [github.com/carlvellotti/claude-code-pm-course](https://github.com/carlvellotti/claude-code-pm-course)

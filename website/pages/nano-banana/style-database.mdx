@@ -1,0 +1,382 @@
+---
+title: "3.1.4: Building Your Style Database"
+description: "Create a reusable library of styles and learn to extract visual styles from any image"
+keywords: "style library, style extraction, prompt database, AI image styles, gemini styles"
+---
+
+## 3.1.4: Building Your Style Database
+
+- **Time to Complete:** 20 minutes
+- **Prerequisites:** Consistency & Style (Module 3.1.3)
+
+> **Start this module in Claude Code:** Run `/start-3-1-4` to begin the interactive experience.
+
+## Overview
+
+Module 3.1.4 teaches you the meta-skill of image generation: building a personal creative toolkit that grows more valuable with every project. Instead of starting from scratch each time, you'll build a library of proven styles you can apply instantly.
+
+**Key takeaway:** This isn't just about generating images - it's about building a compounding system. Every style you save makes future work faster and better.
+
+
+## The Meta-Skill
+
+Most people use AI image tools as one-off novelties:
+- Generate something
+- Use it once
+- Forget about it
+- Start over next time
+
+Power users do something different:
+- Generate something
+- **Save the winning prompt**
+- Reuse it across projects
+- **Build a library over time**
+
+The difference compounds dramatically. After a few months, you have a library of proven styles for every situation - personas, diagrams, presentations, marketing. One command: "use style #12" and you're done.
+
+
+## Your Style Library
+
+The Nano Banana module includes `style-library.html` - a local HTML file that visualizes your style collection.
+
+### What's in the Library
+
+Each style entry contains:
+
+| Field | Purpose |
+|-------|---------|
+| **Index number** | Quick reference ("use style #02") |
+| **Thumbnail** | Visual preview |
+| **Name** | Descriptive title |
+| **Category** | Filtering and organization |
+| **Tags** | Searchable keywords |
+| **Prompt** | The full prompt text |
+| **Example uses** | When to reach for this style |
+
+### Using the Library
+
+**To apply a style:**
+```
+Generate [your subject] using style #5
+```
+
+Claude looks up the style, retrieves the prompt, and applies it to your subject.
+
+**To browse styles:**
+Open `style-library.html` in your browser. Use the filter buttons to explore categories.
+
+### Categories
+
+The library organizes styles into categories:
+
+| Category | What it contains |
+|----------|------------------|
+| **Framework** | 2x2 matrices, pyramids, Venn diagrams |
+| **Flow** | Process diagrams, journey maps, flowcharts |
+| **Architecture** | System diagrams, org charts, hierarchies |
+| **Mockup** | Wireframes, device frames, UI concepts |
+| **Persona** | Portraits, lifestyle shots, headshots |
+| **Marketing** | Ads, announcements, social graphics |
+| **Artistic** | Illustrations, photography styles, retro looks |
+
+
+## Three Ways to Grow Your Library
+
+### Method 1: Save As You Go
+
+The simplest approach - whenever you create something you like, save it.
+
+**Workflow:**
+1. Generate an image you're happy with
+2. Tell Claude: "Add this style to my library"
+3. Claude updates `style-library.html` with the new entry
+4. The style is now available for future use
+
+**Example:**
+```
+You: Generate a minimalist journey map with soft colors
+
+[Claude generates image]
+
+You: I love this style. Add it to my library.
+
+Claude: Done! Added as style #15 "Minimalist Journey Map"
+in the Flow category.
+```
+
+**Best for:** Capturing your own successful experiments.
+
+
+### Method 2: Collect From Online
+
+Great prompts are everywhere - social media, tutorials, prompt databases. When you find one, test it, then save it.
+
+**Workflow:**
+1. Find a promising prompt online
+2. Test it: "Generate [subject] using this prompt: [paste prompt]"
+3. If it works well, tell Claude to save it
+4. Now it's part of your permanent library
+
+**Example:**
+```
+You: I found this prompt online - test it with a coffee shop:
+"Make a photo that is perfectly isometric. It is not a miniature,
+it is a captured photo that just happened to be perfectly isometric."
+
+[Claude generates isometric coffee shop]
+
+You: Great! Save this as "Perfect Isometric Photo"
+
+Claude: Added as style #16 in 3D/Isometric category.
+```
+
+**Best for:** Curating the best prompts from the community.
+
+
+### Method 3: Extract From Any Image
+
+This is the power move. See an image you love? Extract its style as text, then recreate it anytime.
+
+**How it works:**
+1. Provide an image (file path or URL)
+2. Claude runs the style extraction module
+3. The module analyzes: colors, lighting, composition, textures, mood, effects
+4. Returns a detailed natural language description
+5. You can now recreate that style from pure text
+
+**Workflow:**
+```
+You: Extract the style from this image: [path to image]
+
+Claude: [Runs style_extract.py]
+
+Here's the extracted style:
+"Warm analog photography aesthetic with slight film grain.
+Golden hour lighting creates soft shadows. Muted earth tones
+with desaturated greens and warm highlights. Candid composition
+with slight motion blur suggesting authentic moments..."
+
+You: Generate a portrait using that extracted style
+
+[Claude applies the style to a new subject]
+
+You: Perfect. Save this to my library.
+```
+
+**Best for:**
+- Capturing styles from Pinterest, Instagram, or design inspiration
+- Recreating looks from competitors or brands you admire
+- Building a style from a single reference image
+
+### The Style Extraction Module
+
+The `style_extract.py` module uses Gemini's image understanding to analyze any image and describe its visual style.
+
+**What it captures:**
+- Color palette and temperature
+- Lighting quality and direction
+- Composition and framing
+- Textures and materials
+- Mood and atmosphere
+- Typography (if present)
+- Special effects or treatments
+
+**Why it works:** Gemini 3 Pro has exceptional image understanding. It can articulate visual qualities that would be hard to describe manually.
+
+
+## Managing Your Library
+
+### Adding Styles
+
+When you tell Claude to save a style, it:
+1. Assigns the next available ID number
+2. Creates a descriptive name
+3. Chooses an appropriate category
+4. Adds relevant tags
+5. Saves a thumbnail image
+6. Updates `style-library.html`
+
+### Customizing the Library
+
+The style library is just an HTML file - you can customize it:
+
+- **Add columns:** "Ask Claude to add a 'difficulty' column"
+- **Change layout:** "Reorganize the library by category"
+- **Add search:** "Add a search bar to the library"
+- **Modify design:** "Make the library dark mode"
+
+It's YOUR toolkit. Shape it to fit your workflow.
+
+### Tags and Filtering
+
+Tags help you find styles quickly. The canonical tags by category:
+
+| Category | Available tags |
+|----------|----------------|
+| Framework | 2x2-matrix, pyramid, venn, canvas, concentric, triangle |
+| Flow | process, journey-map, flowchart, steps, sequence |
+| Architecture | hierarchy, hub-spoke, system-diagram, org-chart, tree |
+| Mockup | wireframe, device-frame, ui-concept, landing-page, mobile, desktop |
+| Persona | portrait, lifestyle, headshot, context, illustrated, scene |
+| Marketing | ad, social, announcement, banner, hero |
+| Artistic | flat-illustration, hand-drawn, watercolor, photography, retro, minimalist, bold-graphic, 3d-render |
+
+Use the filter buttons in `style-library.html` to browse by category.
+
+
+## The Compounding Effect
+
+Here's why this matters:
+
+**Week 1:** You have 5 styles
+- Basic coverage of common needs
+
+**Month 1:** You have 15 styles
+- Patterns emerging for your work
+- Starting to have "go-to" styles
+
+**Month 3:** You have 30+ styles
+- Comprehensive coverage
+- Rarely need to create from scratch
+- "Use style #23" becomes your workflow
+
+**Year 1:** You have 50+ battle-tested styles
+- Professional-grade library
+- Each style proven across multiple projects
+- Minutes to produce what used to take hours
+
+This is the compounding effect. Every project makes your library more valuable.
+
+
+## Workflow Examples
+
+### Example 1: Consistent Brand Visuals
+
+**Scenario:** Your company has a specific visual style you need to maintain.
+
+**Solution:**
+1. Collect 3-5 on-brand images
+2. Extract the style from your best example
+3. Save as "Company Brand Style"
+4. Apply to all future graphics
+
+```
+Generate a feature announcement using style #8 (Company Brand)
+```
+
+### Example 2: Rapid Exploration
+
+**Scenario:** You need 10 user persona portraits, all consistent.
+
+**Solution:**
+1. Browse your library for persona styles
+2. Pick one that fits the project tone
+3. Generate all 10 using the same style number
+
+```
+Generate Sarah Chen portrait using style #12
+Generate Marcus Johnson portrait using style #12
+Generate Priya Patel portrait using style #12
+...
+```
+
+### Example 3: Recreating Inspiration
+
+**Scenario:** Your CEO shares a competitor's diagram they love.
+
+**Solution:**
+1. Extract the style from the competitor's image
+2. Save it to your library (with appropriate name)
+3. Apply it to your own content
+
+```
+Extract the style from this diagram: [competitor's image]
+Generate our product roadmap using that style
+Save this as "Executive Diagram Style"
+```
+
+
+## Best Practices
+
+### Do:
+- **Save styles frequently** - if you like it, save it
+- **Use descriptive names** - "Warm Portrait" beats "Style 7"
+- **Tag thoroughly** - helps future you find things
+- **Extract aggressively** - see something good? grab it
+- **Review periodically** - prune unused styles
+
+### Don't:
+- **Don't hoard mediocre styles** - quality over quantity
+- **Don't forget to save** - capture wins immediately
+- **Don't over-categorize** - keep it simple
+- **Don't ignore extracted styles** - they're often the best
+
+
+## Troubleshooting
+
+### Style library won't open
+
+- Make sure you're opening `style-library.html` in a browser (not a text editor)
+- Try right-click → Open With → your browser
+
+### New style doesn't appear
+
+- Refresh the browser (Cmd+R / Ctrl+R)
+- Check that Claude confirmed the save
+
+### Extracted style doesn't match original
+
+- Some visual effects are hard to describe in text
+- Try extracting from a simpler example
+- Combine with a reference image for better results
+
+### Can't find the right style
+
+- Use the category filters
+- Try searching by tag
+- Ask Claude: "Which styles work for [your use case]?"
+
+
+## Quick Reference
+
+```
+Three Methods to Grow Your Library:
+  1. Save as you go → Good work? Save it.
+  2. Collect from online → Test, then save.
+  3. Extract from images → The power move.
+
+Using Styles:
+  "Generate [subject] using style #X"
+  "Apply style #Y to this"
+  "Which styles work for journey maps?"
+
+Managing Styles:
+  "Add this to my library"
+  "Save this as [name]"
+  "Show me all persona styles"
+```
+
+
+## What's Next?
+
+You've completed Module 3.1 - Introduction to Image Generation. You understand the mechanics, the prompting principles, and how to build a compounding system.
+
+**Module 3.2** puts these skills to work on real PM tasks. You'll create personas, journey maps, wireframes, architecture diagrams, and marketing assets.
+
+Interactive track: Type `/start-3-2-1`
+
+
+## Resources
+
+- [Dribbble](https://dribbble.com/) - Design inspiration, find styles to add to your library
+- [Behance](https://www.behance.net/) - Creative portfolios, extract styles from professional work
+- [Pinterest](https://www.pinterest.com/) - Visual discovery, curate style inspiration boards
+
+
+---
+
+**About This Course**
+
+Created by [Carl Vellotti](https://www.linkedin.com/in/carlvellotti/). Check out [The Full Stack PM](https://fullstack-pm.com/subscribe?utm_source=ccforpms&utm_medium=course&utm_campaign=nano-banana-database) for more PM builder content.
+
+**Source Repository:** [github.com/carlvellotti/claude-code-pm-course](https://github.com/carlvellotti/claude-code-pm-course)

@@ -1,0 +1,396 @@
+---
+title: "3.1.3: Consistency & Style"
+description: "Master the Golden Rules of prompting, reference images, grids, and variants for consistent AI image generation"
+keywords: "golden rules prompting, reference images, style consistency, image variants, gemini prompting"
+---
+
+## 3.1.3: Consistency & Style
+
+- **Time to Complete:** 20 minutes
+- **Prerequisites:** Understanding the basics (Module 3.1.2)
+
+> **Start this module in Claude Code:** Run `/start-3-1-3` to begin the interactive experience.
+
+## Overview
+
+Module 3.1.3 teaches you to write prompts that get amazing results and maintain consistency across generations. You'll learn Google's Golden Rules of prompting, how to use reference images, and techniques for exploring multiple directions.
+
+**Key takeaway:** Great results come from clear communication, not magic keywords. Talk to Gemini like you'd brief a human designer.
+
+
+## The Golden Rules of Prompting
+
+Google released official guidance for prompting Gemini's image generation. These four rules will transform your results.
+
+### Rule 1: Edit, Don't Re-roll
+
+**If an image is 80% correct, ask for specific changes instead of starting over.**
+
+This is the most important rule. Gemini is a thinking model - it maintains context and understands your creative direction. When you iterate, it builds on what's working.
+
+**Instead of:**
+```
+[Generate image]
+"Not quite right"
+[Generate again from scratch]
+[Generate again from scratch]
+[Generate again from scratch]
+```
+
+**Do this:**
+```
+[Generate image]
+"Make the lighting warmer"
+"Move the subject to the left"
+"Add more contrast"
+[Done]
+```
+
+**Why it works:** Each refinement gives Gemini more information about what you want. Starting over throws away all that context.
+
+
+### Rule 2: Use Natural Language & Full Sentences
+
+**Talk to Gemini like you're briefing a human artist, not writing search keywords.**
+
+You might see "tag soup" prompts online - comma-separated keywords like a search query. That's an outdated approach. Gemini is a thinking model that understands natural language.
+
+**Tag soup (outdated):**
+```
+professional headshot, business attire, confident, studio lighting,
+bokeh background, sharp focus, 8k, trending on artstation
+```
+
+**Natural language (better):**
+```
+A professional headshot of a confident business executive in a
+modern studio setting. Soft, even lighting creates a warm atmosphere.
+The background has a subtle blur that keeps focus on the subject.
+```
+
+**Why it works:** Full sentences provide context and relationships between elements. Gemini understands "soft lighting that creates warmth" better than "soft lighting, warm."
+
+
+### Rule 3: Be Specific and Descriptive
+
+**Define the subject, setting, lighting, mood, textures, and materials. Go deep.**
+
+Gemini can handle remarkable detail - far more than you might expect. The more specific you are, the closer the output matches your vision.
+
+**Vague:**
+```
+A coffee shop
+```
+
+**Specific:**
+```
+A cozy corner coffee shop on a rainy afternoon. Warm Edison bulb
+lighting casts golden pools on worn wooden tables. Steam rises from
+ceramic mugs. Rain streaks down floor-to-ceiling windows. A few
+patrons read books in overstuffed leather armchairs. The walls are
+exposed brick with vintage concert posters. Soft jazz plays from
+an unseen speaker.
+```
+
+**Elements to consider:**
+- **Subject:** Who/what is the focus?
+- **Setting:** Where is this happening?
+- **Lighting:** Natural, artificial, time of day, direction, quality
+- **Mood:** Emotional tone, atmosphere
+- **Textures:** Surface qualities, materials
+- **Colors:** Palette, contrasts, temperature
+- **Composition:** Framing, perspective, focal points
+
+**Pro tip:** If you're not sure how to add detail, ask Claude: "Help me expand this prompt with more specifics."
+
+
+### Rule 4: Provide Context
+
+**Tell Gemini the "why" or "for whom" so it makes smarter creative decisions.**
+
+Context shapes creative choices. A portrait "for a children's book" looks completely different from the same subject "for a luxury brand campaign."
+
+**Without context:**
+```
+A lion in a savanna
+```
+
+**With context:**
+```
+A lion in a savanna, for a nature documentary title card.
+The image should feel majestic and cinematic, capturing the
+power and dignity of wildlife.
+```
+
+**Context examples:**
+- "for a pitch deck to investors"
+- "for a children's educational app"
+- "for a premium subscription service landing page"
+- "in the style of Apple product marketing"
+- "targeting manufacturing operations managers"
+
+**Why it works:** Gemini uses context to make appropriate choices about style, tone, composition, and detail level.
+
+
+## Reference Images
+
+Reference images are your secret weapon for consistency and style control. You can provide images for Gemini to use as visual input.
+
+### Types of Reference Images
+
+| Type | Purpose | Example |
+|------|---------|---------|
+| **Style reference** | Capture a visual aesthetic | Landing page design, art style |
+| **Subject reference** | Maintain character consistency | Photo of a person, product shot |
+| **Composition reference** | Guide layout and framing | Wireframe, screenshot |
+
+### Single Style Reference
+
+Provide one image to capture its visual style:
+
+```
+Generate a [your subject] in the style of this reference image
+```
+
+Gemini analyzes the reference's colors, lighting, composition, and artistic approach - then applies that style to your new subject.
+
+**Use cases:**
+- Recreate a brand's visual language
+- Match an existing campaign aesthetic
+- Achieve a specific artistic style
+
+### Multiple Subject References
+
+For consistent characters, provide multiple photos of the same subject:
+
+```
+Generate [prompt] using these reference photos of [subject]
+```
+
+**Pro tip:** More reference photos = better results. 3-5 photos from different angles and lighting conditions help Gemini understand the subject fully.
+
+**Use cases:**
+- Persona portraits that look like a specific person
+- Product shots from different angles
+- Character consistency across multiple images
+
+### Mix and Match
+
+Combine style references with subject references:
+
+```
+Create [subject from reference A] in the style of [reference B]
+```
+
+This lets you place real subjects into artistic styles, or apply brand aesthetics to new content.
+
+**Example from the course:**
+- Style reference: Bold basketball landing page
+- Subject references: Photos of two cats (Winter and Piper)
+- Result: "APEX CAT" landing page in the basketball style, featuring the actual cats
+
+
+## Grids: Multiple Views in One Image
+
+Grids generate multiple related images in a single output - perfect for character sheets, product views, or presentation slides.
+
+### When to Use Grids
+
+| Use case | Grid format | Example |
+|----------|-------------|---------|
+| Character design | 3x3 poses | Video game sprite sheet |
+| Product views | 2x2 angles | E-commerce product shots |
+| Presentation | 2x4 slides | Teaching materials |
+| UI concepts | 2x3 screens | App design exploration |
+
+### How to Request Grids
+
+Be explicit about the grid structure:
+
+```
+Create a 3x3 grid showing [subject] in 9 different poses:
+- Row 1: Standing, walking, running
+- Row 2: Sitting, jumping, waving
+- Row 3: Thinking, pointing, celebrating
+```
+
+**Key tips:**
+- Specify exact grid dimensions (3x3, 2x4, etc.)
+- Describe what each cell should contain
+- Request consistent style across all cells
+
+### Grid Use Cases for PMs
+
+- **Persona expressions:** Same character showing different emotions
+- **User journey stages:** Visual representation of each step
+- **Feature screenshots:** Multiple app screens in one image
+- **Presentation slides:** Complete slide deck visualization
+
+
+## Variants: Exploring Directions
+
+Instead of committing to one direction, generate multiple variants and choose the best.
+
+### The Variants Workflow
+
+1. **Generate 2-3 variants** of the same concept
+2. **Review all options** - they'll have meaningfully different interpretations
+3. **Pick your favorite**
+4. **Iterate on that one** using the techniques from Module 3.1.2
+
+```
+Generate 3 variants of [concept] with different creative interpretations
+```
+
+### When to Use Variants
+
+- **Uncertain about style:** Let Gemini show you options
+- **Client presentations:** Offer multiple directions
+- **Creative exploration:** See what's possible
+- **Breaking through blocks:** When you're not sure what you want
+
+### Variants vs Iteration
+
+| Variants | Iteration |
+|----------|-----------|
+| Explore different directions | Refine one direction |
+| Generate multiple at once | Build step by step |
+| Choose, then iterate | Edit, don't re-roll |
+| Good for: exploration | Good for: refinement |
+
+**Best practice:** Use variants to find your direction, then switch to iteration to perfect it.
+
+
+## Putting It All Together
+
+Here's a complete workflow combining all techniques:
+
+### Step 1: Write a Detailed Prompt (Rules 2, 3, 4)
+
+```
+Create a professional persona portrait for a pitch deck (context).
+The subject is Marcus, an operations manager in his mid-40s (subject).
+He's in a manufacturing environment, wearing a polo shirt and safety vest (setting).
+Confident but approachable expression (mood).
+Natural lighting from large warehouse windows (lighting).
+```
+
+### Step 2: Provide References (if available)
+
+- Reference photo of the actual person, or
+- Style reference of the desired look
+
+### Step 3: Generate Variants (if exploring)
+
+```
+Generate 3 variants with different compositions
+```
+
+### Step 4: Pick and Iterate (Rule 1)
+
+```
+I like variant 2. Make the lighting warmer and have him
+looking slightly to the left.
+```
+
+### Step 5: Final Resolution
+
+```
+Perfect. Regenerate at 2K resolution for the final version.
+```
+
+
+## Best Practices
+
+### Do:
+- **Write in full sentences** - communicate naturally
+- **Be specific about details** - Gemini can handle it
+- **Provide context** - explain the purpose
+- **Use reference images** - for style and subject consistency
+- **Iterate patiently** - refine rather than restart
+- **Generate variants** - when exploring directions
+
+### Don't:
+- **Don't use tag soup** - it's outdated
+- **Don't be vague** - specificity gets results
+- **Don't skip context** - "why" matters
+- **Don't restart constantly** - edit what's working
+- **Don't make many changes at once** - one thing at a time
+
+
+## Troubleshooting
+
+### Output doesn't match the style reference
+
+- The reference may be too complex - try a cleaner example
+- Be explicit: "Match the color palette and lighting style of the reference"
+- Some styles are harder to replicate than others
+
+### Character doesn't look consistent
+
+- Provide more reference photos (3-5 from different angles)
+- Be specific about identifying features
+- Consider using a dedicated character session
+
+### Grid cells are inconsistent
+
+- Explicitly request "consistent style across all cells"
+- Describe the shared elements that should stay constant
+- Use a style reference for the entire grid
+
+### Variants are too similar
+
+- Ask for "meaningfully different creative interpretations"
+- Specify different aspects to vary: "different compositions" or "different color palettes"
+- Give Gemini more creative latitude in your prompt
+
+
+## Quick Reference
+
+```
+Golden Rules:
+  1. Edit, don't re-roll
+  2. Natural language, not tag soup
+  3. Be specific and descriptive
+  4. Provide context ("why" and "for whom")
+
+Reference Images:
+  - Style ref → Capture aesthetic
+  - Subject ref → Maintain consistency
+  - Multiple refs → Better accuracy
+
+Grids:
+  - Specify dimensions (3x3, 2x4)
+  - Describe each cell
+  - Request consistent style
+
+Variants:
+  - Generate 2-3 options
+  - Pick the best
+  - Then iterate
+```
+
+
+## What's Next?
+
+You know how to write great prompts and maintain consistency. Now it's time to build a system that compounds over time.
+
+**Module 3.1.4** teaches you to build a style database - a reusable library of styles you can apply to any project. You'll also learn to extract styles from any image you find online.
+
+Interactive track: Type `/start-3-1-4`
+
+
+## Resources
+
+- [Dribbble](https://dribbble.com/) - Design inspiration, search for styles to extract
+- [Behance](https://www.behance.net/) - Professional portfolios, find visual styles to reference
+- [Unsplash](https://unsplash.com/) - Free stock photos to use as reference images
+
+
+---
+
+**About This Course**
+
+Created by [Carl Vellotti](https://www.linkedin.com/in/carlvellotti/). Check out [The Full Stack PM](https://fullstack-pm.com/subscribe?utm_source=ccforpms&utm_medium=course&utm_campaign=nano-banana-style) for more PM builder content.
+
+**Source Repository:** [github.com/carlvellotti/claude-code-pm-course](https://github.com/carlvellotti/claude-code-pm-course)
