@@ -15,7 +15,7 @@ mkdir -p releases
 
 # Create complete course zip (includes all modules, company-context, and .claude)
 cd course-materials
-zip -r ../releases/complete-course.zip . -x "*.DS_Store" -x "__pycache__/*" -x "*.pyc"
+zip -r ../releases/complete-course.zip . -x "*.DS_Store" -x "__pycache__/*" -x "*.pyc" -x ".venv/*" -x ".env" -x ".env.local"
 cd ..
 
 echo ""
