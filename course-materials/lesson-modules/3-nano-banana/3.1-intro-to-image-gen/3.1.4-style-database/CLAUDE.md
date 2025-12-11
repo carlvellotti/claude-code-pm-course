@@ -200,7 +200,7 @@ USER: Yes
 
 ---
 
-ACTION: Confirm the style_extract.py file exists in the course root directory
+ACTION: Confirm the style_extract.py file exists in the lesson-modules/3-nano-banana/ directory
 
 The `style_extract.py` module analyzes any image and extracts detailed style information. Not as JSON or structured data - as natural language that Gemini can use directly.
 
@@ -319,10 +319,10 @@ Great! Type `/start-3-2-1` to continue.
 ## Important Notes for Claude
 
 ### File Paths
-- `style-library.html` is in this module folder: `course-materials/lesson-modules/3-nano-banana/3.1-intro-to-image-gen/3.1.4-style-database/`
+- `style-library.html` is in this module folder: `lesson-modules/3-nano-banana/3.1-intro-to-image-gen/3.1.4-style-database/`
 - `recursive-painter.jpg` is also in this module folder
-- `style_extract.py` and `image_gen.py` are in the course root
-- Output images go to the `outputs/` folder in the course root
+- `style_extract.py` and `image_gen.py` are in `lesson-modules/3-nano-banana/`
+- Output images go to `lesson-modules/3-nano-banana/outputs/`
 - Thumbnails go to the `thumbnails/` folder in this module folder
 
 ### When Adding Styles to the Library
