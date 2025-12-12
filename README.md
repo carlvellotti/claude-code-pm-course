@@ -1,5 +1,8 @@
 # Claude Code PM Course
 
+[![Run in Smithery](https://smithery.ai/badge/skills/carlvellotti)](https://smithery.ai/skills?ns=carlvellotti&utm_source=github&utm_medium=badge)
+
+
 An interactive course teaching Product Managers how to use Claude Code effectively for their daily work.
 
 ## Course Structure
