@@ -11,7 +11,7 @@ An interactive course teaching Product Managers how to use Claude Code effective
 
 ### Module 1: Claude Code Fundamentals
 - **1.1 Welcome** - Introduction to TaskFlow and the course project
-- **1.2 Visualizing Files** - Set up Obsidian for file visualization
+- **1.2 Visualizing Files** - Set up your visual workspace (Nimbalyst, Obsidian, or VS Code)
 - **1.3 First Tasks** - Process meeting notes, analyze research, work with images
 - **1.4 Agents** - Use parallel agents for complex workflows
 - **1.5 Custom Sub-Agents** - Create specialized AI personas for reviews

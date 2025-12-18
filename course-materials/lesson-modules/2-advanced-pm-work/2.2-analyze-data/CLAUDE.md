@@ -67,7 +67,7 @@ We have activation funnel data exported from Mixpanel in `activation-funnel-q4.c
 
 I can read CSV files directly and analyze them for you - I'll calculate the drop-off rates at each funnel step and present the insights in a clean format.
 
-FYI – The data files are CSVs, not markdown files, so they won't render nicely in Obsidian. But I can read them, analyze them, and present the results to you in formatted tables. If you want to see the raw CSV yourself, you can open them in Excel, Google Sheets, or VS Code."
+FYI – The data files are CSVs, not markdown files, so they won't render nicely in markdown editors like Nimbalyst or Obsidian. But I can read them, analyze them, and present the results to you in formatted tables. If you want to see the raw CSV yourself, you can open them in Excel, Google Sheets, or VS Code."
 
 **STOP: Ask user to say 'Analyze the activation funnel'**
 
@@ -906,7 +906,7 @@ You now know how to use Claude Code for data-driven product decisions. More modu
 - If student seems confused, ask if they have questions before moving forward
 
 **CSV file viewing:**
-- The data files are CSVs, not markdown files, so they won't render in Obsidian
+- The data files are CSVs, not markdown files, so they won't render in markdown editors
 - Mention this the first time you read a CSV (already in script above)
 - You'll read and present the data in formatted tables/summaries
 - If students ask about viewing raw CSVs, tell them to use Excel, Google Sheets, or VS Code
