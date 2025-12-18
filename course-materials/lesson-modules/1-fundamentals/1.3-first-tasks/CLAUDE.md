@@ -83,13 +83,13 @@ Read lesson-modules/1.3-first-tasks/meeting-notes-raw.md (silently)
 
 "I just read @meeting-notes-raw.md - it's got notes from 3 different meetings all jumbled together. Fragments, abbreviations, incomplete thoughts. Classic end-of-day notes.
 
-**Now here's what I want you to do:** Go look at that file in Obsidian so you can see what messy meeting notes look like.
+**Now here's what I want you to do:** Go look at that file in your editor so you can see what messy meeting notes look like.
 
 Find it in: lesson-modules/1.3-first-tasks/meeting-notes-raw.md
 
 Take a look, then come back and say: **'I see the messy notes'**"
 
-**Check:** Wait for student to view the file in Obsidian
+**Check:** Wait for student to view the file in their editor
 
 ---
 
@@ -117,7 +117,7 @@ Read meeting-notes-raw.md and append the following to the note:
 
 "Done! I just added a summary to the bottom of meeting-notes-raw.md.
 
-**Go look at it in Obsidian!** You should see it in the lesson-modules/1.3-first-tasks/ folder.
+**Go look at it in your editor!** You should see it in the lesson-modules/1-fundamentals/1.3-first-tasks/ folder.
 
 Open it and check out how I organized everything. Then come back and say: **'I see the summary'**"
 
@@ -155,7 +155,7 @@ Read the file they specified and create append action items organized by owner t
 
 "Perfect! I just created appended action items organized by owner.
 
-**Go check it out in Obsidian!**
+**Go check it out in your editor!**
 
 You just did two things:
 1. ✅ Used the **@** symbol to reference a specific file
@@ -200,7 +200,7 @@ ls lesson-modules/1.3-first-tasks/user-interviews/
 
 Each is a full transcript from a 30-minute interview.
 
-**Go take a look at one or two in Obsidian** - just to see what raw interview data looks like. They're in:
+**Go take a look at one or two in your editor** - just to see what raw interview data looks like. They're in:
 lesson-modules/1.3-first-tasks/user-interviews/
 
 Don't read all 8! Just skim one so you see the format. Then say: **'I see the interviews'**"
@@ -238,7 +238,7 @@ Read all files in lesson-modules/1.3-first-tasks/user-interviews/ and create use
 
 "Done! I just created @user-research-synthesis.md.
 
-**Go look at it in Obsidian!** It should be in the lesson-modules/1.3-first-tasks/ folder.
+**Go look at it in your editor!** It should be in the lesson-modules/1-fundamentals/1.3-first-tasks/ folder.
 
 Check out how I pulled patterns from all 8 interviews and organized them. Then come back and say: **'I see the synthesis'**"
 
@@ -283,8 +283,8 @@ Instead of rewriting from scratch, you just say:
 
 Let me show you. I've prepared 3 communication style templates for you to see.
 
-**Go look at the communication-styles folder in Obsidian:**
-lesson-modules/1.3-first-tasks/communication-styles/
+**Go look at the communication-styles folder in your editor:**
+lesson-modules/1-fundamentals/1.3-first-tasks/communication-styles/
 
 You'll find 3 files:
 - style-slack-update.md
@@ -336,7 +336,7 @@ Go ahead - type that command!"
 
 "Done! I just created @research-communications.md with all three versions.
 
-**Go check it out in Obsidian!**
+**Go check it out in your editor!**
 
 You should see:
 📱 **Slack Update** - Short, casual, team-focused (2-3 lines)
@@ -463,7 +463,7 @@ Ready to see image analysis in action? Say: **'Ready to see it'**
 
 I want you to try this right now! Here's what to do:
 
-1. Open `REFERENCE_GUIDE.md` in Obsidian (it's in this same exercise folder)
+1. Open `REFERENCE_GUIDE.md` in your editor (it's in this same exercise folder)
 2. Scroll down to the "Example UI to Try" section (around line 177)
 3. You'll see a screenshot of a user interface
 4. Click on that image to open it full-size
