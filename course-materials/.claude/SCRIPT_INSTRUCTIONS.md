@@ -78,18 +78,18 @@ When creating modules with example files (meeting notes, user research, rough no
 ✅ **DO:**
 - Use .md file extension for all example files
 - Examples: `meeting-notes-1.md`, `rough-feature-notes.md`, `user-interview.md`
-- Reason: Obsidian can display .md files but cannot display .txt files
+- Reason: Markdown editors (Nimbalyst, Obsidian, VS Code) can display .md files but may not display .txt files properly
 
 ❌ **DON'T:**
 - Use .txt file extension for example files
 - Examples: `meeting-notes-1.txt`, `rough-feature-notes.txt`
-- This makes files invisible in Obsidian, breaking the visualization workflow taught in Module 1.2
+- This makes files invisible or improperly formatted in markdown editors, breaking the visualization workflow taught in Module 1.2
 
 **When referencing files in teaching scripts:**
 - All file references should use .md extension
 - Update any legacy .txt references to .md
 
-This ensures students can see all course materials in their Obsidian vault throughout the course.
+This ensures students can see all course materials in their visual workspace throughout the course.
 
 ---
 
