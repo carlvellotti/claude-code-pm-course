@@ -604,7 +604,7 @@ The pptx skill will read the strategy markdown file and generate a complete Powe
 
 "Done! I've created your executive slide deck: `strategy-review-slides.pptx`
 
-(Remember, Obsidian can only display .md files, so you won't see it there. Find it in your folder explorer.)
+(Remember, markdown editors can only display .md files, so you won't see the .pptx there. Find it in your file explorer.)
 
 Here's what the pptx skill generated:
 
