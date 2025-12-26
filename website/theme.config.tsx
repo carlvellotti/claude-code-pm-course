@@ -34,7 +34,10 @@ export default {
     const { frontMatter, title } = useConfig()
     const { asPath } = useRouter()
     const siteUrl = 'https://ccforpms.com'
-    const pageTitle = title ? `${title} – Claude Code for Product Managers` : 'Claude Code for Product Managers'
+    const isHome = asPath === '/'
+    const pageTitle = isHome
+      ? 'Learn Claude Code IN Claude Code!'
+      : (title ? `${title} – Claude Code for Product Managers` : 'Claude Code for Product Managers')
     const description = frontMatter?.description || 'Learn Claude Code for PM work - an interactive course teaching file operations, agents, and AI-powered product management workflows.'
     const ogImage = frontMatter?.ogImage || `${siteUrl}/images/better-graphic.png`
     const url = `${siteUrl}${asPath}`
@@ -65,7 +68,7 @@ export default {
         {/* Open Graph */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content={url} />
-        <meta property="og:site_name" content="Claude Code for Product Managers" />
+        <meta property="og:site_name" content="Learn Claude Code IN Claude Code!" />
         <meta property="og:title" content={pageTitle} />
         <meta property="og:description" content={description} />
         <meta property="og:image" content={ogImage} />
