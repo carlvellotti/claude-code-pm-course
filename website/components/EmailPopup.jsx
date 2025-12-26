@@ -36,6 +36,13 @@ const TrustSignal = ({ children }) => (
   </span>
 )
 
+// Analytics helper
+const trackEvent = (eventName, params = {}) => {
+  if (typeof window !== 'undefined' && window.gtag) {
+    window.gtag('event', eventName, params)
+  }
+}
+
 export default function EmailPopup() {
   const [isVisible, setIsVisible] = useState(false)
   const [email, setEmail] = useState('')
@@ -51,6 +58,7 @@ export default function EmailPopup() {
     // Show popup after 10 seconds
     const timer = setTimeout(() => {
       setIsVisible(true)
+      trackEvent('popup_shown', { popup_type: 'email_signup', source: 'ccforpms' })
     }, 10000)
 
     return () => clearTimeout(timer)
@@ -65,6 +73,7 @@ export default function EmailPopup() {
   const handleClose = () => {
     setIsVisible(false)
     localStorage.setItem('fspm-popup-seen', 'true')
+    trackEvent('popup_closed', { popup_type: 'email_signup', source: 'ccforpms' })
   }
 
   const handleSubmit = async (e) => {
@@ -95,6 +104,7 @@ export default function EmailPopup() {
       if (response.ok && data.success) {
         setStatus('success')
         localStorage.setItem('fspm-popup-seen', 'true')
+        trackEvent('popup_submitted', { popup_type: 'email_signup', source: 'ccforpms' })
         setTimeout(() => {
           setIsVisible(false)
         }, 2500)
