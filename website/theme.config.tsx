@@ -36,7 +36,7 @@ export default {
     const siteUrl = 'https://ccforpms.com'
     const isHome = asPath === '/'
     const pageTitle = isHome
-      ? 'Learn Claude Code IN Claude Code!'
+      ? 'Learn Claude Code IN Claude Code! – Claude Code for Product Managers'
       : (title ? `${title} – Claude Code for Product Managers` : 'Claude Code for Product Managers')
     const description = frontMatter?.description || 'Learn Claude Code for PM work - an interactive course teaching file operations, agents, and AI-powered product management workflows.'
     const ogImage = frontMatter?.ogImage || `${siteUrl}/images/better-graphic.png`
