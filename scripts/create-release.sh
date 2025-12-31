@@ -10,8 +10,9 @@ fi
 
 echo "Creating release zip for $VERSION..."
 
-# Create temp directory
+# Create releases directory and remove any existing zip
 mkdir -p releases
+rm -f releases/complete-course.zip
 
 # Create complete course zip (includes all modules, company-context, and .claude)
 cd course-materials
