@@ -39,7 +39,7 @@ cd ~/Documents && \
 curl -L https://github.com/carlvellotti/claude-code-pm-course/releases/latest/download/complete-course.zip -o course.zip && \
 unzip course.zip -d claude-code-course && \
 cd claude-code-course && \
-claude
+claude "/start-1-1"
 ```
 
 **What this does:**
@@ -47,7 +47,7 @@ claude
 2. Downloads the course materials
 3. Extracts them to `claude-code-course`
 4. Navigates into the course folder
-5. Launches Claude Code with full course context
+5. Launches Claude Code and immediately starts Module 1.1
 
 **Expected output:**
 
@@ -81,7 +81,7 @@ This demonstrates Claude Code's core principle: describe what you want in natura
 
 Most Mac systems have these built-in. If you get an error:
 - **Mac:** Type this in your terminal: `xcode-select --install`
-- **Windows:** Curl and unzip aren't built-in. Download the zip manually from the [GitHub Releases page](https://github.com/carlvellotti/claude-code-pm-course/releases/latest), extract it to your Documents folder, then open your terminal and type: `cd ~/Documents/claude-code-course && claude`
+- **Windows:** Curl and unzip aren't built-in. Download the zip manually from the [GitHub Releases page](https://github.com/carlvellotti/claude-code-pm-course/releases/latest), extract it to your Documents folder, then open your terminal and type: `cd ~/Documents/claude-code-course && claude "/start-1-1"`
 
 ### Can I change the download location?
 
@@ -107,7 +107,7 @@ Try downloading the zip manually from the [GitHub Releases page](https://github.
 cd ~/Downloads
 unzip complete-course.zip -d ~/Documents/claude-code-course
 cd ~/Documents/claude-code-course
-claude
+claude "/start-1-1"
 ```
 
 
