@@ -1,0 +1,204 @@
+---
+title: "0.1: 安装与先决条件"
+description: "在 15 分钟内安装 Claude Code。针对产品经理的 Mac, Windows, Linux 分步指南，包含先决条件和故障排除。"
+keywords: 'claude code installation, install claude code, claude code setup, how to install claude code'
+---
+
+## 0.1: 安装
+
+ - **完成时间:** 15 分钟
+ - **先决条件:** Claude Pro 或 Max 订阅
+
+## 概览
+
+模块 0.1 涵盖 Claude Code 的安装和身份验证。本参考指南提供快速访问信息，以补充交互式教程。
+
+**关键要点:** Claude Code 需要 Node.js 18+ 和付费的 Claude 订阅。满足先决条件后，安装时间不到 5 分钟。
+
+
+## 先决条件
+
+| 要求 | 详情 |
+|-------------|---------|
+| **Claude 订阅** | Claude Pro ($20/月) 或 Claude Max。不支持免费层级。在 [claude.ai](https://claude.ai/) 注册 |
+| **Node.js** | 需要 18 或更高版本。从 [nodejs.org](https://nodejs.org/) 下载 |
+| **操作系统** | macOS 或 Windows 10+ |
+
+
+## 如何打开你的终端
+
+本指南中的所有命令都需要输入到你的**终端**（也称为命令行）中。以下是打开它的方法：
+
+**Mac:**
+1. 按 `Cmd + Space` 打开聚焦搜索
+2. 输入 "Terminal"
+3. 按 Enter
+
+**Windows:**
+1. 按 Windows 键
+2. 输入 "PowerShell"
+3. 按 Enter
+
+你会看到一个带有闪烁光标的窗口——这是你输入命令的地方。
+
+
+## 快速安装
+
+### 检查 Node.js 版本
+
+**打开你的终端并输入此命令，然后按 Enter:**
+
+```bash
+node --version
+```
+
+如果你看到 `v18.0.0` 或更高版本，请继续安装。否则，请先安装 Node.js。
+
+### 安装 Node.js (如果需要)
+
+**推荐:** 从 [nodejs.org](https://nodejs.org/) 下载 LTS 版本
+
+**使用包管理器:**
+
+| 平台 | 命令 |
+|----------|---------|
+| **macOS** | `brew install node` |
+| **Windows** | `choco install nodejs` |
+
+**重要:** 安装 Node.js 后，完全关闭你的终端窗口并打开一个新的。这会刷新你系统的 PATH，使其能够识别 `node` 命令。
+
+### 安装 Claude Code
+
+**在你的终端中，复制并粘贴以下命令之一，然后按 Enter:**
+
+**Mac:**
+```bash
+curl -fsSL https://claude.ai/install.sh | bash
+```
+
+**Windows (PowerShell):**
+```powershell
+irm https://claude.ai/install.ps1 | iex
+```
+
+### 验证安装
+
+**在你的终端中输入此命令并按 Enter:**
+
+```bash
+claude --version
+```
+
+如果你看到版本号，说明安装成功。如果你看到 `command not found`，完全关闭你的终端窗口并打开一个新的，然后重试。
+
+
+## 身份验证
+
+**在你的终端中输入此命令并按 Enter:**
+
+```bash
+claude
+```
+
+当提示时：
+1. 选择 "Claude account with subscription" (不是 Anthropic Console)
+2. 完成浏览器身份验证
+3. 选择你偏好的终端文本样式
+
+身份验证后，你将看到 Claude Code 欢迎屏幕。
+
+
+## 健康检查
+
+**在 Claude Code 内部，输入此命令:**
+
+```
+/doctor
+```
+
+这将验证：
+- 安装完整性
+- 活跃订阅
+- 系统配置
+- 常见问题
+
+健康的输出会显示所有项目的绿色复选标记。
+
+
+## 故障排除
+
+### Command not found: claude
+
+**修复:**
+1. 完全关闭你的终端窗口并打开一个新的
+2. 如果仍然失败，检查 PATH 配置：
+
+**Mac:** 添加到 `~/.bashrc` 或 `~/.zshrc`:
+```bash
+export PATH=$HOME/.local/bin:$PATH
+```
+
+**Windows:** 重启你的计算机（安装程序会自动更新 PATH）
+
+### Subscription required
+
+- 在 [claude.ai](https://claude.ai/) 验证活跃的 Claude Pro/Max 订阅
+- 登出并重新登录以刷新身份验证
+
+### Node version too old
+
+**在你的终端中输入:**
+```bash
+node --version
+```
+
+如果低于 v18.0.0，从 [nodejs.org](https://nodejs.org/) 下载最新的 LTS 版本
+
+### Permission denied
+
+**Mac:**
+```bash
+sudo curl -fsSL https://claude.ai/install.sh | bash
+```
+
+**Windows:**
+以管理员身份运行 PowerShell (右键点击 PowerShell → 以管理员身份运行)
+
+
+## 命令参考
+
+| 命令 | 功能 |
+|---------|----------|
+| `node --version` | 检查 Node.js 版本 |
+| `claude` | 启动 Claude Code |
+| `claude --version` | 检查 Claude Code 版本 |
+| `/doctor` | 运行系统健康检查 (在 Claude Code 内部) |
+| `/help` | 查看可用命令 (在 Claude Code 内部) |
+
+
+## 资源
+
+- [官方文档](https://docs.claude.com/en/docs/claude-code)
+- [GitHub Issues](https://github.com/anthropics/claude-code/issues)
+- Claude Code 社区论坛
+
+
+## 下一步是什么？
+
+**模块 0.2:** 启动 Claude Code 并克隆课程仓库。
+
+你将学习：
+- 与 Claude Code 进行第一次对话
+- 使用 Claude 克隆仓库
+- 理解基于意图的任务委派
+
+交互式轨道：继续使用课程仓库的 CLAUDE.zh.md 文件
+
+
+---
+
+**关于本课程**
+
+由 [Carl Vellotti](https://www.linkedin.com/in/carlvellotti/) 创建。如果你对本模块或整个课程有任何反馈，请给我留言！我正在为产品构建者建立一个通讯和社区，请查看 [The Full Stack PM](https://fullstackpm.com/subscribe?utm_source=ccforpms&utm_medium=course&utm_campaign=installation)。
+
+**源仓库：** [github.com/carlvellotti/claude-code-pm-course](https://github.com/carlvellotti/claude-code-pm-course)

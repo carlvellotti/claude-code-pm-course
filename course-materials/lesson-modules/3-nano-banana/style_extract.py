@@ -1,7 +1,7 @@
 """
-Style Extraction Module
-Uses Gemini 3 Pro's vision capabilities to analyze and extract
-detailed style information from images.
+风格提取模块
+使用 Gemini 3 Pro 的视觉能力来分析并提取
+从图像中提取详细的风格信息。
 """
 import os
 from pathlib import Path
@@ -13,9 +13,11 @@ load_dotenv()
 from google import genai
 from google.genai import types
 
-# Gemini 2.5 Pro for vision/understanding (excellent at image analysis)
+# Gemini 2.5 Pro 用于视觉/理解（擅长图像分析）
 VISION_MODEL = "gemini-2.5-pro"
 
+# 风格提取提示词 (STYLE_EXTRACTION_PROMPT)
+# 注意：此提示词故意保留为英文，以确保 Gemini 模型的最佳性能。
 STYLE_EXTRACTION_PROMPT = """Analyze this image and deconstruct its complete visual style. I want to be able to recreate this exact aesthetic for completely different subjects.
 
 Describe in detail:
@@ -40,38 +42,38 @@ Write this as a cohesive style guide I can reference when generating new images.
 
 
 def _get_client():
-    """Initialize Gemini client"""
+    """初始化 Gemini 客户端"""
     api_key = os.environ.get('GEMINI_API_KEY')
     if not api_key:
-        raise ValueError("GEMINI_API_KEY not found in environment. Check your .env file.")
+        raise ValueError("在环境中未找到 GEMINI_API_KEY。请检查您的 .env 文件。")
     return genai.Client(api_key=api_key)
 
 
 def extract_style(image_path: str, custom_prompt: str = None) -> str:
     """
-    Extract detailed style information from an image.
+    从图像中提取详细的风格信息。
 
     Args:
-        image_path: Path to the image to analyze
-        custom_prompt: Optional custom extraction prompt (uses default if not provided)
+        image_path: 要分析的图像路径
+        custom_prompt: 可选的自定义提取提示词（如果未提供则使用默认值）
 
     Returns:
-        Detailed style description as text
+        作为文本的详细风格描述
     """
     client = _get_client()
 
-    # Load image
+    # 加载图像
     if not os.path.exists(image_path):
-        raise FileNotFoundError(f"Image not found: {image_path}")
+        raise FileNotFoundError(f"未找到图像: {image_path}")
 
     image = Image.open(image_path)
 
     prompt = custom_prompt or STYLE_EXTRACTION_PROMPT
 
-    print(f"Analyzing style of: {image_path}")
-    print("This may take a moment...")
+    print(f"正在分析风格: {image_path}")
+    print("这可能需要一点时间...")
 
-    # Use Gemini's vision capability
+    # 使用 Gemini 的视觉能力
     response = client.models.generate_content(
         model=VISION_MODEL,
         contents=[prompt, image]
@@ -80,7 +82,7 @@ def extract_style(image_path: str, custom_prompt: str = None) -> str:
     style_description = response.text
 
     print("\n" + "="*60)
-    print("STYLE EXTRACTION COMPLETE")
+    print("风格提取完成")
     print("="*60 + "\n")
     print(style_description)
 
@@ -89,40 +91,40 @@ def extract_style(image_path: str, custom_prompt: str = None) -> str:
 
 def extract_and_save(image_path: str, output_path: str = None) -> str:
     """
-    Extract style and save to a markdown file.
+    提取风格并保存到 markdown 文件。
 
     Args:
-        image_path: Path to the image to analyze
-        output_path: Where to save the style guide (auto-generated if not provided)
+        image_path: 要分析的图像路径
+        output_path: 风格指南的保存位置（如果未提供则自动生成）
 
     Returns:
-        Path to the saved style guide
+        保存的风格指南路径
     """
     style_description = extract_style(image_path)
 
-    # Generate output path if not provided
+    # 如果未提供输出路径则生成
     if not output_path:
         image_name = Path(image_path).stem
         output_path = f"styles/{image_name}_style.md"
 
-    # Ensure directory exists
+    # 确保目录存在
     Path(output_path).parent.mkdir(parents=True, exist_ok=True)
 
-    # Write the style guide
+    # 写入风格指南
     with open(output_path, 'w') as f:
-        f.write(f"# Style Guide: {Path(image_path).name}\n\n")
-        f.write(f"*Extracted from: `{image_path}`*\n\n")
+        f.write(f"# 风格指南: {Path(image_path).name}\n\n")
+        f.write(f"*提取自: `{image_path}`*\n\n")
         f.write("---\n\n")
         f.write(style_description)
 
-    print(f"\nStyle guide saved to: {output_path}")
+    print(f"\n风格指南已保存至: {output_path}")
 
     return output_path
 
 
 if __name__ == "__main__":
-    print("Style Extraction Module loaded.")
+    print("风格提取模块已加载。")
     print("")
-    print("Functions:")
-    print("  extract_style(image_path)           - Analyze image and return style description")
-    print("  extract_and_save(image_path)        - Extract and save to styles/ folder")
+    print("函数:")
+    print("  extract_style(image_path)           - 分析图像并返回风格描述")
+    print("  extract_and_save(image_path)        - 提取并保存到 styles/ 文件夹")

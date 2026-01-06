@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-Generate realistic CSV data for Module 2.2: Data-Driven Feature Development
-Uses only Python standard library (no pandas/numpy required)
+生成模块 2.2 的真实 CSV 数据：数据驱动的功能开发
+仅使用 Python 标准库（不需要 pandas/numpy）
 """
 
 import csv
@@ -10,11 +10,11 @@ from datetime import datetime, timedelta
 from collections import defaultdict
 import math
 
-# Set seed for reproducibility
+# 设置随机种子以保证可复现性
 random.seed(42)
 
 def weighted_choice(choices, weights):
-    """Select from choices with given weights"""
+    """根据给定的权重从选项中选择"""
     total = sum(weights)
     r = random.uniform(0, total)
     upto = 0
@@ -25,26 +25,26 @@ def weighted_choice(choices, weights):
     return choices[-1]
 
 def gamma_sample(shape, scale):
-    """Simple gamma distribution approximation"""
-    # Using sum of exponentials approximation
+    """简单的 gamma 分布近似"""
+    # 使用指数分布之和进行近似
     total = 0
     for _ in range(int(shape)):
         total += random.expovariate(1.0 / scale)
     return total
 
 def normal_sample(mean, std):
-    """Normal distribution using Box-Muller transform"""
+    """使用 Box-Muller 变换生成正态分布样本"""
     u1 = random.random()
     u2 = random.random()
     z0 = math.sqrt(-2.0 * math.log(u1)) * math.cos(2.0 * math.pi * u2)
     return mean + z0 * std
 
-print("Generating Module 2.2 data files...")
+print("正在生成模块 2.2 数据文件...")
 
 # ============================================================================
-# FILE 1: taskflow-usage-data-q4.csv (1000 rows of event data)
+# 文件 1: taskflow-usage-data-q4.csv (1000 行事件数据)
 # ============================================================================
-print("\n1. Generating taskflow-usage-data-q4.csv...")
+print("\n1. 正在生成 taskflow-usage-data-q4.csv...")
 
 company_sizes = ['5-20', '21-99', '100+']
 company_size_weights = [0.6, 0.3, 0.1]
@@ -116,12 +116,12 @@ with open('taskflow-usage-data-q4.csv', 'w', newline='') as f:
     writer.writeheader()
     writer.writerows(users_data)
 
-print(f"   ✓ Created {len(users_data)} rows")
+print(f"   ✓ 已创建 {len(users_data)} 行")
 
 # ============================================================================
-# FILE 2: activation-funnel-q4.csv (aggregated funnel)
+# 文件 2: activation-funnel-q4.csv (聚合漏斗)
 # ============================================================================
-print("\n2. Generating activation-funnel-q4.csv...")
+print("\n2. 正在生成 activation-funnel-q4.csv...")
 
 funnel_data = [
     ['Signup', 10000, 10000, 1.0, 0],
@@ -135,12 +135,12 @@ with open('activation-funnel-q4.csv', 'w', newline='') as f:
     writer.writerow(['step', 'users_entered', 'users_completed', 'completion_rate', 'median_time_to_complete'])
     writer.writerows(funnel_data)
 
-print(f"   ✓ Created {len(funnel_data)} rows")
+print(f"   ✓ 已创建 {len(funnel_data)} 行")
 
 # ============================================================================
-# FILE 3: user-survey-responses.csv (800 survey responses)
+# 文件 3: user-survey-responses.csv (800 份调查问卷回复)
 # ============================================================================
-print("\n3. Generating user-survey-responses.csv...")
+print("\n3. 正在生成 user-survey-responses.csv...")
 
 confusion_themes = {
     "didn't know what to create": [
@@ -207,12 +207,12 @@ with open('user-survey-responses.csv', 'w', newline='') as f:
     writer.writeheader()
     writer.writerows(survey_data)
 
-print(f"   ✓ Created {len(survey_data)} rows")
+print(f"   ✓ 已创建 {len(survey_data)} 行")
 
 # ============================================================================
-# FILE 4: onboarding-experiment-results.csv (8,000 rows - THE BIG ONE)
+# 文件 4: onboarding-experiment-results.csv (8,000 行 - 最大文件)
 # ============================================================================
-print("\n4. Generating onboarding-experiment-results.csv...")
+print("\n4. 正在生成 onboarding-experiment-results.csv...")
 
 experiment_data = []
 
@@ -292,16 +292,16 @@ with open('onboarding-experiment-results.csv', 'w', newline='') as f:
     writer.writeheader()
     writer.writerows(experiment_data)
 
-print(f"   ✓ Created {len(experiment_data)} rows")
+print(f"   ✓ 已创建 {len(experiment_data)} 行")
 
 # ============================================================================
-# VALIDATION: Print statistics to verify
+# 验证: 打印统计数据以进行验证
 # ============================================================================
 print("\n" + "="*70)
-print("VALIDATION: Checking experiment statistics")
+print("验证: 检查实验统计数据")
 print("="*70)
 
-# Calculate statistics
+# 计算统计数据
 control_data = [r for r in experiment_data if r['cohort'] == 'control']
 treatment_data = [r for r in experiment_data if r['cohort'] == 'treatment']
 
@@ -311,12 +311,12 @@ treatment_activated = [r for r in treatment_data if r['completed_first_task'] ==
 control_rate = len(control_activated) / len(control_data)
 treatment_rate = len(treatment_activated) / len(treatment_data)
 
-print(f"\n📊 Overall Activation Rates:")
-print(f"   Control:   {control_rate:.3f} (target: 0.452)")
-print(f"   Treatment: {treatment_rate:.3f} (target: 0.478)")
-print(f"   Lift:      {(treatment_rate - control_rate):.3f} (target: 0.026)")
+print(f"\n📊 总体激活率:")
+print(f"   对照组:   {control_rate:.3f} (目标: 0.452)")
+print(f"   实验组:   {treatment_rate:.3f} (目标: 0.478)")
+print(f"   提升:      {(treatment_rate - control_rate):.3f} (目标: 0.026)")
 
-print(f"\n📊 Activation Rates by Segment:")
+print(f"\n📊 分段激活率:")
 for size in ['5-20', '21-99', '100+']:
     control_seg = [r for r in control_data if r['company_size'] == size]
     treatment_seg = [r for r in treatment_data if r['company_size'] == size]
@@ -329,51 +329,51 @@ for size in ['5-20', '21-99', '100+']:
     lift = treatment_seg_rate - control_seg_rate
 
     print(f"\n   {size:8s}")
-    print(f"      Control:   {control_seg_rate:.3f}")
-    print(f"      Treatment: {treatment_seg_rate:.3f}")
-    print(f"      Lift:      {lift:+.3f}")
+    print(f"      对照组:   {control_seg_rate:.3f}")
+    print(f"      实验组:   {treatment_seg_rate:.3f}")
+    print(f"      提升:      {lift:+.3f}")
 
-# Retention
+# 留存率
 control_retention = len([r for r in control_activated if int(r['days_active_week_1']) >= 3]) / len(control_activated)
 treatment_retention = len([r for r in treatment_activated if int(r['days_active_week_1']) >= 3]) / len(treatment_activated)
 
-print(f"\n📊 Week 1 Retention (Activated Users Only):")
-print(f"   Control:   {control_retention:.3f} (target: ~0.601)")
-print(f"   Treatment: {treatment_retention:.3f} (target: ~0.784)")
-print(f"   Lift:      {(treatment_retention - control_retention):+.3f}")
+print(f"\n📊 第一周留存率 (仅激活用户):")
+print(f"   对照组:   {control_retention:.3f} (目标: ~0.601)")
+print(f"   实验组:   {treatment_retention:.3f} (目标: ~0.784)")
+print(f"   提升:      {(treatment_retention - control_retention):+.3f}")
 
-# Tasks
+# 任务
 control_tasks = sum(int(r['tasks_completed_week_1']) for r in control_activated) / len(control_activated)
 treatment_tasks = sum(int(r['tasks_completed_week_1']) for r in treatment_activated) / len(treatment_activated)
 
-print(f"\n📊 Tasks Completed (Week 1, Activated Users):")
-print(f"   Control:   {control_tasks:.1f} tasks (target: ~2.9)")
-print(f"   Treatment: {treatment_tasks:.1f} tasks (target: ~6.8)")
-print(f"   Ratio:     {treatment_tasks/control_tasks:.1f}x")
+print(f"\n📊 完成的任务 (第一周, 激活用户):")
+print(f"   对照组:   {control_tasks:.1f} 个任务 (目标: ~2.9)")
+print(f"   实验组:   {treatment_tasks:.1f} 个任务 (目标: ~6.8)")
+print(f"   比率:     {treatment_tasks/control_tasks:.1f} 倍")
 
-# Feature adoption
+# 功能采用
 control_templates = len([r for r in control_data if r['used_task_template'] == 'True']) / len(control_data)
 treatment_templates = len([r for r in treatment_data if r['used_task_template'] == 'True']) / len(treatment_data)
 
 control_invites = len([r for r in control_data if r['invited_teammate'] == 'True']) / len(control_data)
 treatment_invites = len([r for r in treatment_data if r['invited_teammate'] == 'True']) / len(treatment_data)
 
-print(f"\n📊 Feature Adoption:")
-print(f"   Template Usage:")
-print(f"      Control:   {control_templates:.3f} (target: ~0.109)")
-print(f"      Treatment: {treatment_templates:.3f} (target: ~0.352)")
-print(f"      Ratio:     {treatment_templates/control_templates:.1f}x")
-print(f"\n   Invite Teammate:")
-print(f"      Control:   {control_invites:.3f} (target: ~0.121)")
-print(f"      Treatment: {treatment_invites:.3f} (target: ~0.348)")
-print(f"      Ratio:     {treatment_invites/control_invites:.1f}x")
+print(f"\n📊 功能采用:")
+print(f"   模板使用:")
+print(f"      对照组:   {control_templates:.3f} (目标: ~0.109)")
+print(f"      实验组:   {treatment_templates:.3f} (目标: ~0.352)")
+print(f"      比率:     {treatment_templates/control_templates:.1f} 倍")
+print(f"\n   邀请队友:")
+print(f"      对照组:   {control_invites:.3f} (目标: ~0.121)")
+print(f"      实验组:   {treatment_invites:.3f} (目标: ~0.348)")
+print(f"      比率:     {treatment_invites/control_invites:.1f} 倍")
 
 print("\n" + "="*70)
-print("✅ All files generated successfully!")
+print("✅ 所有文件生成成功！")
 print("="*70)
-print("\nGenerated files:")
+print("\n生成的文件:")
 print("   1. taskflow-usage-data-q4.csv")
 print("   2. activation-funnel-q4.csv")
 print("   3. user-survey-responses.csv")
 print("   4. onboarding-experiment-results.csv")
-print("\nReady for Module 2.2! 🎉")
+print("\n准备好开始模块 2.2 了！ 🎉")

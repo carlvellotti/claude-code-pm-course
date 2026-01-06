@@ -1,0 +1,216 @@
+---
+title: "1.2: 可视化你的工作区"
+description: 设置一个可视化工作区，以便在 Claude Code 旁边查看你的文件，实现无缝的分屏工作流
+---
+
+## 1.2: 可视化你的工作区
+
+ - **完成时间:** 15-20 分钟
+ - **先决条件:** 模块 1.1 完成，基本熟悉文件系统
+
+> **在 Claude Code 中开始此模块:** 运行 `/start-1-2` 以启动交互式体验。
+
+## 概览
+
+设置一个可视化工作区，以便在 Claude Code 旁边实时查看你的项目文件，实现无缝的分屏工作流。
+
+**关键要点:** 可视化工作区让你看着文件在 Claude 工作时出现和更新。
+
+
+## 为什么可视化很重要
+
+在终端中使用 Claude Code 感觉像是盲目工作。你让 Claude 创建文档，但你看不到发生了什么。
+
+**解决方案:** 在终端旁边打开一个可视化编辑器。现在你可以：
+- 看着文件在 Claude 创建它们时出现
+- 在 Claude 工作时阅读文档
+- 验证所有内容都正确组织
+- 始终确切知道正在发生什么
+
+这将 Claude Code 从一个神秘的黑盒转变为一个你可以实时观看和验证的透明工具。
+
+
+## 选择你的工具
+
+### Nimbalyst (推荐)
+
+**最适合:** 想要最流畅体验的 Claude Code 用户
+
+![Nimbalyst - Claude Code 可视化工作区](/images/nimbalyst-hero.webp)
+
+[Nimbalyst](https://nimbalyst.com/for-product-managers?ref=carlvellotti&utm_source=carlvellotti&utm_medium=ccforpms&utm_campaign=partner) 是一个免费的、专为 Claude Code 打造的包装器，具有：
+- **所见即所得 Markdown 编辑** - 查看格式化的文本，而不是原始 Markdown 语法
+- **文件差异** - 确切查看 Claude 在编辑文件时更改了什么
+- **隐藏文件夹可见性** - 可以查看 `.claude/` 文件夹（不像 Obsidian）
+- **会话管理** - 管理多个 Claude Code 会话
+- **与 Claude Code 集成** - 编辑你的 Markdown 并与 Claude Code 一起工作，所有这些都在一个工具中，无需切换到命令行
+
+**下载:** https://nimbalyst.com/for-product-managers?ref=carlvellotti&utm_source=carlvellotti&utm_medium=ccforpms&utm_campaign=partner
+
+### Obsidian
+
+**最适合:** 想要独立笔记应用的用户
+
+[Obsidian](https://obsidian.md/) 是一个免费的、流行的 Markdown 编辑器，具有：
+- 干净、无干扰的界面
+- Wikilinks (`[[filename]]`) 用于连接笔记
+- 图谱视图以可视化笔记连接
+- 庞大的插件生态系统
+
+**限制:**
+- 无法显示像 `.claude/` 这样的隐藏文件夹 - 你需要使用 Finder/资源管理器查看这些
+- 需要你在 2 个工具中工作，Obsidian 用于 Markdown 文件编辑，终端用于 Claude Code
+
+**下载:** https://obsidian.md/download
+
+### VS Code / Cursor
+
+**最适合:** 已经使用这些工具或想要代码编辑功能的用户
+
+- 全功能代码编辑器
+- 可以显示隐藏文件夹
+- Markdown 预览扩展
+- 对于纯产品经理工作来说可能过于复杂
+
+
+## 设置指南
+
+### Nimbalyst 设置
+
+1. **下载:** 访问 https://nimbalyst.com/for-product-managers?ref=carlvellotti&utm_source=carlvellotti&utm_medium=ccforpms&utm_campaign=partner 并点击下载
+2. **安装:** 运行适合你操作系统的安装程序
+3. **打开项目:** 在 Nimbalyst 中打开你的课程文件夹
+4. **分屏:** 并排通过放置 Claude Code 终端和 Nimbalyst
+
+### Obsidian 设置
+
+1. **下载:** 访问 https://obsidian.md/download (个人使用免费)
+2. **打开你的项目:** 选择 "Open folder as vault" 并导航到你的课程文件夹
+3. **分屏:** 并排放置 Claude Code 终端和 Obsidian
+
+**注意:** 如果需要，询问 Claude 确切路径: `What's the path to my course folder?`
+
+
+## .claude/ 文件夹
+
+`.claude/` 文件夹包含智能体、命令和设置。访问取决于你的工具：
+
+| 工具 | 能看到 .claude/? | 如何访问 |
+|------|-------------------|---------------|
+| **Nimbalyst** | 是 | 在文件浏览器中可见 |
+| **Obsidian** | 否 | 使用 Finder/资源管理器 |
+| **VS Code** | 是 | 启用隐藏文件 |
+
+**要在 Finder/资源管理器中查看 `.claude/`:**
+- **Mac:** 在 Finder 中按 `Cmd + Shift + .` 显示隐藏文件夹
+- **Windows:** 在文件资源管理器视图选项卡中启用 "Hidden items"
+
+**何时需要它:** 模块 1.5 (自定义子智能体) 及以后。现在，专注于常规项目文件。
+
+**注意:** 无论你的编辑器如何，Claude Code 始终可以访问 `.claude/` 文件。
+
+
+## 实时可视化演示
+
+当 Claude 创建或编辑文件时，你会看到它们立即出现在你的编辑器中。
+
+**试一试:**
+
+1. 使用你的项目文件夹打开你的编辑器
+2. 在 Claude Code 中，询问: *Create a file called test-visualization.md with some content*
+3. 观察你的编辑器 - 文件立即出现
+4. 点击它阅读 Claude 写的内容
+
+就是这样！不需要刷新。文件在 Claude 工作时实时更新。
+
+
+## 编辑器技巧
+
+### Nimbalyst 技巧
+- 当 Claude 编辑文件时注意高亮的差异
+- `.claude/` 文件夹可见，便于稍后构建自定义智能体
+
+### Obsidian 技巧
+
+**基本快捷键:**
+- **`Cmd/Ctrl + O`** - 快速切换器 (跳转到任何文件)
+- **`Cmd/Ctrl + Shift + F`** - 搜索所有文件
+- **`Cmd/Ctrl + E`** - 切换阅读/编辑视图
+
+**Wikilinks:** 使用 `[[filename]]` 语法连接文档以便于导航
+
+**标签:** 使用 `#prd #user-research #q1-2025` 进行组织和过滤
+
+**保持在阅读视图**以获得更清晰的格式化显示
+
+### VS Code 技巧
+- **`Cmd/Ctrl + P`** - 快速打开任何文件
+- 启用隐藏文件以查看 `.claude/`
+
+
+## 示例：实时工作流
+
+**没有可视化:** Claude 创建文件，但你不确定发生了什么或它们在哪里。
+
+**有可视化工作区:** 看着文件立即出现，点击查看内容，验证组织 - 完全的可见性和控制。
+
+
+## 最佳实践
+
+**做:**
+- 持续使用分屏工作流
+- 使用快速打开快捷键进行导航
+- 保持你的编辑器专注于项目文件夹
+
+**不要:**
+- 仅全屏使用终端（你错过了以半的价值）
+- 现在担心精通你的编辑器（只需将其用作文件查看器）
+
+
+## 故障排除
+
+### 我看不到任何文件
+
+**可能原因:** 打开了错误的文件夹
+
+**修复:**
+1. 询问 Claude: `What's the path to my course folder?`
+2. 在你的编辑器中重新打开那个确切的文件夹
+3. 你的文件现在应该出现了
+
+**常见错误:** 打开了父文件夹而不是项目文件夹本身
+
+**示例:**
+- 错误: `/Users/yourname/Documents` (层级太高)
+- 正确: `/Users/yourname/Documents/claude-code-pm-course`
+
+### 文件没有更新
+
+**可能原因:** 编辑器需要检测更改
+
+**修复:**
+1. 点击编辑器窗口外部再点击回来（强制刷新）
+2. 或者：关闭并重新打开特定文件
+3. 或者：重启编辑器（罕见，但有效）
+
+### 我看到原始 Markdown 而不是格式化文本
+
+**对于 Obsidian:** 按 `Cmd/Ctrl + E` 切换到阅读视图，或点击书本图标
+
+**对于 Nimbalyst:** 内容应默认显示格式化 (WYSIWYG)
+
+### .claude/ 文件夹在哪里？
+
+**Nimbalyst:** 应该在文件浏览器中可见
+
+**Obsidian:** 设计上隐藏。使用 Finder/资源管理器：
+- **Mac:** 打开 Finder → 导航到项目 → 按 `Cmd + Shift + .`
+- **Windows:** 打开文件资源管理器 → 导航到项目 → 视图选项卡 → 勾选 "Hidden items"
+
+---
+
+**关于本课程**
+
+由 [Carl Vellotti](https://www.linkedin.com/in/carlvellotti/) 创建。如果你对本模块或整个课程有任何反馈，请给我留言！我正在为产品构建者建立一个通讯和社区，请查看 [The Full Stack PM](https://fullstackpm.com/subscribe?utm_source=ccforpms&utm_medium=course&utm_campaign=visualizing-files)。
+
+**源仓库：** [github.com/carlvellotti/claude-code-pm-course](https://github.com/carlvellotti/claude-code-pm-course)

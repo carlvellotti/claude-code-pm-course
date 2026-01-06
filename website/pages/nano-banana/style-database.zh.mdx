@@ -1,0 +1,399 @@
+---
+title: "3.1.4: 构建你的风格数据库"
+description: "创建一个可重用的风格库，并学习从任何图像中提取视觉风格"
+keywords: "风格库, 风格提取, 提示词数据库, AI 图像风格, gemini 风格"
+---
+
+## 3.1.4: 构建你的风格数据库
+
+- **完成时间:** 20 分钟
+- **先决条件:** 一致性与风格 (模块 3.1.3)
+
+> **在 Claude Code 中开始此模块:** 运行 `/start-3-1-4` 开始互动体验。
+
+## 概述
+
+模块 3.1.4 教你图像生成的元技能：构建一个随着每个项目而增值的个人创意工具包。你无需每次都从头开始，而是建立一个可以立即应用的成熟风格库。
+
+**核心要点:** 这不仅仅是关于生成图像——这是关于构建一个复利系统。你保存的每种风格都会让未来的工作更快、更好。
+
+
+## 元技能
+
+大多数人将 AI 图像工具作为一次性的新奇事物使用：
+- 生成一些东西
+- 使用一次
+- 忘记它
+- 下次重新开始
+
+超级用户做不同的事情：
+- 生成一些东西
+- **保存获胜的提示词**
+- 跨项目重用它
+- **随时间构建库**
+
+这种差异会产生巨大的复利效应。几个月后，你就拥有了一个适用于各种情况的成熟风格库——画像、图表、演示文稿、营销。一个命令："use style #12"，你就完成了。
+
+
+## 你的风格库
+
+Nano Banana 模块包含 `style-library.html`——一个本地 HTML 文件，用于可视化你的风格收藏。
+
+### 库里有什么
+
+每个风格条目包含：
+
+| 字段 | 目的 |
+|-------|---------|
+| **索引号** | 快速引用 ("use style #02") |
+| **缩略图** | 视觉预览 |
+| **名称** | 描述性标题 |
+| **类别** | 过滤和组织 |
+| **标签** | 可搜索的关键词 |
+| **提示词** | 完整的提示词文本 |
+| **示例用法** | 何时使用此风格 |
+
+### 使用库
+
+**应用风格:**
+```
+Generate [your subject] using style #5
+(使用风格 #5 生成 [你的主体])
+```
+
+Claude 会查找该风格，检索提示词，并将其应用于你的主体。
+
+**浏览风格:**
+在浏览器中打开 `style-library.html`。使用过滤按钮浏览类别。
+
+### 类别
+
+库将风格组织成以下类别：
+
+| 类别 | 包含内容 |
+|----------|------------------|
+| **框架 (Framework)** | 2x2 矩阵、金字塔、维恩图 |
+| **流程 (Flow)** | 流程图、旅程图、流程图 |
+| **架构 (Architecture)** | 系统图、组织结构图、层级结构 |
+| **模型 (Mockup)** | 线框图、设备框架、UI 概念 |
+| **角色 (Persona)** | 肖像、生活方式照片、头像 |
+| **营销 (Marketing)** | 广告、公告、社交图形 |
+| **艺术 (Artistic)** | 插图、摄影风格、复古外观 |
+
+
+## 扩展库的三种方法
+
+### 方法 1: 随做随存 (Save As You Go)
+
+最简单的方法——每当你创造出自己喜欢的东西时，保存它。
+
+**工作流:**
+1. 生成一张你满意的图像
+2. 告诉 Claude: "Add this style to my library" (把这个风格添加到我的库中)
+3. Claude 用新条目更新 `style-library.html`
+4. 该风格现在可供将来使用
+
+**示例:**
+```
+You: Generate a minimalist journey map with soft colors
+(你: 生成一个柔和色彩的极简旅程图)
+
+[Claude generates image] (Claude 生成图像)
+
+You: I love this style. Add it to my library.
+(你: 我喜欢这个风格。把它添加到我的库中。)
+
+Claude: Done! Added as style #15 "Minimalist Journey Map"
+in the Flow category.
+(Claude: 完成！已作为风格 #15 "极简旅程图" 添加到 Flow 类别中。)
+```
+
+**最适合:** 捕捉你自己成功的实验。
+
+
+### 方法 2: 从网上收集 (Collect From Online)
+
+很棒的提示词无处不在——社交媒体、教程、提示词数据库。当你找到一个时，测试它，然后保存它。
+
+**工作流:**
+1. 在网上找到一个有前途的提示词
+2. 测试它: "Generate [subject] using this prompt: [paste prompt]" (使用此提示词生成 [主体])
+3. 如果效果好，告诉 Claude 保存它
+4. 现在它是你永久库的一部分
+
+**示例:**
+```
+You: I found this prompt online - test it with a coffee shop:
+"Make a photo that is perfectly isometric. It is not a miniature,
+it is a captured photo that just happened to be perfectly isometric."
+(你: 我在网上找到了这个提示词 - 用咖啡店测试它：
+"制作一张完美的等距照片。它不是微缩模型，
+而是一张恰好完美等距的抓拍照片。")
+
+[Claude generates isometric coffee shop] (Claude 生成等距咖啡店)
+
+You: Great! Save this as "Perfect Isometric Photo"
+(你: 很棒！把这保存为 "完美等距照片")
+
+Claude: Added as style #16 in 3D/Isometric category.
+(Claude: 已作为风格 #16 添加到 3D/Isometric 类别中。)
+```
+
+**最适合:** 策划来自社区的最佳提示词。
+
+
+### 方法 3: 从任何图像提取 (Extract From Any Image)
+
+这是大招。看到一张你喜欢的图片？将其风格提取为文本，然后随时重新创建。
+
+**工作原理:**
+1. 提供一张图像 (文件路径或 URL)
+2. Claude 运行风格提取模块
+3. 模块分析：颜色、灯光、构图、纹理、情绪、效果
+4. 返回详细的自然语言描述
+5. 你现在可以从纯文本重新创建该风格
+
+**工作流:**
+```
+You: Extract the style from this image: [path to image]
+(你: 从这张图片中提取风格: [图片路径])
+
+Claude: [Runs style_extract.py] (Claude 运行 style_extract.py)
+
+Here's the extracted style:
+"Warm analog photography aesthetic with slight film grain.
+Golden hour lighting creates soft shadows. Muted earth tones
+with desaturated greens and warm highlights. Candid composition
+with slight motion blur suggesting authentic moments..."
+(这是提取的风格：
+"温暖的模拟摄影美学，带有轻微的胶片颗粒。
+黄金时段的灯光营造出柔和的阴影。柔和的大地色调，
+带有去饱和的绿色和温暖的高光。坦率的构图，
+带有轻微的运动模糊，暗示真实的时刻...")
+
+You: Generate a portrait using that extracted style
+(你: 使用提取的风格生成一张肖像)
+
+[Claude applies the style to a new subject] (Claude 将风格应用于新主体)
+
+You: Perfect. Save this to my library.
+(你: 完美。把这保存到我的库中。)
+```
+
+**最适合:**
+- 从 Pinterest、Instagram 或设计灵感中捕捉风格
+- 重现竞争对手或你欣赏的品牌的外观
+- 从单个参考图像构建风格
+
+### 风格提取模块
+
+`style_extract.py` 模块使用 Gemini 的图像理解能力来分析任何图像并描述其视觉风格。
+
+**它捕捉什么:**
+- 调色板和温度
+- 灯光质量和方向
+- 构图和取景
+- 纹理和材质
+- 情绪和氛围
+- 排版 (如果存在)
+- 特殊效果或处理
+
+**为什么有效:** Gemini 3 Pro 具有卓越的图像理解能力。它可以表达人工难以描述的视觉品质。
+
+
+## 管理你的库
+
+### 添加风格
+
+当你告诉 Claude 保存风格时，它会：
+1. 分配下一个可用的 ID 号
+2. 创建一个描述性名称
+3. 选择一个合适的类别
+4. 添加相关标签
+5. 保存缩略图
+6. 更新 `style-library.html`
+
+### 自定义库
+
+风格库只是一个 HTML 文件——你可以自定义它：
+
+- **添加列:** "Ask Claude to add a 'difficulty' column" (让 Claude 添加一个 '难度' 列)
+- **更改布局:** "Reorganize the library by category" (按类别重新组织库)
+- **添加搜索:** "Add a search bar to the library" (给库添加搜索栏)
+- **修改设计:** "Make the library dark mode" (把库变成深色模式)
+
+这是**你的**工具包。根据你的工作流程进行塑造。
+
+### 标签和过滤
+
+标签帮助你快速找到风格。按类别的规范标签：
+
+| 类别 | 可用标签 |
+|----------|----------------|
+| Framework | 2x2-matrix, pyramid, venn, canvas, concentric, triangle |
+| Flow | process, journey-map, flowchart, steps, sequence |
+| Architecture | hierarchy, hub-spoke, system-diagram, org-chart, tree |
+| Mockup | wireframe, device-frame, ui-concept, landing-page, mobile, desktop |
+| Persona | portrait, lifestyle, headshot, context, illustrated, scene |
+| Marketing | ad, social, announcement, banner, hero |
+| Artistic | flat-illustration, hand-drawn, watercolor, photography, retro, minimalist, bold-graphic, 3d-render |
+
+使用 `style-library.html` 中的过滤按钮按类别浏览。
+
+
+## 复利效应
+
+这就是为什么这很重要：
+
+**第 1 周:** 你有 5 种风格
+- 基本覆盖常见需求
+
+**第 1 个月:** 你有 15 种风格
+- 你的工作开始出现模式
+- 开始拥有“首选”风格
+
+**第 3 个月:** 你有 30+ 种风格
+- 全面覆盖
+- 很少需要从头开始创作
+- "Use style #23" 成为你的工作流程
+
+**第 1 年:** 你有 50+ 种久经考验的风格
+- 专业级库
+- 每种风格都在多个项目中得到验证
+- 以前需要数小时的工作现在只需几分钟
+
+这就是复利效应。每个项目都让你的库更有价值。
+
+
+## 工作流示例
+
+### 示例 1: 一致的品牌视觉
+
+**场景:** 你的公司有一个需要保持的特定视觉风格。
+
+**解决方案:**
+1. 收集 3-5 张符合品牌的图像
+2. 从你最好的示例中提取风格
+3. 保存为 "Company Brand Style" (公司品牌风格)
+4. 应用于所有未来的图形
+
+```
+Generate a feature announcement using style #8 (Company Brand)
+```
+
+### 示例 2: 快速探索
+
+**场景:** 你需要 10 个用户角色肖像，全部保持一致。
+
+**解决方案:**
+1. 浏览你的库寻找角色风格
+2. 挑选一个符合项目基调的
+3. 使用相同的风格编号生成所有 10 个
+
+```
+Generate Sarah Chen portrait using style #12
+Generate Marcus Johnson portrait using style #12
+Generate Priya Patel portrait using style #12
+...
+```
+
+### 示例 3: 重现灵感
+
+**场景:** 你的 CEO 分享了一个她喜欢的竞争对手的图表。
+
+**解决方案:**
+1. 从竞争对手的图像中提取风格
+2. 将其保存到你的库中 (使用适当的名称)
+3. 将其应用于你自己的内容
+
+```
+Extract the style from this diagram: [competitor's image]
+Generate our product roadmap using that style
+Save this as "Executive Diagram Style"
+```
+
+
+## 最佳实践
+
+### 要做:
+- **经常保存风格** - 如果你喜欢它，保存它
+- **使用描述性名称** - "Warm Portrait" (温暖肖像) 胜过 "Style 7"
+- **彻底标记** - 帮助未来的你找到东西
+- **积极提取** - 看到好东西？抓住它
+- **定期审查** - 清理未使用的风格
+
+### 不要:
+- **不要囤积平庸的风格** - 质量胜于数量
+- **不要忘记保存** - 立即捕捉胜利
+- **不要过度分类** - 保持简单
+- **不要忽略提取的风格** - 它们往往是最好的
+
+
+## 故障排除
+
+### 风格库无法打开
+
+- 确保你在浏览器中打开 `style-library.html` (而不是文本编辑器)
+- 尝试右键单击 → 打开方式 → 你的浏览器
+
+### 新风格不出现
+
+- 刷新浏览器 (Cmd+R / Ctrl+R)
+- 检查 Claude 是否确认保存
+
+### 提取的风格与原始风格不匹配
+
+- 某些视觉效果很难用文字描述
+- 尝试从更简单的示例中提取
+- 结合参考图像以获得更好的结果
+
+### 找不到合适的风格
+
+- 使用类别过滤器
+- 尝试按标签搜索
+- 问 Claude: "Which styles work for [your use case]?" (哪些风格适用于 [你的用例]？)
+
+
+## 快速参考
+
+```
+扩展库的三种方法:
+  1. 随做随存 → 好作品？保存它。
+  2. 从网上收集 → 测试，然后保存。
+  3. 从图像提取 → 大招。
+
+使用风格:
+  "Generate [subject] using style #X"
+  "Apply style #Y to this"
+  "Which styles work for journey maps?"
+
+管理风格:
+  "Add this to my library"
+  "Save this as [name]"
+  "Show me all persona styles"
+```
+
+
+## 下一步是什么？
+
+你已完成模块 3.1 - 图像生成入门。你理解了机制、提示词原则，以及如何构建一个复利系统。
+
+**模块 3.2** 将这些技能应用于实际的 PM 任务。你将创建角色、旅程图、线框图、架构图和营销资产。
+
+互动轨道: 输入 `/start-3-2-1`
+
+
+## 资源
+
+- [Dribbble](https://dribbble.com/) - 设计灵感，寻找要添加到你库中的风格
+- [Behance](https://www.behance.net/) - 创意作品集，从专业作品中提取风格
+- [Pinterest](https://www.pinterest.com/) - 视觉发现，策划风格灵感板
+
+
+---
+
+**关于本课程**
+
+由 [Carl Vellotti](https://www.linkedin.com/in/carlvellotti/) 创建。查看 [The Full Stack PM](https://fullstackpm.com/subscribe?utm_source=ccforpms&utm_medium=course&utm_campaign=nano-banana-database) 获取更多 PM 构建者内容。
+
+**源代码库:** [github.com/carlvellotti/claude-code-pm-course](https://github.com/carlvellotti/claude-code-pm-course)

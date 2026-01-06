@@ -46,16 +46,16 @@ const trackEvent = (eventName, params = {}) => {
 export default function EmailPopup() {
   const [isVisible, setIsVisible] = useState(false)
   const [email, setEmail] = useState('')
-  const [status, setStatus] = useState('idle') // idle, loading, success, error
+  const [status, setStatus] = useState('idle') // idle（空闲）, loading（加载中）, success（成功）, error（错误）
   const [errorMessage, setErrorMessage] = useState('')
   const inputRef = useRef(null)
 
   useEffect(() => {
-    // Check if user has already seen the popup
+    // 检查用户是否已经看过弹窗
     const hasSeenPopup = localStorage.getItem('fspm-popup-seen')
     if (hasSeenPopup) return
 
-    // Show popup after 10 seconds
+    // 10秒后显示弹窗
     const timer = setTimeout(() => {
       setIsVisible(true)
       trackEvent('popup_shown', { popup_type: 'email_signup', source: 'ccforpms' })
@@ -122,50 +122,50 @@ export default function EmailPopup() {
 
   return (
     <>
-      {/* Overlay */}
+      {/* 遮罩层 */}
       <div className="popup-overlay" onClick={handleClose} />
 
-      {/* Popup */}
+      {/* 弹窗 */}
       <div className="popup-container">
-        {/* Close button */}
-        <button className="popup-close" onClick={handleClose} aria-label="Close popup">
+        {/* 关闭按钮 */}
+        <button className="popup-close" onClick={handleClose} aria-label="关闭弹窗">
           ×
         </button>
 
         <div className="popup-gradient-edge" />
 
         <div className="popup-context-bar">
-          Claude Code for PMs is part of <a href="https://fullstackpm.com" target="_blank" rel="noopener noreferrer">The Full Stack PM</a>
+          Claude Code for PMs 隶属于 <a href="https://fullstackpm.com" target="_blank" rel="noopener noreferrer">The Full Stack PM</a>
         </div>
 
         {status === 'success' ? (
           <div className="popup-content">
             <div className="popup-success">
               <span className="popup-success-icon">🥞</span>
-              <h3>You're in the stack!</h3>
-              <p>Check your inbox for a welcome from Carl.</p>
+              <h3>你已加入 Stack！</h3>
+              <p>请查看收件箱，查收来自 Carl 的欢迎邮件。</p>
             </div>
           </div>
         ) : (
           <div className="popup-content">
             <div className="popup-inner">
-              {/* Left side - Value prop */}
+              {/* 左侧 - 价值主张 */}
               <div className="popup-left">
                 <div className="popup-header">
                   <span className="popup-emoji">🥞</span>
                   <div>
-                    <h3>Join the Stack</h3>
+                    <h3>加入 Stack</h3>
                     <p className="popup-subhead">
-                      Join <strong>12,000+</strong> PMs building with AI
+                      加入 <strong>12,000+</strong> 位使用 AI 构建产品的产品经理
                     </p>
                   </div>
                 </div>
                 <p className="popup-description">
-                  Get weekly insights on using AI tools like Claude Code and Cursor to build prototypes, automations, and more.
+                  获取每周见解，学习如何使用 Claude Code 和 Cursor 等 AI 工具构建原型、自动化工作流等。
                 </p>
               </div>
 
-              {/* Right side - Form */}
+              {/* 右侧 - 表单 */}
               <div className="popup-right">
                 <form onSubmit={handleSubmit} className="popup-form">
                   <input
@@ -179,9 +179,9 @@ export default function EmailPopup() {
                   />
                   <button type="submit" disabled={status === 'loading'}>
                     {status === 'loading' ? (
-                      <><Spinner /> Joining...</>
+                      <><Spinner /> 加入中...</>
                     ) : (
-                      'Join the Stack'
+                      '加入 Stack'
                     )}
                   </button>
                 </form>
@@ -189,9 +189,9 @@ export default function EmailPopup() {
                   <p className="popup-error">{errorMessage}</p>
                 )}
                 <div className="popup-trust">
-                  <TrustSignal>No spam</TrustSignal>
-                  <TrustSignal>Unsubscribe anytime</TrustSignal>
-                  <TrustSignal>Weekly only</TrustSignal>
+                  <TrustSignal>拒绝垃圾邮件</TrustSignal>
+                  <TrustSignal>随时退订</TrustSignal>
+                  <TrustSignal>每周一更</TrustSignal>
                 </div>
               </div>
             </div>
@@ -199,7 +199,7 @@ export default function EmailPopup() {
         )}
 
         <div className="popup-footer">
-          Made with 💛 and 🥞 by <a href="https://www.linkedin.com/in/carlvellotti/" target="_blank" rel="noopener noreferrer">Carl Vellotti</a>
+          由 <a href="https://www.linkedin.com/in/carlvellotti/" target="_blank" rel="noopener noreferrer">Carl Vellotti</a> 用 💛 和 🥞 制作
         </div>
       </div>
 

@@ -1,0 +1,269 @@
+---
+title: "1.7: Claude Code 导航"
+description: 掌握文件操作、搜索和导航技巧
+---
+
+## 1.7: Claude Code 导航
+
+ - **完成时间:** 15-20 分钟
+ - **先决条件:** 模块 1.1-1.6 完成
+
+> **在 Claude Code 中开始此模块:** 运行 `/start-1-7` 以启动交互式体验。
+
+## 📖 概览
+
+模块 1.7 涵盖最后的导航要点：输入模式、分析深度控制和工作流加速。这些技能将普通用户与高级用户区分开来。
+
+**你将学到:**
+1. **输入模式** - 编辑、自动接受和规划模式
+2. **思考关键词** - 控制分析深度 (think/think harder/ultrathink)
+3. **--dangerously-skip-permissions** - 关键工作流加速器
+
+**关键要点:** 掌握何时使用每种模式，按需调整分析深度，并消除工作流中的摩擦。
+
+
+## 🎛️ 三种输入模式
+
+Claude Code 有三种控制工作流执行的输入模式：
+
+| 模式 | 行为 | 最适合 | 切换方法 |
+|------|----------|----------|---------------|
+| **Edit** (默认) | 显示差异，等待批准 | 关键文件，学习，安全 | 按 Shift+Tab |
+| **Auto-Accept** | 立即应用更改 | 简单任务，受信任的操作 | 按 Shift+Tab |
+| **Plan** | 先创建包含待办事项的结构化计划 | 多步骤工作流，复杂研究 | 按 Shift+Tab |
+
+**切换:** 随时按 **Shift+Tab** 在模式之间循环。
+
+### 编辑模式 (默认)
+
+在应用之前显示每个文件更改。你审查并批准每个更改。
+
+**何时使用:**
+- 处理关键文件
+- 学习 Claude 如何处理任务
+- 需要控制和审查
+
+### 自动接受模式
+
+自动应用更改而不询问。快速且自主。
+
+**何时使用:**
+- 任务直截了当且清晰
+- 信任 Claude 正确执行
+- 想要速度胜过审查
+
+### 规划模式
+
+在执行之前创建包含自动生成的待办事项列表的结构化计划。预先查看策略。
+
+**何时使用:**
+- 复杂、多步骤工作流（3+ 个不同步骤）
+- 想要在执行前查看策略
+- 研究 → 综合 → 交付物 工作流
+- 多个智能体需要协调
+
+**示例待办事项列表:**
+```
+☐ Research TaskFlow's main competitors
+☐ Launch parallel agents to analyze AI features
+☐ Synthesize findings into competitive analysis
+☐ Create response strategy document
+```
+
+当 Claude 工作时：
+```
+✓ Research TaskFlow's main competitors
+→ Launch parallel agents to analyze AI features
+☐ Synthesize findings into competitive analysis
+☐ Create response strategy document
+```
+
+
+## 🎯 模式选择指南
+
+| 任务 | 推荐模式 | 原因 |
+|------|------------------|-----|
+| 研究 5 个竞争对手并制定策略 | 规划模式 | 复杂，多步骤，受益于可见性 |
+| 添加深色模式切换 | 自动接受/编辑 | 简单，单步任务 |
+| 修复 README 中的拼写错误 | 自动接受/编辑 | 简单，低风险 |
+| 从粗略笔记创建 PRD | 规划模式 | 多步骤：研究 → 大纲 → 起草 |
+| 分析 CSV 文件 | 自动接受 | 直截了当的分析 |
+| 多来源研究综合 | 规划模式 | 复杂：智能体 → 综合 |
+
+**快速决策树:**
+1. 复杂多步骤工作流？ → **规划模式**
+2. 直截了当且低风险？ → **自动接受**
+3. 否则 → **编辑模式** (最安全)
+
+
+## 💡 思考控制关键词
+
+在 Claude 响应之前调整分析深度：
+
+| 关键词 | 深度 | 何时使用 |
+|---------|-------|-------------|
+| `think about X` | 正常 | 大多数任务 |
+| `think harder about X` | 更深 | 复杂决策 |
+| `ultrathink about X` | 最大 | 真正困难的问题（显示为彩虹！） |
+
+**示例:**
+
+使用规划模式：
+```
+Think harder about competitive threats, then research competitors' AI features
+and create response strategy
+```
+
+使用任何模式：
+```
+Ultrathink about whether we should build or buy this feature
+```
+
+**专业提示:** 思考关键词在所有输入模式下都有效，特别是在复杂策略工作的规划模式中有用。
+
+
+## ⚡ Dangerously Skip Permissions (危险地跳过权限)
+
+### 标志
+
+```bash
+claude --dangerously-skip-permissions
+```
+
+**它做什么:** 跳过所有权限提示。Claude 未经批准执行命令。
+
+**转变:**
+
+| 没有标志 | 有标志 |
+|--------------|-----------|
+| Can I write to user-story-1.md? → Yes<br/>Can I write to user-story-2.md? → Yes<br/>Can I write to user-story-3.md? → Yes<br/>[对每个文件重复...] | [立即创建所有 5 个文件]<br/>完成！ |
+
+### 为什么它值得
+
+**权衡:**
+- **风险:** 没有安全网，命令立即执行
+- **回报:** 纯粹的心流状态，快 10 倍，真正的工作流速度
+
+### Carl 的强烈推荐
+
+一旦你完成了等级 1 并信任 Claude Code，**使用它**。速度提升是值得的。
+
+**创建 shell 别名:**
+```bash
+alias cc="claude --dangerously-skip-permissions"
+```
+
+然后只需输入 `cc` 即可在快速模式下启动 Claude Code。
+
+**何时使用:**
+- 完成等级 1
+- 信任 Claude Code
+- 在安全环境中工作
+- 想要专业速度
+
+**何时避免:**
+- 生产代码
+- 不确定 Claude 会做什么
+- 学习新项目
+
+
+## 🛑 停止执行
+
+随时**按 Esc** 停止 Claude 执行。
+
+**发生什么:**
+- 执行立即停止
+- 到目前为止创建的文件保留
+- 可以审查并决定下一步
+
+**专业提示:** 在规划模式中，一旦你看到了价值，按 Esc，然后在准备好时审查文件。
+
+
+## 💡 最佳实践
+
+**做:**
+- 对多步骤工作流（3+ 步骤）使用规划模式
+- 根据任务复杂性切换模式
+- 使用思考关键词对复杂决策进行更深入的分析
+
+**不要:**
+- 对简单任务使用规划模式（大材小用）
+- 一直停留在一种模式（要灵活）
+- 忘记 Esc 停止执行
+
+**工作流发展:**
+- **第一周:** 对一切使用编辑模式（学习 Claude 如何工作）
+- **第二周:** 对简单任务使用自动接受
+- **第三周:** 对复杂工作流使用规划模式
+- **第四周:** 根据任务自然切换模式
+
+
+## ❓ 常见问题
+
+**我什么时候应该使用规划模式而不是直接让 Claude 做？**
+
+当任务有 3+ 个不同步骤或涉及 研究 → 综合 → 交付物 时使用规划模式。对于简单、明显的任务跳过。
+
+**我可以在 Claude 执行之前编辑计划吗？**
+
+可以！要求调整："Add a step to..." 或 "Remove the X part" 完美工作。
+
+**我应该总是使用 --dangerously-skip-permissions 吗？**
+
+当你信任 Claude 且速度很重要时使用。对于生产代码或学习新项目时避免使用。
+
+**思考关键词在所有模式下都有效吗？**
+
+是的！它们在编辑、自动接受和规划模式下调整分析深度。
+
+
+## 🎉 下一步是什么？
+
+### 等级 1 完成
+
+**恭喜！** 你已经掌握了所有等级 1：基础。
+
+**获得的技能:**
+- ✅ 文件操作（读、写、编辑、引用）
+- ✅ 使用你的可视化工作区进行实时可视化
+- ✅ 产品经理文档处理
+- ✅ 用于克隆自己的并行智能体
+- ✅ 专门的子智能体团队
+- ✅ 永久项目记忆 (CLAUDE.zh.md)
+- ✅ 工作流模式选择
+- ✅ 分析深度控制
+- ✅ 无摩擦的心流状态工作
+
+**节省时间: 每周 10-15 小时**
+
+### 等级 2: 真实产品经理工作流
+
+准备好每周节省 20+ 小时了吗？等级 2 教授日常产品经理工作流。
+
+**模块 2.1: 撰写 PRD**
+- 将粗略想法转化为完整的 PRD
+- 研究智能体和苏格拉底式改进
+
+**模块 2.2: 分析产品数据与构建仪表板**
+- 处理大型数据集 (CSV, 调查)
+- 多来源研究综合
+
+**模块 2.3: 构建产品战略与路线图**
+- 大规模竞争研究
+- 战略综合和路线图创建
+
+**开始等级 2:**
+```
+/start-2-1
+```
+
+**庆祝这一成就！** 你已经为 Claude Code 精通打下了完整的基础。🎓
+
+
+---
+
+**关于本课程**
+
+由 [Carl Vellotti](https://www.linkedin.com/in/carlvellotti/) 创建。如果你对本模块或整个课程有任何反馈，请给我留言！我正在为产品构建者建立一个通讯和社区，请查看 [The Full Stack PM](https://fullstackpm.com/subscribe?utm_source=ccforpms&utm_medium=course&utm_campaign=claude-code-navigation).
+
+**源仓库：** [github.com/carlvellotti/claude-code-pm-course](https://github.com/carlvellotti/claude-code-pm-course)
