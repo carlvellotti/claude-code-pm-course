@@ -180,7 +180,7 @@ I've also provided user research insights in `user-research/pain-points.md` that
 
 Now here's how we'll kick this off. You'll @ mention three files:
 - **`taskflow-company-context.md`** - so I have full context on the company
-- **`methods/socratic-questioning.md`** - the framework I'll use to help sharpen your thinking
+- **`socratic-questioning.md`** - the framework I'll use to help sharpen your thinking
 - **Your chosen template** - the structure we'll use for the PRD
 
 For this practice scenario, the feature is: **an AI voice chat interface for managing your to-do list**
@@ -204,7 +204,7 @@ It should be something like this:
 
 Read all three @-mentioned files:
 - `taskflow-company-context.md`
-- `methods/socratic-questioning.md`
+- `socratic-questioning.md`
 - The chosen template file
 
 **Present it like this:**
@@ -234,7 +234,7 @@ Ready for the questions?"
 
 **ACTION:**
 
-Read `methods/socratic-questioning.md` and extract the first key question from the framework
+Read `socratic-questioning.md` and extract the first key question from the framework
 
 **Present it like this:**
 
@@ -575,7 +575,7 @@ You now know how to use Claude Code for PRD writing. More modules coming soon!}"
 - The three strategic approaches concept works with any template structure
 
 **Socratic questioning:**
-- Pull actual questions from `methods/socratic-questioning.md`
+- Pull actual questions from `socratic-questioning.md`
 - Tailor them to the AI voice chat + to-do list feature context
 - If student skips, provide thoughtful answers based on TaskFlow context
 - Keep it to 3-5 questions total (don't overdo it)
