@@ -1,4 +1,4 @@
-import courseStructure from '../../../course-materials/course-structure.json'
+import courseStructure from '../../../../course-materials/course-structure.json'
 
 // Generate navigation from course structure config
 const level1 = courseStructure.levels.find(l => l.id === "1")!

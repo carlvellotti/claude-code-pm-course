@@ -1,6 +1,6 @@
 import React from 'react'
 import { useConfig } from 'nextra-theme-docs'
-import { useRouter } from 'next/router'
+import { useRouter } from 'nextra/hooks'
 
 const SITE_NAME = {
   en: 'Claude Code for Product Managers',
@@ -29,42 +29,11 @@ const HEAD_TITLE_HOME = {
 
 // Helper to get locale from path since we're not using Next.js i18n routing
 const useLocale = () => {
-  const { asPath } = useRouter()
-  return asPath.startsWith('/zh') ? 'zh' : 'en'
+  const { locale } = useRouter()
+  return (locale as 'en' | 'zh') || 'en'
 }
 
-const LanguageSwitch = () => {
-  const { asPath } = useRouter()
-  const locale = useLocale()
-  
-  // Calculate target path
-  let targetPath = ''
-  if (locale === 'zh') {
-    // Remove /zh prefix
-    targetPath = asPath.replace(/^\/zh/, '') || '/'
-  } else {
-    // Add /zh prefix
-    // Handle root / correctly
-    targetPath = asPath === '/' ? '/zh' : `/zh${asPath}`
-  }
-  
-  return (
-    <a 
-      href={targetPath} 
-      suppressHydrationWarning
-      style={{ 
-        padding: '0.5rem', 
-        fontSize: '0.875rem', 
-        fontWeight: 600,
-        textDecoration: 'none',
-        color: 'currentColor',
-        marginLeft: '0.5rem'
-      }}
-    >
-      {locale === 'en' ? '中文' : 'English'}
-    </a>
-  )
-}
+
 
 export default {
   logo: function Logo() {
@@ -86,7 +55,7 @@ export default {
     component: null
   },
   navbar: {
-    extraContent: <LanguageSwitch />
+
   },
   footer: {
     content: function Footer() {
@@ -107,6 +76,10 @@ export default {
     return { titleTemplate: `%s – ${SITE_NAME[locale]}` }
   },
   theme: 'dark',
+  i18n: [
+    { locale: 'en', name: 'English' },
+    { locale: 'zh', name: '中文' }
+  ],
   search: {
     placeholder: function Placeholder() {
       const locale = useLocale()

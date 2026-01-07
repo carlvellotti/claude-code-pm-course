@@ -9,7 +9,11 @@ const withNextra = nextra({
 /** @type {import('next').NextConfig} */
 const config = {
   output: 'export',        // static export for Pagefind
-  images: { unoptimized: true }
+  images: { unoptimized: true },
+  i18n: {
+    locales: ['en', 'zh'],
+    defaultLocale: 'en'
+  }
 }
 
 export default withNextra(config)
