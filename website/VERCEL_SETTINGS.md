@@ -11,7 +11,7 @@ Project Name: claude-code-pm-course (or whatever you prefer)
 
 ### Build & Development Settings
 ```
-Framework Preset:     Next.js
+Framework Preset:     Other (do NOT use Next.js preset)
 Root Directory:       website
 Build Command:        npm run build
 Output Directory:     out  

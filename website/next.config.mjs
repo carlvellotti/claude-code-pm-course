@@ -10,6 +10,7 @@ const withNextra = nextra({
 const config = {
   output: 'export',        // static export for Pagefind
   images: { unoptimized: true },
+  trailingSlash: true,
   i18n: {
     locales: ['en', 'zh'],
     defaultLocale: 'en'
