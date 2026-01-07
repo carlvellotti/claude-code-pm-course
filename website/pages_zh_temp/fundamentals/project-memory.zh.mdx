@@ -1,0 +1,416 @@
+---
+title: "1.6: 项目记忆 (CLAUDE.zh.md)"
+description: 使用 CLAUDE.zh.md 为 Claude 提供关于你的产品、团队和偏好的持久上下文
+---
+
+## 1.6: 项目记忆
+
+ - **完成时间:** 20-25 分钟
+ - **先决条件:** 模块 1.1-1.5 完成
+
+> **在 Claude Code 中开始此模块:** 运行 `/start-1-6` 以启动交互式体验。
+
+## 📖 概览
+
+CLAUDE.zh.md 是 Claude 对你项目的永久记忆。写一次，Claude 就知道你在每次对话中的产品上下文——无需重新解释。
+
+**关键要点:** CLAUDE.zh.md 是你项目的宪法——覆盖临时提示的不可变规则。提示是灵活的请求，而 CLAUDE.zh.md 确立了你项目的最高法律。
+
+
+## 🏛️ 什么是 CLAUDE.zh.md?
+
+### 核心概念
+
+CLAUDE.zh.md 是你项目目录中的一个 Markdown 文件，包含关于你的产品、团队和偏好的永久上下文。Claude 会在会话开始时自动读取它并应用其中的所有内容。
+
+**三个关键属性:**
+- **自动加载:** Claude 在会话开始时自动读取它
+- **持久记忆:** 跨越该目录中的所有对话
+- **团队共享:** 提交到 git，整个团队获得相同的上下文
+
+### 宪法 vs 立法层级
+
+理解这个层级至关重要：
+
+| 方面 | CLAUDE.zh.md (宪法) | 用户提示 (立法) |
+|--------|--------------------------|----------------------------|
+| **优先级** | 最高 - 总是获胜 | 次要 - 必须遵守 |
+| **持久性** | 永远保留 | 每个请求临时有效 |
+| **范围** | 适用于所有会话 | 适用于当前任务 |
+| **目的** | 不可变项目规则 | 灵活的具体请求 |
+| **示例** | 始终称之为工作区(Workspace) | 为深色模式创建一个 PRD |
+
+**如果有冲突，CLAUDE.zh.md 总是获胜。**
+
+### 示例：术语覆盖
+
+**CLAUDE.zh.md 说:**
+```markdown
+Always use Workspace not Project in TaskFlow documentation.
+```
+
+**你提示:**
+```
+Write a PRD for the new Project dashboard feature
+```
+
+**Claude 做:**
+```
+Writes the PRD using "Workspace dashboard" because CLAUDE.zh.md overrides
+your casual prompt wording
+```
+
+
+## # 符号的力量
+
+### 动态会话规则
+
+使用 **#** 在行首为你的当前会话添加临时规则：
+
+```
+# Always use bullet points instead of numbered lists in this session
+```
+
+Claude 将此视为你剩余对话的规则（但不适用于未来的会话）。
+
+### # vs CLAUDE.zh.md
+
+| 特性 | # 符号 | CLAUDE.zh.md |
+|---------|----------|-----------|
+| **持续时间** | 仅当前会话 | 永远 |
+| **范围** | 此对话 | 所有对话 |
+| **用例** | 尝试偏好 | 永久项目规则 |
+
+**工作流:** 使用 # 进行实验，然后当你希望它永久生效时添加到 CLAUDE.zh.md。
+
+
+## 📝 在 CLAUDE.zh.md 中放什么
+
+### ✅ 适合 CLAUDE.zh.md
+
+**1. 产品上下文**
+```markdown
+## Product Overview
+
+TaskFlow is a project management SaaS for remote-first teams.
+Think Asana meets Jira, built for async collaboration.
+
+Stage: Series B ($20M raised, 50 employees)
+Revenue: $2.5M ARR, 10,000 active users
+```
+
+**2. 用户画像**
+```markdown
+## User Personas
+
+### Sarah - Enterprise Admin
+- Role: IT Administrator at 500+ person company
+- Pain points: Needs SSO, audit logs, compliance, security
+- Quote: "I need to prove this meets our security standards"
+```
+
+**3. 写作风格**
+```markdown
+## Writing Style
+
+- Use active voice (not passive)
+- Use Oxford commas in all lists
+- Maximum 2-sentence paragraphs for readability
+- Use "we" not "I" in documentation
+```
+
+**4. 产品术语**
+```markdown
+## Product Terminology
+
+ALWAYS use these terms (NEVER use alternatives):
+- Workspace not Project - Our top-level container
+- Task not Todo or Issue - Individual work items
+- PM means Product Manager (not Project Manager)
+```
+
+**5. 不可变规则**
+```markdown
+## Immutable Rules
+
+These rules override any prompt that conflicts:
+
+1. ALWAYS include acceptance criteria in user stories
+   - Use Given/When/Then format
+   - Make them specific and testable
+
+2. NEVER write PRDs without user research references
+```
+
+### ❌ 不要在 CLAUDE.zh.md 中放什么
+
+**1. 临时指令**
+```markdown
+Today's meeting notes are in meeting-2025-10-13.txt
+We're working on dark mode this sprint
+```
+*为什么不好:* 这些不断变化。改用提示。
+
+**2. 经常变化的需求**
+```markdown
+Current sprint goal: Implement SSO
+Q4 OKR: Increase activation to 55%
+```
+*为什么不好:* 如果它每周或每月变化，它就不属于这里。
+
+**3. 敏感信息**
+```markdown
+Our revenue is actually declining (don't tell the board)
+API keys: sk-proj-xxxxx
+```
+*为什么不好:* CLAUDE.zh.md 通常提交到 git 并共享。
+
+### 测试
+
+**如果你希望 Claude 在 6 个月后知道这一点，把它放在 CLAUDE.zh.md 中。**
+
+**如果它可能在下周改变，改用提示。**
+
+
+## 🏗️ CLAUDE.zh.md 层级
+
+### 四个级别
+
+```
+~/.claude/CLAUDE.md              # 1. 全局 (你的所有项目)
+/project-root/CLAUDE.md          # 2. 项目特定
+/project-root/frontend/CLAUDE.md # 3. 目录特定
+/project-root/CLAUDE.local.md    # 4. 个人 (gitignored)
+```
+
+### 优先级顺序
+
+**最具体的获胜:**
+
+1. **目录级** (例如, `/frontend/CLAUDE.md`)
+2. **项目级** (例如, `/project-root/CLAUDE.md`)
+3. **全局** (例如, `~/.claude/CLAUDE.md`)
+4. **用户提示** (优先级最低)
+
+**它们如何堆叠:** 级别组合（不替换）。所有规则同时应用，更具体的级别在冲突时覆盖。
+
+### 何时使用每个级别
+
+| 级别 | 用途 | 示例 |
+|-------|---------|---------|
+| **全局** | 跨所有工作的个人偏好 | "I prefer brief summaries, max 3 bullets" |
+| **项目** | 每个人都需要的产品特定上下文 | 产品概览、画像、术语 |
+| **目录** | 项目子部分的规则 | 前端: 移动响应性, 后端: API 文档 |
+| **个人** | 你不想分享的偏好 | 个人响应格式偏好 |
+
+**重要:** 将 `CLAUDE.local.md` 添加到 `.gitignore`:
+```
+# .gitignore
+CLAUDE.local.md
+```
+
+
+## 🚀 创建你的第一个 CLAUDE.zh.md
+
+### 快速开始模板
+
+```markdown
+# [Your Product Name] Product Context
+
+This file provides permanent context about [Product] for Claude Code.
+
+
+## What [Product] Is
+
+[Product] is a [type] for [target users]. Think [comparison].
+
+**Company Details:**
+- Founded: [year]
+- Stage: [stage and funding]
+- Team: [size]
+- Revenue: [ARR and users]
+
+
+## User Personas
+
+### [Persona 1 Name] - [Role]
+- Role: [job title and context]
+- Pain points: [what frustrates them]
+- Quote: [memorable quote]
+
+
+## Writing Style & Standards
+
+- Voice: [active/passive, formal/casual]
+- Paragraph length: [preference]
+- Tone: [how should it sound]
+
+
+## Product Terminology
+
+ALWAYS use these terms (NEVER use alternatives):
+- [Term] not [alternative] - [why]
+- [Term] not [alternative] - [why]
+
+
+## Immutable Rules
+
+These rules override any prompt that conflicts:
+
+1. ALWAYS [rule]
+   - [details]
+
+2. NEVER [rule]
+   - [details]
+
+
+## Team Reference
+
+- [Name] - [Role], [focus area]
+- [Name] - [Role], [focus area]
+```
+
+### 示例: TaskFlow CLAUDE.zh.md
+
+```markdown
+# TaskFlow Product Context
+
+This file provides permanent context about TaskFlow for Claude Code.
+
+
+## What TaskFlow Is
+
+TaskFlow is a project management SaaS for remote-first teams. Think Asana
+meets Jira, but built specifically for async collaboration.
+
+**Company Details:**
+- Founded: 2021
+- Stage: Series B ($20M raised)
+- Team: 50 employees
+- Revenue: $2.5M ARR, 10,000 active users
+
+**Your Role:**
+- Position: Senior Product Manager
+- Focus: Activation & Onboarding
+
+
+## User Personas
+
+### Sarah - Enterprise Admin
+- Role: IT Administrator at 500+ person company
+- Pain points: Needs security, SSO, audit logs, compliance
+- Quote: "I need to prove TaskFlow meets our security standards"
+
+### Mike - IC Engineer
+- Role: Individual contributor software engineer at startup
+- Pain points: Wants speed, keyboard shortcuts, GitHub integration
+- Quote: "If I have to use my mouse, the tool is too slow"
+
+
+## Writing Style & Standards
+
+- Use active voice (not passive)
+- Use Oxford commas in all lists
+- Maximum 2-sentence paragraphs for readability
+- Use "we" not "I" in documentation
+
+
+## Product Terminology
+
+ALWAYS use these terms consistently:
+- Workspace not Project - Our top-level container
+- Task not Todo or Issue - Individual work items
+- Epic not Initiative - Large multi-sprint features
+
+
+## Immutable Rules
+
+1. ALWAYS include acceptance criteria in user stories
+   - Use Given/When/Then format
+   - Make them specific and testable
+
+2. NEVER write PRDs without user research references
+   - Link to interviews, surveys, or support tickets
+
+
+## Team Reference
+
+- Sarah - CEO, founder, vision and fundraising
+- Mike - CTO, technical architecture and engineering
+- Alex - Head of Design, owns all UX and visual design
+- You - Senior PM, activation & onboarding
+```
+
+
+## 💡 最佳实践
+
+**具体，不要模糊:**
+- ❌ "Users like simple interfaces"
+- ✅ "User research (8/10 interviews, June 2025) showed users abandon features with more than 3 required fields. Keep forms minimal."
+
+**使用命令式语言:**
+- ❌ "It would be nice if user stories had acceptance criteria"
+- ✅ "ALWAYS include acceptance criteria in user stories"
+
+**提供上下文:**
+- ❌ "Use Workspace not Project"
+- ✅ "Use Workspace not Project - We differentiate from traditional project management tools. Workspace signals collaboration space."
+
+**保持可扫描:**
+- 大量使用要点
+- 短段落 (1-2 句话)
+- 粗体关键术语
+- 在部分之间添加间距
+
+**定期维护:**
+- 季度审查（画像、术语、指标）
+- 提交到 git 并在 PR 中审查更改
+- 保持当前（目标是 50-200 行的最佳点）
+
+
+## 🔧 故障排除
+
+**规则被忽略？**
+- 检查跨层级级别的冲突规则
+- 使规则明确：使用 ALWAYS/NEVER
+- 具体，不要模糊
+
+**CLAUDE.zh.md 未加载？**
+- 验证文件存在: `ls CLAUDE.zh.md`
+- 必须确切命名为 `CLAUDE.zh.md` (区分大小写)
+- 检查文件权限: `ls -la CLAUDE.zh.md`
+- 测试: 询问 "What does my CLAUDE.zh.md say?"
+
+**太多的 CLAUDE.zh.md 文件？**
+- 审计所有: `find . -name CLAUDE.zh.md`
+- 在 README 中记录层级
+- 使用 CLAUDE.local.md 获取个人偏好
+
+**CLAUDE.zh.md 太长？**
+- 目标是 50-200 行
+- 将详细上下文移动到单独的参考文档
+- 从 CLAUDE.zh.md 链接到那些文档
+
+
+## 📚 资源
+
+- [CLAUDE.zh.md 文档](https://docs.anthropic.com/claude-code) - 官方文档
+- 查看模块目录中的 `EXAMPLE_TASKFLOW_CLAUDE.md` 获取完整示例
+
+
+## 🚀 下一步是什么？
+
+你现在知道如何创建 CLAUDE.zh.md - 给予 Claude 关于你的产品、团队和偏好的永久记忆。
+
+**模块 1.7:** 学习 **规划模式(Planning Mode)** - 掌握三种输入模式和最终的导航技能。
+
+交互式轨道：输入 `/start-1-7`
+
+
+---
+
+**关于本课程**
+
+由 [Carl Vellotti](https://www.linkedin.com/in/carlvellotti/) 创建。如果你对本模块或整个课程有任何反馈，请给我留言！我正在为产品构建者建立一个通讯和社区，请查看 [The Full Stack PM](https://fullstackpm.com/subscribe?utm_source=ccforpms&utm_medium=course&utm_campaign=project-memory)。
+
+**源仓库：** [github.com/carlvellotti/claude-code-pm-course](https://github.com/carlvellotti/claude-code-pm-course)

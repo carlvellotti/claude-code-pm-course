@@ -1,0 +1,421 @@
+---
+title: "3.1.3: 一致性与风格"
+description: "掌握提示词、参考图像、网格和变体的黄金法则，以实现一致的 AI 图像生成"
+keywords: "提示词黄金法则, 参考图像, 风格一致性, 图像变体, gemini 提示词"
+---
+
+## 3.1.3: 一致性与风格
+
+- **完成时间:** 20 分钟
+- **先决条件:** 理解基础知识 (模块 3.1.2)
+
+> **在 Claude Code 中开始此模块:** 运行 `/start-3-1-3` 开始互动体验。
+
+## 概述
+
+模块 3.1.3 将教你如何编写能获得惊人结果并保持生成一致性的提示词。你将学习 Google 的提示词黄金法则、如何使用参考图像，以及探索多个方向的技术。
+
+**核心要点:** 伟大的结果来自于清晰的沟通，而不是神奇的关键词。像给人类设计师下简报一样与 Gemini 对话。
+
+
+## 提示词的黄金法则
+
+Google 发布了关于 Gemini 图像生成的官方指南。这四条法则将改变你的结果。
+
+### 法则 1: 编辑，不要重摇 (Edit, Don't Re-roll)
+
+**如果图像有 80% 是正确的，要求具体的更改，而不是从头开始。**
+
+这是最重要的一条规则。Gemini 是一个思维模型——它保持上下文并理解你的创意方向。当你进行迭代时，它会在有效的基础上进行构建。
+
+**不要这样做:**
+```
+[生成图像]
+"不太对"
+[从头再次生成]
+[从头再次生成]
+[从头再次生成]
+```
+
+**要这样做:**
+```
+[生成图像]
+"让光线更暖一些"
+"把主体移到左边"
+"增加更多对比度"
+[完成]
+```
+
+**为什么有效:** 每次细化都给 Gemini 提供了更多关于你想要什么的信息。从头开始会丢弃所有这些上下文。
+
+
+### 法则 2: 使用自然语言和完整句子
+
+**像给人类艺术家下简报一样与 Gemini 交谈，而不是写搜索关键词。**
+
+你可能会在网上看到“标签汤 (tag soup)”式的提示词——像搜索查询一样用逗号分隔的关键词。这是一种过时的方法。Gemini 是一个理解自然语言的思维模型。
+
+**标签汤 (过时):**
+```
+professional headshot, business attire, confident, studio lighting,
+bokeh background, sharp focus, 8k, trending on artstation
+```
+
+**自然语言 (更好):**
+```
+A professional headshot of a confident business executive in a
+modern studio setting. Soft, even lighting creates a warm atmosphere.
+The background has a subtle blur that keeps focus on the subject.
+(一位自信的企业高管在现代工作室环境中的专业头像。柔和均匀的灯光营造出温暖的氛围。
+背景有微妙的模糊，使焦点保持在主体上。)
+```
+
+**为什么有效:** 完整句子提供了上下文和元素之间的关系。Gemini 理解“营造温暖的柔和灯光”比理解“柔和灯光，温暖”要好得多。
+
+
+### 法则 3: 具体且具有描述性
+
+**定义主体、环境、灯光、情绪、纹理和材质。深入细节。**
+
+Gemini 可以处理惊人的细节——远超你的预期。你越具体，输出就越接近你的愿景。
+
+**模糊:**
+```
+A coffee shop
+(一家咖啡店)
+```
+
+**具体:**
+```
+A cozy corner coffee shop on a rainy afternoon. Warm Edison bulb
+lighting casts golden pools on worn wooden tables. Steam rises from
+ceramic mugs. Rain streaks down floor-to-ceiling windows. A few
+patrons read books in overstuffed leather armchairs. The walls are
+exposed brick with vintage concert posters. Soft jazz plays from
+an unseen speaker.
+(一个雨天下午的舒适街角咖啡店。温暖的爱迪生灯泡在磨损的木桌上投下金色的光池。
+蒸汽从陶瓷杯中升起。雨水顺着落地窗流下。几位顾客坐在塞满填充物的真皮扶手椅上看书。
+墙壁是裸露的砖墙，贴着复古的音乐会海报。看不见的扬声器播放着柔和的爵士乐。)
+```
+
+**需要考虑的元素:**
+- **主体:** 谁/什么是焦点？
+- **环境:** 这发生在哪里？
+- **灯光:** 自然光、人造光、一天中的时间、方向、质量
+- **情绪:** 情感基调、氛围
+- **纹理:** 表面质量、材质
+- **颜色:** 色调、对比度、温度
+- **构图:** 取景、视角、焦点
+
+**专业提示:** 如果你不确定如何添加细节，可以问 Claude: "Help me expand this prompt with more specifics." (帮我用更多细节扩展这个提示词。)
+
+
+### 法则 4: 提供上下文
+
+**告诉 Gemini “为什么”或“给谁看”，以便它做出更明智的创意决策。**
+
+上下文塑造创意选择。“为儿童读物”绘制的肖像与“为奢侈品牌活动”绘制的同一主题看起来完全不同。
+
+**没有上下文:**
+```
+A lion in a savanna
+(稀树草原上的狮子)
+```
+
+**有上下文:**
+```
+A lion in a savanna, for a nature documentary title card.
+The image should feel majestic and cinematic, capturing the
+power and dignity of wildlife.
+(稀树草原上的狮子，用于自然纪录片的标题卡。
+图像应感觉宏伟且具有电影感，捕捉野生动物的力量和尊严。)
+```
+
+**上下文示例:**
+- "for a pitch deck to investors" (用于给投资者的演示文稿)
+- "for a children's educational app" (用于儿童教育应用)
+- "for a premium subscription service landing page" (用于高级订阅服务落地页)
+- "in the style of Apple product marketing" (采用 Apple 产品营销的风格)
+- "targeting manufacturing operations managers" (针对制造运营经理)
+
+**为什么有效:** Gemini 使用上下文来对风格、基调、构图和细节水平做出适当的选择。
+
+
+## 参考图像
+
+参考图像是你控制一致性和风格的秘密武器。你可以提供图像供 Gemini 用作视觉输入。
+
+### 参考图像的类型
+
+| 类型 | 目的 | 示例 |
+|------|---------|---------|
+| **风格参考 (Style reference)** | 捕捉视觉美感 | 落地页设计、艺术风格 |
+| **主体参考 (Subject reference)** | 保持角色一致性 | 人物照片、产品照 |
+| **构图参考 (Composition reference)** | 指导布局和取景 | 线框图、截图 |
+
+### 单一风格参考
+
+提供一张图像来捕捉其视觉风格：
+
+```
+Generate a [your subject] in the style of this reference image
+(以此参考图像的风格生成一个 [你的主体])
+```
+
+Gemini 分析参考图像的颜色、灯光、构图和艺术手法——然后将该风格应用于你的新主体。
+
+**用例:**
+- 重现品牌的视觉语言
+- 匹配现有的活动美学
+- 实现特定的艺术风格
+
+### 多个主体参考
+
+为了保持角色一致，提供同一主体的多张照片：
+
+```
+Generate [prompt] using these reference photos of [subject]
+(使用 [主体] 的这些参考照片生成 [提示词])
+```
+
+**专业提示:** 参考照片越多 = 结果越好。3-5 张不同角度和光照条件下的照片有助于 Gemini 充分理解主体。
+
+**用例:**
+- 看起来像特定真人的画像
+- 不同角度的产品照
+- 跨多张图像的角色一致性
+
+### 混合搭配
+
+结合风格参考与主体参考：
+
+```
+Create [subject from reference A] in the style of [reference B]
+(以 [参考图 B] 的风格创作 [参考图 A 中的主体])
+```
+
+这让你将真实主体放入艺术风格中，或将品牌美学应用于新内容。
+
+**课程示例:**
+- 风格参考: 大胆的篮球落地页
+- 主体参考: 两只猫 (Winter 和 Piper) 的照片
+- 结果: "APEX CAT" 落地页，采用篮球风格，展示真实的猫
+
+
+## 网格: 一张图中的多个视图
+
+网格在单个输出中生成多个相关图像——非常适合角色表、产品视图或演示幻灯片。
+
+### 何时使用网格
+
+| 用例 | 网格格式 | 示例 |
+|----------|-------------|---------|
+| 角色设计 | 3x3 姿势 | 电子游戏精灵表 |
+| 产品视图 | 2x2 角度 | 电子商务产品照 |
+| 演示文稿 | 2x4 幻灯片 | 教学材料 |
+| UI 概念 | 2x3 屏幕 | 应用设计探索 |
+
+### 如何请求网格
+
+明确说明网格结构：
+
+```
+Create a 3x3 grid showing [subject] in 9 different poses:
+- Row 1: Standing, walking, running
+- Row 2: Sitting, jumping, waving
+- Row 3: Thinking, pointing, celebrating
+(创建一个 3x3 网格，展示 [主体] 的 9 种不同姿势：
+- 第 1 行: 站立、行走、奔跑
+- 第 2 行: 坐着、跳跃、挥手
+- 第 3 行: 思考、指点、庆祝)
+```
+
+**关键提示:**
+- 指定确切的网格尺寸 (3x3, 2x4 等)
+- 描述每个单元格应包含的内容
+- 要求所有单元格风格一致
+
+### PM 的网格用例
+
+- **角色表情:** 同一角色展示不同情绪
+- **用户旅程阶段:** 每个步骤的视觉表示
+- **功能截图:** 一张图中展示多个应用屏幕
+- **演示幻灯片:** 完整的幻灯片组可视化
+
+
+## 变体: 探索方向
+
+与其致力于一个方向，不如生成多个变体并选择最好的。
+
+### 变体工作流
+
+1. **生成 2-3 个变体**，基于同一概念
+2. **审查所有选项** - 它们会有明显不同的诠释
+3. **挑选你最喜欢的**
+4. **对其进行迭代**，使用模块 3.1.2 中的技术
+
+```
+Generate 3 variants of [concept] with different creative interpretations
+(生成 [概念] 的 3 个具有不同创意诠释的变体)
+```
+
+### 何时使用变体
+
+- **不确定风格:** 让 Gemini 展示选项
+- **客户演示:** 提供多个方向
+- **创意探索:** 看看有什么可能
+- **突破瓶颈:** 当你不确定自己想要什么时
+
+### 变体 vs 迭代
+
+| 变体 | 迭代 |
+|----------|-----------|
+| 探索不同方向 | 细化一个方向 |
+| 一次生成多个 | 一步步构建 |
+| 选择，然后迭代 | 编辑，不要重摇 |
+| 适用于: 探索 | 适用于: 细化 |
+
+**最佳实践:** 使用变体找到你的方向，然后切换到迭代来完善它。
+
+
+## 融会贯通
+
+这是一个结合所有技术的完整工作流：
+
+### 第 1 步: 编写详细提示词 (法则 2, 3, 4)
+
+```
+Create a professional persona portrait for a pitch deck (context).
+The subject is Marcus, an operations manager in his mid-40s (subject).
+He's in a manufacturing environment, wearing a polo shirt and safety vest (setting).
+Confident but approachable expression (mood).
+Natural lighting from large warehouse windows (lighting).
+(为演示文稿创建一个专业的角色画像 [上下文]。
+主体是 Marcus，一位 40 多岁的运营经理 [主体]。
+他身处制造环境，穿着 Polo 衫和安全背心 [环境]。
+自信但平易近人的表情 [情绪]。
+来自大型仓库窗户的自然光 [灯光]。)
+```
+
+### 第 2 步: 提供参考 (如果有)
+
+- 真实人物的参考照片，或
+- 期望外观的风格参考
+
+### 第 3 步: 生成变体 (如果正在探索)
+
+```
+Generate 3 variants with different compositions
+(生成 3 个具有不同构图的变体)
+```
+
+### 第 4 步: 挑选并迭代 (法则 1)
+
+```
+I like variant 2. Make the lighting warmer and have him
+looking slightly to the left.
+(我喜欢变体 2。让光线更暖一些，让他稍微向左看。)
+```
+
+### 第 5 步: 最终定稿
+
+```
+Perfect. Regenerate at 2K resolution for the final version.
+(完美。以 2K 分辨率重新生成最终版本。)
+```
+
+
+## 最佳实践
+
+### 要做:
+- **使用完整句子** - 自然地交流
+- **对细节具体描述** - Gemini 可以处理
+- **提供上下文** - 解释目的
+- **使用参考图像** - 用于风格和主体一致性
+- **耐心地迭代** - 细化而不是重新开始
+- **生成变体** - 在探索方向时
+
+### 不要:
+- **不要使用标签汤** - 它已过时
+- **不要模糊** - 具体性带来结果
+- **不要省略上下文** - “为什么”很重要
+- **不要不断重新开始** - 编辑有效的内容
+- **不要一次做太多更改** - 一次一件事
+
+
+## 故障排除
+
+### 输出与风格参考不匹配
+
+- 参考可能太复杂 - 尝试更干净的示例
+- 明确说明: "Match the color palette and lighting style of the reference" (匹配参考的调色板和灯光风格)
+- 某些风格比其他风格更难复制
+
+### 角色看起来不一致
+
+- 提供更多参考照片 (3-5 张不同角度)
+- 具体描述识别特征
+- 考虑使用专门的角色会话
+
+### 网格单元格不一致
+
+- 明确要求 "consistent style across all cells" (所有单元格风格一致)
+- 描述应保持不变的共享元素
+- 为整个网格使用风格参考
+
+### 变体太相似
+
+- 要求 "meaningfully different creative interpretations" (有意义的不同创意诠释)
+- 指定要改变的不同方面: "different compositions" (不同构图) 或 "different color palettes" (不同调色板)
+- 在提示词中给 Gemini 更多创意自由度
+
+
+## 快速参考
+
+```
+黄金法则:
+  1. 编辑，不要重摇
+  2. 自然语言，不要标签汤
+  3. 具体且具有描述性
+  4. 提供上下文 ("为什么" 和 "给谁看")
+
+参考图像:
+  - 风格参考 → 捕捉美学
+  - 主体参考 → 保持一致性
+  - 多个参考 → 更高准确度
+
+网格:
+  - 指定尺寸 (3x3, 2x4)
+  - 描述每个单元格
+  - 要求风格一致
+
+变体:
+  - 生成 2-3 个选项
+  - 挑选最好的
+  - 然后迭代
+```
+
+
+## 下一步是什么？
+
+你知道如何编写很棒的提示词并保持一致性。现在是时候建立一个随时间复利的系统了。
+
+**模块 3.1.4** 教你构建风格数据库——一个可重用的风格库，你可以将其应用于任何项目。你还将学习从你找到的任何图像中提取风格。
+
+互动轨道: 输入 `/start-3-1-4`
+
+
+## 资源
+
+- [Dribbble](https://dribbble.com/) - 设计灵感，搜索要提取的风格
+- [Behance](https://www.behance.net/) - 专业作品集，寻找可参考的视觉风格
+- [Unsplash](https://unsplash.com/) - 免费图库，用作参考图像
+
+
+---
+
+**关于本课程**
+
+由 [Carl Vellotti](https://www.linkedin.com/in/carlvellotti/) 创建。查看 [The Full Stack PM](https://fullstackpm.com/subscribe?utm_source=ccforpms&utm_medium=course&utm_campaign=nano-banana-style) 获取更多 PM 构建者内容。
+
+**源代码库:** [github.com/carlvellotti/claude-code-pm-course](https://github.com/carlvellotti/claude-code-pm-course)

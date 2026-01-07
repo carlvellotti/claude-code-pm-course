@@ -1,0 +1,39 @@
+---
+title: Search
+description: Full-text search across all course content
+---
+
+# Search
+
+Use the search box below to find content across all course pages. The search is powered by Pagefind and works entirely client-side (no server needed).
+
+<link rel="stylesheet" href="/pagefind/pagefind-ui.css" />
+<div id="search"></div>
+<script src="/pagefind/pagefind-ui.js"></script>
+<script dangerouslySetInnerHTML={{__html: `
+  if (typeof window !== "undefined") {
+    window.addEventListener("DOMContentLoaded", () => {
+      new PagefindUI({ 
+        element: "#search", 
+        showImages: false, 
+        baseUrl: "/",
+        showSubResults: true
+      })
+    })
+  }
+`}} />
+
+## Search Tips
+
+- **Exact phrases**: Use quotes like `project memory`
+- **Multiple terms**: Search for `PRD template` to find pages with both words
+- **Filters**: Results show which section each match is from
+
+## Cant Find Something?
+
+If you cant find what youre looking for:
+- Try different keywords or synonyms
+- Browse the sidebar navigation
+- Check the [Company Context](/company-context/overview) for TaskFlow background
+- Start with [Getting Started](/getting-started/introduction) for course basics
+

@@ -1,0 +1,217 @@
+---
+title: "1.2: Visualizing Your Workspace"
+description: Set up a visual workspace to see your files alongside Claude Code for a seamless split-screen workflow
+---
+
+## 1.2: Visualizing Your Workspace
+
+ - **Time to Complete:** 15-20 minutes
+ - **Prerequisites:** Module 1.1 complete, basic familiarity with file systems
+
+
+> **Start this module in Claude Code:** Run `/start-1-2` to kick off the interactive experience.
+
+## Overview
+
+Set up a visual workspace to see your project files in real-time alongside Claude Code for a seamless split-screen workflow.
+
+**Key takeaway:** A visual workspace lets you watch files appear and update as Claude works.
+
+
+## Why Visualization Matters
+
+Working with Claude Code in a terminal feels like working blind. You ask Claude to create documents, but you can't see what's happening.
+
+**The solution:** Open a visual editor alongside your terminal. Now you can:
+- Watch files appear as Claude creates them
+- Read documents while Claude is working
+- Verify everything is organized correctly
+- Always know exactly what's happening
+
+This transforms Claude Code from a mysterious black box into a transparent tool you can watch and verify in real-time.
+
+
+## Choose Your Tool
+
+### Nimbalyst (Recommended)
+
+**Best for:** Claude Code users who want the smoothest experience
+
+![Nimbalyst - Visual workspace for Claude Code](/images/nimbalyst-hero.webp)
+
+[Nimbalyst](https://nimbalyst.com/for-product-managers?ref=carlvellotti&utm_source=carlvellotti&utm_medium=ccforpms&utm_campaign=partner) is a free, purpose-built wrapper for Claude Code with:
+- **WYSIWYG markdown editing** - See formatted text, not raw markdown syntax
+- **File diffs** - See exactly what Claude changed when editing files
+- **Hidden folder visibility** - Can see the `.claude/` folder (unlike Obsidian)
+- **Session management** - Manage multiple Claude Code sessions
+- **Integrated with Claude Code** - Edit your markdown and work with Claude Code all in one tool without switching to the command line
+
+**Download:** https://nimbalyst.com/for-product-managers?ref=carlvellotti&utm_source=carlvellotti&utm_medium=ccforpms&utm_campaign=partner
+
+### Obsidian
+
+**Best for:** Users who want a standalone note-taking app
+
+[Obsidian](https://obsidian.md/) is a free, popular markdown editor with:
+- Clean, distraction-free interface
+- Wikilinks (`[[filename]]`) for connecting notes
+- Graph view to visualize note connections
+- Large plugin ecosystem
+
+**Limitations:**
+- Cannot display hidden folders like `.claude/` - you'll use Finder/Explorer for those
+- Requires you work in 2 tools, Obsidian for markdown file editing and the terminal for Claude Code
+
+**Download:** https://obsidian.md/download
+
+### VS Code / Cursor
+
+**Best for:** Users who already use these tools or want code editing capabilities
+
+- Full-featured code editors
+- Can show hidden folders
+- Extensions for markdown preview
+- More complex than needed for pure PM work
+
+
+## Setup Guide
+
+### Nimbalyst Setup
+
+1. **Download:** Visit https://nimbalyst.com/for-product-managers?ref=carlvellotti&utm_source=carlvellotti&utm_medium=ccforpms&utm_campaign=partner and click download
+2. **Install:** Run the installer for your OS
+3. **Open project:** Open your course folder in Nimbalyst
+4. **Split-screen:** Position Claude Code terminal and Nimbalyst side-by-side
+
+### Obsidian Setup
+
+1. **Download:** Visit https://obsidian.md/download (free for personal use)
+2. **Open your project:** Select "Open folder as vault" and navigate to your course folder
+3. **Split-screen:** Position Claude Code terminal and Obsidian side-by-side
+
+**Note:** Ask Claude for the exact path if needed: `What's the path to my course folder?`
+
+
+## The .claude/ Folder
+
+The `.claude/` folder contains agents, commands, and settings. Access depends on your tool:
+
+| Tool | Can see .claude/? | How to access |
+|------|-------------------|---------------|
+| **Nimbalyst** | Yes | Visible in file browser |
+| **Obsidian** | No | Use Finder/Explorer |
+| **VS Code** | Yes | Enable hidden files |
+
+**To view `.claude/` in Finder/Explorer:**
+- **Mac:** Press `Cmd + Shift + .` in Finder to show hidden folders
+- **Windows:** Enable "Hidden items" in File Explorer View tab
+
+**When you need it:** Module 1.5 (Custom Sub-Agents) and later. For now, focus on regular project files.
+
+**Note:** Claude Code can always access `.claude/` files regardless of your editor.
+
+
+## Real-Time Visualization Demo
+
+When Claude creates or edits files, you'll watch them appear in your editor instantly.
+
+**Try it:**
+
+1. Open your editor with your project folder
+2. In Claude Code, ask: *Create a file called test-visualization.md with some content*
+3. Watch your editor - the file appears immediately
+4. Click it to read what Claude wrote
+
+That's it! No refresh needed. Files update in real-time as Claude works.
+
+
+## Editor Tips
+
+### Nimbalyst Tips
+- Watch for highlighted diffs when Claude edits files
+- The `.claude/` folder is visible for building custom agents later
+
+### Obsidian Tips
+
+**Essential shortcuts:**
+- **`Cmd/Ctrl + O`** - Quick Switcher (jump to any file)
+- **`Cmd/Ctrl + Shift + F`** - Search across all files
+- **`Cmd/Ctrl + E`** - Toggle Reading/Editing view
+
+**Wikilinks:** Connect documents with `[[filename]]` syntax for easy navigation
+
+**Tags:** Organize with `#prd #user-research #q1-2025` for filtering
+
+**Stay in Reading view** for cleaner formatted display
+
+### VS Code Tips
+- **`Cmd/Ctrl + P`** - Quick open any file
+- Enable hidden files to see `.claude/`
+
+
+## Example: Real-Time Workflow
+
+**Without visualization:** Claude creates files, but you're unsure what happened or where they are.
+
+**With a visual workspace:** Watch files appear instantly, click to review content, verify organization - complete visibility and control.
+
+
+## Best Practices
+
+**Do:**
+- Use split-screen workflow constantly
+- Use quick-open shortcuts to navigate
+- Keep your editor focused on the project folder
+
+**Don't:**
+- Work full-screen terminal only (you're missing half the value)
+- Worry about mastering your editor right now (just use it as a file viewer)
+
+
+## Troubleshooting
+
+### I don't see any files
+
+**Likely cause:** Wrong folder opened
+
+**Fix:**
+1. Ask Claude: `What's the path to my course folder?`
+2. Re-open that exact folder in your editor
+3. Your files should now appear
+
+**Common mistake:** Opening a parent folder instead of the project folder itself
+
+**Example:**
+- Wrong: `/Users/yourname/Documents` (too high level)
+- Correct: `/Users/yourname/Documents/claude-code-pm-course`
+
+### Files aren't updating
+
+**Likely cause:** Editor needs to detect the change
+
+**Fix:**
+1. Click outside and back into editor window (forces refresh)
+2. Or: Close and reopen the specific file
+3. Or: Restart the editor (rare, but works)
+
+### I see raw markdown instead of formatted text
+
+**For Obsidian:** Press `Cmd/Ctrl + E` to toggle to Reading view, or click the book icon
+
+**For Nimbalyst:** Content should display formatted by default (WYSIWYG)
+
+### Where's the .claude/ folder?
+
+**Nimbalyst:** Should be visible in the file browser
+
+**Obsidian:** Hidden by design. Use Finder/Explorer:
+- **Mac:** Open Finder → Navigate to project → Press `Cmd + Shift + .`
+- **Windows:** Open File Explorer → Navigate to project → View tab → Check "Hidden items"
+
+---
+
+**About This Course**
+
+Created by [Carl Vellotti](https://www.linkedin.com/in/carlvellotti/). If you have any feedback about this module or the course overall, message me! I'm building a newsletter and community for PM builders, check out [The Full Stack PM](https://fullstackpm.com/subscribe?utm_source=ccforpms&utm_medium=course&utm_campaign=visualizing-files).
+
+**Source Repository:** [github.com/carlvellotti/claude-code-pm-course](https://github.com/carlvellotti/claude-code-pm-course)

@@ -7,11 +7,11 @@ def fix_frontmatter(file_path):
     with open(file_path, 'r', encoding='utf-8') as f:
         content = f.read()
     
-    # Check if file has frontmatter
+    # 检查文件是否有 frontmatter
     if not content.startswith('---'):
         return False
     
-    # Split frontmatter from content
+    # 将 frontmatter 与内容分离
     parts = content.split('---', 2)
     if len(parts) < 3:
         return False
@@ -19,7 +19,7 @@ def fix_frontmatter(file_path):
     frontmatter = parts[1].strip()
     body = parts[2]
     
-    # Parse frontmatter lines
+    # 解析 frontmatter 行
     lines = frontmatter.split('\n')
     fixed_lines = []
     
@@ -29,22 +29,22 @@ def fix_frontmatter(file_path):
             key = key.strip()
             value = value.strip()
             
-            # Remove existing quotes if present
+            # 如果存在现有引号，则将其移除
             if value.startswith('"') and value.endswith('"'):
                 value = value[1:-1]
             elif value.startswith("'") and value.endswith("'"):
                 value = value[1:-1]
             
-            # Clean the value - replace newlines and extra spaces
+            # 清理值 - 替换换行符和多余的空格
             value = value.replace('\n', ' ').replace('\r', '')
             value = re.sub(r'\s+', ' ', value)
             
-            # Quote the value
+            # 给值加上引号
             fixed_lines.append(f'{key}: "{value}"')
         else:
             fixed_lines.append(line)
     
-    # Reconstruct file
+    # 重构文件
     new_content = f"---\n{chr(10).join(fixed_lines)}\n---{body}"
     
     with open(file_path, 'w', encoding='utf-8') as f:
@@ -52,17 +52,17 @@ def fix_frontmatter(file_path):
     
     return True
 
-# Process all MDX files
+# 处理所有 MDX 文件
 pages_dir = Path('/Users/carl/claude-code-pm-course/website/pages')
 mdx_files = list(pages_dir.rglob('*.mdx'))
 
-print(f"Found {len(mdx_files)} MDX files")
+print(f"找到 {len(mdx_files)} 个 MDX 文件")
 fixed_count = 0
 
 for mdx_file in mdx_files:
     if fix_frontmatter(mdx_file):
         fixed_count += 1
-        print(f"✓ Fixed: {mdx_file.relative_to(pages_dir)}")
+        print(f"✓ 已修复: {mdx_file.relative_to(pages_dir)}")
 
-print(f"\n✅ Fixed {fixed_count} files")
+print(f"\n✅ 已修复 {fixed_count} 个文件")
 

@@ -1,0 +1,293 @@
+---
+title: "1.4: Agents for Parallel Work"
+description: "Master Claude Code parallel agents to process 10 files simultaneously. Learn to run multiple AI instances for batch PM workflows and analysis."
+keywords: 'claude code agents, parallel processing, AI agents, batch processing, claude code workflow'
+---
+
+## 1.4: Agents for Parallel Work
+
+ - **Time to Complete:** 25 minutes
+ - **Prerequisites:** Module 1.3 (File operations and @ references)
+
+
+> **Start this module in Claude Code:** Run `/start-1-4` to kick off the interactive experience.
+
+## 📖 Overview
+
+Module 1.4 introduces **agents** - independent instances of Claude that run in parallel. Instead of processing 10 meeting notes sequentially (50 minutes), spin up 10 agents to work simultaneously (5 minutes).
+
+**Key takeaway:** Agents transform Claude Code from a single assistant into a scalable team. This isn't just faster - it unlocks entirely new workflows.
+
+
+## 🤯 What Are Agents?
+
+### The Core Concept
+
+**Agents are independent instances of Claude that run in parallel.**
+
+Think of it like cloning yourself to work on multiple tasks simultaneously:
+
+**Sequential work (without agents):**
+```
+Task 1 (5 min) → Task 2 (5 min) → Task 3 (5 min) → ... → Task 10 (5 min)
+Total time: 50 minutes
+```
+
+**Parallel work (with agents):**
+```
+Task 1 (5 min) ┐
+Task 2 (5 min) │
+Task 3 (5 min) ├─→ All happen simultaneously
+...            │
+Task 10 (5 min)┘
+Total time: 5 minutes
+```
+
+### Agent Capabilities
+
+| Each agent has | Each agent does NOT have |
+|----------------|--------------------------|
+| Full file system access | Communication with other agents |
+| All Claude's capabilities | Shared state |
+| Independent context | Knowledge of other agents' results (until synthesis) |
+| Tool use (read/write files) | Sequential dependencies |
+
+
+## 🎯 When to Use Agents
+
+### Decision Framework
+
+| Scenario | Use Agents? | Agent Count |
+|----------|-------------|-------------|
+| Batch processing (10 meetings, 20 interviews) | ✅ Yes | Many (5-20+) |
+| Parallel research (5 competitors, 3 markets) | ✅ Yes | Few (2-5) |
+| Multi-source analysis (interviews + surveys + tickets) | ✅ Yes | Few (2-4) |
+| Single task | ❌ No | 0 - Just use Claude |
+| Sequential work (tasks depend on each other) | ❌ No | 0 |
+| Quick tasks (takes seconds) | ❌ No | 0 |
+
+### Use Agents For:
+
+- **Batch processing:** Same type of work on many items
+- **Parallel research:** Research multiple entities independently
+- **Multi-source analysis:** Different analysis on different sources
+- **Time-sensitive work:** Need results in hours, not days
+
+### Skip Agents For:
+
+- Single tasks (just prompt Claude directly)
+- Sequential work (tasks that depend on each other)
+- Quick tasks (simple requests taking seconds)
+- Context-dependent work (needs to build on previous work)
+
+
+## 🔧 How to Prompt for Agents
+
+### Pattern 1: Explicit Agent Request
+
+```
+Create 10 agents to process the 10 meeting notes in /meetings.
+Each agent should extract:
+- Key decisions
+- Action items
+- Blockers
+- Next steps
+
+Combine all results into @weekly-summary.md
+```
+
+### Pattern 2: Let Claude Decide
+
+```
+I have 15 competitor websites to research for features and pricing.
+Work in parallel to get this done quickly.
+```
+
+### Pattern 3: Specialized Agents
+
+```
+Launch 3 specialized agents:
+- Agent 1: Analyze all interview transcripts in /interviews
+- Agent 2: Process survey data in @survey-results.csv
+- Agent 3: Review support tickets in /support
+
+Synthesize findings into @user-research-insights.md
+```
+
+
+## 💼 Real-World Examples
+
+### Example 1: Meeting Processing
+
+**Scenario:** Monday morning, 10 meeting transcripts, standup in 1 hour.
+
+**Prompt:**
+```
+I have 10 meeting transcripts in /meetings/last-week/.
+
+Create 10 agents to process each meeting simultaneously.
+
+For each meeting, extract:
+- Key decisions made
+- Action items (with owners and due dates)
+- Blockers or risks raised
+
+Synthesize ALL findings into @monday-standup-prep.md with:
+- Section 1: Critical blockers
+- Section 2: Key decisions
+- Section 3: Action items by team member
+```
+
+**Result:** 5 minutes vs 60 minutes sequential work.
+
+### Example 2: Competitive Research
+
+**Scenario:** CEO needs competitive analysis on 5 competitors by end of day.
+
+**Prompt:**
+```
+Launch 5 agents to research these competitors simultaneously:
+- Asana, Linear, Monday.com, ClickUp, Notion
+
+For each competitor, research:
+- Product features and capabilities
+- Pricing tiers and packaging
+- Target market and positioning
+- Recent updates (last 6 months)
+- User reviews and sentiment
+
+Create individual files: @competitor-[name]-research.md
+
+Then synthesize into @competitive-analysis.md with:
+- Feature comparison matrix
+- Pricing comparison
+- Positioning map
+- Gaps and opportunities
+```
+
+**Result:** 1 hour vs 5.5 hours sequential work.
+
+
+## 🎨 Agent Orchestration Patterns
+
+### Pattern 1: Fan-Out Processing
+
+**Use for:** Multiple similar tasks, need all results combined
+
+```
+Process all 15 files in /meetings/ with 15 agents.
+Extract action items from each.
+Combine into single action item list grouped by owner.
+```
+
+### Pattern 2: Specialized Roles
+
+**Use for:** Different types of analysis on different sources
+
+```
+Launch 3 specialized agents:
+- Agent 1 (Interview Expert): Analyze qualitative data
+- Agent 2 (Data Analyst): Process survey numbers
+- Agent 3 (Support Analyst): Categorize ticket themes
+
+Synthesize into comprehensive user research report.
+```
+
+### Pattern 3: Parallel Research
+
+**Use for:** Research multiple entities independently
+
+```
+Research these 5 competitors in parallel.
+Each agent creates detailed profile.
+Synthesize into comparison matrix.
+```
+
+### Pattern 4: Batch Document Generation
+
+**Use for:** Create multiple similar documents
+
+```
+From @prd.md, generate 20 user stories with acceptance criteria.
+Use agents to create stories in parallel.
+Ensure consistency in format and quality.
+```
+
+### Pattern 5: Validation Pipeline
+
+**Use for:** Review multiple documents for quality
+
+```
+Review all PRDs in /docs/prds/ against our quality checklist.
+Each agent reviews one PRD.
+Create summary report of issues and recommendations.
+```
+
+
+## 💡 Best Practices
+
+### Do:
+
+- **Use for time-sensitive batch work** - When you need results fast
+- **Let Claude decide agent count** - "Process these files in parallel" works great
+- **Provide clear individual task instructions** - Each agent needs to know what to do
+- **Request synthesis** - Tell Claude to combine agent results meaningfully
+- **Specify output format** - Standardize agent outputs for easier synthesis
+
+### Don't:
+
+- **Don't use for single tasks** - Just prompt Claude directly
+- **Don't create agents that need to communicate** - They work independently
+- **Don't use for sequential work** - Tasks with dependencies should be done in order
+- **Don't forget synthesis** - Raw agent outputs need combining
+- **Don't over-agent small tasks** - If it takes 30 seconds, don't use agents
+
+
+## 🐛 Troubleshooting
+
+**Agents aren't working in parallel?**
+- Say explicitly: "Create agents to work in parallel" or "Simultaneously process"
+- Use phrases like "at the same time"
+
+**Agent results are inconsistent?**
+- Provide clear template:
+  ```
+  Each agent should output markdown with these sections:
+  ## Summary
+  ## Key Findings
+  ## Recommendations
+  ```
+
+**Too many agents created?**
+- Specify exact count: "Create exactly 5 agents"
+- Or provide constraint: "Use as many agents as needed, max 10"
+
+**No synthesis after agents finish?**
+- Always end with: "After all agents complete, synthesize results into @summary.md"
+
+**One agent failed?**
+- Check error message for specific issue
+- Ensure all referenced files exist
+- Verify instructions are clear
+
+
+## 🚀 What's Next?
+
+You now understand ad-hoc agents - temporary agents created on-the-fly for specific parallel tasks.
+
+**Module 1.5** introduces **custom sub-agents** - permanent team members with personalities, specializations, and visual identities (emojis and colors!). Instead of "act like an engineer" every time, you'll have a 👨‍💻 Engineer sub-agent you can call anytime.
+
+**The difference:**
+- **Module 1.4 (ad-hoc agents):** Temporary clones for parallel processing
+- **Module 1.5 (custom sub-agents):** Permanent specialized team members
+
+Interactive track: Type `/start-1-5`
+
+
+---
+
+**About This Course**
+
+Created by [Carl Vellotti](https://www.linkedin.com/in/carlvellotti/). If you have any feedback about this module or the course overall, message me! I'm building a newsletter and community for PM builders, check out [The Full Stack PM](https://fullstackpm.com/subscribe?utm_source=ccforpms&utm_medium=course&utm_campaign=agents).
+
+**Source Repository:** [github.com/carlvellotti/claude-code-pm-course](https://github.com/carlvellotti/claude-code-pm-course)

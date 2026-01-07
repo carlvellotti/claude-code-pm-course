@@ -1,0 +1,204 @@
+---
+title: "0.1: Installation & Prerequisites"
+description: "Install Claude Code in 15 minutes. Step-by-step guide for Mac, Windows, Linux with prerequisites and troubleshooting for product managers."
+keywords: 'claude code installation, install claude code, claude code setup, how to install claude code'
+---
+
+## 0.1: Installation
+
+ - **Time to Complete:** 15 minutes
+ - **Prerequisites:** Claude Pro or Max subscription
+
+## Overview
+
+Module 0.1 covers installation and authentication for Claude Code. This reference guide provides quick-access information to complement the interactive tutorial.
+
+**Key takeaway:** Claude Code requires Node.js 18+ and a paid Claude subscription. Installation takes under 5 minutes once prerequisites are met.
+
+
+## Prerequisites
+
+| Requirement | Details |
+|-------------|---------|
+| **Claude Subscription** | Claude Pro ($20/month) or Claude Max. Free tier NOT supported. Sign up at [claude.ai](https://claude.ai/) |
+| **Node.js** | Version 18 or higher required. Download from [nodejs.org](https://nodejs.org/) |
+| **Operating System** | macOS or Windows 10+ |
+
+
+## How to Open Your Terminal
+
+All the commands in this guide need to be typed into your **terminal** (also called command line). Here's how to open it:
+
+**Mac:**
+1. Press `Cmd + Space` to open Spotlight
+2. Type "Terminal"
+3. Press Enter
+
+**Windows:**
+1. Press the Windows key
+2. Type "PowerShell"
+3. Press Enter
+
+You'll see a window with a blinking cursor - this is where you'll type commands.
+
+
+## Quick Installation
+
+### Check Node.js Version
+
+**Open your terminal and type this command, then press Enter:**
+
+```bash
+node --version
+```
+
+If you see `v18.0.0` or higher, proceed to installation. Otherwise, install Node.js first.
+
+### Install Node.js (If Needed)
+
+**Recommended:** Download the LTS version from [nodejs.org](https://nodejs.org/)
+
+**Using Package Managers:**
+
+| Platform | Command |
+|----------|---------|
+| **macOS** | `brew install node` |
+| **Windows** | `choco install nodejs` |
+
+**Important:** After installing Node.js, completely close your terminal window and open a new one. This refreshes your system's PATH so it recognizes the `node` command.
+
+### Install Claude Code
+
+**In your terminal, copy and paste one of these commands, then press Enter:**
+
+**Mac:**
+```bash
+curl -fsSL https://claude.ai/install.sh | bash
+```
+
+**Windows (PowerShell):**
+```powershell
+irm https://claude.ai/install.ps1 | iex
+```
+
+### Verify Installation
+
+**Type this command in your terminal and press Enter:**
+
+```bash
+claude --version
+```
+
+If you see a version number, installation succeeded. If you see `command not found`, completely close your terminal window and open a new one, then try again.
+
+
+## Authentication
+
+**Type this in your terminal and press Enter:**
+
+```bash
+claude
+```
+
+When prompted:
+1. Choose "Claude account with subscription" (NOT Anthropic Console)
+2. Complete browser authentication
+3. Select your preferred terminal text style
+
+After authentication, you'll see the Claude Code welcome screen.
+
+
+## Health Check
+
+**Inside Claude Code, type this command:**
+
+```
+/doctor
+```
+
+This verifies:
+- Installation integrity
+- Active subscription
+- System configuration
+- Common issues
+
+Healthy output shows green checkmarks for all items.
+
+
+## Troubleshooting
+
+### Command not found: claude
+
+**Fix:**
+1. Completely close your terminal window and open a new one
+2. If still failing, check PATH configuration:
+
+**Mac:** Add to `~/.bashrc` or `~/.zshrc`:
+```bash
+export PATH=$HOME/.local/bin:$PATH
+```
+
+**Windows:** Restart your computer (installer updates PATH automatically)
+
+### Subscription required
+
+- Verify active Claude Pro/Max subscription at [claude.ai](https://claude.ai/)
+- Log out and log back in to refresh authentication
+
+### Node version too old
+
+**Type this in your terminal:**
+```bash
+node --version
+```
+
+Download latest LTS from [nodejs.org](https://nodejs.org/) if below v18.0.0
+
+### Permission denied
+
+**Mac:**
+```bash
+sudo curl -fsSL https://claude.ai/install.sh | bash
+```
+
+**Windows:**
+Run PowerShell as Administrator (right-click PowerShell → Run as Administrator)
+
+
+## Command Reference
+
+| Command | Function |
+|---------|----------|
+| `node --version` | Check Node.js version |
+| `claude` | Launch Claude Code |
+| `claude --version` | Check Claude Code version |
+| `/doctor` | Run system health check (inside Claude Code) |
+| `/help` | View available commands (inside Claude Code) |
+
+
+## Resources
+
+- [Official Documentation](https://docs.claude.com/en/docs/claude-code)
+- [GitHub Issues](https://github.com/anthropics/claude-code/issues)
+- Claude Code community forums
+
+
+## What's Next?
+
+**Module 0.2:** Start Claude Code and clone the course repository.
+
+You'll learn to:
+- Have your first conversation with Claude Code
+- Use Claude to clone repositories
+- Understand intent-based task delegation
+
+Interactive track: Continue with the course repository's CLAUDE.md file
+
+
+---
+
+**About This Course**
+
+Created by [Carl Vellotti](https://www.linkedin.com/in/carlvellotti/). If you have any feedback about this module or the course overall, message me! I'm building a newsletter and community for PM builders, check out [The Full Stack PM](https://fullstackpm.com/subscribe?utm_source=ccforpms&utm_medium=course&utm_campaign=installation).
+
+**Source Repository:** [github.com/carlvellotti/claude-code-pm-course](https://github.com/carlvellotti/claude-code-pm-course)

@@ -1,0 +1,292 @@
+---
+title: "1.4: 并行工作智能体"
+description: "掌握 Claude Code 并行智能体以同时处理 10 个文件。学习运行多个 AI 实例进行批量产品经理工作流和分析。"
+keywords: 'claude code agents, parallel processing, AI agents, batch processing, claude code workflow'
+---
+
+## 1.4: 并行工作智能体
+
+ - **完成时间:** 25 分钟
+ - **先决条件:** 模块 1.3 (文件操作和 @ 引用)
+
+> **在 Claude Code 中开始此模块:** 运行 `/start-1-4` 以启动交互式体验。
+
+## 📖 概览
+
+模块 1.4 介绍 **智能体** - 并行运行的独立 Claude 实例。与其按顺序处理 10 个会议记录（50 分钟），不如启动 10 个智能体同时工作（5 分钟）。
+
+**关键要点:** 智能体将 Claude Code 从单个助手转变为可扩展的团队。这不仅仅是更快——它解锁了全新的工作流。
+
+
+## 🤯 什么是智能体？
+
+### 核心概念
+
+**智能体是并行运行的独立 Claude 实例。**
+
+把它想象成克隆你自己同时处理多个任务：
+
+**顺序工作 (没有智能体):**
+```
+Task 1 (5 min) → Task 2 (5 min) → Task 3 (5 min) → ... → Task 10 (5 min)
+Total time: 50 minutes
+```
+
+**并行工作 (有智能体):**
+```
+Task 1 (5 min) ┐
+Task 2 (5 min) │
+Task 3 (5 min) ├─→ 所有同时发生
+...            │
+Task 10 (5 min)┘
+Total time: 5 minutes
+```
+
+### 智能体能力
+
+| 每个智能体拥有 | 每个智能体**没有** |
+|----------------|--------------------------|
+| 完全的文件系统访问权限 | 与其他智能体的通信 |
+| 所有 Claude 的能力 | 共享状态 |
+| 独立的上下文 | 知道其他智能体结果的知识（直到综合） |
+| 工具使用 (读/写文件) | 顺序依赖 |
+
+
+## 🎯 何时使用智能体
+
+### 决策框架
+
+| 场景 | 使用智能体？ | 智能体数量 |
+|----------|-------------|-------------|
+| 批处理 (10 个会议, 20 个访谈) | ✅ 是 | 许多 (5-20+) |
+| 并行研究 (5 个竞争对手, 3 个市场) | ✅ 是 | 少数 (2-5) |
+| 多来源分析 (访谈 + 调查 + 工单) | ✅ 是 | 少数 (2-4) |
+| 单个任务 | ❌ 否 | 0 - 仅使用 Claude |
+| 顺序工作 (任务彼此依赖) | ❌ 否 | 0 |
+| 快速任务 (几秒钟) | ❌ 否 | 0 |
+
+### 使用智能体用于:
+
+- **批处理:** 对许多项目进行相同类型的工作
+- **并行研究:** 独立研究多个实体
+- **多来源分析:** 对不同来源进行不同的分析
+- **时间敏感工作:** 需要在几小时内而不是几天内得到结果
+
+### 跳过智能体用于:
+
+- 单个任务（直接提示 Claude）
+- 顺序工作（彼此依赖的任务应按顺序完成）
+- 快速任务（几秒钟的简单请求）
+- 上下文依赖工作（需要建立在先前工作之上）
+
+
+## 🔧 如何提示智能体
+
+### 模式 1: 显式智能体请求
+
+```
+Create 10 agents to process the 10 meeting notes in /meetings.
+Each agent should extract:
+- Key decisions
+- Action items
+- Blockers
+- Next steps
+
+Combine all results into @weekly-summary.md
+```
+
+### 模式 2: 让 Claude 决定
+
+```
+I have 15 competitor websites to research for features and pricing.
+Work in parallel to get this done quickly.
+```
+
+### 模式 3: 专用智能体
+
+```
+Launch 3 specialized agents:
+- Agent 1: Analyze all interview transcripts in /interviews
+- Agent 2: Process survey data in @survey-results.csv
+- Agent 3: Review support tickets in /support
+
+Synthesize findings into @user-research-insights.md
+```
+
+
+## 💼 真实世界示例
+
+### 示例 1: 会议处理
+
+**场景:** 周一早上，10 个会议记录，1 小时后站会。
+
+**提示:**
+```
+I have 10 meeting transcripts in /meetings/last-week/.
+
+Create 10 agents to process each meeting simultaneously.
+
+For each meeting, extract:
+- Key decisions made
+- Action items (with owners and due dates)
+- Blockers or risks raised
+
+Synthesize ALL findings into @monday-standup-prep.md with:
+- Section 1: Critical blockers
+- Section 2: Key decisions
+- Section 3: Action items by team member
+```
+
+**结果:** 5 分钟 vs 60 分钟顺序工作。
+
+### 示例 2: 竞争研究
+
+**场景:** CEO 需要在一天结束前对 5 个竞争对手进行竞争分析。
+
+**提示:**
+```
+Launch 5 agents to research these competitors simultaneously:
+- Asana, Linear, Monday.com, ClickUp, Notion
+
+For each competitor, research:
+- Product features and capabilities
+- Pricing tiers and packaging
+- Target market and positioning
+- Recent updates (last 6 months)
+- User reviews and sentiment
+
+Create individual files: @competitor-[name]-research.md
+
+Then synthesize into @competitive-analysis.md with:
+- Feature comparison matrix
+- Pricing comparison
+- Positioning map
+- Gaps and opportunities
+```
+
+**结果:** 1 小时 vs 5.5 小时顺序工作。
+
+
+## 🎨 智能体编排模式
+
+### 模式 1: 扇出处理
+
+**用于:** 多个类似任务，需要合并所有结果
+
+```
+Process all 15 files in /meetings/ with 15 agents.
+Extract action items from each.
+Combine into single action item list grouped by owner.
+```
+
+### 模式 2: 专用角色
+
+**用于:** 对不同来源进行不同类型的分析
+
+```
+Launch 3 specialized agents:
+- Agent 1 (Interview Expert): Analyze qualitative data
+- Agent 2 (Data Analyst): Process survey numbers
+- Agent 3 (Support Analyst): Categorize ticket themes
+
+Synthesize into comprehensive user research report.
+```
+
+### 模式 3: 并行研究
+
+**用于:** 独立研究多个实体
+
+```
+Research these 5 competitors in parallel.
+Each agent creates detailed profile.
+Synthesize into comparison matrix.
+```
+
+### 模式 4: 批量文档生成
+
+**用于:** 创建多个类似文档
+
+```
+From @prd.md, generate 20 user stories with acceptance criteria.
+Use agents to create stories in parallel.
+Ensure consistency in format and quality.
+```
+
+### 模式 5: 验证管道
+
+**用于:** 审查多个文档的质量
+
+```
+Review all PRDs in /docs/prds/ against our quality checklist.
+Each agent reviews one PRD.
+Create summary report of issues and recommendations.
+```
+
+
+## 💡 最佳实践
+
+### 做:
+
+- **用于时间敏感的批量工作** - 当你需要快速得到结果时
+- **让 Claude 决定智能体数量** - "Process these files in parallel" 效果很好
+- **提供清晰的个人任务说明** - 每个智能体需要知道做什么
+- **请求综合** - 告诉 Claude 有意义地合并智能体结果
+- **指定输出格式** - 标准化智能体输出以便于综合
+
+### 不要:
+
+- **不要用于单个任务** - 直接提示 Claude
+- **不要创建需要通信的智能体** - 它们独立工作
+- **不要用于顺序工作** - 有依赖关系的任务应按顺序完成
+- **不要忘记综合** - 原始智能体输出需要合并
+- **不要过度代理小任务** - 如果只需 30 秒，不要使用智能体
+
+
+## 🐛 故障排除
+
+**智能体没有并行工作？**
+- 明确说: "Create agents to work in parallel" 或 "Simultaneously process"
+- 使用像 "at the same time" 这样的短语
+
+**智能体结果不一致？**
+- 提供清晰的模板:
+  ```
+  Each agent should output markdown with these sections:
+  ## Summary
+  ## Key Findings
+  ## Recommendations
+  ```
+
+**创建了太多智能体？**
+- 指定确切数量: "Create exactly 5 agents"
+- 或提供约束: "Use as many agents as needed, max 10"
+
+**智能体完成后没有综合？**
+- 始终以此结束: "After all agents complete, synthesize results into @summary.md"
+
+**一个智能体失败了？**
+- 检查错误消息以查找具体问题
+- 确保所有引用的文件存在
+- 验证说明是否清晰
+
+
+## 🚀 下一步是什么？
+
+你现在了解了特定智能体(ad-hoc agents) - 为特定并行任务即时创建的临时智能体。
+
+**模块 1.5** 介绍 **自定义子智能体** - 具有个性、专业化和视觉标识（表情符号和颜色！）的永久团队成员。你将拥有一个可以随时调用的 👨‍💻 工程师子智能体，而不是每次都说“像工程师一样行事”。
+
+**区别:**
+- **模块 1.4 (特定智能体):** 用于并行处理的临时克隆
+- **模块 1.5 (自定义子智能体):** 永久的专业团队成员
+
+交互式轨道：输入 `/start-1-5`
+
+
+---
+
+**关于本课程**
+
+由 [Carl Vellotti](https://www.linkedin.com/in/carlvellotti/) 创建。如果你对本模块或整个课程有任何反馈，请给我留言！我正在为产品构建者建立一个通讯和社区，请查看 [The Full Stack PM](https://fullstackpm.com/subscribe?utm_source=ccforpms&utm_medium=course&utm_campaign=agents)。
+
+**源仓库：** [github.com/carlvellotti/claude-code-pm-course](https://github.com/carlvellotti/claude-code-pm-course)

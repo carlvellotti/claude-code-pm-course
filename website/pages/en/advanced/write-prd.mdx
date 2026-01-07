@@ -1,0 +1,242 @@
+---
+title: "2.1: Write a PRD"
+description: "Write better PRDs with Claude Code AI agents. Use Socratic questioning, parallel approaches, and multi-perspective reviews for requirements docs."
+keywords: 'write prd, product requirements document, AI for product managers, prd template, product management'
+---
+
+## 2.1: Write a PRD
+
+ - **Time to Complete:** 45-60 minutes
+ - **Prerequisites:** Module 1.4 (Agents), Module 1.5 (Custom Sub-Agents)
+
+
+> **Start this module in Claude Code:** Run `/start-2-1` to kick off the interactive experience.
+
+## Overview
+
+Module 2.1 teaches you to write better PRDs faster by using AI as a thinking partner. You'll incorporate templates, company context, and user research via @-mentions, generate multiple strategic approaches in parallel, and get multi-perspective feedback before sharing with your team.
+
+**Key takeaway:** AI is most valuable when it helps you think better, not when it does all the thinking for you. The best PRDs combine human judgment with AI's ability to process full context, generate options, and provide diverse perspectives.
+
+
+## Traditional vs AI Partnership Approach
+
+| Traditional Approach | AI Partnership Approach |
+|---------------------|------------------------|
+| Open blank document | Provide full context via @-mentions |
+| Write PRD alone | Use Socratic questioning to clarify thinking |
+| Share with team | Generate multiple strategic approaches |
+| Get feedback | Get feedback from sub-agents first |
+| Revise | Refine before anyone sees it |
+| Repeat | Share stronger first draft |
+
+**The difference:** You're never starting from scratch, and you've addressed potential issues before your first review.
+
+
+## The Four Core Techniques
+
+### 1. Full Context via @-Mentions
+
+Provide Claude with all relevant information at once.
+
+**What to @-mention:**
+- **Company context** - Product strategy, customer insights, business metrics
+- **User research** - Interview transcripts, survey results, pain points
+- **Templates** - Your preferred PRD structure
+- **Methods** - Frameworks like Socratic questioning
+- **Related docs** - Previous PRDs, competitive analysis, roadmap
+
+**Example:**
+```
+Help me write a PRD for [feature] using:
+@company-context.md - product and customer context
+@user-research/pain-points.md - insights from 20 interviews
+@prd-template.md - our standard PRD structure
+@methods/socratic-questioning.md - framework for clear thinking
+```
+
+### 2. Socratic Questioning for Clarity
+
+Use structured questioning to sharpen fuzzy thinking before writing.
+
+**Key question categories:**
+
+| Category | Questions |
+|----------|-----------|
+| **Problem Clarity** | What specific user pain point does this solve?<br/>Who experiences this most acutely?<br/>What's the cost of NOT solving this? |
+| **Solution Validation** | Why is this the right solution?<br/>What alternatives did you consider?<br/>What's the simplest version? |
+| **Success Criteria** | How will we measure success?<br/>What would indicate failure?<br/>What metric are we moving and by how much? |
+| **Constraints** | What technical risks exist?<br/>What are we NOT doing?<br/>If we had half the time, what would we cut? |
+| **Strategic Fit** | Why build this RIGHT NOW?<br/>How does this fit our broader strategy?<br/>How does this affect competitive position? |
+
+**Pro tip:** Pick 3-5 most relevant questions. Quality over quantity.
+
+### 3. Generate Multiple Strategic Approaches
+
+Have Claude generate 3 different strategic approaches to the same feature. Compare, choose the best, or combine elements.
+
+**Example: AI voice chat + to-do list feature**
+
+| Approach | Primary Interface | Use Case | Success Metric |
+|----------|------------------|----------|----------------|
+| **Chat-First** | AI conversation | Quick capture while mobile | % tasks created via voice |
+| **List-First** | Traditional to-do list | Hands-free updates to existing workflow | DAU of voice feature |
+| **Balanced** | Equal weight to both | Flexible based on context | User satisfaction + adoption |
+
+**Using agents for parallel generation:**
+```
+Spin up 3 agents to generate 3 PRD drafts in parallel:
+- Agent 1: Chat-first approach
+- Agent 2: List-first approach
+- Agent 3: Balanced approach
+```
+
+This demonstrates the power of parallel processing for PM work.
+
+### 4. Multi-Perspective Feedback via Sub-Agents
+
+Get diverse feedback before sharing with your actual team.
+
+**Three key perspectives:**
+
+| Sub-Agent | Focus Areas |
+|-----------|-------------|
+| **👨‍💻 Engineer** | Technical feasibility, implementation complexity, risks, dependencies, timeline estimates |
+| **💼 Executive** | Business value, strategic fit, resource justification, competitive positioning, ROI |
+| **👤 User Researcher** | User needs alignment, usability concerns, edge cases, adoption barriers, metric validity |
+
+**Example:**
+```
+Get reviews from all three sub-agents and consolidate feedback:
+- @.claude/agents/engineer.md - technical review
+- @.claude/agents/executive.md - business review
+- @.claude/agents/user-researcher.md - UX review
+```
+
+
+## Real-World Example
+
+**Context setup:**
+```
+I'm writing a PRD for smart meeting summaries. Help me think through this using:
+@company-context.md
+@user-research/calendar-pain-points.md
+@prd-template.md
+@methods/socratic-questioning.md
+```
+
+**Clarify thinking:**
+```
+Ask me 5 key questions about this feature using the Socratic framework:
+- Problem clarity
+- Why this solution
+- Success metrics
+- Technical constraints
+- Strategic timing
+```
+
+**Generate approaches:**
+```
+Generate 3 strategic approaches:
+1. Calendar-native (summaries appear in calendar app)
+2. Email-first (summaries delivered via email)
+3. Standalone app (dedicated meeting hub)
+
+For each: problem framing, solution, success metrics
+```
+
+**Get feedback:**
+```
+👨‍💻 Engineer, review @smart-summaries-prd.md for technical feasibility.
+Then 💼 Executive, review for business value and strategic fit.
+Then 👤 User Researcher, review for user needs alignment.
+```
+
+
+## Best Practices
+
+**Do:**
+- Start with full context (@-mention company docs, research, templates)
+- Use Socratic questions to clarify fuzzy thinking
+- Generate 2-3 strategic approaches, don't go with first idea
+- Get sub-agent feedback before sharing with real team
+- Drive the process yourself - AI provides options, you decide
+
+**Don't:**
+- Let AI write for you (you're partnering, not outsourcing)
+- Skip the thinking (questions exist to sharpen YOUR judgment)
+- Accept first draft (always generate alternatives to compare)
+- Ignore sub-agent feedback (often catches important issues)
+- Work in isolation (use full context)
+
+**Pro Tips:**
+
+| Tip | Benefit |
+|-----|---------|
+| Create methods library | Reusable frameworks (Socratic, JTBD, RICE) for any PRD |
+| Maintain template library | Different templates for features, redesigns, experiments |
+| Save great agent prompts | Reuse personas that give valuable feedback |
+| Use checkpoints | Save each version (v1, v2, v3) to reference alternatives |
+| Document reasoning | Note WHY you chose this approach over others |
+
+
+## Troubleshooting
+
+**AI-generated PRDs feel generic**
+
+Cause: Insufficient context or too much AI autonomy
+
+Fix:
+- Provide more specific company context (@-mention detailed docs)
+- Use Socratic questioning to inject YOUR thinking
+- Ask "help me think through" not "write me a PRD"
+- Add specific examples and user quotes from research
+
+**Sub-agent feedback is surface-level**
+
+Cause: Agent personas aren't specific enough, or PRD lacks depth
+
+Fix:
+- Enhance sub-agent personas with specific concerns (API rate limits, scalability)
+- Provide agents with more context (@-mention technical/strategy docs)
+- Ask for specific feedback types: "Focus on technical risks"
+- Ensure your PRD draft has enough detail to review
+
+**Process takes too long**
+
+Cause: Too many steps, or not using parallelization
+
+Fix:
+- You don't need all 3 approaches every time - one may be enough
+- Use agents to generate drafts in parallel (not sequentially)
+- Skip Socratic questions if you already have clarity
+- Not every PRD needs sub-agent review - use for high-stakes features
+
+**Hard to track versions**
+
+Cause: Poor file naming or version management
+
+Fix:
+- Clear naming: `feature-prd-v1.md`, `feature-prd-v2-chat-first.md`, `feature-prd-final.md`
+- Add dates: `feature-prd-2025-01-15.md`
+- Keep changelog section in PRD
+- Use git commits to track evolution
+- Archive old versions in `drafts/` folder
+
+
+## What's Next?
+
+You now understand how to partner with AI to write better PRDs: provide full context via @-mentions, use Socratic questioning to clarify thinking, generate multiple strategic approaches with agents, and get multi-perspective feedback via sub-agents.
+
+**Module 2.2:** Learn about **Data-Driven Decisions** - use data to drive product decisions, from discovering funnel problems to estimating feature impact to analyzing A/B tests.
+
+Interactive track: Type `/start-2-2`
+
+
+---
+
+**About This Course**
+
+Created by [Carl Vellotti](https://www.linkedin.com/in/carlvellotti/). If you have any feedback about this module or the course overall, message me! I'm building a newsletter and community for PM builders, check out [The Full Stack PM](https://fullstackpm.com/subscribe?utm_source=ccforpms&utm_medium=course&utm_campaign=write-prd).
+
+**Source Repository:** [github.com/carlvellotti/claude-code-pm-course](https://github.com/carlvellotti/claude-code-pm-course)

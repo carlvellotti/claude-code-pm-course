@@ -1,0 +1,332 @@
+---
+title: "1.5: Custom Sub-Agents"
+description: Create specialized AI personas for different types of reviews and feedback
+---
+
+## 1.5: Custom Sub-Agents
+
+ - **Time to Complete:** 20-25 minutes
+ - **Prerequisites:** Module 1.4 (Agents for Parallel Work)
+
+
+> **Start this module in Claude Code:** Run `/start-1-5` to kick off the interactive experience.
+
+## 📖 Overview
+
+Module 1.5 teaches you how to create custom sub-agents - permanent AI team members with distinct personalities, expertise, and visual identities. Unlike the temporary ad-hoc agents you learned in Module 1.4, custom sub-agents are reusable specialists you can call on anytime.
+
+**Key takeaway:** Custom sub-agents transform Claude Code from a single assistant into a full specialized team. Instead of telling Claude act like an engineer every time, you build a real Engineer sub-agent with personality, expertise, and visual distinction (colors and emojis!) that you can call upon repeatedly.
+
+
+## 🎭 What Are Custom Sub-Agents?
+
+### The Core Concept
+
+Custom sub-agents are pre-configured AI personas stored as files in your projects `.claude/agents/` folder. Each sub-agent has:
+
+- **Name with emoji** (shows up visually in terminal!)
+- **Color coding** (purple, blue, green, red, etc.)
+- **Persona definition** (background, expertise, communication style)
+- **Specialized knowledge** (what theyre good at)
+
+Think of them as hiring permanent team members who are always available and never forget context.
+
+### Custom Sub-Agents vs Ad-Hoc Agents
+
+Understanding the difference is crucial:
+
+**Ad-Hoc Agents (Module 1.4):**
+- Created on-the-fly for specific tasks
+- Temporary workers for one-time jobs
+- Example: Create 10 agents to summarize these meeting notes
+- Use case: Parallel processing of similar tasks
+
+**Custom Sub-Agents (Module 1.5):**
+- Pre-built personas you call repeatedly
+- Permanent team members with expertise
+- Example: 👨‍💻 Engineer, review this technical spec
+- Use case: Specialized perspectives you need regularly
+
+**When to use which:**
+
+| Scenario | Use This |
+|----------|----------|
+| Process 20 meeting notes simultaneously | Ad-hoc agents (parallel workers) |
+| Get technical feedback on specs weekly | Custom sub-agent (Engineer) |
+| Research 5 competitors at once | Ad-hoc agents (one-time research) |
+| Convert updates to exec summaries regularly | Custom sub-agent (Executive) |
+| Analyze 50 user interviews in parallel | Ad-hoc agents (batch processing) |
+| Get UX perspective on designs repeatedly | Custom sub-agent (User Researcher) |
+
+**The key difference:** Ad-hoc agents are for DOING many things in parallel. Custom sub-agents are for getting SPECIALIZED PERSPECTIVES you need repeatedly.
+
+
+## 🗂️ Setup Guide: Accessing the .claude/agents/ Folder
+
+Custom sub-agents live in the hidden `.claude/agents/` folder.
+
+### On Mac
+
+Press **Cmd+Shift+.** in Finder to show hidden files, then navigate to your project folder and open `.claude/agents/`
+
+### On Windows
+
+In File Explorer, click **View** tab → Check **Hidden items**, then navigate to your project folder and open `.claude/agents/`
+
+**Note:** Obsidian can't display hidden folders. Use Finder/Explorer, VS Code, or Nimbalyst (which can show hidden folders) to edit `.claude/` files.
+
+
+## 📄 Sub-Agent File Structure
+
+Each sub-agent is a simple markdown file with three sections:
+
+### Anatomy of a Sub-Agent File
+
+```markdown
+# [Emoji] [Name]
+
+## Color
+[color-name]
+
+## Persona
+[Background, expertise, communication style - 2-3 paragraphs]
+
+## Expertise
+- [Skill 1]
+- [Skill 2]
+- [Skill 3]
+- [etc.]
+```
+
+### Example: Engineer Sub-Agent
+
+```markdown
+# 👨‍💻 Engineer
+
+## Color
+purple
+
+## Persona
+You are an experienced software engineer with 10+ years at top tech companies
+(Google, Meta, startups). You think deeply about technical architecture,
+scalability, performance, and implementation details.
+
+When analyzing features or specs, you provide:
+- Technical feasibility assessment
+- Implementation complexity estimates
+- Potential challenges and edge cases
+- Performance and scalability considerations
+- Concrete, specific recommendations
+
+Your communication style:
+- Direct and pragmatic
+- Focus on whats technically possible vs ideal
+- Flag risks early
+- Suggest alternatives when something wont work
+- Balance perfectionism with shipping
+
+You help PMs write better technical specs by spotting gaps, ambiguities,
+and technical challenges they might miss.
+
+## Expertise
+- System architecture and design patterns
+- API design and database schema
+- Performance optimization and scalability
+- Technical feasibility assessment
+- Spotting edge cases and error states
+- Implementation complexity estimation
+```
+
+**Key elements:**
+- **Emoji & Name:** Appears in terminal when called
+- **Color:** Visual distinction (purple, blue, green, red, yellow, cyan, magenta)
+- **Persona:** 2-4 paragraphs describing background, expertise, and communication style
+- **Expertise:** Bulleted list of specific skills
+
+
+## 🛠️ Creating Your First Sub-Agent
+
+Lets create a QA Tester sub-agent from scratch.
+
+### Step 1: Navigate to .claude/agents/ Folder
+
+Use the methods above to open your projects `.claude/agents/` folder in Finder/Explorer.
+
+### Step 2: Create New File
+
+Create a new file named: `qa-tester.md`
+
+**Naming convention:**
+- Use lowercase
+- Use hyphens for spaces
+- End with `.md`
+- Example: `data-analyst.md`, `tech-writer.md`, `growth-pm.md`
+
+### Step 3: Write the Persona
+
+Copy this template and customize:
+
+```markdown
+# 🔍 QA Tester
+
+## Color
+red
+
+## Persona
+You are a meticulous QA professional with 8+ years of experience testing enterprise
+software at companies like Microsoft, Atlassian, and fast-growing startups. You think
+comprehensively about edge cases, error states, and user error scenarios that others
+miss.
+
+When reviewing features or user stories, you provide:
+- Comprehensive test case generation
+- Edge case identification (the weird scenarios no one thinks about)
+- Error state analysis (what happens when things go wrong)
+- Accessibility and usability testing considerations
+- Cross-browser and cross-platform compatibility concerns
+
+Your communication style:
+- Thorough and detail-oriented
+- Constructively critical (you spot problems early)
+- Organized (you categorize issues by severity)
+- Practical (you suggest solutions, not just problems)
+- User-advocate (you think like end users making mistakes)
+
+You help PMs ship higher quality products by catching issues before they reach users.
+
+## Expertise
+- Test case generation and test plan creation
+- Edge case and error state identification
+- Acceptance criteria validation
+- User error scenario analysis
+- Regression testing strategy
+- Accessibility testing (WCAG compliance)
+- Cross-browser and device compatibility
+- Load and performance testing considerations
+```
+
+### Step 4: Save and Test
+
+Save the file, then test in Claude Code:
+
+```bash
+# Start Claude Code
+claude
+
+# Call your new sub-agent
+🔍 QA Tester, review these user stories in @user-stories.md and identify
+potential edge cases and missing test scenarios
+```
+
+You should see red-colored output with the QA emoji!
+
+**Tip:** Run `/agents` in Claude Code to see all your configured sub-agents at any time.
+
+
+## 👥 Pre-Built Sub-Agents
+
+**👨‍💻 Engineer (Purple)**
+- Technical feasibility reviews
+- Implementation complexity estimates
+- Architecture feedback
+
+**💼 Executive (Blue)**
+- Converting updates to executive summaries
+- Stakeholder communication
+- Strategic business framing
+
+**👤 User Researcher (Green)**
+- Analyzing user interviews
+- Identifying pain points and patterns
+- Synthesizing qualitative research
+
+
+## 💼 Real-World PM Examples
+
+**Engineer for Technical Specs:**
+```
+👨‍💻 Engineer, review @dashboard-prd.md and identify technical challenges,
+performance implications, and implementation complexity
+```
+
+**Executive for Stakeholder Communication:**
+```
+💼 Executive, convert @sprint-update.md into 3-bullet executive summary
+focused on business impact and metrics
+```
+
+**User Researcher for Interview Analysis:**
+```
+👤 User Researcher, analyze all files in /interviews and identify
+top 3 pain points with supporting quotes
+```
+
+
+## 🎯 Other Sub-Agent Ideas for PMs
+
+- **📊 Data Analyst** - A/B testing, metrics, statistical analysis
+- **✍️ Technical Writer** - Documentation, help articles, release notes
+- **🎯 Marketing PM** - Positioning, go-to-market strategy, launch planning
+- **🎨 UX Designer** - User flows, design feedback, accessibility reviews
+- **🧪 Growth PM** - Experimentation, onboarding, retention strategies
+- **🛡️ Security Expert** - GDPR, SOC2, compliance, data privacy
+- **🎤 Customer Success** - Onboarding, adoption, churn analysis
+
+
+## 💡 Best Practices
+
+**Persona Design:**
+- Give specific background and expertise (not generic "you are helpful")
+- Define clear communication style
+- Make them feel like a real person with 2-4 paragraphs
+
+
+**When to Create Custom Sub-Agents:**
+- You need the same perspective weekly or more
+- For specialized expertise you use repeatedly
+- Building consistent team workflows
+
+
+## 🐛 Troubleshooting
+
+**Can't see .claude/ folder?**
+- Mac: Press Cmd+Shift+. in Finder
+- Windows: Enable "Hidden items" in File Explorer
+
+**Sub-agent not responding?**
+- Include the emoji: `👨‍💻 Engineer, review this`
+- Check file is in `.claude/agents/` and ends in `.md`
+- Restart Claude (`exit` then `claude`)
+
+**Call multiple sub-agents:**
+```
+👨‍💻 Engineer, review @spec.md for technical feasibility.
+Then 🔍 QA Tester, review it for test coverage.
+```
+
+
+## 📚 Resources
+
+- [Awesome Claude Code Sub-Agents](https://github.com/VoltAgent/awesome-claude-code-subagents) - Collection of community sub-agent templates
+- [Sub-Agent Examples](https://github.com/wshobson/agents) - Real-world agent configurations
+- [SubAgents.cc](https://www.subagents.cc/) - Sub-agent template generator
+
+
+## 🚀 What's Next?
+
+You now know how to create custom sub-agents - permanent team members with specialized expertise you can call repeatedly.
+
+**Module 1.6:** Learn about **Project Memory with CLAUDE.md** - giving Claude permanent context about your product, team, and preferences.
+
+Interactive track: Type `/start-1-6`
+
+
+
+
+---
+
+**About This Course**
+
+Created by [Carl Vellotti](https://www.linkedin.com/in/carlvellotti/). If you have any feedback about this module or the course overall, message me! I'm building a newsletter and community for PM builders, check out [The Full Stack PM](https://fullstackpm.com/subscribe?utm_source=ccforpms&utm_medium=course&utm_campaign=custom-subagents).
+
+**Source Repository:** [github.com/carlvellotti/claude-code-pm-course](https://github.com/carlvellotti/claude-code-pm-course)
