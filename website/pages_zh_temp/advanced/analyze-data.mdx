@@ -1,0 +1,332 @@
+---
+title: "2.2: Analyze Data"
+description: "Data-driven product decisions with AI analysis. Analyze funnels, estimate ROI, segment A/B tests, and make ship/kill decisions with Claude Code."
+keywords: 'product analytics, data analysis, A/B testing, product metrics, funnel analysis, ROI calculation'
+---
+
+## 2.2: Analyze Data
+
+ - **Time to Complete:** 60-75 minutes
+ - **Prerequisites:** Module 2.1 (Writing PRDs), basic understanding of CSV files and product metrics
+
+
+> **Start this module in Claude Code:** Run `/start-2-2` to kick off the interactive experience.
+
+## 📖 Overview
+
+Module 2.2 teaches the complete PM workflow for data-driven feature development: discovering problems through data analysis, estimating business impact before building, and analyzing experiment results to make ship/kill decisions.
+
+**Key takeaway:** Never stop at topline metrics – always segment by your target customer, check quality over quantity, and look for leading indicators that predict long-term success.
+
+
+## 🎯 The Three-Phase Workflow
+
+| Phase | Purpose | Deliverable |
+|-------|---------|-------------|
+| **Discovery** | Find problems with data (funnel + surveys) | `problem-analysis.md` with quantitative and qualitative evidence |
+| **Impact Estimation** | Build ROI models to justify engineering investment | `impact-estimate.md` and `roi-scenarios.md` with 3 scenarios |
+| **Experiment Analysis** | Analyze A/B test results beyond topline metrics | `experiment-readout.md` with ship/iterate/kill recommendation |
+
+
+## 📊 Impact Estimation Framework
+
+### The Formula
+
+```
+Impact = Users Affected × Current Action Rate × Expected Lift × Value per Action
+```
+
+### Components
+
+**Users Affected**
+- How many users will see this feature?
+- Account for gradual rollout (not always 100%)
+- Example: 5,000 signups/month × 70% see feature = 3,500 users affected
+
+**Current Action Rate**
+- What % currently take the desired action?
+- Get from analytics tool (Mixpanel, Amplitude)
+- Example: 45% activation rate (2,025/4,500 complete first task)
+
+**Expected Lift**
+- How much will the feature improve the rate?
+- Sources: similar features you've shipped, competitor benchmarks, user research, expert judgment
+- Example: Survey shows 60% drop due to "need examples." Conservatively recover 30% → estimate 13pp lift (45% → 58%)
+
+**Value per Action**
+- What's each incremental action worth?
+- For activation: LTV × conversion rate
+- For retention: extended LTV
+- For viral: invite acceptance × activation × conversion × LTV
+- Example: Activated user → 60% convert × $12/mo × 24 months = $172.80 LTV per activation
+
+### Three-Scenario Approach
+
+Always model uncertainty with pessimistic, realistic, and optimistic scenarios:
+
+| Scenario | Adoption | Lift | Use Case |
+|----------|----------|------|----------|
+| **Pessimistic** (20th percentile) | 30% | 45% → 50% | Minimum expected impact |
+| **Realistic** (50th percentile) | 70% | 45% → 58% | Most likely case |
+| **Optimistic** (80th percentile) | 90% | 45% → 62% + retention boost | Best case scenario |
+
+**Present all three to leadership** so they understand the range of outcomes and can make informed bets.
+
+
+## 🔬 Experiment Analysis Framework
+
+### The Hierarchy of Analysis
+
+**1. Topline Metrics**
+```
+Calculate overall activation rates for control and treatment
+```
+- Quick snapshot of overall impact
+- Not enough to make decisions
+
+**2. Statistical Significance**
+```
+Calculate statistical significance between control and treatment groups
+```
+- p < 0.05: Statistically significant (< 5% chance this is random)
+- 95% CI: Range of plausible effect sizes
+- Wide CI = high uncertainty, even if p < 0.05
+
+**3. Segment Analysis**
+```
+Segment the experiment results by company_size and calculate activation rates for each segment
+```
+- Features work differently for different user types
+- Topline averages can hide segment wins
+- Always segment by target customer before deciding
+
+**4. Quality Metrics**
+```
+Among activated users, calculate week 1 retention for both cohorts
+```
+- Activation rate = HOW MANY users activated
+- Retention = if those are GOOD activations
+- Check: Week 1 retention, engagement metrics, long-term retention
+
+**5. Leading Indicators**
+```
+Compare template usage and invite rates between cohorts
+```
+- Feature adoption: Do users engage with the new feature?
+- Viral metrics: Do users invite teammates?
+- Depth of engagement: Do users use advanced features?
+- Leading indicators predict future success
+
+
+## 💼 Claude Code Data Analysis
+
+### What Claude Can Do
+
+**Read CSV files directly:**
+```
+Read activation-funnel-q4.csv and calculate drop-off rates at each step
+```
+
+**Process thousands of rows instantly:**
+```
+Analyze the 8,000 rows in onboarding-experiment-results.csv and segment
+activation rates by company size
+```
+
+**Build ROI models:**
+```
+Build an impact estimation model using the framework in
+impact-estimation-framework.md
+```
+
+**Run statistical analyses:**
+```
+Calculate statistical significance between control and treatment groups
+with p-values and confidence intervals
+```
+
+**Cross-reference data sources:**
+```
+Analyze funnel data from activation-funnel-q4.csv and correlate with
+user feedback from user-survey-responses.csv
+```
+
+### Sample CSV Structures
+
+**Funnel data (activation-funnel-q4.csv):**
+```csv
+step,users_entered,users_completed,completion_rate,median_time_to_complete
+Signup,10000,10000,1.0,0
+First Task Created,10000,7200,0.72,18
+First Task Completed,7200,2880,0.40,45
+Invite Sent,2880,1440,0.50,24
+```
+
+**Experiment data (onboarding-experiment-results.csv):**
+```csv
+user_id,cohort,company_size,completed_first_task,invited_teammate,tasks_completed_week_1
+control_user_0001,control,5-20,True,False,4
+control_user_0002,control,5-20,False,False,0
+treatment_user_0001,treatment,5-20,True,True,8
+```
+
+Claude reads these and presents formatted tables with insights.
+
+
+## 💡 Real-World Examples
+
+### Discovery: Stuck Activation Rate
+
+**Situation:** Activation plateaued at 45% for 6 months.
+
+**Analysis workflow:**
+1. `Read activation-funnel-q4.csv and find the biggest drop-off` → 60% drop at task completion
+2. `Analyze user-survey-responses.csv and extract top complaints` → Need examples/templates
+3. Cross-reference: Drop-off correlates with survey feedback
+4. Synthesize: Create `problem-analysis.md` with quantitative and qualitative evidence
+
+**Outcome:** Clear problem statement backed by data, ready for stakeholder alignment.
+
+### Impact Estimation: Justifying Guided Onboarding
+
+**Situation:** Proposed $100k feature (4 eng-months). Engineering skeptical, leadership wants ROI.
+
+**Analysis workflow:**
+1. `Analyze taskflow-usage-data-q4.csv to calculate current activation rate` → 45% baseline
+2. Estimate lift based on survey data (60% need examples → conservatively recover 30% → 13pp lift)
+3. `Build complete ROI model with baseline, projections, and business impact`
+4. `Generate pessimistic, realistic, and optimistic scenarios`
+
+**Outcome:** 9.4x ROI over 3 years (realistic), 2.6x even in pessimistic case. Build approved.
+
+### Experiment Analysis: Revealing Hidden Wins
+
+**Situation:** Topline shows 45% → 48% (+2.6pp, p=0.04). Team disappointed.
+
+**Analysis workflow:**
+1. Check topline → Modest +2.6pp
+2. `Segment results by company_size` → Small teams: +11.4pp (huge!), Enterprise: -3.5pp (negative)
+3. `Among activated users, calculate week 1 retention` → Treatment: 78% vs Control: 60%
+4. `Compare template usage and invite rates` → Template usage 3.2x higher, invite rate 35% vs 12%
+
+**Outcome:** What looked like a failure is a huge win for target segment. Ship to small teams, exclude enterprise.
+
+
+## 🎯 Best Practices
+
+### Analysis Approach
+
+**Do:**
+- Always validate hypotheses with data before building
+- Create three scenarios for every estimate (acknowledge uncertainty)
+- Segment by target customer (topline can hide wins)
+- Check quality metrics (retention > activation count)
+- Look for leading indicators that predict long-term success
+- Cross-reference quantitative + qualitative data
+
+**Don't:**
+- Stop at topline metrics without segmentation
+- Use single-point estimates (use ranges and scenarios)
+- Assume 100% adoption (account for gradual rollout)
+- Ignore negative segments (exclude them from rollout)
+- Kill experiments before checking segments and quality
+- Over-optimize lift estimates (be conservative)
+
+### Lift Estimation Sources
+
+**Best to worst:**
+1. **Your historical data** - Past experiments are best predictors
+2. **User research** - Survey shows 60% drop due to X → fix X recovers Y%
+3. **Competitor benchmarks** - Industry standards for similar features
+4. **Expert judgment** - Team estimates from eng/design/PM
+
+### Pro Tips
+
+**Build a lift estimate library**
+Track estimated vs actual lift for every feature. After 5-10 features, you'll get much better at estimating.
+
+**Front-load disappointing news**
+Show modest topline first, then reveal segment wins. Teaches stakeholders to always dig deeper.
+
+**Automate analysis scripts**
+Save prompts for funnel analysis, segmentation, and ROI modeling. Reuse across features.
+
+
+## 📁 Working with CSV Data
+
+### Common Data Sources
+
+| Platform | Export Type |
+|----------|-------------|
+| Mixpanel, Amplitude | Usage events, funnels |
+| Optimizely, LaunchDarkly | A/B test results |
+| Qualtrics, SurveyMonkey | Survey responses |
+| Google Analytics | Traffic/conversion data |
+
+**Claude Code can read CSV, TSV, and JSON directly.**
+
+### Viewing CSV Files
+
+**Options:**
+- **Excel or Google Sheets** - Best for exploring data visually
+- **VS Code** - Good for viewing raw structure
+- **Let Claude read it** - Claude formats data in clean markdown tables
+
+**Recommended:** Let Claude read and analyze the CSV, presenting results in formatted tables. View raw CSV only if you need to verify specific data points.
+
+
+## 🐛 Troubleshooting
+
+**Claude can't read my CSV file**
+- Check file path with `ls` or file browser
+- Use correct relative path (e.g., `data/experiment-results.csv`)
+- Verify file extension is `.csv` not `.CSV` (case-sensitive on some systems)
+
+**Results don't match what I see in Excel**
+- Ask Claude to show the calculation step-by-step
+- Verify Claude is using the correct columns
+- Ask: `Explain how you calculated activation rate from this CSV`
+
+**Statistical significance seems wrong**
+- Check sample size: Need ~400+ users per cohort for reliable tests
+- Remember: `p<0.05` means "less than 5% chance this is random," not "5% error"
+- Wide confidence intervals = high uncertainty, even if `p<0.05`
+
+**Segment analysis shows conflicting results**
+- This isn't a bug - it's an insight!
+- Features often win for target segment and lose for others
+- Solution: Ship to winning segment, exclude losing segment
+
+
+## 📖 Key Terms
+
+| Term | Definition |
+|------|------------|
+| **Activation Rate** | Percentage of signups who complete a key action |
+| **Confidence Interval** | Range of plausible values for the true effect size (e.g., 95% CI: [0.1%, 5.1%]) |
+| **Funnel Analysis** | Tracking users through sequential steps to identify drop-off points |
+| **Leading Indicator** | Early metric that predicts future success (e.g., invite rate predicts retention) |
+| **Lift** | Improvement in metric (e.g., activation 45% → 58% = +13pp lift) |
+| **LTV (Lifetime Value)** | Total revenue from a customer over their entire relationship |
+| **p-value** | Probability the observed effect is due to random chance (`p<0.05` = statistically significant) |
+| **ROI** | Revenue or value generated divided by cost (e.g., 9.4x ROI) |
+| **Segment** | Subset of users grouped by shared characteristic (e.g., company size, role) |
+| **Topline Metric** | Overall average metric before segmentation |
+
+
+## 🚀 What's Next?
+
+You now understand how to analyze funnel and survey data, build ROI models with scenario analyses, and analyze A/B tests beyond topline metrics using Claude Code as your data analysis partner.
+
+**Module 2.3:** Learn about **Competitive Research & Strategic Analysis** - conduct rapid competitive research with parallel agents and apply strategic frameworks.
+
+Interactive track: Type `/start-2-3`
+
+
+---
+
+**About This Course**
+
+Created by [Carl Vellotti](https://www.linkedin.com/in/carlvellotti/). If you have any feedback about this module or the course overall, message me! I'm building a newsletter and community for PM builders, check out [The Full Stack PM](https://fullstackpm.com/subscribe?utm_source=ccforpms&utm_medium=course&utm_campaign=analyze-data).
+
+**Source Repository:** [github.com/carlvellotti/claude-code-pm-course](https://github.com/carlvellotti/claude-code-pm-course)

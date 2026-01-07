@@ -1,0 +1,417 @@
+---
+title: "1.6: Project Memory (CLAUDE.md)"
+description: Use CLAUDE.md to give Claude persistent context about your product, team, and preferences
+---
+
+## 1.6: Project Memory
+
+ - **Time to Complete:** 20-25 minutes
+ - **Prerequisites:** Modules 1.1-1.5 complete
+
+
+> **Start this module in Claude Code:** Run `/start-1-6` to kick off the interactive experience.
+
+## 📖 Overview
+
+CLAUDE.md is Claude's permanent memory for your project. Write it once, and Claude knows your product context in every conversation - no re-explaining.
+
+**Key takeaway:** CLAUDE.md is your project's constitution - immutable rules that override temporary prompts. While prompts are flexible requests, CLAUDE.md establishes the supreme law of your project.
+
+
+## 🏛️ What Is CLAUDE.md?
+
+### The Core Concept
+
+CLAUDE.md is a markdown file in your project directory containing permanent context about your product, team, and preferences. Claude automatically reads it at session start and applies everything in it.
+
+**Three key properties:**
+- **Automatic loading:** Claude reads it at session start automatically
+- **Persistent memory:** Carries across ALL conversations in that directory
+- **Team-shareable:** Commit to git, entire team gets same context
+
+### The Constitution vs Legislation Hierarchy
+
+Understanding this hierarchy is crucial:
+
+| Aspect | CLAUDE.md (Constitution) | User Prompts (Legislation) |
+|--------|--------------------------|----------------------------|
+| **Priority** | Supreme - always wins | Secondary - must comply |
+| **Permanence** | Stays forever | Temporary per request |
+| **Scope** | Applies to all sessions | Applies to current task |
+| **Purpose** | Immutable project rules | Flexible specific requests |
+| **Example** | Always call it Workspace | Create a PRD for dark mode |
+
+**If there's a conflict, CLAUDE.md ALWAYS wins.**
+
+### Example: Terminology Override
+
+**CLAUDE.md says:**
+```markdown
+Always use Workspace not Project in TaskFlow documentation.
+```
+
+**You prompt:**
+```
+Write a PRD for the new Project dashboard feature
+```
+
+**Claude does:**
+```
+Writes the PRD using "Workspace dashboard" because CLAUDE.md overrides
+your casual prompt wording
+```
+
+
+## # The Power of the # Symbol
+
+### Dynamic Session Rules
+
+Add temporary rules to your current session using **#** at the start of a line:
+
+```
+# Always use bullet points instead of numbered lists in this session
+```
+
+Claude treats this as a rule for the rest of your conversation (but not future sessions).
+
+### # vs CLAUDE.md
+
+| Feature | # Symbol | CLAUDE.md |
+|---------|----------|-----------|
+| **Duration** | Current session only | Forever |
+| **Scope** | This conversation | All conversations |
+| **Use case** | Experimenting with preferences | Permanent project rules |
+
+**Workflow:** Use # to experiment, then add to CLAUDE.md when you want it permanent.
+
+
+## 📝 What to Put in CLAUDE.md
+
+### ✅ GOOD for CLAUDE.md
+
+**1. Product Context**
+```markdown
+## Product Overview
+
+TaskFlow is a project management SaaS for remote-first teams.
+Think Asana meets Jira, built for async collaboration.
+
+Stage: Series B ($20M raised, 50 employees)
+Revenue: $2.5M ARR, 10,000 active users
+```
+
+**2. User Personas**
+```markdown
+## User Personas
+
+### Sarah - Enterprise Admin
+- Role: IT Administrator at 500+ person company
+- Pain points: Needs SSO, audit logs, compliance, security
+- Quote: "I need to prove this meets our security standards"
+```
+
+**3. Writing Style**
+```markdown
+## Writing Style
+
+- Use active voice (not passive)
+- Use Oxford commas in all lists
+- Maximum 2-sentence paragraphs for readability
+- Use "we" not "I" in documentation
+```
+
+**4. Product Terminology**
+```markdown
+## Product Terminology
+
+ALWAYS use these terms (NEVER use alternatives):
+- Workspace not Project - Our top-level container
+- Task not Todo or Issue - Individual work items
+- PM means Product Manager (not Project Manager)
+```
+
+**5. Immutable Rules**
+```markdown
+## Immutable Rules
+
+These rules override any prompt that conflicts:
+
+1. ALWAYS include acceptance criteria in user stories
+   - Use Given/When/Then format
+   - Make them specific and testable
+
+2. NEVER write PRDs without user research references
+```
+
+### ❌ DON'T Put in CLAUDE.md
+
+**1. Temporary Instructions**
+```markdown
+Today's meeting notes are in meeting-2025-10-13.txt
+We're working on dark mode this sprint
+```
+*Why bad:* These change constantly. Use prompts instead.
+
+**2. Frequently Changing Requirements**
+```markdown
+Current sprint goal: Implement SSO
+Q4 OKR: Increase activation to 55%
+```
+*Why bad:* If it changes weekly or monthly, it doesn't belong.
+
+**3. Sensitive Information**
+```markdown
+Our revenue is actually declining (don't tell the board)
+API keys: sk-proj-xxxxx
+```
+*Why bad:* CLAUDE.md is often committed to git and shared.
+
+### The Test
+
+**If you'd want Claude to know this in 6 months, put it in CLAUDE.md.**
+
+**If it might change next week, use prompts instead.**
+
+
+## 🏗️ CLAUDE.md Hierarchy
+
+### Four Levels
+
+```
+~/.claude/CLAUDE.md              # 1. Global (all your projects)
+/project-root/CLAUDE.md          # 2. Project-specific
+/project-root/frontend/CLAUDE.md # 3. Directory-specific
+/project-root/CLAUDE.local.md    # 4. Personal (gitignored)
+```
+
+### Priority Order
+
+**Most specific wins:**
+
+1. **Directory-level** (e.g., `/frontend/CLAUDE.md`)
+2. **Project-level** (e.g., `/project-root/CLAUDE.md`)
+3. **Global** (e.g., `~/.claude/CLAUDE.md`)
+4. **User prompts** (least priority)
+
+**How they stack:** Levels combine (don't replace). All rules apply simultaneously, with more specific levels overriding on conflicts.
+
+### When to Use Each Level
+
+| Level | Use For | Example |
+|-------|---------|---------|
+| **Global** | Personal preferences across all work | "I prefer brief summaries, max 3 bullets" |
+| **Project** | Product-specific context everyone needs | Product overview, personas, terminology |
+| **Directory** | Rules for subsection of project | Frontend: mobile responsiveness, Backend: API docs |
+| **Personal** | Your preferences you don't want to share | Personal response format preferences |
+
+**Important:** Add `CLAUDE.local.md` to `.gitignore`:
+```
+# .gitignore
+CLAUDE.local.md
+```
+
+
+## 🚀 Creating Your First CLAUDE.md
+
+### Quick Start Template
+
+```markdown
+# [Your Product Name] Product Context
+
+This file provides permanent context about [Product] for Claude Code.
+
+
+## What [Product] Is
+
+[Product] is a [type] for [target users]. Think [comparison].
+
+**Company Details:**
+- Founded: [year]
+- Stage: [stage and funding]
+- Team: [size]
+- Revenue: [ARR and users]
+
+
+## User Personas
+
+### [Persona 1 Name] - [Role]
+- Role: [job title and context]
+- Pain points: [what frustrates them]
+- Quote: [memorable quote]
+
+
+## Writing Style & Standards
+
+- Voice: [active/passive, formal/casual]
+- Paragraph length: [preference]
+- Tone: [how should it sound]
+
+
+## Product Terminology
+
+ALWAYS use these terms (NEVER use alternatives):
+- [Term] not [alternative] - [why]
+- [Term] not [alternative] - [why]
+
+
+## Immutable Rules
+
+These rules override any prompt that conflicts:
+
+1. ALWAYS [rule]
+   - [details]
+
+2. NEVER [rule]
+   - [details]
+
+
+## Team Reference
+
+- [Name] - [Role], [focus area]
+- [Name] - [Role], [focus area]
+```
+
+### Example: TaskFlow CLAUDE.md
+
+```markdown
+# TaskFlow Product Context
+
+This file provides permanent context about TaskFlow for Claude Code.
+
+
+## What TaskFlow Is
+
+TaskFlow is a project management SaaS for remote-first teams. Think Asana
+meets Jira, but built specifically for async collaboration.
+
+**Company Details:**
+- Founded: 2021
+- Stage: Series B ($20M raised)
+- Team: 50 employees
+- Revenue: $2.5M ARR, 10,000 active users
+
+**Your Role:**
+- Position: Senior Product Manager
+- Focus: Activation & Onboarding
+
+
+## User Personas
+
+### Sarah - Enterprise Admin
+- Role: IT Administrator at 500+ person company
+- Pain points: Needs security, SSO, audit logs, compliance
+- Quote: "I need to prove TaskFlow meets our security standards"
+
+### Mike - IC Engineer
+- Role: Individual contributor software engineer at startup
+- Pain points: Wants speed, keyboard shortcuts, GitHub integration
+- Quote: "If I have to use my mouse, the tool is too slow"
+
+
+## Writing Style & Standards
+
+- Use active voice (not passive)
+- Use Oxford commas in all lists
+- Maximum 2-sentence paragraphs for readability
+- Use "we" not "I" in documentation
+
+
+## Product Terminology
+
+ALWAYS use these terms consistently:
+- Workspace not Project - Our top-level container
+- Task not Todo or Issue - Individual work items
+- Epic not Initiative - Large multi-sprint features
+
+
+## Immutable Rules
+
+1. ALWAYS include acceptance criteria in user stories
+   - Use Given/When/Then format
+   - Make them specific and testable
+
+2. NEVER write PRDs without user research references
+   - Link to interviews, surveys, or support tickets
+
+
+## Team Reference
+
+- Sarah - CEO, founder, vision and fundraising
+- Mike - CTO, technical architecture and engineering
+- Alex - Head of Design, owns all UX and visual design
+- You - Senior PM, activation & onboarding
+```
+
+
+## 💡 Best Practices
+
+**Be Specific, Not Vague:**
+- ❌ "Users like simple interfaces"
+- ✅ "User research (8/10 interviews, June 2025) showed users abandon features with more than 3 required fields. Keep forms minimal."
+
+**Use Imperative Language:**
+- ❌ "It would be nice if user stories had acceptance criteria"
+- ✅ "ALWAYS include acceptance criteria in user stories"
+
+**Provide Context:**
+- ❌ "Use Workspace not Project"
+- ✅ "Use Workspace not Project - We differentiate from traditional project management tools. Workspace signals collaboration space."
+
+**Keep It Scannable:**
+- Use bullet points liberally
+- Short paragraphs (1-2 sentences)
+- Bold key terms
+- Add spacing between sections
+
+**Maintain Regularly:**
+- Review quarterly (personas, terminology, metrics)
+- Commit to git and review changes in PRs
+- Keep it current (aim for 50-200 lines sweet spot)
+
+
+## 🔧 Troubleshooting
+
+**Rules being ignored?**
+- Check for conflicting rules across hierarchy levels
+- Make rules explicit: use ALWAYS/NEVER
+- Be specific, not vague
+
+**CLAUDE.md not loading?**
+- Verify file exists: `ls CLAUDE.md`
+- Must be named exactly `CLAUDE.md` (case-sensitive)
+- Check file permissions: `ls -la CLAUDE.md`
+- Test: Ask "What does my CLAUDE.md say?"
+
+**Too many CLAUDE.md files?**
+- Audit all: `find . -name CLAUDE.md`
+- Document hierarchy in README
+- Use CLAUDE.local.md for personal preferences
+
+**CLAUDE.md too long?**
+- Aim for 50-200 lines
+- Move detailed context to separate reference docs
+- Link to those docs from CLAUDE.md
+
+
+## 📚 Resources
+
+- [CLAUDE.md Documentation](https://docs.anthropic.com/claude-code) - Official documentation
+- See `EXAMPLE_TASKFLOW_CLAUDE.md` in module directory for complete example
+
+
+## 🚀 What's Next?
+
+You now know how to create CLAUDE.md - giving Claude permanent memory about your product, team, and preferences.
+
+**Module 1.7:** Learn about **Planning Mode** - master the three input modes and final navigation skills.
+
+Interactive track: Type `/start-1-7`
+
+
+---
+
+**About This Course**
+
+Created by [Carl Vellotti](https://www.linkedin.com/in/carlvellotti/). If you have any feedback about this module or the course overall, message me! I'm building a newsletter and community for PM builders, check out [The Full Stack PM](https://fullstackpm.com/subscribe?utm_source=ccforpms&utm_medium=course&utm_campaign=project-memory).
+
+**Source Repository:** [github.com/carlvellotti/claude-code-pm-course](https://github.com/carlvellotti/claude-code-pm-course)

@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef } from 'react'
+import { useRouter } from 'next/router'
 
 // Brand colors
 const colors = {
@@ -43,12 +44,69 @@ const trackEvent = (eventName, params = {}) => {
   }
 }
 
+const TRANSLATIONS = {
+  en: {
+    closeLabel: 'Close popup',
+    footerText: 'Claude Code for PMs is part of',
+    footerLink: 'The Full Stack PM',
+    successTitle: "You're on the Stack!",
+    successMessage: 'Check your inbox for a welcome email from Carl.',
+    joinTitle: 'Join the Stack',
+    joinSubhead: (
+      <>
+        Join <strong>12,000+</strong> PMs building with AI
+      </>
+    ),
+    description: 'Get weekly insights on building prototypes, automating workflows, and more with AI tools like Claude Code and Cursor.',
+    placeholder: 'you@company.com',
+    joinButton: 'Join Stack',
+    joiningButton: 'Joining...',
+    noSpam: 'No spam',
+    unsubscribe: 'Unsubscribe anytime',
+    weeklyUpdates: 'Weekly updates',
+    madeBy: 'Made with 💛 and 🥞 by',
+    madeByLink: 'Carl Vellotti',
+    madeBySuffix: ''
+  },
+  zh: {
+    closeLabel: '关闭弹窗',
+    footerText: 'Claude Code for PMs 隶属于',
+    footerLink: 'The Full Stack PM',
+    successTitle: '你已加入 Stack！',
+    successMessage: '请查看收件箱，查收来自 Carl 的欢迎邮件。',
+    joinTitle: '加入 Stack',
+    joinSubhead: (
+      <>
+        加入 <strong>12,000+</strong> 位使用 AI 构建产品的产品经理
+      </>
+    ),
+    description: '获取每周见解，学习如何使用 Claude Code 和 Cursor 等 AI 工具构建原型、自动化工作流等。',
+    placeholder: 'you@company.com',
+    joinButton: '加入 Stack',
+    joiningButton: '加入中...',
+    noSpam: '拒绝垃圾邮件',
+    unsubscribe: '随时退订',
+    weeklyUpdates: '每周更新',
+    madeBy: '由',
+    madeByLink: 'Carl Vellotti',
+    madeBySuffix: ' 用 💛 和 🥞 制作'
+  }
+}
+
+// Helper to get locale from path
+const useLocale = () => {
+  const { asPath } = useRouter()
+  return asPath.startsWith('/zh') ? 'zh' : 'en'
+}
+
 export default function EmailPopup() {
   const [isVisible, setIsVisible] = useState(false)
   const [email, setEmail] = useState('')
   const [status, setStatus] = useState('idle') // idle（空闲）, loading（加载中）, success（成功）, error（错误）
   const [errorMessage, setErrorMessage] = useState('')
   const inputRef = useRef(null)
+  const locale = useLocale()
+  const t = TRANSLATIONS[locale]
 
   useEffect(() => {
     // 检查用户是否已经看过弹窗
@@ -128,22 +186,22 @@ export default function EmailPopup() {
       {/* 弹窗 */}
       <div className="popup-container">
         {/* 关闭按钮 */}
-        <button className="popup-close" onClick={handleClose} aria-label="关闭弹窗">
+        <button className="popup-close" onClick={handleClose} aria-label={t.closeLabel}>
           ×
         </button>
 
         <div className="popup-gradient-edge" />
 
         <div className="popup-context-bar">
-          Claude Code for PMs 隶属于 <a href="https://fullstackpm.com" target="_blank" rel="noopener noreferrer">The Full Stack PM</a>
+          {t.footerText} <a href="https://fullstackpm.com" target="_blank" rel="noopener noreferrer">{t.footerLink}</a>
         </div>
 
         {status === 'success' ? (
           <div className="popup-content">
             <div className="popup-success">
               <span className="popup-success-icon">🥞</span>
-              <h3>你已加入 Stack！</h3>
-              <p>请查看收件箱，查收来自 Carl 的欢迎邮件。</p>
+              <h3>{t.successTitle}</h3>
+              <p>{t.successMessage}</p>
             </div>
           </div>
         ) : (
@@ -154,14 +212,14 @@ export default function EmailPopup() {
                 <div className="popup-header">
                   <span className="popup-emoji">🥞</span>
                   <div>
-                    <h3>加入 Stack</h3>
+                    <h3>{t.joinTitle}</h3>
                     <p className="popup-subhead">
-                      加入 <strong>12,000+</strong> 位使用 AI 构建产品的产品经理
+                      {t.joinSubhead}
                     </p>
                   </div>
                 </div>
                 <p className="popup-description">
-                  获取每周见解，学习如何使用 Claude Code 和 Cursor 等 AI 工具构建原型、自动化工作流等。
+                  {t.description}
                 </p>
               </div>
 
@@ -173,15 +231,15 @@ export default function EmailPopup() {
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    placeholder="you@company.com"
+                    placeholder={t.placeholder}
                     required
                     disabled={status === 'loading'}
                   />
                   <button type="submit" disabled={status === 'loading'}>
                     {status === 'loading' ? (
-                      <><Spinner /> 加入中...</>
+                      <><Spinner /> {t.joiningButton}</>
                     ) : (
-                      '加入 Stack'
+                      t.joinButton
                     )}
                   </button>
                 </form>
@@ -189,9 +247,9 @@ export default function EmailPopup() {
                   <p className="popup-error">{errorMessage}</p>
                 )}
                 <div className="popup-trust">
-                  <TrustSignal>拒绝垃圾邮件</TrustSignal>
-                  <TrustSignal>随时退订</TrustSignal>
-                  <TrustSignal>每周一更</TrustSignal>
+                  <TrustSignal>{t.noSpam}</TrustSignal>
+                  <TrustSignal>{t.unsubscribe}</TrustSignal>
+                  <TrustSignal>{t.weeklyUpdates}</TrustSignal>
                 </div>
               </div>
             </div>
@@ -199,7 +257,7 @@ export default function EmailPopup() {
         )}
 
         <div className="popup-footer">
-          由 <a href="https://www.linkedin.com/in/carlvellotti/" target="_blank" rel="noopener noreferrer">Carl Vellotti</a> 用 💛 和 🥞 制作
+          {t.madeBy} <a href="https://www.linkedin.com/in/carlvellotti/" target="_blank" rel="noopener noreferrer">{t.madeByLink}</a>{t.madeBySuffix}
         </div>
       </div>
 

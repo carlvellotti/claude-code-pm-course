@@ -5,11 +5,13 @@
     {
       "id": "1",
       "name": "Foundation",
+      "name_zh": "基础",
       "description": "Core Claude Code mechanics",
       "modules": [
         {
           "id": "1.1",
           "title": "Welcome",
+          "title_zh": "欢迎",
           "slug": "welcome",
           "path": "lesson-modules/1-fundamentals/1.1-welcome/CLAUDE.md",
           "command": "start-1-1",
@@ -19,6 +21,7 @@
         {
           "id": "1.2",
           "title": "Visualizing Files",
+          "title_zh": "可视化文件",
           "slug": "visualizing-files",
           "path": "lesson-modules/1-fundamentals/1.2-visualizing-files/CLAUDE.md",
           "command": "start-1-2",
@@ -28,6 +31,7 @@
         {
           "id": "1.3",
           "title": "First Tasks",
+          "title_zh": "初次任务",
           "slug": "first-tasks",
           "path": "lesson-modules/1-fundamentals/1.3-first-tasks/CLAUDE.md",
           "command": "start-1-3",
@@ -37,6 +41,7 @@
         {
           "id": "1.4",
           "title": "Agents",
+          "title_zh": "智能体",
           "slug": "agents",
           "path": "lesson-modules/1-fundamentals/1.4-agents/CLAUDE.md",
           "command": "start-1-4",
@@ -46,6 +51,7 @@
         {
           "id": "1.5",
           "title": "Custom Sub-agents",
+          "title_zh": "自定义子智能体",
           "slug": "custom-subagents",
           "path": "lesson-modules/1-fundamentals/1.5-custom-subagents/CLAUDE.md",
           "command": "start-1-5",
@@ -55,6 +61,7 @@
         {
           "id": "1.6",
           "title": "Project Memory",
+          "title_zh": "项目记忆",
           "slug": "project-memory",
           "path": "lesson-modules/1-fundamentals/1.6-project-memory/CLAUDE.md",
           "command": "start-1-6",
@@ -64,6 +71,7 @@
         {
           "id": "1.7",
           "title": "Claude Code Navigation",
+          "title_zh": "Claude Code 导航",
           "slug": "claude-code-navigation",
           "path": "lesson-modules/1-fundamentals/1.7-claude-code-navigation/CLAUDE.md",
           "command": "start-1-7",
@@ -75,11 +83,13 @@
     {
       "id": "2",
       "name": "PM Workflows",
+      "name_zh": "产品经理工作流",
       "description": "Real Product Management tasks",
       "modules": [
         {
           "id": "2.1",
           "title": "Write a PRD",
+          "title_zh": "撰写 PRD",
           "slug": "write-prd",
           "path": "lesson-modules/2-advanced-pm-work/2.1-write-prd/CLAUDE.md",
           "command": "start-2-1",
@@ -89,6 +99,7 @@
         {
           "id": "2.2",
           "title": "Analyze Data",
+          "title_zh": "分析数据",
           "slug": "analyze-data",
           "path": "lesson-modules/2-advanced-pm-work/2.2-analyze-data/CLAUDE.md",
           "command": "start-2-2",
@@ -98,6 +109,7 @@
         {
           "id": "2.3",
           "title": "Product Strategy",
+          "title_zh": "产品战略",
           "slug": "product-strategy",
           "path": "lesson-modules/2-advanced-pm-work/2.3-product-strategy/CLAUDE.md",
           "command": "start-2-3",
@@ -109,11 +121,13 @@
     {
       "id": "3",
       "name": "Nano Banana",
+      "name_zh": "Nano Banana",
       "description": "AI Image Generation with Gemini 3 Pro",
       "modules": [
         {
           "id": "3.1.1",
           "title": "Welcome & First Generation",
+          "title_zh": "欢迎与初次生成",
           "slug": "welcome-first-generation",
           "path": "lesson-modules/3-nano-banana/3.1-intro-to-image-gen/3.1.1-welcome/CLAUDE.md",
           "command": "start-3-1-1",
@@ -123,6 +137,7 @@
         {
           "id": "3.1.2",
           "title": "Understanding the Basics",
+          "title_zh": "理解基础",
           "slug": "understanding-basics",
           "path": "lesson-modules/3-nano-banana/3.1-intro-to-image-gen/3.1.2-basics/CLAUDE.md",
           "command": "start-3-1-2",
@@ -132,6 +147,7 @@
         {
           "id": "3.1.3",
           "title": "Consistency & Style",
+          "title_zh": "一致性与风格",
           "slug": "consistency-style",
           "path": "lesson-modules/3-nano-banana/3.1-intro-to-image-gen/3.1.3-style/CLAUDE.md",
           "command": "start-3-1-3",
@@ -141,6 +157,7 @@
         {
           "id": "3.1.4",
           "title": "Building Your Style Database",
+          "title_zh": "构建风格库",
           "slug": "style-database",
           "path": "lesson-modules/3-nano-banana/3.1-intro-to-image-gen/3.1.4-style-database/CLAUDE.md",
           "command": "start-3-1-4",
@@ -150,6 +167,7 @@
         {
           "id": "3.2.1",
           "title": "Users & Product Visuals",
+          "title_zh": "用户与产品视觉",
           "slug": "users-product-visuals",
           "path": "lesson-modules/3-nano-banana/3.2-pm-use-cases/3.2.1-users-product/CLAUDE.md",
           "command": "start-3-2-1",
@@ -159,6 +177,7 @@
         {
           "id": "3.2.2",
           "title": "Strategy & Architecture Visuals",
+          "title_zh": "战略与架构视觉",
           "slug": "strategy-architecture-visuals",
           "path": "lesson-modules/3-nano-banana/3.2-pm-use-cases/3.2.2-strategy-architecture/CLAUDE.md",
           "command": "start-3-2-2",
@@ -168,6 +187,7 @@
         {
           "id": "3.2.3",
           "title": "Marketing & Launch Assets",
+          "title_zh": "营销与发布资产",
           "slug": "marketing-launch-assets",
           "path": "lesson-modules/3-nano-banana/3.2-pm-use-cases/3.2.3-marketing/CLAUDE.md",
           "command": "start-3-2-3",
