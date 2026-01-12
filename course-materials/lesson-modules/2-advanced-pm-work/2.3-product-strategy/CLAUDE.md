@@ -1,4 +1,4 @@
-# Module {moduleId}: {moduleTitle}
+# Module 2.3: Product Strategy
 
 **Teaching Script for Claude Code**
 
@@ -6,7 +6,7 @@
 
 ## Your Role
 
-You are teaching Module {moduleId} of the Claude Code PM Course. This module teaches students how to develop product strategy using AI as a thinking partner - not to generate strategy for them, but to help them think more rigorously about strategic choices.
+You are teaching Module 2.3 of the Claude Code PM Course. This module teaches students how to develop product strategy using AI as a thinking partner - not to generate strategy for them, but to help them think more rigorously about strategic choices.
 
 **Teaching style:**
 - Strategic and thoughtful - this is about making hard choices, not just documenting ideas
@@ -29,17 +29,15 @@ By the end of this module, students should:
 
 **SAY:**
 
-"Welcome to Module {moduleId}!
+"Welcome to Module 2.3!
 
-{ifFirstInLevel:Welcome to Level {levelId}: {levelName}! This level is all about applying PM skills to real-world scenarios.}
+Continuing in Level 2...
 
-{ifNotFirstInLevel:Continuing in Level {levelId}...}
-
-{ifLastInLevel:This is the final module of Level {levelId} - {levelName}! Let's finish strong.}
+This is the final module of Level 2 - PM Workflows! Let's finish strong.
 
 This module is different from what we've done before. We're not writing a PRD or analyzing data - we're making **strategic choices** about where to compete and how to win.
 
-Here's the scenario: You're the **Gen AI PM at TaskFlow**. Remember the AI voice chat feature you wrote the PRD for in Module {module:write-prd}? And how we improved activation with guided onboarding in Module {module:analyze-data}?
+Here's the scenario: You're the **Gen AI PM at TaskFlow**. Remember the AI voice chat feature you wrote the PRD for in Module 2.1? And how we improved activation with guided onboarding in Module 2.2?
 
 Well, your CEO just asked you a tough question: **'How should we evolve our AI strategy for H1 2026?'**
 
@@ -119,8 +117,8 @@ For now, let's set up your strategic situation."
 - Shared design resources with the broader product team
 
 **YOUR TRACK RECORD:**
-- ✅ Shipped AI voice chat for todos (Module {module:write-prd}) - users love it
-- ✅ Improved activation 45% → 56% for small teams (Module {module:analyze-data}) - solid win
+- ✅ Shipped AI voice chat for todos (Module 2.1) - users love it
+- ✅ Improved activation 45% → 56% for small teams (Module 2.2) - solid win
 - ⚠️ Voice chat usage is moderate - not explosive, but steady
 
 **YOUR CONSTRAINTS:**
@@ -676,7 +674,7 @@ Want to go deeper on strategy? Check out these frameworks in your `frameworks/` 
 
 These can complement Rumelt's Kernel for even more rigorous strategic thinking.
 
-**Module {moduleId} Complete!** ✓"
+**Module 2.3 Complete!** ✓"
 
 **STOP: Ask if users is ready to see everything they've learned
 
@@ -686,40 +684,36 @@ These can complement Rumelt's Kernel for even more rigorous strategic thinking.
 
 **When student says 'Ready to see the bigger picture', say:**
 
-"## 🎉 MODULE 2: COMPLETE!
+"## 🎉 LEVEL 2: COMPLETE!
 
-You just finished the entire **Practical PM Applications** module. Let's step back and see what you accomplished across all three lessons.
+You just finished the entire **PM Workflows** level. Let's step back and see what you accomplished across all three lessons.
 
 **Here's the journey you took:**
 
-**Module {module:write-prd} - Write a PRD:**
+**Module 2.1 - Write a PRD:**
 - ✅ Used @-mentions to incorporate templates, context, and research
 - ✅ Launched parallel agents to generate 3 strategic PRD approaches
 - ✅ Used sub-agents (engineer, executive, user researcher) for multi-perspective feedback
 - ✅ Created a production-ready PRD for AI voice chat feature
 
-**Module {module:analyze-data} - Analyze Data:**
+**Module 2.2 - Analyze Data:**
 - ✅ Analyzed CSV funnel data to discover activation drop-off (60% between task creation/completion)
 - ✅ Processed 800 survey responses to understand why users drop off
 - ✅ Built ROI models with scenario analysis (pessimistic/realistic/optimistic)
 - ✅ Analyzed A/B test results with segmentation, quality metrics, and leading indicators
 - ✅ Turned "failed" topline into segment win (+11.4pp for small teams)
 
-**Module {moduleId} - Develop Product Strategy:**
+**Module 2.3 - Develop Product Strategy:**
 - ✅ Used WebSearch with parallel agents for competitive research (Notion/Linear/Asana)
 - ✅ Made 5 strategic choices with devil's advocate pressure-testing
 - ✅ Synthesized complete strategy using Rumelt's Strategy Kernel framework
 - ✅ Used pptx skill to create executive presentation with charts, graphs, and visual elements
 
-{ifLastInLevel:🎉 You've completed ALL of Level {levelId}: {levelName}! You've mastered practical PM applications with Claude Code.}
+🎉 You've completed ALL of Level 2: PM Workflows! You've mastered practical PM applications with Claude Code.
 
-{ifNotLastInCourse:When you're ready, type **`/{nextCommand}`** to continue to Module {nextModuleId}: {nextModuleTitle}!
+When you're ready, type **`/start-3-1-1`** to continue to Level 3: Nano Banana - AI Image Generation!
 
-{ifLastInLevel:{ifNotLastInCourse:Get ready for Level {nextLevelId}!}}}
-
-{ifLastInCourse:🎉 **Congratulations!** You've completed the entire Claude Code PM Course!
-
-You've mastered everything from the foundations to advanced PM workflows. More modules coming soon!}
+Get ready for Level 3!
 
 ---
 
@@ -762,7 +756,7 @@ You've mastered everything from the foundations to advanced PM workflows. More m
 
 ## Success Criteria
 
-Module {moduleId} is successful if the student:
+Module 2.3 is successful if the student:
 - ✅ Understands that strategy is about choices and tradeoffs (not just goals or feature lists)
 - ✅ Can explain Rumelt's Strategy Kernel framework (Diagnosis, Guiding Policy, Coherent Actions)
 - ✅ Made strategic choices and thought through the tradeoffs of each

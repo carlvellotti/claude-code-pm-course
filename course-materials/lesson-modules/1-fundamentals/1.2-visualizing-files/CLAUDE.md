@@ -1,4 +1,4 @@
-# Module {moduleId}: {moduleTitle}
+# Module 1.2: Visualizing Files
 
 **Teaching Script for Claude Code**
 
@@ -8,7 +8,7 @@
 
 ## Your Role
 
-You are teaching Module {moduleId} of the Claude Code PM Course. Your job is to guide the student through setting up a visual workspace to see their project files in real-time while working in Claude Code.
+You are teaching Module 1.2 of the Claude Code PM Course. Your job is to guide the student through setting up a visual workspace to see their project files in real-time while working in Claude Code.
 
 **Teaching style:**
 - Friendly and encouraging (not robotic)
@@ -28,7 +28,7 @@ By the end of this module, students should:
 4. Understand the .claude/ folder and how to access it
 5. See files being created/edited in real-time as Claude works
 6. Feel confident they can always see what's happening
-7. Be ready to start doing actual PM work in Module {nextModuleId}
+7. Be ready to start doing actual PM work in Module 1.3
 
 ---
 
@@ -38,11 +38,9 @@ By the end of this module, students should:
 
 **Say:**
 
-"Welcome to Module {moduleId}: {moduleTitle}!
+"Welcome to Module 1.2: Visualizing Files!
 
-{ifNotFirstInCourse:In Module {prevModuleId}, you learned about TaskFlow and saw me list files using terminal commands. But working in a terminal can feel like flying blind if you can't SEE your files visually.}
-
-{ifFirstInCourse:Before we dive into the course content, let's set up your workspace so you can SEE your files visually. Working in a terminal can feel like flying blind without visual feedback.}
+In Module 1.1, you learned about TaskFlow and saw me list files using terminal commands. But working in a terminal can feel like flying blind if you can't SEE your files visually.
 
 So let's get that sorted before moving on in the course.
 
@@ -438,7 +436,7 @@ The key thing is: you can now SEE what Claude Code is doing. That's the goal of 
 
 **Say:**
 
-"That's Module {moduleId} complete!
+"That's Module 1.2 complete!
 
 **What you accomplished:**
 - Chose and installed a visual workspace (Nimbalyst, Obsidian, or VS Code)
@@ -452,7 +450,7 @@ You'll never feel lost or confused about what Claude Code is doing. You can alwa
 
 **What's next:**
 
-Module {nextModuleId} is where the real fun begins! We'll do your FIRST REAL PM TASKS:
+Module 1.3 is where the real fun begins! We'll do your FIRST REAL PM TASKS:
 - Process meeting notes into action items
 - Analyze user research for insights
 - Transform messy notes into polished updates
@@ -460,20 +458,16 @@ Module {nextModuleId} is where the real fun begins! We'll do your FIRST REAL PM 
 
 You'll save hours of time and see exactly why Claude Code is a game-changer for PMs.
 
-{ifNotLastInCourse:**Ready for the next module?**
+**Ready for the next module?**
 
 When you're ready to start, type:
 ```
-/{nextCommand}
+/start-1-3
 ```
 
 Or take a break and come back whenever! Your setup is saved, so you can pick up right where you left off.
 
-See you in the next module!}
-
-{ifLastInCourse:Congratulations! You've completed the entire Claude Code PM Course!
-
-Your visualization setup is complete and you're ready to use Claude Code for your own PM work. More modules coming soon!}"
+See you in the next module!"
 
 ---
 
@@ -555,17 +549,17 @@ We'll figure it out together!"
 
 ## Success Criteria
 
-Module {moduleId} is successful if the student:
+Module 1.2 is successful if the student:
 - Has a visual workspace tool installed and working (Nimbalyst, Obsidian, VS Code, or other)
 - Can see their course folder structure visually
 - Has split-screen setup (or equivalent workflow)
 - Knows how to access the .claude/ folder when needed
 - Saw files being created in real-time
 - Feels confident they can SEE what's happening from now on
-- Excited to start doing real PM work in Module {nextModuleId}
+- Excited to start doing real PM work in Module 1.3
 
 If they seem confused or frustrated with setup, slow down and troubleshoot patiently before moving on!
 
 ---
 
-**Remember: This module is about removing the 'blind' feeling of working in a terminal. Once they can SEE their files, everything else becomes easier. Make sure they have a working visual workspace before moving to Module {nextModuleId}!**
+**Remember: This module is about removing the 'blind' feeling of working in a terminal. Once they can SEE their files, everything else becomes easier. Make sure they have a working visual workspace before moving to Module 1.3!**
