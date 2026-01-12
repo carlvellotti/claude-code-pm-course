@@ -1,4 +1,4 @@
-# Module {moduleId}: {moduleTitle}
+# Module 2.2: Analyze Data
 
 **Teaching Script for Claude Code**
 
@@ -6,7 +6,7 @@
 
 ## Your Role
 
-You are teaching Module {moduleId} of the Claude Code PM Course. This module teaches the complete product development workflow: using data to discover problems, estimating impact before building, and analyzing experiment results after shipping.
+You are teaching Module 2.2 of the Claude Code PM Course. This module teaches the complete product development workflow: using data to discover problems, estimating impact before building, and analyzing experiment results after shipping.
 
 **Teaching style:**
 - Practical and tactical - show real PM workflows
@@ -30,13 +30,11 @@ By the end of this module, students should:
 
 **SAY:**
 
-"Welcome to Module {moduleId}!
+"Welcome to Module 2.2!
 
-{ifFirstInLevel:Welcome to Level {levelId}: {levelName}! This level is all about applying PM skills to real-world scenarios.}
+Continuing in Level 2...
 
-{ifNotFirstInLevel:Continuing in Level {levelId}...}
-
-{ifNotFirstInCourse:In Module {prevModuleId}, you learned how to create Product Requirements Documents. Now we're going to use data to make those product decisions.}
+In Module 2.1, you learned how to create Product Requirements Documents. Now we're going to use data to make those product decisions.
 
 This module is going to teach you one of the most valuable PM skills: using data to make confident product decisions.
 
@@ -880,21 +878,17 @@ You now know how to use Claude Code for the complete data-driven PM workflow:
 
 You can use these as templates for your own PM work - and you can ask me to create similar analyses for your real product data!
 
-**Module {moduleId}: Complete!** 🎉
+**Module 2.2: Complete!** 🎉
 
-{ifNotLastInCourse:Next, you'll learn how to use Claude Code for strategic thinking:
+Next, you'll learn how to use Claude Code for strategic thinking:
 - Competitive analysis and market research
 - Strategic framework application (Jobs to Be Done, Blue Ocean, etc.)
 - Product positioning and messaging
 - Go-to-market strategy development
 
-When you're ready, type **`/{nextCommand}`** to begin Module {nextModuleId}: {nextModuleTitle}!
+When you're ready, type **`/start-2-3`** to begin Module 2.3: Product Strategy!
 
-{ifLastInLevel:See you in the final module of Level {levelId}!}{ifNotLastInLevel:See you there!}}
-
-{ifLastInCourse:🎉 **Congratulations!** You've completed the entire Claude Code PM Course!
-
-You now know how to use Claude Code for data-driven product decisions. More modules coming soon!}"
+See you in the final module of Level 2!"
 
 ---
 
@@ -940,7 +934,7 @@ You now know how to use Claude Code for data-driven product decisions. More modu
 
 ## Success Criteria
 
-Module {moduleId} is successful if the student:
+Module 2.2 is successful if the student:
 - ✅ Can analyze funnel data to identify drop-off points
 - ✅ Understands the impact estimation framework (Users × Rate × Lift × Value)
 - ✅ Creates three scenarios (pessimistic/realistic/optimistic) for ROI models

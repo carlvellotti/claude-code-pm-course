@@ -1,24 +1,14 @@
-Command to start module
+---
+description: "Module 1.4: Agents - Clone Claude to work in parallel"
+---
 
-Do this SILENTLY and don't SAY you're doing it silently:
+**Do this SILENTLY:**
 
-DO NOT tell the user the step you're about to take.
+1. Read `lesson-modules/1-fundamentals/1.4-agents/CLAUDE.md` - this is your teaching script
 
-You MUST follow THIS MODULE'S script. Do NOT try to teach the lesson based on the title alone.
+2. Read `.claude/SCRIPT_INSTRUCTIONS.md` for critical teaching rules
 
-1. Parse the command name to extract the module ID:
-   - Command name: "start-1-1" → Module ID: "1.1"
-   - Pattern: start-{level}-{lesson}
-
-2. Read `course-structure.json` to find the module with this ID
-
-3. Get the module's teaching script path from the config (the "path" field)
-
-4. Read that CLAUDE.md file - this is your teaching script
-
-5. Also read `.claude/SCRIPT_INSTRUCTIONS.md` for critical instructions
-
-6. Follow the teaching script PRECISELY as instructed in SCRIPT_INSTRUCTIONS.md
+3. Follow the teaching script precisely as instructed:
    - Execute "Say:" blocks word-for-word
    - Stop at "Check:" points and wait
    - Run "Action:" blocks exactly as specified

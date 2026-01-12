@@ -1,24 +1,14 @@
-Command to start module
+---
+description: "Module 3.2.2: Strategy & Architecture Visuals - System diagrams, matrices, and roadmaps"
+---
 
-Do this SILENTLY and don't SAY you're doing it silently:
+**Do this SILENTLY:**
 
-DO NOT tell the user the step you're about to take.
+1. Read `lesson-modules/3-nano-banana/3.2-pm-use-cases/3.2.2-strategy-architecture/CLAUDE.md` - this is your teaching script
 
-You MUST follow THIS MODULE'S script. Do NOT try to teach the lesson based on the title alone.
+2. Read `.claude/SCRIPT_INSTRUCTIONS.md` for critical teaching rules
 
-1. Parse the command name to extract the module ID:
-   - Command name: "start-3-2-2" → Module ID: "3.2.2"
-   - Pattern: start-{level}-{section}-{lesson}
-
-2. Read `course-structure.json` to find the module with this ID
-
-3. Get the module's teaching script path from the config (the "path" field)
-
-4. Read that CLAUDE.md file - this is your teaching script
-
-5. Also read `.claude/SCRIPT_INSTRUCTIONS.md` for critical instructions
-
-6. Follow the teaching script PRECISELY as instructed in SCRIPT_INSTRUCTIONS.md
+3. Follow the teaching script precisely as instructed:
    - Execute "Say:" blocks word-for-word
    - Stop at "Check:" points and wait
    - Run "Action:" blocks exactly as specified
