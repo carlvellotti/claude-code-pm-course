@@ -13,4 +13,21 @@ module.exports = {
       },
     ],
   },
+  transform: async (config, path) => {
+    // Set homepage to highest priority
+    if (path === '/') {
+      return {
+        loc: path,
+        changefreq: 'weekly',
+        priority: 1.0,
+        lastmod: new Date().toISOString(),
+      }
+    }
+    return {
+      loc: path,
+      changefreq: 'weekly',
+      priority: 0.7,
+      lastmod: new Date().toISOString(),
+    }
+  },
 }
