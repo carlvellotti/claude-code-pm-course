@@ -1,0 +1,329 @@
+---
+title: "1.5: 自定义子智能体"
+description: 为不同类型的审查和反馈创建专门的 AI 角色
+---
+
+## 1.5: 自定义子智能体
+
+ - **完成时间:** 20-25 分钟
+ - **先决条件:** 模块 1.4 (并行工作智能体)
+
+> **在 Claude Code 中开始此模块:** 运行 `/start-1-5` 以启动交互式体验。
+
+## 📖 概览
+
+模块 1.5 教你如何创建自定义子智能体——具有独特个性、专业知识和视觉标识的永久 AI 团队成员。与你在模块 1.4 中学到的临时特定智能体不同，自定义子智能体是你可以随时调用的可重用专家。
+
+**关键要点:** 自定义子智能体将 Claude Code 从单个助手转变为完整的专业团队。你不再每次都告诉 Claude 像工程师一样行事，而是构建一个真正的工程师子智能体，具有个性、专业知识和视觉区别（颜色和表情符号！），你可以反复调用它。
+
+
+## 🎭 什么是自定义子智能体？
+
+### 核心概念
+
+自定义子智能体是存储在你项目 `.claude/agents/` 文件夹中的预配置 AI 角色。每个子智能体具有：
+
+- **带表情符号的名称** (在终端中直观显示！)
+- **颜色编码** (紫色, 蓝色, 绿色, 红色, 等等)
+- **角色定义** (背景, 专业知识, 沟通风格)
+- **专业知识** (他们擅长什么)
+
+把它们想象成雇佣了永久的团队成员，他们总是随时待命，并且永远不会忘记上下文。
+
+### 自定义子智能体 vs 特定智能体(Ad-Hoc Agents)
+
+理解区别至关重要：
+
+**特定智能体 (模块 1.4):**
+- 为特定任务即时创建
+- 一次性工作的临时工
+- 示例: 创建 10 个智能体来总结这些会议记录
+- 用例: 类似任务的并行处理
+
+**自定义子智能体 (模块 1.5):**
+- 你反复调用的预构建角色
+- 具有专业知识的永久团队成员
+- 示例: 👨‍💻 工程师，审查此技术规范
+- 用例: 你经常需要的专业视角
+
+**何时使用哪种:**
+
+| 场景 | 使用此种 |
+|----------|----------|
+| 同时处理 20 个会议记录 | 特定智能体 (并行工作者) |
+| 每周获取规范的技术反馈 | 自定义子智能体 (工程师) |
+| 一次研究 5 个竞争对手 | 特定智能体 (一次性研究) |
+| 定期将更新转换为高管摘要 | 自定义子智能体 (高管) |
+| 并行分析 50 个用户访谈 | 特定智能体 (批处理) |
+| 反复获取设计的 UX 视角 | 自定义子智能体 (用户研究员) |
+
+**关键区别:** 特定智能体用于并行**做**很多事情。自定义子智能体用于获取你反复需要的**专业视角**。
+
+
+## 🗂️ 设置指南: 访问 .claude/agents/ 文件夹
+
+自定义子智能体位于隐藏的 `.claude/agents/` 文件夹中。
+
+### 在 Mac 上
+
+在 Finder 中按 **Cmd+Shift+.** 显示隐藏文件，然后导航到你的项目文件夹并打开 `.claude/agents/`
+
+### 在 Windows 上
+
+在文件资源管理器中，点击 **查看** 选项卡 → 勾选 **隐藏的项目**，然后导航到你的项目文件夹并打开 `.claude/agents/`
+
+**注意:** Obsidian 无法显示隐藏文件夹。使用 Finder/资源管理器、VS Code 或 Nimbalyst (可以显示隐藏文件夹) 来编辑 `.claude/` 文件。
+
+
+## 📄 子智能体文件结构
+
+每个子智能体是一个简单的 Markdown 文件，包含三个部分：
+
+### 子智能体文件剖析
+
+```markdown
+# [Emoji] [Name]
+
+## Color
+[color-name]
+
+## Persona
+[Background, expertise, communication style - 2-3 paragraphs]
+
+## Expertise
+- [Skill 1]
+- [Skill 2]
+- [Skill 3]
+- [etc.]
+```
+
+### 示例: 工程师子智能体
+
+```markdown
+# 👨‍💻 Engineer
+
+## Color
+purple
+
+## Persona
+You are an experienced software engineer with 10+ years at top tech companies
+(Google, Meta, startups). You think deeply about technical architecture,
+scalability, performance, and implementation details.
+
+When analyzing features or specs, you provide:
+- Technical feasibility assessment
+- Implementation complexity estimates
+- Potential challenges and edge cases
+- Performance and scalability considerations
+- Concrete, specific recommendations
+
+Your communication style:
+- Direct and pragmatic
+- Focus on whats technically possible vs ideal
+- Flag risks early
+- Suggest alternatives when something wont work
+- Balance perfectionism with shipping
+
+You help PMs write better technical specs by spotting gaps, ambiguities,
+and technical challenges they might miss.
+
+## Expertise
+- System architecture and design patterns
+- API design and database schema
+- Performance optimization and scalability
+- Technical feasibility assessment
+- Spotting edge cases and error states
+- Implementation complexity estimation
+```
+
+**关键要素:**
+- **Emoji & Name:** 调用时出现在终端中
+- **Color:** 视觉区别 (purple, blue, green, red, yellow, cyan, magenta)
+- **Persona:** 2-4 段描述背景、专业知识和沟通风格
+- **Expertise:** 具体技能的要点列表
+
+
+## 🛠️ 创建你的第一个子智能体
+
+让我们从头开始创建一个 QA 测试员子智能体。
+
+### 步骤 1: 导航到 .claude/agents/ 文件夹
+
+使用上述方法在 Finder/资源管理器中打开你项目的 `.claude/agents/` 文件夹。
+
+### 步骤 2: 创建新文件
+
+创建一个名为 `qa-tester.md` 的新文件
+
+**命名约定:**
+- 使用小写
+- 使用连字符代替空格
+- 以 `.md` 结尾
+- 示例: `data-analyst.md`, `tech-writer.md`, `growth-pm.md`
+
+### 步骤 3: 编写角色
+
+复制此模板并自定义：
+
+```markdown
+# 🔍 QA Tester
+
+## Color
+red
+
+## Persona
+You are a meticulous QA professional with 8+ years of experience testing enterprise
+software at companies like Microsoft, Atlassian, and fast-growing startups. You think
+comprehensively about edge cases, error states, and user error scenarios that others
+miss.
+
+When reviewing features or user stories, you provide:
+- Comprehensive test case generation
+- Edge case identification (the weird scenarios no one thinks about)
+- Error state analysis (what happens when things go wrong)
+- Accessibility and usability testing considerations
+- Cross-browser and cross-platform compatibility concerns
+
+Your communication style:
+- Thorough and detail-oriented
+- Constructively critical (you spot problems early)
+- Organized (you categorize issues by severity)
+- Practical (you suggest solutions, not just problems)
+- User-advocate (you think like end users making mistakes)
+
+You help PMs ship higher quality products by catching issues before they reach users.
+
+## Expertise
+- Test case generation and test plan creation
+- Edge case and error state identification
+- Acceptance criteria validation
+- User error scenario analysis
+- Regression testing strategy
+- Accessibility testing (WCAG compliance)
+- Cross-browser and device compatibility
+- Load and performance testing considerations
+```
+
+### 步骤 4: 保存并测试
+
+保存文件，然后在 Claude Code 中测试：
+
+```bash
+# Start Claude Code
+claude
+
+# Call your new sub-agent
+🔍 QA Tester, review these user stories in @user-stories.md and identify
+potential edge cases and missing test scenarios
+```
+
+你应该看到带有 QA 表情符号的红色输出！
+
+**提示:** 随时在 Claude Code 中运行 `/agents` 以查看你所有配置的子智能体。
+
+
+## 👥 预构建的子智能体
+
+**👨‍💻 Engineer (Purple)**
+- 技术可行性审查
+- 实现复杂性估算
+- 架构反馈
+
+**💼 Executive (Blue)**
+- 将更新转换为高管摘要
+- 利益相关者沟通
+- 战略业务框架
+
+**👤 User Researcher (Green)**
+- 分析用户访谈
+- 识别痛点和模式
+- 综合定性研究
+
+
+## 💼 真实世界产品经理示例
+
+**用于技术规范的工程师:**
+```
+👨‍💻 Engineer, review @dashboard-prd.md and identify technical challenges,
+performance implications, and implementation complexity
+```
+
+**用于利益相关者沟通的高管:**
+```
+💼 Executive, convert @sprint-update.md into 3-bullet executive summary
+focused on business impact and metrics
+```
+
+**用于访谈分析的用户研究员:**
+```
+👤 User Researcher, analyze all files in /interviews and identify
+top 3 pain points with supporting quotes
+```
+
+
+## 🎯 其他产品经理子智能体想法
+
+- **📊 Data Analyst** - A/B 测试, 指标, 统计分析
+- **✍️ Technical Writer** - 文档, 帮助文章, 发布说明
+- **🎯 Marketing PM** - 定位, 上市策略, 发布计划
+- **🎨 UX Designer** - 用户流, 设计反馈, 可访问性审查
+- **🧪 Growth PM** - 实验, 入职,以此保留策略
+- **🛡️ Security Expert** - GDPR, SOC2, 合规, 数据隐私
+- **🎤 Customer Success** - 入职, 采用, 流失分析
+
+
+## 💡 最佳实践
+
+**角色设计:**
+- 给出具体的背景和专业知识（不要通用的“你是乐于助人的”）
+- 定义清晰的沟通风格
+- 让他们感觉像一个真实的人，用 2-4 段话描述
+
+
+**何时创建自定义子智能体:**
+- 你每周或更频繁地需要相同的视角
+- 用于你反复使用的专业知识
+- 建立一致的团队工作流
+
+
+## 🐛 故障排除
+
+**看不到 .claude/ 文件夹？**
+- Mac: 在 Finder 中按 Cmd+Shift+.
+- Windows: 在文件资源管理器中启用 "Hidden items"
+
+**子智能体没有响应？**
+- 包含表情符号: `👨‍💻 Engineer, review this`
+- 检查文件是否在 `.claude/agents/` 中且以 `.md` 结尾
+- 重启 Claude (`exit` 然后 `claude`)
+
+**调用多个子智能体:**
+```
+👨‍💻 Engineer, review @spec.md for technical feasibility.
+Then 🔍 QA Tester, review it for test coverage.
+```
+
+
+## 📚 资源
+
+- [Awesome Claude Code Sub-Agents](https://github.com/VoltAgent/awesome-claude-code-subagents) - 社区子智能体模板集合
+- [Sub-Agent Examples](https://github.com/wshobson/agents) - 真实世界智能体配置
+- [SubAgents.cc](https://www.subagents.cc/) - 子智能体模板生成器
+
+
+## 🚀 下一步是什么？
+
+你现在知道如何创建自定义子智能体 - 具有专业知识的永久团队成员，你可以反复调用。
+
+**模块 1.6:** 学习 **项目记忆 (CLAUDE.zh.md)** - 给予 Claude 关于你的产品、团队和偏好的永久上下文。
+
+交互式轨道：输入 `/start-1-6`
+
+
+---
+
+**关于本课程**
+
+由 [Carl Vellotti](https://www.linkedin.com/in/carlvellotti/) 创建。如果你对本模块或整个课程有任何反馈，请给我留言！我正在为产品构建者建立一个通讯和社区，请查看 [The Full Stack PM](https://fullstackpm.com/subscribe?utm_source=ccforpms&utm_medium=course&utm_campaign=custom-subagents)。
+
+**源仓库：** [github.com/carlvellotti/claude-code-pm-course](https://github.com/carlvellotti/claude-code-pm-course)

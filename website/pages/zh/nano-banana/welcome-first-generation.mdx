@@ -1,0 +1,208 @@
+---
+title: "3.1.1: 欢迎与首次生成"
+description: "设置您的 Gemini API 密钥并使用 Nano Banana Pro 生成您的第一张 AI 图像"
+keywords: "gemini api 密钥, google ai studio, 首次图像生成, nano banana 设置, gemini 3 pro"
+---
+
+## 3.1.1: 欢迎与首次生成
+
+- **完成时间：** 10 分钟
+- **先决条件：** 已下载 Nano Banana 文件 (模块 3.0)
+
+> **在 Claude Code 中开始此模块：** 运行 `/start-3-1-1` 以启动交互式体验。
+
+## 概览
+
+模块 3.1.1 带您从零开始生成您的第一张 AI 图像。您将设置您的 Gemini API 密钥，配置计费，并观看 Claude 将参考照片转化为神奇的东西。
+
+**关键要点：** 设置是一次性过程。一旦配置好您的 API 密钥，您就可以通过简单的自然语言请求生成图像 - Claude 处理所有技术复杂性。
+
+
+## 什么是 Gemini 3 Pro？
+
+**Gemini 3 Pro** (代号 "Nano Banana Pro") 是 Google 最先进的图像生成模型。它可以：
+
+- 从文本描述生成逼真的图像
+- 转换参考照片同时保留身份特征
+- 向图像添加准确的文本覆盖
+- 跨多个生成创建一致的角色
+- 理解并复制复杂的视觉风格
+
+与消费者应用不同，直接访问 API 可以为您提供：
+- **更宽松的内容政策** (例如，使用真人作为参考)
+- **完全的参数控制** (宽高比、分辨率等)
+- **基于会话的迭代** (逐步完善图像)
+- **更低的成本** (~$0.10/张图像 vs 订阅应用)
+
+
+## 设置您的 API 密钥
+
+### 第 1 步：从 Google AI Studio 获取您的密钥
+
+1. 前往 [Google AI Studio](https://aistudio.google.com/)
+2. 使用您的 Google 账户登录
+3. 接受服务条款 (如果是第一次)
+4. 点击左侧边栏中的 **"Get API Key"**
+5. 点击右上角的 **"Create API key"** 生成新密钥
+6. 将您的密钥命名为任何您想要的名称，并选择 "Default Gemini Project"
+7. 在仪表板中点击该密钥
+8. 复制密钥 - 它以 `AIza...` 开头
+
+妥善保管此密钥。您将在第 3 步中将其粘贴到您的 `.env` 文件中。
+
+### 第 2 步：设置计费
+
+Gemini 3 Pro 需要计费账户。别担心 - 它是按使用量付费的，非常实惠。
+
+1. 在 Google AI Studio 中，前往 **Get API key** (左侧边栏底部)
+2. 在 "Quota tier" 列下，点击 **Set up billing**
+3. 按照提示添加付款方式
+
+**成本背景：**
+- ~$0.10 每次图像生成
+- 整个课程总花费不到 $5
+- 没有月度订阅 - 只为您的使用付费
+- 这笔钱归 **Google** 所有，而不是 Carl (不幸的是)
+
+### 第 3 步：配置您的 API 密钥
+
+只需告诉 Claude 您的 API 密钥，它就会设置好一切：
+
+> "My Gemini API key is AIzaYourKeyHere - please add it to my .env file"
+
+Claude 将创建 `.env` 文件并安全地存储您的密钥。
+
+**更喜欢手动操作？** 将 `.env.example` 复制为 `.env` 并添加您的密钥：`GEMINI_API_KEY=YourKeyHere`
+
+
+## 您的首次生成
+
+一旦设置完成，您就可以开始生成了。在交互式模块中，Claude 使用参考照片创建一个有趣的欢迎图像 - 展示模型转换真实照片的能力。
+
+**幕后发生了什么：**
+1. 您描述您想要什么
+2. Claude 调用 `image_gen.py` 中的 `generate()` 函数
+3. 该函数将您的请求发送到 Gemini 的 API
+4. 生成的图像保存到 `outputs/` 文件夹
+5. Claude 告诉您在哪里可以找到它
+
+**生成时间：** 每张图像大约 10-15 秒。
+
+
+## Claude 为您处理什么
+
+当您通过 Claude Code 生成图像时，您无需担心：
+
+| 您处理 | Claude 处理 |
+|------------|----------------|
+| 描述您想要什么 | API 调用和身份验证 |
+| 选择风格 | 会话管理 |
+| 提供反馈 | 文件保存和命名 |
+| 审查输出 | 参数优化 |
+
+这就是结合 Gemini 和 Claude Code 的力量。您专注于创意指导；Claude 处理实施。
+
+
+## `image_gen.py` 模块
+
+所有图像生成都通过名为 `image_gen.py` 的预构建 Python 模块运行。您不需要编写任何代码 - Claude 代表您使用它。
+
+**关键函数：**
+- `generate()` - 创建或完善图像
+- `new_session()` - 重新开始 (清除对话历史)
+- `session_info()` - 检查当前会话状态
+
+**您将在模块 3.1.2 中了解更多关于这些的信息。**
+
+
+## 输出结构
+
+生成的图像保存到您的 nano-banana 目录中的 `outputs/` 文件夹：
+
+```
+nano-banana/
+├── outputs/
+│   ├── image_001.png
+│   ├── image_002.png
+│   └── ...
+├── image_gen.py
+├── .env
+└── ...
+```
+
+图像按顺序编号。Claude 会告诉您每张生成图像的确切路径，以便您在 Finder (Mac) 或资源管理器 (Windows) 中打开它。
+
+
+## 故障排除
+
+### "API key not found" 或身份验证错误
+
+- 验证您的 `.env` 文件是否存在 (不是 `.env.example`)
+- 检查密钥是否粘贴正确，没有多余空格
+- 确保密钥以 `AIza` 开头
+
+### "Billing not enabled" 错误
+
+- 返回 Google AI Studio → Settings → Plan information
+- 确认计费已设置且已链接付款方式
+- 计费激活可能需要几分钟时间
+
+### 生成失败或超时
+
+- 检查您的互联网连接
+- Gemini 可能负载过高 - 等待一分钟再试
+- 如果错误持续存在，尝试开始新会话：告诉 Claude "Start a new session"
+
+### 找不到生成的图像
+
+- 图像保存到 `outputs/` 文件夹
+- 每次生成后 Claude 会提供确切路径
+- 打开 Finder (Mac) 或资源管理器 (Windows) 并导航到该文件夹
+
+
+## 最佳实践
+
+**保持您的 API 密钥安全：**
+- 永远不要将 `.env` 提交到 git (它默认在 `.gitignore` 中)
+- 不要公开分享您的 API 密钥
+- 如果泄露，您可以在 Google AI Studio 中重新生成密钥
+
+**在适当的查看器中检查输出：**
+- 终端无法显示图像 - 始终打开文件
+- 使用预览 (Mac)、照片 (Windows) 或任何图像查看器
+- 为了获得最佳体验，在工作时保持 `outputs/` 文件夹打开
+
+
+## 您接下来将学到什么
+
+模块 3.1.1 让您设置好。模块 3.1 的其余部分教您有效地使用图像生成：
+
+- **3.1.2: 理解基础** - 参数、宽高比、分辨率、迭代
+- **3.1.3: 一致性与风格** - 提示的黄金法则、参考图像、变体
+- **3.1.4: 构建您的风格数据库** - 创建可重用的风格库
+
+然后模块 3.2 将这些技能应用于实际 PM 工作：画像、图表、模型和营销资产。
+
+
+## 接下来是什么？
+
+您已设置好并生成了第一张图像。现在是时候了解系统是如何工作的了。
+
+**模块 3.1.2** 教您关于 `generate()` 函数、可用参数以及如何迭代您的图像。
+
+交互式轨道：输入 `/start-3-1-2`
+
+
+## 资源
+
+- [Google AI Studio](https://aistudio.google.com/) - 获取您的 API 密钥并管理计费
+- [Gemini 图像生成文档](https://ai.google.dev/gemini-api/docs/image-generation) - 官方 API 参考
+
+
+---
+
+**关于本课程**
+
+由 [Carl Vellotti](https://www.linkedin.com/in/carlvellotti/) 创建。查看 [The Full Stack PM](https://fullstackpm.com/subscribe?utm_source=ccforpms&utm_medium=course&utm_campaign=nano-banana-welcome) 获取更多 PM 建设者内容。
+
+**源存储库：** [github.com/carlvellotti/claude-code-pm-course](https://github.com/carlvellotti/claude-code-pm-course)

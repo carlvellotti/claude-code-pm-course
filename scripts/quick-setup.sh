@@ -1,83 +1,83 @@
 #!/bin/bash
 
-# Note: Not using 'set -e' to allow script to handle errors gracefully
+# 注意：不使用 'set -e'，以便脚本可以优雅地处理错误
 
-# Test mode flag - set to 1 to simulate without executing
+# 测试模式标志 - 设置为 1 以模拟执行而不实际更改
 TEST_MODE=${TEST_MODE:-0}
 
 if [ "$TEST_MODE" = "1" ]; then
     echo "========================================="
-    echo "TEST MODE - No changes will be made"
+    echo "测试模式 - 不会进行任何更改"
     echo "========================================="
     echo ""
 fi
 
 echo "========================================="
-echo "Claude Code for Product Managers Course"
-echo "Quick Setup Script"
+echo "产品经理 Claude Code 课程"
+echo "快速设置脚本"
 echo "========================================="
 echo ""
 
-# Check Node.js version
-echo "Checking prerequisites..."
+# 检查 Node.js 版本
+echo "正在检查先决条件..."
 if command -v node &> /dev/null; then
     NODE_VERSION=$(node --version | cut -d 'v' -f 2 | cut -d '.' -f 1)
     if [ "$NODE_VERSION" -ge 18 ]; then
-        echo "✓ Node.js $(node --version) installed"
+        echo "✓ Node.js $(node --version) 已安装"
     else
-        echo "⚠️  Node.js $(node --version) found, but version 18+ required"
-        echo "Upgrading Node.js..."
+        echo "⚠️  发现 Node.js $(node --version)，但需要 18+ 版本"
+        echo "正在升级 Node.js..."
         if [ "$TEST_MODE" = "1" ]; then
-            echo "[TEST] Would upgrade Node.js via Homebrew"
+            echo "[测试] 将通过 Homebrew 升级 Node.js"
         else
             brew upgrade node
         fi
     fi
 else
-    echo "Node.js not found. Installing..."
+    echo "未找到 Node.js。正在安装..."
     if [ "$TEST_MODE" = "1" ]; then
-        echo "[TEST] Would install Node.js"
+        echo "[测试] 将安装 Node.js"
     else
-        # Check if Homebrew is installed
+        # 检查是否已安装 Homebrew
         if ! command -v brew &> /dev/null; then
-            echo "Installing Homebrew first..."
+            echo "正在首先安装 Homebrew..."
             /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" < /dev/null
         fi
 
-        echo "Installing Node.js via Homebrew..."
+        echo "正在通过 Homebrew 安装 Node.js..."
         brew install node < /dev/null
 
-        # Add Homebrew's bin directory to PATH for this script session
+        # 将 Homebrew 的 bin 目录添加到当前脚本会话的 PATH 中
         export PATH="/opt/homebrew/bin:$PATH"
 
-        echo "✓ Node.js installed"
+        echo "✓ Node.js 已安装"
     fi
 fi
 
 echo ""
 
-# Check if Claude Code is already installed
+# 检查 Claude Code 是否已安装
 if command -v claude &> /dev/null; then
-    echo "✓ Claude Code is already installed"
+    echo "✓ Claude Code 已安装"
 else
-    echo "Installing Claude Code..."
+    echo "正在安装 Claude Code..."
     if [ "$TEST_MODE" = "1" ]; then
-        echo "[TEST] Would run: curl -fsSL https://claude.ai/install.sh | bash"
-        echo "✓ [TEST] Claude Code installation simulated"
+        echo "[测试] 将运行：curl -fsSL https://claude.ai/install.sh | bash"
+        echo "✓ [测试] Claude Code 安装已模拟"
     else
         curl -fsSL https://claude.ai/install.sh | bash < /dev/null
 
-        # Try to add to PATH for this session
-        # Claude Code typically installs to ~/.local/bin on macOS/Linux
+        # 尝试将其添加到当前会话的 PATH 中
+        # Claude Code 通常安装在 macOS/Linux 的 ~/.local/bin
         export PATH="$HOME/.local/bin:$PATH"
 
-        # Verify installation
+        # 验证安装
         if command -v claude &> /dev/null; then
-            echo "✓ Claude Code installed successfully"
+            echo "✓ Claude Code 安装成功"
         else
             echo ""
-            echo "⚠️  Claude Code installed, but not available in current session."
-            echo "   Please restart your terminal and run this script again:"
+            echo "⚠️  Claude Code 已安装，但在当前会话中不可用。"
+            echo "   请重启终端并再次运行此脚本："
             echo ""
             echo "   curl -fsSL https://raw.githubusercontent.com/carlvellotti/claude-code-pm-course/main/scripts/quick-setup.sh | bash"
             echo ""
@@ -87,49 +87,49 @@ else
 fi
 
 echo ""
-echo "Downloading course materials..."
+echo "正在下载课程资料..."
 
-# Course materials will extract to Documents/claude-code-course/
+# 课程资料将解压到 Documents/claude-code-course/
 COURSE_DIR="$HOME/Documents/claude-code-course"
 
 if [ "$TEST_MODE" = "1" ]; then
-    echo "[TEST] Would download course to: $HOME/Documents/course.zip"
-    echo "[TEST] Would extract to: $COURSE_DIR"
-    echo "✓ [TEST] Course materials download simulated"
+    echo "[测试] 将下载课程到：$HOME/Documents/course.zip"
+    echo "[测试] 将解压到：$COURSE_DIR"
+    echo "✓ [测试] 课程资料下载已模拟"
 else
     cd "$HOME/Documents"
 
-    # Remove existing course materials if they exist
+    # 如果存在现有课程资料，则将其删除
     if [ -d "$COURSE_DIR" ]; then
-        echo "Found existing course materials. Removing..."
+        echo "发现现有课程资料。正在删除..."
         rm -rf "$COURSE_DIR"
     fi
 
-    # Download and extract course materials into claude-code-course folder
+    # 下载并解压课程资料到 claude-code-course 文件夹
     curl -L https://github.com/carlvellotti/claude-code-pm-course/releases/latest/download/complete-course.zip -o course.zip
     unzip -q course.zip -d claude-code-course
     rm course.zip
 
-    echo "✓ Course materials extracted to: $COURSE_DIR"
+    echo "✓ 课程资料已解压到：$COURSE_DIR"
 fi
 echo ""
 echo "========================================="
-echo "Setup Complete!"
+echo "设置完成！"
 echo "========================================="
 echo ""
-echo "Starting the course..."
+echo "正在开始课程..."
 echo ""
 
 if [ "$TEST_MODE" = "1" ]; then
-    echo "[TEST] Would navigate to: $COURSE_DIR"
-    echo "[TEST] Would run: claude \"/start-1-1\""
+    echo "[测试] 将导航到：$COURSE_DIR"
+    echo "[测试] 将运行：claude \"/start-1-1\""
     echo ""
     echo "========================================="
-    echo "TEST COMPLETE - No changes were made"
+    echo "测试完成 - 未进行任何更改"
     echo "========================================="
 else
-    # Navigate to course directory and launch Claude Code
-    # Redirect stdin from /dev/tty to enable interactive mode when piped
+    # 导航到课程目录并启动 Claude Code
+    # 从 /dev/tty 重定向标准输入以启用交互模式
     cd "$COURSE_DIR"
     claude "/start-1-1" < /dev/tty
 fi

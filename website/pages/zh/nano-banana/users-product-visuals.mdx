@@ -1,0 +1,395 @@
+---
+title: "3.2.1: 用户与产品视觉"
+description: "为融资演示和演讲创建用户画像、旅程图、线框图和产品模型"
+keywords: "用户画像, 旅程图, 线框图模型, 设备框架, 生活照, 产品可视化"
+---
+
+## 3.2.1: 用户与产品视觉
+
+- **完成时间：** 25 分钟
+- **先决条件：** 已完成模块 3.1 (已构建风格数据库)
+
+> **在 Claude Code 中开始此模块：** 运行 `/start-3-2-1` 以启动交互式体验。
+
+## 概览
+
+模块 3.2.1 将您的图像生成技能应用于实际 PM 交付物。您将创建产品推介所需的视觉资产：用户画像、旅程图、线框图、设备模型和主图。
+
+**关键要点：** 这些技术适用于任何推介或演示。一旦您能生成这五种资产类型，您几乎可以视觉化地传达任何产品故事。
+
+
+## 场景
+
+在整个模块 3.2 中，您是 TaskFlow (本课程虚构的 B2B SaaS 公司) 的产品经理。您正在推介 **TaskFlow Mobile** - 一款面向制造业运营经理的新移动应用。
+
+您的推介文稿需要：
+1. **用户画像** - "我们为谁构建？"
+2. **旅程图** - "我们正在解决什么问题？"
+3. **线框图** - "解决方案看起来像什么？"
+4. **设备模型** - "拿在手里感觉如何？"
+5. **主图** - "愿景是什么？"
+
+让我们构建每一个。
+
+
+## 用户画像
+
+![用户画像示例 - 电影感和插画风格](/images/nano-banana/persona-portrait-cinematic.png)
+
+### 它们是什么
+
+用户画像为您的目标用户赋予面孔。它们使抽象的用户细分感觉真实，并帮助利益相关者与您正在为其构建的人产生共鸣。
+
+### 何时使用
+
+- 推介文稿中的“谁”幻灯片
+- 用户研究演示
+- PRD 用户画像部分
+- 团队对齐文档
+
+### 如何生成
+
+**基本提示词：**
+```
+Create a persona portrait of [name], a [role] at [company type].
+[Age range], [key characteristics]. Professional but approachable.
+For a pitch deck.
+```
+
+**示例 - Marcus Chen:**
+```
+Create a persona portrait of Marcus Chen, an operations manager
+at a manufacturing plant. Mid-40s, practical, confident but
+approachable expression. Wearing work-appropriate attire -
+polo shirt, maybe a safety vest. Natural lighting.
+For a pitch deck to leadership.
+```
+
+### 风格选项
+
+| 风格 | 最适合 | 示例提示词添加 |
+|-------|----------|------------------------|
+| **逼真照片** | 高管演示 | "Photorealistic, professional headshot quality" |
+| **插画** | 友好/非正式环境 | "Illustrated in a modern flat style" |
+| **风格化** | 特定品牌需求 | 引用您的风格库 |
+
+### 专业提示
+
+- **添加环境线索：** 包含环境提示 (工厂车间、办公室等)
+- **匹配基调：** 高管推介 = 更正式；团队维基 = 更随意
+- **保持一致：** 如果您有多个画像，请对所有人使用相同的风格
+
+
+## 旅程图
+
+![旅程图示例 - 极简和手绘风格](/images/nano-banana/journey-map-minimalist.png)
+
+### 它们是什么
+
+旅程图可视化用户随时间推移的体验 - 整个过程中的步骤、接触点、痛点和情绪。
+
+### 何时使用
+
+- 问题定义幻灯片
+- 用户研究发现
+- 解决方案框架
+- 利益相关者对齐
+
+### 如何生成
+
+**基本提示词：**
+```
+Create a journey map showing [user]'s [process/workflow].
+Stages: [list stages]. Show pain points at each stage.
+Clean, presentation-ready, 16:9 aspect ratio.
+```
+
+**示例 - Marcus 的早晨：**
+```
+Create a journey map showing an operations manager's morning workflow.
+Stages: Arrive (6am) → Review backlog → Morning standup → Floor walk → Handoff prep.
+Show pain points: scattered information, manual tracking, delayed updates.
+Clean visual style suitable for a pitch deck. 16:9 aspect ratio.
+```
+
+### 风格选项
+
+| 风格 | 最适合 |
+|-------|----------|
+| **极简主义** | 高管演示 |
+| **手绘** | 研讨会/协作感 |
+| **信息图表** | 营销/外部使用 |
+| **详细** | 深入演示 |
+
+### 专业提示
+
+- **包含情绪：** 每个阶段的高兴/沮丧面孔增加影响力
+- **突出痛点：** 红色区域或图标吸引对问题的注意
+- **保持可扫描：** 最多 5-7 个阶段；细节放在支持文档中
+
+
+## 线框图转换
+
+![线框图示例 - 灰度和手绘草图风格](/images/nano-banana/wireframe-grayscale.png)
+
+### 它是什么
+
+将粗糙的草图转换为精致的线框图。这非常适合将会议白板草图转换为可演示的状态。
+
+### 何时使用
+
+- 头脑风暴会议后
+- 早期设计审查
+- 快速概念验证
+- 当没有设计师可用时
+
+### 如何生成
+
+**基本提示词：**
+```
+Transform this hand-drawn sketch into a clean, polished wireframe.
+Keep the same layout and elements. Professional quality with
+clean lines and consistent spacing.
+```
+
+提供您的粗糙草图作为参考图像。
+
+**示例：**
+```
+Transform this hand-drawn wireframe into a polished mobile app wireframe.
+Preserve the layout: header with greeting, task list, shift overview,
+bottom navigation. Clean, professional, grayscale with good typography.
+Mobile aspect ratio (9:16).
+```
+
+### 草图中包含什么
+
+即使是粗糙的草图也应该显示：
+- 整体布局结构
+- 关键 UI 元素 (标题、按钮、列表)
+- 内容层级
+- 导航模式
+
+Gemini 将清理视觉效果，同时保留您的布局决策。
+
+### 专业提示
+
+- **保持草图清晰：** Gemini 需要理解您的意图
+- **标记元素：** 在草图中写上文字，这样 Gemini 就知道什么放在哪里
+- **指定保真度：** "Low-fi wireframe" (低保真) vs "high-fidelity mockup" (高保真)
+
+
+## 设备模型
+
+![设备模型示例 - iPhone 和 MacBook 框架](/images/nano-banana/device-iphone-light.png)
+
+### 它们是什么
+
+设备模型将您的线框图或截图放入手机/笔记本电脑框架中。它们使数字产品感觉有形。
+
+### 何时使用
+
+- 应用商店预览图
+- 推介文稿产品幻灯片
+- 营销材料
+- 社交媒体公告
+
+### 如何生成
+
+**基本提示词：**
+```
+Place this wireframe into a [device] mockup.
+Clean background, slight shadow for depth.
+Professional, presentation-ready.
+```
+
+提供您的线框图作为参考图像。
+
+**示例：**
+```
+Put this mobile wireframe into an iPhone 15 Pro mockup.
+Clean white background with subtle shadow.
+Slight 3D angle to show depth. Professional quality.
+```
+
+### 设备选项
+
+| 设备 | 最适合 |
+|--------|----------|
+| **iPhone** | 移动应用推介 |
+| **Android** | 跨平台或 Android 优先 |
+| **MacBook** | Web 应用，仪表板 |
+| **iPad** | 平板电脑体验 |
+| **多设备** | 响应式设计展示 |
+
+### 专业提示
+
+- **匹配环境：** 消费者用 iPhone，企业用 MacBook
+- **使用当前设备：** 最新型号感觉更高级
+- **考虑角度：** 平面为了清晰，角度为了动感
+- **添加环境：** 手持设备增加真实感
+
+
+## 生活照
+
+![生活照示例 - 办公室环境中的人物](/images/nano-banana/persona-scene-office-modern.png)
+
+### 它们是什么
+
+生活照展示您的产品在现实世界中的使用。它们是推销愿景的“主图” - 一个人在自然环境中使用您的产品。
+
+### 何时使用
+
+- 推介文稿封面
+- 落地页
+- 营销主图
+- 社交媒体公告
+
+### 如何生成
+
+**基本提示词：**
+```
+A [persona] using [product] in [environment].
+[Specific details about context]. Natural lighting.
+Composition suitable for [use case].
+```
+
+**示例：**
+```
+Marcus, an operations manager in his mid-40s, using TaskFlow Mobile
+on the factory floor. He's holding his phone confidently, reviewing
+task updates. Manufacturing environment in the background - equipment,
+workers, industrial setting. Natural lighting from warehouse windows.
+Composition works as a pitch deck hero image.
+```
+
+### 构图提示
+
+| 元素 | 指导 |
+|---------|----------|
+| **主体放置** | 三分法则；如果需要，留出文字覆盖空间 |
+| **背景** | 相关但不分散注意力；增加环境 |
+| **光照** | 自然光通常感觉更真实 |
+| **表情** | 应该匹配故事 (自信，专注，满意) |
+
+### 专业提示
+
+- **使用画像一致性：** 在所有图像中生成同一个 "Marcus"
+- **匹配环境：** B2B SaaS 用办公室，消费者应用用家庭
+- **留出文字空间：** 如果是主图，留出标题空间
+- **生成变体：** 尝试不同的构图并挑选最好的
+
+
+## 完整推介文稿示例
+
+以下是所有五种资产如何在 TaskFlow Mobile 推介中协同工作：
+
+### 幻灯片 1: 主角
+**资产：** Marcus 在工厂车间使用 TaskFlow Mobile 的生活照
+**故事：** "这是我们正在构建的未来"
+
+### 幻灯片 2: 用户
+**资产：** Marcus Chen 的用户画像
+**故事：** "认识 Marcus - 我们的目标用户"
+
+### 幻灯片 3: 问题
+**资产：** Marcus 混乱早晨的旅程图
+**故事：** "他当前的工作流已损坏"
+
+### 幻灯片 4: 解决方案
+**资产：** TaskFlow Mobile 的精致线框图
+**故事：** "这是我们正在构建的"
+
+### 幻灯片 5: 愿景
+**资产：** 设备模型 (带有线框图的 iPhone)
+**故事：** "口袋里的任务管理"
+
+**总时间：** 所有五种资产 15-20 分钟。
+
+
+## 使用您的风格库
+
+还记得模块 3.1.4 中的风格库吗？它在这里大放异彩。
+
+**为了保持一致性：**
+```
+Generate Marcus persona portrait using style #12
+Generate journey map using style #15
+```
+
+**为了探索选项：**
+```
+Show me all persona styles in my library
+Generate Marcus using style #12, #15, and #18 as variants
+```
+
+您构建的风格越多，这就变得越快。
+
+
+## 最佳实践
+
+### 做：
+- **在整个文稿中匹配风格** - 一致性看起来很专业
+- **使用 TaskFlow 环境** - 或您的真实公司环境
+- **首先生成 1K** - 迭代，然后生成 2K 用于最终版
+- **保存好的风格** - 将它们添加到您的库中
+- **生成变体** - 特别是对于主图
+
+### 不做：
+- **不要混合截然不同的风格** - 这看起来不专业
+- **不要跳过迭代** - 初稿很少是最终版
+- **不要过度细化线框图** - 它们应该感觉像线框图
+- **不要忘记环境** - 告诉 Claude 它是为了什么
+
+
+## 故障排除
+
+### 画像不匹配描述
+
+- 对年龄、表情、服装更具体
+- 提供您想要的“类型”的参考图像
+- 尝试："NOT a stock photo feeling, more natural and authentic" (不要图库照片的感觉，更自然和真实)
+
+### 旅程图太复杂
+
+- 减少到最多 5-6 个阶段
+- 请求 "simplified, high-level view" (简化的、高层视图)
+- 将详细旅程保留给单独的深入幻灯片
+
+### 线框图看起来太精致
+
+- 明确请求 "low-fidelity wireframe" (低保真线框图)
+- 要求 "grayscale only, no polish" (仅灰度，无润色)
+- 指定 "sketch-like, not final design" (像草图，不是最终设计)
+
+### 设备模型看起来很假
+
+- 请求 "photorealistic device frame" (逼真的设备框架)
+- 添加环境："slight shadow and reflection" (轻微阴影和反射)
+- 尝试不同角度
+
+
+## 接下来是什么？
+
+您已经掌握了用户和产品视觉。接下来：用于利益相关者会议的战略和架构图。
+
+**模块 3.2.2** 涵盖系统架构图、优先级矩阵和产品路线图 - CTO、CEO 和董事会会议的视觉资料。
+
+交互式轨道：输入 `/start-3-2-2`
+
+
+## 资源
+
+- [Figma 旅程图模板](https://www.figma.com/community/file/1167700722702284382/journey-map-template) - 免费参考模板
+- [UXPressia 模板](https://uxpressia.com/templates) - 旅程图和画像模板
+- [旅程图示例](https://www.uxtweak.com/user-journey-map/examples/) - 不同风格的灵感
+- [Smashing Magazine: 旅程图模板](https://www.smashingmagazine.com/2024/07/customer-journey-maps-figma-miro-templates/) - 精选合集
+
+
+---
+
+**关于本课程**
+
+由 [Carl Vellotti](https://www.linkedin.com/in/carlvellotti/) 创建。查看 [The Full Stack PM](https://fullstackpm.com/subscribe?utm_source=ccforpms&utm_medium=course&utm_campaign=nano-banana-users) 获取更多 PM 建设者内容。
+
+**源存储库：** [github.com/carlvellotti/claude-code-pm-course](https://github.com/carlvellotti/claude-code-pm-course)

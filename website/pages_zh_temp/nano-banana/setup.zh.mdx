@@ -1,0 +1,133 @@
+---
+title: "3.0: 设置与下载"
+description: "下载 Nano Banana 模块并开始使用 Gemini 3 Pro 学习 AI 图像生成"
+keywords: "nano banana, gemini 图像生成, AI 图像, claude code, 设置"
+ogImage: "https://ccforpms.com/images/nano-banana-og.png"
+---
+
+![Nano Banana Pro for Product Managers](/images/nano-banana-banner.png)
+
+## 3.0: 设置与下载
+
+- **完成时间：** 5 分钟
+- **先决条件：** 已安装 Claude Code，Google 账户
+
+## 什么是 Nano Banana？
+
+Nano Banana 教您使用 **Gemini 3 Pro Preview** (代号 "Nano Banana Pro") - Google 最先进的图像生成模型来生成专业图像。但这不仅仅是一个关于提示图像生成器的课程。
+
+**这是一个 Claude Code 课程。**
+
+您将学习构建一个完整的图像生成工作流，其中 Claude Code：
+- **运行您的生成** - 直接从您的终端执行图像请求
+- **批量处理多个图像** - 并行生成变体和迭代
+- **管理您的文件** - 组织输出，智能命名，跟踪版本
+- **构建您的风格库** - 创建和维护可重用的风格定义
+- **与您一起迭代** - 通过对话完善提示，调整参数，并改进结果
+
+在本课程结束时，您将能够创建：
+- **用户画像** 和生活照
+- **旅程图** 和用户流可视化
+- **线框图** 和设备模型
+- **架构图** 和战略框架
+- **营销资产** 和发布图形
+
+**关键洞察：** 您不仅仅是在学习生成图像 - 您正在构建一个由 Claude Code 驱动的专业创意管道，它会随着时间的推移而复利。工作流与输出同样重要。
+
+
+## 开始之前
+
+**您需要：**
+- 已安装并正常工作的 Claude Code
+- 一个 Google 账户
+- Google Cloud 计费的付款方式
+
+**关于成本：** Gemini 3 Pro 每张图像收费 ~$0.10。整个课程总花费不到 $5。Claude 将在第一个模块中引导您设置计费。
+
+
+## 下载并开始
+
+**打开您的终端并运行：**
+
+```bash
+cd ~/Documents && \
+curl -L https://github.com/carlvellotti/claude-code-pm-course/releases/latest/download/complete-course.zip -o claude-code-pm-course.zip && \
+unzip claude-code-pm-course.zip -d claude-code-pm-course && \
+cd claude-code-pm-course && \
+claude "/start-3-1-1"
+```
+
+**这会做什么：**
+1. 导航到您的 Documents 文件夹
+2. 下载完整的课程材料 (包括 Nano Banana)
+3. 将它们解压到 `claude-code-pm-course`
+4. 导航进入该文件夹
+5. 启动 Claude Code
+6. 启动您的第一课
+
+
+## 替代方案：手动下载
+
+如果上述命令不起作用：
+
+1. 从 [最新发布页面](https://github.com/carlvellotti/claude-code-pm-course/releases/latest) 下载 zip
+2. 将其解压到您的 Documents 文件夹
+3. 打开您的终端并运行：
+```bash
+cd ~/Documents/claude-code-pm-course && claude
+```
+4. 输入 `/start-3-1-1` 开始
+
+
+## 您将学到什么
+
+**模块 3.1: 图像生成介绍**
+- 3.1.1: 欢迎与首次生成 - 设置您的 API 密钥并生成您的第一张图像
+- 3.1.2: 理解基础 - 参数、宽高比、分辨率、迭代
+- 3.1.3: 一致性与风格 - 提示的黄金法则、参考图像、变体
+- 3.1.4: 构建您的风格数据库 - 创建可重用的风格库
+
+**模块 3.2: PM 用例**
+- 3.2.1: 用户与产品视觉 - 画像、旅程图、线框图、模型
+- 3.2.2: 战略与架构 - 图表、矩阵、路线图
+- 3.2.3: 营销与发布资产 - 应用商店图形、广告、公告
+
+
+## 故障排除
+
+### 找不到 curl 或 unzip
+
+**Mac:** 在终端中运行 `xcode-select --install` 以安装命令行工具。
+
+**Windows:** 从发布页面 (上面的链接) 手动下载 zip，解压它，然后导航到该文件夹并运行 `claude`。
+
+### 下载失败
+
+尝试从 [发布页面](https://github.com/carlvellotti/claude-code-pm-course/releases/latest) 手动下载并解压到您的 Documents 文件夹。
+
+### Claude Code 无法识别 /start 命令
+
+确保您是在 `claude-code-pm-course` 文件夹内运行 Claude Code。斜杠命令仅在 Claude 可以访问模块文件时才有效。
+
+
+## 接下来是什么？
+
+一旦 Claude Code 在 `claude-code-pm-course` 文件夹内运行：
+
+**输入：** `/start-3-1-1`
+
+Claude 将引导您完成：
+- 获取您的 Gemini API 密钥
+- 设置计费
+- 生成您的第一张图像
+
+整个设置大约需要 5 分钟，不知不觉中您就将拥有第一张 AI 生成的图像。
+
+
+---
+
+**关于本课程**
+
+由 [Carl Vellotti](https://www.linkedin.com/in/carlvellotti/) 创建。Nano Banana 是 Claude Code for Product Managers 课程的一部分。查看 [The Full Stack PM](https://fullstackpm.com/subscribe?utm_source=ccforpms&utm_medium=course&utm_campaign=nano-banana-setup) 获取更多 PM 建设者内容。
+
+**源存储库：** [github.com/carlvellotti/claude-code-pm-course](https://github.com/carlvellotti/claude-code-pm-course)

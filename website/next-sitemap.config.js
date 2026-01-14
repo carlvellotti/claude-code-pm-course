@@ -2,6 +2,8 @@
 module.exports = {
   siteUrl: 'https://ccforpms.com',
   generateRobotsTxt: true,
+  outDir: 'out',
+  sourceDir: '.next',
   generateIndexSitemap: false, // Don't need index for <50k URLs
   exclude: ['/company-context/*'], // Exclude reference pages from sitemap
   robotsTxtOptions: {

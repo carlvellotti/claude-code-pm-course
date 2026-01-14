@@ -1,0 +1,415 @@
+---
+title: "3.2.3: 营销与发布资产"
+description: "为产品发布创建应用商店图形、社交广告和发布公告"
+keywords: "应用商店图形, 社交广告创意, 发布公告, 营销资产, 产品发布视觉"
+---
+
+## 3.2.3: 营销与发布资产
+
+- **完成时间:** 20 分钟
+- **先决条件:** 战略与架构可视化 (模块 3.2.2)
+
+> **在 Claude Code 中开始此模块:** 运行 `/start-3-2-3` 开始互动体验。
+
+## 概述
+
+模块 3.2.3 通过营销和发布资产完善你的产品视觉工具包。应用商店图形、社交广告、发布公告——这些是向世界介绍你的产品的视觉内容。
+
+**核心要点:** 营销视觉内容能瞬间传达价值。一张很棒的发布图可以产生大段文字无法带来的兴奋感。
+
+
+## 场景
+
+TaskFlow Mobile 获得了绿灯。它将在下个月发布。营销部门需要资产：
+
+1. **应用商店首图 (App store hero)** - 用户在商店中看到的功能图
+2. **社交广告创意 (Social ad creative)** - LinkedIn/社交媒体的活动资产
+3. **发布公告 (Launch announcement)** - "我们来了"时刻的图形
+
+让我们构建每一个资产。
+
+
+## 应用商店功能图形
+
+![应用商店功能图形示例 - 极简风格](/images/nano-banana/ad-app-minimal.png)
+
+### 它们是什么
+
+功能图形是用户在应用商店中看到的首图。它们是用户对你产品的通过视觉产生的第一印象。
+
+### 平台要求
+
+| 平台 | 尺寸 | 说明 |
+|----------|------|-------|
+| **App Store** | 1024×1024 (图标), 截图尺寸各异 | 专注于应用图标和截图序列 |
+| **Play Store** | 1024×500 (功能图) | 宽横幅格式 |
+| **两者** | 多个设备截图 | 展示关键功能 |
+
+### 如何生成
+
+**基本提示词:**
+```
+Create an app store feature graphic for [app name].
+Show the app on [device], highlighting [key feature/benefit].
+Clean, professional style. [dimensions].
+(为 [应用名称] 创建一个应用商店功能图。
+在 [设备] 上展示应用，突出 [关键功能/优势]。
+干净、专业的风格。[尺寸]。)
+```
+
+**示例 - TaskFlow Mobile:**
+```
+Create an App Store feature graphic for TaskFlow Mobile.
+Show the app displayed on a modern iPhone.
+The interface shows task management for operations teams.
+Professional style suitable for B2B app store listing.
+Subtle manufacturing/operations context in background.
+16:9 aspect ratio.
+(为 TaskFlow Mobile 创建一个 App Store 功能图。
+展示应用在现代 iPhone 上的显示效果。
+界面显示运营团队的任务管理。
+适合 B2B 应用商店列表的专业风格。
+背景中有微妙的制造/运营语境。
+16:9 纵横比。)
+```
+
+### 关键元素
+
+| 元素 | 目的 |
+|---------|---------|
+| **设备框架** | 表明产品是真实/有形的 |
+| **UI 截图** | 演示界面 |
+| **语境** | 暗示用例 |
+| **干净背景** | 保持焦点在产品上 |
+
+### 风格提示
+
+- **B2B 应用:** 专业、干净、功能感
+- **消费者应用:** 充满活力、情感化、生活方式导向
+- **企业:** 值得信赖、安全、精致
+- **初创公司:** 现代、创新、新鲜
+
+### 专业提示
+
+- **展示真实价值:** 展示你最好的 UI，而不是通用屏幕
+- **匹配品牌颜色:** 使用你公司的调色板
+- **保持简单:** 每张图传达一个清晰的信息
+- **生成变体:** 测试不同的方法
+
+
+## 社交广告创意
+
+![社交广告示例 - LinkedIn 专业风格](/images/nano-banana/social-linkedin-professional.png)
+
+### 它们是什么
+
+社交广告创意旨在阻止滚动并在几分之一秒内传达价值。它们针对信息流表现进行了优化。
+
+### 平台规格
+
+| 平台 | 推荐尺寸 | 说明 |
+|----------|-------------------|-------|
+| **LinkedIn** | 1200×627 (横向), 1080×1080 (方形) | 专业 B2B 受众 |
+| **Twitter/X** | 1200×675 (横向), 1080×1080 (方形) | 快速互动 |
+| **Facebook/Instagram** | 1080×1080 (方形), 1080×1350 (竖向) | 视觉优先平台 |
+
+### 如何生成
+
+**基本提示词:**
+```
+Create a social ad for [product].
+Message: [key value proposition]
+Style: [visual approach]
+Include space for headline text.
+[dimensions]
+(为 [产品] 创建一个社交广告。
+信息: [关键价值主张]
+风格: [视觉方法]
+为标题文本留出空间。
+[尺寸])
+```
+
+**示例 - TaskFlow Mobile:**
+```
+Create a LinkedIn ad for TaskFlow Mobile.
+Show a before/after transformation:
+- Left side: Overwhelmed operations manager with clipboard, scattered papers
+- Right side: Same manager confidently using TaskFlow Mobile
+
+Message: From chaos to clarity.
+Bold, attention-grabbing style.
+Leave space at top for headline text.
+Square format (1:1).
+(为 TaskFlow Mobile 创建一个 LinkedIn 广告。
+展示前后对比转变：
+- 左侧：不知所措的运营经理，拿着剪贴板，散落的文件
+- 右侧：同一位经理自信地使用 TaskFlow Mobile
+
+信息：从混乱到清晰。
+大胆、引人注目的风格。
+在顶部为标题文本留出空间。
+方形格式 (1:1)。)
+```
+
+### 广告创意模式
+
+| 模式 | 描述 | 最适合 |
+|---------|-------------|----------|
+| **前后对比** | 问题状态 → 解决方案状态 | 转型故事 |
+| **产品主角** | 以设备/界面为中心 | 功能发布 |
+| **生活方式** | 语境中的用户 | 情感连接 |
+| **数据/统计** | 具有视觉冲击力的数字 | 建立可信度 |
+| **推荐** | 引语加人物 | 社会认同 |
+
+### 专业提示
+
+- **1 秒内钩住:** 图像必须瞬间传达价值
+- **留出文本空间:** 标题会被添加上去；不要让图像太拥挤
+- **使用对比:** 在充满内容的信息流中脱颖而出
+- **生成多个变体:** A/B 测试是标准做法
+
+
+## 发布公告图形
+
+![发布公告示例 - 渐变风格](/images/nano-banana/announcement-launch-gradient.png)
+
+### 它们是什么
+
+发布公告图形是“我们来了”的视觉内容。它们出现在博客文章、电子邮件群发、社交公告、新闻稿中——任何你宣布发布的地方。
+
+### 何时使用
+
+- 产品发布日
+- 主要功能发布
+- 版本更新
+- 里程碑公告
+
+### 如何生成
+
+**基本提示词:**
+```
+Create a launch announcement graphic for [product].
+Concept: "Introducing [product name]"
+Feel: [emotional tone]
+Professional quality suitable for press release.
+16:9 aspect ratio.
+(为 [产品] 创建一个发布公告图形。
+概念: "介绍 [产品名称]"
+感觉: [情感基调]
+适合新闻稿的专业质量。
+16:9 纵横比。)
+```
+
+**示例 - TaskFlow Mobile:**
+```
+Create a launch announcement graphic for TaskFlow Mobile.
+Concept: "Introducing TaskFlow Mobile" energy.
+Hero shot of the app - polished, premium feel.
+Launch/announcement energy - could be spotlight effect,
+subtle motion, or clean reveal aesthetic.
+Professional enough for press release, exciting enough for social.
+16:9 aspect ratio.
+(为 TaskFlow Mobile 创建一个发布公告图形。
+概念: "介绍 TaskFlow Mobile" 的能量。
+应用的主角镜头 - 抛光、高级感。
+发布/公告能量 - 可以是聚光灯效果、
+微妙的动感或干净的揭示美学。
+专业程度足以用于新闻稿，兴奋程度足以用于社交媒体。
+16:9 纵横比。)
+```
+
+### 关键元素
+
+| 元素 | 目的 |
+|---------|---------|
+| **产品主角** | 正在发布的东西 |
+| **公告能量** | 兴奋、新颖、势头 |
+| **文本空间** | 留给 "Introducing..." 标题的空间 |
+| **品牌一致性** | 公司颜色和风格 |
+
+### 情绪选项
+
+| 情绪 | 视觉方法 |
+|------|-----------------|
+| **兴奋** | 运动模糊、动态角度、明亮颜色 |
+| **高级** | 干净、极简、精致的灯光 |
+| **创新** | 未来感、科技前沿、大胆 |
+| **值得信赖** | 稳定、专业、令人安心 |
+
+### 专业提示
+
+- **让它感觉像个事件:** 这不仅仅是另一张图片
+- **以产品为中心:** 主角应该明确无误
+- **生成多个版本:** 不同平台需要不同格式
+- **考虑文字覆盖:** 为标题和日期留出空间
+
+
+## 完整发布资产包
+
+这是一个产品发布的完整套件：
+
+### 应用商店展示
+- 功能图形 (16:9)
+- 5-6 个截图模型
+- 应用图标 (如果需要)
+
+### 社交活动
+- LinkedIn 广告创意 (方形 + 横向)
+- Twitter/X 卡片图像
+- Instagram 帖子 + 故事变体
+
+### 公告包
+- 新闻稿首图 (16:9)
+- 电子邮件标题图
+- 博客文章特色图像
+- 社交公告变体
+
+**总时间:** 30-45 分钟完成一套完整的发布包。
+
+
+## 使用你的风格库
+
+营销受益于一致的视觉识别。
+
+**构建特定于营销的风格:**
+- "Brand Ad Style" (品牌广告风格) - 你公司的视觉语言
+- "Launch Energy" (发布能量) - 动态公告感觉
+- "App Store Clean" (应用商店简洁风) - 商店列表美学
+
+**然后一致地应用:**
+```
+Generate LinkedIn ad using style #45 (Brand Ad Style)
+Generate announcement using style #52 (Launch Energy)
+```
+
+
+## 最佳实践
+
+### 要做:
+- **匹配你的品牌** - 使用一致的颜色和风格
+- **专注于价值** - 用户得到了什么？
+- **生成变体** - 营销需要测试
+- **平台优先思维** - 针对展示位置进行优化
+- **保持简单** - 每张图一个信息
+
+### 不要:
+- **不要过度拥挤** - 留出呼吸空间
+- **不要太通用** - 展示**你的**产品，而不是图库图片
+- **不要忘记文本空间** - 文案会被添加上去
+- **不要使用微小文本** - 移动端信息流很小
+- **不要跳过变体** - 一个版本永远不够
+
+
+## 故障排除
+
+### 广告无法阻止滚动
+
+- 增加对比度和大胆度
+- 尝试更具情感的概念
+- 让转变更加戏剧化
+- 生成完全不同的变体
+
+### 应用商店图形看起来很通用
+
+- 展示实际 UI，而不是占位符屏幕
+- 添加暗示用例的语境
+- 明确引用你的品牌颜色
+- 尝试生活方式方法 (使用中的产品)
+
+### 发布公告感觉不令人兴奋
+
+- 要求 "launch energy" (发布能量) 或 "announcement moment" (公告时刻)
+- 添加动态元素 (运动模糊、聚光灯)
+- 让产品更加突出
+- 生成具有不同情绪的变体
+
+
+## 更大的图景
+
+让我们把视野拉远一点。
+
+### 你构建了什么
+
+通过 Nano Banana，你组装了一个专业的创意流水线：
+
+**1. 最强大的图像模型**
+Gemini 3 Pro 生成逼真的图像，转换参考，处理文本覆盖，并保持跨生成的一致性。
+
+**2. 最强大的 AI 助手**
+Claude Code 处理所有技术复杂性——API 调用、会话管理、文件保存。你专注于创意方向。
+
+**3. 一个复利系统**
+你的风格库随着每个项目而增长。以前需要探索的东西现在只需要一个命令："use style #12"。
+
+### 区别
+
+大多数人将 AI 图像工具作为新奇事物使用：
+- 生成随机图像
+- 使用一次
+- 重新开始
+
+你拥有一个专业的流水线：
+- 有意图地生成
+- 构建可重用的风格
+- 随时间复利
+
+这就是偶尔使用 AI 和拥有 AI 作为创意超能力之间的区别。
+
+
+## 课程完成
+
+恭喜。你已完成 Nano Banana。
+
+从你的第一次“穿着香蕉服的 Carl”生成，到推出带有专业营销资产的产品——你从“这是如何工作的？”变成了拥有完整的视觉工具包。
+
+**你现在拥有:**
+- 对可用的最强大图像模型的理解
+- 对获得极佳结果的提示词原则的掌握
+- 一个随时间增值且可重用的风格库
+- 创建任何 PM 视觉内容（画像、图表、模型、营销）的技能
+
+**你的风格库永远属于你。** 继续构建它。每个项目都让它更有价值。
+
+
+## 下一步是什么？
+
+这是 Nano Banana 的最后一个模块。但你的旅程还在继续：
+
+**继续构建你的库:**
+- 保存每个项目的风格
+- 从你欣赏的图像中提取风格
+- 与你的团队分享风格
+
+**应用于实际工作:**
+- 演示文稿和推介
+- 用户研究工件
+- 产品文档
+- 营销活动
+
+**保持联系:**
+查看 [The Full Stack PM](https://fullstackpm.com/subscribe?utm_source=ccforpms&utm_medium=course&utm_campaign=nano-banana-marketing) 获取更多 PM 构建者内容，包括高级技术和新风格库。
+
+
+---
+
+**恭喜完成 Nano Banana！**
+
+现在去构建一些令人惊叹的东西吧。
+
+
+## 资源
+
+- [Hootsuite Social Media Image Sizes](https://blog.hootsuite.com/social-media-image-sizes-guide/) - 所有平台，定期更新
+- [Sprout Social Image Guide](https://sproutsocial.com/insights/social-media-image-sizes-guide/) - 综合规格
+- [App Store Screenshot Guide](https://splitmetrics.com/blog/app-store-screenshots-aso-guide/) - Apple 要求和最佳实践
+- [Google Play Screenshot Guide](https://appradar.com/blog/android-app-screenshot-sizes-and-guidelines-for-google-play) - Android 要求
+- [App Screenshot Best Practices](https://www.moburst.com/blog/app-screenshots/) - 设计提示
+
+
+---
+
+**关于本课程**
+
+由 [Carl Vellotti](https://www.linkedin.com/in/carlvellotti/) 创建。Nano Banana 是 Claude Code for Product Managers 课程的一部分。
+
+**源代码库:** [github.com/carlvellotti/claude-code-pm-course](https://github.com/carlvellotti/claude-code-pm-course)
