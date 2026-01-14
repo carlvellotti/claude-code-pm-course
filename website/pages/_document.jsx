@@ -2,6 +2,7 @@ import { Html, Head, Main, NextScript } from 'next/document'
 
 const META_PIXEL_ID = process.env.NEXT_PUBLIC_META_PIXEL_ID
 const LINKEDIN_PARTNER_ID = process.env.NEXT_PUBLIC_LINKEDIN_PARTNER_ID
+const X_PIXEL_ID = process.env.NEXT_PUBLIC_X_PIXEL_ID
 
 export default function Document() {
   return (
@@ -49,6 +50,15 @@ export default function Document() {
               />
             </noscript>
           </>
+        )}
+
+        {/* X/Twitter Pixel */}
+        {X_PIXEL_ID && (
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `!function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments)},s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='https://static.ads-twitter.com/uwt.js',a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');twq('config','${X_PIXEL_ID}');`,
+            }}
+          />
         )}
       </Head>
       <body>
