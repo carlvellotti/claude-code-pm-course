@@ -1,6 +1,6 @@
 {
-  "version": "1.0.0",
-  "lastUpdated": "2025-12-05",
+  "version": "2.0.0",
+  "lastUpdated": "2026-01-14",
   "levels": [
     {
       "id": "1",
@@ -173,6 +173,58 @@
           "command": "start-3-2-3",
           "description": "Create app store graphics, social ads, and launch announcement visuals",
           "estimatedMinutes": 20
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "name": "Vibe Coding",
+      "description": "Build a real web app from scratch and deploy it",
+      "modules": [
+        {
+          "id": "4.1",
+          "title": "Setup",
+          "slug": "setup",
+          "path": "lesson-modules/4-vibe-coding/4.1-setup/CLAUDE.md",
+          "command": "start-4-1",
+          "description": "The vibecoding mindset and project folder setup",
+          "estimatedMinutes": 10
+        },
+        {
+          "id": "4.2",
+          "title": "Plan",
+          "slug": "plan",
+          "path": "lesson-modules/4-vibe-coding/4.2-plan/CLAUDE.md",
+          "command": "start-4-2",
+          "description": "Interview process to define clear requirements",
+          "estimatedMinutes": 25
+        },
+        {
+          "id": "4.3",
+          "title": "Build & Iterate",
+          "slug": "build-iterate",
+          "path": "lesson-modules/4-vibe-coding/4.3-build-iterate/CLAUDE.md",
+          "command": "start-4-3",
+          "description": "Scaffold, build, and refine with screenshots",
+          "estimatedMinutes": 40
+        },
+        {
+          "id": "4.4",
+          "title": "GitHub",
+          "slug": "github",
+          "path": "lesson-modules/4-vibe-coding/4.4-github/CLAUDE.md",
+          "command": "start-4-4",
+          "description": "Version control and backup",
+          "estimatedMinutes": 15
+        },
+        {
+          "id": "4.5",
+          "title": "Go Live",
+          "slug": "go-live",
+          "path": "lesson-modules/4-vibe-coding/4.5-go-live/CLAUDE.md",
+          "command": "start-4-5",
+          "description": "Deploy to Vercel with a real URL",
+          "estimatedMinutes": 15
         }
       ]
     }
