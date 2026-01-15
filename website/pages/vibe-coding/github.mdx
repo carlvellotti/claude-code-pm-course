@@ -1,0 +1,84 @@
+---
+title: '4.4: GitHub'
+description: 'Save your code to the cloud with version control and prepare for deployment.'
+keywords: 'github, git, version control, repository, push code'
+---
+
+## 4.4: GitHub
+
+- **Time to Complete:** 15 minutes
+
+> **Interactive lesson:** Run `/start-4-4` in Claude Code
+
+**In this lesson:** Push your project to a private GitHub repository.
+
+## What is Version Control?
+
+Version control is a system that tracks every change to your files over time.
+
+Think of it like "track changes" in Word, but for entire projects. You can:
+- See the history of every change
+- Go back to any previous version
+- Undo mistakes
+
+It solves the "Final_v3_REAL_FINAL.docx" problem forever.
+
+## Git vs GitHub
+
+These are related but different:
+
+**Git** = The version control system that runs on your computer. It tracks changes locally.
+
+**GitHub** = A website that stores your Git repositories in the cloud.
+
+Analogy: Git is like Microsoft Word (the tool). GitHub is like Google Drive (where you store and share files).
+
+## Key Terms
+
+| Term | What it means |
+|------|---------------|
+| **Repository (repo)** | A project folder tracked by Git |
+| **Commit** | A saved snapshot at a point in time |
+| **Push** | Upload commits from your computer → GitHub |
+| **Pull** | Download changes from GitHub → your computer |
+
+## Why You Need This for Deployment
+
+Right now your code only exists on your computer. If your laptop dies, it's gone.
+
+More importantly: deployment services need to pull your code from somewhere. GitHub is that somewhere.
+
+When you deploy in the next lesson, Vercel will connect to your GitHub repo and pull the code automatically.
+
+## What is the GitHub CLI?
+
+The GitHub CLI (`gh`) is a command-line tool for working with GitHub.
+
+Claude uses it so you don't have to type Git commands yourself. It authenticates through your browser using a device code flow - you'll see a code, enter it on GitHub's website, and you're connected.
+
+## Troubleshooting
+
+### "gh: command not found"
+GitHub CLI isn't installed.
+- **Mac:** Run `brew install gh`
+- **Others:** Download from [cli.github.com](https://cli.github.com)
+
+### Authentication failed
+Run `gh auth login` again and make sure you complete the browser step. You need to enter the code and click "Authorize."
+
+### "Repository already exists"
+A repo with that name already exists on your GitHub. Either:
+- Pick a different name
+- Delete the existing repo on github.com first
+
+### "Permission denied"
+Your authentication token expired. Re-run `gh auth login`.
+
+### Can't find repo on github.com
+Make sure you're logged into the correct GitHub account in your browser.
+
+---
+
+## What's Next
+
+**[4.5: Go Live →](/vibe-coding/go-live)** - Deploy your app to the internet and get a real URL to share

@@ -1,0 +1,90 @@
+---
+title: '4.3: Build & Iterate'
+description: 'Create your project, watch Claude build it, and refine through iteration.'
+keywords: 'development server, localhost, iteration, plan mode, npm run dev'
+---
+
+## 4.3: Build & Iterate
+
+- **Time to Complete:** 30-40 minutes
+
+> **Interactive lesson:** Run `/start-4-3` in Claude Code
+
+**In this lesson:** Claude scaffolds the project, builds your app, and you iterate with screenshots.
+
+## What is a Development Server?
+
+A development server runs your code locally so you can see it as a website.
+
+Key things to know:
+- It only works on YOUR computer (not public)
+- It lets you test and iterate before going live
+- It must keep running while you're viewing the site
+- Stop it with `Ctrl+C` in the terminal
+
+## What is Localhost?
+
+`localhost` means your own computer acting as a server.
+
+`localhost:3000` = port 3000 on your machine.
+
+This is NOT a real URL. Nobody else can access it. You'll get a real URL when you deploy in lesson 4.5.
+
+## What is Plan Mode?
+
+Plan mode is a Claude Code feature where Claude shows you the plan before executing.
+
+- Toggle it with **Shift+Tab**
+- Good for big tasks where you want to review first
+- You approve the plan, then Claude builds
+
+For complex builds, this lets you ask questions and make adjustments before any code is written.
+
+## Why Iteration Matters
+
+The first version is never perfect. This is normal and expected.
+
+Professional development is always: build → review → refine → repeat.
+
+The difference with AI: iterations take seconds instead of days. So don't settle - keep refining until you love it.
+
+## The Screenshot Trick
+
+**Ctrl+V** (not Cmd+V on Mac!) pastes images directly into Claude Code.
+
+This is powerful for iteration:
+- Take a screenshot of what's wrong
+- Circle the problem or point at it
+- Paste it and describe what you want different
+
+Visual feedback is faster than describing problems in words.
+
+## Troubleshooting
+
+### "npm: command not found"
+Node.js isn't installed. Download it from [nodejs.org](https://nodejs.org), install it, then restart your terminal.
+
+### "Port 3000 already in use"
+Another app is using that port. Either:
+- Close other terminal windows that might be running servers
+- Use a different port (Claude can help with this)
+
+### Browser didn't open
+Manually go to [http://localhost:3000](http://localhost:3000)
+
+### Blank page
+1. Check your terminal for build errors (red text)
+2. Check browser console: press F12, click "Console" tab, look for red errors
+
+### Changes not showing
+- Did you refresh the browser?
+- Is the dev server still running in the terminal?
+
+### Style looks wrong
+Clear browser cache with **Cmd+Shift+R** (Mac) or **Ctrl+Shift+R** (Windows), or try an incognito window.
+
+---
+
+## What's Next
+
+**[4.4: GitHub →](/vibe-coding/github)** - Save your code to the cloud so it's backed up and ready for deployment

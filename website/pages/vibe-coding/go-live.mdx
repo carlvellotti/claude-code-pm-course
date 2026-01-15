@@ -1,0 +1,113 @@
+---
+title: '4.5: Go Live'
+description: 'Deploy your app to the internet and get a real URL anyone can visit.'
+keywords: 'vercel, deployment, deploy, hosting, go live, ship'
+---
+
+## 4.5: Go Live
+
+- **Time to Complete:** 15 minutes
+
+> **Interactive lesson:** Run `/start-4-5` in Claude Code
+
+**In this lesson:** Deploy your project and get a live URL to share.
+
+## What is Deployment?
+
+Deployment is taking code from your computer and putting it on the internet.
+
+Your code goes from your machine → servers that anyone can access → real URL.
+
+Developers say "deploy," "ship," or "go live" constantly. This is the moment your thing becomes real.
+
+## What is Hosting?
+
+Hosting means servers that run your code 24/7 and handle traffic from visitors.
+
+You don't manage the servers yourself - the hosting service handles all of that. You just give them your code.
+
+## What is Vercel?
+
+Vercel is a hosting service for websites. It's:
+- **Free** for personal projects (generous free tier)
+- **Made by the creators of Next.js** - they work perfectly together
+- **Connected to GitHub** - auto-deploys when you push changes
+
+Give Vercel your GitHub repo → it builds your code → you get a real URL like `yourproject.vercel.app`.
+
+## How Auto-Deploy Works
+
+This is the magic:
+
+1. You push code to GitHub
+2. Vercel detects the change
+3. Vercel rebuilds and redeploys automatically
+4. Your live site updates in ~1 minute
+
+No manual steps after initial setup. Change code → push → it's live.
+
+## What is the Vercel CLI?
+
+The Vercel CLI is a command-line tool for deploying directly from your terminal.
+
+Claude uses it to deploy without you leaving Claude Code. It authenticates through your browser, similar to GitHub.
+
+## Troubleshooting
+
+### "vercel: command not found"
+Vercel CLI isn't installed. Run `npm i -g vercel`
+
+### Authentication failed
+Run `vercel login` again and complete the browser authorization.
+
+### Build failed
+Check the Vercel dashboard for error logs. Usually it's a code issue - tell Claude what the error says and it can help fix it.
+
+### "Project not found"
+Make sure you're in the correct project folder when you run the deploy command.
+
+### Site shows old version
+Deployment might still be building. Check the Vercel dashboard for status - it usually takes about a minute.
+
+### Works locally but not on Vercel
+Environment differences. Check the Vercel build logs for clues about what's different.
+
+## After Deployment
+
+Once you're live:
+
+1. **Test on your phone** - same URL works on any device
+2. **Share with friends** - send the link, watch their reaction
+3. **Future updates:** change code → push to GitHub → auto-deploys
+
+That's the whole flow. You now know how to build and ship things.
+
+## The Complete Loop
+
+You've learned:
+
+| Step | What it means |
+|------|---------------|
+| **Plan** | Get clear on what you're building |
+| **Build** | Let AI create it |
+| **Iterate** | Refine until it's right |
+| **Save** | Back it up to GitHub |
+| **Go Live** | Put it on the internet |
+
+This loop works for any project. Landing pages, tools, apps, prototypes - same process.
+
+---
+
+## What's Next
+
+**Module 4 Complete!**
+
+You now have the full vibecoding workflow. Try building something else - start a new project folder and follow the same loop. The best way to learn is to make something you actually want.
+
+## Community & Feedback
+
+**Stay connected:** Join the newsletter at [ccforpms.com](https://ccforpms.com) for new modules, guides, and PM-focused Claude Code content.
+
+**Course creator:** [Carl Vellotti](https://linkedin.com/in/carlvellotti) ([X](https://x.com/carlvellotti)) - feedback always welcome!
+
+**Enjoyed this?** Share it with friends who could use these skills.
