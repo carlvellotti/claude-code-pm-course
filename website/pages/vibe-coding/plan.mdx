@@ -1,0 +1,79 @@
+---
+title: '4.2: Plan'
+description: 'Define clear requirements before building through an interactive interview process.'
+keywords: 'requirements, product planning, quiz logic, visual previews'
+---
+
+## 4.2: Plan
+
+- **Time to Complete:** 20-25 minutes
+
+> **Interactive lesson:** Run `/start-4-2` in Claude Code
+
+**In this lesson:** Claude interviews you to create a requirements spec.
+
+## What Are Requirements?
+
+Requirements are a description of what you're building before you build it.
+
+Think of it as the "contract" between you and whoever builds it. The more detail upfront, the fewer surprises later.
+
+This principle applies whether you're working with:
+- AI tools
+- Developers
+- Designers
+- Agencies
+
+Vague instructions = unexpected results. Specific requirements = what you actually wanted.
+
+## What is "Logic" in Software?
+
+Logic is the rules for how something behaves. It's the "if this, then that" layer.
+
+Every app has logic:
+- If user clicks button → show next screen
+- If answer = A → add point to personality X
+- If score is highest → show that result
+
+You define the logic in plain English. Claude implements it in code.
+
+## How Recommendation Engines Work
+
+Quizzes, product recommenders, and matchmakers all use the same pattern:
+
+1. **User inputs** → answers, preferences, choices
+2. **Scoring system** → each input adds weight to outcomes
+3. **Output** → highest scoring outcome wins
+
+For a personality quiz:
+- Each answer maps to a personality type
+- Answers accumulate points
+- Final result = personality with most points
+
+You don't code this - you just decide the mappings.
+
+## Why Visual Previews Matter
+
+Words are ambiguous. "Modern" means different things to different people.
+
+Seeing options is faster than describing preferences. You know it when you see it.
+
+Claude can generate HTML preview files with different visual styles and open them in your browser. You pick what you like - or mix elements from multiple options.
+
+## The REQUIREMENTS.md File
+
+At the end of this lesson, all your decisions get saved to a single file: `REQUIREMENTS.md`
+
+This includes:
+- What you're building
+- The logic (how it works)
+- Visual style preferences
+- Content (questions, results, etc.)
+
+This file is the spec Claude builds from in the next lesson.
+
+---
+
+## What's Next
+
+**[4.3: Build & Iterate →](/vibe-coding/build-iterate)** - Watch Claude build your app, then refine it until you love it
