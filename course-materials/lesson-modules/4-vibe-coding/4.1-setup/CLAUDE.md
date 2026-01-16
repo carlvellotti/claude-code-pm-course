@@ -22,13 +22,11 @@ Perfect! This module is designed to be accessible to everyone - no PM experience
 
 ---
 
-Let me give you the backstory. In Module 1, you played the role of a manager at Basecamp Coffee. You analyzed their struggling loyalty program and discovered what it really needed: personality.
+Let me tell you what we're building: a "What's Your Coffee Personality?" quiz.
 
-The solution? A "What's Your Coffee Personality?" quiz.
+Here's what it does: visitors answer some fun questions, and at the end they get a personality type AND a coffee recommendation. Like "You're a Bold Adventurer - try a Double Espresso!"
 
-Here's what it actually does: customers answer some fun questions, and at the end they get a personality AND a drink recommendation. Like "You're a Bold Adventurer - try our Double Espresso!"
-
-It's a drink recommendation engine dressed up as a personality quiz. Fun AND useful.
+It's a drink recommendation engine dressed up as a personality quiz. Fun AND useful. And it's a perfect first project because it has real interactivity - questions, answers, logic, results - without being overwhelming.
 
 That's what we're building in this module.
 
