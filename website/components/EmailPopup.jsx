@@ -43,12 +43,38 @@ const trackEvent = (eventName, params = {}) => {
   }
 }
 
+// A/B test variants
+const VARIANTS = {
+  CONTROL: 'control',
+  CHEATSHEET: 'cheatsheet',
+}
+
+const getOrAssignVariant = () => {
+  if (typeof window === 'undefined') return VARIANTS.CONTROL
+
+  const stored = localStorage.getItem('fspm-popup-variant')
+  if (stored && Object.values(VARIANTS).includes(stored)) {
+    return stored
+  }
+
+  // 50/50 split
+  const variant = Math.random() < 0.5 ? VARIANTS.CONTROL : VARIANTS.CHEATSHEET
+  localStorage.setItem('fspm-popup-variant', variant)
+  return variant
+}
+
 export default function EmailPopup() {
   const [isVisible, setIsVisible] = useState(false)
   const [email, setEmail] = useState('')
   const [status, setStatus] = useState('idle') // idle, loading, success, error
   const [errorMessage, setErrorMessage] = useState('')
+  const [variant, setVariant] = useState(VARIANTS.CONTROL)
   const inputRef = useRef(null)
+
+  useEffect(() => {
+    // Assign variant on mount
+    setVariant(getOrAssignVariant())
+  }, [])
 
   useEffect(() => {
     // Check if user has already seen the popup
@@ -58,11 +84,11 @@ export default function EmailPopup() {
     // Show popup after 10 seconds
     const timer = setTimeout(() => {
       setIsVisible(true)
-      trackEvent('popup_shown', { popup_type: 'email_signup', source: 'ccforpms' })
+      trackEvent('popup_shown', { popup_type: 'email_signup', source: 'ccforpms', variant })
     }, 10000)
 
     return () => clearTimeout(timer)
-  }, [])
+  }, [variant])
 
   useEffect(() => {
     if (isVisible && inputRef.current) {
@@ -73,7 +99,7 @@ export default function EmailPopup() {
   const handleClose = () => {
     setIsVisible(false)
     localStorage.setItem('fspm-popup-seen', 'true')
-    trackEvent('popup_closed', { popup_type: 'email_signup', source: 'ccforpms' })
+    trackEvent('popup_closed', { popup_type: 'email_signup', source: 'ccforpms', variant })
   }
 
   const handleSubmit = async (e) => {
@@ -85,6 +111,7 @@ export default function EmailPopup() {
 
     try {
       // Use fullstackpm.com API (same Beehiiv publication)
+      const utmCampaign = variant === VARIANTS.CHEATSHEET ? 'popup-cheatsheet' : 'popup-control'
       const response = await fetch('https://fullstackpm.com/api/subscribe', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -93,7 +120,7 @@ export default function EmailPopup() {
           source: 'ccforpms-popup',
           utm_source: 'ccforpms',
           utm_medium: 'popup',
-          utm_campaign: 'course-popup',
+          utm_campaign: utmCampaign,
           landing_page: window.location.pathname,
           referrer: document.referrer || 'direct',
         }),
@@ -104,7 +131,7 @@ export default function EmailPopup() {
       if (response.ok && data.success) {
         setStatus('success')
         localStorage.setItem('fspm-popup-seen', 'true')
-        trackEvent('popup_submitted', { popup_type: 'email_signup', source: 'ccforpms' })
+        trackEvent('popup_submitted', { popup_type: 'email_signup', source: 'ccforpms', variant })
         setTimeout(() => {
           setIsVisible(false)
         }, 2500)
@@ -146,7 +173,44 @@ export default function EmailPopup() {
               <p>Check your inbox for a welcome from Carl.</p>
             </div>
           </div>
+        ) : variant === VARIANTS.CHEATSHEET ? (
+          /* Cheatsheet Variant - Centered layout */
+          <div className="popup-content popup-content-centered">
+            <div className="popup-inner-centered">
+              <div className="popup-header-centered">
+                <h3>Want the full course in your inbox?</h3>
+              </div>
+              <p className="popup-subhead-centered">
+                I'll remind you to come back + send you a <span className="highlight">bonus cheat sheet</span>. 100% free.
+              </p>
+              <form onSubmit={handleSubmit} className="popup-form popup-form-centered">
+                <input
+                  ref={inputRef}
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="you@company.com"
+                  required
+                  disabled={status === 'loading'}
+                />
+                <button type="submit" disabled={status === 'loading'}>
+                  {status === 'loading' ? (
+                    <><Spinner /> Sending...</>
+                  ) : (
+                    'Send me the course'
+                  )}
+                </button>
+              </form>
+              {status === 'error' && (
+                <p className="popup-error">{errorMessage}</p>
+              )}
+              <p className="popup-disclaimer">
+                Subscribes to <a href="https://fullstackpm.com" target="_blank" rel="noopener noreferrer">The Full Stack PM</a>. No spam. Unsubscribe anytime.
+              </p>
+            </div>
+          </div>
         ) : (
+          /* Control Variant - Original two-column layout */
           <div className="popup-content">
             <div className="popup-inner">
               {/* Left side - Value prop */}
@@ -435,6 +499,57 @@ export default function EmailPopup() {
           margin-top: 12px;
           font-size: 13px;
           color: ${colors.stone600};
+        }
+
+        /* Cheatsheet variant styles */
+        .popup-content-centered {
+          text-align: center;
+        }
+
+        .popup-inner-centered {
+          max-width: 600px;
+          margin: 0 auto;
+        }
+
+        .popup-header-centered h3 {
+          font-size: 26px;
+          font-weight: 700;
+          color: ${colors.ink};
+          margin: 0 0 12px;
+          font-family: 'Outfit', system-ui, sans-serif;
+        }
+
+        .popup-subhead-centered {
+          font-size: 17px;
+          color: ${colors.stone700};
+          margin: 0 0 24px;
+          line-height: 1.5;
+        }
+
+        .highlight {
+          color: ${colors.maple};
+          font-weight: 600;
+        }
+
+        .popup-form-centered {
+          max-width: 440px;
+          margin: 0 auto;
+        }
+
+        .popup-disclaimer {
+          margin: 16px 0 0;
+          font-size: 13px;
+          color: ${colors.stone600};
+        }
+
+        .popup-disclaimer a {
+          color: ${colors.maple};
+          text-decoration: none;
+          font-weight: 500;
+        }
+
+        .popup-disclaimer a:hover {
+          text-decoration: underline;
         }
 
         .popup-success {
