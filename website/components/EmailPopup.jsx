@@ -13,27 +13,13 @@ const colors = {
   stone400: '#b8a99a',
   stone200: '#e8e0d6',
   stone50: '#faf8f5',
-  success: '#2d8a4e',
 }
-
-const CheckIcon = () => (
-  <svg style={{ width: 14, height: 14 }} fill="currentColor" viewBox="0 0 20 20">
-    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-  </svg>
-)
 
 const Spinner = () => (
   <svg style={{ width: 16, height: 16, animation: 'spin 1s linear infinite' }} viewBox="0 0 24 24">
     <circle style={{ opacity: 0.25 }} cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
     <path style={{ opacity: 0.75 }} fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
   </svg>
-)
-
-const TrustSignal = ({ children }) => (
-  <span className="trust-signal">
-    <span className="trust-check"><CheckIcon /></span>
-    {children}
-  </span>
 )
 
 // Analytics helper
@@ -43,38 +29,12 @@ const trackEvent = (eventName, params = {}) => {
   }
 }
 
-// A/B test variants
-const VARIANTS = {
-  CONTROL: 'control',
-  CHEATSHEET: 'cheatsheet',
-}
-
-const getOrAssignVariant = () => {
-  if (typeof window === 'undefined') return VARIANTS.CONTROL
-
-  const stored = localStorage.getItem('fspm-popup-variant')
-  if (stored && Object.values(VARIANTS).includes(stored)) {
-    return stored
-  }
-
-  // 50/50 split
-  const variant = Math.random() < 0.5 ? VARIANTS.CONTROL : VARIANTS.CHEATSHEET
-  localStorage.setItem('fspm-popup-variant', variant)
-  return variant
-}
-
 export default function EmailPopup() {
   const [isVisible, setIsVisible] = useState(false)
   const [email, setEmail] = useState('')
   const [status, setStatus] = useState('idle') // idle, loading, success, error
   const [errorMessage, setErrorMessage] = useState('')
-  const [variant, setVariant] = useState(VARIANTS.CONTROL)
   const inputRef = useRef(null)
-
-  useEffect(() => {
-    // Assign variant on mount
-    setVariant(getOrAssignVariant())
-  }, [])
 
   useEffect(() => {
     // Check if user has already seen the popup
@@ -84,11 +44,11 @@ export default function EmailPopup() {
     // Show popup after 10 seconds
     const timer = setTimeout(() => {
       setIsVisible(true)
-      trackEvent('popup_shown', { popup_type: 'email_signup', source: 'ccforpms', variant })
+      trackEvent('popup_shown', { popup_type: 'email_signup', source: 'ccforpms' })
     }, 10000)
 
     return () => clearTimeout(timer)
-  }, [variant])
+  }, [])
 
   useEffect(() => {
     if (isVisible && inputRef.current) {
@@ -99,7 +59,7 @@ export default function EmailPopup() {
   const handleClose = () => {
     setIsVisible(false)
     localStorage.setItem('fspm-popup-seen', 'true')
-    trackEvent('popup_closed', { popup_type: 'email_signup', source: 'ccforpms', variant })
+    trackEvent('popup_closed', { popup_type: 'email_signup', source: 'ccforpms' })
   }
 
   const handleSubmit = async (e) => {
@@ -111,7 +71,6 @@ export default function EmailPopup() {
 
     try {
       // Use fullstackpm.com API (same Beehiiv publication)
-      const utmCampaign = variant === VARIANTS.CHEATSHEET ? 'popup-cheatsheet' : 'popup-control'
       const response = await fetch('https://fullstackpm.com/api/subscribe', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -120,7 +79,7 @@ export default function EmailPopup() {
           source: 'ccforpms-popup',
           utm_source: 'ccforpms',
           utm_medium: 'popup',
-          utm_campaign: utmCampaign,
+          utm_campaign: 'popup-cheatsheet',
           landing_page: window.location.pathname,
           referrer: document.referrer || 'direct',
         }),
@@ -131,7 +90,7 @@ export default function EmailPopup() {
       if (response.ok && data.success) {
         setStatus('success')
         localStorage.setItem('fspm-popup-seen', 'true')
-        trackEvent('popup_submitted', { popup_type: 'email_signup', source: 'ccforpms', variant })
+        trackEvent('popup_submitted', { popup_type: 'email_signup', source: 'ccforpms' })
         setTimeout(() => {
           setIsVisible(false)
         }, 2500)
@@ -173,8 +132,7 @@ export default function EmailPopup() {
               <p>Check your inbox for a welcome from Carl.</p>
             </div>
           </div>
-        ) : variant === VARIANTS.CHEATSHEET ? (
-          /* Cheatsheet Variant - Centered layout */
+        ) : (
           <div className="popup-content popup-content-centered">
             <div className="popup-inner-centered">
               <div className="popup-header-centered">
@@ -209,57 +167,6 @@ export default function EmailPopup() {
               </p>
             </div>
           </div>
-        ) : (
-          /* Control Variant - Original two-column layout */
-          <div className="popup-content">
-            <div className="popup-inner">
-              {/* Left side - Value prop */}
-              <div className="popup-left">
-                <div className="popup-header">
-                  <span className="popup-emoji">🥞</span>
-                  <div>
-                    <h3>Join the Stack</h3>
-                    <p className="popup-subhead">
-                      Join <strong>12,000+</strong> PMs building with AI
-                    </p>
-                  </div>
-                </div>
-                <p className="popup-description">
-                  Get weekly insights on using AI tools like Claude Code and Cursor to build prototypes, automations, and more.
-                </p>
-              </div>
-
-              {/* Right side - Form */}
-              <div className="popup-right">
-                <form onSubmit={handleSubmit} className="popup-form">
-                  <input
-                    ref={inputRef}
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="you@company.com"
-                    required
-                    disabled={status === 'loading'}
-                  />
-                  <button type="submit" disabled={status === 'loading'}>
-                    {status === 'loading' ? (
-                      <><Spinner /> Joining...</>
-                    ) : (
-                      'Join the Stack'
-                    )}
-                  </button>
-                </form>
-                {status === 'error' && (
-                  <p className="popup-error">{errorMessage}</p>
-                )}
-                <div className="popup-trust">
-                  <TrustSignal>No spam</TrustSignal>
-                  <TrustSignal>Unsubscribe anytime</TrustSignal>
-                  <TrustSignal>Weekly only</TrustSignal>
-                </div>
-              </div>
-            </div>
-          </div>
         )}
 
         <div className="popup-footer">
@@ -273,22 +180,6 @@ export default function EmailPopup() {
         @keyframes spin {
           from { transform: rotate(0deg); }
           to { transform: rotate(360deg); }
-        }
-
-        .trust-signal {
-          display: inline-flex;
-          align-items: center;
-          gap: 6px;
-        }
-        .trust-check {
-          width: 16px;
-          height: 16px;
-          border-radius: 50%;
-          background: ${colors.success}15;
-          color: ${colors.success};
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
         }
       `}</style>
 
@@ -379,56 +270,6 @@ export default function EmailPopup() {
           padding: 20px 24px 16px;
         }
 
-        .popup-inner {
-          display: flex;
-          flex-direction: column;
-          gap: 24px;
-          max-width: 900px;
-          margin: 0 auto;
-        }
-
-        .popup-left {
-          flex: 1;
-        }
-
-        .popup-header {
-          display: flex;
-          align-items: center;
-          gap: 16px;
-        }
-
-        .popup-emoji {
-          font-size: 40px;
-          animation: float 4s ease-in-out infinite;
-        }
-
-        .popup-header h3 {
-          font-size: 22px;
-          font-weight: 700;
-          color: ${colors.ink};
-          margin: 0;
-          font-family: 'Outfit', system-ui, sans-serif;
-        }
-
-        .popup-subhead {
-          font-size: 14px;
-          color: ${colors.stone600};
-          margin: 4px 0 0;
-        }
-        .popup-subhead strong {
-          color: ${colors.ink};
-        }
-
-        .popup-description {
-          margin: 16px 0 0;
-          color: ${colors.stone700};
-          line-height: 1.6;
-        }
-
-        .popup-right {
-          flex-shrink: 0;
-        }
-
         .popup-form {
           display: flex;
           flex-direction: column;
@@ -491,17 +332,7 @@ export default function EmailPopup() {
           text-align: center;
         }
 
-        .popup-trust {
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: center;
-          gap: 16px;
-          margin-top: 12px;
-          font-size: 13px;
-          color: ${colors.stone600};
-        }
-
-        /* Cheatsheet variant styles */
+        /* Popup layout styles */
         .popup-content-centered {
           text-align: center;
         }
@@ -577,19 +408,6 @@ export default function EmailPopup() {
         @media (min-width: 640px) {
           .popup-content {
             padding: 40px;
-          }
-          .popup-inner {
-            flex-direction: row;
-            align-items: center;
-          }
-          .popup-right {
-            width: 340px;
-          }
-          .popup-form {
-            flex-direction: row;
-          }
-          .popup-trust {
-            justify-content: flex-start;
           }
         }
 
