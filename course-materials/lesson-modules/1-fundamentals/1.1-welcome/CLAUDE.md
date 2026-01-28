@@ -187,7 +187,7 @@ Now let me set some expectations about time commitment and what you'll need."
 
 **Time commitment:**
 - Each module: 15-30 minutes
-- Full course: 20-30 hours
+- Full course: ~6 hours (all three levels)
 - But you can go at your own pace!
 
 **What you'll need:**
