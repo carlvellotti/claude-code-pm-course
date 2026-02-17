@@ -1,42 +1,42 @@
-# Support Ticket #4521
+# サポートチケット #4521
 
-**Date:** October 3, 2024
-**Customer:** TechNova Inc. (Business tier, 45 seats)
-**Contact:** Linda Martinez, IT Admin
-**Priority:** Medium
-**Status:** Open
+**日付:** 2024年10月3日
+**顧客:** TechNova Inc.（Businessプラン、45シート）
+**連絡先:** Linda Martinez、IT管理者
+**優先度:** 中
+**ステータス:** オープン
 
 ---
 
-## Subject: Mobile app availability for iOS/Android?
+## 件名: iOS/Android向けモバイルアプリの提供について
 
-## Description
+## 説明
 
-Hi TaskFlow team,
+TaskFlowチームの皆さん、
 
-Our team has been asking about mobile app availability. We currently have to use the mobile web version which is quite slow and doesn't support offline access.
+私たちのチームからモバイルアプリの提供についての問い合わせが増えています。現在はモバイルWeb版を使用していますが、かなり動作が遅く、オフラインアクセスにも対応していません。
 
-Key questions:
-1. Is there a native mobile app planned?
-2. If so, what's the estimated timeline?
-3. Will it support our SSO (Okta)?
+確認したい点:
+1. ネイティブモバイルアプリの開発予定はありますか？
+2. もしあれば、想定されるタイムラインは？
+3. 当社のSSO（Okta）に対応しますか？
 
-Several team members have mentioned this is becoming a blocker for field staff adoption.
+複数のチームメンバーから、現場スタッフの導入におけるブロッカーになりつつあるとの声が上がっています。
 
-Thanks,
+よろしくお願いいたします。
 Linda
 
 ---
 
-## Internal Notes
+## 社内メモ
 
-- Customer has been with us 8 months
-- Previously escalated slow mobile web performance (ticket #4102)
-- Account is up for renewal in Q1 2025
-- CSM flagged as "at risk" due to mobile complaints
+- 顧客歴8ヶ月
+- 以前にモバイルWebのパフォーマンス低下をエスカレーション済み（チケット #4102）
+- 2025年Q1に契約更新予定
+- CSMが「リスクあり」とフラグ付け（モバイルに関する不満が原因）
 
 ---
 
-## Tags
+## タグ
 
 `mobile` `feature-request` `ios` `android` `enterprise` `renewal-risk`

@@ -1,45 +1,45 @@
-# Support Ticket #4723
+# サポートチケット #4723
 
-**Date:** October 20, 2024
-**Customer:** GlobalEvents Co. (Pro tier, 20 seats)
-**Contact:** Derek Thompson, Event Manager
-**Priority:** Medium
-**Status:** Open
+**日付:** 2024年10月20日
+**顧客:** GlobalEvents Co.（Proティア、20シート）
+**連絡先:** Derek Thompson、イベントマネージャー
+**優先度:** 中
+**ステータス:** オープン
 
 ---
 
-## Subject: Offline mode desperately needed
+## 件名: オフラインモードが切実に必要
 
-## Description
+## 説明
 
-Hello TaskFlow support,
+TaskFlowサポートの皆様へ、
 
-We manage live events - conferences, trade shows, corporate events. During events, we're running around venues that often have terrible WiFi.
+私たちはライブイベント（カンファレンス、展示会、企業イベント）を運営しています。イベント中は、WiFiが非常に不安定な会場内を走り回っています。
 
-We need to:
-- Check task assignments
-- Update task status
-- Add notes/photos from the floor
-- Coordinate with team members
+必要なこと:
+- タスクの割り当てを確認する
+- タスクのステータスを更新する
+- 現場からメモや写真を追加する
+- チームメンバーと連携する
 
-Currently, TaskFlow mobile web just spins forever when there's poor connectivity. We've resorted to using a shared Google Doc as our "offline" task list during events, then manually updating TaskFlow afterward. It's a mess.
+現在、接続が悪い環境ではTaskFlowのモバイルウェブはいつまでもローディングが続きます。仕方なくGoogle Docsを「オフライン」タスクリストとして使い、イベント後に手動でTaskFlowを更新しています。非常に煩雑です。
 
-An offline-capable mobile app would be a game-changer for our industry. Is this on your roadmap?
+オフライン対応のモバイルアプリは、私たちの業界にとってゲームチェンジャーになります。ロードマップに入っていますか？
 
 Derek
 
 ---
 
-## Internal Notes
+## 社内メモ
 
-- Events/hospitality vertical
-- Offline is a hard requirement for their use case
-- Workaround (Google Docs) shows commitment to TaskFlow
-- Good candidate for case study if we launch mobile
-- Similar feedback from 3 other event companies
+- イベント/ホスピタリティ業界
+- オフラインはこのユースケースにとって必須要件
+- 代替手段（Google Docs）の利用はTaskFlowへのコミットメントを示している
+- モバイルをローンチした場合のケーススタディ候補
+- 他の3社のイベント会社からも同様のフィードバックあり
 
 ---
 
-## Tags
+## タグ
 
 `mobile` `offline` `events` `connectivity` `feature-request` `sync`

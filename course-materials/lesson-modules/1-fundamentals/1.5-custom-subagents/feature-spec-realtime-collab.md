@@ -1,44 +1,44 @@
-# Real-Time Collaboration Feature Spec (Draft)
+# リアルタイムコラボレーション機能仕様書（ドラフト）
 
-## Overview
-Add real-time collaboration to our document editor so multiple users can edit simultaneously.
+## 概要
+ドキュメントエディタにリアルタイムコラボレーション機能を追加し、複数のユーザーが同時に編集できるようにする。
 
-## Goals
-- Allow 2-10 users to edit the same document at once
-- Show cursor positions of other users
-- Prevent conflicts when users edit same section
-- Works on web and mobile
+## 目標
+- 2〜10人のユーザーが同じドキュメントを同時に編集できるようにする
+- 他のユーザーのカーソル位置を表示する
+- ユーザーが同じセクションを編集した際のコンフリクトを防止する
+- Web とモバイルの両方で動作する
 
-## User Stories
-- As a team member, I want to see who else is editing so I don't overwrite their work
-- As a collaborator, I want to see changes appear instantly so we can work together
-- As a document owner, I want to see who made what changes for accountability
+## ユーザーストーリー
+- チームメンバーとして、他に誰が編集しているかを確認し、相手の作業を上書きしないようにしたい
+- コラボレーターとして、変更が即座に反映されるのを見て、一緒に作業したい
+- ドキュメントオーナーとして、誰がどの変更を行ったかを確認し、説明責任を果たしたい
 
-## Technical Approach
-- Use WebSockets for real-time updates
-- Operational Transform (OT) or CRDT for conflict resolution
-- Store cursor positions and broadcast to all users
-- Show colored cursors with user names
+## 技術的アプローチ
+- リアルタイム更新に WebSocket を使用する
+- コンフリクト解決に Operational Transform (OT) または CRDT を使用する
+- カーソル位置を保存し、全ユーザーにブロードキャストする
+- ユーザー名付きのカラーカーソルを表示する
 
-## Success Metrics
-- 90% of edits sync within 500ms
-- Less than 5% conflict rate
-- Support at least 10 concurrent editors
+## 成功指標
+- 90% の編集が 500ms 以内に同期される
+- コンフリクト率が 5% 未満
+- 最低 10 人の同時編集者をサポートする
 
-## Timeline
-- Phase 1: Basic cursor sharing (2 weeks)
-- Phase 2: Real-time text sync (4 weeks)
-- Phase 3: Conflict resolution (3 weeks)
-- Phase 4: Mobile support (2 weeks)
+## タイムライン
+- フェーズ 1: 基本的なカーソル共有（2 週間）
+- フェーズ 2: リアルタイムテキスト同期（4 週間）
+- フェーズ 3: コンフリクト解決（3 週間）
+- フェーズ 4: モバイル対応（2 週間）
 
-## Open Questions
-- How do we handle users with poor network connections?
-- What happens if WebSocket connection drops?
-- Do we need presence indicators (online/offline)?
-- Should we show edit history in real-time?
+## 未解決の質問
+- ネットワーク接続が不安定なユーザーにどう対応するか？
+- WebSocket 接続が切断された場合はどうするか？
+- プレゼンスインジケーター（オンライン/オフライン）は必要か？
+- 編集履歴をリアルタイムで表示すべきか？
 
-## Resources Needed
-- 2 backend engineers (WebSocket infrastructure)
-- 2 frontend engineers (UI and sync logic)
-- 1 mobile engineer (iOS/Android)
-- QA support for testing edge cases
+## 必要なリソース
+- バックエンドエンジニア 2 名（WebSocket インフラ）
+- フロントエンドエンジニア 2 名（UI と同期ロジック）
+- モバイルエンジニア 1 名（iOS/Android）
+- エッジケーステスト用の QA サポート

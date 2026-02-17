@@ -1,41 +1,41 @@
-# Support Ticket #4756
+# サポートチケット #4756
 
-**Date:** October 22, 2024
-**Customer:** CodeCraft Studios (Business tier, 80 seats)
-**Contact:** Kevin O'Brien, Engineering Director
-**Priority:** Medium
-**Status:** Open
+**日付:** 2024年10月22日
+**顧客:** CodeCraft Studios（Businessティア、80シート）
+**連絡先:** Kevin O'Brien、エンジニアリングディレクター
+**優先度:** 中
+**ステータス:** オープン
 
 ---
 
-## Subject: Linear has a mobile app, why doesn't TaskFlow?
+## 件名: Linearにはモバイルアプリがあるのに、なぜTaskFlowにはないのか？
 
-## Description
+## 説明
 
-Honest question - why doesn't TaskFlow have a mobile app in 2024?
+率直な質問です - なぜ2024年になってもTaskFlowにはモバイルアプリがないのですか？
 
-We're a game development studio. Half our team uses TaskFlow (production, art, design) and half uses Linear (engineering). The engineers keep smugly showing off their Linear mobile app while our production team struggles with TaskFlow mobile web.
+私たちはゲーム開発スタジオです。チームの半分がTaskFlowを使い（プロダクション、アート、デザイン）、残りの半分がLinearを使っています（エンジニアリング）。エンジニアたちはLinearのモバイルアプリを得意げに見せびらかし、一方でプロダクションチームはTaskFlowのモバイルウェブに苦労しています。
 
-It's becoming a point of friction. Engineers are asking why we don't just consolidate on Linear. The only reason we haven't is because TaskFlow is better for non-engineering workflows.
+これが摩擦の原因になっています。エンジニアたちは「なぜLinearに統一しないのか」と問いかけています。統一していない唯一の理由は、TaskFlowの方がエンジニアリング以外のワークフローに優れているからです。
 
-But if Linear ships better cross-team features, and TaskFlow still doesn't have a mobile app... we might have to reconsider.
+しかし、もしLinearがより優れたクロスチーム機能を実装し、TaskFlowにまだモバイルアプリがなければ...再検討せざるを得ないかもしれません。
 
-Just wanted to give you that honest feedback.
+率直なフィードバックをお伝えしたかっただけです。
 
 Kevin
 
 ---
 
-## Internal Notes
+## 社内メモ
 
-- Gaming vertical (design-heavy teams)
-- Split tooling situation (TaskFlow vs Linear)
-- Consolidation risk is real
-- Linear cited as competitive threat
-- 80 seats = significant revenue at risk
+- ゲーム業界（デザイン中心のチーム）
+- ツール分断状態（TaskFlow vs Linear）
+- 統合リスクは現実的
+- Linearが競合脅威として言及
+- 80シート = 重要な収益がリスクにさらされている
 
 ---
 
-## Tags
+## タグ
 
 `mobile` `competitive` `linear` `consolidation-risk` `gaming` `feature-request`

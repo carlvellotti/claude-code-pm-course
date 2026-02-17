@@ -1,55 +1,55 @@
-# User Interview: Priya Sharma
+# ユーザーインタビュー: Priya Sharma
 
-**Date:** October 17, 2024
-**Role:** Product Manager at HealthTech Solutions (Series B, 120 employees)
-**TaskFlow User Since:** January 2024
-**Interview Duration:** 25 minutes
-
----
-
-## Background
-
-Priya manages 3 product squads and uses TaskFlow for roadmapping, sprint tracking, and stakeholder updates. Travels frequently for customer visits.
+**日付:** 2024年10月17日
+**役職:** HealthTech Solutions プロダクトマネージャー（Series B、従業員120名）
+**TaskFlow利用開始:** 2024年1月
+**インタビュー時間:** 25分
 
 ---
 
-## Key Quotes
+## 背景
 
-**On mobile usage context:**
-> "I'm on planes probably twice a week. That's 4-6 hours where I could be reviewing tickets, prioritizing backlog, responding to comments. Instead I just... can't, because TaskFlow mobile web is unusable offline."
-
-**On current workarounds:**
-> "I've started screenshotting my board before flights. It's embarrassing. I screenshot a project management tool because I can't access it properly."
-
-**On team impact:**
-> "My team knows that when I'm traveling, I basically go dark on TaskFlow. They've learned to not expect responses. That's not great for a PM."
-
-**On desired functionality:**
-> "I don't need everything. Give me: view my tasks, read and respond to comments, update status. That's 80% of what I need on mobile."
+Priyaは3つのプロダクトスクワッドを管理し、ロードマッピング、スプリントトラッキング、ステークホルダーへの報告にTaskFlowを使用しています。顧客訪問のため頻繁に出張しています。
 
 ---
 
-## Feature Requests
+## 主要な発言
 
-1. Offline mode (critical for flights)
-2. Comment replies with @mentions
-3. Drag-and-drop status changes
-4. Dark mode (for planes)
+**モバイル利用の文脈について:**
+> 「週に2回くらい飛行機に乗ってます。そこで4〜6時間チケットのレビューやバックログの優先順位付け、コメントへの返信ができるはずなのに。でもTaskFlowのモバイルWebはオフラインで使えないから、何もできないんです。」
 
----
+**現在の回避策について:**
+> 「フライト前にボードをスクリーンショットするようになりました。恥ずかしいですよ。プロジェクト管理ツールのスクショを撮らないとアクセスできないって。」
 
-## Competitive Pressure
+**チームへの影響について:**
+> 「チームも私が出張中はTaskFlow上で音信不通になるって分かってます。返信を期待しないように学んでしまった。PMとしてはよくないですよね。」
 
-> "Our engineering team just adopted Linear for their internal work. When I asked why, they said 'mobile app.' That stings because I championed TaskFlow."
-
----
-
-## Willingness to Pay
-
-> "We're on the Business tier. I'd advocate for Enterprise if it came with a solid mobile app. We're talking maybe $10k more per year, but the productivity gain would justify it."
+**必要な機能について:**
+> 「全部は要りません。タスクの閲覧、コメントの読み書き、ステータスの更新。モバイルで必要なことの80%はそれで十分です。」
 
 ---
 
-## Summary
+## 機能リクエスト
 
-Power user whose productivity drops significantly during travel. Mobile app would unlock ~10 hours/week of previously dead time. Strong internal champion but losing credibility due to mobile gap.
+1. オフラインモード（フライト時に必須）
+2. @メンション付きコメント返信
+3. ドラッグ＆ドロップでのステータス変更
+4. ダークモード（機内用）
+
+---
+
+## 競合からの圧力
+
+> 「うちのエンジニアリングチームが社内作業にLinearを導入したんです。理由を聞いたら『モバイルアプリ』って。TaskFlowを推進してきた私としてはつらいですね。」
+
+---
+
+## 支払い意向
+
+> 「Businessプランを使っています。しっかりしたモバイルアプリが付くならEnterpriseへのアップグレードを推進しますよ。年間1万ドル追加くらいかもしれませんが、生産性向上で十分正当化できます。」
+
+---
+
+## まとめ
+
+出張時に生産性が大幅に低下するパワーユーザー。モバイルアプリがあれば週約10時間のデッドタイムを活用可能に。社内での強力な推進者だが、モバイルのギャップにより信頼性を失いつつある。

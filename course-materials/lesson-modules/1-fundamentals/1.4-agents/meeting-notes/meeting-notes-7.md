@@ -1,30 +1,30 @@
-USER RESEARCH SESSION - ONBOARDING FLOW
-Date: October 5, 2024
-Attendees: You (Senior PM), UX Researcher (Amy), 5 user participants (new signups, watched via Zoom)
+ユーザーリサーチセッション - オンボーディングフロー
+日付: 2024年10月5日
+出席者: あなた（シニアPM）、UXリサーチャー（Amy）、ユーザー参加者5名（新規サインアップ、Zoomで観察）
 
-RESEARCH GOAL: Understand why activation rate is stuck at 45%. Observe new users going through onboarding, identify friction points.
+リサーチ目標: アクティベーション率が45%で停滞している原因を理解する。新規ユーザーのオンボーディング体験を観察し、摩擦ポイントを特定する。
 
-KEY FINDINGS:
+主な発見:
 
-Finding 1 - Empty state overwhelms:
-After signup, users see completely empty workspace. 3 out of 5 participants didn't know what to do first. One user closed the browser. Suggests we need better empty state guidance or starter templates.
+発見1 - 空の状態がユーザーを圧倒:
+サインアップ後、ユーザーに完全に空のワークスペースが表示される。5名中3名が最初に何をすべきか分からなかった。1名のユーザーはブラウザを閉じてしまった。より良い空の状態のガイダンスまたはスターターテンプレートが必要。
 
-Finding 2 - Task creation unclear:
-Users struggled to find "Create Task" button. It's in top-right corner, but users look at center of screen first. Took average 47 seconds to find button. One user still hadn't found it after 2 minutes.
+発見2 - タスク作成が分かりにくい:
+ユーザーが「タスク作成」ボタンを見つけるのに苦労。ボタンは右上にあるが、ユーザーはまず画面中央を見る。ボタンを見つけるまで平均47秒。1名のユーザーは2分経っても見つけられなかった。
 
-Finding 3 - Inviting teammates not obvious:
-Only 1 out of 5 users invited a teammate during session. Others didn't see the invite prompt. This kills our viral coefficient. We need to make team invites more prominent.
+発見3 - チームメイトの招待が分かりにくい:
+セッション中にチームメイトを招待したのは5名中1名のみ。他のユーザーは招待プロンプトに気づかなかった。これはバイラル係数を低下させる。チーム招待をより目立たせる必要がある。
 
-Finding 4 - Tutorial skipped:
-4 out of 5 users skipped the tutorial video. "Too long, I'll figure it out." Suggests video tutorials don't work. Need interactive onboarding instead.
+発見4 - チュートリアルがスキップされる:
+5名中4名がチュートリアル動画をスキップ。「長すぎる、自分で試す」とのこと。動画チュートリアルは効果がないことを示唆。インタラクティブなオンボーディングが必要。
 
-Finding 5 - Positive moments:
-Users loved the clean design. Once they created their first task, engagement increased significantly. "This is beautiful" was said multiple times.
+発見5 - ポジティブな瞬間:
+ユーザーはクリーンなデザインを気に入った。最初のタスクを作成した後、エンゲージメントが大幅に向上。「これは美しい」というコメントが複数回聞かれた。
 
-ACTION ITEMS:
-- You to document findings in full research report by Oct 8
-- Amy to design improved empty state with templates
-- You to propose onboarding improvements in next product sync
-- Team to prioritize activation improvements for Q4
+アクションアイテム:
+- あなた: 10月8日までにリサーチレポートの完全版を文書化
+- Amy: テンプレート付きの改善された空の状態をデザイン
+- あなた: 次のプロダクト定例でオンボーディング改善を提案
+- チーム: Q4のアクティベーション改善を優先
 
-RECOMMENDATION: Focus on first 5 minutes of user experience. That's where we lose people.
+推奨事項: ユーザー体験の最初の5分間に集中すること。そこがユーザーを失う場所である。

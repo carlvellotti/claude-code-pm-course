@@ -1,21 +1,21 @@
-DESIGN REVIEW - DARK MODE IMPLEMENTATION
-Date: October 9, 2024
-Attendees: Jordan Kim (Head of Design), You (Senior PM), Frontend team lead, UX Designer (Amy)
+デザインレビュー - ダークモード実装
+日付: 2024年10月9日
+出席者: Jordan Kim（デザイン責任者）、あなた（シニアPM）、フロントエンドチームリード、UXデザイナー（Amy）
 
-DISCUSSION:
-Jordan walked through dark mode designs. Team reviewed color palette, contrast ratios, accessibility standards. All WCAG AAA compliant - excellent work.
+議論:
+Jordanがダークモードのデザインを説明。チームでカラーパレット、コントラスト比、アクセシビリティ基準をレビュー。すべてWCAG AAAに準拠 - 素晴らしい仕上がり。
 
-Discussed implementation approach: system preference default vs. manual toggle. Decided on both - respect system preference, but allow manual override. Toggle in user settings menu.
+実装アプローチについて議論: システム設定のデフォルト vs. 手動トグル。両方を採用することに決定 - システム設定を尊重しつつ、手動での上書きも可能に。トグルはユーザー設定メニューに配置。
 
-Reviewed edge cases: embedded images/screenshots, syntax highlighting in code blocks, Figma embeds. Most handled well, but Figma embeds look washed out in dark mode. Amy to follow up with Figma team about dark mode embed support.
+エッジケースをレビュー: 埋め込み画像/スクリーンショット、コードブロックのシンタックスハイライト、Figma埋め込み。ほとんどは問題なく対応できるが、Figma埋め込みがダークモードで色あせて見える問題あり。AmyがFigmaチームにダークモード埋め込みサポートについて問い合わせ予定。
 
-Frontend lead estimated 2-3 weeks implementation time. Some components need refactoring to support theming. Suggests shipping dark mode in phases: core UI first, then integrations/embeds.
+フロントエンドリードの見積もり: 実装に2〜3週間。一部コンポーネントのテーマ対応リファクタリングが必要。フェーズ分けでの提供を提案: まずコアUIを、次に連携/埋め込みを対応。
 
-ACTION ITEMS:
-- Jordan to finalize color tokens in design system by Oct 12
-- Frontend lead to create implementation plan with phases by Oct 11
-- Amy to contact Figma about dark mode embed support
-- You to update dark mode PRD with phased rollout approach
-- Frontend team to begin implementation week of Oct 14
+アクションアイテム:
+- Jordan: 10月12日までにデザインシステムのカラートークンを確定
+- フロントエンドリード: 10月11日までにフェーズ別実装計画を作成
+- Amy: Figmaにダークモード埋め込みサポートについて問い合わせ
+- あなた: フェーズ分けロールアウトでダークモードPRDを更新
+- フロントエンドチーム: 10月14日の週から実装を開始
 
-DECISION: Ship dark mode in 2 phases. Phase 1 (core UI) by Nov 15. Phase 2 (integrations) by Dec 1.
+決定事項: ダークモードを2フェーズで提供。フェーズ1（コアUI）は11月15日まで。フェーズ2（連携機能）は12月1日まで。

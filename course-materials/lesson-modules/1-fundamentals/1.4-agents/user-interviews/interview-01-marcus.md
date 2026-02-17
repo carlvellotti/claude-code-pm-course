@@ -1,49 +1,49 @@
-# User Interview: Marcus Thompson
+# ユーザーインタビュー: Marcus Thompson
 
-**Date:** October 15, 2024
-**Role:** Engineering Manager at Cloudshift (Series A, 45 employees)
-**TaskFlow User Since:** March 2024
-**Interview Duration:** 30 minutes
-
----
-
-## Background
-
-Marcus manages a distributed engineering team of 8 across 3 time zones. Uses TaskFlow daily for sprint planning and tracking.
+**日付:** 2024年10月15日
+**役職:** Cloudshift エンジニアリングマネージャー（Series A、従業員45名）
+**TaskFlow利用開始:** 2024年3月
+**インタビュー時間:** 30分
 
 ---
 
-## Key Quotes
+## 背景
 
-**On current mobile experience:**
-> "I check TaskFlow probably 20 times a day, but I'd say half of those are from my phone. The mobile web experience is... functional, but painfully slow. Loading a board takes forever on cellular."
-
-**On specific pain points:**
-> "The killer scenario is standup. I'm walking my dog at 9am, standup starts, and I need to quickly update my tasks or check what my team committed to. By the time the mobile site loads, I've missed the context."
-
-**On competitor comparison:**
-> "Linear's mobile app is buttery smooth. I've actually caught myself wishing we used Linear just for the mobile experience, even though TaskFlow is better for everything else."
-
-**On what they'd use mobile for:**
-> "Quick status updates, checking assignments, maybe adding a quick task when something comes up in a meeting. I don't need to do complex board editing on mobile - just the quick stuff."
+Marcusは3つのタイムゾーンにまたがる8名の分散型エンジニアリングチームを管理しています。スプリント計画とトラッキングのためにTaskFlowを毎日使用しています。
 
 ---
 
-## Feature Requests
+## 主要な発言
 
-1. Push notifications for mentions and due dates
-2. Quick-add task without opening full interface
-3. Offline mode for subway commute
-4. Widget for iOS home screen showing today's tasks
+**現在のモバイル体験について:**
+> 「TaskFlowを1日に20回くらいチェックしてるんですけど、そのうち半分はスマホからです。モバイルWeb版は...動くことは動くんですが、とにかく遅い。セルラー回線でボードを読み込むのに永遠にかかります。」
+
+**具体的なペインポイントについて:**
+> 「一番困るのがスタンドアップのシーンです。朝9時に犬の散歩をしていて、スタンドアップが始まって、タスクをすぐ更新したりチームのコミット内容を確認したい。でもモバイルサイトが読み込まれる頃にはもう文脈を見逃してるんですよ。」
+
+**競合との比較について:**
+> 「Linearのモバイルアプリはすごく滑らかです。正直、モバイル体験だけのためにLinearを使いたいと思ったことがあります。TaskFlowの方が他のすべてにおいて優れてるのに。」
+
+**モバイルで何をしたいか:**
+> 「ステータスの簡単な更新、アサインの確認、ミーティング中に思いついたタスクをサッと追加するとか。モバイルで複雑なボード編集をしたいわけじゃなくて、ちょっとした操作だけで十分です。」
 
 ---
 
-## Willingness to Pay
+## 機能リクエスト
 
-> "If there was a mobile app that actually worked well? I'd push for us to upgrade to whatever tier includes it. Easily worth an extra $2-3 per seat per month."
+1. メンションと期日のプッシュ通知
+2. フルインターフェースを開かずにタスクをクイック追加
+3. 地下鉄通勤用のオフラインモード
+4. iOSホーム画面に今日のタスクを表示するウィジェット
 
 ---
 
-## Summary
+## 支払い意向
 
-Heavy mobile user currently frustrated by web experience. Would increase engagement significantly with native app. Price-insensitive if quality is there.
+> 「ちゃんと使えるモバイルアプリがあったら？それが含まれるプランにアップグレードするよう推進しますよ。1シートあたり月額2〜3ドル追加でも余裕で払う価値があります。」
+
+---
+
+## まとめ
+
+Web体験に不満を抱えるヘビーモバイルユーザー。ネイティブアプリがあればエンゲージメントが大幅に向上する見込み。品質が確保されていれば価格には敏感ではない。

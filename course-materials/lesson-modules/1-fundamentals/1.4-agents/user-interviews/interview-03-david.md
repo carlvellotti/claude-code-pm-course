@@ -1,49 +1,49 @@
-# User Interview: David Kim
+# ユーザーインタビュー: David Kim
 
-**Date:** October 18, 2024
-**Role:** Startup Founder/CEO at DataPipe (Seed, 12 employees)
-**TaskFlow User Since:** August 2024
-**Interview Duration:** 20 minutes
-
----
-
-## Background
-
-David wears multiple hats - CEO, product lead, and occasional engineer. Uses TaskFlow as the central hub for the entire company. Always on the move between investor meetings, customer calls, and team syncs.
+**日付:** 2024年10月18日
+**役職:** DataPipe 創業者/CEO（Seed、従業員12名）
+**TaskFlow利用開始:** 2024年8月
+**インタビュー時間:** 20分
 
 ---
 
-## Key Quotes
+## 背景
 
-**On mobile necessity:**
-> "As a founder, I'm never at my desk. I'm in Ubers, walking between meetings, grabbing coffee. That's when I need to check in on what's happening. A desktop-only tool is basically a part-time tool for me."
-
-**On current frustration:**
-> "I literally bought an iPad just to have a better TaskFlow experience on the go. That's insane. I spent $800 to work around your lack of a mobile app."
-
-**On team communication:**
-> "My team updates tasks throughout the day. If I can't see those updates until I'm back at my laptop at 7pm, I'm always behind. I'm making decisions with stale information."
-
-**On competitor consideration:**
-> "I evaluated Notion, Asana, and Linear before choosing TaskFlow. TaskFlow won on features. But I'll be honest - if we weren't already invested in TaskFlow, the mobile thing might've been a dealbreaker."
+DavidはCEO、プロダクトリード、時にはエンジニアと複数の役割を兼任しています。会社全体のハブとしてTaskFlowを使用。投資家ミーティング、顧客コール、チーム同期の間を常に移動しています。
 
 ---
 
-## Feature Requests
+## 主要な発言
 
-1. Native app with push notifications
-2. Apple Watch complication for task counts
-3. Voice-to-task creation via Siri
-4. Quick capture widget
+**モバイルの必要性について:**
+> 「創業者として、デスクにいることがないんです。Uberに乗ってたり、ミーティングの間を歩いてたり、コーヒーを買いに行ったり。その時に今何が起きてるか確認したい。デスクトップ専用ツールは、僕にとっては実質パートタイムのツールなんです。」
+
+**現在の不満について:**
+> 「移動中でもまともにTaskFlowを使いたくてiPadを買いましたよ。おかしいでしょ。モバイルアプリがないことの回避策に800ドルも使ったんです。」
+
+**チームコミュニケーションについて:**
+> 「チームは日中ずっとタスクを更新してます。でも夜7時にラップトップの前に戻るまでその更新が見れないなら、常に遅れを取ってることになる。古い情報で判断を下してるんです。」
+
+**競合検討について:**
+> 「TaskFlowを選ぶ前にNotion、Asana、Linearを評価しました。機能面ではTaskFlowが勝ちました。でも正直に言うと、すでにTaskFlowに投資してなかったら、モバイルの問題は致命的だったかもしれません。」
 
 ---
 
-## Willingness to Pay
+## 機能リクエスト
 
-> "I'm on your cheapest plan because we're a startup. But mobile? That's existential for how I work. I'd pay 2x what I'm paying now. Easy."
+1. プッシュ通知付きネイティブアプリ
+2. タスク数を表示するApple Watchコンプリケーション
+3. Siri経由の音声タスク作成
+4. クイックキャプチャウィジェット
 
 ---
 
-## Summary
+## 支払い意向
 
-Founder persona where mobile isn't a nice-to-have, it's essential to job function. Currently using expensive workarounds. High retention risk if better mobile competitor emerges.
+> 「スタートアップなので一番安いプランを使ってます。でもモバイルは？僕の働き方にとって存在意義に関わる問題です。今の2倍払いますよ。余裕で。」
+
+---
+
+## まとめ
+
+モバイルが「あればいい」ではなく、業務遂行に不可欠な創業者ペルソナ。現在は高額な回避策を使用中。より良いモバイル体験を提供する競合が現れた場合、解約リスクが高い。

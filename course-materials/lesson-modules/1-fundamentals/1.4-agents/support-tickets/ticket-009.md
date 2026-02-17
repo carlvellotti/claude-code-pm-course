@@ -1,47 +1,47 @@
-# Support Ticket #4789
+# サポートチケット #4789
 
-**Date:** October 24, 2024
-**Customer:** Precision Manufacturing (Enterprise tier, 200 seats)
-**Contact:** Tom Bradley, COO
-**Priority:** High
-**Status:** Escalated to Product
+**日付:** 2024年10月24日
+**顧客:** Precision Manufacturing（Enterpriseティア、200シート）
+**連絡先:** Tom Bradley、COO
+**優先度:** 高
+**ステータス:** プロダクトチームにエスカレーション済み
 
 ---
 
-## Subject: Mobile app as condition for contract renewal
+## 件名: モバイルアプリが契約更新の条件
 
-## Description
+## 説明
 
-Team,
+チームの皆さん、
 
-I'll be direct: our contract renews in February 2025. A native mobile app with offline capabilities is now a requirement for renewal, not a nice-to-have.
+単刀直入に申し上げます。当社の契約は2025年2月に更新を迎えます。オフライン機能を備えたネイティブモバイルアプリは、更新のための必須要件であり、あれば嬉しい程度のものではありません。
 
-Our situation:
-- 60% of our workforce is on the manufacturing floor
-- They have tablets/phones but no desktop access
-- Current mobile web experience has been "consistently disappointing" (their words)
-- We've had to create a parallel system using paper checklists
+当社の状況:
+- 従業員の60%が製造現場にいます
+- タブレットやスマートフォンはありますが、デスクトップへのアクセスはありません
+- 現在のモバイルウェブ体験は「一貫して期待外れ」です（現場の声です）
+- 紙のチェックリストによる並行システムを作らざるを得ませんでした
 
-We've been a TaskFlow customer for 2 years and generally happy with the desktop product. But we can't keep paying enterprise prices for a tool that only works for 40% of our employees.
+TaskFlowの顧客として2年間、デスクトップ製品には概ね満足しています。しかし、従業員の40%しか使えないツールにエンタープライズ価格を払い続けるわけにはいきません。
 
-I need to know by December 1st whether a mobile app will be available in 2025 so we can make our renewal decision.
+2025年にモバイルアプリが提供されるかどうか、12月1日までに回答をいただく必要があります。それにより更新の判断を行います。
 
 Tom Bradley
 COO
 
 ---
 
-## Internal Notes
+## 社内メモ
 
-- **$240k ARR at risk**
-- 2-year customer, previously very satisfied
-- COO-level escalation = serious
-- Manufacturing = mobile-first workforce
-- Deadline given: Dec 1 for roadmap clarity
-- **CEO and Head of Product looped in**
+- **年間ARR $240kがリスクにさらされている**
+- 2年間の顧客、以前は非常に満足していた
+- COOレベルのエスカレーション = 深刻
+- 製造業 = モバイルファーストの労働力
+- 期限提示: ロードマップの明確化を12月1日までに
+- **CEOおよびプロダクト責任者に共有済み**
 
 ---
 
-## Tags
+## タグ
 
 `mobile` `enterprise` `renewal-risk` `manufacturing` `offline` `executive-escalation` `deadline`

@@ -1,131 +1,131 @@
-# Sales Team Notes: Lost Deals Due to Mobile App Gap
+# 営業チームメモ: モバイルアプリ不足による失注案件
 
-**Compiled by:** Jessica Torres, Sales Operations
-**Date Range:** Q3-Q4 2024
-**Purpose:** Document deals lost or at risk due to lack of native mobile app
-
----
-
-## Executive Summary
-
-Over the past 6 months, we've tracked deals where mobile app availability was cited as a significant factor in the sales outcome. This document summarizes those opportunities.
-
-**Total Deals Impacted:** 12 deals
-**Total ARR Lost/At Risk:** $847,000
-**Most Common Objection:** "No native mobile app in 2024 is a dealbreaker"
+**作成者:** Jessica Torres、営業オペレーション
+**対象期間:** 2024年Q3〜Q4
+**目的:** ネイティブモバイルアプリがないために失注した、またはリスクのある案件を記録
 
 ---
 
-## Lost Deals
+## エグゼクティブサマリー
 
-### Deal #1: Velocity Logistics
-- **Deal Size:** $156,000 ARR (300 seats)
-- **Lost to:** Asana
-- **Sales Rep:** Marcus Chen
-- **Notes:**
-  > "Their ops team is 70% field workers. When they saw we didn't have a mobile app, the conversation basically ended. Asana won because of their mobile app, even though our desktop features were stronger. Direct quote from their COO: 'We can't deploy a tool our field team can't use.'"
+過去6ヶ月間、モバイルアプリの有無が営業結果に大きな影響を与えた案件を追跡しました。本ドキュメントはそれらの案件をまとめたものです。
 
-### Deal #2: Summit Healthcare Group
-- **Deal Size:** $89,000 ARR (120 seats)
-- **Lost to:** Monday.com
-- **Sales Rep:** Ashley Rodriguez
-- **Notes:**
-  > "Healthcare = nurses and staff constantly moving between rooms. They need to check tasks on tablets/phones. Our mobile web was too slow in their demo. Monday's native app was 'night and day better' according to their IT director."
-
-### Deal #3: Frontier Construction
-- **Deal Size:** $67,000 ARR (85 seats)
-- **Lost to:** Procore (industry-specific)
-- **Sales Rep:** David Kim
-- **Notes:**
-  > "Construction job sites have limited connectivity. They specifically asked about offline mode. When I explained we don't have a native app, they said 'that's a non-starter.' Lost to a more expensive but mobile-first competitor."
-
-### Deal #4: NexGen Events
-- **Deal Size:** $42,000 ARR (50 seats)
-- **Lost to:** Asana
-- **Sales Rep:** Rachel Green
-- **Notes:**
-  > "Event management company. Their team lives on their phones during events. Showed them mobile web, they laughed. Not meanly, but like 'you can't be serious.' Went with Asana within a week."
-
-### Deal #5: Pacific Retail Group
-- **Deal Size:** $112,000 ARR (200 seats)
-- **Lost to:** Monday.com
-- **Sales Rep:** James Wilson
-- **Notes:**
-  > "Retail = store managers who don't have desktops. Mobile is their primary device. We were their first choice based on features until the mobile conversation. Their exact words: 'Love the product, can't use the product.'"
+**影響を受けた案件数:** 12件
+**失注/リスクのある合計ARR:** $847,000
+**最も多い反対意見:** 「2024年にネイティブモバイルアプリがないのは致命的」
 
 ---
 
-## At-Risk Renewals (Mobile Cited)
+## 失注案件
+
+### 案件 #1: Velocity Logistics
+- **案件規模:** $156,000 ARR（300シート）
+- **失注先:** Asana
+- **営業担当:** Marcus Chen
+- **メモ:**
+  > 「先方のオペレーションチームは70%がフィールドワーカーです。モバイルアプリがないと分かった時点で、会話はほぼ終わりました。デスクトップ機能では当社が優れていたにもかかわらず、Asanaがモバイルアプリで勝ちました。先方COOの直接の言葉：『フィールドチームが使えないツールは導入できません。』」
+
+### 案件 #2: Summit Healthcare Group
+- **案件規模:** $89,000 ARR（120シート）
+- **失注先:** Monday.com
+- **営業担当:** Ashley Rodriguez
+- **メモ:**
+  > 「医療 = 看護師やスタッフが常に部屋間を移動しています。タブレット/スマートフォンでタスクを確認する必要があります。当社のモバイルWebはデモで遅すぎました。Monday.comのネイティブアプリは先方IT部長いわく『月とすっぽん』でした。」
+
+### 案件 #3: Frontier Construction
+- **案件規模:** $67,000 ARR（85シート）
+- **失注先:** Procore（業界特化型）
+- **営業担当:** David Kim
+- **メモ:**
+  > 「建設現場は接続環境が限られています。オフラインモードについて具体的に質問されました。ネイティブアプリがないと説明したところ、『それは話にならない』と言われました。より高価でもモバイルファーストの競合に負けました。」
+
+### 案件 #4: NexGen Events
+- **案件規模:** $42,000 ARR（50シート）
+- **失注先:** Asana
+- **営業担当:** Rachel Green
+- **メモ:**
+  > 「イベント管理会社です。イベント中はチームがスマートフォンで作業しています。モバイルWebを見せたところ、笑われました。悪意はなく、『本気ですか？』というような笑いでした。1週間以内にAsanaに決まりました。」
+
+### 案件 #5: Pacific Retail Group
+- **案件規模:** $112,000 ARR（200シート）
+- **失注先:** Monday.com
+- **営業担当:** James Wilson
+- **メモ:**
+  > 「小売 = デスクトップを持たない店長たち。モバイルが主要デバイスです。機能面では当社が第一候補でしたが、モバイルの話になった途端に変わりました。先方の正確な言葉：『プロダクトは大好きです。でも使えません。』」
+
+---
+
+## リスクのある契約更新（モバイルが理由）
 
 ### CloudScale Technologies
-- **Current ARR:** $180,000
-- **Renewal Date:** March 2025
-- **Risk Level:** High
-- **CSM Notes:**
-  > "Customer explicitly stated mobile app is requirement for renewal. 40% of their team is on-call engineers who need mobile access. Evaluating Linear as backup option."
+- **現在のARR:** $180,000
+- **更新日:** 2025年3月
+- **リスクレベル:** 高
+- **CSMメモ:**
+  > 「顧客はモバイルアプリが契約更新の条件であると明確に述べました。チームの40%がオンコールエンジニアでモバイルアクセスが必要です。バックアップとしてLinearを評価中。」
 
 ### Meridian Financial Services
-- **Current ARR:** $95,000
-- **Renewal Date:** January 2025
-- **Risk Level:** Medium
-- **CSM Notes:**
-  > "Financial advisors travel constantly. They've created workarounds (Slack + TaskFlow) but CSM reports growing frustration. Competitor demos scheduled for December."
+- **現在のARR:** $95,000
+- **更新日:** 2025年1月
+- **リスクレベル:** 中
+- **CSMメモ:**
+  > 「ファイナンシャルアドバイザーは常に出張しています。回避策（Slack + TaskFlow）を作っていますが、CSMによるとフラストレーションが増大中。12月に競合のデモが予定されています。」
 
 ### Atlas Manufacturing
-- **Current ARR:** $240,000
-- **Renewal Date:** February 2025
-- **Risk Level:** Critical
-- **CSM Notes:**
-  > "COO sent ultimatum email - need mobile app commitment by Dec 1 or they walk. 60% factory floor workers without desktop access. This is our largest at-risk account."
+- **現在のARR:** $240,000
+- **更新日:** 2025年2月
+- **リスクレベル:** 重大
+- **CSMメモ:**
+  > 「COOが最後通牒メールを送付 - 12月1日までにモバイルアプリのコミットメントがなければ離脱すると。従業員の60%がデスクトップアクセスのない工場フロアの作業員。当社最大のリスクアカウントです。」
 
 ---
 
-## Competitive Analysis (From Sales Conversations)
+## 競合分析（営業会話より）
 
-| Competitor | Mobile App Quality | Cited in Lost Deals |
+| 競合他社 | モバイルアプリの品質 | 失注案件での言及数 |
 |------------|-------------------|---------------------|
-| Asana | Strong native apps, good offline | 4 deals |
-| Monday.com | Solid mobile experience | 3 deals |
-| Linear | Excellent mobile (eng teams love it) | 2 deals |
-| ClickUp | Has mobile, mixed reviews | 1 deal |
-| Notion | Decent mobile app | 1 deal |
-| Procore | Industry-specific mobile | 1 deal |
+| Asana | 強力なネイティブアプリ、良好なオフライン | 4件 |
+| Monday.com | 堅実なモバイル体験 | 3件 |
+| Linear | 優れたモバイル（エンジニアチームに好評） | 2件 |
+| ClickUp | モバイルあり、評価は様々 | 1件 |
+| Notion | まずまずのモバイルアプリ | 1件 |
+| Procore | 業界特化型モバイル | 1件 |
 
 ---
 
-## Common Objections From Prospects
+## 見込み客からの主な反対意見
 
-1. **"No mobile app in 2024?"** (heard in 80% of deals with mobile-heavy workforce)
-2. **"Our team won't adopt a desktop-only tool"**
-3. **"We need push notifications"**
-4. **"What about offline access?"**
-5. **"Can it integrate with MDM?"** (enterprise deals)
-
----
-
-## Win-Back Opportunities If Mobile Launches
-
-Several lost prospects indicated they would reconsider TaskFlow if we launched a quality mobile app:
-
-1. **Velocity Logistics** - "Call us when you have mobile" - $156k opportunity
-2. **Summit Healthcare** - "We liked everything else about TaskFlow" - $89k opportunity
-3. **NexGen Events** - "Would switch back if mobile was solid" - $42k opportunity
-
-**Potential win-back ARR:** $287,000+
+1. **「2024年にモバイルアプリがないんですか？」**（モバイル中心の労働力を持つ案件の80%で聞かれる）
+2. **「デスクトップ専用ツールはチームが採用しません」**
+3. **「プッシュ通知が必要です」**
+4. **「オフラインアクセスはどうなっていますか？」**
+5. **「MDMと連携できますか？」**（エンタープライズ案件）
 
 ---
 
-## Sales Team Recommendation
+## モバイルローンチ時の再獲得機会
 
-The lack of a mobile app is no longer a "nice to have" objection - it's becoming a primary disqualifier in 30%+ of our deals, particularly in:
-- Healthcare
-- Construction/Field Services
-- Retail
-- Events/Hospitality
-- Any company with >40% mobile workforce
+失注した見込み客の中には、高品質なモバイルアプリをローンチすれば TaskFlow を再検討すると示した企業があります:
 
-**Request:** Prioritize native mobile app development. Sales team willing to participate in beta testing and customer recruitment for early access program.
+1. **Velocity Logistics** - 「モバイルができたら連絡ください」 - $156kの機会
+2. **Summit Healthcare** - 「TaskFlow の他の部分はすべて気に入っていました」 - $89kの機会
+3. **NexGen Events** - 「モバイルがしっかりしていれば戻りたい」 - $42kの機会
+
+**再獲得可能ARR:** $287,000以上
 
 ---
 
-*Document maintained by Sales Ops. Last updated: October 28, 2024*
+## 営業チームの提言
+
+モバイルアプリの不在は、もはや「あれば良い」程度の反対意見ではありません。案件の30%以上で主要な不適格要因になりつつあります。特に以下の業界で顕著です:
+- 医療
+- 建設/フィールドサービス
+- 小売
+- イベント/ホスピタリティ
+- モバイルワーカーが40%以上の企業全般
+
+**要望:** ネイティブモバイルアプリの開発を優先してください。営業チームは早期アクセスプログラムのベータテストと顧客募集に協力する用意があります。
+
+---
+
+*本ドキュメントは営業オペレーションが管理。最終更新: 2024年10月28日*

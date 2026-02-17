@@ -1,18 +1,18 @@
-PRODUCT SYNC - MOBILE APP LAUNCH
-Date: October 1, 2024
-Attendees: Sarah Chen (Head of Product), Alex Rivera (PM Mobile), Mike Rodriguez (CTO), Jordan Kim (Head of Design)
+プロダクト定例 - モバイルアプリローンチ
+日付: 2024年10月1日
+出席者: Sarah Chen（プロダクト責任者）、Alex Rivera（モバイルPM）、Mike Rodriguez（CTO）、Jordan Kim（デザイン責任者）
 
-DISCUSSION:
-Mobile app launch is tracking for Q1 2025, but we're seeing scope creep. Engineering wants feature parity with web app, but that would delay launch by 6-8 weeks. Team debated MVP scope - what's truly essential vs. nice-to-have.
+議論:
+モバイルアプリのローンチは2025年Q1に向けて順調だが、スコープクリープが発生している。エンジニアリングチームはWebアプリとの機能パリティを求めているが、それだと6〜8週間の遅延が生じる。チームでMVPのスコープについて議論 - 本当に必要な機能と、あれば良い程度の機能の線引き。
 
-Jordan presented designs for mobile onboarding flow. Team loved the simplified task creation interface. Mike raised concerns about offline sync complexity - could add 3 weeks to timeline.
+Jordanがモバイルオンボーディングフローのデザインを発表。シンプルなタスク作成インターフェースはチームに好評。Mikeはオフライン同期の複雑さについて懸念を提起 - タイムラインに3週間の追加が必要になる可能性あり。
 
-Sarah pushed for launch by end of January to hit Q1 target. Proposed cutting advanced filters and custom fields from v1, adding them in v1.1 (February).
+SarahはQ1目標達成のため1月末までのローンチを推進。v1では高度なフィルタとカスタムフィールドを除外し、v1.1（2月）で追加する提案。
 
-ACTION ITEMS:
-- Alex to document final MVP scope by Oct 5
-- Mike to validate offline sync timeline by Oct 3
-- Jordan to simplify onboarding flow (remove tutorial, add contextual tooltips)
-- Sarah to communicate timeline expectations to CEO
+アクションアイテム:
+- Alex: 10月5日までに最終MVPスコープを文書化
+- Mike: 10月3日までにオフライン同期のタイムラインを検証
+- Jordan: オンボーディングフローを簡素化（チュートリアルを削除、コンテキストツールチップを追加）
+- Sarah: CEOにタイムラインの見通しを共有
 
-DECISION: Ship mobile MVP without advanced filters/custom fields. Launch target: Jan 31, 2025.
+決定事項: 高度なフィルタ/カスタムフィールドなしでモバイルMVPをリリース。ローンチ目標: 2025年1月31日。

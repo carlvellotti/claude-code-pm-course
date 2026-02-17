@@ -1,36 +1,36 @@
-# Support Ticket #4658
+# サポートチケット #4658
 
-**Date:** October 14, 2024
-**Customer:** Starter plan (Free tier, 3 seats)
-**Contact:** Jenny Liu, Freelance Designer
-**Priority:** Low
-**Status:** Open
+**日付:** 2024年10月14日
+**顧客:** Starterプラン（無料プラン、3シート）
+**連絡先:** Jenny Liu、フリーランスデザイナー
+**優先度:** 低
+**ステータス:** オープン
 
 ---
 
-## Subject: Any plans for iPhone app?
+## 件名: iPhoneアプリの予定はありますか？
 
-## Description
+## 説明
 
-Hey! Love TaskFlow for managing my freelance projects.
+こんにちは！フリーランスのプロジェクト管理にTaskFlowを気に入って使っています。
 
-Just wondering if there are any plans for an iPhone app? I do a lot of work from coffee shops and my phone, would be great to have a proper app instead of the website.
+iPhoneアプリの予定があるか気になっています。カフェやスマホからの作業が多いので、Webサイトの代わりにちゃんとしたアプリがあると嬉しいです。
 
-Not urgent, just curious!
+急ぎではないですが、気になったので！
 
 Jenny
 
 ---
 
-## Internal Notes
+## 社内メモ
 
-- Free tier user
-- Low priority but represents broader market demand
-- Good candidate for beta testing if app launches
-- Active user despite free tier (logs in daily)
+- 無料プランユーザー
+- 優先度は低いが、より広い市場の需要を代表
+- アプリローンチ時のベータテスト候補として適任
+- 無料プランにもかかわらずアクティブユーザー（毎日ログイン）
 
 ---
 
-## Tags
+## タグ
 
 `mobile` `ios` `feature-request` `free-tier` `freelancer`

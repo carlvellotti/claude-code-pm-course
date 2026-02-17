@@ -1,45 +1,45 @@
-# Support Ticket #4701
+# サポートチケット #4701
 
-**Date:** October 18, 2024
-**Customer:** HealthFirst Medical (Business tier, 35 seats)
-**Contact:** Amanda Rodriguez, Practice Manager
-**Priority:** High
-**Status:** Open
+**日付:** 2024年10月18日
+**顧客:** HealthFirst Medical（Businessティア、35シート）
+**連絡先:** Amanda Rodriguez、プラクティスマネージャー
+**優先度:** 高
+**ステータス:** オープン
 
 ---
 
-## Subject: Mobile access critical for clinical staff
+## 件名: 臨床スタッフにとってモバイルアクセスは不可欠
 
-## Description
+## 説明
 
-Hi there,
+こんにちは、
 
-We're a medical practice using TaskFlow to manage our administrative tasks and patient follow-ups. Our clinical staff (nurses, MAs) are constantly moving between exam rooms and rarely sit at computers.
+私たちは医療クリニックで、TaskFlowを使って事務作業や患者フォローアップを管理しています。臨床スタッフ（看護師、医療助手）は常に診察室間を移動しており、デスクに座ることはほとんどありません。
 
-Current problems:
-- Mobile web is too slow between patients (need instant access)
-- Can't quickly check/update tasks during brief moments
-- HIPAA concerns about using personal phones with browser history
-- Need app-level PIN/biometric lock
+現在の問題:
+- モバイルウェブは患者の合間に使うには遅すぎます（即座にアクセスが必要です）
+- わずかな空き時間にタスクを素早く確認・更新できません
+- ブラウザ履歴を残す個人携帯の使用についてHIPAAの懸念があります
+- アプリレベルのPIN/生体認証ロックが必要です
 
-Is there a mobile app planned? For healthcare, mobile access isn't optional - it's how our staff works.
+モバイルアプリの予定はありますか？医療現場では、モバイルアクセスはオプションではなく、スタッフの働き方そのものです。
 
-We're considering switching to a competitor that has a mobile app, but we really prefer TaskFlow's features otherwise.
+モバイルアプリのある競合への乗り換えを検討していますが、それ以外の点ではTaskFlowの機能の方が好みです。
 
 Amanda
 
 ---
 
-## Internal Notes
+## 社内メモ
 
-- Healthcare vertical (growing segment for us)
-- HIPAA compliance concerns are valid
-- Competitor mentioned: Asana (has mobile app)
-- This feedback echoes other healthcare customers
-- **Flag for product team: Healthcare mobile requirements**
+- ヘルスケア業界（当社にとって成長セグメント）
+- HIPAAコンプライアンスの懸念は妥当
+- 言及された競合: Asana（モバイルアプリあり）
+- このフィードバックは他のヘルスケア顧客の声と一致
+- **プロダクトチームへのフラグ: ヘルスケア向けモバイル要件**
 
 ---
 
-## Tags
+## タグ
 
 `mobile` `healthcare` `hipaa` `compliance` `churn-risk` `security` `biometric`

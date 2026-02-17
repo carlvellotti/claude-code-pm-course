@@ -1,42 +1,42 @@
-# Support Ticket #4612
+# サポートチケット #4612
 
-**Date:** October 10, 2024
-**Customer:** Meridian Marketing (Business tier, 60 seats)
-**Contact:** Sarah Park, Director of Operations
-**Priority:** Medium
-**Status:** Open
+**日付:** 2024年10月10日
+**顧客:** Meridian Marketing（Businessプラン、60シート）
+**連絡先:** Sarah Park、オペレーションディレクター
+**優先度:** 中
+**ステータス:** オープン
 
 ---
 
-## Subject: Push notifications for mobile?
+## 件名: モバイルでのプッシュ通知について
 
-## Description
+## 説明
 
-Hello,
+こんにちは、
 
-Quick question - is there any way to get push notifications for TaskFlow on mobile?
+簡単な質問です - TaskFlowのモバイルでプッシュ通知を受け取る方法はありますか？
 
-Right now I only find out about urgent task updates when I happen to check the app (mobile web). By then it's often too late. I've missed several deadlines because I didn't see the notification in time.
+現在、緊急のタスク更新に気づくのは、たまたまアプリ（モバイルWeb）を確認したときだけです。その時にはもう手遅れなことが多いです。通知に気づかなかったせいで、いくつかの締め切りを逃してしまいました。
 
-Our team is very mobile - lots of client meetings, events, travel. We need to stay connected to TaskFlow without having it open constantly.
+私たちのチームは非常にモバイル中心で、クライアントミーティング、イベント、出張が多いです。TaskFlowを常に開いていなくても接続を維持する必要があります。
 
-I know you don't have a native app, but is there any workaround for notifications?
+ネイティブアプリがないのは承知していますが、通知に関する回避策はありませんか？
 
-Best,
+よろしくお願いいたします。
 Sarah
 
 ---
 
-## Internal Notes
+## 社内メモ
 
-- Long-time customer (14 months)
-- Power user, very active in community
-- Has referred 2 other companies
-- Mentioned she's "evaluating options" in last CSM call
-- Would be significant loss if churned
+- 長期顧客（14ヶ月）
+- パワーユーザー、コミュニティで非常に活発
+- 他の2社を紹介済み
+- 前回のCSMコールで「他の選択肢を検討中」と発言
+- 解約した場合の損失が大きい
 
 ---
 
-## Tags
+## タグ
 
 `mobile` `notifications` `push-notifications` `feature-request` `power-user`

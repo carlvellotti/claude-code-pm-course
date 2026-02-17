@@ -1,24 +1,24 @@
-CUSTOMER DISCOVERY CALL - ENTERPRISE PROSPECT
-Date: October 3, 2024
-Attendees: Sales rep (Jessica), You (Senior PM), Customer: Rachel Thomas (VP Ops at TechFlow, 600 employees)
+顧客ディスカバリーコール - エンタープライズ見込み客
+日付: 2024年10月3日
+出席者: 営業担当（Jessica）、あなた（シニアPM）、顧客: Rachel Thomas（TechFlow VP of Ops、従業員600名）
 
-BACKGROUND:
-TechFlow is evaluating project management tools. Currently using Asana but frustrated with cost ($18k/year) and complexity. Team of 600 employees, mostly remote. Looking to switch by Q1 2025.
+背景:
+TechFlowがプロジェクト管理ツールを評価中。現在Asanaを使用しているが、コスト（年間$18k）と複雑さに不満あり。従業員600名、ほぼリモート。2025年Q1までに切り替え希望。
 
-KEY INSIGHTS:
-Rachel emphasized security requirements: SOC 2 compliance, SAML SSO, audit logs are non-negotiable. Asked about our enterprise features - impressed that we're building them now.
+主な知見:
+Rachelがセキュリティ要件を強調: SOC 2準拠、SAML SSO、監査ログは必須。当社のエンタープライズ機能について質問 - 現在開発中であることに好印象。
 
-Pain points with Asana: too expensive, too complex, poor mobile experience, slow performance. Team complains about notification overload. Loves our async-first philosophy.
+Asanaへの不満: 高コスト、複雑すぎる、モバイル体験が悪い、パフォーマンスが遅い。チームからの通知過多への苦情。当社の非同期ファーストの哲学を評価。
 
-Budget: $10-12k/year (significantly less than current spend). Decision committee includes CTO, CFO, and Rachel. Timeline: decision by November, implementation in December.
+予算: 年間$10〜12k（現在の支出を大幅に下回る）。意思決定委員会にはCTO、CFO、Rachelが参加。タイムライン: 11月までに決定、12月に導入。
 
-CONCERNS:
-Worried we're too early-stage (only 50 employees). Asked about uptime SLA, customer support response times, and data export capabilities. We addressed most concerns, but SLA question requires follow-up.
+懸念事項:
+当社がまだ初期段階（従業員50名のみ）であることを心配。稼働率SLA、カスタマーサポートの応答時間、データエクスポート機能について質問。ほとんどの懸念に対応できたが、SLAの質問にはフォローアップが必要。
 
-ACTION ITEMS:
-- You to send enterprise features roadmap by Oct 5
-- Jessica to provide case study from similar-sized customer
-- You to confirm uptime SLA guarantees with engineering
-- Jessica to schedule demo with their CTO next week
+アクションアイテム:
+- あなた: 10月5日までにエンタープライズ機能ロードマップを送付
+- Jessica: 同規模の顧客の事例を提供
+- あなた: エンジニアリングチームと稼働率SLA保証を確認
+- Jessica: 来週、先方のCTOとのデモを設定
 
-OPPORTUNITY: High-value deal ($12k/year). Good reference customer for enterprise segment.
+機会: 高価値案件（年間$12k）。エンタープライズセグメントの良いリファレンス顧客になる可能性あり。

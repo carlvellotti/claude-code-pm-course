@@ -1,31 +1,31 @@
-PRICING STRATEGY DISCUSSION
-Date: October 8, 2024
-Attendees: CEO, CFO, Sarah Chen (Head of Product), Sales Lead (Tom), You (Senior PM)
+価格戦略ディスカッション
+日付: 2024年10月8日
+出席者: CEO、CFO、Sarah Chen（プロダクト責任者）、営業リード（Tom）、あなた（シニアPM）
 
-CONTEXT:
-Reviewing pricing strategy ahead of enterprise push. Current pricing: Free (up to 10 users), Pro ($12/user/month), Enterprise (custom). Competitors charging more, but are we leaving money on table?
+背景:
+エンタープライズ強化に向けた価格戦略の見直し。現行価格: Free（ユーザー10名まで）、Pro（$12/ユーザー/月）、Enterprise（カスタム）。競合他社はより高い価格設定だが、当社は機会を逃していないか？
 
-DISCUSSION:
+議論:
 
-Proposal 1 - Raise Pro plan to $15/user/month:
-CFO advocates for price increase. "We're 20% cheaper than Asana, we can raise prices." Sales Lead concerned this would hurt mid-market deals. CEO neutral.
+提案1 - Proプランを$15/ユーザー/月に値上げ:
+CFOが値上げを推奨。「AsanaよりPrice20%安い。値上げできる。」営業リードはミッドマーケットの商談に悪影響が出ることを懸念。CEOは中立。
 
-Proposal 2 - Add Business tier between Pro and Enterprise:
-Your suggestion: $18/user/month with some enterprise features (basic SSO, priority support). Targets companies with 50-200 employees who need more than Pro but aren't ready for full Enterprise.
+提案2 - ProとEnterpriseの間にBusinessティアを追加:
+あなたの提案: $18/ユーザー/月で一部エンタープライズ機能を含む（基本的なSSO、優先サポート）。従業員50〜200名の企業がターゲット。Proでは不十分だが、完全なEnterpriseにはまだ早い層向け。
 
-Proposal 3 - Annual discount adjustment:
-Currently offering 20% discount for annual payment. CFO suggests reducing to 15% to improve cash flow. Sales Lead strongly opposed - "annual deals are our bread and butter."
+提案3 - 年間割引の調整:
+現在、年払いで20%割引を提供中。CFOはキャッシュフロー改善のため15%に引き下げを提案。営業リードは強く反対 - 「年間契約は当社の生命線だ。」
 
-Proposal 4 - Usage-based pricing for integrations:
-Some competitors charge for integrations. Could add $2/user/month for "unlimited integrations" tier. Team skeptical - adds complexity, may confuse customers.
+提案4 - 連携機能の従量課金:
+一部の競合他社は連携機能に課金。「無制限の連携」ティアを$2/ユーザー/月で追加可能。チームは懐疑的 - 複雑さが増し、顧客を混乱させる可能性あり。
 
-DECISION:
-Launch Business tier at $18/user/month. Keep Pro pricing stable. Test for 3 months, measure conversion rates from Free → Pro → Business → Enterprise.
+決定事項:
+Businessティアを$18/ユーザー/月でローンチ。Proの価格は据え置き。3ヶ月間テストし、Free → Pro → Business → Enterpriseのコンバージョン率を測定。
 
-ACTION ITEMS:
-- You to define Business tier feature set by Oct 15
-- CFO to model revenue impact of new tier
-- Sales Lead to prepare sales pitch for Business tier
-- Marketing to create pricing page updates
+アクションアイテム:
+- あなた: 10月15日までにBusinessティアの機能セットを定義
+- CFO: 新ティアの収益への影響をモデル化
+- 営業リード: Businessティアの営業ピッチを準備
+- マーケティング: 価格ページの更新を作成
 
-Target launch: November 1, 2024
+目標ローンチ: 2024年11月1日

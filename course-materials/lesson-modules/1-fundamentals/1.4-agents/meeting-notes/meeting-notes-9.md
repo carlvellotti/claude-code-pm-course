@@ -1,40 +1,40 @@
-ROADMAP REVIEW - 2025 PLANNING
-Date: October 11, 2024
-Attendees: Sarah Chen (Head of Product), You (Senior PM), Alex Rivera (PM Mobile), Engineering Leads (3), Jordan Kim (Design)
+ロードマップレビュー - 2025年計画
+日付: 2024年10月11日
+出席者: Sarah Chen（プロダクト責任者）、あなた（シニアPM）、Alex Rivera（モバイルPM）、エンジニアリングリード（3名）、Jordan Kim（デザイン）
 
-OBJECTIVE: Finalize Q1-Q2 2025 roadmap priorities. Balance customer requests, strategic initiatives, and technical debt.
+目的: 2025年Q1〜Q2のロードマップ優先事項を確定。顧客要望、戦略的イニシアチブ、技術的負債のバランスを取る。
 
-Q1 2025 PRIORITIES (Jan-Mar):
-1. Mobile app launch (committed, in progress)
-2. Enterprise features: SSO, permissions, audit logs (committed, enterprise blocker)
-3. Activation improvements: onboarding redesign, templates (committed, CEO priority)
-4. Dark mode (committed, highly requested)
+2025年Q1優先事項（1月〜3月）:
+1. モバイルアプリのローンチ（コミット済み、進行中）
+2. エンタープライズ機能: SSO、権限管理、監査ログ（コミット済み、エンタープライズのブロッカー）
+3. アクティベーション改善: オンボーディング再設計、テンプレート（コミット済み、CEOの優先事項）
+4. ダークモード（コミット済み、リクエスト多数）
 
-Q2 2025 PRIORITIES (Apr-Jun):
-1. Time tracking (customer request, 127 upvotes)
-2. Resource management / capacity planning (team lead persona need)
-3. Custom workflows (flexibility for complex teams)
-4. API v2 (integration partners requesting improvements)
+2025年Q2優先事項（4月〜6月）:
+1. タイムトラッキング（顧客要望、127件のアップボート）
+2. リソース管理/キャパシティプランニング（チームリードペルソナのニーズ）
+3. カスタムワークフロー（複雑なチームへの柔軟性）
+4. API v2（連携パートナーからの改善要望）
 
-DEFERRED / ICEBOX:
-- Whiteboarding feature (nice-to-have, not core competency)
-- Goals & OKRs (strategic planning - separate product?)
-- Public roadmap (marketing wants, low priority)
-- Advanced reporting (niche use case)
+延期/アイスボックス:
+- ホワイトボード機能（あれば良い程度、コアコンピタンスではない）
+- 目標 & OKR（戦略的計画 - 別プロダクト？）
+- パブリックロードマップ（マーケティングが希望、優先度低）
+- 高度なレポーティング（ニッチなユースケース）
 
-TECHNICAL DEBT ALLOCATION:
-Engineering Leads requested 20% time for tech debt each sprint. Team agreed. Will improve velocity long-term and reduce bugs.
+技術的負債の配分:
+エンジニアリングリードが各スプリントで20%の時間を技術的負債に充てることを要求。チームは合意。長期的な開発速度の向上とバグの削減が期待できる。
 
-DISCUSSION:
-Alex advocated for native desktop app (Electron). Team decided not yet - web app performance is good enough. Revisit in Q3 if customer demand increases.
+議論:
+Alexがネイティブデスクトップアプリ（Electron）を提案。チームはまだ時期尚早と判断 - Webアプリのパフォーマンスで十分。Q3に顧客需要が増加すれば再検討。
 
-Jordan raised concern about design team capacity. Roadmap is ambitious. May need to hire another designer in Q1.
+Jordanがデザインチームのキャパシティに懸念を提起。ロードマップは野心的。Q1に新しいデザイナーの採用が必要になる可能性あり。
 
-ACTION ITEMS:
-- Sarah to share roadmap with CEO for approval
-- You to create detailed specs for Q1 activation improvements
-- Alex to finalize mobile app launch plan
-- Jordan to assess design hiring needs
-- Engineering Leads to define tech debt priorities for Q1
+アクションアイテム:
+- Sarah: CEOにロードマップを共有し承認を得る
+- あなた: Q1アクティベーション改善の詳細仕様を作成
+- Alex: モバイルアプリのローンチ計画を確定
+- Jordan: デザインチームの採用ニーズを評価
+- エンジニアリングリード: Q1の技術的負債の優先事項を定義
 
-Roadmap to be finalized by Oct 18, communicated company-wide Oct 21.
+ロードマップは10月18日までに確定、10月21日に全社に共有予定。

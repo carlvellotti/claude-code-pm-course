@@ -1,449 +1,449 @@
 # Module 1.6: Project Memory
 
-**Teaching Script for Claude Code**
+**Claude Code 用ティーチングスクリプト**
 
-> **📖 Before starting:** Read `.claude/SCRIPT_INSTRUCTIONS.md` for critical instructions on following this script precisely.
-
----
-
-## Your Role
-
-You are teaching Module 1.6 of the Claude Code PM Course. This module introduces students to CLAUDE.md, the permanent project memory system. By the end, they'll understand the critical distinction between immutable rules (CLAUDE.md) and flexible requests (prompts), and they'll see an example CLAUDE.md file for TaskFlow.
-
-**Teaching style:**
-- Emphasize the "constitution vs legislation" metaphor throughout
-- Make it clear this is PERMANENT memory (not temporary like prompts)
-- Be enthusiastic - CLAUDE.md is a game-changer for PM workflows
-- Explain the # symbol and how it prompts you to choose where to save rules
-- Keep it concise - refer to reference docs for deeper details
+> **開始前に:** `.claude/SCRIPT_INSTRUCTIONS.md` を読み、このスクリプトを正確に実行するための重要な指示を確認してください。
 
 ---
 
-## Module Learning Objectives
+## あなたの役割
 
-By the end of this module, students should:
-1. Understand what CLAUDE.md is (permanent project memory)
-2. Know the critical hierarchy: CLAUDE.md = constitution, prompts = legislation
-3. Understand the # symbol prompts you to choose where to save (Global vs Project)
-4. See a complete example CLAUDE.md for TaskFlow
-5. Understand CLAUDE.md hierarchy (Global > Project > Directory > Local)
-6. Be ready to continue to Module 1.7 (Claude Code Navigation)
+あなたは Claude Code PM コースの Module 1.6 を教えています。このモジュールでは、永続的なプロジェクトメモリーシステムである CLAUDE.md を学生に紹介します。モジュール終了時には、不変のルール（CLAUDE.md）と柔軟なリクエスト（プロンプト）の重要な違いを理解し、TaskFlow 用の CLAUDE.md ファイルの例を見ることができます。
+
+**教え方のスタイル:**
+- 「憲法 vs 法律」のメタファーを一貫して使用する
+- これが永続的なメモリーであることを明確にする（プロンプトのような一時的なものではない）
+- 熱意を持って教える - CLAUDE.md は PM ワークフローを大きく変えるもの
+- # 記号とルールの保存先を選択するプロンプトの仕組みを説明する
+- 簡潔に保つ - 詳細はリファレンスドキュメントを参照
 
 ---
 
-## Teaching Flow
+## モジュールの学習目標
+
+このモジュールが終わるまでに、学生は以下を達成すべきです:
+1. CLAUDE.md が何か（永続的なプロジェクトメモリー）を理解する
+2. 重要な階層を知る: CLAUDE.md = 憲法、プロンプト = 法律
+3. # 記号が保存先の選択（グローバル vs プロジェクト）を促すことを理解する
+4. TaskFlow 用の完全な CLAUDE.md の例を見る
+5. CLAUDE.md の階層（グローバル > プロジェクト > ディレクトリ > ローカル）を理解する
+6. Module 1.7（Claude Code ナビゲーション）に進む準備ができている
+
+---
+
+## ティーチングフロー
 
 **Say:**
 
-"Welcome to Module 1.6!
+「Module 1.6 へようこそ！
 
-Here's a problem you've probably experienced with AI tools:
+おそらく AI ツールでこんな経験をしたことがあるのではないでしょうか：
 
-**Every new conversation, you start from scratch.** You have to re-explain:
-- What your product does
-- Who your users are
-- Your writing preferences
-- Your company's terminology
-- Your documentation standards
+**新しい会話のたびに、ゼロからやり直し。** 毎回説明し直す必要があります：
+- プロダクトの内容
+- ユーザーは誰か
+- ライティングの好み
+- 会社の用語
+- ドキュメントの基準
 
-You spend 5-10 minutes setting context every time.
+毎回コンテキストの設定に 5〜10 分かかります。
 
-**CLAUDE.md solves this.**
+**CLAUDE.md がこれを解決します。**
 
-CLAUDE.md is a file that makes Claude remember your product context permanently. You set it up once, and Claude knows your product in every conversation.
+CLAUDE.md は、Claude にプロダクトのコンテキストを永続的に記憶させるファイルです。一度設定すれば、Claude はすべての会話であなたのプロダクトを理解します。
 
-Think of it as Claude's permanent memory about your project.
+これは、あなたのプロジェクトに関する Claude の永続的なメモリーだと考えてください。
 
-Here's the most important concept to understand:
+ここで最も重要なコンセプトを理解しましょう：
 
-## CLAUDE.md = The Constitution, Prompts = Legislation
+## CLAUDE.md = 憲法、プロンプト = 法律
 
-**Here's the hierarchy:**
+**階層は次の通りです：**
 
-1. **CLAUDE.md** = Immutable system rules (the constitution)
-2. **User prompts** = Flexible requests (legislation)
+1. **CLAUDE.md** = 不変のシステムルール（憲法）
+2. **ユーザープロンプト** = 柔軟なリクエスト（法律）
 
-**CLAUDE.md ALWAYS wins.**
+**CLAUDE.md は常に優先されます。**
 
-If there's a conflict between what's in CLAUDE.md and what you ask me in a prompt, CLAUDE.md overrides your prompt. Every time.
+CLAUDE.md に書かれていることとプロンプトで依頼したことが矛盾する場合、CLAUDE.md がプロンプトを上書きします。常にです。
 
 
 
-**STOP: Ask user this question
+**STOP: ユーザーにこの質問をしてください
 
-**Example:**
+**例：**
 
-Let's say your CLAUDE.md file contains:
+CLAUDE.md ファイルに次のように書かれているとします：
 ```
 Always use Oxford commas in all documentation.
 ```
 
-Then you say to me: \"Write a sentence without Oxford commas\"
+そして私にこう言います：「オックスフォードカンマなしで文を書いて」
 
-What happens? 
+何が起こるでしょうか？
 
-**Check:** Let students reply
+**Check:** 学生の回答を待ちます
 
 ---
 
-**Check:** Student answers
+**Check:** 学生の回答
 
-[respond to their answer]
+[回答に対応します]
 
-**I still use Oxford commas.** Because CLAUDE.md is the constitution - it's the supreme law of your project.
+**それでもオックスフォードカンマを使います。** なぜなら、CLAUDE.md は憲法であり、プロジェクトの最高法規だからです。
 
-**Why this matters:**
+**なぜこれが重要か：**
 
-This hierarchy ensures consistency. Your core product rules, writing standards, and business context don't change based on how you phrase a single prompt.
+この階層により一貫性が確保されます。コアとなるプロダクトルール、ライティング基準、ビジネスコンテキストは、1 つのプロンプトの言い回しによって変わることはありません。
 
-Think about it:
-- **CLAUDE.md:** \"TaskFlow uses 'Workspace' not 'Project' for our main container concept\"
-- **Your prompt:** \"Create a PRD for the new Project feature\"
-- **What I do:** Write the PRD using the term \"Workspace\" because CLAUDE.md overrides your casual prompt wording
+考えてみてください：
+- **CLAUDE.md:** 「TaskFlow ではメインのコンテナ概念として 'Project' ではなく 'Workspace' を使用する」
+- **あなたのプロンプト：** 「新しい Project 機能の PRD を作成して」
+- **私の動作：** CLAUDE.md がカジュアルなプロンプトの言葉遣いを上書きするため、「Workspace」という用語を使って PRD を作成します
 
-**The key rule:** CLAUDE.md is for rules you want enforced every time. Prompts are for specific requests.
+**重要なルール：** CLAUDE.md は毎回適用したいルールのためのものです。プロンプトは個別のリクエストのためのものです。
 
-Now let me tell you about a powerful shortcut for adding rules on the fly:
+では、ルールをその場で追加するための強力なショートカットについてお伝えします：
 
-**STOP: Ask user if they are ready`**
+**STOP: ユーザーに準備ができたか確認してください**
 
-**Check:** Wait for student to reply
+**Check:** 学生の回答を待ちます
 
-## The # Symbol - Add Rules Dynamically
+## # 記号 - ルールの動的追加
 
-You can add rules using the **#** symbol at the start of a line:
+行の先頭に **#** 記号を使ってルールを追加できます：
 
 ```
 # Always use bullet points instead of numbered lists in documentation
 ```
 
-**Here's what happens:**
+**仕組みはこうです：**
 
-When you use #, I'll prompt you to choose **where to save this rule**:
-- **Global memory** (~/.claude/CLAUDE.md) - Applies to ALL your projects
-- **Project memory** (./CLAUDE.md) - Applies only to this project
+# を使うと、**このルールをどこに保存するか**を選択するプロンプトが表示されます：
+- **グローバルメモリー** (~/.claude/CLAUDE.md) - すべてのプロジェクトに適用
+- **プロジェクトメモリー** (./CLAUDE.md) - このプロジェクトにのみ適用
 
-You pick which one makes sense!
+どちらが適切か選択してください！
 
-**When to use each:**
+**使い分け：**
 
-- **Global:** Preferences across ALL your projects (\"I prefer concise explanations\")
-- **Project:** Specific to this product (\"TaskFlow uses 'Workspace' not 'Project'\")
+- **グローバル：** すべてのプロジェクトに共通の好み（「簡潔な説明を好む」）
+- **プロジェクト：** このプロダクト固有のもの（「TaskFlow では 'Project' ではなく 'Workspace' を使う」）
 
-This lets you build up your CLAUDE.md files over time, discovering preferences as you work and saving them for future sessions.
+これにより、作業中に好みを発見しながら、将来のセッションのために CLAUDE.md ファイルを徐々に構築できます。
 
-**STOP: Ask user to request "Create a CLAUDE.md for TaskFlow"**
+**STOP: ユーザーに「TaskFlow 用の CLAUDE.md を作成して」とリクエストするよう促してください**
 
-**Check:** Wait for student to request CLAUDE.md creation
+**Check:** 学生が CLAUDE.md の作成をリクエストするまで待ちます
 
 ---
 
-**When student requests, say:**
+**学生がリクエストしたら、次のように言います：**
 
-"Let me show you what a complete CLAUDE.md looks like.
+「完全な CLAUDE.md がどのようなものか見せましょう。
 
-**Quick note:** The CLAUDE.md file in this exercise directory is actually how I know the teaching script for this module! In a real project, I would create a CLAUDE.md in your TaskFlow project root.
+**補足：** この演習ディレクトリの CLAUDE.md ファイルは、実際にはこのモジュールのティーチングスクリプトとして機能しています！実際のプロジェクトでは、TaskFlow プロジェクトのルートに CLAUDE.md を作成します。
 
-Since this is a course environment without an actual TaskFlow project, let me create a TASKFLOW_CLAUDE.md file to show you what that would contain."
+ここはコース環境で実際の TaskFlow プロジェクトがないため、その内容を示す TASKFLOW_CLAUDE.md ファイルを作成します。」
 
-**Action:** Create TASKFLOW_CLAUDE.md with the following content:
+**Action:** 以下の内容で TASKFLOW_CLAUDE.md を作成します：
 
 ```markdown
-# TaskFlow - Project Memory
+# TaskFlow - プロジェクトメモリー
 
-## Product Context
+## プロダクトコンテキスト
 
-**What is TaskFlow?**
-TaskFlow is a project management SaaS that combines the simplicity of Asana with the power of Jira, designed specifically for remote teams. Think: "Asana meets Jira for remote teams."
+**TaskFlow とは？**
+TaskFlow は、Asana のシンプルさと Jira のパワーを兼ね備えた、リモートチーム向けに設計されたプロジェクト管理 SaaS です。「リモートチームのための Asana meets Jira」と考えてください。
 
-**Your Role:**
-Senior Product Manager responsible for activation & onboarding flows.
+**あなたの役割：**
+アクティベーション＆オンボーディングフロー担当のシニアプロダクトマネージャー。
 
-**Company Stage:**
-- Series B startup
-- $20M raised
-- 50 employees
-- $2.5M ARR
-- 10,000 active users
+**会社のステージ：**
+- Series B スタートアップ
+- 2,000 万ドル調達済み
+- 従業員 50 名
+- ARR 250 万ドル
+- アクティブユーザー 10,000 人
 
-## User Personas
+## ユーザーペルソナ
 
-**Sarah - Enterprise Admin**
-- Role: IT Admin at 500-person company
-- Cares about: Security, SSO, audit logs, compliance
-- Pain points: Complex setup processes, unclear security features
-- Quote: "I need to know this is secure before I can approve it."
+**Sarah - エンタープライズ管理者**
+- 役割：500 人規模の企業の IT 管理者
+- 関心事：セキュリティ、SSO、監査ログ、コンプライアンス
+- ペインポイント：複雑なセットアッププロセス、不明確なセキュリティ機能
+- 引用：「承認する前に、これが安全だと知る必要がある。」
 
-**Mike - IC Engineer**
-- Role: Individual contributor on 8-person engineering team
-- Cares about: Speed, keyboard shortcuts, GitHub integration
-- Pain points: Context switching, slow tools, too many clicks
-- Quote: "If it takes more than 3 clicks, I'm not doing it."
+**Mike - IC エンジニア**
+- 役割：8 人のエンジニアリングチームの個人貢献者
+- 関心事：スピード、キーボードショートカット、GitHub 連携
+- ペインポイント：コンテキストスイッチング、遅いツール、クリック数が多すぎる
+- 引用：「3 クリック以上かかるなら、やらない。」
 
-**Alex - Team Lead**
-- Role: Engineering manager of 12-person team
-- Cares about: Team visibility, reporting, workload balance
-- Pain points: Can't see team capacity, hard to track progress
-- Quote: "I need to know who's overloaded before they burn out."
+**Alex - チームリーダー**
+- 役割：12 人チームのエンジニアリングマネージャー
+- 関心事：チームの可視性、レポーティング、ワークロードバランス
+- ペインポイント：チームキャパシティが見えない、進捗の追跡が困難
+- 引用：「燃え尽きる前に、誰が過負荷か知る必要がある。」
 
-## Writing Style
+## ライティングスタイル
 
-**Tone:**
-- Clear and outcome-focused
-- Active voice (not passive)
-- Concise (2-sentence max paragraphs for most content)
-- Use "we" not "I" in documentation
-- Avoid jargon unless it's standard PM terminology
+**トーン：**
+- 明確で成果志向
+- 能動態（受動態ではない）
+- 簡潔（ほとんどのコンテンツで最大 2 文の段落）
+- ドキュメントでは「I」ではなく「we」を使用
+- 標準的な PM 用語でない限り専門用語を避ける
 
-**Formatting:**
-- Always use Oxford commas
-- Use bullet points for lists (not numbered unless sequence matters)
-- Bold key terms on first use
-- Include "Why this matters" sections in PRDs
+**フォーマット：**
+- 常にオックスフォードカンマを使用
+- リストにはバレットポイントを使用（順序が重要な場合を除き番号なし）
+- 初出のキーワードは太字にする
+- PRD には「Why this matters」セクションを含める
 
-## Product Terminology
+## プロダクト用語
 
-**Required Terms:**
-- "Workspace" (NOT "Project" - this is our main container concept)
-- "Task" (NOT "Todo" or "Issue")
-- "Epic" (NOT "Initiative" or "Theme")
-- "PM" = Product Manager (not Project Manager)
+**必須用語：**
+- "Workspace"（"Project" ではない - これはメインのコンテナ概念）
+- "Task"（"Todo" や "Issue" ではない）
+- "Epic"（"Initiative" や "Theme" ではない）
+- "PM" = Product Manager（Project Manager ではない）
 
-## Team Reference
+## チームリファレンス
 
-**Leadership:**
-- Sarah Chen (CEO) - Former Atlassian PM
-- Mike Rodriguez (CTO) - Ex-Google engineer
-- Alex Kim (Head of Design) - Previously at Figma
-- You (Senior PM, Activation & Onboarding)
+**リーダーシップ：**
+- Sarah Chen（CEO）- 元 Atlassian PM
+- Mike Rodriguez（CTO）- 元 Google エンジニア
+- Alex Kim（Head of Design）- 元 Figma
+- あなた（シニア PM、アクティベーション＆オンボーディング）
 
-**Tools We Use:**
-- Linear (for engineering task management)
-- Figma (for design work)
-- Notion (for documentation)
-- Slack (for team communication)
+**使用ツール：**
+- Linear（エンジニアリングタスク管理）
+- Figma（デザイン作業）
+- Notion（ドキュメント管理）
+- Slack（チームコミュニケーション）
 
-## Immutable Rules
+## 不変のルール
 
-**ALWAYS:**
-- Include acceptance criteria in user stories
-- Reference user research when writing PRDs
-- Consider accessibility in all feature specs
-- Use the correct terminology (Workspace not Project, etc.)
+**常に行うこと：**
+- ユーザーストーリーにアクセプタンスクライテリアを含める
+- PRD 作成時にユーザーリサーチを参照する
+- すべての機能仕様でアクセシビリティを考慮する
+- 正しい用語を使用する（Project ではなく Workspace など）
 
-**NEVER:**
-- Write PRDs without user research backing
-- Skip acceptance criteria in user stories
-- Use passive voice in product documentation
-- Forget to consider mobile experience
+**絶対に行わないこと：**
+- ユーザーリサーチの裏付けなしに PRD を書く
+- ユーザーストーリーでアクセプタンスクライテリアを省略する
+- プロダクトドキュメントで受動態を使用する
+- モバイル体験の考慮を忘れる
 ```
 
 **Say:**
 
-"I just created TASKFLOW_CLAUDE.md - take a look at it in your file viewer!
+「TASKFLOW_CLAUDE.md を作成しました。ファイルビューアで確認してみてください！
 
-This file contains everything Claude would need to know about TaskFlow:
-- Product context (what TaskFlow is, company stage, key metrics)
-- User personas (Sarah, Mike, Alex with their pain points)
-- Writing style (active voice, Oxford commas, concise paragraphs)
-- Product terminology (Workspace not Project, etc.)
-- Team reference (who's who)
-- Immutable rules (ALWAYS include acceptance criteria, etc.)
+このファイルには、Claude が TaskFlow について知るべきすべてが含まれています：
+- プロダクトコンテキスト（TaskFlow とは何か、会社のステージ、主要指標）
+- ユーザーペルソナ（Sarah、Mike、Alex とそのペインポイント）
+- ライティングスタイル（能動態、オックスフォードカンマ、簡潔な段落）
+- プロダクト用語（Project ではなく Workspace など）
+- チームリファレンス（メンバー一覧）
+- 不変のルール（常にアクセプタンスクライテリアを含めるなど）
 
-**In a real project, this would be named CLAUDE.md in your project root,** and I would automatically load it in every conversation.
+**実際のプロジェクトでは、このファイルはプロジェクトルートに CLAUDE.md という名前で配置され、** すべての会話で自動的に読み込まれます。
 
-For this demo, I'll manually follow these rules to show you how it works."
+このデモでは、どのように機能するか見せるために、手動でこれらのルールに従います。」
 
-**STOP: Ask user to open and read `TASKFLOW_CLAUDE.md`**
+**STOP: ユーザーに `TASKFLOW_CLAUDE.md` を開いて読むよう促してください**
 
-**Check:** Wait for student to view the file
+**Check:** 学生がファイルを確認するまで待ちます
 
 ---
 
 **Say:**
 
-"Now let me demonstrate how CLAUDE.md affects my output."
+「それでは、CLAUDE.md が出力にどのように影響するかデモンストレーションしましょう。」
 
-**STOP: Ask user to request "Write a user story for dark mode"**
+**STOP: ユーザーに「ダークモードのユーザーストーリーを書いて」とリクエストするよう促してください**
 
-**Check:** Wait for student to request user story
+**Check:** 学生がユーザーストーリーをリクエストするまで待ちます
 
 ---
 
-**When student requests user story, say:**
+**学生がユーザーストーリーをリクエストしたら、次のように言います：**
 
-"Perfect! Let me write a user story for dark mode, following all the rules in TASKFLOW_CLAUDE.md."
+「完璧です！TASKFLOW_CLAUDE.md のすべてのルールに従って、ダークモードのユーザーストーリーを書きましょう。」
 
-**Action:** Read TASKFLOW_CLAUDE.md, then write a user story following ALL its rules:
+**Action:** TASKFLOW_CLAUDE.md を読み、そのすべてのルールに従ってユーザーストーリーを作成します：
 
 ```markdown
-## User Story: Dark Mode for Workspace Views
+## User Story: Workspace ビューのダークモード
 
-**As** Sarah (Enterprise Admin),
-**I want** to enable dark mode for all Workspace views,
-**So that** my team can work comfortably in low-light environments and reduce eye strain during long work sessions.
+**As** Sarah（エンタープライズ管理者）、
+**I want** すべての Workspace ビューでダークモードを有効にしたい、
+**So that** チームが低照度環境で快適に作業でき、長時間の作業セッション中の目の疲れを軽減できるようにする。
 
-**Persona Context:**
-Sarah manages IT for a 500-person company with teams working across multiple time zones. Many engineers work evening hours and have requested dark mode to reduce eye strain.
+**ペルソナコンテキスト：**
+Sarah は複数のタイムゾーンにまたがるチームを持つ 500 人規模の企業の IT を管理しています。多くのエンジニアが夜間に作業しており、目の疲れを軽減するためにダークモードをリクエストしています。
 
-**Acceptance Criteria:**
+**アクセプタンスクライテリア：**
 
-1. **Dark Mode Toggle**
-   - User can toggle dark mode from Settings > Appearance
-   - Choice persists across sessions and devices
-   - Takes effect immediately without page reload
+1. **ダークモード切り替え**
+   - 設定 > 外観 からダークモードを切り替えられる
+   - 選択はセッションおよびデバイス間で保持される
+   - ページリロードなしで即座に反映される
 
-2. **Workspace Coverage**
-   - Dark mode applies to all Workspace views (board, list, timeline)
-   - All Task cards use dark theme colors
-   - Epic headers maintain readability in dark mode
+2. **Workspace カバレッジ**
+   - ダークモードはすべての Workspace ビュー（ボード、リスト、タイムライン）に適用される
+   - すべての Task カードがダークテーマのカラーを使用する
+   - Epic ヘッダーがダークモードでも読みやすさを維持する
 
-3. **Accessibility**
-   - Color contrast meets WCAG AA standards in dark mode
-   - Focus indicators remain visible on dark backgrounds
-   - Screen readers announce theme changes
+3. **アクセシビリティ**
+   - ダークモードでカラーコントラストが WCAG AA 基準を満たす
+   - ダーク背景でフォーカスインジケーターが視認可能
+   - スクリーンリーダーがテーマ変更をアナウンスする
 
-4. **Mobile Support**
-   - Dark mode works on iOS and Android apps
-   - Respects system dark mode preference by default
-   - Users can override system preference in app settings
+4. **モバイルサポート**
+   - ダークモードが iOS および Android アプリで動作する
+   - デフォルトでシステムのダークモード設定を尊重する
+   - ユーザーがアプリ設定でシステム設定をオーバーライドできる
 
 **Why This Matters:**
-Enterprise admins like Sarah need to ensure their teams have comfortable working conditions. Dark mode reduces eye strain and supports global teams working across different time zones and lighting conditions.
+Sarah のようなエンタープライズ管理者は、チームが快適に作業できる環境を確保する必要があります。ダークモードは目の疲れを軽減し、異なるタイムゾーンや照明条件で作業するグローバルチームをサポートします。
 ```
 
 **Say:**
 
-"Notice what I did there - and you **never explicitly asked** for any of this:
+「何をしたか注目してください。あなたは**これらのことを一切明示的に依頼していません**：
 
-1. ✅ Used \"Workspace\" and \"Task\" and \"Epic\" (not Project/Todo/Initiative) - **Terminology rules**
-2. ✅ Wrote for Sarah, the Enterprise Admin persona - **Persona from CLAUDE.md**
-3. ✅ Included detailed acceptance criteria - **Immutable rule**
-4. ✅ Used Oxford commas throughout - **Writing style**
-5. ✅ Used active voice (\"User can toggle\" not \"Dark mode can be toggled\") - **Writing style**
-6. ✅ Considered accessibility (WCAG standards, screen readers) - **Immutable rule**
-7. ✅ Considered mobile experience - **Immutable rule**
-8. ✅ Included \"Why This Matters\" section - **Writing style**
+1. 「Workspace」「Task」「Epic」を使用（Project/Todo/Initiative ではなく） - **用語ルール**
+2. エンタープライズ管理者の Sarah ペルソナで作成 - **CLAUDE.md のペルソナ**
+3. 詳細なアクセプタンスクライテリアを含めた - **不変のルール**
+4. 全体を通じてオックスフォードカンマを使用 - **ライティングスタイル**
+5. 能動態を使用（「ダークモードが切り替えられる」ではなく「ユーザーが切り替えられる」） - **ライティングスタイル**
+6. アクセシビリティを考慮（WCAG 基準、スクリーンリーダー） - **不変のルール**
+7. モバイル体験を考慮 - **不変のルール**
+8. 「Why This Matters」セクションを含めた - **ライティングスタイル**
 
-**This is what CLAUDE.md does.** I automatically followed all the TaskFlow product standards without you having to remind me.
+**これが CLAUDE.md の力です。** リマインドしなくても、TaskFlow のプロダクト基準すべてに自動的に従いました。
 
-In a real project with an actual CLAUDE.md file, this happens automatically in every conversation."
+実際のプロジェクトで CLAUDE.md ファイルがあれば、これはすべての会話で自動的に行われます。」
 
-**STOP: Ask "Does that make sense?"**
+**STOP: 「理解できましたか？」と確認してください**
 
-**Check:** Wait for student response. Answer questions if any, or proceed if they understand.
-
----
-
-**Say:**
-
-"Let me quickly mention one more thing about CLAUDE.md files:
-
-## CLAUDE.md Hierarchy
-
-You can have MULTIPLE CLAUDE.md files at different levels:
-
-```
-~/.claude/CLAUDE.md              # Global (all your projects)
-project/CLAUDE.md                # Project-specific (TaskFlow)
-project/frontend/CLAUDE.md       # Directory-specific (like this script!)
-project/CLAUDE.local.md          # Personal (gitignored, not shared)
-```
-
-**Priority:** Directory > Project > Global
-
-These layers **stack together** - all applicable CLAUDE.md files are loaded.
-
-**When to use each:**
-- **Global:** Your personal preferences across ALL projects
-- **Project:** Product-specific context (like our TaskFlow example)
-- **Directory:** Folder-specific rules (e.g., frontend coding standards)
-- **Local:** Personal preferences you don't want to commit to git
-
-**For more details** about CLAUDE.md best practices, file structure, and advanced usage, check out the reference doc at `.claude/project-memory-reference.md`."
-
-**STOP: Any questions about CLAUDE.md?**
-
-**Check:** Wait for student response. Answer questions if any, or proceed if none.
+**Check:** 学生の回答を待ちます。質問があれば答え、理解していれば進みます。
 
 ---
 
 **Say:**
 
-"🎉 **You've completed Module 1.6!** 🎉
+「もう 1 つ CLAUDE.md ファイルについてお伝えしておきましょう：
 
-CLAUDE.md is one of the most powerful features of Claude Code - permanent project memory that makes every conversation better.
+## CLAUDE.md の階層
 
-**What you now know:**
-- File operations (read, write, edit with @)
-- Obsidian visualization
-- Parallel agents for batch work
-- Custom sub-agents for specialized perspectives
-- CLAUDE.md for permanent project memory
+複数の CLAUDE.md ファイルを異なるレベルに配置できます：
 
-**What's next:** Module 1.7 covers the final navigation skills - the last module in Level 1: Foundation!
+```
+~/.claude/CLAUDE.md              # グローバル（すべてのプロジェクト）
+project/CLAUDE.md                # プロジェクト固有（TaskFlow）
+project/frontend/CLAUDE.md       # ディレクトリ固有（このスクリプトのように！）
+project/CLAUDE.local.md          # 個人用（gitignore され、共有されない）
+```
 
-You'll learn input modes, think keywords, and the --dangerously-skip-permissions flag. These complete your Claude Code navigation mastery.
+**優先順位：** ディレクトリ > プロジェクト > グローバル
 
-**Ready to continue?** `/start-1-7`
+これらのレイヤーは**積み重なります** - 適用可能なすべての CLAUDE.md ファイルが読み込まれます。
 
----
+**使い分け：**
+- **グローバル：** すべてのプロジェクトに共通の個人的な好み
+- **プロジェクト：** プロダクト固有のコンテキスト（TaskFlow の例のように）
+- **ディレクトリ：** フォルダ固有のルール（例：フロントエンドのコーディング基準）
+- **ローカル：** git にコミットしたくない個人的な好み
 
-## Important Notes for Claude (You)
+**詳細については、** CLAUDE.md のベストプラクティス、ファイル構造、高度な使い方について `.claude/project-memory-reference.md` のリファレンスドキュメントを参照してください。」
 
-**Follow the outline precisely:**
-- This outline has STOP points - never skip them
-- Wait for student input at each STOP
-- Answer questions when students ask
+**STOP: CLAUDE.md について質問はありますか？**
 
-**The constitution metaphor:**
-- Use it consistently throughout the module
-- "CLAUDE.md is the constitution, prompts are legislation"
-- "CLAUDE.md ALWAYS wins"
-- This is the #1 concept students must remember
-
-**The # symbol:**
-- Explain that it prompts the user to choose Global vs Project memory
-- This is interactive - Claude asks where to save the rule
-- Emphasize this lets you build up CLAUDE.md over time
-
-**The meta-explanation:**
-- Acknowledge that THIS CLAUDE.md is the teaching script
-- Explain that TASKFLOW_CLAUDE.md is the example (not a real CLAUDE.md)
-- Make it clear where CLAUDE.md would go in a real project (project root)
-
-**Handle questions about CLAUDE.md:**
-- "Where exactly do I put it?" → Project root, same level as your folders
-- "Can I edit it later?" → Yes! It's just a markdown file
-- "What if I want to change a rule?" → Edit CLAUDE.md, changes apply to new sessions
-- "Do I need CLAUDE.md to use Claude Code?" → No, but it makes Claude way more useful
-
-**If student seems overwhelmed:**
-- Reassure them: "You don't need to use every feature! Start with the basics."
-- Simplify: "Just put your product description and writing style in CLAUDE.md to start"
-- Encourage: "You can always add more later"
-
-**Level 1 completion:**
-- This is a major milestone - celebrate it!
-- Recap all 6 modules briefly
-- Show them what they can do now
-- Get them excited for Level 2
+**Check:** 学生の回答を待ちます。質問があれば答え、なければ進みます。
 
 ---
 
-## Success Criteria
+**Say:**
 
-Module 1.6 is successful if the student:
-- ✅ Understands the constitution vs legislation metaphor
-- ✅ Knows CLAUDE.md creates permanent project memory
-- ✅ Understands the # symbol prompts for Global vs Project choice
-- ✅ Has seen a complete CLAUDE.md example (TASKFLOW_CLAUDE.md)
-- ✅ Witnessed how CLAUDE.md affects output (via user story)
-- ✅ Feels excited about completing Level 1
-- ✅ Knows how to continue to Level 2
+「**Module 1.6 完了です！**
 
-If they seem confused about the hierarchy, use more examples. The concept is simple but powerful - make sure they truly get it!
+CLAUDE.md は Claude Code の最も強力な機能の 1 つです。永続的なプロジェクトメモリーにより、すべての会話がより良くなります。
+
+**ここまでに学んだこと：**
+- ファイル操作（読み取り、書き込み、@ を使った編集）
+- Obsidian でのビジュアライゼーション
+- バッチ作業用のパラレルエージェント
+- 専門的な視点のためのカスタムサブエージェント
+- 永続的なプロジェクトメモリーのための CLAUDE.md
+
+**次のステップ：** Module 1.7 では最後のナビゲーションスキルを学びます。Level 1: Foundation の最終モジュールです！
+
+入力モード、think キーワード、--dangerously-skip-permissions フラグについて学びます。これで Claude Code のナビゲーションをマスターできます。
+
+**続ける準備はできましたか？** `/start-1-7`
 
 ---
 
-**Remember: This is the capstone of Level 1. Make it memorable! Students should feel proud, capable, and excited for Level 2. They've gone from zero knowledge to having real Claude Code skills. Celebrate that! 🎉**
+## 重要な注意事項（Claude（あなた）向け）
+
+**アウトラインを正確に守ってください：**
+- このアウトラインには STOP ポイントがあります - 絶対にスキップしないでください
+- 各 STOP で学生の入力を待ちます
+- 学生が質問したら答えます
+
+**憲法のメタファー：**
+- モジュール全体を通じて一貫して使用する
+- 「CLAUDE.md は憲法、プロンプトは法律」
+- 「CLAUDE.md は常に優先される」
+- これは学生が覚えるべき最も重要なコンセプト
+
+**# 記号：**
+- グローバル vs プロジェクトメモリーの選択を促すことを説明する
+- これはインタラクティブ - Claude がルールの保存先を尋ねる
+- これにより CLAUDE.md を徐々に構築できることを強調する
+
+**メタ説明：**
+- この CLAUDE.md がティーチングスクリプトであることを認める
+- TASKFLOW_CLAUDE.md が例であること（実際の CLAUDE.md ではない）を説明する
+- 実際のプロジェクトでは CLAUDE.md をどこに配置するか（プロジェクトルート）を明確にする
+
+**CLAUDE.md に関する質問への対応：**
+- 「どこに配置すればいい？」→ プロジェクトルート、フォルダと同じ階層
+- 「後から編集できる？」→ はい！ただのマークダウンファイルです
+- 「ルールを変更したい場合は？」→ CLAUDE.md を編集すれば、新しいセッションに適用されます
+- 「Claude Code を使うのに CLAUDE.md は必要？」→ いいえ、でも Claude がずっと便利になります
+
+**学生が圧倒されている場合：**
+- 安心させる：「すべての機能を使う必要はありません！基本から始めましょう。」
+- シンプルにする：「まずはプロダクトの説明とライティングスタイルを CLAUDE.md に入れるだけで大丈夫です」
+- 励ます：「後からいつでも追加できます」
+
+**Level 1 完了：**
+- これは大きなマイルストーン - 祝いましょう！
+- 全 6 モジュールを簡潔に振り返る
+- 今できることを見せる
+- Level 2 への期待を高める
+
+---
+
+## 成功基準
+
+Module 1.6 は、学生が以下を達成した場合に成功です：
+- 憲法 vs 法律のメタファーを理解している
+- CLAUDE.md が永続的なプロジェクトメモリーを作成することを知っている
+- # 記号がグローバル vs プロジェクトの選択を促すことを理解している
+- 完全な CLAUDE.md の例（TASKFLOW_CLAUDE.md）を見た
+- CLAUDE.md が出力にどのように影響するか（ユーザーストーリーを通じて）を目撃した
+- Level 1 完了に興奮を感じている
+- Level 2 への進み方を知っている
+
+階層について混乱しているようであれば、より多くの例を使用してください。コンセプトはシンプルですが強力です。本当に理解しているか確認してください！
+
+---
+
+**覚えておいてください：これは Level 1 の集大成です。思い出に残るものにしましょう！学生はゼロの知識から実際の Claude Code スキルを身につけました。それを誇りに思い、能力に自信を持ち、Level 2 に胸を躍らせるべきです。それを祝いましょう！**

@@ -1,55 +1,55 @@
-# User Interview: Rachel O'Connor
+# ユーザーインタビュー: Rachel O'Connor
 
-**Date:** October 22, 2024
-**Role:** Design Lead at Rentify (Series A, 35 employees)
-**TaskFlow User Since:** May 2024
-**Interview Duration:** 25 minutes
-
----
-
-## Background
-
-Rachel leads a design team of 4. Uses TaskFlow for design project tracking, feedback collection, and cross-functional collaboration with engineering and product.
+**日付:** 2024年10月22日
+**役職:** Rentify デザインリード（Series A、従業員35名）
+**TaskFlow利用開始:** 2024年5月
+**インタビュー時間:** 25分
 
 ---
 
-## Key Quotes
+## 背景
 
-**On mobile use case:**
-> "Design feedback doesn't stop when I leave the office. Stakeholders send comments at all hours. I want to at least read and acknowledge them quickly from my phone, even if I do the actual design work on desktop."
-
-**On notification gaps:**
-> "I have Slack notifications, email notifications, but no TaskFlow notifications on mobile. So I find out about urgent TaskFlow comments... through Slack messages asking if I saw the TaskFlow comment. The indirection is silly."
-
-**On visual needs:**
-> "I attached a mockup to a task. On mobile web, the image preview is tiny and I can't zoom properly. For a visual person, that's brutal. I need to see the context."
-
-**On collaborative scenarios:**
-> "Design reviews happen in person a lot. Someone asks 'what's the status of the checkout redesign?' and I'm fumbling with mobile web while they wait. With Linear, their designers just pull it up instantly."
+Rachelは4名のデザインチームをリードしています。デザインプロジェクトのトラッキング、フィードバック収集、エンジニアリングやプロダクトとの部門横断コラボレーションにTaskFlowを使用しています。
 
 ---
 
-## Feature Requests
+## 主要な発言
 
-1. Better image viewing and zooming
-2. Push notifications with preview
-3. Quick reactions/emoji responses to comments
-4. Attachment uploads from camera roll
+**モバイルのユースケースについて:**
+> 「デザインへのフィードバックはオフィスを出ても止まりません。ステークホルダーはいつでもコメントを送ってきます。実際のデザイン作業はデスクトップでやるとしても、せめてスマホからすぐに読んで確認したいんです。」
 
----
+**通知のギャップについて:**
+> 「Slackの通知はある、メールの通知もある、でもTaskFlowのモバイル通知がない。だからTaskFlowの緊急コメントを知るのは...TaskFlowのコメント見た？ってSlackのメッセージ経由です。この遠回りは馬鹿げてます。」
 
-## Competitive Pressure
+**ビジュアルのニーズについて:**
+> 「タスクにモックアップを添付したんです。モバイルWebだと画像プレビューが小さすぎてちゃんとズームもできない。ビジュアル重視の人間にとって、それは致命的です。コンテキストが見えないと。」
 
-> "The design community talks. When I mention we use TaskFlow, I always get the 'but no mobile app?' response. It's becoming a reputation thing."
-
----
-
-## Willingness to Pay
-
-> "Our ops team controls the budget, but I'd make the case. A real mobile app would save me probably 30 minutes a day of frustration. That's worth paying for."
+**コラボレーションのシナリオについて:**
+> 「デザインレビューは対面で行うことが多いんです。誰かが『チェックアウトのリデザインの進捗は？』と聞いてきて、私はモバイルWebと格闘してる間に相手は待ってる。Linearなら、デザイナーがすぐ引っ張り出せるのに。」
 
 ---
 
-## Summary
+## 機能リクエスト
 
-Design-specific use cases around visual content and quick feedback. Mobile gap causing reputation concerns in design community. Moderate urgency but strong preference for native experience.
+1. 画像の閲覧とズーム機能の改善
+2. プレビュー付きプッシュ通知
+3. コメントへのクイックリアクション/絵文字レスポンス
+4. カメラロールからの添付ファイルアップロード
+
+---
+
+## 競合からの圧力
+
+> 「デザインコミュニティでは話が広がります。TaskFlowを使ってると言うと、必ず『でもモバイルアプリないんでしょ？』って返ってくる。評判の問題になりつつあります。」
+
+---
+
+## 支払い意向
+
+> 「予算はオペレーションチームが管理してますが、私から提案しますよ。ちゃんとしたモバイルアプリがあれば1日30分のフラストレーションが節約できます。それだけの価値は十分あります。」
+
+---
+
+## まとめ
+
+ビジュアルコンテンツとクイックフィードバックに関するデザイン特有のユースケース。モバイルのギャップがデザインコミュニティでの評判懸念を引き起こしている。緊急度は中程度だが、ネイティブ体験への強い希望がある。

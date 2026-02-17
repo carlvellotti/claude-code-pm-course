@@ -1,55 +1,55 @@
-# User Interview: James Wright
+# ユーザーインタビュー: James Wright
 
-**Date:** October 23, 2024
-**Role:** Operations Manager at LogiFlow (Series B, 200 employees)
-**TaskFlow User Since:** December 2023
-**Interview Duration:** 30 minutes
-
----
-
-## Background
-
-James oversees operations across multiple teams - facilities, IT, HR projects, and vendor management. Uses TaskFlow to track cross-departmental initiatives. Often away from desk dealing with on-site issues.
+**日付:** 2024年10月23日
+**役職:** LogiFlow オペレーションマネージャー（Series B、従業員200名）
+**TaskFlow利用開始:** 2023年12月
+**インタビュー時間:** 30分
 
 ---
 
-## Key Quotes
+## 背景
 
-**On mobile necessity:**
-> "Operations means I'm on my feet. Server room, warehouse, meeting rooms. I'm maybe at my desk 2 hours a day. The other 6 hours, I need to stay connected to what's happening in TaskFlow."
-
-**On real-time gaps:**
-> "Facilities emergency happens, I create a task on my laptop, assign it, walk to deal with it. 30 minutes later I want to check status. Mobile web takes so long to load that I just call the person instead. We've reverted to phone calls because the tool is too slow."
-
-**On team adoption:**
-> "I manage 15 people. Maybe 5 of them sit at desks regularly. The rest are mobile workers. They've basically stopped using TaskFlow because there's no good mobile option. We use a group chat instead. That defeats the purpose."
-
-**On enterprise requirements:**
-> "We're a bigger company with security requirements. If there's a mobile app, it needs SSO, it needs to work with our MDM, it needs to be enterprise-ready. Not just a quick prototype."
+Jamesは複数のチーム（施設管理、IT、人事プロジェクト、ベンダー管理）にまたがるオペレーションを統括しています。部門横断的なイニシアチブのトラッキングにTaskFlowを使用。現場の対応でデスクを離れることが多いです。
 
 ---
 
-## Feature Requests
+## 主要な発言
 
-1. Enterprise SSO support in mobile app
-2. MDM/MAM compatibility
-3. Barcode/QR scanning for asset tracking tasks
-4. Location-based task suggestions
+**モバイルの必要性について:**
+> 「オペレーションは立ち仕事なんです。サーバールーム、倉庫、会議室。デスクにいるのは1日2時間くらい。残りの6時間、TaskFlowで何が起きてるか把握し続ける必要があります。」
 
----
+**リアルタイム性のギャップについて:**
+> 「施設の緊急事態が起きて、ラップトップでタスクを作って、アサインして、対応しに行く。30分後にステータスを確認したい。でもモバイルWebの読み込みが遅すぎて、結局電話しちゃうんです。ツールが遅すぎるから電話に逆戻りしてる。」
 
-## Scale Concerns
+**チームの導入状況について:**
+> 「15人を管理しています。そのうち常にデスクにいるのはたぶん5人。残りはモバイルワーカーです。まともなモバイル手段がないから、彼らは基本的にTaskFlowを使わなくなりました。代わりにグループチャットを使ってます。それじゃ意味がないですよね。」
 
-> "I saw your pricing page. For 200 users, mobile features better be included in our tier, not an add-on. We're already paying significant money."
-
----
-
-## Willingness to Pay
-
-> "We're locked into annual contract. But at renewal, mobile will be a requirement, not a nice-to-have. If you don't have it, we'll evaluate alternatives. Full stop."
+**エンタープライズ要件について:**
+> 「うちはセキュリティ要件がある大企業です。モバイルアプリがあるなら、SSO対応は必須、MDMとの互換性も必須、エンタープライズ対応でなければなりません。単なるプロトタイプじゃダメです。」
 
 ---
 
-## Summary
+## 機能リクエスト
 
-Enterprise/ops persona where mobile workforce is majority of users. Current desktop-only approach causing shadow tool usage (group chats). Renewal risk explicitly stated. Needs enterprise-grade mobile solution.
+1. モバイルアプリでのエンタープライズSSO対応
+2. MDM/MAM互換性
+3. 資産管理タスク用のバーコード/QRスキャン
+4. 位置情報ベースのタスクサジェスション
+
+---
+
+## スケールに関する懸念
+
+> 「料金ページを見ました。200ユーザーなら、モバイル機能は私たちのプランに含まれてるべきで、アドオンにすべきじゃない。すでにかなりの金額を払ってるんですから。」
+
+---
+
+## 支払い意向
+
+> 「年間契約にロックされてます。でも更新時にモバイルは必須条件であって、あればいい程度のものじゃありません。もしなければ、代替ツールを評価します。以上。」
+
+---
+
+## まとめ
+
+モバイルワーカーがユーザーの大半を占めるエンタープライズ/オペレーションペルソナ。現在のデスクトップ専用アプローチがシャドーツール利用（グループチャット）を引き起こしている。契約更新リスクが明確に表明されている。エンタープライズグレードのモバイルソリューションが必要。

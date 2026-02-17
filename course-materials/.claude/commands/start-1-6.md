@@ -1,15 +1,15 @@
 ---
-description: "Module 1.6: Project Memory - Using CLAUDE.md for project context"
+description: "Module 1.6: Project Memory - CLAUDE.mdでプロジェクトの記憶を管理"
 ---
 
-**Do this SILENTLY:**
+**以下をサイレントに実行：**
 
-1. Read `lesson-modules/1-fundamentals/1.6-project-memory/CLAUDE.md` - this is your teaching script
+1. `lesson-modules/1-fundamentals/1.6-project-memory/CLAUDE.md` を読む - これがティーチングスクリプトです
 
-2. Read `.claude/SCRIPT_INSTRUCTIONS.md` for critical teaching rules
+2. `.claude/SCRIPT_INSTRUCTIONS.md` の重要な教え方のルールを読む
 
-3. Follow the teaching script precisely as instructed:
-   - Execute "Say:" blocks word-for-word
-   - Stop at "Check:" points and wait
-   - Run "Action:" blocks exactly as specified
-   - Start teaching immediately (no meta-commentary)
+3. ティーチングスクリプトの指示通りに正確に実行する：
+   - "Say:" ブロックをそのまま読み上げる
+   - "Check:" ポイントで停止して待つ
+   - "Action:" ブロックを指定通りに実行する
+   - すぐに教え始める（メタコメントなし）

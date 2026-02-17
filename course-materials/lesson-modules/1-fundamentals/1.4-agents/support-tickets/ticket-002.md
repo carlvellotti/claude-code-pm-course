@@ -1,43 +1,43 @@
-# Support Ticket #4589
+# サポートチケット #4589
 
-**Date:** October 8, 2024
-**Customer:** Buildwell Construction (Pro tier, 25 seats)
-**Contact:** Mike Torres, Project Coordinator
-**Priority:** High
-**Status:** Open
+**日付:** 2024年10月8日
+**顧客:** Buildwell Construction（Proプラン、25シート）
+**連絡先:** Mike Torres、プロジェクトコーディネーター
+**優先度:** 高
+**ステータス:** オープン
 
 ---
 
-## Subject: URGENT - Field workers can't use TaskFlow on job sites
+## 件名: 緊急 - 現場作業員が作業現場でTaskFlowを使えない
 
-## Description
+## 説明
 
-We're a construction company and most of our team works on job sites, not in offices. They only have phones, not laptops.
+私たちは建設会社で、チームの大半はオフィスではなく作業現場で働いています。ラップトップではなくスマホしか持っていません。
 
-The mobile website is basically unusable:
-- Takes 30+ seconds to load a board
-- Constantly logs us out
-- Can't upload photos from phone easily
-- No offline access (job sites often have poor signal)
+モバイルWebサイトは基本的に使い物になりません:
+- ボードの読み込みに30秒以上かかる
+- 頻繁にログアウトされる
+- スマホからの写真アップロードが簡単にできない
+- オフラインアクセスがない（作業現場は電波が弱いことが多い）
 
-We switched from Asana specifically for TaskFlow's features, but we didn't realize there was no mobile app. Our field team (15 people) has basically stopped using TaskFlow entirely because of this.
+TaskFlowの機能が気に入ってAsanaから移行したのですが、モバイルアプリがないとは知りませんでした。現場チーム（15名）は基本的にTaskFlowの使用を完全にやめてしまいました。
 
-Is there any workaround? Or should we be looking at other tools?
+何か回避策はありますか？それとも他のツールを検討すべきでしょうか？
 
 Mike
 
 ---
 
-## Internal Notes
+## 社内メモ
 
-- New customer (2 months)
-- Already expressing regret about switching
-- Field workforce = mobile-only users
-- High churn risk
-- Escalated to CSM for retention call
+- 新規顧客（2ヶ月）
+- すでに移行を後悔する発言あり
+- 現場ワーカー = モバイル専用ユーザー
+- 解約リスクが高い
+- CSMにリテンションコールとしてエスカレーション済み
 
 ---
 
-## Tags
+## タグ
 
 `mobile` `critical` `churn-risk` `offline` `field-workers` `photo-upload`

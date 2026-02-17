@@ -1,45 +1,45 @@
-# Support Ticket #4634
+# サポートチケット #4634
 
-**Date:** October 12, 2024
-**Customer:** FinanceFlow LLC (Enterprise tier, 150 seats)
-**Contact:** Robert Chen, VP of Engineering
-**Priority:** High
-**Status:** Escalated
+**日付:** 2024年10月12日
+**顧客:** FinanceFlow LLC（Enterpriseプラン、150シート）
+**連絡先:** Robert Chen、エンジニアリングVP
+**優先度:** 高
+**ステータス:** エスカレーション済み
 
 ---
 
-## Subject: Mobile app requirement for enterprise rollout
+## 件名: エンタープライズ展開におけるモバイルアプリの要件
 
-## Description
+## 説明
 
-Hi TaskFlow team,
+TaskFlowチームの皆さん、
 
-We're in the process of rolling out TaskFlow across our entire engineering organization (150 people). However, our security team has raised concerns about the lack of a native mobile app.
+現在、エンジニアリング組織全体（150名）へのTaskFlowの展開を進めています。しかし、セキュリティチームからネイティブモバイルアプリがないことについて懸念が上がっています。
 
-Specifically:
-1. Mobile web doesn't integrate with our MDM (Mobile Device Management)
-2. We can't enforce app-level security policies
-3. No way to remote wipe TaskFlow data if a device is lost
-4. Browser-based access is harder to audit
+具体的には:
+1. モバイルWebが当社のMDM（モバイルデバイス管理）と統合できない
+2. アプリレベルのセキュリティポリシーを適用できない
+3. デバイス紛失時にTaskFlowのデータをリモートワイプする手段がない
+4. ブラウザベースのアクセスは監査が難しい
 
-These are blockers for full enterprise deployment. We can proceed with desktop users, but ~40% of our team needs mobile access for on-call rotations and incident response.
+これらはエンタープライズ全体への展開のブロッカーです。デスクトップユーザーは先行できますが、チームの約40%がオンコールローテーションやインシデント対応のためにモバイルアクセスを必要としています。
 
-What's the roadmap for a native mobile app with enterprise security features?
+エンタープライズセキュリティ機能を備えたネイティブモバイルアプリのロードマップを教えてください。
 
 Robert
 
 ---
 
-## Internal Notes
+## 社内メモ
 
-- Enterprise customer, $180k ARR
-- Currently only 80 of 150 seats active (desktop users)
-- Security concerns blocking remaining 70 seats
-- Direct line to CTO if needed
-- **CRITICAL: Do not lose this account**
+- エンタープライズ顧客、ARR $180k
+- 現在150シート中80シートのみアクティブ（デスクトップユーザー）
+- セキュリティ上の懸念が残り70シートをブロック
+- 必要に応じてCTOへの直通ラインあり
+- **重要: このアカウントは絶対に失わないこと**
 
 ---
 
-## Tags
+## タグ
 
 `mobile` `enterprise` `security` `mdm` `compliance` `high-value` `blocker`

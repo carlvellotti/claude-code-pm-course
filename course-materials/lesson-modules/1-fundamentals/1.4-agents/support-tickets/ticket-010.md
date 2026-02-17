@@ -1,50 +1,50 @@
-# Support Ticket #4801
+# サポートチケット #4801
 
-**Date:** October 25, 2024
-**Customer:** RemoteFirst Agency (Pro tier, 15 seats)
-**Contact:** Nina Patel, CEO
-**Priority:** Medium
-**Status:** Open
+**日付:** 2024年10月25日
+**顧客:** RemoteFirst Agency（Proティア、15シート）
+**連絡先:** Nina Patel、CEO
+**優先度:** 中
+**ステータス:** オープン
 
 ---
 
-## Subject: Mobile experience killing our productivity
+## 件名: モバイル体験が生産性を低下させている
 
-## Description
+## 説明
 
-Hi TaskFlow,
+TaskFlowの皆さんへ、
 
-We're a fully remote marketing agency. "Remote" means we work from everywhere - home offices, co-working spaces, airports, cafes. Mobile access isn't a luxury, it's essential.
+私たちは完全リモートのマーケティングエージェンシーです。「リモート」とは、あらゆる場所で働くということです - ホームオフィス、コワーキングスペース、空港、カフェ。モバイルアクセスは贅沢品ではなく、必需品です。
 
-The current mobile web experience is hurting us:
-- Page loads take 10-15 seconds on average
-- Frequently get logged out mid-task
-- Images/attachments barely load
-- No way to get notified without keeping browser open
+現在のモバイルウェブ体験が私たちに悪影響を与えています:
+- ページの読み込みに平均10〜15秒かかります
+- タスクの途中で頻繁にログアウトされます
+- 画像や添付ファイルがほとんど読み込まれません
+- ブラウザを開いたままにしないと通知を受け取れません
 
-We've tried everything:
-- Adding to home screen (still slow)
-- Different browsers (Safari, Chrome - same issues)
-- Clearing cache regularly (temporary fix at best)
+あらゆる手段を試しました:
+- ホーム画面に追加（依然として遅い）
+- 異なるブラウザ（Safari、Chrome - 同じ問題）
+- 定期的なキャッシュクリア（一時的な改善にしかならない）
 
-My team has started using Slack threads to coordinate instead of TaskFlow because at least Slack works on mobile. That defeats the purpose of having TaskFlow.
+チームは、TaskFlowの代わりにSlackのスレッドで調整するようになりました。少なくともSlackはモバイルで機能するからです。これではTaskFlowを導入している意味がありません。
 
-Is a mobile app anywhere on the roadmap? Even a basic one would be better than what we have now.
+モバイルアプリはロードマップのどこかにありますか？基本的なものでも、現状よりはずっと良いです。
 
 Nina
 
 ---
 
-## Internal Notes
+## 社内メモ
 
-- Remote agency = 100% distributed workforce
-- Shadow tool usage (Slack replacing TaskFlow for coordination)
-- CEO directly expressing frustration
-- Good company for testimonial if mobile launches
-- Pro tier but potential to upgrade with better mobile
+- リモートエージェンシー = 100%分散型チーム
+- シャドーツールの利用（SlackがTaskFlowの代わりに使われている）
+- CEOが直接フラストレーションを表明
+- モバイルがローンチされた場合の推薦文候補
+- Proティアだが、モバイル改善でアップグレードの可能性あり
 
 ---
 
-## Tags
+## タグ
 
 `mobile` `remote-work` `performance` `shadow-tools` `feature-request` `ceo-feedback`

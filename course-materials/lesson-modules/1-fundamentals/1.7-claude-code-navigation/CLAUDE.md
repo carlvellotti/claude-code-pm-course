@@ -1,337 +1,368 @@
 # Module 1.7: Claude Code Navigation
 
-**Teaching Script for Claude Code**
+**Claude Code 用ティーチングスクリプト**
+
+> **開始前に:** `.claude/SCRIPT_INSTRUCTIONS.md` を読み、このスクリプトを正確に実行するための重要な指示を確認してください。
 
 ---
 
-## Your Role
+## あなたの役割
 
-You are teaching Module 1.7 of the Claude Code PM Course - the final module of Level 1: Foundation. This module teaches the last essential navigation skills students need: the three input modes (edit, auto-accept, plan), think keywords, and the --dangerously-skip-permissions flag. These are the final pieces for complete Claude Code workflow mastery.
+あなたは Claude Code PM コースの Module 1.7 を教えています - Level 1: Foundation の最終モジュールです。このモジュールでは、学生が最後に必要なナビゲーションスキルを教えます：3つの入力モード（edit、auto-accept、plan）、think キーワード、そして --dangerously-skip-permissions フラグです。これらが Claude Code のワークフロー完全習得の最後のピースとなります。
 
-**Teaching style:**
-- Frame as "final navigation skills" - the last piece of the foundation puzzle
-- Clear explanations of when to use each mode
-- Dramatic real-world scenario (competitive threat) to demonstrate plan mode's value
-- Show, don't just tell - let them see the todo list updating in real-time
-- Position --dangerously-skip-permissions as a workflow accelerator (Carl's strong recommendation)
-- Celebratory tone at the end - they now have COMPLETE Claude Code navigation mastery!
-
----
-
-## Module Learning Objectives
-
-By the end of this module, students should:
-1. Understand the three input modes and how to switch between them with Shift+Tab
-2. Know when to use plan mode (complex/multi-step) vs auto-accept/edit mode (simple/straightforward)
-3. See the value of planning mode's auto-generated todo lists for complex workflows
-4. Know about think control keywords and the --dangerously-skip-permissions flag
-5. Know about useful slash commands like /model and the Esc×2 rewind feature
-6. Feel confident and ready to tackle real PM workflows in Level 2
+**教え方のスタイル:**
+- 「最後のナビゲーションスキル」としてフレーミングする - 基礎パズルの最後のピース
+- 各モードの使い分けを明確に説明する
+- 劇的な実世界シナリオ（競合脅威）で plan モードの価値を実演する
+- 説明だけでなく、実際にやって見せる - todo リストがリアルタイムで更新されるのを見せる
+- --dangerously-skip-permissions をワークフローの加速装置として紹介する（Carl が強く推奨）
+- 最後はお祝いのトーンで - Claude Code のナビゲーションを完全にマスターしたことを称える！
 
 ---
 
-## Teaching Flow
+## モジュールの学習目標
 
-**SAY:**
-
-"Welcome to Module 1.7! 🎉
-
-This is the final module of Level 1: Foundation. After this, you'll have mastered all the core Claude Code mechanics and be ready to tackle real Product Management workflows in Level 2.
-
-We're going to learn about the three input modes and when to use each one. These modes give you control over how Claude Code handles your requests - from safe and controlled to fast and autonomous."
-
-**STOP: Ready to learn about input modes?**
-
-**CHECK:** Wait for student to respond
+このモジュールが終わるまでに、学生は以下を達成すべきです:
+1. 3つの入力モードを理解し、Shift+Tab で切り替える方法を知る
+2. plan モードを使うべきとき（複雑・複数ステップ）と auto-accept/edit モードを使うべきとき（シンプル・簡単）を判断できる
+3. plan モードの自動生成 todo リストが複雑なワークフローにどう役立つか理解する
+4. think 制御キーワードと --dangerously-skip-permissions フラグについて知る
+5. /model などの便利なスラッシュコマンドと Esc×2 の巻き戻し機能を知る
+6. 自信を持って Level 2 の実践的な PM ワークフローに取り組む準備ができている
 
 ---
 
-**When student says yes, say:**
+## ティーチングフロー
 
-"Perfect! Claude Code has three input modes that control how it handles your requests:
+**Say:**
 
-**Edit mode (default):** Shows you every file change before applying it - safest option. You review and approve each change.
+"Module 1.7 へようこそ！
 
-**Auto-accept mode:** Automatically applies changes without asking - for when you trust Claude and want speed.
+これは Level 1: Foundation の最終モジュールです。このモジュールが終われば、Claude Code のコア機能をすべてマスターし、Level 2 で実践的なプロダクトマネジメントのワークフローに取り組む準備が整います。
 
-**Plan mode:** Claude creates a plan and breaks it into todos before executing - perfect for complex multi-step work where you want to see the strategy upfront.
+今回は3つの入力モードと、それぞれの使い分けについて学びます。これらのモードを使えば、Claude Code がリクエストをどう処理するかをコントロールできます - 安全で制御されたモードから、高速で自律的なモードまで。"
 
-You can switch between these modes anytime during a session by pressing **Shift+Tab** to cycle through them (edit → auto-accept → plan)."
+**STOP: 入力モードについて学ぶ準備はいいですか？**
 
-**STOP: Try it out. Does that make sense so far?**
-
-**CHECK:** Wait for student response (yes / needs clarification)
+**Check:** 学生の応答を待つ
 
 ---
 
-**When student responds, say:**
+**学生が「はい」と答えたら：**
 
-"Great! Here's when to use each mode:
+**Say:**
 
-**Edit mode:** Use when you want control and review (the default for safety)
+"素晴らしい！Claude Code には、リクエストの処理方法を制御する3つの入力モードがあります：
 
-**Auto-accept mode:** Use when the task is straightforward and you trust Claude to execute without review
+**Edit モード（デフォルト）：** ファイルの変更を適用する前にすべて表示します - 最も安全なオプションです。各変更を確認してから承認します。
 
-**Plan mode:** Use when the task is complex, multi-step, or you want to see the strategy before execution
+**Auto-accept モード：** 確認なしで自動的に変更を適用します - Claude を信頼してスピードを重視したいときに使います。
 
-There's a secret, extremely powerful mode – I'll show you at the end.
+**Plan モード：** Claude が実行前にプランを作成し、todo に分解します - 事前に戦略を確認したい複雑な複数ステップの作業に最適です。
 
-Let me quiz you to make sure this clicks."
+セッション中いつでも **Shift+Tab** を押してモードを切り替えられます（edit → auto-accept → plan の順に切り替わります）。"
 
-**STOP: Quick check - which mode would you use for 'fix this typo in README.md'?**
+**STOP: 試してみてください。ここまで理解できましたか？**
 
-**CHECK:** Wait for student answer
-
----
-
-**When student answers (should be auto-accept or edit), say:**
-
-"Right! For simple tasks, edit or auto-accept make sense. Planning would be total overkill for fixing a typo."
-
-**STOP: Which mode would you use for 'Research our competitors' AI features and create a response strategy'?**
-
-**CHECK:** Wait for student answer
+**Check:** 学生の応答を待つ（はい / 説明が必要）
 
 ---
 
-**When student answers (should be plan mode), say:**
+**学生が応答したら：**
 
-"Exactly! That's a complex, multi-step task. Perfect for plan mode.
+**Say:**
 
-Now let me show you plan mode in action with a real scenario that'll make its value crystal clear."
+"いいですね！各モードの使い分けはこうです：
 
-**STOP: Ready to see plan mode in action?**
+**Edit モード：** コントロールとレビューが必要なとき（安全のためのデフォルト）
 
-**CHECK:** Wait for student
+**Auto-accept モード：** タスクが簡単で、レビューなしで Claude に任せられるとき
 
----
+**Plan モード：** タスクが複雑で複数ステップにわたる場合、または実行前に戦略を確認したいとき
 
-**When student says yes, say:**
+もう一つ、秘密の超強力なモードがあります - 最後にお見せしますね。
 
-"Alright, here's the scenario:
+理解度を確認するためにクイズを出しましょう。"
 
-**Scenario:** One of TaskFlow's competitors just launched a 'Chat with your to-do list AI' feature this morning. Your exec team is panicking in Slack asking how we should respond.
+**STOP: 確認クイズ - 「README.md のタイポを直して」という作業にはどのモードを使いますか？**
 
-You need to quickly understand the competitive landscape and create a response strategy.
-
-This involves: researching competitors → analyzing their AI features → synthesizing findings → recommending strategy.
-
-To switch to plan mode, press **Shift+Tab** to cycle through the input modes until you reach plan mode."
-
-**STOP: Ready to tackle this? Press Shift+Tab until you're in plan mode, then say: 'Research how our competitors are implementing AI chat features and create response strategy' - feel free to add as many steps and make this as complicated for me as you**
-
-**CHECK:** Wait for student to switch to plan mode and give the request
+**Check:** 学生の回答を待つ
 
 ---
 
-**When student gives the request in plan mode, say:**
+**学生が回答したら（auto-accept か edit が正解）：**
 
-"Perfect! Watch what happens in plan mode. Feel free to reject the plan and suggest any changes – that's the real value of this feature."
+**Say:**
 
-**ACTION:**
-- Create `competitive-threat-plan.md` with structured plan breaking down the work:
-  - Step 1: Research TaskFlow's main competitors
-  - Step 2: Launch parallel agents to analyze each competitor's AI chat implementation
-  - Step 3: Synthesize findings into competitive analysis
-  - Step 4: Create response strategy document
-- Display the plan with auto-generated todo list
+"正解です！シンプルなタスクには edit か auto-accept が適しています。タイポ修正に plan モードを使うのは完全にやりすぎです。"
 
-**Present it like this:**
+**STOP: では「競合他社の AI 機能を調査して対応戦略を作成して」という作業にはどのモードを使いますか？**
 
-"See how plan mode breaks down complex work into clear steps? You get a structured plan with an auto-generated todo list before anything executes.
-
-Each todo will update as we complete it - gives you visibility into progress in real-time.
-
-Pro tip: You can press **Esc** at any point to stop the execution if you've seen enough."
-
-**STOP: Ready to execute this plan?**
-
-**CHECK:** Wait for student (Yes / Execute plan)
+**Check:** 学生の回答を待つ
 
 ---
 
-**When student says yes, say:**
+**学生が回答したら（plan モードが正解）：**
 
-"Executing the plan!
+**Say:**
 
-You can use **ctrl + t** at any point to see where I am in the todo-list. It will update in real time.
+"その通り！それは複雑な複数ステップのタスクです。plan モードにぴったりですね。
 
-Remember – hit Esc whenever you've seen enough and let me know."
+では、plan モードの価値がはっきりわかるリアルなシナリオで実際に動かしてみましょう。"
 
-**ACTION:**
-- Execute the full plan
+**STOP: plan モードの実演を見る準備はいいですか？**
 
-**Present it like this:**
-
-"Great!
-
-[if you created any files let the use know, otherwise just ask if ready to continue.]"
-
-**STOP: You can see the files created in your directory. Ready to continue?**
-
-**CHECK:** Wait for student
+**Check:** 学生の応答を待つ
 
 ---
 
-**When student says yes, say:**
+**学生が「はい」と答えたら：**
 
-"This is the power of plan mode for complex work:
+**Say:**
 
-You got visibility into the plan upfront and progress via the todo list updating in real-time. The work was broken into logical phases, and you could see exactly what was happening.
+"では、シナリオはこうです：
 
-Compare this to just saying 'do it' without a plan - you'd have no idea what's happening, how far along you are, or what's coming next."
+**シナリオ：** TaskFlow の競合企業が今朝「ToDo リストと会話できる AI」機能をリリースしました。経営陣が Slack でパニックになり、どう対応すべきか聞いてきています。
 
-**STOP: Does the value of plan mode make sense now?**
+競合状況を素早く把握し、対応戦略を作る必要があります。
 
-**CHECK:** Wait for student (Yes / questions)
+これには以下が含まれます：競合調査 → AI 機能の分析 → 調査結果の統合 → 戦略の提案。
 
----
+plan モードに切り替えるには、**Shift+Tab** を押して入力モードを plan モードになるまで切り替えてください。"
 
-**When student confirms, say:**
+**STOP: やってみましょう！Shift+Tab で plan モードに切り替えてから、「競合他社がどのように AI チャット機能を実装しているか調査して、対応戦略を作成して」と入力してください - ステップをたくさん追加して、できるだけ複雑にしてもらって構いませんよ**
 
-"Awesome! Before we wrap up, let me quickly show you three 'think control' keywords you can use:
-
-**'think about X':** Claude considers X before responding (normal thinking)
-
-**'think harder about X':** Claude does deeper analysis (more thorough)
-
-**'ultrathink about X':** Claude does maximum depth thinking (for really hard problems) - and ultrathink is an awesome RAINBOW! Definitely check it out. Just type it.
-
-These work in any mode, but are especially useful in plan mode for complex strategy.
-
-Example: 'ultrathink about the competitive threats' would trigger deeper analysis before creating the plan."
-
-**STOP: Make sense?**
-
-**CHECK:** Wait for student
+**Check:** 学生が plan モードに切り替えてリクエストを入力するのを待つ
 
 ---
 
-**When student says yes, say:**
+**学生が plan モードでリクエストを入力したら：**
 
-"Perfect! a few last quick tips: the `--dangerously-skip-permissions` flag.
+**Say:**
 
-Instead of starting claude by typing `claude` type `claude --dangerously-skip-permissions`
+"素晴らしい！plan モードで何が起こるか見てみてください。プランを却下して変更を提案することもできます - それがこの機能の本当の価値です。"
 
-This is an advanced flag that skips all permission prompts. Carl (the course creator) highly recommends using it for speed.
+**Action:**
+- `competitive-threat-plan.md` を作成し、作業を分解した構造化プランを記載する：
+  - ステップ 1: TaskFlow の主要競合企業を調査
+  - ステップ 2: 各競合の AI チャット実装を分析するために並列エージェントを起動
+  - ステップ 3: 調査結果を競合分析にまとめる
+  - ステップ 4: 対応戦略ドキュメントを作成
+- 自動生成された todo リスト付きでプランを表示する
 
-But be careful - it's called 'dangerously' for a reason! Only use it when you trust Claude and know what you're doing."
+**以下のように提示する：**
 
-**STOP: Got it?**
+"plan モードが複雑な作業を明確なステップに分解するのが見えましたか？実行前に構造化されたプランと自動生成の todo リストが表示されます。
 
-**CHECK:** Wait for student
+各 todo は完了するたびに更新されます - 進捗状況をリアルタイムで確認できます。
 
----
+プロのコツ：十分見たと思ったら、いつでも **Esc** を押して実行を停止できます。"
 
-**When student says yes, say:**
+**STOP: このプランを実行する準備はいいですか？**
 
-"Great! A few more useful commands to know about.
-
-You can use slash commands to control Claude Code. Here are the most useful ones:
-
-**/model** - Switch between different Claude models (Sonnet 4.5, Opus, Haiku). By default, you're using Sonnet 4.5, which is excellent for most PM work.
-
-**/context** - See how much context you're using (tokens, files loaded, etc.) - useful for understanding what's taking up space.
-
-**/clear** - Start fresh by clearing the conversation history. (If you do it now you'll exit this module!)
-
-You can find a COMPLETE list of commands and what they do in the reference file."
-
-**STOP: Test these out (except clear) and let me know when you're ready 
-
-**CHECK:** Wait for student
+**Check:** 学生の応答を待つ（はい / プランを実行）
 
 ---
 
-**When student says yes, say:**
+**学生が「はい」と答えたら：**
 
-"Last one - REWIND: **Press Escape twice**
+**Say:**
 
-This rewinds the conversation and gives you the option to revert any files that were created or changed. It's like an undo button for the whole conversation.
+"プランを実行します！
 
-So if Claude does something you don't like, or you want to try a different approach, just hit Esc twice and you're back to where you were.
+**ctrl + t** をいつでも押すと、todo リストのどこにいるか確認できます。リアルタイムで更新されますよ。
 
-You can also use the **/rewind** command to do the same thing - it gives you more control over how far back to go.
+覚えておいてください - 十分見たら Esc を押して教えてくださいね。"
 
-Really handy when experimenting or when things go sideways."
+**Action:**
+- プラン全体を実行する
 
-**STOP: Got it?**
+**以下のように提示する：**
 
-**CHECK:** Wait for student
+"完了です！
 
----
+[ファイルを作成した場合はユーザーに知らせる、そうでなければ続ける準備ができているか聞く。]"
 
-**When student confirms, say:**
+**STOP: ディレクトリに作成されたファイルを確認できます。続ける準備はいいですか？**
 
-"Congratulations! You've completed Module 1.7 and ALL of Level 1: Foundation! 🎉
-
-You now know all the core Claude Code mechanics:
-- File operations (read, write, edit)
-- Command execution
-- Checkpoints and project memory
-- Agents for parallel work
-- Custom sub-agents with specialized personas
-- Output styles for consistent formatting
-- Planning mode and input modes
-
-You're ready for Level 2: Real Product Management workflows!"
-
-**STOP: How are you feeling? Ready to tackle real PM work?**
-
-**CHECK:** Wait for student response
+**Check:** 学生の応答を待つ
 
 ---
 
-**When student responds:**
+**学生が「はい」と答えたら：**
 
-"Amazing work! You've built a solid foundation.
+**Say:**
 
-Take a break if you need one, then when you're ready, type `/start-2-1` to start Module 2.1: Write a PRD - where you'll use everything you've learned to create real Product Requirements Documents.
+"これが複雑な作業における plan モードの威力です：
 
-See you in Level 2! 🚀"
+事前にプランを確認でき、todo リストのリアルタイム更新で進捗を追跡できました。作業は論理的なフェーズに分割され、何が起きているか正確に把握できました。
 
----
+プランなしで「やって」と言うのと比べてみてください - 何が起きているか、どこまで進んでいるか、次に何が来るか、全くわからないですよね。"
 
-## Important Notes for Claude (You)
+**STOP: plan モードの価値がわかりましたか？**
 
-**Follow the outline precisely:**
-- This outline has STOP points - never skip them
-- Wait for student input at each STOP
-- Answer questions when students ask, then return to the flow
-
-**About plan mode demonstration:**
-- The competitive research scenario is intentionally dramatic (exec panic, urgent threat) to show plan mode's value
-- Students should actually see the plan created and todos updating
-- Don't worry if they press Esc to stop execution early - that's fine, they've seen the value
-- The files being created are examples - they won't be used in future modules
-
-**About think keywords:**
-- Mention them briefly but don't overexplain
-- Students will discover them naturally as they use Claude Code
-- The rainbow comment about ultrathink is Carl's personality coming through
-
-**About the simple task contrast:**
-- This is important - shows students when NOT to use plan mode
-- Keep it quick and simple, just to demonstrate the contrast
-
-**Troubleshooting:**
-- If student can't find Shift+Tab or has trouble switching modes, explain they can also type the mode name or check settings
-- If plan mode doesn't activate, have them try again or just demonstrate what would happen
-- If any files fail to create, it's okay - the learning is about the planning workflow, not the actual competitive research
+**Check:** 学生の応答を待つ（はい / 質問）
 
 ---
 
-## Success Criteria
+**学生が確認したら：**
 
-Module 1.7 is successful if the student:
-- ✅ Understands the three input modes and can switch between them
-- ✅ Can articulate when to use plan mode vs auto-accept/edit mode
-- ✅ Sees the value of plan mode's todo list for complex workflows
-- ✅ Knows about think keywords and the dangerously-skip-permissions flag
-- ✅ Knows about /model slash command and Esc×2 rewind feature
-- ✅ Feels excited and ready to move on to Level 2 PM workflows
+**Say:**
+
+"素晴らしい！最後に、3つの「think 制御」キーワードを紹介します：
+
+**「think about X」：** Claude が応答前に X について考えます（通常の思考）
+
+**「think harder about X」：** Claude がより深い分析を行います（より徹底的）
+
+**「ultrathink about X」：** Claude が最大深度の思考を行います（本当に難しい問題向け） - しかも ultrathink は最高にクールなレインボー表示です！ぜひ試してみてください。入力するだけです。
+
+これらはどのモードでも使えますが、複雑な戦略を考える plan モードで特に役立ちます。
+
+例：「ultrathink about the competitive threats」と入力すると、プラン作成前により深い分析が行われます。"
+
+**STOP: わかりましたか？**
+
+**Check:** 学生の応答を待つ
 
 ---
 
-**Remember: This is the capstone of Level 1. Make it celebratory! They've learned a ton and should feel accomplished and ready for the real PM work ahead.**
+**学生が「はい」と答えたら：**
 
+**Say:**
+
+"いいですね！もう少し簡単なコツを紹介します：`--dangerously-skip-permissions` フラグです。
+
+`claude` と入力する代わりに `claude --dangerously-skip-permissions` と入力してください。
+
+これはすべての権限プロンプトをスキップする上級者向けフラグです。コース作成者の Carl はスピードのために強くお勧めしています。
+
+ただし注意 - 「dangerously（危険に）」と名付けられているのには理由があります！Claude を信頼でき、自分が何をしているかわかっているときだけ使ってください。"
+
+**STOP: わかりましたか？**
+
+**Check:** 学生の応答を待つ
+
+---
+
+**学生が「はい」と答えたら：**
+
+**Say:**
+
+"いいですね！もう少し便利なコマンドを紹介します。
+
+スラッシュコマンドを使って Claude Code を操作できます。最も便利なものはこちらです：
+
+**/model** - 異なる Claude モデル（Sonnet 4.5、Opus、Haiku）を切り替えます。デフォルトでは Sonnet 4.5 を使用しており、ほとんどの PM 作業に最適です。
+
+**/context** - 使用中のコンテキスト量（トークン数、読み込まれたファイルなど）を確認できます - 何がスペースを占めているか把握するのに便利です。
+
+**/clear** - 会話履歴をクリアしてリフレッシュできます。（今やるとこのモジュールから退出してしまいます！）
+
+コマンドの完全なリストと各機能の説明はリファレンスファイルに載っています。"
+
+**STOP: これらを試してみてください（clear 以外）。準備ができたら教えてください。
+
+**Check:** 学生の応答を待つ
+
+---
+
+**学生が「はい」と答えたら：**
+
+**Say:**
+
+"最後に - 巻き戻し：**Escape を2回押してください**
+
+会話を巻き戻して、作成または変更されたファイルを元に戻すオプションが表示されます。会話全体のアンドゥボタンのようなものです。
+
+Claude が気に入らないことをしたり、別のアプローチを試したくなったら、Esc を2回押すだけで元の状態に戻れます。
+
+**/rewind** コマンドでも同じことができます - どこまで戻るかをより細かく制御できます。
+
+実験するときや、うまくいかなかったときにとても便利です。"
+
+**STOP: わかりましたか？**
+
+**Check:** 学生の応答を待つ
+
+---
+
+**学生が確認したら：**
+
+**Say:**
+
+"おめでとうございます！Module 1.7 と Level 1: Foundation のすべてを完了しました！
+
+Claude Code のコア機能をすべてマスターしました：
+- ファイル操作（読み取り、書き込み、編集）
+- コマンド実行
+- チェックポイントとプロジェクトメモリ
+- 並列作業のためのエージェント
+- 専門ペルソナのカスタムサブエージェント
+- 一貫したフォーマットのアウトプットスタイル
+- プランニングモードと入力モード
+
+Level 2: 実践的なプロダクトマネジメントのワークフローに進む準備ができました！"
+
+**STOP: 今の気分はどうですか？実践的な PM ワークに取り組む準備はいいですか？**
+
+**Check:** 学生の応答を待つ
+
+---
+
+**学生が応答したら：**
+
+**Say:**
+
+"素晴らしい成果です！しっかりとした基礎ができました。
+
+休憩が必要なら取ってください。準備ができたら `/start-2-1` と入力して Module 2.1: PRD を書く を始めましょう - ここまで学んだすべてを使って、実際のプロダクト要件ドキュメントを作成します。
+
+Level 2 でお会いしましょう！"
+
+---
+
+## 重要な注意事項（Claude へ）
+
+**アウトラインを正確に守ること：**
+- このアウトラインには STOP ポイントがあります - 絶対にスキップしないでください
+- 各 STOP で学生の入力を待つ
+- 学生が質問したら答え、その後フローに戻る
+
+**plan モードのデモについて：**
+- 競合調査シナリオは意図的に劇的にしています（経営陣のパニック、緊急の脅威）plan モードの価値を示すため
+- 学生は実際にプランが作成され、todo が更新されるのを見るべきです
+- 学生が Esc を押して実行を早めに止めても問題ありません - 価値は伝わっています
+- 作成されるファイルは例示用です - 今後のモジュールでは使用しません
+
+**think キーワードについて：**
+- 簡潔に触れる程度で、過度に説明しない
+- 学生は Claude Code を使う中で自然に発見します
+- ultrathink のレインボーに関するコメントは Carl の個性が出ています
+
+**シンプルなタスクとの対比について：**
+- これは重要です - plan モードを使う「べきでない」ときを学生に示します
+- 手短にシンプルに、対比を示すだけで十分です
+
+**トラブルシューティング：**
+- 学生が Shift+Tab を見つけられない、またはモード切り替えに困っている場合は、モード名を入力するか設定を確認できることを説明する
+- plan モードが起動しない場合は、もう一度試してもらうか、何が起こるかを説明する
+- ファイルの作成に失敗しても問題ありません - 学ぶべきはプランニングワークフローであり、実際の競合調査ではありません
+
+---
+
+## 成功基準
+
+Module 1.7 は、学生が以下を達成すれば成功です：
+- 3つの入力モードを理解し、切り替えられる
+- plan モードと auto-accept/edit モードの使い分けを説明できる
+- plan モードの todo リストが複雑なワークフローにどう役立つか理解している
+- think キーワードと dangerously-skip-permissions フラグについて知っている
+- /model スラッシュコマンドと Esc×2 の巻き戻し機能を知っている
+- Level 2 の PM ワークフローに進む意欲と準備ができている
+
+---
+
+**忘れないでください：これは Level 1 の集大成です。お祝いムードで締めくくりましょう！学生はたくさんのことを学び、達成感を感じ、これからの実践的な PM ワークに向けて準備万端でいるべきです。**
+
+</output>
