@@ -299,6 +299,21 @@ All course example files MUST use `.md` extension (not `.txt`) because:
 **Branch:**
 Main branch is `main` - use this for pull requests.
 
+### Auto-commit Policy (Claude Code Mobile / Web Sessions)
+
+**This repo is used via Claude Code on the web (not locally).** After every file change, immediately commit and push to the current branch:
+
+```bash
+git add <changed-file>
+git commit -m "Brief description of change"
+git push -u origin <current-branch>
+```
+
+- Always use the current branch (never push to `main` directly)
+- Commit after each individual file edit — don't batch multiple changes
+- Use clear, descriptive commit messages
+- This keeps the remote GitHub fork in sync since there is no local filesystem to fall back on
+
 ## Website Theme Customization
 
 The site uses a teal color scheme (`primaryHue: 169`) with dark theme default. Footer includes CC BY-NC-ND 4.0 license attribution.
