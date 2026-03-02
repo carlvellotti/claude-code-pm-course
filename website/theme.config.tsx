@@ -36,9 +36,9 @@ export default {
     const siteUrl = 'https://ccforpms.com'
     const isHome = asPath === '/'
     const pageTitle = isHome
-      ? 'Claude Code Course for Product Managers | Free Interactive Tutorial'
+      ? 'Claude Code for Product Managers | Free PM Tutorial & Course'
       : (title ? `${title} – Claude Code for Product Managers` : 'Claude Code for Product Managers')
-    const description = frontMatter?.description || 'Learn Claude Code IN Claude Code! Free Claude Code course for Product Managers - master AI agents, file operations, and PM workflows. No videos, just doing.'
+    const description = frontMatter?.description || 'Learn Claude Code IN Claude Code! Free Claude Code tutorial for Product Managers — master AI agents, file ops, and PM workflows. Hands-on, no videos.'
     const ogImage = frontMatter?.ogImage || `${siteUrl}/images/better-graphic.png`
     const url = `${siteUrl}${asPath}`
 
