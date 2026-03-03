@@ -201,7 +201,8 @@ def generate(
     config = types.GenerateContentConfig(
         response_modalities=['TEXT', 'IMAGE'],
         image_config=types.ImageConfig(
-            aspectRatio=aspect_ratio
+            aspectRatio=aspect_ratio,
+            image_size=resolution
         )
     )
 
