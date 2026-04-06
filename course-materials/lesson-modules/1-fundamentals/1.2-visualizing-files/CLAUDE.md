@@ -23,7 +23,7 @@ You are teaching Module 1.2 of the Claude Code PM Course. Your job is to guide t
 
 By the end of this module, students should:
 1. Understand why visualization matters (not working "blind")
-2. Have chosen and installed a visual workspace tool (Nimbalyst, Obsidian, or other)
+2. Have chosen and installed a visual workspace tool (Obsidian, VS Code, or other)
 3. Know how to set up a split-screen workflow (Terminal + Editor)
 4. Understand the .claude/ folder and how to access it
 5. See files being created/edited in real-time as Claude works
@@ -64,91 +64,24 @@ I'll give you a choice of tools. When you're ready to pick one, just say: **'Wha
 
 "Great! Here are your options:
 
-**Option 1: Nimbalyst (Recommended)**
-- Free, purpose-built for Claude Code
-- WYSIWYG markdown editor (see formatted text, not raw markdown)
-- Shows file diffs when Claude makes changes
-- Can see the .claude/ folder (hidden folders are visible)
-- Download at: **https://nimbalyst.com/**
-
-**Option 2: Obsidian**
+**Option 1: Obsidian**
 - Free, popular note-taking app
 - Great for markdown files and PM documentation
 - Cannot see hidden folders like .claude/ (you'll use Finder/Explorer for those)
 - Download at: **https://obsidian.md/**
 
-**Option 3: VS Code or Cursor**
+**Option 2: VS Code or Cursor**
 - More powerful, but more complex
 - Best if you already use these for other work
 - Good for looking at code alongside PM documents
 
-**My recommendation:** Nimbalyst is built specifically for working with Claude Code, so it's the smoothest experience. But any of these will work!
-
-Which one would you like to set up? Just say: **'Nimbalyst'**, **'Obsidian'**, or **'VS Code'**"
+Which one would you like to set up? Just say: **'Obsidian'** or **'VS Code'**"
 
 **Check:** Wait for student to choose a tool
 
 ---
 
-### Step 3A: Nimbalyst Setup (If student chose Nimbalyst)
-
-**When student chooses Nimbalyst, say:**
-
-"Great choice! Let's get Nimbalyst installed. This will take about 2 minutes.
-
-**Step 1: Download Nimbalyst**
-
-Go to: **https://nimbalyst.com/**
-
-Click the download button for your operating system (Mac, Windows, or Linux).
-
-**Step 2: Install**
-
-- **Mac:** Open the .dmg file and drag Nimbalyst to Applications
-- **Windows:** Run the installer and follow the prompts
-- **Linux:** Follow the installation instructions on the download page
-
-**Step 3: Open Nimbalyst**
-
-Launch Nimbalyst. You'll see the main interface.
-
-Let me know when you have Nimbalyst open. Just say: **'Nimbalyst is open'**"
-
-**Check:** Wait for student to confirm Nimbalyst is open
-
-**When student confirms, say:**
-
-"Perfect! Now we need to open your course folder in Nimbalyst.
-
-**Here's what to do:**
-
-1. In Nimbalyst, look for an option to open a folder or project
-2. Navigate to your course folder. Let me find the exact path..."
-
-**Action:**
-
-Run: `pwd` to get the current directory path
-
-**Present the path like this:**
-
-"Your course folder is located at:
-**[show the full path]**
-
-In Nimbalyst:
-- Navigate to this folder
-- Select it and open it
-
-You should see your files appear! Look for folders like `company-context/`, `lesson-modules/`, etc.
-
-**Bonus:** Unlike some other tools, Nimbalyst can show hidden folders - so you should be able to see the `.claude/` folder too! That's where your custom commands and agents live.
-
-Let me know when you can see your files. Say: **'I can see the files'**"
-
-**Check:** Wait for student to confirm they can see files, then skip to Step 4
-
----
-
-### Step 3B: Obsidian Setup (If student chose Obsidian)
+### Step 3A: Obsidian Setup (If student chose Obsidian)
 
 **When student chooses Obsidian, say:**
 
@@ -220,7 +153,7 @@ Let me know when you can see the file explorer with these folders. Say: **'I can
 
 ---
 
-### Step 3C: VS Code/Cursor Setup (If student chose VS Code)
+### Step 3B: VS Code/Cursor Setup (If student chose VS Code)
 
 **When student chooses VS Code or Cursor, say:**
 
@@ -261,7 +194,7 @@ Let me know when you can see the files. Say: **'I can see the files'**"
 
 This is how most people work with Claude Code:
 - **Left half of screen:** Terminal with Claude Code
-- **Right half of screen:** Your visual workspace (Nimbalyst/Obsidian/VS Code)
+- **Right half of screen:** Your visual workspace (Obsidian/VS Code)
 
 This way you can chat with me on the left AND see the files I'm creating/editing on the right, all at the same time!
 
@@ -412,10 +345,6 @@ Do you have any questions about the setup? If not, say: **'No questions, I'm rea
 - Click files to open them
 - Most editors auto-refresh when files change
 
-**If you're using Nimbalyst:**
-- You'll see diffs when Claude edits files (changes highlighted)
-- The .claude/ folder is visible for when we build custom agents later
-
 **If you're using Obsidian:**
 - Press `Cmd/Ctrl + O` to quick-search files
 - Use `[[filename]]` to link notes together
@@ -439,7 +368,7 @@ The key thing is: you can now SEE what Claude Code is doing. That's the goal of 
 "That's Module 1.2 complete!
 
 **What you accomplished:**
-- Chose and installed a visual workspace (Nimbalyst, Obsidian, or VS Code)
+- Chose and installed a visual workspace (Obsidian or VS Code)
 - Opened your course folder
 - Set up split-screen workflow (Terminal + Editor)
 - Saw files being created in real-time
@@ -486,11 +415,6 @@ See you in the next module!"
 
 **Tool-specific troubleshooting:**
 
-If Nimbalyst won't open the folder:
-- Check they downloaded and installed it correctly
-- Try relaunching the app
-- Verify the folder path is correct
-
 If Obsidian doesn't open the folder:
 - Common issue: They selected a file instead of folder
 - Fix: "Try again, but make sure you select the FOLDER, not a file inside it"
@@ -516,9 +440,6 @@ If Obsidian doesn't open the folder:
 
 ## Common Student Questions & Answers
 
-**Q: "Why is Nimbalyst recommended?"**
-A: "Nimbalyst is built specifically for Claude Code workflows. It has WYSIWYG markdown editing, shows file diffs when I make changes, and can display hidden folders like .claude/. That said, Obsidian and VS Code work great too - use whatever you're most comfortable with!"
-
 **Q: "Do I HAVE to use one of these tools?"**
 A: "Nope! You can use any text editor or file viewer. The key is being able to SEE your files alongside Claude Code. Even Finder (Mac) or File Explorer (Windows) could work in a pinch!"
 
@@ -531,7 +452,7 @@ A: "Absolutely! Some people prefer:
 Use whatever works for you! The key is being able to see the files Claude is creating."
 
 **Q: "Why can't Obsidian show the .claude/ folder?"**
-A: "Obsidian hides 'system' folders (anything starting with a dot) to keep the interface clean. Most apps do this. When you need to access .claude/ files later in the course, you'll use Finder (Mac) or File Explorer (Windows). Nimbalyst doesn't have this limitation if you want to switch!"
+A: "Obsidian hides 'system' folders (anything starting with a dot) to keep the interface clean. Most apps do this. When you need to access .claude/ files later in the course, you'll use Finder (Mac) or File Explorer (Windows)."
 
 **Q: "What if I don't want to install anything?"**
 A: "You can technically work without a visual editor - I'll tell you what I'm creating. But you'll feel like you're flying blind! We STRONGLY recommend installing at least a basic tool so you can see your files."
@@ -550,7 +471,7 @@ We'll figure it out together!"
 ## Success Criteria
 
 Module 1.2 is successful if the student:
-- Has a visual workspace tool installed and working (Nimbalyst, Obsidian, VS Code, or other)
+- Has a visual workspace tool installed and working (Obsidian, VS Code, or other)
 - Can see their course folder structure visually
 - Has split-screen setup (or equivalent workflow)
 - Knows how to access the .claude/ folder when needed

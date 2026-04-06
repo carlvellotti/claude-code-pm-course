@@ -78,7 +78,7 @@ When creating modules with example files (meeting notes, user research, rough no
 ✅ **DO:**
 - Use .md file extension for all example files
 - Examples: `meeting-notes-1.md`, `rough-feature-notes.md`, `user-interview.md`
-- Reason: Markdown editors (Nimbalyst, Obsidian, VS Code) can display .md files but may not display .txt files properly
+- Reason: Markdown editors (Obsidian, VS Code) can display .md files but may not display .txt files properly
 
 ❌ **DON'T:**
 - Use .txt file extension for example files

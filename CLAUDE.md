@@ -207,7 +207,7 @@ When a user types a slash command in the course-materials/ folder, read `course-
 - "Check:" points are gates - STOP and WAIT for student response
 - "Action:" blocks contain exact commands to execute
 - NEVER break the fourth wall or say "I've read the script" - start teaching immediately
-- Use .md file extensions for all example files (not .txt) so they work with markdown editors (Nimbalyst, Obsidian, etc.)
+- Use .md file extensions for all example files (not .txt) so they work with markdown editors (Obsidian, VS Code, etc.)
 
 ### Website (website/)
 
@@ -283,7 +283,7 @@ Planning documents not included in student-facing materials:
 ## File Extension Convention
 
 All course example files MUST use `.md` extension (not `.txt`) because:
-- Students use markdown editors (Nimbalyst, Obsidian, VS Code) to visualize course files (taught in Module 1.2)
+- Students use markdown editors (Obsidian, VS Code) to visualize course files (taught in Module 1.2)
 - Most markdown editors cannot display .txt files properly
 - This is enforced in SCRIPT_INSTRUCTIONS.md
 

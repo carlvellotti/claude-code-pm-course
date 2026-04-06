@@ -65,7 +65,7 @@ We have activation funnel data exported from Mixpanel in `activation-funnel-q4.c
 
 I can read CSV files directly and analyze them for you - I'll calculate the drop-off rates at each funnel step and present the insights in a clean format.
 
-FYI – The data files are CSVs, not markdown files, so they won't render nicely in markdown editors like Nimbalyst or Obsidian. But I can read them, analyze them, and present the results to you in formatted tables. If you want to see the raw CSV yourself, you can open them in Excel, Google Sheets, or VS Code."
+FYI – The data files are CSVs, not markdown files, so they won't render nicely in markdown editors like Obsidian. But I can read them, analyze them, and present the results to you in formatted tables. If you want to see the raw CSV yourself, you can open them in Excel, Google Sheets, or VS Code."
 
 **STOP: Ask user to say 'Analyze the activation funnel'**
 
