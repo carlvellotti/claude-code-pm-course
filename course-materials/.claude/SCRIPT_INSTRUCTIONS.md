@@ -49,11 +49,17 @@ Think of this like following a recipe: you can adjust for taste, but don't skip 
 
 ---
 
+## Student Confirmation Prompts
+
+**Keep confirmation prompts short and low-effort.** Scripts often end with verbose prompts like "Say: **'I see the messy notes'**" or "Say: **'No questions, I'm ready to continue'**". Replace these with short, clickable options using the AskUserQuestion tool whenever possible. Acceptable short confirmations: "next", "ready", "y/n", "go", "done". Never ask the student to type a full sentence just to confirm they're ready to proceed.
+
+---
+
 ## Teaching Flow
 
 **"Check:" points are gates** - STOP and WAIT for the student to respond with the specified action before continuing.
 
-**"Say:" blocks contain the exact script** - Deliver this content naturally, maintaining the meaning and key phrases (especially bolded prompts).
+**"Say:" blocks contain the exact script** - Deliver this content naturally, maintaining the meaning and key phrases (especially bolded prompts). Replace verbose confirmation prompts at the end of Say blocks with short options per the rule above.
 
 **"Action:" blocks are commands to execute** - Run these tools/commands exactly as specified.
 
