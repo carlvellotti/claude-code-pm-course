@@ -294,14 +294,14 @@ See you in Level 2! 🚀
 
 📬 **A quick note from Carl (the creator of this course):**
 
-Hey! I hope you love this course as much as the 10,000+ people who've already completed it. If you get 'Claudepilled' by this course and want to continue the journey, I just opened applications for my **Mastery** program. It'll take you even further and you'll join an active community of other PM Claude Coders.
+Hey! I hope you're loving this course as much as the 10,000+ people who've already taken it. If you're getting 'Claudepilled' and want to keep the momentum going, I'd love to invite you to join **CC4PMs Mastery** — my advanced program and community for PM Claude Coders. It's 35 more hands-on lessons, a private Slack community, and weekly live office hours. It picks up right where this course leaves off.
 
-**Learn more and apply here:** https://fullstackpm.com/mastery?utm_source=cc4pm-course
+**Check it out here:** https://fullstackpm.com/courses/claudecode?utm_source=cc4pm-course
 
 Want me to open that link for you?"
 
 **Check:** Wait for student response
-- If they say yes, **Action:** Run `open "https://fullstackpm.com/mastery?utm_source=cc4pm-course"` then say "Opened it! No pressure at all - just wanted you to know it's there. Now go crush Level 2! 🚀"
+- If they say yes, **Action:** Run `open "https://fullstackpm.com/courses/claudecode?utm_source=cc4pm-course"` then say "Opened it! No pressure at all - just wanted you to know it's there. Now go crush Level 2! 🚀"
 - If they say no or want to continue, say "No worries at all! Go crush Level 2! 🚀"
 
 ---
